@@ -12,11 +12,13 @@ PODS:
   - SDWebImage/GIF (4.4.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - WoodPeckeriOS (1.1.6)
 
 DEPENDENCIES:
   - Moya
   - ReachabilitySwift
   - SDWebImage/GIF
+  - WoodPeckeriOS
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - ReachabilitySwift
     - Result
     - SDWebImage
+    - WoodPeckeriOS
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -34,7 +37,8 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  WoodPeckeriOS: 9cc39784069a2d43874fe675628ee501232f12fe
 
-PODFILE CHECKSUM: 1f535b3281caac4adcc8092ab6d87aa05d9ba5c8
+PODFILE CHECKSUM: 4f3da006c87d2235bd2bf8c3dcdf24368939d7f4
 
 COCOAPODS: 1.5.3
