@@ -14,7 +14,7 @@ end
 target 'GoodManager' do
 
     # Basics
-    #pod 'RealmSwift'
+    pod 'RealmSwift'
     pod 'SDWebImage/GIF'
     pod 'ReachabilitySwift'
     pod 'Moya'

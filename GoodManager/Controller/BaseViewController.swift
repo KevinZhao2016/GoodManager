@@ -18,5 +18,9 @@ class BaseViewController: UIViewController {
     func AppSetStatusBarColor(color:String){
         self.view.backgroundColor = UIColor(named: color)
     }
+    
+    func APPOutBrowserOpenURL(url:String!){
+        UIApplication.shared.openURL(URL(string: url)!)
+    }
 
 }
