@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  AdTest
+//  GoodManager
 //
 //  Created by KevinZhao on 2018/12/25.
 //  Copyright © 2018 GoodManager. All rights reserved.
