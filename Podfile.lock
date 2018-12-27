@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (4.8.0)
+  - FLAnimatedImage (1.0.12)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - ReachabilitySwift (4.3.0)
+  - Result (4.0.0)
+  - SDWebImage/Core (4.4.3)
+  - SDWebImage/GIF (4.4.3):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+
+DEPENDENCIES:
+  - Moya
+  - ReachabilitySwift
+  - SDWebImage/GIF
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - FLAnimatedImage
+    - Moya
+    - ReachabilitySwift
+    - Result
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+
+PODFILE CHECKSUM: 1f535b3281caac4adcc8092ab6d87aa05d9ba5c8
+
+COCOAPODS: 1.5.3

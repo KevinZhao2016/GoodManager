@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */; };
-		0A4A01FD21D32D6700FD39F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A01FC21D32D6700FD39F7 /* ViewController.swift */; };
+		0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */; };
 		0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4A01FE21D32D6700FD39F7 /* Main.storyboard */; };
 		0A4A020221D32D6700FD39F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4A020121D32D6700FD39F7 /* Assets.xcassets */; };
 		0A4A020521D32D6700FD39F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4A020321D32D6700FD39F7 /* LaunchScreen.storyboard */; };
 		0A4A021021D32D6800FD39F7 /* GoodManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A020F21D32D6800FD39F7 /* GoodManagerTests.swift */; };
 		0A4A021B21D32D6800FD39F7 /* GoodManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A021A21D32D6800FD39F7 /* GoodManagerUITests.swift */; };
+		0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */; };
+		0A5B880021D36C8F0045A1BE /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FF21D36C8F0045A1BE /* Global.swift */; };
+		0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880121D36CB60045A1BE /* BundleInfo.swift */; };
+		0A5B880421D375200045A1BE /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880321D375200045A1BE /* NetWork.swift */; };
+		0A5B880621D3754C0045A1BE /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880521D3754C0045A1BE /* NetworkStatus.swift */; };
+		0A5B880921D377590045A1BE /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880821D377590045A1BE /* ExUIView.swift */; };
+		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		0A4A01F721D32D6700FD39F7 /* GoodManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A4A01FC21D32D6700FD39F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A4A01FF21D32D6700FD39F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A4A020121D32D6700FD39F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A4A020421D32D6700FD39F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,15 @@
 		0A4A021621D32D6800FD39F7 /* GoodManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4A021A21D32D6800FD39F7 /* GoodManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodManagerUITests.swift; sourceTree = "<group>"; };
 		0A4A021C21D32D6800FD39F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0A5B87FF21D36C8F0045A1BE /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		0A5B880121D36CB60045A1BE /* BundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleInfo.swift; sourceTree = "<group>"; };
+		0A5B880321D375200045A1BE /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
+		0A5B880521D3754C0045A1BE /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		0A5B880821D377590045A1BE /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
+		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
+		A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7317ACA35C25E7563687A49 /* Pods-GoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,8 @@
 				0A4A020E21D32D6800FD39F7 /* GoodManagerTests */,
 				0A4A021921D32D6800FD39F7 /* GoodManagerUITests */,
 				0A4A01F821D32D6700FD39F7 /* Products */,
+				F5BE5C2C9E8389152116961D /* Pods */,
+				6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +116,12 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
+				0A5B880721D377410045A1BE /* Extension */,
+				0A5B87FC21D36BFF0045A1BE /* Common */,
+				0A5B87FB21D36BF80045A1BE /* Controller */,
+				0A5B87FA21D36BF20045A1BE /* View */,
+				0A5B87F921D36BEB0045A1BE /* Model */,
 				0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */,
-				0A4A01FC21D32D6700FD39F7 /* ViewController.swift */,
 				0A4A01FE21D32D6700FD39F7 /* Main.storyboard */,
 				0A4A020121D32D6700FD39F7 /* Assets.xcassets */,
 				0A4A020321D32D6700FD39F7 /* LaunchScreen.storyboard */,
@@ -125,6 +148,65 @@
 			path = GoodManagerUITests;
 			sourceTree = "<group>";
 		};
+		0A5B87F921D36BEB0045A1BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B880521D3754C0045A1BE /* NetworkStatus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A5B87FA21D36BF20045A1BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A5B87FB21D36BF80045A1BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */,
+				0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A5B87FC21D36BFF0045A1BE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B87FF21D36C8F0045A1BE /* Global.swift */,
+				0A5B880121D36CB60045A1BE /* BundleInfo.swift */,
+				0A5B880321D375200045A1BE /* NetWork.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0A5B880721D377410045A1BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B880821D377590045A1BE /* ExUIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5BE5C2C9E8389152116961D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */,
+				D7317ACA35C25E7563687A49 /* Pods-GoodManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A4A021F21D32D6800FD39F7 /* Build configuration list for PBXNativeTarget "GoodManager" */;
 			buildPhases = (
+				F5547760AFE81FC8F2CD5EA0 /* [CP] Check Pods Manifest.lock */,
 				0A4A01F321D32D6700FD39F7 /* Sources */,
 				0A4A01F421D32D6700FD39F7 /* Frameworks */,
 				0A4A01F521D32D6700FD39F7 /* Resources */,
+				D8A847E95EEACA66F6269446 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +335,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D8A847E95EEACA66F6269446 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5547760AFE81FC8F2CD5EA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A4A01F321D32D6700FD39F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4A01FD21D32D6700FD39F7 /* ViewController.swift in Sources */,
+				0A5B880021D36C8F0045A1BE /* Global.swift in Sources */,
+				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
+				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
+				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
+				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				0A5B880621D3754C0045A1BE /* NetworkStatus.swift in Sources */,
+				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,11 +577,13 @@
 		};
 		0A4A022021D32D6800FD39F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK3T8FC8XY;
 				INFOPLIST_FILE = GoodManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +597,13 @@
 		};
 		0A4A022121D32D6800FD39F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7317ACA35C25E7563687A49 /* Pods-GoodManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK3T8FC8XY;
 				INFOPLIST_FILE = GoodManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
