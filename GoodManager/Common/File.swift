@@ -30,3 +30,4 @@ func APPGetFileSize(path:String) -> Int{
     let filePath = NSHomeDirectory() + path
     return Int(filePath.getFileSize())
 }
+

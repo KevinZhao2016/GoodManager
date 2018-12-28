@@ -1,44 +1,73 @@
 PODS:
   - Alamofire (4.8.0)
+  - BMPlayer (1.0.1):
+    - BMPlayer/Full (= 1.0.1)
+  - BMPlayer/Core (1.0.1)
+  - BMPlayer/Full (1.0.1):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.0.0)
+    - SnapKit (~> 4.0.0)
   - FLAnimatedImage (1.0.12)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
+  - NVActivityIndicatorView (4.0.1):
+    - NVActivityIndicatorView/Presenter (= 4.0.1)
+  - NVActivityIndicatorView/Presenter (4.0.1)
   - ReachabilitySwift (4.3.0)
+  - Realm (3.13.0):
+    - Realm/Headers (= 3.13.0)
+  - Realm/Headers (3.13.0)
+  - RealmSwift (3.13.0):
+    - Realm (= 3.13.0)
   - Result (4.0.0)
   - SDWebImage/Core (4.4.3)
   - SDWebImage/GIF (4.4.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SnapKit (4.0.1)
   - WoodPeckeriOS (1.1.6)
 
 DEPENDENCIES:
+  - BMPlayer (~> 1.0.0)
   - Moya
   - ReachabilitySwift
+  - RealmSwift
   - SDWebImage/GIF
+  - SnapKit (~> 4.0.0)
   - WoodPeckeriOS
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BMPlayer
     - FLAnimatedImage
     - Moya
+    - NVActivityIndicatorView
     - ReachabilitySwift
+    - Realm
+    - RealmSwift
     - Result
     - SDWebImage
+    - SnapKit
     - WoodPeckeriOS
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  NVActivityIndicatorView: 77ed6d7b571643e24899e7858bf9ae2ee4c21f31
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
+  RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   WoodPeckeriOS: 9cc39784069a2d43874fe675628ee501232f12fe
 
-PODFILE CHECKSUM: 4f3da006c87d2235bd2bf8c3dcdf24368939d7f4
+PODFILE CHECKSUM: ed41fca942823c23feab4996e2f063acc1f1804e
 
 COCOAPODS: 1.5.3

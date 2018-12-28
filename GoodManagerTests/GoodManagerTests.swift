@@ -22,8 +22,7 @@ class GoodManagerTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let controller = BaseViewController()
-        controller.APPOutBrowserOpenURL(url: "https://www.baidu.com")
+        print(APPIfExistInterfaceName(interfaceName: "APPDelFilesss"))
     }
 
     func testPerformanceExample() {

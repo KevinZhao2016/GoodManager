@@ -6,7 +6,7 @@ use_frameworks!
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '3.0.1'
+            config.build_settings['SWIFT_VERSION'] = '4.0.0'
         end
     end
 end
@@ -14,10 +14,12 @@ end
 target 'GoodManager' do
 
     # Basics
-    #pod 'RealmSwift'
+    pod 'RealmSwift'
     pod 'SDWebImage/GIF'
     pod 'ReachabilitySwift'
     pod 'Moya'
-pod 'WoodPeckeriOS'
+    pod 'WoodPeckeriOS'
+    pod 'SnapKit', '~> 4.0.0'
+    pod 'BMPlayer', '~> 1.0.0'
 end
 

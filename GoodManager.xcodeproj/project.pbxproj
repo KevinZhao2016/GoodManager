@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */; };
+		0A24B4FB21D5CF3500F1336D /* scanSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A24B4FA21D5CF3400F1336D /* scanSound.wav */; };
 		0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */; };
 		0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */; };
 		0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4A01FE21D32D6700FD39F7 /* Main.storyboard */; };
@@ -16,6 +18,9 @@
 		0A4A021B21D32D6800FD39F7 /* GoodManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A021A21D32D6800FD39F7 /* GoodManagerUITests.swift */; };
 		0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CDEAB21D4A2FB00E28E95 /* File.swift */; };
 		0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CDEAD21D4A7C500E28E95 /* ExString.swift */; };
+		0A58311021D6072A00DC4321 /* BMPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58310F21D6072A00DC4321 /* BMPlayerViewController.swift */; };
+		0A58311221D6101C00DC4321 /* RealmAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311121D6101C00DC4321 /* RealmAgent.swift */; };
+		0A58311421D6252100DC4321 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311321D6252100DC4321 /* Value.swift */; };
 		0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */; };
 		0A5B880021D36C8F0045A1BE /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FF21D36C8F0045A1BE /* Global.swift */; };
 		0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880121D36CB60045A1BE /* BundleInfo.swift */; };
@@ -43,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeViewController.swift; sourceTree = "<group>"; };
+		0A24B4FA21D5CF3400F1336D /* scanSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scanSound.wav; sourceTree = "<group>"; };
 		0A4A01F721D32D6700FD39F7 /* GoodManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +65,9 @@
 		0A4A021C21D32D6800FD39F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4CDEAB21D4A2FB00E28E95 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0A4CDEAD21D4A7C500E28E95 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		0A58310F21D6072A00DC4321 /* BMPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerViewController.swift; sourceTree = "<group>"; };
+		0A58311121D6101C00DC4321 /* RealmAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAgent.swift; sourceTree = "<group>"; };
+		0A58311321D6252100DC4321 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
 		0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0A5B87FF21D36C8F0045A1BE /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		0A5B880121D36CB60045A1BE /* BundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleInfo.swift; sourceTree = "<group>"; };
@@ -129,6 +139,7 @@
 				0A4A01FE21D32D6700FD39F7 /* Main.storyboard */,
 				0A4A020121D32D6700FD39F7 /* Assets.xcassets */,
 				0A4A020321D32D6700FD39F7 /* LaunchScreen.storyboard */,
+				0A24B4FA21D5CF3400F1336D /* scanSound.wav */,
 				0A4A020621D32D6700FD39F7 /* Info.plist */,
 			);
 			path = GoodManager;
@@ -172,6 +183,8 @@
 			children = (
 				0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */,
 				0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */,
+				0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */,
+				0A58310F21D6072A00DC4321 /* BMPlayerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +196,8 @@
 				0A5B880121D36CB60045A1BE /* BundleInfo.swift */,
 				0A5B880321D375200045A1BE /* NetWork.swift */,
 				0A4CDEAB21D4A2FB00E28E95 /* File.swift */,
+				0A58311121D6101C00DC4321 /* RealmAgent.swift */,
+				0A58311321D6252100DC4321 /* Value.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -322,6 +337,7 @@
 				0A4A020521D32D6700FD39F7 /* LaunchScreen.storyboard in Resources */,
 				0A4A020221D32D6700FD39F7 /* Assets.xcassets in Resources */,
 				0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */,
+				0A24B4FB21D5CF3500F1336D /* scanSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,11 +368,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BMPlayer/BMPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${PODS_ROOT}/WoodPeckeriOS/WoodPeckeriOS.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -364,11 +385,16 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WoodPeckeriOS.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,9 +437,13 @@
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A5B880621D3754C0045A1BE /* NetworkStatus.swift in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
+				0A58311421D6252100DC4321 /* Value.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
+				0A58311021D6072A00DC4321 /* BMPlayerViewController.swift in Sources */,
+				0A58311221D6101C00DC4321 /* RealmAgent.swift in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

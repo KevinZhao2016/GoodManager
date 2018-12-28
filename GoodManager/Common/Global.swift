@@ -31,3 +31,14 @@ var isFullScreen: Bool {
     }
     return false
 }
+
+func APPIfExistInterfaceName(interfaceName:String) -> Int{
+    var flag = 0
+    let agent = RealmAgent()
+    if(agent.queue(name: interfaceName).name != ""){
+        flag = 1
+    }else{
+        flag = 0
+    }
+    return flag
+}
