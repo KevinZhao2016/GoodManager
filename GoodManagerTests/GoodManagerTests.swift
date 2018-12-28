@@ -23,6 +23,7 @@ class GoodManagerTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         print(APPIfExistInterfaceName(interfaceName: "APPDelFilesss"))
+        print(APPGetFileBase(path: "/Podfile"))
     }
 
     func testPerformanceExample() {
