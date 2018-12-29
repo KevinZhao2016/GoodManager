@@ -34,6 +34,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         })
 //        APPSetProgressBarColor(color: "#FFFFFF")
     }
+    override func viewDidAppear(_ animated: Bool) {
+        APPPreviewFile(path: "/Podfile.txt")
+    }
     
     func setupWebview(){
         // 创建配置
@@ -83,6 +86,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         webview.evaluateJavaScript(JSFun) { (result, error) in
             print(result,error)
         }
+    }
+    
+    //在线预览文件
+    func APPPreviewFile(path:String){
+        let controller = BaseNavigationController(rootViewController:PreviewFileViewController(Path: path))
+        self.present(controller, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
