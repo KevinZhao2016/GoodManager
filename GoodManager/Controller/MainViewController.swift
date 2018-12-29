@@ -26,8 +26,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(webview)
-        self.view.addSubview(self.image)
         //启动图片
         image.sd_setImage(with: URL(string: "http://img.zcool.cn/community/01d7e15a0f0f2ca801204a0e8190bc.gif"), placeholderImage: UIImage(named: "bigimage"))
         setupWebview()
@@ -35,7 +33,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
             self.removeImageWithDelay()
         })
 //        APPSetProgressBarColor(color: "#FFFFFF")
-        
     }
     
     func setupWebview(){
@@ -51,6 +48,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         webview.load(URLRequest(url: URL(string: "https://www.apple.com/cn")!))
         webview.navigationDelegate = self
         webview.allowsBackForwardNavigationGestures = true
+        self.view.addSubview(webview)
+        self.view.addSubview(self.image)
         //进度条监听
         self.webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         self.webview.addSubview(self.progressView)

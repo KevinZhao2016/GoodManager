@@ -28,8 +28,10 @@
 		0A5B880021D36C8F0045A1BE /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FF21D36C8F0045A1BE /* Global.swift */; };
 		0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880121D36CB60045A1BE /* BundleInfo.swift */; };
 		0A5B880421D375200045A1BE /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880321D375200045A1BE /* NetWork.swift */; };
-		0A5B880621D3754C0045A1BE /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880521D3754C0045A1BE /* NetworkStatus.swift */; };
+		0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */; };
 		0A5B880921D377590045A1BE /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880821D377590045A1BE /* ExUIView.swift */; };
+		0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */; };
+		0A61A64821D762A800A5CAD5 /* TelBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A64721D762A800A5CAD5 /* TelBook.swift */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +83,10 @@
 		0A5B87FF21D36C8F0045A1BE /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		0A5B880121D36CB60045A1BE /* BundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleInfo.swift; sourceTree = "<group>"; };
 		0A5B880321D375200045A1BE /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
-		0A5B880521D3754C0045A1BE /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusModel.swift; sourceTree = "<group>"; };
 		0A5B880821D377590045A1BE /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
+		0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelBookModel.swift; sourceTree = "<group>"; };
+		0A61A64721D762A800A5CAD5 /* TelBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelBook.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7317ACA35C25E7563687A49 /* Pods-GoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +181,8 @@
 		0A5B87F921D36BEB0045A1BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0A5B880521D3754C0045A1BE /* NetworkStatus.swift */,
+				0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */,
+				0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				0A4CDEAB21D4A2FB00E28E95 /* File.swift */,
 				0A58311121D6101C00DC4321 /* RealmAgent.swift */,
 				0A58311321D6252100DC4321 /* Value.swift */,
+				0A61A64721D762A800A5CAD5 /* TelBook.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -452,7 +458,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A61A64821D762A800A5CAD5 /* TelBook.swift in Sources */,
 				0A5B880021D36C8F0045A1BE /* Global.swift in Sources */,
+				0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */,
 				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
@@ -460,7 +468,7 @@
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
-				0A5B880621D3754C0045A1BE /* NetworkStatus.swift in Sources */,
+				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
 				0A58311421D6252100DC4321 /* Value.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
