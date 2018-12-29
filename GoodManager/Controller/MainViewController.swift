@@ -9,21 +9,21 @@
 import UIKit
 import WebKit
 import SDWebImage
+import TZImagePickerController
 
-class MainViewController: BaseViewController {
-    
-    var webview = WKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
+    var webview:WKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     var index = 0
     var urlArr = NSArray()
     var titleArr = NSArray()
-    lazy private var progressView: UIProgressView = {
+    lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
         self.progressView.tintColor = UIColor.green      // 进度条颜色
         self.progressView.trackTintColor = UIColor.white // 进度条背景色
         return self.progressView
     }()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(webview)
@@ -35,9 +35,19 @@ class MainViewController: BaseViewController {
             self.removeImageWithDelay()
         })
 //        APPSetProgressBarColor(color: "#FFFFFF")
+        
     }
     
     func setupWebview(){
+        // 创建配置
+        let config = WKWebViewConfiguration()
+        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
+        let userContent = WKUserContentController()
+        // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
+        userContent.add(self, name: "NativeMethod")
+        // 将UserConttentController设置到配置文件
+        config.userContentController = userContent
+        webview = WKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), configuration: config)
         webview.load(URLRequest(url: URL(string: "https://www.apple.com/cn")!))
         webview.navigationDelegate = self
         webview.allowsBackForwardNavigationGestures = true
@@ -63,6 +73,12 @@ class MainViewController: BaseViewController {
     func APPSetProgressBarColor(color:String){
         self.progressView.tintColor = UIColor(named: color)
     }
+    
+    //图片多选
+    func selectImage(){
+        self.present(TZImagePickerController(maxImagesCount: 9, delegate: self), animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,28 +87,7 @@ class MainViewController: BaseViewController {
         self.webview.removeObserver(self, forKeyPath: "estimatedProgress")
         self.webview.uiDelegate = nil
         self.webview.navigationDelegate = nil
-    }
-    
-}
-
-extension MainViewController:WKNavigationDelegate,WKUIDelegate{
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
-        //  加载进度条
-        if keyPath == "estimatedProgress"{
-            progressView.alpha = 1.0
-            progressView.setProgress(Float((self.webview.estimatedProgress) ), animated: true)
-            if (self.webview.estimatedProgress )  >= 1.0 {
-                UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseOut, animations: {
-                    self.progressView.alpha = 0
-                }, completion: { (finish) in
-                    self.progressView.setProgress(0.0, animated: false)
-                })
-            }
-        }
-    }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        webview.load(URLRequest(url: URL(string: "https://www.baidu.com")!))
+        webview.configuration.userContentController.removeScriptMessageHandler(forName: "NativeMethod")
     }
     
 }

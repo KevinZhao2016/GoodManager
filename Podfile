@@ -21,5 +21,6 @@ target 'GoodManager' do
     pod 'WoodPeckeriOS'
     pod 'SnapKit', '~> 4.0.0'
     pod 'BMPlayer', '~> 1.0.0'
+    pod 'TZImagePickerController' 
 end
 

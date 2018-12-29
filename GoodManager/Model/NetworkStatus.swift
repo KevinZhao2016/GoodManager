@@ -9,6 +9,11 @@
 import Foundation
 
 struct NetworkStatus {
-    let mode:Int?
-    let describe:String?
+    var mode:Int
+    var describe:String
+    
+    init(imode:Int, idescribe:String){
+        mode = imode
+        describe = idescribe
+    }
 }

@@ -28,6 +28,7 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SnapKit (4.0.1)
+  - TZImagePickerController (3.1.6)
   - WoodPeckeriOS (1.1.6)
 
 DEPENDENCIES:
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - RealmSwift
   - SDWebImage/GIF
   - SnapKit (~> 4.0.0)
+  - TZImagePickerController
   - WoodPeckeriOS
 
 SPEC REPOS:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - Result
     - SDWebImage
     - SnapKit
+    - TZImagePickerController
     - WoodPeckeriOS
 
 SPEC CHECKSUMS:
@@ -66,8 +69,9 @@ SPEC CHECKSUMS:
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  TZImagePickerController: 733aa6fd217f87c61656764f8e76b2137b6c8f47
   WoodPeckeriOS: 9cc39784069a2d43874fe675628ee501232f12fe
 
-PODFILE CHECKSUM: ed41fca942823c23feab4996e2f063acc1f1804e
+PODFILE CHECKSUM: 9379f8d9f01c840496b1347e850c2e0795cf0f53
 
 COCOAPODS: 1.5.3
