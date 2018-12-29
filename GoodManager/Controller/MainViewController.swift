@@ -79,6 +79,13 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         self.present(TZImagePickerController(maxImagesCount: 9, delegate: self), animated: true, completion: nil)
     }
     
+    //调用js方法
+    func APPExecWinJS(mark:Int, JSFun:String){
+        webview.evaluateJavaScript(JSFun) { (result, error) in
+            print(result,error)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
