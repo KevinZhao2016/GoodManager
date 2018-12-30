@@ -7,13 +7,24 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct TelBookModel{
-    var phone:String
-    var name:String
+struct TelBookModel:Mappable{
+    var phone:String = ""
+    var name:String = ""
+    
+    init?(map: Map) {
+        
+    }
     
     init(Phonenumber:String, Name:String){
         phone = Phonenumber
         name = Name
     }
+    
+    mutating func mapping(map: Map) {
+        phone <- map["phone"]
+        name <- map["name"]
+    }
+    
 }

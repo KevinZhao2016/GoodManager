@@ -32,10 +32,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
             self.removeImageWithDelay()
         })
-//        APPSetProgressBarColor(color: "#FFFFFF")
+
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        APPPreviewFile(path: "/Podfile.txt")
+        
     }
     
     func setupWebview(){

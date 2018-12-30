@@ -7,13 +7,24 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct NetworkStatus {
-    var mode:Int
-    var describe:String
+struct NetworkStatus: Mappable {
+    var mode:Int?
+    var describe:String?
     
-    init(imode:Int, idescribe:String){
-        mode = imode
-        describe = idescribe
+    init?(map: Map) {
+      
     }
+    
+    init(Mode:Int,Describe:String){
+        mode = Mode
+        describe = Describe
+    }
+    
+    mutating func mapping(map: Map) {
+        mode <- map["mode"]
+        describe <- map["describe"]
+    }
+ 
 }

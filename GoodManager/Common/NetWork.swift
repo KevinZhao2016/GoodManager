@@ -10,6 +10,7 @@ import Foundation
 import Reachability
 import SystemConfiguration.CaptiveNetwork
 import CoreTelephony
+import SwiftyJSON
 
 class Network{
     
@@ -75,9 +76,9 @@ class Network{
     
 }
 
-func APPGetNetWork() -> NetworkStatus{
+func APPGetNetWork() -> String{
     let reachability = Reachability()!
-    var networkStatus = NetworkStatus(imode: 0, idescribe: "")
+    var networkStatus = NetworkStatus(Mode:0,Describe:"")
     let network = Network()
     // 检测网络连接状态
     if reachability.connection != .none {
@@ -87,15 +88,16 @@ func APPGetNetWork() -> NetworkStatus{
             print("网络类型：Wifi")
             networkStatus.mode = 2
             networkStatus.describe = network.getSSidInfo()
+            print(networkStatus.toJSON())
         } else if reachability.connection == .cellular {
             print("网络类型：移动网络")
             networkStatus.mode = 1
             networkStatus.describe = network.getNetworkType()
         } else {
-        print("网络连接：不可用")
+            print("网络连接：不可用")
         }
     }
-        return networkStatus
+        return networkStatus.toJSONString()!
 }
 
 

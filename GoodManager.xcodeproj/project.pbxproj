@@ -32,6 +32,8 @@
 		0A5B880921D377590045A1BE /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880821D377590045A1BE /* ExUIView.swift */; };
 		0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */; };
 		0A61A64821D762A800A5CAD5 /* TelBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A64721D762A800A5CAD5 /* TelBook.swift */; };
+		0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AADBCC421D873F200DEA755 /* ExDictionary.swift */; };
+		0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AADBCC621D8A7A900DEA755 /* VerionModel.swift */; };
 		0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618321D797BA0066459B /* PreviewFileViewController.swift */; };
 		0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618521D7AC640066459B /* BaseNavigationController.swift */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
@@ -89,6 +91,8 @@
 		0A5B880821D377590045A1BE /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelBookModel.swift; sourceTree = "<group>"; };
 		0A61A64721D762A800A5CAD5 /* TelBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelBook.swift; sourceTree = "<group>"; };
+		0AADBCC421D873F200DEA755 /* ExDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDictionary.swift; sourceTree = "<group>"; };
+		0AADBCC621D8A7A900DEA755 /* VerionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerionModel.swift; sourceTree = "<group>"; };
 		0AD6618321D797BA0066459B /* PreviewFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFileViewController.swift; sourceTree = "<group>"; };
 		0AD6618521D7AC640066459B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			children = (
 				0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */,
 				0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */,
+				0AADBCC621D8A7A900DEA755 /* VerionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			children = (
 				0A5B880821D377590045A1BE /* ExUIView.swift */,
 				0A4CDEAD21D4A7C500E28E95 /* ExString.swift */,
+				0AADBCC421D873F200DEA755 /* ExDictionary.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -411,12 +417,14 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${PODS_ROOT}/WoodPeckeriOS/WoodPeckeriOS.framework",
 			);
@@ -429,12 +437,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WoodPeckeriOS.framework",
 			);
@@ -486,7 +496,9 @@
 				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
 				0A58311421D6252100DC4321 /* Value.swift in Sources */,
+				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
+				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
 				0A4F01E321D71E6E00AD1E2C /* ImagePicjerViewController.swift in Sources */,
 				0A58311021D6072A00DC4321 /* BMPlayerViewController.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
