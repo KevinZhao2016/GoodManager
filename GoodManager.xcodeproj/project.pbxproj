@@ -18,6 +18,8 @@
 		0A4A021B21D32D6800FD39F7 /* GoodManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A021A21D32D6800FD39F7 /* GoodManagerUITests.swift */; };
 		0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CDEAB21D4A2FB00E28E95 /* File.swift */; };
 		0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CDEAD21D4A7C500E28E95 /* ExString.swift */; };
+		0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EE1B921D9F24400A943D1 /* LocationModel.swift */; };
+		0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */; };
 		0A4F01E021D71DF700AD1E2C /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4F01DF21D71DF700AD1E2C /* ExternalAccessory.framework */; };
 		0A4F01E321D71E6E00AD1E2C /* ImagePicjerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F01E221D71E6E00AD1E2C /* ImagePicjerViewController.swift */; };
 		0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */; };
@@ -74,6 +76,8 @@
 		0A4A021C21D32D6800FD39F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4CDEAB21D4A2FB00E28E95 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0A4CDEAD21D4A7C500E28E95 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		0A4EE1B921D9F24400A943D1 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationExtension.swift; sourceTree = "<group>"; };
 		0A4F01DF21D71DF700AD1E2C /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		0A4F01E121D71DF700AD1E2C /* GoodManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoodManager.entitlements; sourceTree = "<group>"; };
 		0A4F01E221D71E6E00AD1E2C /* ImagePicjerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicjerViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */,
 				0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */,
 				0AADBCC621D8A7A900DEA755 /* VerionModel.swift */,
+				0A4EE1B921D9F24400A943D1 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				0AD6618721D7AD0E0066459B /* Base */,
 				0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */,
 				0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */,
+				0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */,
 				0A58310F21D6072A00DC4321 /* BMPlayerViewController.swift */,
 				0A4F01E221D71E6E00AD1E2C /* ImagePicjerViewController.swift */,
 				0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */,
@@ -485,12 +491,14 @@
 				0A61A64821D762A800A5CAD5 /* TelBook.swift in Sources */,
 				0A5B880021D36C8F0045A1BE /* Global.swift in Sources */,
 				0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */,
+				0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */,
 				0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */,
 				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
 				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,

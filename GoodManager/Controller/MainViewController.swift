@@ -23,7 +23,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         self.progressView.trackTintColor = UIColor.white // 进度条背景色
         return self.progressView
     }()
-   
+    
+    lazy var locationManager = CLLocationManager()//用于定位
+    lazy var currLocation = CLLocation()
+    lazy var locationModel = LocationModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //启动图片
@@ -32,11 +36,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
             self.removeImageWithDelay()
         })
-
+        locationManager.delegate = self //定位代理方法
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        APPStartLocation(callBackfunName: "f")
     }
     
     func setupWebview(){
