@@ -16,10 +16,10 @@ class InterfaceName: Object {
 
 class RealmAgent {
  
-    func add(name:String) -> Bool{
+    func addInterface(name:String) -> Bool{
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
-        let interface = queue(name: name)
+        let interface = queueInterface(name: name)
         if(interface.name != ""){
             return false
         }
@@ -33,10 +33,10 @@ class RealmAgent {
         return true
     }
     
-    func delete(name:String) -> Bool{
+    func deleteInterface(name:String) -> Bool{
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
-        let interface = queue(name: name)
+        let interface = queueInterface(name: name)
         do{
             try realm.write {
                 realm.delete(interface)
@@ -47,7 +47,7 @@ class RealmAgent {
         return true
     }
     
-    func queue(name:String) -> InterfaceName{
+    func queueInterface(name:String) -> InterfaceName{
         let realm = try! Realm()
         let result =  realm.objects(InterfaceName.self).filter("name == %@",name).first
         return result ?? InterfaceName()
