@@ -14,18 +14,29 @@ class InterfaceName: Object {
     @objc dynamic var name = ""
 }
 
-class RealmAgent {
+func APPIfExistInterfaceName(interfaceName:String) -> Int{
+    var flag = 0
+    let agent = InterfaceRealm()
+    if(agent.queueInterface(name: interfaceName).name != ""){
+        flag = 1
+    }else{
+        flag = 0
+    }
+    return flag
+}
+
+class InterfaceRealm {
  
     func addInterface(name:String) -> Bool{
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
         let interface = queueInterface(name: name)
-        if(interface.name != ""){
+        if(interface.name == ""){
             return false
         }
         do{
             try realm.write {
-                realm.delete(interface)
+                realm.add(interface)
             }
         }catch{
             return false

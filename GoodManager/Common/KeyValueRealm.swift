@@ -7,17 +7,63 @@
 //
 
 import Foundation
+import RealmSwift
 
-var Dict = [Int: String]()
-
-func APPSetValue(key:Int, value:String){
-    Dict[key] = value
+class KeyValue: Object {
+    @objc dynamic var key = ""
+    @objc dynamic var value = ""
 }
 
-func APPGetValue(key:Int) -> String{
-    return Dict[key] ?? ""
+class KeyValueRealm{
+    func addKeyValue(key:String, value:String) -> Bool{
+        let realm = try! Realm()
+        print(realm.configuration.fileURL ?? "")
+        let keyValue = queueKeyValue(key:key)
+        if(keyValue.key == ""){
+            return false
+        }
+        do{
+            try realm.write {
+                realm.add(keyValue)
+            }
+        }catch{
+            return false
+        }
+        return true
+    }
+    
+    func deleteKeyValue(key:String) -> Bool{
+        let realm = try! Realm()
+        print(realm.configuration.fileURL ?? "")
+        let keyValue = queueKeyValue(key: key)
+        do{
+            try realm.write {
+                realm.delete(keyValue)
+            }
+        }catch{
+            return false
+        }
+        return true
+    }
+    
+    func queueKeyValue(key:String) -> KeyValue{
+        let realm = try! Realm()
+        let result =  realm.objects(KeyValue.self).filter("key == %@",key).first
+        return result ?? KeyValue()
+    }
 }
 
-func APPDelValue(key:Int) {
-    Dict.removeValue(forKey: key)
+func APPSetValue(key:String, value:String){
+    let agent = KeyValueRealm()
+    agent.addKeyValue(key: key, value: value)
+}
+
+func APPGetValue(key:String) -> String{
+    let agent = KeyValueRealm()
+    return agent.queueKeyValue(key: key).value
+}
+
+func APPDelValue(key:String) {
+    let agent = KeyValueRealm()
+    agent.deleteKeyValue(key: key)
 }

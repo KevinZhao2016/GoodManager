@@ -24,8 +24,8 @@
 		0A4F01E321D71E6E00AD1E2C /* ImagePicjerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F01E221D71E6E00AD1E2C /* ImagePicjerViewController.swift */; };
 		0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */; };
 		0A58311021D6072A00DC4321 /* BMPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58310F21D6072A00DC4321 /* BMPlayerViewController.swift */; };
-		0A58311221D6101C00DC4321 /* RealmAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311121D6101C00DC4321 /* RealmAgent.swift */; };
-		0A58311421D6252100DC4321 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311321D6252100DC4321 /* Value.swift */; };
+		0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311121D6101C00DC4321 /* InterfaceRealm.swift */; };
+		0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311321D6252100DC4321 /* KeyValueRealm.swift */; };
 		0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */; };
 		0A5B880021D36C8F0045A1BE /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B87FF21D36C8F0045A1BE /* Global.swift */; };
 		0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880121D36CB60045A1BE /* BundleInfo.swift */; };
@@ -85,8 +85,8 @@
 		0A4F01E521D721E700AD1E2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
 		0A58310F21D6072A00DC4321 /* BMPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerViewController.swift; sourceTree = "<group>"; };
-		0A58311121D6101C00DC4321 /* RealmAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAgent.swift; sourceTree = "<group>"; };
-		0A58311321D6252100DC4321 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		0A58311121D6101C00DC4321 /* InterfaceRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceRealm.swift; sourceTree = "<group>"; };
+		0A58311321D6252100DC4321 /* KeyValueRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueRealm.swift; sourceTree = "<group>"; };
 		0A5B87FD21D36C3E0045A1BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0A5B87FF21D36C8F0045A1BE /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		0A5B880121D36CB60045A1BE /* BundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleInfo.swift; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 				0A5B880121D36CB60045A1BE /* BundleInfo.swift */,
 				0A5B880321D375200045A1BE /* NetWork.swift */,
 				0A4CDEAB21D4A2FB00E28E95 /* File.swift */,
-				0A58311121D6101C00DC4321 /* RealmAgent.swift */,
-				0A58311321D6252100DC4321 /* Value.swift */,
+				0A58311121D6101C00DC4321 /* InterfaceRealm.swift */,
+				0A58311321D6252100DC4321 /* KeyValueRealm.swift */,
 				0A61A64721D762A800A5CAD5 /* TelBook.swift */,
 			);
 			path = Common;
@@ -503,14 +503,14 @@
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
 				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
-				0A58311421D6252100DC4321 /* Value.swift in Sources */,
+				0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */,
 				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
 				0A4F01E321D71E6E00AD1E2C /* ImagePicjerViewController.swift in Sources */,
 				0A58311021D6072A00DC4321 /* BMPlayerViewController.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
-				0A58311221D6101C00DC4321 /* RealmAgent.swift in Sources */,
+				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
