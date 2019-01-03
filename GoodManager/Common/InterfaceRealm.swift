@@ -31,7 +31,7 @@ class InterfaceRealm {
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
         let interface = queueInterface(name: name)
-        if(interface.name == ""){
+        if(interface.name != ""){
             return false
         }
         do{

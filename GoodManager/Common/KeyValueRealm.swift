@@ -19,7 +19,7 @@ class KeyValueRealm{
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
         let keyValue = queueKeyValue(key:key)
-        if(keyValue.key == ""){
+        if(keyValue.key != ""){
             return false
         }
         do{
