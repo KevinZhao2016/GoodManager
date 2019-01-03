@@ -10,6 +10,7 @@ import Foundation
 import Contacts
 import SwiftyJSON
 
+fileprivate var callbackfun:String = ""
 func getTelBookRight(){
     //1.获取授权状态
     //CNContactStore 通讯录对象
@@ -30,12 +31,12 @@ func getTelBookRight(){
 }
 
 //获取所有联系人数据
-func APPGetTelBookList(callBackfunName:String) -> String{
+func APPGetTelBookList(callBackfunName:String){
     var TelBookList = Array<TelBookModel>()
     //1.获取授权状态
     let status = CNContactStore.authorizationStatus(for: .contacts)
     //2.判断当前授权状态
-    guard status == .authorized else { return ""}
+    guard status == .authorized else { return }
     //3.创建通讯录对象
     let store = CNContactStore()
     //4.从通讯录中获取所有联系人
@@ -62,5 +63,6 @@ func APPGetTelBookList(callBackfunName:String) -> String{
     } catch {
         print(error)
     }
-    return TelBookList.toJSONString()!
+    APPExecWinJs()
+    TelBookList.toJSONString()!
 }
