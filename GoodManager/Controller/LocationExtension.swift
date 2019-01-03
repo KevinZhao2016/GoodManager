@@ -10,10 +10,12 @@ import Foundation
 import CoreLocation
 import UIKit
 
+fileprivate var callbackfun:String = ""
 extension MainViewController: CLLocationManagerDelegate{
 
     func APPStartLocation(callBackfunName:String){
         loadLocation()
+        callbackfun = callBackfunName
     }
     
     func getLocationJSON() -> String{
@@ -52,7 +54,8 @@ extension MainViewController: CLLocationManagerDelegate{
             LonLatToCity()
             //停止定位
             locationManager.stopUpdatingLocation()
-            getLocationJSON()
+            //回调
+            self.APPExecWinJS(mark: 0, JSFun: callbackfun + "(" + getLocationJSON()  + ")")
         }
 
     }

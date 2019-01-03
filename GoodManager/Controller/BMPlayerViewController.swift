@@ -27,7 +27,7 @@ class BMPlayerViewController: BaseViewController {
             let _ = self.navigationController?.popViewController(animated: true)
         }
         let asset = BMPlayerResource(url: URL(string: "http://vjs.zencdn.net/v/oceans.mp4")!,
-                                     name: "风格互换：原来你我相爱")
+                                     name: "test")
         player.setVideo(resource: asset)
         player.autoPlay()
         

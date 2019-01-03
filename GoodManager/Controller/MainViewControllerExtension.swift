@@ -32,11 +32,12 @@ extension MainViewController:WKNavigationDelegate,WKUIDelegate{
 
 extension MainViewController:WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print(message.body)
         if "NativeMethod" == message.name {
             // 判断message的内容，然后做相应的操作
             //window.webkit.messageHandlers.NativeMethod.postMessage("fun");根据body判断执行的方法
-            if "close" == message.body as! String {
-                
+            if "APPGetVersion" == message.body as! String {
+                print(APPGetVersion())
             }
         }
     }

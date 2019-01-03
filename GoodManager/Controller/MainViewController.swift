@@ -53,7 +53,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         // 将UserConttentController设置到配置文件
         config.userContentController = userContent
         webview = WKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), configuration: config)
-        webview.load(URLRequest(url: URL(string: "https://www.apple.com/cn")!))
+        webview.load(URLRequest(url: URL(string: "http://localhost:8080/index.html")!))
         webview.navigationDelegate = self
         webview.allowsBackForwardNavigationGestures = true
         self.view.addSubview(webview)
