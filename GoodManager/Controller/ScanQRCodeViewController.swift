@@ -11,8 +11,10 @@ import AVFoundation
 import ImageIO
 import AudioToolbox
 
+typealias QRString = (String) -> Void
 class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var backClosure: QRString?// 数据回调闭包
     var device: AVCaptureDevice!  //摄像头对象
     var session: AVCaptureSession!  //会话对象
     var previewlayer: AVCaptureVideoPreviewLayer!  //摄像头图层
@@ -36,7 +38,7 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         super.viewWillAppear(animated)
         
         session.startRunning()
-        startScanLineAnimation()
+//        startScanLineAnimation()
     }
     
     func createNavButtonItem() -> Void {
@@ -64,17 +66,18 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
         //获取到二维码数据
         let featureArr = detector?.features(in: CIImage.init(cgImage: image.cgImage!))
-        let feature = featureArr?.first as! CIQRCodeFeature
-        
+        guard let feature = featureArr?.first as? CIQRCodeFeature else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        print(feature.messageString)
+        self.backClosure!(feature.messageString!)
         //数据处理
         self.dismiss(animated: true) {
-//            let messageVC = ZZMessageViewController()
-//            messageVC.data = feature.messageString!
-//            self.stopScanLineAnimation()
-//            self.scanSound()
-//            self.session.stopRunning()
-//            self.navigationController?.pushViewController(messageVC, animated: true)
+            self.scanSound()
+            self.session.stopRunning()
         }
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     //点击取消时调用该方法
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -83,7 +86,7 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
     
     //返回
     @objc func backAction() -> Void {
-        _ = self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     //创建扫描UI界面
@@ -118,15 +121,15 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         self.view.addSubview(scanImage)
         
         //添加扫描线
-        scanLine = UIImageView.init(frame: CGRect.init(x:(width - scanWidth)/2, y: (height - scanWidth)/2, width: scanWidth, height: 4))
-        scanLine.image = UIImage.init(named: "scanline.png")
-        self.view.addSubview(scanLine)
+//        scanLine = UIImageView.init(frame: CGRect.init(x:(width - scanWidth)/2, y: (height - scanWidth)/2, width: scanWidth, height: 4))
+//        scanLine.image = UIImage.init(named: "scanline.png")
+//        self.view.addSubview(scanLine)
         
         //设置有效的扫描区域  注意：坐标系原点为右顶点，横为y，竖为x
         output.rectOfInterest = CGRect(x: (height - scanWidth - 64)/2/height, y: (width - scanWidth)/2/width, width: scanWidth, height: scanWidth)
         
         let label = UILabel.init(frame: CGRect.init(x: 0, y: (height + scanWidth)/2 + 8, width: width, height: 20))
-        label.text = "请将二维码/条形码放入框内，即可扫描"
+        label.text = "请将二维码/条形码放入框内，即可扫描，点击屏幕控制闪光灯"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = UIColor.white
         label.textAlignment = .center
@@ -155,13 +158,13 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         return animate
     }
     
-    func startScanLineAnimation() -> Void {
-        let animate = scanLineAnimation(fromValue: 2, toValue: Int(scanWidth)-2)
-        scanLine.layer.add(animate, forKey: "scanLine")
-    }
+//    func startScanLineAnimation() -> Void {
+//        let animate = scanLineAnimation(fromValue: 2, toValue: Int(scanWidth)-2)
+//        scanLine.layer.add(animate, forKey: "scanLine")
+//    }
     
     func stopScanLineAnimation() -> Void {
-        scanLine.layer.removeAnimation(forKey: "scanLine")
+//        scanLine.layer.removeAnimation(forKey: "scanLine")
     }
     
     //MARK: ------相机扫描二维码--------
@@ -192,9 +195,9 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         previewlayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewlayer?.frame = self.view.frame
     }
+    
     //扫描到二维码时调用
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count > 0 {
             
             self.scanSound()
@@ -202,13 +205,20 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
             stopScanLineAnimation()
             
             let metadata: AVMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-            
-//            let messageVC = ZZMessageViewController()
-//            messageVC.data = metadata.stringValue
-//            self.navigationController?.pushViewController(messageVC, animated: true)
+            print(metadata.stringValue)
+            self.backClosure!(metadata.stringValue!)
+            //数据处理
+            self.dismiss(animated: true) {
+                self.scanSound()
+                self.session.stopRunning()
+            }
+            self.navigationController?.dismiss(animated: true, completion: nil)
+            //            let messageVC = ZZMessageViewController()
+            //            messageVC.data = metadata.stringValue
+            //            self.navigationController?.pushViewController(messageVC, animated: true)
         }
     }
-    
+
     //MARK: -------提示音机震动------
     func scanSound() -> Void {
         

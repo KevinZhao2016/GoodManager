@@ -158,11 +158,11 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
-				0A4F01E121D71DF700AD1E2C /* GoodManager.entitlements */,
 				0A5B880721D377410045A1BE /* Extension */,
+				0A4F01E121D71DF700AD1E2C /* GoodManager.entitlements */,
 				0A5B87FC21D36BFF0045A1BE /* Common */,
 				0A5B87FB21D36BF80045A1BE /* Controller */,
-				0A5B87FA21D36BF20045A1BE /* View */,
+				0A7F289C21DE4737009C38C8 /* View */,
 				0A5B87F921D36BEB0045A1BE /* Model */,
 				0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */,
 				0A4A01FE21D32D6700FD39F7 /* Main.storyboard */,
@@ -203,13 +203,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0A5B87FA21D36BF20045A1BE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		0A5B87FB21D36BF80045A1BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +241,14 @@
 				0AADBCC421D873F200DEA755 /* ExDictionary.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0A7F289C21DE4737009C38C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		0AD6618721D7AD0E0066459B /* Base */ = {

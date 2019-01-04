@@ -40,7 +40,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        APPStartLocation(callBackfunName: "f")
+        APPScanQRCode(callBackfunName: "k")
     }
     
     func setupWebview(){
@@ -53,7 +53,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         // 将UserConttentController设置到配置文件
         config.userContentController = userContent
         webview = WKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), configuration: config)
-        webview.load(URLRequest(url: URL(string: "http://localhost:8080/index.html")!))
+        webview.load(URLRequest(url: URL(string: "http://www.apple.com/cn")!))
         webview.navigationDelegate = self
         webview.allowsBackForwardNavigationGestures = true
         self.view.addSubview(webview)
@@ -91,6 +91,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         webview.evaluateJavaScript(JSFun) { (result, error) in
             print(result,error)
         }
+    }
+    
+    //扫描二维码
+    func APPScanQRCode(callBackfunName:String){
+        let controller = ScanQRCodeViewController()
+        controller.backClosure = { (QRcode:String) ->Void in
+            print("main  " + QRcode)
+            self.APPExecWinJS(mark: 0, JSFun: callBackfunName + "(" + QRcode + ")")
+        }
+        self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
     }
     
     //在线预览文件
