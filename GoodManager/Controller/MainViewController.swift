@@ -14,9 +14,6 @@ import TZImagePickerController
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     var webview:WKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
-    var index = 0
-    var urlArr = NSArray()
-    var titleArr = NSArray()
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
         self.progressView.tintColor = UIColor.green      // 进度条颜色
@@ -40,7 +37,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        APPScanQRCode(callBackfunName: "k")
+        
     }
     
     func setupWebview(){
