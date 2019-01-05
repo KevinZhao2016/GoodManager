@@ -12,7 +12,6 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(APPGetNetWork())
     }
     
     func AppSetStatusBarColor(color:String){

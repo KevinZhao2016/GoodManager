@@ -65,6 +65,6 @@ extension MainViewController{
         } catch {
             print(error)
         }
-        APPExecWinJS(mark: 0, JSFun: callbackfun + "(" + TelBookList.toJSONString()! + ")")
+        APPExecWinJS(mark: "0", JSFun: callbackfun + "(" + TelBookList.toJSONString()! + ")")
     }
 }

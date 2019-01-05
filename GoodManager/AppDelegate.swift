@@ -12,11 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = MainViewController()
+        let vc = MainViewController()
+        mainViewControllers.append(vc)
+        self.window?.rootViewController = vc
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         getTelBookRight()//检查通讯录权限

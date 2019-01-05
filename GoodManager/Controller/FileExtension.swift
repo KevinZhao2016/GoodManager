@@ -19,7 +19,7 @@ extension MainViewController{
         Alamofire.upload(fileURL!, to: "host")
             .response { response in
                 print(response)
-                self.APPExecWinJS(mark: 0, JSFun: callBackfunName + "(" + (fileURL?.path)! + ")")
+                APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + (fileURL?.path)! + ")")
         }
     
     }
@@ -40,7 +40,7 @@ extension MainViewController{
         Alamofire.download(fileURL, to: destination)
             .response { response in
                 print(response)
-                self.APPExecWinJS(mark: 0, JSFun: callBackfunName + "(" + (response.destinationURL?.path)! + ")")
+                APPExecWinJS(mark:" ", JSFun: callBackfunName + "(" + (response.destinationURL?.path)! + ")")
         }
     }
 }

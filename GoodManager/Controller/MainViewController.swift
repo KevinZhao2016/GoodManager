@@ -12,6 +12,8 @@ import SDWebImage
 import TZImagePickerController
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
+    var mark:String = ""
+    var url:String = "http://localhost:8080"
     var webview:WKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     lazy  var progressView: UIProgressView = {
@@ -27,17 +29,25 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //启动图片
-        image.sd_setImage(with: URL(string: "http://img.zcool.cn/community/01d7e15a0f0f2ca801204a0e8190bc.gif"), placeholderImage: UIImage(named: "bigimage"))
         setupWebview()
-        _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
-            self.removeImageWithDelay()
-        })
+        if(LaunchFlag == false){
+            setupLaunchView() //启动页
+        }
         locationManager.delegate = self //定位代理方法
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
+    }
+    
+    func setupLaunchView(){
+             //启动图片
+        image.sd_setImage(with: URL(string: "http://img.zcool.cn/community/01d7e15a0f0f2ca801204a0e8190bc.gif"), placeholderImage: UIImage(named: "bigimage"))
+        self.view.addSubview(image)
+        _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
+            self.removeImageWithDelay()
+        })
+        LaunchFlag = true
     }
     
     func setupWebview(){
@@ -50,11 +60,10 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         // 将UserConttentController设置到配置文件
         config.userContentController = userContent
         webview = WKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), configuration: config)
-        webview.load(URLRequest(url: URL(string: "http://www.apple.com/cn")!))
+        webview.load(URLRequest(url: URL(string: url)!))
         webview.navigationDelegate = self
         webview.allowsBackForwardNavigationGestures = true
         self.view.addSubview(webview)
-        self.view.addSubview(self.image)
         //进度条监听
         self.webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         self.webview.addSubview(self.progressView)
@@ -83,22 +92,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         self.present(TZImagePickerController(maxImagesCount: 9, delegate: self), animated: true, completion: nil)
     }
     
-    //调用js方法
-    func APPExecWinJS(mark:Int, JSFun:String){
-        webview.evaluateJavaScript(JSFun) { (result, error) in
-            print(result,error)
-        }
-    }
-    
-    //扫描二维码
-    func APPScanQRCode(callBackfunName:String){
-        let controller = ScanQRCodeViewController()
-        controller.backClosure = { (QRcode:String) ->Void in
-            print("main  " + QRcode)
-            self.APPExecWinJS(mark: 0, JSFun: callBackfunName + "(" + QRcode + ")")
-        }
-        self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
-    }
     
     //在线预览文件
     func APPPreviewFile(path:String){

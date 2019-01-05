@@ -17,7 +17,17 @@ let ratioWidth = SCREEN_WIDTH / iphone6Width
 let ratioHeight = SCREEN_HEIGHT / iphone6Height
 let MediumFontName = "PingFangSC-Medium"
 let RegularFontName = "PingFangSC-Regular"
+var LaunchFlag:Bool = false //标志是否需要展示启动页
+var mainViewControllers:Array<MainViewController> = []
 
+func findControllerByMark(mark:String) -> MainViewController{
+    for vc in mainViewControllers{
+        if(vc.mark == mark){
+            return vc
+        }
+    }
+    return MainViewController()
+}
 //判断是否全面屏
 var isFullScreen: Bool {
     if #available(iOS 11, *) {

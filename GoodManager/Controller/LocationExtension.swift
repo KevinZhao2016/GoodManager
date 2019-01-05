@@ -55,7 +55,7 @@ extension MainViewController: CLLocationManagerDelegate{
             //停止定位
             locationManager.stopUpdatingLocation()
             //回调
-            self.APPExecWinJS(mark: 0, JSFun: callbackfun + "(" + getLocationJSON()  + ")")
+            APPExecWinJS(mark: "", JSFun: callbackfun + "(" + getLocationJSON()  + ")")
         }
 
     }

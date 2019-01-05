@@ -39,6 +39,12 @@ extension MainViewController:WKScriptMessageHandler{
             if "APPGetVersion" == message.body as! String {
                 print(APPGetVersion())
             }
+            else if "APPWinOpen" == message.body as! String {
+                APPWinOpen(url: "http://www.hdu.edu.cn", mark: "hdu", progressBarColor: "#000000", statusBarColor: "#111111")
+            }
+            else if "APPWinClose" == message.body as! String {
+                APPWinClose(mark: "hdu")
+            }
         }
     }
 }
