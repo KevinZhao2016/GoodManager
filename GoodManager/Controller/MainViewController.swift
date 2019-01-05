@@ -37,7 +37,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+      
     }
     
     func setupLaunchView(){

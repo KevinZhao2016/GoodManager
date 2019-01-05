@@ -40,6 +40,9 @@
 		0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618321D797BA0066459B /* PreviewFileViewController.swift */; };
 		0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618521D7AC640066459B /* BaseNavigationController.swift */; };
 		0AEA36AB21DE1A9700AA1820 /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA36AA21DE1A9700AA1820 /* FileExtension.swift */; };
+		0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664321E0ED0800636D06 /* ContactPickerController.swift */; };
+		0AEE664621E103D600636D06 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664521E103D600636D06 /* Contact.swift */; };
+		0AEE664821E105A400636D06 /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664721E105A400636D06 /* ExArray.swift */; };
 		0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04CE21E0D4EF0032C670 /* Window.swift */; };
 		0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04D021E0DDB50032C670 /* QRCode.swift */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
@@ -105,6 +108,9 @@
 		0AD6618321D797BA0066459B /* PreviewFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFileViewController.swift; sourceTree = "<group>"; };
 		0AD6618521D7AC640066459B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0AEA36AA21DE1A9700AA1820 /* FileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtension.swift; sourceTree = "<group>"; };
+		0AEE664321E0ED0800636D06 /* ContactPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerController.swift; sourceTree = "<group>"; };
+		0AEE664521E103D600636D06 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		0AEE664721E105A400636D06 /* ExArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
 		0AFB04CE21E0D4EF0032C670 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0AFB04D021E0DDB50032C670 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				0A4F01E221D71E6E00AD1E2C /* ImagePicjerViewController.swift */,
 				0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */,
 				0AD6618321D797BA0066459B /* PreviewFileViewController.swift */,
+				0AEE664321E0ED0800636D06 /* ContactPickerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 				0AFB04D021E0DDB50032C670 /* QRCode.swift */,
 				0AFB04CE21E0D4EF0032C670 /* Window.swift */,
 				0A23FCF521E0DF9D00ECDA6E /* JS.swift */,
+				0AEE664521E103D600636D06 /* Contact.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				0A5B880821D377590045A1BE /* ExUIView.swift */,
 				0A4CDEAD21D4A7C500E28E95 /* ExString.swift */,
 				0AADBCC421D873F200DEA755 /* ExDictionary.swift */,
+				0AEE664721E105A400636D06 /* ExArray.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -504,14 +513,17 @@
 				0A61A64821D762A800A5CAD5 /* TelBookExtension.swift in Sources */,
 				0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */,
 				0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */,
+				0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */,
 				0A5B880021D36C8F0045A1BE /* Global.swift in Sources */,
 				0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */,
 				0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */,
 				0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */,
 				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
+				0AEE664821E105A400636D06 /* ExArray.swift in Sources */,
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
+				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
 				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
