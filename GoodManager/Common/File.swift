@@ -42,3 +42,11 @@ func APPGetFileBase(path:String) -> String{
     let base64 = fileData?.base64EncodedString(options: .endLineWithLineFeed)
     return base64 ?? ""
 }
+
+//在线预览文件
+func APPPreviewFile(path:String){
+    let vc = mainViewControllers.last
+    let controller = BaseNavigationController(rootViewController:PreviewFileViewController(Path: path))
+    vc!.present(controller, animated: true, completion: nil)
+}
+

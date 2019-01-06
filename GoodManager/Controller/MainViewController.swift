@@ -87,17 +87,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         self.progressView.tintColor = UIColor(named: color)
     }
     
-    //图片多选
-    func selectImage(){
-        self.present(TZImagePickerController(maxImagesCount: 9, delegate: self), animated: true, completion: nil)
-    }
     
-    
-    //在线预览文件
-    func APPPreviewFile(path:String){
-        let controller = BaseNavigationController(rootViewController:PreviewFileViewController(Path: path))
-        self.present(controller, animated: true, completion: nil)
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -19,6 +19,7 @@
 		0A4A021B21D32D6800FD39F7 /* GoodManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A021A21D32D6800FD39F7 /* GoodManagerUITests.swift */; };
 		0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CDEAB21D4A2FB00E28E95 /* File.swift */; };
 		0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4CDEAD21D4A7C500E28E95 /* ExString.swift */; };
+		0A4E312321E199AB00D15766 /* ImageSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E312221E199AB00D15766 /* ImageSelect.swift */; };
 		0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EE1B921D9F24400A943D1 /* LocationModel.swift */; };
 		0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */; };
 		0A4F01E021D71DF700AD1E2C /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4F01DF21D71DF700AD1E2C /* ExternalAccessory.framework */; };
@@ -84,6 +85,7 @@
 		0A4A021C21D32D6800FD39F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4CDEAB21D4A2FB00E28E95 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0A4CDEAD21D4A7C500E28E95 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		0A4E312221E199AB00D15766 /* ImageSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelect.swift; sourceTree = "<group>"; };
 		0A4EE1B921D9F24400A943D1 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationExtension.swift; sourceTree = "<group>"; };
 		0A4F01DF21D71DF700AD1E2C /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -254,6 +256,7 @@
 				0AFB04CE21E0D4EF0032C670 /* Window.swift */,
 				0A23FCF521E0DF9D00ECDA6E /* JS.swift */,
 				0AEE664521E103D600636D06 /* Contact.swift */,
+				0A4E312221E199AB00D15766 /* ImageSelect.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				0A4E312321E199AB00D15766 /* ImageSelect.swift in Sources */,
 				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,

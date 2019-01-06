@@ -12,6 +12,6 @@ import Foundation
 func APPExecWinJS(mark:String, JSFun:String){
     let vc = mainViewControllers.last
     vc!.webview.evaluateJavaScript(JSFun) { (result, error) in
-        
+
     }
 }
