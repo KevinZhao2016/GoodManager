@@ -18,7 +18,7 @@ target 'GoodManager' do
     pod 'SDWebImage/GIF'
     pod 'ReachabilitySwift'
     pod 'Moya'
-    pod 'WoodPeckeriOS'
+    #pod 'WoodPeckeriOS'
     pod 'SnapKit', '~> 4.0.0'
     pod 'BMPlayer', '~> 1.0.0'
     pod 'TZImagePickerController'

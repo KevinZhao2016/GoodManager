@@ -30,8 +30,7 @@ PODS:
     - SDWebImage/Core
   - SnapKit (4.0.1)
   - SwiftyJSON (4.2.0)
-  - TZImagePickerController (3.1.6)
-  - WoodPeckeriOS (1.1.6)
+  - TZImagePickerController (3.0.9)
 
 DEPENDENCIES:
   - BMPlayer (~> 1.0.0)
@@ -43,7 +42,6 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
-  - WoodPeckeriOS
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -61,7 +59,6 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - TZImagePickerController
-    - WoodPeckeriOS
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -77,9 +74,8 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  TZImagePickerController: 733aa6fd217f87c61656764f8e76b2137b6c8f47
-  WoodPeckeriOS: 9cc39784069a2d43874fe675628ee501232f12fe
+  TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: 7f0572412f520c50adfef2d3a27873dd64bc7a84
+PODFILE CHECKSUM: e00f0f601d584037f170559bd431829892ee7b50
 
 COCOAPODS: 1.5.3

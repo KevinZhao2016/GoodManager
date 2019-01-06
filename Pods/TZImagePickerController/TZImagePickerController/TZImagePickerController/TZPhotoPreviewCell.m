@@ -224,8 +224,6 @@
             self.imageRequestID = 0;
         }
     } networkAccessAllowed:YES];
-    
-    [self configMaximumZoomScale];
 }
 
 - (void)recoverSubviews {
@@ -259,8 +257,9 @@
     [self refreshScrollViewContentSize];
 }
 
-- (void)configMaximumZoomScale {
-    _scrollView.maximumZoomScale = _allowCrop ? 4.0 : 2.5;
+- (void)setAllowCrop:(BOOL)allowCrop {
+    _allowCrop = allowCrop;
+    _scrollView.maximumZoomScale = allowCrop ? 4.0 : 2.5;
     
     if ([self.asset isKindOfClass:[PHAsset class]]) {
         PHAsset *phAsset = (PHAsset *)self.asset;
@@ -363,8 +362,8 @@
         [_playButton removeFromSuperview];
     }
     _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_playButton setImage:[UIImage tz_imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
-    [_playButton setImage:[UIImage tz_imageNamedFromMyBundle:@"MMVideoPreviewPlayHL"] forState:UIControlStateHighlighted];
+    [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
+    [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlayHL"] forState:UIControlStateHighlighted];
     [_playButton addTarget:self action:@selector(playButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_playButton];
 }
@@ -429,7 +428,7 @@
 - (void)pausePlayerAndShowNaviBar {
     if (_player.rate != 0.0) {
         [_player pause];
-        [_playButton setImage:[UIImage tz_imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
         if (self.singleTapGestureBlock) {
             self.singleTapGestureBlock();
         }

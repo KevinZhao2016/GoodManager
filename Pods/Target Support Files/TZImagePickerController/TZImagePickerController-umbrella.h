@@ -17,7 +17,6 @@
 #import "TZImageCropManager.h"
 #import "TZImageManager.h"
 #import "TZImagePickerController.h"
-#import "TZImageRequestOperation.h"
 #import "TZLocationManager.h"
 #import "TZPhotoPickerController.h"
 #import "TZPhotoPreviewCell.h"
