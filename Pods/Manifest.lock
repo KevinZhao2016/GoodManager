@@ -8,6 +8,9 @@ PODS:
     - NVActivityIndicatorView (~> 4.0.0)
     - SnapKit (~> 4.0.0)
   - FLAnimatedImage (1.0.12)
+  - Kingfisher (4.10.1)
+  - LLPhotoBrowser (1.1.0):
+    - Kingfisher
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya/Core (12.0.1):
@@ -34,6 +37,8 @@ PODS:
 
 DEPENDENCIES:
   - BMPlayer (~> 1.0.0)
+  - Kingfisher (~> 4.10.0)
+  - LLPhotoBrowser (~> 1.1.0)
   - Moya
   - ObjectMapper (~> 3.4)
   - ReachabilitySwift
@@ -48,6 +53,8 @@ SPEC REPOS:
     - Alamofire
     - BMPlayer
     - FLAnimatedImage
+    - Kingfisher
+    - LLPhotoBrowser
     - Moya
     - NVActivityIndicatorView
     - ObjectMapper
@@ -64,6 +71,8 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   NVActivityIndicatorView: 77ed6d7b571643e24899e7858bf9ae2ee4c21f31
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -76,6 +85,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: e00f0f601d584037f170559bd431829892ee7b50
+PODFILE CHECKSUM: a98d57a65fd3eef7910889ada1244a1f1441d27a
 
 COCOAPODS: 1.5.3

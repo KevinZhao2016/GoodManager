@@ -37,7 +37,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-      
+        APPChooseMoreImage(source:2, maxNum:9, ifOriginalPic:1 ,callBackfunName:"String")
     }
     
     func setupLaunchView(){
@@ -83,11 +83,42 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
             })
     }
     
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+        var path:String = " "
+        var targetSize = PHImageManagerMaximumSize
+        if isSelectOriginalPhoto == true {
+            targetSize = PHImageManagerMaximumSize
+        }else{
+            targetSize = CGSize(width: 200, height: 200)
+        }
+     
+            PHImageManager.default().requestImage(for: assets.first as! PHAsset,
+                                                  targetSize: targetSize, contentMode: .aspectFit,
+                                                  options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
+//                                                    print (info?.keys)
+                                                    if(isSelectOriginalPhoto == true){
+                                                        let imageURL = info!["PHImageFileURLKey"] as! URL
+                                                        print("路径：",imageURL)
+                                                    }else{
+                                                        let fileManager = FileManager.default
+                                                        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                                                                           .userDomainMask, true)[0] as String
+                                                        let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
+                                                        let filePath = rootPath + "/" + "\(name)" + ".jpg"
+                                                        let imageData = image?.jpegData(compressionQuality: 1)
+                                                        print ("name:"+"\(name)")
+                                                        fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+                                                        print(filePath)
+                                                    }
+            })
+            
+        
+        
+    }
+    
     func APPSetProgressBarColor(color:String){
         self.progressView.tintColor = UIColor(named: color)
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

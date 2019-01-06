@@ -9,7 +9,7 @@
 import UIKit
 import TZImagePickerController
 
-class ImagePicjerViewController: UIViewController {
+class ImagePickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -24,5 +24,8 @@ target 'GoodManager' do
     pod 'TZImagePickerController'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'ObjectMapper', '~> 3.4'
+    pod 'LLPhotoBrowser', '~> 1.1.0'
+    #pod 'iOSPhotoEditor'
+    pod 'Kingfisher', '~> 4.10.0'
 end
 

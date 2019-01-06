@@ -10,12 +10,25 @@ import Foundation
 import TZImagePickerController
 
 //图片多选
-func selectImage(){
-//    let vc = mainViewControllers.last
-//    let controller = TZImagePickerController()
-//    controller.maxImagesCount = 9
-//    controller.delegate = vc as! TZImagePickerControllerDelegate
-//    vc!.present(controller , animated: true, completion: nil)
+func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunName:String){
+    let vc = mainViewControllers.last
+    let controller = TZImagePickerController(maxImagesCount: maxNum, delegate: vc)
+    if ifOriginalPic == 0{
+         controller!.allowPickingOriginalPhoto = false
+    }else{
+        controller!.allowPickingOriginalPhoto = true
+    }
+    if source == 0 {
+        //仅相册
+        controller!.allowTakePicture = false
+    }else if source == 1 {
+        //仅拍照
+    }else{
+        //相册和拍照
+        controller!.allowTakePicture = true
+    }
+    controller!.allowPickingVideo = false
+    vc!.present(controller! , animated: true, completion: nil)
 }
 
 
