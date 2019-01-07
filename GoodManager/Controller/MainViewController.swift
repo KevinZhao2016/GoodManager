@@ -37,7 +37,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        APPChooseMoreImage(source:2, maxNum:9, ifOriginalPic:1 ,callBackfunName:"String")
+//        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")
+       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
     }
     
     func setupLaunchView(){

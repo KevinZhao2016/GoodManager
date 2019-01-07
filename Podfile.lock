@@ -1,13 +1,7 @@
 PODS:
   - Alamofire (4.8.0)
-  - BMPlayer (1.0.1):
-    - BMPlayer/Full (= 1.0.1)
-  - BMPlayer/Core (1.0.1)
-  - BMPlayer/Full (1.0.1):
-    - BMPlayer/Core
-    - NVActivityIndicatorView (~> 4.0.0)
-    - SnapKit (~> 4.0.0)
   - FLAnimatedImage (1.0.12)
+  - iOSPhotoEditor (0.6)
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
@@ -16,10 +10,8 @@ PODS:
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
-  - NVActivityIndicatorView (4.0.1):
-    - NVActivityIndicatorView/Presenter (= 4.0.1)
-  - NVActivityIndicatorView/Presenter (4.0.1)
   - ObjectMapper (3.4.2)
+  - Player (0.12.1)
   - ReachabilitySwift (4.3.0)
   - Realm (3.13.0):
     - Realm/Headers (= 3.13.0)
@@ -36,11 +28,12 @@ PODS:
   - TZImagePickerController (3.0.9)
 
 DEPENDENCIES:
-  - BMPlayer (~> 1.0.0)
+  - iOSPhotoEditor
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
   - Moya
   - ObjectMapper (~> 3.4)
+  - Player (~> 0.12.0)
   - ReachabilitySwift
   - RealmSwift
   - SDWebImage/GIF
@@ -51,13 +44,13 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - BMPlayer
     - FLAnimatedImage
+    - iOSPhotoEditor
     - Kingfisher
     - LLPhotoBrowser
     - Moya
-    - NVActivityIndicatorView
     - ObjectMapper
+    - Player
     - ReachabilitySwift
     - Realm
     - RealmSwift
@@ -69,13 +62,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  iOSPhotoEditor: d597c2797033bb06e2a705560ae748136c8ac2ea
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  NVActivityIndicatorView: 77ed6d7b571643e24899e7858bf9ae2ee4c21f31
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
   RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
@@ -85,6 +78,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: a98d57a65fd3eef7910889ada1244a1f1441d27a
+PODFILE CHECKSUM: dc14fd79b6f49a41a98fefb46de92df5f7b67e67
 
 COCOAPODS: 1.5.3
