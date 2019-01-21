@@ -20,6 +20,7 @@ func APPPreviewImage(paths:String,defaultIndex:Int){
     let browser = LLPhotoBrowserViewController(photoArray: photoArray, currentIndex: defaultIndex)
     // 模态弹出
     let vc = mainViewControllers.last
+    browser.actionSheetBackgroundColor = UIColor.white
     vc!.present(browser, animated: false, completion: nil)
 }
 

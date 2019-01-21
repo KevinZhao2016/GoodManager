@@ -53,16 +53,15 @@ open class LLPhotoBrowserViewController: LLBrowserViewController {
         // If Big Image Frame = nil , Reload Image Frame
         let bigRect = getBigImageFrameIfIsNil(rect: rect, image: imageView.image!)
         // First Open Animation
-//        if self.isFirstOpen {
-//            self.isFirstOpen = false
-//            imageView.frame = getFrameInWindow(view: item.sourceImageView!)
-//            UIView.animate(withDuration: 0.3, animations: {
-//                imageView.frame = bigRect
-//            })
-//        }else
-//        {
+        if self.isFirstOpen {
+            self.isFirstOpen = false
+            imageView.frame = getFrameInWindow(view: item.sourceImageView!)
+            UIView.animate(withDuration: 0.3, animations: {
+                imageView.frame = bigRect
+            })
+        }else{
             imageView.frame = bigRect
-//        }
+        }
     }
     
     // Load Big Picture

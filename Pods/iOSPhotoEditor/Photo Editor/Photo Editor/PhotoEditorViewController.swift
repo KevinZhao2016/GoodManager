@@ -93,11 +93,11 @@ public final class PhotoEditorViewController: UIViewController {
         self.view.addGestureRecognizer(edgePan)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow),
-                                               name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+                                               name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
-                                               name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+                                               name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         
         configureCollectionView()

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         getTelBookRight()//检查通讯录权限
-        print(APPGetVersion())
+        getLaunchData()
         return true
     }
 

@@ -13,7 +13,7 @@ import TZImagePickerController
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     var mark:String = ""
-    var url:String = "http://localhost:8080"
+    var url:String = "http://api.yiganzi.cn/StartupPage.ashx?action=getStartupData"
     var webview:WKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     lazy  var progressView: UIProgressView = {
@@ -28,6 +28,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     lazy var locationModel = LocationModel()
     
     override func viewDidLoad() {
+        print(UIScreen.main.bounds)
         super.viewDidLoad()
         setupWebview()
         if(LaunchFlag == false){
@@ -38,13 +39,18 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
 //        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")
-       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
+//       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
     }
     
     func setupLaunchView(){
              //启动图片
-        image.sd_setImage(with: URL(string: "http://img.zcool.cn/community/01d7e15a0f0f2ca801204a0e8190bc.gif"), placeholderImage: UIImage(named: "bigimage"))
+        image.sd_setImage(with: URL(string: picUrl ?? ""), placeholderImage: UIImage(named: "launch"))
+        //http://img.zcool.cn/community/01d7e15a0f0f2ca801204a0e8190bc.gif
         self.view.addSubview(image)
+        //添加点击事件
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
+        image.addGestureRecognizer(singleTapGesture)
+        image.isUserInteractionEnabled = true
         _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
             self.removeImageWithDelay()
         })
@@ -82,6 +88,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
                     self.image.removeFromSuperview()
                 }
             })
+    }
+    
+    @objc func imageViewClick(){
+        if (linkUrl != "" && picUrl != ""){
+            APPOutBrowserOpenURL(url: linkUrl)
+        }
     }
     
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {

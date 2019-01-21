@@ -21,19 +21,19 @@ open class Endpoint {
     public typealias SampleResponseClosure = () -> EndpointSampleResponse
 
     /// A string representation of the URL for the request.
-    public let url: String
+    open let url: String
 
     /// A closure responsible for returning an `EndpointSampleResponse`.
-    public let sampleResponseClosure: SampleResponseClosure
+    open let sampleResponseClosure: SampleResponseClosure
 
     /// The HTTP method for the request.
-    public let method: Moya.Method
+    open let method: Moya.Method
 
     /// The `Task` for the request.
-    public let task: Task
+    open let task: Task
 
     /// The HTTP header fields for the request.
-    public let httpHeaderFields: [String: String]?
+    open let httpHeaderFields: [String: String]?
 
     public init(url: String,
                 sampleResponseClosure: @escaping SampleResponseClosure,

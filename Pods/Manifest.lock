@@ -5,11 +5,17 @@ PODS:
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya-ObjectMapper/Core (2.7):
+    - Moya (~> 11)
+    - ObjectMapper (~> 3.3)
+  - Moya-ObjectMapper/RxSwift (2.7):
+    - Moya-ObjectMapper/Core
+    - RxSwift (~> 4.1)
+  - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 3.0)
   - ObjectMapper (3.4.2)
   - Player (0.12.1)
   - ReachabilitySwift (4.3.0)
@@ -18,7 +24,10 @@ PODS:
   - Realm/Headers (3.13.0)
   - RealmSwift (3.13.0):
     - Realm (= 3.13.0)
-  - Result (4.0.0)
+  - Result (3.2.4)
+  - RxAtomic (4.4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
   - SDWebImage/Core (4.4.3)
   - SDWebImage/GIF (4.4.3):
     - FLAnimatedImage (~> 1.0)
@@ -31,8 +40,7 @@ DEPENDENCIES:
   - iOSPhotoEditor
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
-  - Moya
-  - ObjectMapper (~> 3.4)
+  - Moya-ObjectMapper/RxSwift
   - Player (~> 0.12.0)
   - ReachabilitySwift
   - RealmSwift
@@ -49,12 +57,15 @@ SPEC REPOS:
     - Kingfisher
     - LLPhotoBrowser
     - Moya
+    - Moya-ObjectMapper
     - ObjectMapper
     - Player
     - ReachabilitySwift
     - Realm
     - RealmSwift
     - Result
+    - RxAtomic
+    - RxSwift
     - SDWebImage
     - SnapKit
     - SwiftyJSON
@@ -66,18 +77,21 @@ SPEC CHECKSUMS:
   iOSPhotoEditor: d597c2797033bb06e2a705560ae748136c8ac2ea
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
   RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: dc14fd79b6f49a41a98fefb46de92df5f7b67e67
+PODFILE CHECKSUM: 9a1bf64d68acc20f40a4e311115646e0c9b6cc44
 
 COCOAPODS: 1.5.3

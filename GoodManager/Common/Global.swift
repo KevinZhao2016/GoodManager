@@ -19,6 +19,9 @@ let MediumFontName = "PingFangSC-Medium"
 let RegularFontName = "PingFangSC-Regular"
 var LaunchFlag:Bool = false //标志是否需要展示启动页
 var mainViewControllers:Array<MainViewController> = []
+let md5string = "amdsdfwrer21aafIos"  //加密串
+var picUrl:String = ""
+var linkUrl:String = ""
 
 func findControllerByMark(mark:String) -> MainViewController{
     for vc in mainViewControllers{
@@ -42,4 +45,28 @@ var isFullScreen: Bool {
     return false
 }
 
+//获取系统时间
+func getDateTime() -> String{
+    let date = Date()
+    let timeFormatter = DateFormatter.init()
+    timeFormatter.dateFormat="yyyyMMddHHmmss"
+    let timeZone = TimeZone(identifier: "GMT")
+    timeFormatter.timeZone = timeZone
+    return timeFormatter.string(from: date)
+}
+
+func jsonToData(jsonDic:Dictionary<String, Any>) -> Data? {
+    if (!JSONSerialization.isValidJSONObject(jsonDic)) {
+        print("is not a valid json object")
+        return nil
+    }
+    //利用自带的json库转换成Data
+    //如果设置options为JSONSerialization.WritingOptions.prettyPrinted，则打印格式更好阅读
+    let data = try? JSONSerialization.data(withJSONObject: jsonDic, options: [])
+    //Data转换成String打印输出
+    let str = String(data:data!, encoding: String.Encoding.utf8)
+    //输出json字符串
+    print("Json Str:\(str!)")
+    return data
+}
 

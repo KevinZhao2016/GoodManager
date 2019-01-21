@@ -59,23 +59,23 @@ open class MoyaProvider<Target: TargetType>: MoyaProviderType {
     public typealias StubClosure = (Target) -> Moya.StubBehavior
 
     /// A closure responsible for mapping a `TargetType` to an `EndPoint`.
-    public let endpointClosure: EndpointClosure
+    open let endpointClosure: EndpointClosure
 
     /// A closure deciding if and what request should be performed.
-    public let requestClosure: RequestClosure
+    open let requestClosure: RequestClosure
 
     /// A closure responsible for determining the stubbing behavior
     /// of a request for a given `TargetType`.
-    public let stubClosure: StubClosure
+    open let stubClosure: StubClosure
 
     /// The manager for the session.
-    public let manager: Manager
+    open let manager: Manager
 
     /// A list of plugins.
     /// e.g. for logging, network activity indicator or credentials.
-    public let plugins: [PluginType]
+    open let plugins: [PluginType]
 
-    public let trackInflights: Bool
+    open let trackInflights: Bool
 
     open internal(set) var inflightRequests: [Endpoint: [Moya.Completion]] = [:]
 

@@ -31,19 +31,19 @@ open class LLRemindView: UIView {
     func setupRemindView() {
         self.alpha = 0
         backMaskView = UIView.init()
-        backMaskView?.autoresizingMask = UIViewAutoresizing(rawValue: UInt(0 | 2 | 3 | 5))
+        backMaskView?.autoresizingMask = UIView.AutoresizingMask(rawValue: UInt(0 | 2 | 3 | 5))
         backMaskView?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         backMaskView?.layer.cornerRadius = 5.0
         backMaskView?.layer.masksToBounds = true
         self.addSubview(backMaskView!)
         
         remindIcon = UIImageView.init()
-        remindIcon?.autoresizingMask = UIViewAutoresizing(rawValue: UInt(0 | 2 | 3 | 5))
+        remindIcon?.autoresizingMask = UIView.AutoresizingMask(rawValue: UInt(0 | 2 | 3 | 5))
         remindIcon?.contentMode = .scaleAspectFit
         backMaskView?.addSubview(remindIcon!)
         
         remindLabel = UILabel.init()
-        remindLabel?.autoresizingMask = UIViewAutoresizing(rawValue: UInt(0 | 2 | 3 | 5))
+        remindLabel?.autoresizingMask = UIView.AutoresizingMask(rawValue: UInt(0 | 2 | 3 | 5))
         remindLabel?.font = UIFont.systemFont(ofSize: 14)
         remindLabel?.textColor = UIColor.white
         remindLabel?.textAlignment = .center
@@ -56,7 +56,7 @@ open class LLRemindView: UIView {
             temp = "发生未知错误"
         }
         
-        return (temp! as NSString).boundingRect(with: CGSize.init(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: remindLabel?.font ?? UIFont.systemFont(ofSize: 14)], context: nil).size
+        return (temp! as NSString).boundingRect(with: CGSize.init(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: remindLabel?.font ?? UIFont.systemFont(ofSize: 14)], context: nil).size
     }
     
     func show(_ content: String? = nil) {

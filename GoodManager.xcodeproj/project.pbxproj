@@ -43,6 +43,14 @@
 		0AB8CAF421E1ED45006491CD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8CAF321E1ED45006491CD /* Photo.swift */; };
 		0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618321D797BA0066459B /* PreviewFileViewController.swift */; };
 		0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618521D7AC640066459B /* BaseNavigationController.swift */; };
+		0AEDCABB21F166D0005887A3 /* APINetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCABA21F166D0005887A3 /* APINetworkActivityPlugin.swift */; };
+		0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCABC21F166E9005887A3 /* APIProvider.swift */; };
+		0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCABE21F16722005887A3 /* APITarget.swift */; };
+		0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCAC121F16840005887A3 /* LaunchTarget.swift */; };
+		0AEDCAC421F16E40005887A3 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCAC321F16E40005887A3 /* Launch.swift */; };
+		0AEDCAC621F1709F005887A3 /* LaunchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCAC521F1709F005887A3 /* LaunchResultModel.swift */; };
+		0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCAC721F17181005887A3 /* ResultModel.swift */; };
+		0AEDCACA21F177B6005887A3 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCAC921F177B6005887A3 /* Observable+ObjectMapper.swift */; };
 		0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664321E0ED0800636D06 /* ContactPickerController.swift */; };
 		0AEE664621E103D600636D06 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664521E103D600636D06 /* Contact.swift */; };
 		0AEE664821E105A400636D06 /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664721E105A400636D06 /* ExArray.swift */; };
@@ -114,6 +122,14 @@
 		0AB8CAF321E1ED45006491CD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0AD6618321D797BA0066459B /* PreviewFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFileViewController.swift; sourceTree = "<group>"; };
 		0AD6618521D7AC640066459B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		0AEDCABA21F166D0005887A3 /* APINetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworkActivityPlugin.swift; sourceTree = "<group>"; };
+		0AEDCABC21F166E9005887A3 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		0AEDCABE21F16722005887A3 /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
+		0AEDCAC121F16840005887A3 /* LaunchTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTarget.swift; sourceTree = "<group>"; };
+		0AEDCAC321F16E40005887A3 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		0AEDCAC521F1709F005887A3 /* LaunchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResultModel.swift; sourceTree = "<group>"; };
+		0AEDCAC721F17181005887A3 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		0AEDCAC921F177B6005887A3 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		0AEE664321E0ED0800636D06 /* ContactPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerController.swift; sourceTree = "<group>"; };
 		0AEE664521E103D600636D06 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		0AEE664721E105A400636D06 /* ExArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
@@ -176,6 +192,7 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
+				0AEDCAB921F166A8005887A3 /* NetWorking */,
 				0A4EDB8021E0849700DB6356 /* View */,
 				0A5B880721D377410045A1BE /* Extension */,
 				0A4F01E121D71DF700AD1E2C /* GoodManager.entitlements */,
@@ -225,6 +242,8 @@
 				0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */,
 				0AADBCC621D8A7A900DEA755 /* VerionModel.swift */,
 				0A4EE1B921D9F24400A943D1 /* LocationModel.swift */,
+				0AEDCAC521F1709F005887A3 /* LaunchResultModel.swift */,
+				0AEDCAC721F17181005887A3 /* ResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +282,7 @@
 				0A4E312221E199AB00D15766 /* Image.swift */,
 				0AB8CAF321E1ED45006491CD /* Photo.swift */,
 				0A7F576921E2F6A300F03870 /* Video.swift */,
+				0AEDCAC321F16E40005887A3 /* Launch.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -285,6 +305,26 @@
 				0AD6618521D7AC640066459B /* BaseNavigationController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		0AEDCAB921F166A8005887A3 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				0AEDCAC021F1682D005887A3 /* Target */,
+				0AEDCABA21F166D0005887A3 /* APINetworkActivityPlugin.swift */,
+				0AEDCABC21F166E9005887A3 /* APIProvider.swift */,
+				0AEDCABE21F16722005887A3 /* APITarget.swift */,
+				0AEDCAC921F177B6005887A3 /* Observable+ObjectMapper.swift */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		0AEDCAC021F1682D005887A3 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				0AEDCAC121F16840005887A3 /* LaunchTarget.swift */,
+			);
+			path = Target;
 			sourceTree = "<group>";
 		};
 		6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */ = {
@@ -454,12 +494,15 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LLPhotoBrowser/LLPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -475,12 +518,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -531,29 +577,37 @@
 				0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */,
 				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
+				0AEDCAC421F16E40005887A3 /* Launch.swift in Sources */,
 				0AEE664821E105A400636D06 /* ExArray.swift in Sources */,
 				0A7F576721E2F0B500F03870 /* CameraViewController.swift in Sources */,
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */,
 				0A4E312321E199AB00D15766 /* Image.swift in Sources */,
+				0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */,
 				0AB8CAF421E1ED45006491CD /* Photo.swift in Sources */,
 				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
+				0AEDCACA21F177B6005887A3 /* Observable+ObjectMapper.swift in Sources */,
 				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,
 				0A23FCF621E0DF9D00ECDA6E /* JS.swift in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
 				0A7F576C21E2FD4B00F03870 /* PlayerViewController.swift in Sources */,
+				0AEDCABB21F166D0005887A3 /* APINetworkActivityPlugin.swift in Sources */,
 				0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */,
 				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
+				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
 				0A4F01E321D71E6E00AD1E2C /* ImagePickerViewController.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
+				0AEDCAC621F1709F005887A3 /* LaunchResultModel.swift in Sources */,
+				0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

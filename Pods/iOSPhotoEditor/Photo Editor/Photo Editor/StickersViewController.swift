@@ -185,7 +185,7 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
                         
         }, completion: { (finished) -> Void in
             self.view.removeFromSuperview()
-            self.removeFromParentViewController()
+            self.removeFromParent()
             self.stickersViewControllerDelegate?.stickersViewDidDisappear()
         })
     }

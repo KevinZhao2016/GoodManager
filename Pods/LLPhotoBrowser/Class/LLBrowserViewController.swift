@@ -230,7 +230,7 @@ open class LLBrowserViewController: UIViewController, UICollectionViewDelegate, 
             let hValue = NSValue.init(cgRect: hRect)
             horizontalBigRectArray?.append(hValue)
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange(notification:)), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     // Get Rect In Window
@@ -399,7 +399,7 @@ open class LLBrowserViewController: UIViewController, UICollectionViewDelegate, 
             return
         }
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         view.backgroundColor = UIColor.clear
         
         // Background Color
