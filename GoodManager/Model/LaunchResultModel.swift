@@ -15,7 +15,7 @@ struct LaunchResultModel:Mappable{
     var errcode:Int = 0
     var errmsg:String = ""
     var serverTime:String = ""
-    var result:[ResultModel] = [ResultModel()]
+    var result:String = ""
     init?(map: Map) {
         
     }

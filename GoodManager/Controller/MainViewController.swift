@@ -43,15 +43,14 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     func setupLaunchView(){
-             //启动图片
-        image.sd_setImage(with: URL(string: picUrl ?? ""), placeholderImage: UIImage(named: "launch"))
-        //http://img.zcool.cn/community/01d7e15a0f0f2ca801204a0e8190bc.gif
+        //启动图片 异步获取
+//        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "launch"))
         self.view.addSubview(image)
         //添加点击事件
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
         image.addGestureRecognizer(singleTapGesture)
         image.isUserInteractionEnabled = true
-        _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 3.3, repeats: false, block: { (Timer) in
             self.removeImageWithDelay()
         })
         LaunchFlag = true

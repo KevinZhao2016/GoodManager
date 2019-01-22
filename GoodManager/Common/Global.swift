@@ -70,3 +70,7 @@ func jsonToData(jsonDic:Dictionary<String, Any>) -> Data? {
     return data
 }
 
+func getLastMainViewController() -> MainViewController{
+    return mainViewControllers.last!
+}
+

@@ -14,28 +14,36 @@ import SwiftyJSON
 fileprivate let LaunchProvider = MoyaProvider<LaunchTarget>()
 
 func getLaunchData(){
-    var model:LaunchResultModel?
     LaunchProvider.request(.Launch, completion: { result in
-            var success = true
             switch result {
             case let .success(moyaResponse):
-                let data = moyaResponse.data // Data, your JSON response is probably in here!
+//                let data = moyaResponse.data // Data, your JSON response is probably in here!
                 let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
                 print(statusCode)
                 if(statusCode == 200){
                     do {
                         if let model = try? moyaResponse.mapObject(LaunchResultModel.self) {
                             if(model.errcode == 0){
-                                picUrl = model.result[0].picUrl
-                                linkUrl = model.result[0].linkUrl
+//                                print(model)
+//                                print(String(bytes: (moyaResponse.request?.httpBody)!, encoding: String.Encoding.utf8))
+                                var i = model.result.range(of: "{picUrl:'")
+                                var j = model.result.range(of: "',")
+                                var subStr =  model.result.substring(with: (i?.upperBound)!..<(j?.lowerBound)!)
+                                picUrl = subStr
+                                i = model.result.range(of: "linkUrl:'")
+                                j = model.result.range(of: "'}")
+                                subStr =  model.result.substring(with: (i?.upperBound)!..<(j?.lowerBound)!)
+                                linkUrl = subStr
+                                //显示图片
+                                let vc = getLastMainViewController()
+                                vc.image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "launch"))
+                                print("picurl:" + picUrl)
                             }
                         } else {
                             print("maperror")
-                            success = false
                         }
                     }catch {
                         print(error)
-                        success = false
                     }
                 }
             case let .failure(error):
@@ -43,7 +51,6 @@ func getLaunchData(){
                     break
                 }
                 print(error)
-                success = false
             }
         })
 }

@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //启动页
+        getLaunchData()
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let vc = MainViewController()
         mainViewControllers.append(vc)
@@ -21,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         getTelBookRight()//检查通讯录权限
-        getLaunchData()
         return true
     }
 
