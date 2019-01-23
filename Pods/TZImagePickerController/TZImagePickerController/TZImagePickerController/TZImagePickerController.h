@@ -222,6 +222,7 @@
 @property (nonatomic, copy) NSString *fullImageBtnTitleStr;
 @property (nonatomic, copy) NSString *settingBtnTitleStr;
 @property (nonatomic, copy) NSString *processHintStr;
+@property (nonatomic, copy) NSString *editStr;
 
 /// Icon theme color, default is green color like wechat, the value is r:31 g:185 b:34. Currently only support image selection icon when showSelectedIndex is YES. If you need it, please set it as soon as possible
 /// icon主题色，默认是微信的绿色，值是r:31 g:185 b:34。目前仅支持showSelectedIndex为YES时的图片选中icon。如需要，请尽早设置它。

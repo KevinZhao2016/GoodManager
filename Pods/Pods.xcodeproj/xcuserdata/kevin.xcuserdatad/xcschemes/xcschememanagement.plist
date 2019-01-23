@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moya-ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -99,7 +104,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>iOSPhotoEditor.xcscheme</key>
+		<key>YYCategories.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ZMJImageEditor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>dsBridge.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

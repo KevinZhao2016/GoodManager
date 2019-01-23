@@ -25,8 +25,10 @@ target 'GoodManager' do
     pod 'SwiftyJSON', '~> 4.0'
     #pod 'ObjectMapper', '~> 3.4'
     pod 'LLPhotoBrowser', '~> 1.1.0'
-    pod 'iOSPhotoEditor'
+    #pod 'iOSPhotoEditor'
+    pod 'ZMJImageEditor'
     pod 'Kingfisher', '~> 4.10.0'
     pod 'Player', '~> 0.12.0'
+    pod 'dsBridge'
 end
 

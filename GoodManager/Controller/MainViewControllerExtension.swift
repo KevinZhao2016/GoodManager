@@ -30,21 +30,22 @@ extension MainViewController:WKNavigationDelegate,WKUIDelegate{
     
 }
 
-extension MainViewController:WKScriptMessageHandler{
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print(message.body)
-        if "NativeMethod" == message.name {
-            // 判断message的内容，然后做相应的操作
-            //window.webkit.messageHandlers.NativeMethod.postMessage("fun");根据body判断执行的方法
-            if "APPGetVersion" == message.body as! String {
-                print(APPGetVersion())
-            }
-            else if "APPWinOpen" == message.body as! String {
-                APPWinOpen(url: "http://www.hdu.edu.cn", mark: "hdu", progressBarColor: "#000000", statusBarColor: "#111111")
-            }
-            else if "APPWinClose" == message.body as! String {
-                APPWinClose(mark: "hdu")
-            }
-        }
-    }
-}
+//extension MainViewController:WKScriptMessageHandler{
+//
+//    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+//        print(message.body)
+//        if "NativeMethod" == message.name {
+//            // 判断message的内容，然后做相应的操作
+//            //window.webkit.messageHandlers.NativeMethod.postMessage("fun");根据body判断执行的方法
+//            if "APPGetVersion" == message.body as! String {
+//                print(APPGetVersion())
+//            }
+//            else if "APPWinOpen" == message.body as! String {
+//                APPWinOpen(url: "http://www.hdu.edu.cn", mark: "hdu", progressBarColor: "#000000", statusBarColor: "#111111")
+//            }
+//            else if "APPWinClose" == message.body as! String {
+//                APPWinClose(mark: "hdu")
+//            }
+//        }
+//    }
+//}

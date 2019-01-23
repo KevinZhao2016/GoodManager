@@ -8,6 +8,9 @@
 
 import Foundation
 import Alamofire
+import Moya
+import ObjectMapper
+import SwiftyJSON
 
 let fileManager = FileManager.default
 
@@ -30,14 +33,11 @@ func APPDelFile(path:String) -> Bool{
 }
 
 func APPGetFileSize(path:String) -> Int{
-    let documentPath = NSHomeDirectory() + "/Documents"
-    let filePath = documentPath + path
-    return Int(filePath.getFileSize())
+    return Int(path.getFileSize())
 }
 
 func APPGetFileBase(path:String) -> String{
-    let documentPath = NSHomeDirectory() + "/Documents"
-    let fileUrl = URL(fileURLWithPath: documentPath + path)
+    let fileUrl = URL(fileURLWithPath: path)
     let fileData = try? Data(contentsOf: fileUrl)
     //将文件转为base64编码
     let base64 = fileData?.base64EncodedString(options: .endLineWithLineFeed)
@@ -52,13 +52,41 @@ func APPPreviewFile(path:String){
 }
 
 func APPUploadFile(path:String, callBackfunName:String){
-    let fileURL = URL(string: NSHomeDirectory() + "/Documents" + path)
+//    let fileURL = URL(string: NSHomeDirectory() + "/Documents" + path)
+    let LaunchProvider = MoyaProvider<LaunchTarget>()
     //TODO: 上传地址初始化
-    Alamofire.upload(fileURL!, to: "host")
-        .response { response in
-            print(response)
-            APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + (fileURL?.path)! + ")")
-    }
+//    Alamofire.upload(fileURL!, to: "host")
+//        .response { response in
+//            print(response)
+//            APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + (fileURL?.path)! + ")")
+//    }
+    LaunchProvider.request(.uploadFile(path), completion: { result in
+        switch result {
+        case let .success(moyaResponse):
+            //                let data = moyaResponse.data // Data, your JSON response is probably in here!
+            let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
+            print(statusCode)
+            if(statusCode == 200){
+                do {
+                    if let model = try? moyaResponse.mapObject(LaunchResultModel.self) {
+                        if(model.code == 1){
+                            print(model)
+                            //TODO：执行回调
+                        }
+                    } else {
+                        print("maperror")
+                    }
+                }catch {
+                    print(error)
+                }
+            }
+        case let .failure(error):
+            guard let error = error as? CustomStringConvertible else {
+                break
+            }
+            print(error)
+        }
+    })
     
 }
 

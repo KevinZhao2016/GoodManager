@@ -34,7 +34,6 @@
 		0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */; };
 		0A5B880921D377590045A1BE /* ExUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B880821D377590045A1BE /* ExUIView.swift */; };
 		0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */; };
-		0A61A64821D762A800A5CAD5 /* TelBookExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A64721D762A800A5CAD5 /* TelBookExtension.swift */; };
 		0A7F576721E2F0B500F03870 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F576621E2F0B500F03870 /* CameraViewController.swift */; };
 		0A7F576A21E2F6A300F03870 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F576921E2F6A300F03870 /* Video.swift */; };
 		0A7F576C21E2FD4B00F03870 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */; };
@@ -43,6 +42,7 @@
 		0AB8CAF421E1ED45006491CD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8CAF321E1ED45006491CD /* Photo.swift */; };
 		0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618321D797BA0066459B /* PreviewFileViewController.swift */; };
 		0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618521D7AC640066459B /* BaseNavigationController.swift */; };
+		0AEC339F21F879B100A0245F /* JsApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC339E21F879B100A0245F /* JsApiSwift.swift */; };
 		0AEDCABB21F166D0005887A3 /* APINetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCABA21F166D0005887A3 /* APINetworkActivityPlugin.swift */; };
 		0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCABC21F166E9005887A3 /* APIProvider.swift */; };
 		0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEDCABE21F16722005887A3 /* APITarget.swift */; };
@@ -113,7 +113,6 @@
 		0A5B880521D3754C0045A1BE /* NetworkStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusModel.swift; sourceTree = "<group>"; };
 		0A5B880821D377590045A1BE /* ExUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIView.swift; sourceTree = "<group>"; };
 		0A61A64521D761CF00A5CAD5 /* TelBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelBookModel.swift; sourceTree = "<group>"; };
-		0A61A64721D762A800A5CAD5 /* TelBookExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelBookExtension.swift; sourceTree = "<group>"; };
 		0A7F576621E2F0B500F03870 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0A7F576921E2F6A300F03870 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		0AB8CAF321E1ED45006491CD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0AD6618321D797BA0066459B /* PreviewFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFileViewController.swift; sourceTree = "<group>"; };
 		0AD6618521D7AC640066459B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		0AEC339E21F879B100A0245F /* JsApiSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsApiSwift.swift; sourceTree = "<group>"; };
 		0AEDCABA21F166D0005887A3 /* APINetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		0AEDCABC21F166E9005887A3 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		0AEDCABE21F16722005887A3 /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
@@ -254,7 +254,6 @@
 				0AD6618721D7AD0E0066459B /* Base */,
 				0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */,
 				0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */,
-				0A61A64721D762A800A5CAD5 /* TelBookExtension.swift */,
 				0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */,
 				0A4F01E221D71E6E00AD1E2C /* ImagePickerViewController.swift */,
 				0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */,
@@ -283,6 +282,7 @@
 				0AB8CAF321E1ED45006491CD /* Photo.swift */,
 				0A7F576921E2F6A300F03870 /* Video.swift */,
 				0AEDCAC321F16E40005887A3 /* Launch.swift */,
+				0AEC339E21F879B100A0245F /* JsApiSwift.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -493,6 +493,7 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LLPhotoBrowser/LLPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -507,7 +508,9 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/ZMJImageEditor/ZMJImageEditor.framework",
+				"${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -517,6 +520,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -531,7 +535,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZMJImageEditor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/dsBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -567,7 +573,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A61A64821D762A800A5CAD5 /* TelBookExtension.swift in Sources */,
 				0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */,
 				0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */,
 				0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */,
@@ -583,6 +588,7 @@
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
+				0AEC339F21F879B100A0245F /* JsApiSwift.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
 				0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */,
 				0A4E312321E199AB00D15766 /* Image.swift in Sources */,

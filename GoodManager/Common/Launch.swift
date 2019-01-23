@@ -26,14 +26,14 @@ func getLaunchData(){
                             if(model.errcode == 0){
 //                                print(model)
 //                                print(String(bytes: (moyaResponse.request?.httpBody)!, encoding: String.Encoding.utf8))
-                                var i = model.result.range(of: "{picUrl:'")
-                                var j = model.result.range(of: "',")
-                                var subStr =  model.result.substring(with: (i?.upperBound)!..<(j?.lowerBound)!)
-                                picUrl = subStr
-                                i = model.result.range(of: "linkUrl:'")
-                                j = model.result.range(of: "'}")
-                                subStr =  model.result.substring(with: (i?.upperBound)!..<(j?.lowerBound)!)
-                                linkUrl = subStr
+//                                var i = model.result.range(of: "{picUrl:'")
+//                                var j = model.result.range(of: "',")
+//                                var subStr =  model.result.substring(with: (i?.upperBound)!..<(j?.lowerBound)!)
+                                picUrl = model.result.picUrl
+//                                i = model.result.range(of: "linkUrl:'")
+//                                j = model.result.range(of: "'}")
+//                                subStr =  model.result.substring(with: (i?.upperBound)!..<(j?.lowerBound)!)
+                                linkUrl = model.result.linkUrl
                                 //显示图片
                                 let vc = getLastMainViewController()
                                 vc.image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "launch"))

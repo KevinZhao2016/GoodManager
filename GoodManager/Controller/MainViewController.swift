@@ -10,11 +10,13 @@ import UIKit
 import WebKit
 import SDWebImage
 import TZImagePickerController
+import ZMJImageEditor
+import dsBridge
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     var mark:String = ""
-    var url:String = "http://api.yiganzi.cn/StartupPage.ashx?action=getStartupData"
-    var webview:WKWebView!
+    var url:String = "http://www.baidu.com"
+    var webview:DWKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
@@ -40,11 +42,14 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
 //        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")
 //       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
+//        APPChooseMoreImage(source: 0, maxNum: 4, ifOriginalPic: 1, callBackfunName: "String")
+        print(NSHomeDirectory() + "/Documents")
+        APPUploadFile(path:"5003.jpg", callBackfunName:"String")
     }
     
     func setupLaunchView(){
         //启动图片 异步获取
-//        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "launch"))
+        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "launch"))
         self.view.addSubview(image)
         //添加点击事件
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
@@ -58,14 +63,17 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     
     func setupWebview(){
         // 创建配置
-        let config = WKWebViewConfiguration()
-        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
-        let userContent = WKUserContentController()
-        // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-        userContent.add(self, name: "NativeMethod")
-        // 将UserConttentController设置到配置文件
-        config.userContentController = userContent
-        webview = WKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), configuration: config)
+//        let config = WKWebViewConfiguration()
+//        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
+//        let userContent = WKUserContentController()
+//        // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
+//        userContent.add(self, name: "NativeMethod")
+//        // 将UserConttentController设置到配置文件
+//        config.userContentController = userContent
+    
+        webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        //bridge
+        webview.addJavascriptObject(JsApiSwift(), namespace: nil)
         webview.load(URLRequest(url: URL(string: url)!))
         webview.navigationDelegate = self
         webview.allowsBackForwardNavigationGestures = true
@@ -122,10 +130,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
                                                         fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
                                                         print(filePath)
                                                     }
-            })
-            
-        
-        
+            }) 
     }
     
     func APPSetProgressBarColor(color:String){

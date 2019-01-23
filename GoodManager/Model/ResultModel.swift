@@ -12,6 +12,7 @@ import ObjectMapper
 struct ResultModel:Mappable {
     var picUrl:String = ""
     var linkUrl:String = ""
+    var countDown:Int = 0
     init?(map: Map) {
         
     }
@@ -22,5 +23,6 @@ struct ResultModel:Mappable {
     mutating func mapping(map: Map) {
         picUrl <- map["picUrl"]
         linkUrl <- map["linkUrl"]
+        countDown <- map["countDown"]
     }
 }

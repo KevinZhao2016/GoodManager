@@ -1,10 +1,11 @@
 PODS:
   - Alamofire (4.8.0)
+  - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
-  - iOSPhotoEditor (0.6)
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
+  - Masonry (1.0.2)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya-ObjectMapper/Core (2.7):
@@ -35,9 +36,15 @@ PODS:
   - SnapKit (4.0.1)
   - SwiftyJSON (4.2.0)
   - TZImagePickerController (3.0.9)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - ZMJImageEditor (0.3.0):
+    - Masonry (~> 1.0.1)
+    - YYCategories (~> 1.0.4)
 
 DEPENDENCIES:
-  - iOSPhotoEditor
+  - dsBridge
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
   - Moya-ObjectMapper/RxSwift
@@ -48,14 +55,16 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
+  - ZMJImageEditor
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - dsBridge
     - FLAnimatedImage
-    - iOSPhotoEditor
     - Kingfisher
     - LLPhotoBrowser
+    - Masonry
     - Moya
     - Moya-ObjectMapper
     - ObjectMapper
@@ -70,13 +79,16 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - TZImagePickerController
+    - YYCategories
+    - ZMJImageEditor
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  iOSPhotoEditor: d597c2797033bb06e2a705560ae748136c8ac2ea
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -91,7 +103,9 @@ SPEC CHECKSUMS:
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  ZMJImageEditor: b8cb57e3a9aeeded041fcf847064b95c814abac1
 
-PODFILE CHECKSUM: 9a1bf64d68acc20f40a4e311115646e0c9b6cc44
+PODFILE CHECKSUM: 2e5aa7e971c8cd67938684f64f0a47b8038ec92f
 
 COCOAPODS: 1.5.3

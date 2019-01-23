@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import MobileCoreServices
+
 let SCREEN_WIDTH:CGFloat = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
 let STATUS_HEIGHT = UIApplication.shared.statusBarFrame.size.height
@@ -72,5 +74,20 @@ func jsonToData(jsonDic:Dictionary<String, Any>) -> Data? {
 
 func getLastMainViewController() -> MainViewController{
     return mainViewControllers.last!
+}
+
+
+//根据后缀获取对应的Mime-Type
+func mimeType(pathExtension: String) -> String {
+    if let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+                                                       pathExtension as NSString,
+                                                       nil)?.takeRetainedValue() {
+        if let mimetype = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?
+            .takeRetainedValue() {
+            return mimetype as String
+        }
+    }
+    //文件资源类型如果不知道，传万能类型application/octet-stream，服务器会自动解析文件类
+    return "application/octet-stream"
 }
 

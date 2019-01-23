@@ -8,10 +8,11 @@
 
 import UIKit
 import SnapKit
+import WebKit
 
 class PreviewFileViewController: UIViewController {
     var backBtn = UIButton()
-    var webView = UIWebView()
+    var webView = WKWebView()
     var path:String = ""
    
     init(Path:String){
@@ -40,8 +41,8 @@ class PreviewFileViewController: UIViewController {
         }
         let documentPath = NSHomeDirectory() + "/Documents"
         let fileUrl = URL(fileURLWithPath: documentPath + path)
-        webView.loadRequest(URLRequest(url: fileUrl))
-        webView.scalesPageToFit = true
+        webView.load(URLRequest(url: fileUrl))
+//        webView.scalesPageToFit = true
     }
     
     func showCloseButton(){
