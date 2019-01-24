@@ -1,11 +1,11 @@
 PODS:
   - Alamofire (4.8.0)
+  - CLImagePickerTool (3.0.0)
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
-  - Masonry (1.0.2)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya-ObjectMapper/Core (2.7):
@@ -35,15 +35,10 @@ PODS:
     - SDWebImage/Core
   - SnapKit (4.0.1)
   - SwiftyJSON (4.2.0)
-  - TZImagePickerController (3.0.9)
-  - YYCategories (1.0.4):
-    - YYCategories/no-arc (= 1.0.4)
-  - YYCategories/no-arc (1.0.4)
-  - ZMJImageEditor (0.3.0):
-    - Masonry (~> 1.0.1)
-    - YYCategories (~> 1.0.4)
+  - TZImagePickerController (3.1.7)
 
 DEPENDENCIES:
+  - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
   - dsBridge
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
@@ -55,7 +50,6 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
-  - ZMJImageEditor
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -64,7 +58,6 @@ SPEC REPOS:
     - FLAnimatedImage
     - Kingfisher
     - LLPhotoBrowser
-    - Masonry
     - Moya
     - Moya-ObjectMapper
     - ObjectMapper
@@ -79,16 +72,23 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - TZImagePickerController
-    - YYCategories
-    - ZMJImageEditor
+
+EXTERNAL SOURCES:
+  CLImagePickerTool:
+    :git: https://github.com/Darren-chenchen/CLImagePickerTool.git
+
+CHECKOUT OPTIONS:
+  CLImagePickerTool:
+    :commit: acd0cfabb7a66909b3144b110dac0bfa09ce7db1
+    :git: https://github.com/Darren-chenchen/CLImagePickerTool.git
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  CLImagePickerTool: 5837ba7d3f4f557bab2ccc1db7a0442e2f377e2b
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -102,10 +102,8 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
-  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
-  ZMJImageEditor: b8cb57e3a9aeeded041fcf847064b95c814abac1
+  TZImagePickerController: 3027e1e2029c830186c6a167c88c933b8556fdc7
 
-PODFILE CHECKSUM: 2e5aa7e971c8cd67938684f64f0a47b8038ec92f
+PODFILE CHECKSUM: 7765c11c1fe02957841e4fe810dbd5fbcdb106f9
 
 COCOAPODS: 1.5.3

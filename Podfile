@@ -26,9 +26,10 @@ target 'GoodManager' do
     #pod 'ObjectMapper', '~> 3.4'
     pod 'LLPhotoBrowser', '~> 1.1.0'
     #pod 'iOSPhotoEditor'
-    pod 'ZMJImageEditor'
+    #pod 'ZMJImageEditor'
     pod 'Kingfisher', '~> 4.10.0'
     pod 'Player', '~> 0.12.0'
     pod 'dsBridge'
+    pod 'CLImagePickerTool', :git => 'https://github.com/Darren-chenchen/CLImagePickerTool.git'
 end
 

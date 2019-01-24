@@ -9,14 +9,14 @@
 import Foundation
 
 func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:String){
-    let vc = mainViewControllers.last
+    let vc = getLastMainViewController()
     let webvc = MainViewController()
     webvc.mark = mark
     webvc.url = url
-    webvc.APPSetProgressBarColor(color: progressBarColor)
-    webvc.AppSetStatusBarColor(color: statusBarColor)
+    APPSetProgressBarColor(color: progressBarColor)
+    AppSetStatusBarColor(color: statusBarColor)
     mainViewControllers.append(webvc)
-    vc!.present(webvc, animated: false, completion: nil)
+    vc.present(webvc, animated: false, completion: nil)
 }
 
 func APPWinClose(mark:String){

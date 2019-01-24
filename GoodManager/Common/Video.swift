@@ -10,9 +10,12 @@ import Foundation
 import TZImagePickerController
 import MobileCoreServices
 
+
 func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String){
     let vc = mainViewControllers.last
+    vc!.videocallBackfunName = callBackfunName
     let controller = TZImagePickerController(maxImagesCount: 1, delegate: vc)
+    controller?.videoMaximumDuration = TimeInterval(maxVideoLength)
     if source == 0 {
         //仅相册
         controller!.allowTakePicture = false
@@ -47,7 +50,7 @@ func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String
         controller!.allowTakeVideo = true
         vc!.present(controller! , animated: true, completion: nil)
     }
-    
+
 }
 
 func APPPlayVideo(path:String, startPosition:Double, callBackfunName:String){
@@ -59,3 +62,5 @@ func APPPlayVideo(path:String, startPosition:Double, callBackfunName:String){
     vc.callbackfun = callBackfunName
     basevc!.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
 }
+
+

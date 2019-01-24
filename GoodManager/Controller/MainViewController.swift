@@ -10,14 +10,15 @@ import UIKit
 import WebKit
 import SDWebImage
 import TZImagePickerController
-import ZMJImageEditor
 import dsBridge
+import CoreLocation
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     var mark:String = ""
-    var url:String = "http://www.baidu.com"
+    var url:String = mainUrl
     var webview:DWKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
+    lazy var videocallBackfunName:String = ""
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
         self.progressView.tintColor = UIColor.green      // 进度条颜色
@@ -42,9 +43,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
 //        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")
 //       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
-//        APPChooseMoreImage(source: 0, maxNum: 4, ifOriginalPic: 1, callBackfunName: "String")
-        print(NSHomeDirectory() + "/Documents")
-        APPUploadFile(path:"5003.jpg", callBackfunName:"String")
+//        APPChooseMoreImage(source: 0, maxNum: 9, ifOriginalPic: 1, callBackfunName: "String")
+//        APPChooseSingleImage(source:0, ifNeedEdit:0, ifOriginalPic:1 ,callBackfunName:"String")
+        APPChooseSingleVideo(source:0, maxVideoLength:3, callBackfunName:"String")
     }
     
     func setupLaunchView(){
@@ -103,39 +104,51 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         }
     }
     
-    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
-        var path:String = " "
-        var targetSize = PHImageManagerMaximumSize
-        if isSelectOriginalPhoto == true {
-            targetSize = PHImageManagerMaximumSize
-        }else{
-            targetSize = CGSize(width: 200, height: 200)
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!) {
+        let option = PHVideoRequestOptions.init()
+        option.isNetworkAccessAllowed = true
+        option.deliveryMode = PHVideoRequestOptionsDeliveryMode.automatic
+        PHImageManager.default().requestAVAsset(forVideo: asset, options: option) { (Asset:AVAsset?, AudioMix:AVAudioMix?, info:[AnyHashable : Any]?) in
+            let  avAsset = Asset as? AVURLAsset
+            let path = avAsset?.url.path
+            print(path)
+            self.VideoCallBack(path:path!, callBackfunName:self.videocallBackfunName)
         }
-     
-            PHImageManager.default().requestImage(for: assets.first as! PHAsset,
-                                                  targetSize: targetSize, contentMode: .aspectFit,
-                                                  options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
-//                                                    print (info?.keys)
-                                                    if(isSelectOriginalPhoto == true){
-                                                        let imageURL = info!["PHImageFileURLKey"] as! URL
-                                                        print("路径：",imageURL)
-                                                    }else{
-                                                        let fileManager = FileManager.default
-                                                        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-                                                                                                           .userDomainMask, true)[0] as String
-                                                        let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
-                                                        let filePath = rootPath + "/" + "\(name)" + ".jpg"
-                                                        let imageData = image?.jpegData(compressionQuality: 1)
-                                                        print ("name:"+"\(name)")
-                                                        fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
-                                                        print(filePath)
-                                                    }
-            }) 
     }
     
-    func APPSetProgressBarColor(color:String){
-        self.progressView.tintColor = UIColor(named: color)
+    private func VideoCallBack(path:String, callBackfunName:String){
+        APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
     }
+    
+//    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+//        var path:String = " "
+//        var targetSize = PHImageManagerMaximumSize
+//        if isSelectOriginalPhoto == true {
+//            targetSize = PHImageManagerMaximumSize
+//        }else{
+//            targetSize = CGSize(width: 200, height: 200)
+//        }
+//
+//            PHImageManager.default().requestImage(for: assets.first as! PHAsset,
+//                                                  targetSize: targetSize, contentMode: .aspectFit,
+//                                                  options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
+////                                                    print (info?.keys)
+//                                                    if(isSelectOriginalPhoto == true){
+//                                                        let imageURL = info!["PHImageFileURLKey"] as! URL
+//                                                        print("路径：",imageURL)
+//                                                    }else{
+//                                                        let fileManager = FileManager.default
+//                                                        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+//                                                                                                           .userDomainMask, true)[0] as String
+//                                                        let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
+//                                                        let filePath = rootPath + "/" + "\(name)" + ".jpg"
+//                                                        let imageData = image?.jpegData(compressionQuality: 1)
+//                                                        print ("name:"+"\(name)")
+//                                                        fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+//                                                        print(filePath)
+//                                                    }
+//            })
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A18C98D21F9F052007DDF57 /* Webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A18C98C21F9F052007DDF57 /* Webview.swift */; };
 		0A23FCF621E0DF9D00ECDA6E /* JS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23FCF521E0DF9D00ECDA6E /* JS.swift */; };
 		0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */; };
 		0A24B4FB21D5CF3500F1336D /* scanSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A24B4FA21D5CF3400F1336D /* scanSound.wav */; };
@@ -23,7 +24,6 @@
 		0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EE1B921D9F24400A943D1 /* LocationModel.swift */; };
 		0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */; };
 		0A4F01E021D71DF700AD1E2C /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4F01DF21D71DF700AD1E2C /* ExternalAccessory.framework */; };
-		0A4F01E321D71E6E00AD1E2C /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F01E221D71E6E00AD1E2C /* ImagePickerViewController.swift */; };
 		0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */; };
 		0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311121D6101C00DC4321 /* InterfaceRealm.swift */; };
 		0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58311321D6252100DC4321 /* KeyValueRealm.swift */; };
@@ -39,7 +39,6 @@
 		0A7F576C21E2FD4B00F03870 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */; };
 		0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AADBCC421D873F200DEA755 /* ExDictionary.swift */; };
 		0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AADBCC621D8A7A900DEA755 /* VerionModel.swift */; };
-		0AB8CAF421E1ED45006491CD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8CAF321E1ED45006491CD /* Photo.swift */; };
 		0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618321D797BA0066459B /* PreviewFileViewController.swift */; };
 		0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6618521D7AC640066459B /* BaseNavigationController.swift */; };
 		0AEC339F21F879B100A0245F /* JsApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC339E21F879B100A0245F /* JsApiSwift.swift */; };
@@ -77,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A18C98C21F9F052007DDF57 /* Webview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webview.swift; sourceTree = "<group>"; };
 		0A23FCF521E0DF9D00ECDA6E /* JS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JS.swift; sourceTree = "<group>"; };
 		0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeViewController.swift; sourceTree = "<group>"; };
 		0A24B4FA21D5CF3400F1336D /* scanSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scanSound.wav; sourceTree = "<group>"; };
@@ -100,7 +100,6 @@
 		0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationExtension.swift; sourceTree = "<group>"; };
 		0A4F01DF21D71DF700AD1E2C /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		0A4F01E121D71DF700AD1E2C /* GoodManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoodManager.entitlements; sourceTree = "<group>"; };
-		0A4F01E221D71E6E00AD1E2C /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		0A4F01E421D721E600AD1E2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		0A4F01E521D721E700AD1E2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -118,7 +117,6 @@
 		0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		0AADBCC421D873F200DEA755 /* ExDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDictionary.swift; sourceTree = "<group>"; };
 		0AADBCC621D8A7A900DEA755 /* VerionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerionModel.swift; sourceTree = "<group>"; };
-		0AB8CAF321E1ED45006491CD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0AD6618321D797BA0066459B /* PreviewFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFileViewController.swift; sourceTree = "<group>"; };
 		0AD6618521D7AC640066459B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0AEC339E21F879B100A0245F /* JsApiSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsApiSwift.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */,
 				0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */,
 				0A4EE1BB21D9F31F00A943D1 /* LocationExtension.swift */,
-				0A4F01E221D71E6E00AD1E2C /* ImagePickerViewController.swift */,
 				0A4F01E621D75C6000AD1E2C /* MainViewControllerExtension.swift */,
 				0AD6618321D797BA0066459B /* PreviewFileViewController.swift */,
 				0AEE664321E0ED0800636D06 /* ContactPickerController.swift */,
@@ -279,10 +276,10 @@
 				0A23FCF521E0DF9D00ECDA6E /* JS.swift */,
 				0AEE664521E103D600636D06 /* Contact.swift */,
 				0A4E312221E199AB00D15766 /* Image.swift */,
-				0AB8CAF321E1ED45006491CD /* Photo.swift */,
 				0A7F576921E2F6A300F03870 /* Video.swift */,
 				0AEDCAC321F16E40005887A3 /* Launch.swift */,
 				0AEC339E21F879B100A0245F /* JsApiSwift.swift */,
+				0A18C98C21F9F052007DDF57 /* Webview.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -490,10 +487,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CLImagePickerTool/CLImagePickerTool.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LLPhotoBrowser/LLPhotoBrowser.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -508,8 +505,6 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
-				"${BUILT_PRODUCTS_DIR}/ZMJImageEditor/ZMJImageEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -517,10 +512,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLImagePickerTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLPhotoBrowser.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -535,8 +530,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZMJImageEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/dsBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,7 +586,6 @@
 				0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */,
 				0A4E312321E199AB00D15766 /* Image.swift in Sources */,
 				0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */,
-				0AB8CAF421E1ED45006491CD /* Photo.swift in Sources */,
 				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
@@ -607,8 +599,8 @@
 				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
+				0A18C98D21F9F052007DDF57 /* Webview.swift in Sources */,
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
-				0A4F01E321D71E6E00AD1E2C /* ImagePickerViewController.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,

@@ -24,6 +24,7 @@ var mainViewControllers:Array<MainViewController> = []
 let md5string = "amdsdfwrer21aafIos"  //加密串
 var picUrl:String = ""
 var linkUrl:String = ""
+var mainUrl:String = "http://www.baidu.com"//主页地址
 
 func findControllerByMark(mark:String) -> MainViewController{
     for vc in mainViewControllers{

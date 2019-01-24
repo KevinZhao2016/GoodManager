@@ -15,15 +15,15 @@ import SwiftyJSON
 let fileManager = FileManager.default
 
 func APPIfExistFile(path:String) -> Bool {
-    let documentPath = NSHomeDirectory() + "/Documents"
-    let isExists = fileManager.fileExists(atPath: documentPath + path)
+//    let documentPath = NSHomeDirectory() + "/Documents"
+    let isExists = fileManager.fileExists(atPath:  path)
     return isExists
 }
 
 func APPDelFile(path:String) -> Bool{
-    let documentPath = NSHomeDirectory() + "/Documents"
+//    let documentPath = NSHomeDirectory() + "/Documents"
     do {
-        try fileManager.removeItem(atPath: documentPath+path)
+        try fileManager.removeItem(atPath: path)
     }
       catch {
             print(error)
@@ -63,7 +63,7 @@ func APPUploadFile(path:String, callBackfunName:String){
     LaunchProvider.request(.uploadFile(path), completion: { result in
         switch result {
         case let .success(moyaResponse):
-            //                let data = moyaResponse.data // Data, your JSON response is probably in here!
+            let data = moyaResponse.data // Data, your JSON response is probably in here!
             let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
             print(statusCode)
             if(statusCode == 200){
@@ -72,6 +72,7 @@ func APPUploadFile(path:String, callBackfunName:String){
                         if(model.code == 1){
                             print(model)
                             //TODO：执行回调
+                            APPExecWinJS(mark:" ", JSFun: callBackfunName + "(" + String(data: data, encoding: String.Encoding.utf8)! + ")")
                         }
                     } else {
                         print("maperror")

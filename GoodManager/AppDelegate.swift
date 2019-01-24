@@ -18,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         getLaunchData()
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let vc = MainViewController()
+        vc.mark = " "
         mainViewControllers.append(vc)
         self.window?.rootViewController = vc
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         getTelBookRight()//检查通讯录权限
+        APPGetNetWork()
         return true
     }
 
