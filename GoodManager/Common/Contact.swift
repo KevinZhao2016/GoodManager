@@ -65,7 +65,7 @@ func APPGetTelBookList(callBackfunName:String){
     } catch {
         print(error)
     }
-    APPExecWinJS(mark: "", JSFun: callbackfun + "(" + TelBookList.toJSONString()! + ")")
+    APPExecWinJS(JSFun: callbackfun + "(" + TelBookList.toJSONString()! + ")")
 }
 
 func APPChooseTelBook(maxNum:Int,callBackfunName:String){
@@ -74,7 +74,7 @@ func APPChooseTelBook(maxNum:Int,callBackfunName:String){
     vc.delegate = vc
     vc.maxNum = maxNum
     vc.backClosure = { (ContactString:String) ->Void in
-        APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + ContactString + ")")
+        APPExecWinJS(JSFun: callBackfunName + "(" + ContactString + ")")
     }
     basevc!.present(vc, animated: true, completion: nil)
 }

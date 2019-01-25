@@ -55,6 +55,7 @@
 		0AEE664821E105A400636D06 /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE664721E105A400636D06 /* ExArray.swift */; };
 		0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04CE21E0D4EF0032C670 /* Window.swift */; };
 		0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04D021E0DDB50032C670 /* QRCode.swift */; };
+		0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB1E0121FB3E0500007EDA /* Location.swift */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		0AEE664721E105A400636D06 /* ExArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
 		0AFB04CE21E0D4EF0032C670 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0AFB04D021E0DDB50032C670 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		0AFB1E0121FB3E0500007EDA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7317ACA35C25E7563687A49 /* Pods-GoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				0AEDCAC321F16E40005887A3 /* Launch.swift */,
 				0AEC339E21F879B100A0245F /* JsApiSwift.swift */,
 				0A18C98C21F9F052007DDF57 /* Webview.swift */,
+				0AFB1E0121FB3E0500007EDA /* Location.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
 				0A18C98D21F9F052007DDF57 /* Webview.swift in Sources */,
+				0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */,
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,

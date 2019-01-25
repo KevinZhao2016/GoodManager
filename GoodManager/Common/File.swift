@@ -14,22 +14,26 @@ import SwiftyJSON
 
 let fileManager = FileManager.default
 
-func APPIfExistFile(path:String) -> Bool {
+func APPIfExistFile(path:String) -> Int {
 //    let documentPath = NSHomeDirectory() + "/Documents"
     let isExists = fileManager.fileExists(atPath:  path)
-    return isExists
+    if (isExists){
+        return 1
+    }else {
+        return 0
+    }
 }
 
-func APPDelFile(path:String) -> Bool{
+func APPDelFile(path:String,callBackfunName:String){
 //    let documentPath = NSHomeDirectory() + "/Documents"
     do {
         try fileManager.removeItem(atPath: path)
     }
       catch {
+            APPExecWinJS(JSFun: callBackfunName + "(0)")
             print(error)
-            return false
     }
-    return true
+    APPExecWinJS(JSFun: callBackfunName + "(1)")
 }
 
 func APPGetFileSize(path:String) -> Int{
@@ -72,7 +76,7 @@ func APPUploadFile(path:String, callBackfunName:String){
                         if(model.code == 1){
                             print(model)
                             //TODO：执行回调
-                            APPExecWinJS(mark:" ", JSFun: callBackfunName + "(" + String(data: data, encoding: String.Encoding.utf8)! + ")")
+                            APPExecWinJS(JSFun: callBackfunName + "(" + String(data: data, encoding: String.Encoding.utf8)! + ")")
                         }
                     } else {
                         print("maperror")
@@ -107,6 +111,6 @@ func APPDownFile(path:String, callBackfunName:String){
     Alamofire.download(fileURL, to: destination)
         .response { response in
             print(response)
-            APPExecWinJS(mark:" ", JSFun: callBackfunName + "(" + (response.destinationURL?.path)! + ")")
+            APPExecWinJS(JSFun: callBackfunName + "(" + (response.destinationURL?.path)! + ")")
     }
 }

@@ -12,11 +12,6 @@ import UIKit
 
 fileprivate var callbackfun:String = ""
 extension MainViewController: CLLocationManagerDelegate{
-
-    func APPStartLocation(callBackfunName:String){
-        loadLocation()
-        callbackfun = callBackfunName
-    }
     
     func getLocationJSON() -> String{
         print(self.locationModel.toJSONString()!)

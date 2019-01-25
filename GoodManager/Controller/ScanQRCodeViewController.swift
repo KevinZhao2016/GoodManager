@@ -15,6 +15,7 @@ typealias QRString = (String) -> Void
 class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var backClosure: QRString?// 数据回调闭包
+    var callbackfun:String = ""
     var device: AVCaptureDevice!  //摄像头对象
     var session: AVCaptureSession!  //会话对象
     var previewlayer: AVCaptureVideoPreviewLayer!  //摄像头图层
@@ -72,6 +73,8 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         }
         print(feature.messageString)
         self.backClosure!(feature.messageString!)
+        //回调
+        APPExecWinJS(JSFun: callbackfun + "(" + feature.messageString! + ")")
         //数据处理
         self.dismiss(animated: true) {
             self.scanSound()

@@ -54,13 +54,13 @@ func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String
 }
 
 func APPPlayVideo(path:String, startPosition:Double, callBackfunName:String){
-    let basevc = mainViewControllers.last
+    let basevc = getLastMainViewController()
     let vc = PlayerViewController()
     //"https://media.w3.org/2010/05/sintel/trailer.mp4"
     vc.urlpath = path
     vc.playfromtime = startPosition
     vc.callbackfun = callBackfunName
-    basevc!.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+    basevc.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
 }
 
 

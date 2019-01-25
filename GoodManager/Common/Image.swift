@@ -74,14 +74,14 @@ func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBac
         imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1, superVC: vc) { (asset,editorImage) in
             let phasset = asset.first!
             path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-            APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+            APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
         }
     case 1:
         imagePickTool.cameraOut = true
         imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1) { (asset,cutImage) in
             let phasset = asset.first!
             path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-            APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+            APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
         }
     case 2:
         imagePickTool.cameraOut = false
@@ -89,7 +89,7 @@ func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBac
         imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1, superVC: vc) { (asset,editorImage) in
             let phasset = asset.first!
             path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-            APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+            APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
         }
     default:
         break
@@ -114,7 +114,7 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
         imagePickTool.cl_setupImagePickerWith(MaxImagesCount: maxNum) { (asset,cutImage) in
             for phasset in asset {
                 path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-                APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+                APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
             }
         }
     case 1:
@@ -122,7 +122,7 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
         imagePickTool.cl_setupImagePickerWith(MaxImagesCount: maxNum) { (asset,cutImage) in
             for phasset in asset {
                 path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-                APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+                APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
             }
         }
     case 2:
@@ -131,7 +131,7 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
         imagePickTool.cl_setupImagePickerWith(MaxImagesCount: maxNum) { (asset,cutImage) in
             for phasset in asset {
                 path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-                APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+                APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
             }
         }
     default:
@@ -140,7 +140,8 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
 }
 
 func APPGetBankImage(callBackfunName:String){
-    let vc = mainViewControllers.last
+    let vc = getLastMainViewController()
+    vc.imagecallBackfunName = callBackfunName
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
         let imagePicker = CameraViewController()
         // 表示操作为拍照
@@ -153,14 +154,15 @@ func APPGetBankImage(callBackfunName:String){
         imagePicker.delegate = imagePicker
         // 进入拍照界面
         imagePicker.callbackfun = callBackfunName
-        vc!.present(imagePicker, animated: true, completion: nil)
+        vc.present(imagePicker, animated: true, completion: nil)
     }else {
         // 照相机不可用
     }
 }
 
 func APPGetIdentityCardImage(callBackfunName:String){
-    let vc = mainViewControllers.last
+    let vc = getLastMainViewController()
+    vc.imagecallBackfunName = callBackfunName
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
         let imagePicker = CameraViewController()
         // 表示操作为拍照
@@ -173,7 +175,7 @@ func APPGetIdentityCardImage(callBackfunName:String){
         imagePicker.delegate = imagePicker
         // 进入拍照界面
         imagePicker.callbackfun = callBackfunName
-        vc!.present(imagePicker, animated: true, completion: nil)
+        vc.present(imagePicker, animated: true, completion: nil)
     }else {
         // 照相机不可用
     }

@@ -19,6 +19,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     var webview:DWKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
+    lazy var imagecallBackfunName:String = ""
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
         self.progressView.tintColor = UIColor.green      // 进度条颜色
@@ -117,38 +118,44 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     private func VideoCallBack(path:String, callBackfunName:String){
-        APPExecWinJS(mark: " ", JSFun: callBackfunName + "(" + path + ")")
+        APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
     }
     
-//    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
-//        var path:String = " "
-//        var targetSize = PHImageManagerMaximumSize
-//        if isSelectOriginalPhoto == true {
-//            targetSize = PHImageManagerMaximumSize
-//        }else{
-//            targetSize = CGSize(width: 200, height: 200)
-//        }
-//
-//            PHImageManager.default().requestImage(for: assets.first as! PHAsset,
-//                                                  targetSize: targetSize, contentMode: .aspectFit,
-//                                                  options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
-////                                                    print (info?.keys)
-//                                                    if(isSelectOriginalPhoto == true){
-//                                                        let imageURL = info!["PHImageFileURLKey"] as! URL
-//                                                        print("路径：",imageURL)
-//                                                    }else{
-//                                                        let fileManager = FileManager.default
-//                                                        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-//                                                                                                           .userDomainMask, true)[0] as String
-//                                                        let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
-//                                                        let filePath = rootPath + "/" + "\(name)" + ".jpg"
-//                                                        let imageData = image?.jpegData(compressionQuality: 1)
-//                                                        print ("name:"+"\(name)")
-//                                                        fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
-//                                                        print(filePath)
-//                                                    }
-//            })
-//    }
+    private func ImageCallBack(path:String, callBackfunName:String){
+        APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
+    }
+    
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+    
+        var targetSize = PHImageManagerMaximumSize
+        if isSelectOriginalPhoto == true {
+            targetSize = PHImageManagerMaximumSize
+        }else{
+            targetSize = CGSize(width: 200, height: 200)
+        }
+
+            PHImageManager.default().requestImage(for: assets.first as! PHAsset,
+                                                  targetSize: targetSize, contentMode: .aspectFit,
+                                                  options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
+//                                                    print (info?.keys)
+                                                    if(isSelectOriginalPhoto == true){
+                                                        let imageURL = info!["PHImageFileURLKey"] as! URL
+                                                        print("路径：",imageURL)
+                                                        self.ImageCallBack(path: imageURL.path, callBackfunName: self.imagecallBackfunName)
+                                                    }else{
+                                                        let fileManager = FileManager.default
+                                                        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                                                                           .userDomainMask, true)[0] as String
+                                                        let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
+                                                        let filePath = rootPath + "/" + "\(name)" + ".jpg"
+                                                        let imageData = image?.jpegData(compressionQuality: 1)
+                                                        print ("name:"+"\(name)")
+                                                        fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+                                                        print(filePath)
+                                                         self.ImageCallBack(path: filePath, callBackfunName: self.imagecallBackfunName)
+                                                    }
+            })
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
