@@ -46,7 +46,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
 //       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
 //        APPChooseMoreImage(source: 0, maxNum: 9, ifOriginalPic: 1, callBackfunName: "String")
 //        APPChooseSingleImage(source:0, ifNeedEdit:0, ifOriginalPic:1 ,callBackfunName:"String")
-        APPChooseSingleVideo(source:0, maxVideoLength:3, callBackfunName:"String")
+//        APPChooseSingleVideo(source:0, maxVideoLength:3, callBackfunName:"String")
     }
     
     func setupLaunchView(){
