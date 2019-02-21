@@ -137,6 +137,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
 }
 
 #pragma mark - 属性设置
+//保证正常绘制，如果传入nil就直接不处理
 - (void)setFont:(UIFont *)font
 {
     if (font && _font != font)
@@ -166,9 +167,10 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
 
 - (void)setHighlightColor:(UIColor *)highlightColor
 {
-    if (_highlightColor != highlightColor)
+    if (highlightColor && _highlightColor != highlightColor)
     {
         _highlightColor = highlightColor;
+        
         [self resetTextFrame];
     }
 }
@@ -178,6 +180,28 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     if (_linkColor != linkColor)
     {
         _linkColor = linkColor;
+        [self resetTextFrame];
+    }
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    CGRect oldRect = self.bounds;
+    [super setFrame:frame];
+    
+    if (!CGRectEqualToRect(self.bounds, oldRect))
+    {
+        [self resetTextFrame];
+    }
+}
+
+- (void)setBounds:(CGRect)bounds
+{
+    CGRect oldRect = self.bounds;
+    [super setBounds:bounds];
+    
+    if (!CGRectEqualToRect(self.bounds, oldRect))
+    {
         [self resetTextFrame];
     }
 }
@@ -205,92 +229,6 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     if (_shadowBlur != shadowBlur)
     {
         _shadowBlur = shadowBlur;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setUnderLineForLink:(BOOL)underLineForLink
-{
-    if (_underLineForLink != underLineForLink)
-    {
-        _underLineForLink = underLineForLink;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setAutoDetectLinks:(BOOL)autoDetectLinks
-{
-    if (_autoDetectLinks != autoDetectLinks)
-    {
-        _autoDetectLinks = autoDetectLinks;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setNumberOfLines:(NSInteger)numberOfLines
-{
-    if (_numberOfLines != numberOfLines)
-    {
-        _numberOfLines = numberOfLines;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setTextAlignment:(CTTextAlignment)textAlignment
-{
-    if (_textAlignment != textAlignment)
-    {
-        _textAlignment = textAlignment;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setLineBreakMode:(CTLineBreakMode)lineBreakMode
-{
-    if (_lineBreakMode != lineBreakMode)
-    {
-        _lineBreakMode = lineBreakMode;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setLineSpacing:(CGFloat)lineSpacing
-{
-    if (_lineSpacing != lineSpacing)
-    {
-        _lineSpacing = lineSpacing;
-        [self resetTextFrame];
-    }
-}
-
-- (void)setParagraphSpacing:(CGFloat)paragraphSpacing
-{
-    if (_paragraphSpacing != paragraphSpacing)
-    {
-        _paragraphSpacing = paragraphSpacing;
-        [self resetTextFrame];
-    }
-}
-
-#pragma mark - frame
-- (void)setFrame:(CGRect)frame
-{
-    CGRect oldRect = self.bounds;
-    [super setFrame:frame];
-    
-    if (!CGRectEqualToRect(self.bounds, oldRect))
-    {
-        [self resetTextFrame];
-    }
-}
-
-- (void)setBounds:(CGRect)bounds
-{
-    CGRect oldRect = self.bounds;
-    [super setBounds:bounds];
-    
-    if (!CGRectEqualToRect(self.bounds, oldRect))
-    {
         [self resetTextFrame];
     }
 }
@@ -460,6 +398,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     CFArrayRef runs = CTLineGetGlyphRuns(line);
     CFIndex runCount = CFArrayGetCount(runs);
     
+    // Iterate through each of the "runs" (i.e. a chunk of text) and find the runs that
+    // intersect with the range.
     for (CFIndex k = 0; k < runCount; k++)
     {
         CTRunRef run = CFArrayGetValueAtIndex(runs, k);
@@ -470,6 +410,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
         
         if (intersectedRunRange.length == 0)
         {
+            // This run doesn't intersect the range, so skip it.
             continue;
         }
         
@@ -477,11 +418,12 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
         CGFloat descent = 0.0f;
         CGFloat leading = 0.0f;
         
+        // Use of 'leading' doesn't properly highlight Japanese-character link.
         CGFloat width = (CGFloat)CTRunGetTypographicBounds(run,
                                                            CFRangeMake(0, 0),
                                                            &ascent,
                                                            &descent,
-                                                           NULL);
+                                                           NULL); //&leading);
         CGFloat height = ascent + descent;
         
         CGFloat xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, nil);
@@ -682,7 +624,19 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     {
         CFRelease(framesetter);
     }
-    return CGSizeMake(ceilf(newSize.width) + 1, MIN(ceilf(newSize.height) + 1, size.height));
+    
+    //hack:
+    //1.需要加上额外的一部分size,有些情况下计算出来的像素点并不是那么精准
+    //2.iOS7 的 CTFramesetterSuggestFrameSizeWithConstraint s方法比较残,需要多加一部分 height
+    //3.iOS7 多行中如果首行带有很多空格，会导致返回的 suggestionWidth 远小于真实 width ,那么多行情况下就是用传入的 width
+    if (newSize.height < _fontHeight * 2)   //单行
+    {
+        return CGSizeMake(ceilf(newSize.width) + 2.0, ceilf(newSize.height) + 4.0);
+    }
+    else
+    {
+        return CGSizeMake(size.width, ceilf(newSize.height) + 4.0);
+    }
 }
 
 
@@ -763,7 +717,6 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
             CGRect highlightRect = [self rectForRange:linkRange
                                                inLine:line
                                            lineOrigin:lineOrigins[i]];
-            
             highlightRect = CGRectOffset(highlightRect, 0, -rect.origin.y);
             if (!CGRectIsEmpty(highlightRect))
             {
@@ -840,8 +793,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
                         
                         if (lastLineRange.length > 0)
                         {
-                            //移除掉最后一个对象...
-                            //其实这个地方有点问题,也有可能需要移除最后 2 个对象，因为 attachment 宽度的关系
+                            //移除掉最后一个对象...（其实这个地方有点问题,也有可能需要移除最后 2 个对象，因为 attachment 宽度的关系）
                             [truncationString deleteCharactersInRange:NSMakeRange(lastLineRange.length - 1, 1)];
                         }
                         [truncationString appendAttributedString:tokenString];
@@ -906,7 +858,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
         CGFloat lineHeight = lineAscent + lineDescent;
         CGFloat lineBottomY = lineOrigin.y - lineDescent;
         
-        //遍历找到对应的 attachment 进行绘制
+        //遍历以找到对应的 attachment 进行绘制
         for (CFIndex k = 0; k < runCount; k++)
         {
             CTRunRef run = CFArrayGetValueAtIndex(runs, k);
@@ -1041,8 +993,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     {
         return;
     }
-    M80SyncLinkChecker checker = M80AttributedLabelConfig.shared.checker;
-    BOOL sync = checker ? checker(text) : YES;
+    BOOL sync = length <= M80MinAsyncDetectLinkLength;
     [self computeLink:text
                  sync:sync];
 }
@@ -1051,8 +1002,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
                sync:(BOOL)sync
 {
     __weak typeof(self) weakSelf = self;
-    typedef void (^M80LinkBlock) (NSArray *);
-    M80LinkBlock block = ^(NSArray *links)
+    typedef void (^LinkBlock) (NSArray *);
+    LinkBlock block = ^(NSArray *links)
     {
         weakSelf.linkDetected = YES;
         if ([links count])
@@ -1188,5 +1139,12 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
         return self;
     }
 }
+
+#pragma mark - 设置自定义的连接检测block
++ (void)setCustomDetectMethod:(M80CustomDetectLinkBlock)block
+{
+    [M80AttributedLabelURL setCustomDetectMethod:block];
+}
+
 
 @end

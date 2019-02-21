@@ -7,7 +7,12 @@
 //
 
 #import "M80AttributedLabelURL.h"
-#import "M80AttributedLabelConfig.h"
+
+static NSString *M80URLExpression = @"((([A-Za-z]{3,9}:(?:\\/\\/)?)(?:[\\-;:&=\\+\\$,\\w]+@)?[A-Za-z0-9\\.\\-]+|(?:www\\.|[\\-;:&=\\+\\$,\\w]+@)[A-Za-z0-9\\.\\-]+)((:[0-9]+)?)((?:\\/[\\+~%\\/\\.\\w\\-]*)?\\??(?:[\\-\\+=&;%@\\.\\w]*)#?(?:[\\.\\!\\/\\\\\\w]*))?)";
+
+static M80CustomDetectLinkBlock customDetectBlock = nil;
+
+static NSString *M80URLExpressionKey = @"M80URLExpressionKey";
 
 
 @implementation M80AttributedLabelURL
@@ -27,10 +32,9 @@
 
 + (NSArray *)detectLinks:(NSString *)plainText
 {
-    M80LinkDetector detector = M80AttributedLabelConfig.shared.detector;
-    if (detector)
+    if (customDetectBlock)
     {
-        return detector(plainText);
+        return customDetectBlock(plainText);
     }
     else
     {
@@ -38,11 +42,11 @@
         if ([plainText length])
         {
             links = [NSMutableArray array];
-            NSDataDetector *detector = [M80AttributedLabelURL linkDetector];
-            [detector enumerateMatchesInString:plainText
+            NSRegularExpression *urlRegex = [M80AttributedLabelURL urlExpression];
+            [urlRegex enumerateMatchesInString:plainText
                                        options:0
                                          range:NSMakeRange(0, [plainText length])
-                                    usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                                    usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
                                         NSRange range = result.range;
                                         NSString *text = [plainText substringWithRange:range];
                                         M80AttributedLabelURL *link = [M80AttributedLabelURL urlWithLinkData:text
@@ -55,22 +59,23 @@
     }
 }
 
-+ (NSDataDetector *)linkDetector
++ (NSRegularExpression *)urlExpression
 {
-    static NSString *M80LinkDetectorKey = @"M80LinkDetectorKey";
-    
     NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
-    NSDataDetector *detector = dict[M80LinkDetectorKey];
-    if (detector == nil)
+    NSRegularExpression *exp = dict[M80URLExpressionKey];
+    if (exp == nil)
     {
-        detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink | NSTextCheckingTypePhoneNumber
-                                                   error:nil];
-        if (detector)
-        {
-            dict[M80LinkDetectorKey] = detector;
-        }
+        exp = [NSRegularExpression regularExpressionWithPattern:M80URLExpression
+                                                        options:NSRegularExpressionCaseInsensitive
+                                                          error:nil];
+        dict[M80URLExpressionKey] = exp;
     }
-    return detector;
+    return exp;
+}
+
++ (void)setCustomDetectMethod:(M80CustomDetectLinkBlock)block
+{
+    customDetectBlock = [block copy];
 }
 
 @end

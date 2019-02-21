@@ -15,13 +15,13 @@ target 'GoodManager' do
 
     # Basics
     pod 'RealmSwift'
-    pod 'SDWebImage/GIF'
+    pod 'SDWebImage/GIF', '~> 4.2.2'
     pod 'ReachabilitySwift'
     pod 'Moya-ObjectMapper/RxSwift'
     #pod 'WoodPeckeriOS'
     pod 'SnapKit', '~> 4.0.0'
     #pod 'BMPlayer', '~> 1.0.0'
-    pod 'TZImagePickerController'
+    pod 'TZImagePickerController','~> 3.0.7'
     pod 'SwiftyJSON', '~> 4.0'
     #pod 'ObjectMapper', '~> 3.4'
     pod 'LLPhotoBrowser', '~> 1.1.0'
@@ -32,7 +32,7 @@ target 'GoodManager' do
     pod 'dsBridge'
     pod 'CLImagePickerTool', :git => 'https://github.com/Darren-chenchen/CLImagePickerTool.git'
     pod 'JPush'
-    pod 'NIMKit/Lite'
+    pod 'NIMKit', '2.11.5'
     #pod 'NIMSDK_LITE', '5.4.0'
 end
 

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (nullable NSArray *)detectLinks:(nullable NSString *)plainText;
+
++ (void)setCustomDetectMethod:(nullable M80CustomDetectLinkBlock)block;
 @end
 
 

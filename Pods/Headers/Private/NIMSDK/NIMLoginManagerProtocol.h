@@ -1,1 +1,0 @@
-../../../NIMSDK/SDK/NIMSDK/ExportHeaders/Protocol/NIMLoginManagerProtocol.h

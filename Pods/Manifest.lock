@@ -1,8 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
   - CLImagePickerTool (3.0.0)
-  - CTAssetsPickerController (3.3.1):
-    - PureLayout (~> 3.0.0)
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
   - JCore (1.2.6)
@@ -11,7 +9,7 @@ PODS:
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
-  - M80AttributedLabel (1.9.1)
+  - M80AttributedLabel (1.6.3)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya-ObjectMapper/Core (2.7):
@@ -23,17 +21,19 @@ PODS:
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - NIMKit/Lite (1.0.1):
-    - CTAssetsPickerController
-    - M80AttributedLabel
-    - NIMSDK (~> 3.2.0)
-    - SDWebImage
-    - SVProgressHUD
-    - Toast
-  - NIMSDK (3.2.5)
+  - NIMKit (2.11.5):
+    - NIMKit/Lite (= 2.11.5)
+  - NIMKit/Core (2.11.5):
+    - M80AttributedLabel (~> 1.6.3)
+    - SDWebImage (~> 4.2.2)
+    - Toast (~> 3.0)
+    - TZImagePickerController (~> 3.0.7)
+  - NIMKit/Lite (2.11.5):
+    - NIMKit/Core
+    - NIMSDK_LITE (~> 6.1.1)
+  - NIMSDK_LITE (6.1.1)
   - ObjectMapper (3.4.2)
   - Player (0.12.1)
-  - PureLayout (3.0.2)
   - ReachabilitySwift (4.3.0)
   - Realm (3.13.0):
     - Realm/Headers (= 3.13.0)
@@ -44,17 +44,16 @@ PODS:
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
-  - SDWebImage/GIF (4.4.3):
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
+  - SDWebImage/GIF (4.2.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SnapKit (4.0.1)
-  - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
-  - Toast (4.0.0)
-  - TZImagePickerController (3.1.7)
+  - Toast (3.1.0)
+  - TZImagePickerController (3.0.9)
 
 DEPENDENCIES:
   - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
@@ -63,19 +62,18 @@ DEPENDENCIES:
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
   - Moya-ObjectMapper/RxSwift
-  - NIMKit/Lite
+  - NIMKit (= 2.11.5)
   - Player (~> 0.12.0)
   - ReachabilitySwift
   - RealmSwift
-  - SDWebImage/GIF
+  - SDWebImage/GIF (~> 4.2.2)
   - SnapKit (~> 4.0.0)
   - SwiftyJSON (~> 4.0)
-  - TZImagePickerController
+  - TZImagePickerController (~> 3.0.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - CTAssetsPickerController
     - dsBridge
     - FLAnimatedImage
     - JCore
@@ -86,10 +84,9 @@ SPEC REPOS:
     - Moya
     - Moya-ObjectMapper
     - NIMKit
-    - NIMSDK
+    - NIMSDK_LITE
     - ObjectMapper
     - Player
-    - PureLayout
     - ReachabilitySwift
     - Realm
     - RealmSwift
@@ -98,7 +95,6 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SnapKit
-    - SVProgressHUD
     - SwiftyJSON
     - Toast
     - TZImagePickerController
@@ -115,34 +111,31 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   CLImagePickerTool: 5837ba7d3f4f557bab2ccc1db7a0442e2f377e2b
-  CTAssetsPickerController: b1d1d50ab87cf6b8b13531de5f4530482e7e53ed
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
-  M80AttributedLabel: d6079b23765837f583747c2b9949e3b7e0d4cb5d
+  M80AttributedLabel: d06543195d3e451d2ea62ad76d04aa9cea7661d4
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
-  NIMKit: 9f93c59e9efc4485db68e660c7bec1112c55ab3d
-  NIMSDK: bf6ef3597a187912075800645252e07793e54de0
+  NIMKit: ec370f2f270fbc03bdb68c51118695e03133ffa1
+  NIMSDK_LITE: fb16cf52c23cd5769ed1ec196d234307ba000aa0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
   RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TZImagePickerController: 3027e1e2029c830186c6a167c88c933b8556fdc7
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+  TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: 983322ac469948142fb27cb9d144d67b6c05633a
+PODFILE CHECKSUM: e5994370b84bf40b8d24803e448bbe06614c230d
 
 COCOAPODS: 1.5.3

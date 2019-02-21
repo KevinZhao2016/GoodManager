@@ -1,0 +1,6 @@
+framework module NIMKit {
+  umbrella header "NIMKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
