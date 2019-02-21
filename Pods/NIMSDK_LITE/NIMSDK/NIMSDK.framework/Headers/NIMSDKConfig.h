@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param notification 通知对象
  *
- *  @return 是否忽略
+ *  @return 是否通知
  */
 - (BOOL)shouldIgnoreNotification:(NIMNotificationObject *)notification;
 
@@ -69,20 +69,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  默认未读 NO 的原因是客户端常常需要直接再写入一条 tip 消息用于提醒显示，使用 NO 作为默认值直接写入一条已读 tip 消息，避免未读计数发生两次变化，最终导致界面重复刷新
  *  如果客户场景不需要写入 tip 消息，可以设置为 YES，以保持未读计数的一致性。
  */
-@property (nonatomic,assign)    BOOL    shouldConsiderRevokedMessageUnreadCount;
+@property (nonatomic,assign)    BOOL    shouldConsiderRevokedMessageUnreadCount;;
 
 /**
  *  是否需要多端同步未读数
  *  @discusssion 默认为 NO。设置成 YES 的情况下，同个账号多端（PC 和 移动端等）将同步未读计数。
  */
 @property (nonatomic,assign)    BOOL    shouldSyncUnreadCount;
-
-
-/**
- *  是否将群通知计入未读
- *  @discusssion 默认为 NO。设置成 YES 的情况下，收到的群通知也会计入未读数
- */
-@property (nonatomic,assign)    BOOL    shouldCountTeamNotification;
 
 
 /**
@@ -107,33 +100,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @discusssion 默认为 0。即默认情况下，自动登录将无限重试。设置成大于 0 的值后，在没有登录成功前，自动登录将重试最多 maxAutoLoginRetryTimes 次，如果失败，则抛出错误 (NIMLocalErrorCodeAutoLoginRetryLimit)。
  */
 @property (nonatomic,assign)    NSInteger   maxAutoLoginRetryTimes;
-
-
-/**
- *  本地 log 存活期
- *  @discusssion 默认为 7 天。即超过 7 天的 log 将被清除。只能设置大于等于 2 的值。
- */
-@property (nonatomic,assign)    NSInteger   maximumLogDays;
-
-/**
- *  是否支持动图缩略
- *  @discusssion 默认为 NO。即默认情况下，从服务器获取原图缩略图时，如果原图为动图，我们将返回原图第一帧的缩略图。
- *               而开启这个选项后，我们将返回缩略图后的动图。这个选项只影响从服务器获取的缩略图，不影响本地生成的缩略图。
- */
-@property (nonatomic,assign)    BOOL   animatedImageThumbnailEnabled;
-
-/**
- *  是否禁止后台重连
- *  @discusssion 默认为 NO。即默认情况下，当程序退到后台断开连接后，如果 App 仍能运行，SDK 将继续执行自动重连机制。设置为 YES 后在后台将不自动重连，重连将被推迟到前台进行。
-*                只有特殊用户场景才需要此设置，无明确原因请勿设置。
- */
-@property (nonatomic,assign)    BOOL    reconnectInBackgroundStateDisabled;
-
-/**
- *  是否开启群回执功能
- *  @discusssion 默认为 NO。
- */
-@property (nonatomic,assign)    BOOL    teamReceiptEnabled;
 
 /**
  *  配置项委托

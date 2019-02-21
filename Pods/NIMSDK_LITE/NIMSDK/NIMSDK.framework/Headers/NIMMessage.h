@@ -21,10 +21,8 @@
 #import "NIMRobotObject.h"
 #import "NIMMessageSetting.h"
 #import "NIMMessageReceipt.h"
-#import "NIMTeamMessageReceiptDetail.h"
 #import "NIMAntiSpamOption.h"
 #import "NIMMessageApnsMemberOption.h"
-#import "NIMTeamMessageReceipt.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -72,6 +70,11 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
 
 
 
+
+/**
+ *  消息体协议
+ */
+@protocol NIMMessageObject;
 /**
  *  消息结构
  */
@@ -99,7 +102,7 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
 
 /**
  *  消息文本
- *  @discussion 消息中除 NIMMessageTypeText 和 NIMMessageTypeTip 外，其他消息 text 字段都为 nil
+ *  @discussion 聊天室消息中除 NIMMessageTypeText 和 NIMMessageTypeTip 外，其他消息 text 字段都为 nil
  */
 @property (nullable,nonatomic,copy)                  NSString *text;
 
@@ -116,7 +119,7 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
 @property (nullable,nonatomic,strong)                NIMMessageSetting *setting;
 
 /**
- *  易盾消息反垃圾配置
+ *  消息反垃圾配置
  *  @discussion 目前仅支持易盾，只有接入了易盾才可以设置这个配置
  */
 @property (nullable,nonatomic,strong)                NIMAntiSpamOption *antiSpamOption;
@@ -129,7 +132,7 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
 
 /**
  *  消息推送Payload
- *  @discussion 可以通过这个字段定义消息推送 Payload ,支持字段参考苹果技术文档,长度限制 2K
+ *  @discussion 可以通过这个字段定义消息推送Payload,支持字段参考苹果技术文档,长度限制 2K
  */
 @property (nullable,nonatomic,copy)                NSDictionary *apnsPayload;
 
@@ -142,7 +145,7 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
 
 /**
  *  服务器扩展
- *  @discussion 客户端可以设置这个字段,这个字段将在本地存储且发送至对端,上层需要保证 NSDictionary 可以转换为 JSON，长度限制 1K
+ *  @discussion 客户端可以设置这个字段,这个字段将在本地存储且发送至对端,上层需要保证 NSDictionary 可以转换为 JSON，长度限制 4K
  */
 @property (nullable,nonatomic,copy)                NSDictionary    *remoteExt;
 
@@ -190,14 +193,14 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
 
 /**
  *  消息是否被播放过
- *  @discussion 修改这个属性,后台会自动更新 db 中对应的数据。聊天室消息里，此字段无效。
+ *  @discussion 修改这个属性,后台会自动更新db中对应的数据
  */
 @property (nonatomic,assign)                BOOL isPlayed;
 
 
 /**
  *  消息是否标记为已删除
- *  @discussion 已删除的消息在获取本地消息列表时会被过滤掉，只有根据 messageId 获取消息的接口可能会返回已删除消息。聊天室消息里，此字段无效。
+ *  @discussion 已删除的消息在获取本地消息列表时会被过滤掉，只有根据messageId获取消息的接口可能会返回已删除消息。
  */
 @property (nonatomic,assign,readonly)       BOOL isDeleted;
 
@@ -207,20 +210,6 @@ typedef NS_ENUM(NSInteger, NIMMessageAttachmentDownloadState){
  *  @discussion 只有当当前消息为 P2P 消息且 isOutgoingMsg 为 YES 时这个字段才有效，需要对端调用过发送已读回执的接口
  */
 @property (nonatomic,assign,readonly)       BOOL isRemoteRead;
-
-/**
- *  是否已发送群回执
- *  @discussion 只针对群消息有效
- */
-@property (nonatomic,assign,readonly)       BOOL isTeamReceiptSended;
-
-/**
- *  群已读回执信息
- *  @discussion 只有当当前消息为 Team 消息且 teamReceiptEnabled 为 YES 时才有效，需要对端调用过发送已读回执的接口
- */
-@property (nullable,nonatomic,strong,readonly)   NIMTeamMessageReceipt *teamReceiptInfo;
-
-
 
 /**
  *  消息发送者名字

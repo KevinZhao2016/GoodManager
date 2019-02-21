@@ -12,24 +12,15 @@
 @class NIMSession;
 @class NIMMessageReceipt;
 @class NIMRevokeMessageNotification;
-@class NIMTeamMessageReceiptDetail;
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  P2P 发送已读回执 Block
+ *  发送已读回执Block
  *
  *  @param error 错误信息,如果成功,error 为 nil
  */
 typedef void(^NIMSendMessageReceiptBlock)(NSError * __nullable error);
-
-/**
- *  Team 发送已读回执 Block
- *
- *  @param error 错误信息,如果成功,error 为 nil
- *  @param failedReceipts 失败的回执
- */
-typedef void(^NIMSendTeamMessageReceiptsBlock)(NSError * __nullable error,NSArray<NIMMessageReceipt *> * __nullable failedReceipts);
 
 /**
  *  撤回消息Block
@@ -37,15 +28,6 @@ typedef void(^NIMSendTeamMessageReceiptsBlock)(NSError * __nullable error,NSArra
  *  @param error 错误信息,如果成功,error 为 nil
  */
 typedef void(^NIMRevokeMessageBlock)(NSError * __nullable error);
-
-/**
- *  查询群组消息回执详情Block
- *
- *  @param error      错误,如果成功则error为nil
- *  @param detail     已读回执详情
- */
-typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMessageReceiptDetail * __nullable detail);
-
 
 
 /**
@@ -56,20 +38,10 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
 @optional
 /**
  *  即将发送消息回调
- *  @discussion 因为发消息之前可能会有个准备过程,所以需要在收到这个回调时才将消息加入到 Datasource 中
+ *  @discussion 因为发消息之前可能会有个异步的准备过程,所以需要在收到这个回调时才将消息加入到datasource中
  *  @param message 当前发送的消息
  */
 - (void)willSendMessage:(NIMMessage *)message;
-
-
-/**
- *  上传资源文件成功的回调
- *  @discussion 对于需要上传资源的消息(图片，视频，音频等)，SDK 将在上传资源成功后通过这个接口进行回调，上层可以在收到该回调后进行推送信息的重新配置 (APNS payload)
- *  @param urlString 当前消息资源获得的 url 地址
- *  @param message 当前发送的消息
- */
-- (void)uploadAttachmentSuccess:(NSString *)urlString
-                     forMessage:(NIMMessage *)message;
 
 /**
  *  发送消息进度回调
@@ -101,10 +73,10 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
 /**
  *  收到消息回执
  *
- *  @param receipts 消息回执数组
- *  @discussion 当上层收到此消息时所有的存储和 model 层业务都已经更新，只需要更新 UI 即可。
+ *  @param receipt 消息回执
+ *  @discussion 当上层收到此消息时所有的存储和 model 层业务都已经更新，只需要更新 UI 即可。如果对端发送的已读回执时间戳比当前端存储的最后时间戳还小，这个已读回执将被忽略。
  */
-- (void)onRecvMessageReceipts:(NSArray<NIMMessageReceipt *> *)receipts;
+- (void)onRecvMessageReceipt:(NIMMessageReceipt *)receipt;
 
 
 /**
@@ -150,7 +122,7 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
  *  @param session 接受方
  *  @param error   错误 如果在准备发送消息阶段发生错误,这个error会被填充相应的信息
  *
- *  @return 是否调用成功,这里返回的 result 只是表示当前这个函数调用是否成功,需要后续的回调才能够判断消息是否已经发送至服务器
+ *  @return 是否调用成功,这里返回的result只是表示当前这个函数调用是否成功,需要后续的回调才能够判断消息是否已经发送至服务器
  */
 - (BOOL)sendMessage:(NIMMessage *)message
           toSession:(NIMSession *)session
@@ -162,7 +134,7 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
  *  @param message 重发消息
  *  @param error   错误 如果在准备发送消息阶段发生错误,这个error会被填充相应的信息
  *
- *  @return 是否调用成功,这里返回的 result 只是表示当前这个函数调用是否成功,需要后续的回调才能够判断消息是否已经发送至服务器
+ *  @return 是否调用成功,这里返回的result只是表示当前这个函数调用是否成功,需要后续的回调才能够判断消息是否已经发送至服务器
  */
 - (BOOL)resendMessage:(NIMMessage *)message
                 error:(NSError * __nullable *)error;
@@ -174,8 +146,8 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
  *  @param message 消息
  *  @param session 接收方
  *  @param error   错误 如果在准备发送消息阶段发生错误,这个error会被填充相应的信息
- *
- *  @return 是否调用成功,这里返回的 result 只是表示当前这个函数调用是否成功,需要后续的回调才能够判断消息是否已经发送至服务器
+ *n
+ *  @return 是否调用成功,这里返回的result只是表示当前这个函数调用是否成功,需要后续的回调才能够判断消息是否已经发送至服务器
  */
 - (BOOL)forwardMessage:(NIMMessage *)message
              toSession:(NIMSession *)session
@@ -183,48 +155,14 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
 
 
 /**
- *  发送已读回执 (P2P)
+ *  发送已读回执
  *
  *  @param receipt    已读回执
  *  @param completion 完成回调
- *  @discussion 此接口仅适用于 P2P 消息，群消息已读回执使用 sendTeamMessageReceipts:completion 如果已有比当前已读回执时间戳更大的已读回执已确认，则接口返回成功。
+ *  @discussion 如果已有比当前已读回执时间戳更大的已读回执已确认，客户端将忽略当前请求直接返回(error code 为 NIMRemoteErrorCodeExist)
  */
 - (void)sendMessageReceipt:(NIMMessageReceipt *)receipt
                 completion:(nullable NIMSendMessageReceiptBlock)completion;
-
-
-/**
- *  发送已读回执 (Team 批量接口)
- *
- *  @param receipts   已读回执
- *  @param completion 完成回调
- *  @discussion 此接口仅适用于 Team 消息。
- */
-- (void)sendTeamMessageReceipts:(NSArray<NIMMessageReceipt *> *)receipts
-                     completion:(nullable NIMSendTeamMessageReceiptsBlock)completion;
-
-
-/**
- *  刷新群组消息已读、未读数量
- *
- *  @param messages      要查询的消息集合
- *  @discussion          消息已读变化后，会通过 NIMChatManager 的代理 onRecvMessageReceipts: 回调给上层
- *                       刷新的消息必须为群组消息
- */
-- (void)refreshTeamMessageReceipts:(NSArray<NIMMessage *> *)messages;
-
-
-/**
- *  查询群组消息回执详情
- *
- *  @param message       要查询的消息
- *  @param completion    完成后的回调
- *  @discussion          详情包括已读人数的 id 列表和未读人数的 id 列表
- *                       查询详情对象不会跟着回执人数变化而变化，如果要获取最新的详情，必须再次调用此接口
- *
- */
-- (void)queryMessageReceiptDetail:(NIMMessage *)message
-                       completion:(NIMQueryReceiptDetailBlock)completion;
 
 
 /**
@@ -244,24 +182,9 @@ typedef void(^NIMQueryReceiptDetailBlock)(NSError * __nullable error,NIMTeamMess
  *  @param error   错误
  *
  *  @return 是否调用成功
- *  @discussion 附件包括：图片消息的图片缩略图，视频消息的视频缩略图，音频消息的音频文件，文件消息的文件以及自定义消息中的自定义文件
- *              个人和群组消息 SDK 会在收到该消息时自动调用本接口，自动下载除 "文件消息的文件" 外的所有附件内容
- *
  */
 - (BOOL)fetchMessageAttachment:(NIMMessage *)message
                          error:(NSError * __nullable *)error;
-
-
-
-/**
- *  取消收取消息附件
- *
- *  @param message 需要取消收取附件的消息
- *
- *  @discussion 附件包括：图片消息的图片缩略图，视频消息的视频缩略图，音频消息的音频文件，文件消息的文件以及自定义消息中的自定义文件
- *              个人和群组消息。SDK 不会触发任何下载回调
- */
-- (void)cancelFetchingMessageAttachment:(NIMMessage *)message;
 
 /**
  *  消息是否正在传输 (发送/接受附件)

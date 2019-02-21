@@ -1,9 +1,4 @@
 # 网易云信 UI 组件 	· iOS
-[![Build Status](https://img.shields.io/travis/netease-im/NIM_iOS_UIKit/master.svg?style=flat)](https://travis-ci.org/netease-im/NIM_iOS_UIKit)
-[![Pod Version](https://img.shields.io/cocoapods/v/NIMKit.svg?style=flat)](#)
-[![Pod Platform](http://img.shields.io/cocoapods/p/NIMKit.svg?style=flat)](#)
-[![Minimum Requirement](http://img.shields.io/badge/Requirement-iOS%208.0%2B-green.svg?style=flat)](#)
-[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](./LICENSE)
 
 ## 简介
 
@@ -30,10 +25,6 @@
 在开发云信的前期，我们虽然也意识到这方面的困难，在提供云信 SDK 的同时也开源了相应的 Demo 源码，意在提供一个比较优雅的实现参考，但对于接入的开发者而言，成本仍然过大。这也是这个组件库的由来和目的：开发者在不写任何一行代码的情况下也能够轻松实现一个聊天界面。
 
 
-## 集成环境
-* 编译版本 : iOS SDK 10.0 及以上。
-* 操作系统 : iOS 8.0 及以上。
-
 ## 集成说明
 
 ### Cocoapods 集成
@@ -48,39 +39,55 @@ pod 'NIMKit'
 
 * 轻量版本
 
-  ```shell
-  pod 'NIMKit'
-  ```
+	```shell
+	pod 'NIMKit'
+	```
 
     或
 
-  ```shell
-  pod 'NIMKit/Lite'
-  ```
+    ```shell
+	pod 'NIMKit/Lite'
+	```
 
 * 完整版本
 
-  ```shell
-  pod 'NIMKit/Full'
-  ```
-
-### Swift 集成
-
-由于使用 Swift 开发的第三方库不支持编译为静态库，`NIMKit` 和这些库同时使用 [Cocoapods](https://cocoapods.org/) 的时候会出现一些问题，具体解决方案可以参考这个[文档](./Documents/nim_swift.md)。
-
+	```shell
+	pod 'NIMSDK/Full'
+	```
 
 ### 手动集成
 
-我们`强烈`不推荐你使用手动导入的方式来集成 `NIMKit`，但如果你一定要这么做，可以参考这个[文档](./Documents/nim_mi.md)。
+当然你也可以通过手动导入 `NIMKit`。步骤如下
+
+* 添加 `NIMKit` 下所有源文件到你的工程中
+
+* 添加 `NIMKitResource.bundle` ， `NIMKitEmoticon.bundle` ， `NIMKitSettings.bundle` 到你的工程中
 
 
+* 添加必要的依赖项
+	* CoreText.framework
+	
+* 如果你选择手动添加 NIMSDK，还需要添加如下依赖项
+	* CoreTelephony.framework
+	* AVFoundation.framework
+	* MobileCoreServices.framework
+	* SystemConfiguration.framework
+	* AudioToolbox.framework
+	* CoreMedia.framework
+	* libc++.tbd
+	* libsqlite3.0.tbd  
+	* libz.tbd 
+
+* 设置 `Other Linker Flags` 为 `-ObjC`
+
+* 在需要使用到组件的地方导入头文件 `NIMKit.h` 
 
 ## 快速使用
 
 `NIMKit` 提供两个最重要的类
 
-* `NIMSessionViewController`
-* `NIMSessionListViewController`
+* NIMSessionViewController
+* NIMSessionListViewController
 
 前者用于会话界面的显示和互动，而后者提供了最近会话功能。在集成 `NIMSDK` 且完成了基础设置后，直接调用这两个类就可以得到完善的聊天界面和会话列表。
 
@@ -99,23 +106,23 @@ NIMSessionViewController *vc = [[NIMSessionViewController alloc] initWithSession
 初始化会话列表不需要任何前置条件，直接初始化即可。
 
 ```objc
-NIMSessionListViewController *vc = [[NIMSessionListViewController alloc] init];
+NIMSessionListViewController *vc = [[NIMSessionViewController alloc] init];
 ```
 
 ## 集成效果
 
 
-| 最近会话进入会话                                 | 群组会话                                     | 发送多张图片                                   |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_1.gif) | ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_2.gif) | ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_3.gif) |
+最近会话进入会话 | 群组会话 | 发送多张图片 
+-------------|-------------|-------------|-------------
+![image](./Documents/Images/nimkit_1.gif)|![image](./Documents/Images/nimkit_2.gif)  | ![image](./Documents/Images/nimkit_3.gif) 
 
-| 发送语音                                     | 发送地理位置                                   | 发送中与发送失败，点击叹号可重发                         |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_4.gif) | ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_5.gif) | ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_6.gif) |
+发送语音| 发送地理位置 |发送中与发送失败，点击叹号可重发 
+-------------|-------------|-------------
+![image](./Documents/Images/nimkit_4.gif)|![image](./Documents/Images/nimkit_5.gif)  | ![image](./Documents/Images/nimkit_6.gif) 
 
-| 自定义消息-阅后即焚示例                             | 最近联系人选择器                                 | 最近会话删除与未读删除                              |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_7.gif) | ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_8.gif) | ![image](https://github.com/netease-im/NIM_Resources/blob/master/iOS/Images/nimkit_9.gif) |
+自定义消息-阅后即焚示例 | 最近联系人选择器 | 最近会话删除与未读删除 
+-------------|-------------|------------
+![image](./Documents/Images/nimkit_7.gif)|![image](./Documents/Images/nimkit_8.gif)  | ![image](./Documents/Images/nimkit_9.gif) 
 
 
 ## 定制化
@@ -128,7 +135,5 @@ NIMSessionListViewController *vc = [[NIMSessionListViewController alloc] init];
 
 3.[《新消息类型集成》](./Documents/nim_custom_message.md)
 
-4.[《用户信息自定义》](./Documents/nim_userinfo.md)
-
-5.[《机器人消息排版指南》](./Documents/nim_robot.md)
+4.[《用户信息自定义》](./nim_userinfo.md)
 

@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, NIMImageFormat)
  */
 @interface NIMImageOption : NSObject
 /**
-*  压缩参数默认为 0.5,可传入0.0-1.0的值,如果传入非法参数，则按照 0.5 进行压缩
+*  压缩参数默认为0,可传入0.0-1.0的值,如果值为0或者不合法参数时按照0.5进行压缩
 */
 @property (nonatomic,assign)    float compressQuality;
 
@@ -59,8 +59,6 @@ typedef NS_ENUM(NSInteger, NIMImageFormat)
  *  图片实例对象初始化方法
  *
  *  @param filepath 要发送的图片路径
- *
- *  @discussion 使用此方法上传是不做压缩转换的原图上传。iOS 11 苹果采用了新的图片格式 HEIC ，如果采用原图会导致其他设备的兼容问题，请开发者在上层做好格式的兼容转换。
  *
  *  @return 图片实例对象
  */

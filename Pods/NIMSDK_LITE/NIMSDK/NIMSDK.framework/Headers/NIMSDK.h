@@ -51,7 +51,6 @@
 #import "NIMChatroomMemberRequest.h"
 #import "NIMChatroomUpdateRequest.h"
 #import "NIMChatroomQueueRequest.h"
-#import "NIMChatroomBeKickedResult.h"
 
 /**
  *  消息定义
@@ -60,8 +59,6 @@
 #import "NIMSystemNotification.h"
 #import "NIMRevokeMessageNotification.h"
 #import "NIMDeleteMessagesOption.h"
-#import "NIMBroadcastMessage.h"
-#import "NIMImportedRecentSession.h"
 
 /**
  *  推送定义
@@ -91,11 +88,6 @@
  */
 #import "NIMRobot.h"
 
-/**
- *  缓存管理
- */
-#import "NIMCacheQuery.h"
-
 
 /**
  *  各个对外接口协议定义
@@ -114,11 +106,8 @@
 #import "NIMEventSubscribeManagerProtocol.h"
 #import "NIMRobotManagerProtocol.h"
 #import "NIMRedPacketManagerProtocol.h"
-#import "NIMBroadcastManagerProtocol.h"
-#import "NIMAntispamManagerProtocol.h"
 
 /**
  *  SDK业务类
  */
-#import "NIMServerSetting.h"
 #import "NIMSDKHeader.h"
