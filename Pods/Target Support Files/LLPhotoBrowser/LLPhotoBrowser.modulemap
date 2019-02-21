@@ -1,6 +1,0 @@
-framework module LLPhotoBrowser {
-  umbrella header "LLPhotoBrowser-umbrella.h"
-
-  export *
-  module * { export * }
-}
