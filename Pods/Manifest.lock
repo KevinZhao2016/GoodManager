@@ -31,7 +31,6 @@ PODS:
     - SVProgressHUD
     - Toast
   - NIMSDK (3.2.5)
-  - NIMSDK_LITE (5.4.0)
   - ObjectMapper (3.4.2)
   - Player (0.12.1)
   - PureLayout (3.0.2)
@@ -65,7 +64,6 @@ DEPENDENCIES:
   - LLPhotoBrowser (~> 1.1.0)
   - Moya-ObjectMapper/RxSwift
   - NIMKit/Lite
-  - NIMSDK_LITE (= 5.4.0)
   - Player (~> 0.12.0)
   - ReachabilitySwift
   - RealmSwift
@@ -89,7 +87,6 @@ SPEC REPOS:
     - Moya-ObjectMapper
     - NIMKit
     - NIMSDK
-    - NIMSDK_LITE
     - ObjectMapper
     - Player
     - PureLayout
@@ -130,7 +127,6 @@ SPEC CHECKSUMS:
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
   NIMKit: 9f93c59e9efc4485db68e660c7bec1112c55ab3d
   NIMSDK: bf6ef3597a187912075800645252e07793e54de0
-  NIMSDK_LITE: 42a4826579c9ceb0248169c7aff9d66d6912724b
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
@@ -147,6 +143,6 @@ SPEC CHECKSUMS:
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TZImagePickerController: 3027e1e2029c830186c6a167c88c933b8556fdc7
 
-PODFILE CHECKSUM: e8b68d6446f681494c23f06db7dd7af72a7d3554
+PODFILE CHECKSUM: 983322ac469948142fb27cb9d144d67b6c05633a
 
 COCOAPODS: 1.5.3

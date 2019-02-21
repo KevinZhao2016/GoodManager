@@ -33,6 +33,6 @@ target 'GoodManager' do
     pod 'CLImagePickerTool', :git => 'https://github.com/Darren-chenchen/CLImagePickerTool.git'
     pod 'JPush'
     pod 'NIMKit/Lite'
-    pod 'NIMSDK_LITE', '5.4.0'
+    #pod 'NIMSDK_LITE', '5.4.0'
 end
 

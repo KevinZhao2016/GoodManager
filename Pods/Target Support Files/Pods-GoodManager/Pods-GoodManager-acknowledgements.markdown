@@ -239,10 +239,6 @@ Copyright 2016 Netease
 
 Copyright 2016 Netease 
 
-## NIMSDK_LITE
-
-Copyright 2017 Netease 
-
 ## ObjectMapper
 
 The MIT License (MIT)
