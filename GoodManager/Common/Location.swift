@@ -10,6 +10,7 @@ import Foundation
 
 func APPStartLocation(callBackfunName:String){
     let vc = getLastMainViewController()
+    callbackfun = callBackfunName
     vc.loadLocation()
-    APPExecWinJS(JSFun: callBackfunName)
+//    ExecWinJS(JSFun: "(\"" + callBackfunName + "\")")
 }

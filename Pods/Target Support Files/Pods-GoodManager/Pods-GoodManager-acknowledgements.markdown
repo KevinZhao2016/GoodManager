@@ -74,6 +74,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## JCore
+
+Copyright jpush.cn
+
+## JPush
+
+Copyright jiguang.cn
+
 ## Kingfisher
 
 The MIT License (MIT)
@@ -175,6 +183,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+
+## NIMSDK_LITE
+
+Copyright 2017 Netease 
 
 ## ObjectMapper
 

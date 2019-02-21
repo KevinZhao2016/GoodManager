@@ -40,7 +40,7 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
     @objc func back(){
         self.dismiss(animated: true, completion: nil)
         print(self.player.currentTime)
-        APPExecWinJS(JSFun: callbackfun! + "(" + "\(self.player.currentTime)" + ")")
+        ExecWinJS(JSFun: callbackfun! + "(\"" + "\(self.player.currentTime)" + "\")")
     }
     
     override func viewDidAppear(_ animated: Bool) {

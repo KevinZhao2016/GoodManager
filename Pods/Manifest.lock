@@ -3,6 +3,9 @@ PODS:
   - CLImagePickerTool (3.0.0)
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
+  - JCore (1.2.6)
+  - JPush (3.1.2):
+    - JCore (~> 1.2.6)
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
@@ -17,6 +20,7 @@ PODS:
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - NIMSDK_LITE (5.4.0)
   - ObjectMapper (3.4.2)
   - Player (0.12.1)
   - ReachabilitySwift (4.3.0)
@@ -40,9 +44,11 @@ PODS:
 DEPENDENCIES:
   - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
   - dsBridge
+  - JPush
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
   - Moya-ObjectMapper/RxSwift
+  - NIMSDK_LITE (~> 5.4.0)
   - Player (~> 0.12.0)
   - ReachabilitySwift
   - RealmSwift
@@ -56,10 +62,13 @@ SPEC REPOS:
     - Alamofire
     - dsBridge
     - FLAnimatedImage
+    - JCore
+    - JPush
     - Kingfisher
     - LLPhotoBrowser
     - Moya
     - Moya-ObjectMapper
+    - NIMSDK_LITE
     - ObjectMapper
     - Player
     - ReachabilitySwift
@@ -87,10 +96,13 @@ SPEC CHECKSUMS:
   CLImagePickerTool: 5837ba7d3f4f557bab2ccc1db7a0442e2f377e2b
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
+  NIMSDK_LITE: 42a4826579c9ceb0248169c7aff9d66d6912724b
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
@@ -104,6 +116,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TZImagePickerController: 3027e1e2029c830186c6a167c88c933b8556fdc7
 
-PODFILE CHECKSUM: 7765c11c1fe02957841e4fe810dbd5fbcdb106f9
+PODFILE CHECKSUM: c0f1ff7c1559048026d81dd8379c6a40a6b571b6
 
 COCOAPODS: 1.5.3

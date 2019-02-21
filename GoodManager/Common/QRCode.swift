@@ -15,7 +15,7 @@ func APPScanQRCode(callBackfunName:String){
     let basevc = getLastMainViewController()
     controller.backClosure = { (QRcode:String) ->Void in
         print("main  " + QRcode)
-        APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + QRcode + ")")
+        ExecWinJS(JSFun: callBackfunName + "(\"" + QRcode + "\")" )
     }
     controller.callbackfun = callBackfunName
     basevc.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)

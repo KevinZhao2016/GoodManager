@@ -21,7 +21,7 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
         if (type == "public.movie"){
             let filePath = info[UIImagePickerController.InfoKey.mediaURL] as! URL
 //            print(info[UIImagePickerController.InfoKey.mediaURL])
-             APPExecWinJS(mark: "", JSFun: callbackfun! + "(" + filePath.path + ")")
+             APPExecWinJS(mark: "", JSFun: callbackfun! + "(\"" + filePath.path + "\")")
         }else{
             let image = info[UIImagePickerController.InfoKey.originalImage]  as! UIImage
             let fileManager = FileManager.default
@@ -33,7 +33,7 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
             //        print ("name:"+"\(date)")
             fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
             print(filePath)
-            APPExecWinJS(mark: "", JSFun: callbackfun! + "(" + filePath + ")")
+            APPExecWinJS(mark: "", JSFun: callbackfun! + "(\"" + filePath + "\")")
         }
         
     }

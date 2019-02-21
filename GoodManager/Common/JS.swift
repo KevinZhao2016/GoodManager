@@ -10,17 +10,25 @@ import Foundation
 
 //调用js方法
 func APPExecWinJS(mark:String, JSFun:String){
-    let vc = findControllerByMark(mark: mark)
-    vc.webview.evaluateJavaScript(JSFun) { (result, error) in
+    var vc:MainViewController?
+    if (mark == "") {
+        vc = getLastMainViewController()
+    }else{
+        vc = findControllerByMark(mark: mark)
+    }
+    vc!.webview.evaluateJavaScript(JSFun) { (result, error) in
         //处理js调用结果
         print(result as Any)
     }
 }
 
-func APPExecWinJS(JSFun:String){
+func ExecWinJS(JSFun:String){
     let vc = getLastMainViewController()
-    vc.webview.evaluateJavaScript(JSFun) { (result, error) in
+    let Fun = "javascript:" + JSFun
+    print(Fun)
+    vc.webview.evaluateJavaScript(Fun) { (result, error) in
         //处理js调用结果
-        print(result as Any)
+        print(result)
+        print(error)
     }
 }

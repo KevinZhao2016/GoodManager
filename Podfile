@@ -31,5 +31,8 @@ target 'GoodManager' do
     pod 'Player', '~> 0.12.0'
     pod 'dsBridge'
     pod 'CLImagePickerTool', :git => 'https://github.com/Darren-chenchen/CLImagePickerTool.git'
+    pod 'JPush'
+    pod 'NIMKit'
+    pod 'NIMSDK_LITE', '~> 5.4.0'
 end
 

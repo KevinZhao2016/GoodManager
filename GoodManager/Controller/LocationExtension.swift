@@ -10,12 +10,14 @@ import Foundation
 import CoreLocation
 import UIKit
 
-fileprivate var callbackfun:String = ""
+var callbackfun:String = ""
 extension MainViewController: CLLocationManagerDelegate{
     
     func getLocationJSON() -> String{
-        print(self.locationModel.toJSONString()!)
-        return self.locationModel.toJSONString()!
+        var result = self.locationModel.toJSONString()!
+        result = result.replacingOccurrences(of: "\"", with: "\\\"")
+        print(result)
+        return result
     }
 
     //打开定位
@@ -23,12 +25,12 @@ extension MainViewController: CLLocationManagerDelegate{
         //定位方式
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //iOS8.0以上才可以使用
-        if(Double(UIDevice.current.systemVersion)! >= 8.0 ){
+//        if(Double(UIDevice.current.systemVersion)! >= 8.0 ){
             //始终允许访问位置信息
             locationManager.requestAlwaysAuthorization()
             //使用应用程序期间允许访问位置数据
             locationManager.requestWhenInUseAuthorization()
-        }
+//        }
         //开启定位
         locationManager.startUpdatingLocation()
     }
@@ -49,8 +51,7 @@ extension MainViewController: CLLocationManagerDelegate{
             LonLatToCity()
             //停止定位
             locationManager.stopUpdatingLocation()
-            //回调
-            APPExecWinJS(mark: "", JSFun: callbackfun + "(" + getLocationJSON()  + ")")
+            
         }
 
     }
@@ -82,6 +83,8 @@ extension MainViewController: CLLocationManagerDelegate{
                 //国家编码
                 let CountryCode: String = (mark.addressDictionary! as NSDictionary).value(forKey: "CountryCode") as! String
                 self.locationModel.GBCode = CountryCode
+                //回调
+                ExecWinJS(JSFun: callbackfun + "(\"" + self.getLocationJSON()  + "\")")
                 //街道位置
 //                let FormattedAddressLines: NSString = ((mark.addressDictionary! as NSDictionary).value(forKey: "FormattedAddressLines") as AnyObject).firstObject as! NSString
                 //具体位置

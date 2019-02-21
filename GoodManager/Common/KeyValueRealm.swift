@@ -10,18 +10,21 @@ import Foundation
 import RealmSwift
 
 class KeyValue: Object {
-    @objc dynamic var key = ""
-    @objc dynamic var value = ""
+    @objc dynamic var key:String = ""
+    @objc dynamic var value:String = ""
 }
+
 
 class KeyValueRealm{
     func addKeyValue(key:String, value:String) -> Bool{
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
-        let keyValue = queueKeyValue(key:key)
+        var keyValue = queueKeyValue(key:key)
         if(keyValue.key != ""){
             return false
         }
+        keyValue.key = key
+        keyValue.value = value
         do{
             try realm.write {
                 realm.add(keyValue)
@@ -55,11 +58,12 @@ class KeyValueRealm{
 
 func APPSetValue(key:String, value:String){
     let agent = KeyValueRealm()
-    agent.addKeyValue(key: key, value: value)
+    print(agent.addKeyValue(key: key, value: value))
 }
 
 func APPGetValue(key:String) -> String{
     let agent = KeyValueRealm()
+    print(agent.queueKeyValue(key: key).value)
     return agent.queueKeyValue(key: key).value
 }
 

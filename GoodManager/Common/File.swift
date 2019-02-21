@@ -30,10 +30,10 @@ func APPDelFile(path:String,callBackfunName:String){
         try fileManager.removeItem(atPath: path)
     }
       catch {
-            APPExecWinJS(JSFun: callBackfunName + "(0)")
+            ExecWinJS(JSFun: callBackfunName + "(\"0\")")
             print(error)
     }
-    APPExecWinJS(JSFun: callBackfunName + "(1)")
+    ExecWinJS(JSFun: callBackfunName + "(\"1\")")
 }
 
 func APPGetFileSize(path:String) -> Int{
@@ -76,7 +76,7 @@ func APPUploadFile(path:String, callBackfunName:String){
                         if(model.code == 1){
                             print(model)
                             //TODO：执行回调
-                            APPExecWinJS(JSFun: callBackfunName + "(" + String(data: data, encoding: String.Encoding.utf8)! + ")")
+                            ExecWinJS(JSFun: callBackfunName + "(\"" + String(data: data, encoding: String.Encoding.utf8)! + "\")")
                         }
                     } else {
                         print("maperror")
@@ -111,6 +111,6 @@ func APPDownFile(path:String, callBackfunName:String){
     Alamofire.download(fileURL, to: destination)
         .response { response in
             print(response)
-            APPExecWinJS(JSFun: callBackfunName + "(" + (response.destinationURL?.path)! + ")")
+            ExecWinJS(JSFun: callBackfunName + "(\"" + (response.destinationURL?.path)! + "\")")
     }
 }

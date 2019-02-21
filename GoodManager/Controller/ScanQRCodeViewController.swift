@@ -74,7 +74,7 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         print(feature.messageString)
         self.backClosure!(feature.messageString!)
         //回调
-        APPExecWinJS(JSFun: callbackfun + "(" + feature.messageString! + ")")
+        ExecWinJS(JSFun: callbackfun + "(\"" + feature.messageString! + "\")")
         //数据处理
         self.dismiss(animated: true) {
             self.scanSound()

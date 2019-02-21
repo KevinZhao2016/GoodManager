@@ -11,7 +11,7 @@ import Foundation
 import Contacts
 import SwiftyJSON
 
-fileprivate var callbackfun:String = ""
+//var callbackfun:String = ""
 
 func getTelBookRight(){
     //1.获取授权状态
@@ -65,16 +65,23 @@ func APPGetTelBookList(callBackfunName:String){
     } catch {
         print(error)
     }
-    APPExecWinJS(JSFun: callbackfun + "(" + TelBookList.toJSONString()! + ")")
+    var result = TelBookList.toJSONString()!
+    result = result.replacingOccurrences(of: "\"", with: "\\\"")
+    print(result)
+    ExecWinJS(JSFun: callbackfun + "(\"" +  result + "\")")
 }
 
 func APPChooseTelBook(maxNum:Int,callBackfunName:String){
     let vc = ContactPickerController()
-    let basevc = mainViewControllers.last
+    let basevc = getLastMainViewController()
     vc.delegate = vc
     vc.maxNum = maxNum
     vc.backClosure = { (ContactString:String) ->Void in
-        APPExecWinJS(JSFun: callBackfunName + "(" + ContactString + ")")
+        var result = ContactString
+        print("resut!!!!!!!!!!:",result)
+        result = result.replacingOccurrences(of: "\"", with: "\\\"")
+        result = result.replacingOccurrences(of: "\\\\\"", with: "\\\"")
+        ExecWinJS(JSFun: callBackfunName + "(\"" + result + "\")")
     }
-    basevc!.present(vc, animated: true, completion: nil)
+    basevc.present(vc, animated: true, completion: nil)
 }

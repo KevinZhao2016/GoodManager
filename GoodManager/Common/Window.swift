@@ -13,10 +13,10 @@ func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:St
     let webvc = MainViewController()
     webvc.mark = mark
     webvc.url = url
+    mainViewControllers.append(webvc)
     APPSetProgressBarColor(color: progressBarColor)
     AppSetStatusBarColor(color: statusBarColor)
-    mainViewControllers.append(webvc)
-    vc.present(webvc, animated: false, completion: nil)
+    vc.present(webvc, animated: true, completion: nil)
 }
 
 func APPWinClose(mark:String){

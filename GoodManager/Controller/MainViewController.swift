@@ -14,12 +14,13 @@ import dsBridge
 import CoreLocation
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
-    var mark:String = ""
+    var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
+    var photoPath:String = ""
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
         self.progressView.tintColor = UIColor.green      // 进度条颜色
@@ -118,30 +119,33 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     private func VideoCallBack(path:String, callBackfunName:String){
-        APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
+        ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
     }
     
     private func ImageCallBack(path:String, callBackfunName:String){
-        APPExecWinJS(JSFun: callBackfunName + "(" + path + ")")
+        ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
     }
     
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
-    
         var targetSize = PHImageManagerMaximumSize
         if isSelectOriginalPhoto == true {
             targetSize = PHImageManagerMaximumSize
         }else{
             targetSize = CGSize(width: 200, height: 200)
         }
-
-            PHImageManager.default().requestImage(for: assets.first as! PHAsset,
+        var i = 0
+        for asset in assets {
+            i = i + 1
+            PHImageManager.default().requestImage(for: asset as! PHAsset,
                                                   targetSize: targetSize, contentMode: .aspectFit,
                                                   options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
-//                                                    print (info?.keys)
+                                                    //                                                    print (info?.keys)
                                                     if(isSelectOriginalPhoto == true){
                                                         let imageURL = info!["PHImageFileURLKey"] as! URL
                                                         print("路径：",imageURL)
-                                                        self.ImageCallBack(path: imageURL.path, callBackfunName: self.imagecallBackfunName)
+                                                        self.photoPath.append(imageURL.path + ",")
+                                                        print("photopath:",self.photoPath)
+                                                        //self.ImageCallBack(path: imageURL.path, callBackfunName: self.imagecallBackfunName)
                                                     }else{
                                                         let fileManager = FileManager.default
                                                         let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
@@ -152,9 +156,14 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
                                                         print ("name:"+"\(name)")
                                                         fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
                                                         print(filePath)
-                                                         self.ImageCallBack(path: filePath, callBackfunName: self.imagecallBackfunName)
+                                                        self.photoPath.append(filePath + ",")
+//                                                        self.ImageCallBack(path: filePath, callBackfunName: self.imagecallBackfunName)
+                                                    }
+                                                    if(i == assets.count){
+                                                         self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
                                                     }
             })
+        }
     }
     
     override func didReceiveMemoryWarning() {

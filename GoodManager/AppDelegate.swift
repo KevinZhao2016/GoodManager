@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         getLaunchData()
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let vc = MainViewController()
-        vc.mark = " "
+        vc.mark = "main"
         mainViewControllers.append(vc)
         self.window?.rootViewController = vc
         self.window?.backgroundColor = UIColor.white

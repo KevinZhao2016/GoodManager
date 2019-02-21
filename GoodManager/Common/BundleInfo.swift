@@ -111,9 +111,10 @@ func APPGetVersion() -> String{
     var versionModel = VersionModel()
     versionModel.mobileModel = BundleInfo().iphoneType()
     versionModel.mobileSystemVersion = UIDevice.current.systemVersion
-    let appversion = "HJL" + "." + BundleInfo.Version! +  "." + BundleInfo.ShortVersion! + "." +  BundleInfo.BuildTime
-    print(appversion)
+    //+ "." + BundleInfo.Version!
+    let appversion = "HJL"  +  "." + BundleInfo.ShortVersion! + "." +  BundleInfo.BuildTime
     versionModel.appVersion = appversion
+    print(versionModel.toJSONString()!)
     return versionModel.toJSONString()!
 }
 
