@@ -1,0 +1,142 @@
+PODS:
+  - Alamofire (4.8.0)
+  - CLImagePickerTool (3.0.0)
+  - dsBridge (3.0.6)
+  - FLAnimatedImage (1.0.12)
+  - JCore (1.2.6)
+  - JPush (3.1.2):
+    - JCore (~> 1.2.6)
+  - Kingfisher (4.10.1)
+  - LLPhotoBrowser (1.1.0):
+    - Kingfisher
+  - M80AttributedLabel (1.6.3)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya-ObjectMapper/Core (2.7):
+    - Moya (~> 11)
+    - ObjectMapper (~> 3.3)
+  - Moya-ObjectMapper/RxSwift (2.7):
+    - Moya-ObjectMapper/Core
+    - RxSwift (~> 4.1)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - NIMKit (2.11.5):
+    - NIMKit/Lite (= 2.11.5)
+  - NIMKit/Core (2.11.5):
+    - M80AttributedLabel (~> 1.6.3)
+    - SDWebImage (~> 4.2.2)
+    - Toast (~> 3.0)
+    - TZImagePickerController (~> 3.0.7)
+  - NIMKit/Lite (2.11.5):
+    - NIMKit/Core
+    - NIMSDK_LITE (~> 6.1.1)
+  - NIMSDK_LITE (6.1.1)
+  - ObjectMapper (3.4.2)
+  - Player (0.12.1)
+  - ReachabilitySwift (4.3.0)
+  - Realm (3.13.0):
+    - Realm/Headers (= 3.13.0)
+  - Realm/Headers (3.13.0)
+  - RealmSwift (3.13.0):
+    - Realm (= 3.13.0)
+  - Result (3.2.4)
+  - RxAtomic (4.4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
+  - SDWebImage/GIF (4.2.3):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+  - SnapKit (4.0.1)
+  - SwiftyJSON (4.2.0)
+  - Toast (3.1.0)
+  - TZImagePickerController (3.0.9)
+
+DEPENDENCIES:
+  - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
+  - dsBridge
+  - JPush
+  - Kingfisher (~> 4.10.0)
+  - LLPhotoBrowser (~> 1.1.0)
+  - Moya-ObjectMapper/RxSwift
+  - NIMKit
+  - NIMSDK_LITE
+  - Player (~> 0.12.0)
+  - ReachabilitySwift
+  - RealmSwift
+  - SDWebImage/GIF
+  - SnapKit (~> 4.0.0)
+  - SwiftyJSON (~> 4.0)
+  - TZImagePickerController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - dsBridge
+    - FLAnimatedImage
+    - JCore
+    - JPush
+    - Kingfisher
+    - LLPhotoBrowser
+    - M80AttributedLabel
+    - Moya
+    - Moya-ObjectMapper
+    - NIMKit
+    - NIMSDK_LITE
+    - ObjectMapper
+    - Player
+    - ReachabilitySwift
+    - Realm
+    - RealmSwift
+    - Result
+    - RxAtomic
+    - RxSwift
+    - SDWebImage
+    - SnapKit
+    - SwiftyJSON
+    - Toast
+    - TZImagePickerController
+
+EXTERNAL SOURCES:
+  CLImagePickerTool:
+    :git: https://github.com/Darren-chenchen/CLImagePickerTool.git
+
+CHECKOUT OPTIONS:
+  CLImagePickerTool:
+    :commit: acd0cfabb7a66909b3144b110dac0bfa09ce7db1
+    :git: https://github.com/Darren-chenchen/CLImagePickerTool.git
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  CLImagePickerTool: 5837ba7d3f4f557bab2ccc1db7a0442e2f377e2b
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
+  M80AttributedLabel: d06543195d3e451d2ea62ad76d04aa9cea7661d4
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
+  NIMKit: ec370f2f270fbc03bdb68c51118695e03133ffa1
+  NIMSDK_LITE: fb16cf52c23cd5769ed1ec196d234307ba000aa0
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Player: ae8070a33c9360f5c93c247c00236b9489f62fca
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
+  RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+  TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
+
+PODFILE CHECKSUM: 5cab8c33665474b30f8899eb0a42a82655d43059
+
+COCOAPODS: 1.6.0

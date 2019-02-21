@@ -1,0 +1,6 @@
+framework module Pods_GoodManager {
+  umbrella header "Pods-GoodManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
