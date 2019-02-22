@@ -11,7 +11,7 @@ import UIKit
 
 func APPSetProgressBarColor(color:String){
     let vc = getLastMainViewController()
-    vc.progressView.tintColor = UIColor(named: color)
+    vc.progressView.tintColor = UIColor().hexStringToUIColor(hex: color)
 }
 
 func APPSetBrowserHomeURL(url:String){
@@ -20,7 +20,7 @@ func APPSetBrowserHomeURL(url:String){
 
 func AppSetStatusBarColor(color:String){
     let vc = getLastMainViewController()
-    vc.view.backgroundColor = UIColor(named: color)
+    vc.view.backgroundColor = UIColor().hexStringToUIColor(hex: color)
 }
 
 func APPOutBrowserOpenURL(url:String!){

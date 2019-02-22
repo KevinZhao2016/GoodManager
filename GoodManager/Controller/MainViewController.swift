@@ -73,8 +73,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
 //        userContent.add(self, name: "NativeMethod")
 //        // 将UserConttentController设置到配置文件
 //        config.userContentController = userContent
-    
-        webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - STATUS_HEIGHT))
         //bridge
         webview.addJavascriptObject(JsApiSwift(), namespace: nil)
         webview.load(URLRequest(url: URL(string: url)!))
