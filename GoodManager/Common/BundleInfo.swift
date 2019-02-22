@@ -114,6 +114,8 @@ func APPGetVersion() -> String{
     //+ "." + BundleInfo.Version!
     let appversion = "HJL"  +  "." + BundleInfo.ShortVersion! + "." +  BundleInfo.BuildTime
     versionModel.appVersion = appversion
+    versionModel.appType = "iOS"
+    versionModel.mobileBrand = "Apple"
     print(versionModel.toJSONString()!)
     return versionModel.toJSONString()!
 }
