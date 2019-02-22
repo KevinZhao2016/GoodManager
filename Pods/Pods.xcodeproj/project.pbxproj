@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -16,6 +16,7 @@
 				61A7D75865C20272D53BC19298DA2A93 /* PBXTargetDependency */,
 			);
 			name = JPush;
+			productName = JPush;
 		};
 		6DCA67AEEA91E7138CA0A2BC4F993DA6 /* JCore */ = {
 			isa = PBXAggregateTarget;
@@ -25,6 +26,7 @@
 			dependencies = (
 			);
 			name = JCore;
+			productName = JCore;
 		};
 		8CF06D7EC6C13D2390F6CB8393A96A50 /* NIMSDK_LITE */ = {
 			isa = PBXAggregateTarget;
@@ -34,6 +36,7 @@
 			dependencies = (
 			);
 			name = NIMSDK_LITE;
+			productName = NIMSDK_LITE;
 		};
 /* End PBXAggregateTarget section */
 
@@ -1476,10 +1479,10 @@
 		05DD9300337B93C7C397C39B91B68ACF /* UIImage+NIMKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+NIMKit.h"; path = "NIMKit/NIMKit/Classes/Category/UIImage+NIMKit.h"; sourceTree = "<group>"; };
 		0673A4EA5B24AF9B3EEAF1D992068203 /* ic_redo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_redo@3x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_redo@3x.png"; sourceTree = "<group>"; };
 		069FB5CED804FA46C66703CB647A4067 /* M80AttributedLabel+NIMKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "M80AttributedLabel+NIMKit.h"; path = "NIMKit/NIMKit/Classes/Category/M80AttributedLabel+NIMKit.h"; sourceTree = "<group>"; };
-		06CD2A050BB432729B6259EE5435E8F9 /* RLMSyncPermission.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncPermission.mm; path = Realm/RLMSyncPermission.mm; sourceTree = "<group>"; };
+		06CD2A050BB432729B6259EE5435E8F9 /* RLMSyncPermission.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncPermission.mm; path = Realm/RLMSyncPermission.mm; sourceTree = "<group>"; };
 		0748A35341B0094D07A62EDE6A60C9B4 /* TZProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZProgressView.m; path = TZImagePickerController/TZImagePickerController/TZProgressView.m; sourceTree = "<group>"; };
 		07AB9AFC041FF2B49FE23BD427DB9BDC /* CoustomPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoustomPresentationController.swift; path = CLImagePickerTool/CLImagePickerTool/AnotherPickView/CoustomPresentationController.swift; sourceTree = "<group>"; };
-		07CE65C11E1EF1E52104E50CCA4A5A7D /* RLMAnalytics.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAnalytics.mm; path = Realm/RLMAnalytics.mm; sourceTree = "<group>"; };
+		07CE65C11E1EF1E52104E50CCA4A5A7D /* RLMAnalytics.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMAnalytics.mm; path = Realm/RLMAnalytics.mm; sourceTree = "<group>"; };
 		083A89A03E55B93ADF73B8B982E20CFD /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		086BDBF188D1C73EFE9B80F4D3CE3E39 /* cl_imagepickervedio.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = cl_imagepickervedio.png; path = CLImagePickerTool/CLImagePickerTool/images/cl_imagepickervedio.png; sourceTree = "<group>"; };
 		0898D51D34A8B4857659BCF2EA09E142 /* Bag+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bag+Rx.swift"; path = "RxSwift/Extensions/Bag+Rx.swift"; sourceTree = "<group>"; };
@@ -1489,19 +1492,19 @@
 		0A1273BF015CFB679644AE6824152AE9 /* NIMSessionFileTransContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionFileTransContentView.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionFileTransContentView.m; sourceTree = "<group>"; };
 		0A6DC7F184B7CACE3BFEB2A30CC20002 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		0A75ECDE6B8A0B601ACF0F38CFFD3D39 /* ic_redo_grey@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_redo_grey@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_redo_grey@2x.png"; sourceTree = "<group>"; };
-		0A9C3D56C6C5D3132A20E458B7C1904C /* primitive_list_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = primitive_list_notifier.cpp; path = Realm/ObjectStore/src/impl/primitive_list_notifier.cpp; sourceTree = "<group>"; };
+		0A9C3D56C6C5D3132A20E458B7C1904C /* primitive_list_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = primitive_list_notifier.cpp; path = Realm/ObjectStore/src/impl/primitive_list_notifier.cpp; sourceTree = "<group>"; };
 		0ACF6F848476054B832BBC050A095F79 /* Realm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Realm.h; path = include/Realm.h; sourceTree = "<group>"; };
 		0B14A24B0490A92D560DBF112C53C757 /* Kingfisher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kingfisher-Info.plist"; sourceTree = "<group>"; };
 		0B42CA2A010D8F8A9F7FE26FB6AAA8B0 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		0B442B189F0E37BDD683D7E9DBE346A0 /* Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Player.modulemap; sourceTree = "<group>"; };
 		0B4E5F8B3BCCE5FFC66631B55DAACAA5 /* GroupBy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupBy.swift; path = RxSwift/Observables/GroupBy.swift; sourceTree = "<group>"; };
 		0B74C63A01D0A37F3BB6A2D8A0833D27 /* LLPhotoBrowser.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = LLPhotoBrowser.bundle; path = Class/LLPhotoBrowser.bundle; sourceTree = "<group>"; };
-		0B7EDACDE98E4744D24FCC72B6E5E847 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GoodManager.framework; path = "Pods-GoodManager.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7EDACDE98E4744D24FCC72B6E5E847 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE41F928392AC29C05C82B8844AA90F /* UIView+NIM.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+NIM.h"; path = "NIMKit/NIMKit/Classes/Category/UIView+NIM.h"; sourceTree = "<group>"; };
 		0BE89404627944485D09F9B7C9473D8A /* TZImageCropManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TZImageCropManager.m; path = TZImagePickerController/TZImagePickerController/TZImageCropManager.m; sourceTree = "<group>"; };
 		0C74882B3834E5D8A22546FBBF869468 /* NIMKitRobotTemplateLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitRobotTemplateLayout.h; path = NIMKit/NIMKit/Classes/Sections/Util/Robot/NIMKitRobotTemplateLayout.h; sourceTree = "<group>"; };
 		0CE78A93DDEA300FC6650B3581A5EEB0 /* NIMContactSelectViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMContactSelectViewController.h; path = NIMKit/NIMKit/Classes/Sections/Contact/NIMContactSelectViewController.h; sourceTree = "<group>"; };
-		0D31397FCF8DCA85A67D3726F2ACDAFB /* sync_user.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_user.cpp; path = Realm/ObjectStore/src/sync/sync_user.cpp; sourceTree = "<group>"; };
+		0D31397FCF8DCA85A67D3726F2ACDAFB /* sync_user.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_user.cpp; path = Realm/ObjectStore/src/sync/sync_user.cpp; sourceTree = "<group>"; };
 		0D51EE06C465F080BEDB2FEA6547718B /* CustomNavgationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomNavgationView.swift; path = CLImagePickerTool/CLImagePickerTool/views/CustomNavgationView.swift; sourceTree = "<group>"; };
 		0D77CBB92E4AEA9B16F614D937012AFF /* Moya-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-umbrella.h"; sourceTree = "<group>"; };
 		0D8CE5B4E84DB91F46B4D4597AAC0F80 /* NIMSessionNotificationContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionNotificationContentView.h; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionNotificationContentView.h; sourceTree = "<group>"; };
@@ -1509,7 +1512,7 @@
 		0E01E8DDF927C6ACC65A234958CD21A3 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		0E206BA36AD05D90B018953826148A8E /* NIMTeamSwitchTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTeamSwitchTableViewCell.m; path = NIMKit/NIMKit/Classes/Sections/Team/View/NIMTeamSwitchTableViewCell.m; sourceTree = "<group>"; };
 		0EB20B634277EFB8B2362536C4305676 /* Dematerialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dematerialize.swift; path = RxSwift/Observables/Dematerialize.swift; sourceTree = "<group>"; };
-		0F01D704A227B0FB5C291D9D68AB634D /* RLMListBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMListBase.mm; path = Realm/RLMListBase.mm; sourceTree = "<group>"; };
+		0F01D704A227B0FB5C291D9D68AB634D /* RLMListBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMListBase.mm; path = Realm/RLMListBase.mm; sourceTree = "<group>"; };
 		0F1A053740257958FCC92C355C892A66 /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableType+ObjectMapper.swift"; path = "Source/RxSwift/ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		0FE2504364A6C359ADA82D67E997DBC9 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
 		0FF65D8993CA5CAFA50629C1F03D56DE /* URL+Moya.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Moya.swift"; path = "Sources/Moya/URL+Moya.swift"; sourceTree = "<group>"; };
@@ -1519,7 +1522,7 @@
 		106A90763E85050C92A15921C458F0D6 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		1078E5B2E663A476A4010A654E08CABD /* LLLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LLLayout.swift; path = Class/LLLayout.swift; sourceTree = "<group>"; };
 		1095C3D745E16E7A9FCBDBDB10A5678D /* RLMArray_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMArray_Private.h; path = include/RLMArray_Private.h; sourceTree = "<group>"; };
-		1134123AE82D5AA191FE63A1B7596958 /* uuid.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = uuid.cpp; path = Realm/ObjectStore/src/util/uuid.cpp; sourceTree = "<group>"; };
+		1134123AE82D5AA191FE63A1B7596958 /* uuid.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = uuid.cpp; path = Realm/ObjectStore/src/util/uuid.cpp; sourceTree = "<group>"; };
 		113885B2A059493C0ABE0A7752A50ABD /* RxAtomic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxAtomic-prefix.pch"; sourceTree = "<group>"; };
 		1167FAB4E23FA1E12C808BF8FAC892E6 /* NIMGroupedUsrInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMGroupedUsrInfo.m; path = NIMKit/NIMKit/Classes/Sections/Contact/ContactGroup/NIMGroupedUsrInfo.m; sourceTree = "<group>"; };
 		117906C958BEC76CBB25B4240B91584C /* Buffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Buffer.swift; path = RxSwift/Observables/Buffer.swift; sourceTree = "<group>"; };
@@ -1534,7 +1537,7 @@
 		12C100F2D1ECA71EA903C6818DCC29DA /* NIMBadgeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMBadgeView.m; path = NIMKit/NIMKit/Classes/Sections/Common/NIMBadgeView.m; sourceTree = "<group>"; };
 		130DF42D9E98765D66396E312C4AB294 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = FLAnimatedImage/FLAnimatedImageView.m; sourceTree = "<group>"; };
 		134094DA443A385FC5111339BFB3A5D1 /* TZPhotoPickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPickerController.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPickerController.h; sourceTree = "<group>"; };
-		13423322CBE916BED5E268319C307EE8 /* placeholder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = placeholder.cpp; path = Realm/ObjectStore/src/placeholder.cpp; sourceTree = "<group>"; };
+		13423322CBE916BED5E268319C307EE8 /* placeholder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = placeholder.cpp; path = Realm/ObjectStore/src/placeholder.cpp; sourceTree = "<group>"; };
 		138BB6DDAB02A75795665C0D65EC44E8 /* RxSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwift.modulemap; sourceTree = "<group>"; };
 		13B367211F39872A60CAE707BE444266 /* CLCropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLCropViewController.swift; path = CLImagePickerTool/CLImagePickerTool/controller/CLCropViewController.swift; sourceTree = "<group>"; };
 		14804F3ECDEA2325BEA1D7DF83FD0CE9 /* RetryWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryWhen.swift; path = RxSwift/Observables/RetryWhen.swift; sourceTree = "<group>"; };
@@ -1550,11 +1553,11 @@
 		16845473BCB18B1C89752848AD8063D1 /* Empty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Empty.swift; path = RxSwift/Observables/Empty.swift; sourceTree = "<group>"; };
 		16CE19EA3C47A74B73F1692C7A2D8F58 /* NIMSessionTimestampCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionTimestampCell.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/NIMSessionTimestampCell.m; sourceTree = "<group>"; };
 		1714BBAB105860A2F6922648960378D9 /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
-		17C9FDE46E5AA655E9318DC6F8664879 /* RLMSyncUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncUtil.mm; path = Realm/RLMSyncUtil.mm; sourceTree = "<group>"; };
+		17C9FDE46E5AA655E9318DC6F8664879 /* RLMSyncUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncUtil.mm; path = Realm/RLMSyncUtil.mm; sourceTree = "<group>"; };
 		17D6CC09307EFFCFB25455AFB2BD59CB /* SortDescriptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortDescriptor.swift; path = RealmSwift/SortDescriptor.swift; sourceTree = "<group>"; };
 		17F415F5B8157879920C90346F2CDD8E /* BinaryDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDisposable.swift; path = RxSwift/Disposables/BinaryDisposable.swift; sourceTree = "<group>"; };
 		17FF0F79196FC81FBB502C67D704FE77 /* NIMKitTimerHolder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitTimerHolder.h; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitTimerHolder.h; sourceTree = "<group>"; };
-		181E211B2D490FB75851BA98E06D261F /* binding_callback_thread_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = binding_callback_thread_observer.cpp; path = Realm/ObjectStore/src/binding_callback_thread_observer.cpp; sourceTree = "<group>"; };
+		181E211B2D490FB75851BA98E06D261F /* binding_callback_thread_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = binding_callback_thread_observer.cpp; path = Realm/ObjectStore/src/binding_callback_thread_observer.cpp; sourceTree = "<group>"; };
 		186CD80179E0312B66EDBCB70AB70024 /* NIMCommonTableDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMCommonTableDelegate.m; path = NIMKit/NIMKit/Classes/Global/NIMCommonTableDelegate.m; sourceTree = "<group>"; };
 		18ACB0C2E1BC16195B560A6282D4528E /* NIMSessionDataSourceImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionDataSourceImpl.m; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionDataSourceImpl.m; sourceTree = "<group>"; };
 		192A1A2574AB00D17E5EFE06B42CBF67 /* RLMObjectSchema.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectSchema.h; path = include/RLMObjectSchema.h; sourceTree = "<group>"; };
@@ -1600,7 +1603,7 @@
 		2121A67C8129293A6176DAA840433184 /* NIMLoadMoreView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMLoadMoreView.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/NIMLoadMoreView.m; sourceTree = "<group>"; };
 		214036C6294A2AE2E877F36E2AFAC2AD /* NIMMemberGroupView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMMemberGroupView.m; path = NIMKit/NIMKit/Classes/Sections/Common/NIMMemberGroupView.m; sourceTree = "<group>"; };
 		215C6F1DD020CB064D190CDB6254B289 /* NIMBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMBadgeView.h; path = NIMKit/NIMKit/Classes/Sections/Common/NIMBadgeView.h; sourceTree = "<group>"; };
-		216A1DB1FA8DF312C63ACA4F85D2284C /* RxAtomic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxAtomic.framework; path = RxAtomic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		216A1DB1FA8DF312C63ACA4F85D2284C /* RxAtomic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxAtomic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		217F6ED86F04748288BCBA66943AA29B /* Enumerated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enumerated.swift; path = RxSwift/Observables/Enumerated.swift; sourceTree = "<group>"; };
 		218D3DF1B9413E4144C5C55F0F47D8B5 /* NIMSessionLayoutImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionLayoutImpl.m; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionLayoutImpl.m; sourceTree = "<group>"; };
 		21BAB57D3D6006A85952F29D7DB44325 /* ConnectableObservableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectableObservableType.swift; path = RxSwift/ConnectableObservableType.swift; sourceTree = "<group>"; };
@@ -1634,15 +1637,15 @@
 		2A369312A30987B4AE4BC6C92AEA4731 /* NIMPageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMPageView.m; path = NIMKit/NIMKit/Classes/Sections/Common/NIMPageView.m; sourceTree = "<group>"; };
 		2ADF915B61DB00B736660E0DB6A9FB0B /* CLImagePickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLImagePickersViewController.swift; path = CLImagePickerTool/CLImagePickerTool/controller/CLImagePickersViewController.swift; sourceTree = "<group>"; };
 		2B0661F6564C78A2C06AEF9B1A94819C /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
-		2B0A1735EE7E3D5290197AF19FA7A11A /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast.framework; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B0A1735EE7E3D5290197AF19FA7A11A /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B142C40385D1EFDE278640A4881FC13 /* RxAtomic.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxAtomic.xcconfig; sourceTree = "<group>"; };
 		2B380FDFB4D4A573ED5BEBE02AA83A1E /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
 		2B644B33097E0572E02FAB7979E07BC5 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		2B6DADFC5B855FD66DF99D2D38E91E8C /* ObserveOn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserveOn.swift; path = RxSwift/Observables/ObserveOn.swift; sourceTree = "<group>"; };
 		2C23620CCDD37F41D32943E3BB870C1E /* NIMCommonTableData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMCommonTableData.m; path = NIMKit/NIMKit/Classes/Global/NIMCommonTableData.m; sourceTree = "<group>"; };
 		2C88A473F7A12B5CA2B5ABA3B5FEA42A /* RxSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwift-dummy.m"; sourceTree = "<group>"; };
-		2CA508635ADB070879DDACE985B9AB00 /* index_set.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = index_set.cpp; path = Realm/ObjectStore/src/index_set.cpp; sourceTree = "<group>"; };
-		2D309A1604CFD6CD5A346362F968714D /* RLMRealmUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealmUtil.mm; path = Realm/RLMRealmUtil.mm; sourceTree = "<group>"; };
+		2CA508635ADB070879DDACE985B9AB00 /* index_set.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = index_set.cpp; path = Realm/ObjectStore/src/index_set.cpp; sourceTree = "<group>"; };
+		2D309A1604CFD6CD5A346362F968714D /* RLMRealmUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMRealmUtil.mm; path = Realm/RLMRealmUtil.mm; sourceTree = "<group>"; };
 		2DB2E5068BB116F1BD6C10EFB57A36A0 /* NIMKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NIMKit.xcconfig; sourceTree = "<group>"; };
 		2E0A3017C22FB5216DD1483EA54B4664 /* CLPickersTools.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLPickersTools.swift; path = CLImagePickerTool/CLImagePickerTool/CLPickersTools.swift; sourceTree = "<group>"; };
 		2E930DC59BB1C0756A71D8D5985A6206 /* NIMTimestampModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTimestampModel.h; path = NIMKit/NIMKit/Classes/Sections/Model/NIMTimestampModel.h; sourceTree = "<group>"; };
@@ -1655,8 +1658,8 @@
 		3042CB77E1502AABB3D56D6D8F066D61 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		30F0BC189C1950267AE4B26FC4B9E7BB /* Using.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Using.swift; path = RxSwift/Observables/Using.swift; sourceTree = "<group>"; };
 		314FB88FB7F24E2AF6512B107595DBDF /* RxAtomic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxAtomic-Info.plist"; sourceTree = "<group>"; };
-		316C5B3E7695E6AADE7521D2B8E8C4CF /* RLMSyncConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncConfiguration.mm; path = Realm/RLMSyncConfiguration.mm; sourceTree = "<group>"; };
-		31B09E21C4DFB7BF5A64484244547903 /* RLMProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMProperty.mm; path = Realm/RLMProperty.mm; sourceTree = "<group>"; };
+		316C5B3E7695E6AADE7521D2B8E8C4CF /* RLMSyncConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncConfiguration.mm; path = Realm/RLMSyncConfiguration.mm; sourceTree = "<group>"; };
+		31B09E21C4DFB7BF5A64484244547903 /* RLMProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMProperty.mm; path = Realm/RLMProperty.mm; sourceTree = "<group>"; };
 		320F48F6B0E122F7B4D4F6884CE1F0FE /* HDAlertWindowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HDAlertWindowView.swift; path = CLImagePickerTool/CLImagePickerTool/pop/HDAlertWindowView.swift; sourceTree = "<group>"; };
 		32864B1048A835CC667AC6FC1880671E /* LLBrowserViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LLBrowserViewController.swift; path = Class/LLBrowserViewController.swift; sourceTree = "<group>"; };
 		329F1CCFA8E31DCF34E0EAC2F7A1189D /* NIMSessionUnknowContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionUnknowContentView.h; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionUnknowContentView.h; sourceTree = "<group>"; };
@@ -1668,7 +1671,7 @@
 		3495C597352F5BD3BB84DC49AD9BF445 /* NIMTeamMemberCardViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTeamMemberCardViewController.m; path = NIMKit/NIMKit/Classes/Sections/Team/NIMTeamMemberCardViewController.m; sourceTree = "<group>"; };
 		34A191CDE3F8EEFBB609F35FAF1B3353 /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
 		350CC85A0BA771ED33855FD9B692681D /* SkipUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkipUntil.swift; path = RxSwift/Observables/SkipUntil.swift; sourceTree = "<group>"; };
-		3516CD8017CCA02E4FED6DD55A730A71 /* RLMSyncUser.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncUser.mm; path = Realm/RLMSyncUser.mm; sourceTree = "<group>"; };
+		3516CD8017CCA02E4FED6DD55A730A71 /* RLMSyncUser.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncUser.mm; path = Realm/RLMSyncUser.mm; sourceTree = "<group>"; };
 		357F2D3E0E62A57B81B2D65F3D810092 /* TZImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZImagePickerController.h; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.h; sourceTree = "<group>"; };
 		360A7105F508BB368B2F24044E7F5E0B /* RealmConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RealmConfiguration.swift; path = RealmSwift/RealmConfiguration.swift; sourceTree = "<group>"; };
 		361576E6C0E4299F24FBE6B1F8353FE3 /* SerialDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerialDispatchQueueScheduler.swift; path = RxSwift/Schedulers/SerialDispatchQueueScheduler.swift; sourceTree = "<group>"; };
@@ -1677,7 +1680,7 @@
 		36660B9A10522875B321B0569EE3A5B3 /* NIMSessionTableAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionTableAdapter.m; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionTableAdapter.m; sourceTree = "<group>"; };
 		369D185D69758AC19D2BE209ECA11616 /* NIMMessageCellFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMMessageCellFactory.m; path = NIMKit/NIMKit/Classes/Sections/Session/Model/NIMMessageCellFactory.m; sourceTree = "<group>"; };
 		369F6FA833CA4E2FAA50AA3DD3D24A68 /* CLPresent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLPresent.swift; path = CLImagePickerTool/CLImagePickerTool/AnotherPickView/CLPresent.swift; sourceTree = "<group>"; };
-		36A40BC36DF4C95DD0CA0B4DA436ECA8 /* collection_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = collection_notifier.cpp; path = Realm/ObjectStore/src/impl/collection_notifier.cpp; sourceTree = "<group>"; };
+		36A40BC36DF4C95DD0CA0B4DA436ECA8 /* collection_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = collection_notifier.cpp; path = Realm/ObjectStore/src/impl/collection_notifier.cpp; sourceTree = "<group>"; };
 		36BC978B6303F0A2A6119BE82959CE83 /* TZImagePickerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TZImagePickerController.modulemap; sourceTree = "<group>"; };
 		370621164B140FE0A87E2A504C0CBFDB /* ObjectiveCSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectiveCSupport.swift; path = RealmSwift/ObjectiveCSupport.swift; sourceTree = "<group>"; };
 		371B796939483E196FC76790FFD9076C /* NIMGlobalMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMGlobalMacro.h; path = NIMKit/NIMKit/Classes/Global/NIMGlobalMacro.h; sourceTree = "<group>"; };
@@ -1686,7 +1689,7 @@
 		37CCAF3DF0F48D71F9677F144A2C8C7B /* NIMInputEmoticonManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputEmoticonManager.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputEmoticonManager.h; sourceTree = "<group>"; };
 		37DB468BB7ADF14A665E7FBD9F13F0E0 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		3807D298CEBB0E652C09457FD4B66064 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3809AD2494AEBC883D521385E12EA68B /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3809AD2494AEBC883D521385E12EA68B /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380EFFA5BC9B18B54A02CCD47EE79AA6 /* NIMKitConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitConfig.h; path = NIMKit/NIMKit/Classes/Global/NIMKitConfig.h; sourceTree = "<group>"; };
 		382C24F0030CF6752FBB6B146C73DD18 /* NIMCommonTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCommonTableViewCell.h; path = NIMKit/NIMKit/Classes/Global/NIMCommonTableViewCell.h; sourceTree = "<group>"; };
 		38BEF1F9F6C2A9FF1E90FEB7108652C4 /* NIMSessionUnknowContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionUnknowContentView.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionUnknowContentView.m; sourceTree = "<group>"; };
@@ -1713,19 +1716,19 @@
 		3DB1E3E02A560697E7BF677C9AA301B1 /* LLPhotoBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LLPhotoBrowser.modulemap; sourceTree = "<group>"; };
 		3E15011834FCAC3E22466532949E3EAF /* NetworkActivityPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityPlugin.swift; path = Sources/Moya/Plugins/NetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		3E6237B3C63D1351F7EAE3644FB40DE5 /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
-		3E7F8FA1FB405D3DE2C14AF5EFFF20E7 /* RLMRealmConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealmConfiguration.mm; path = Realm/RLMRealmConfiguration.mm; sourceTree = "<group>"; };
+		3E7F8FA1FB405D3DE2C14AF5EFFF20E7 /* RLMRealmConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMRealmConfiguration.mm; path = Realm/RLMRealmConfiguration.mm; sourceTree = "<group>"; };
 		3F44045A23075F2E5C8E9379F74DC226 /* Reactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reactive.swift; path = RxSwift/Reactive.swift; sourceTree = "<group>"; };
 		3F4A08F33E33311F66B8E46134502213 /* NIMKitFileLocationHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitFileLocationHelper.h; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitFileLocationHelper.h; sourceTree = "<group>"; };
 		3F7FB0BE2F46A59C00C61703B01F5A7E /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
 		3FAEA9B49402A51E7A58D9355E8AAB19 /* Pods-GoodManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoodManager.modulemap"; sourceTree = "<group>"; };
 		403F672268334964187154C02D14545B /* Toast.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toast.xcconfig; sourceTree = "<group>"; };
-		4040F251158C4F3DD43ABF0469FA7DF4 /* RLMResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMResults.mm; path = Realm/RLMResults.mm; sourceTree = "<group>"; };
+		4040F251158C4F3DD43ABF0469FA7DF4 /* RLMResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMResults.mm; path = Realm/RLMResults.mm; sourceTree = "<group>"; };
 		40B3DDE39B9A1309CD601BCBB4F93C18 /* NIMKitAudioCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitAudioCenter.h; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMKitAudioCenter.h; sourceTree = "<group>"; };
 		40C14E9B12DBD28A3DFD628E5907A184 /* TZAssetCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZAssetCell.h; path = TZImagePickerController/TZImagePickerController/TZAssetCell.h; sourceTree = "<group>"; };
 		40C4786A1A575B9BB0BF39276DF4D74B /* NIMCommonTableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCommonTableData.h; path = NIMKit/NIMKit/Classes/Global/NIMCommonTableData.h; sourceTree = "<group>"; };
 		40C9132BBC5FA88CE142B26254462E08 /* Concat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concat.swift; path = RxSwift/Observables/Concat.swift; sourceTree = "<group>"; };
 		40D13DA605F0CA79CAC3BFBB95CA9C5C /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = RealmSwift/Aliases.swift; sourceTree = "<group>"; };
-		40D58060425B3FFEFE926F2DF5A8F06D /* RLMSyncSessionRefreshHandle.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncSessionRefreshHandle.mm; path = Realm/RLMSyncSessionRefreshHandle.mm; sourceTree = "<group>"; };
+		40D58060425B3FFEFE926F2DF5A8F06D /* RLMSyncSessionRefreshHandle.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncSessionRefreshHandle.mm; path = Realm/RLMSyncSessionRefreshHandle.mm; sourceTree = "<group>"; };
 		40E332697A357B9A0536DB3116C31535 /* NIMTeamCardRowItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTeamCardRowItem.m; path = NIMKit/NIMKit/Classes/Sections/Team/Model/NIMTeamCardRowItem.m; sourceTree = "<group>"; };
 		4180198DBEEE7AECDEA207BE4F6A26FE /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		418F1860F61A74831081BFAA9096D61F /* AddRef.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddRef.swift; path = RxSwift/Observables/AddRef.swift; sourceTree = "<group>"; };
@@ -1742,9 +1745,9 @@
 		43F16D1CAFED4E0E03F2D20EE98AA108 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		443E5463389292550189C0F598A3FFAA /* CombineLatest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineLatest.swift; path = RxSwift/Observables/CombineLatest.swift; sourceTree = "<group>"; };
 		44A8137A25F62A224B5127BA9D75544C /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		44C47B9E04011512DFAB1C71CC9ED0C6 /* collection_change_builder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = collection_change_builder.cpp; path = Realm/ObjectStore/src/impl/collection_change_builder.cpp; sourceTree = "<group>"; };
+		44C47B9E04011512DFAB1C71CC9ED0C6 /* collection_change_builder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = collection_change_builder.cpp; path = Realm/ObjectStore/src/impl/collection_change_builder.cpp; sourceTree = "<group>"; };
 		44CA10C46C7B2CED2B7D09A1FE63C118 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
-		44EADB028710CE87F7C6D306935DEB02 /* NIMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NIMKit.framework; path = NIMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44EADB028710CE87F7C6D306935DEB02 /* NIMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NIMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		450932A6AD386AF7BC4D5FC3F350E855 /* NIMKitRobotTemplateParserProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitRobotTemplateParserProtocol.h; path = NIMKit/NIMKit/Classes/Sections/Util/Robot/NIMKitRobotTemplateParserProtocol.h; sourceTree = "<group>"; };
 		453090A47121E13525FCB4D8BFB31071 /* NIMKitAuthorizationTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitAuthorizationTool.m; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitAuthorizationTool.m; sourceTree = "<group>"; };
 		455573EFD7401CC681C0A9FBBCF5809A /* DWKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWKWebView.h; path = dsbridge/DWKWebView.h; sourceTree = "<group>"; };
@@ -1795,9 +1798,9 @@
 		4E7B621BC8A42939E4BD82EE3558504A /* CLImagePickerListCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CLImagePickerListCell.xib; path = CLImagePickerTool/CLImagePickerTool/views/CLImagePickerListCell.xib; sourceTree = "<group>"; };
 		4ECE687E1F13B0DFFF21252CF984B23F /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
 		4EE4C08166E53C09554F00DBACF5A8BB /* InternalApis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InternalApis.h; path = dsbridge/InternalApis.h; sourceTree = "<group>"; };
-		4F031E1E8904D52651038B11F9C5D2E2 /* schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = schema.cpp; path = Realm/ObjectStore/src/schema.cpp; sourceTree = "<group>"; };
+		4F031E1E8904D52651038B11F9C5D2E2 /* schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = schema.cpp; path = Realm/ObjectStore/src/schema.cpp; sourceTree = "<group>"; };
 		4F0B32FD734A8C13F7D5089FE6A0D8A0 /* TZImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TZImagePickerController.bundle; path = TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle; sourceTree = "<group>"; };
-		4F3E6BA48A1A6D92F6DBDAEFC2B94684 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3E6BA48A1A6D92F6DBDAEFC2B94684 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F67D585A6885A22E3B41C64F7E72376 /* NIMKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKit.h; path = NIMKit/NIMKit/Classes/NIMKit.h; sourceTree = "<group>"; };
 		4F6A2BB7E74875E18B391EA171C1833F /* ImagePickerChooseImageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePickerChooseImageCell.swift; path = CLImagePickerTool/CLImagePickerTool/views/ImagePickerChooseImageCell.swift; sourceTree = "<group>"; };
 		4F7E6AE0101A241E1B40C92AAF71CFDA /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
@@ -1807,8 +1810,8 @@
 		50362D448BA93756A24E1FF8ABD4C5F6 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		5055F5334C2988A8339EE9C5D479720C /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = RxSwift/Observables/Window.swift; sourceTree = "<group>"; };
 		508B32A23E6A79317F6633EAF4B2E63F /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
-		509209410F632D568D9AB9852B933071 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5120D1B9DF89EF1AC799075DBA5BB5EE /* external_commit_helper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = external_commit_helper.cpp; path = Realm/ObjectStore/src/impl/apple/external_commit_helper.cpp; sourceTree = "<group>"; };
+		509209410F632D568D9AB9852B933071 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5120D1B9DF89EF1AC799075DBA5BB5EE /* external_commit_helper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = external_commit_helper.cpp; path = Realm/ObjectStore/src/impl/apple/external_commit_helper.cpp; sourceTree = "<group>"; };
 		519BCA8AB40507AE5F27CEE6ED14EBBB /* NIMVideoContentConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMVideoContentConfig.h; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMVideoContentConfig.h; sourceTree = "<group>"; };
 		51C035C137CA6902F2429646E9585EF9 /* NIMKitDependency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitDependency.h; path = NIMKit/NIMKit/Classes/Global/NIMKitDependency.h; sourceTree = "<group>"; };
 		51DB1577796150C08DAEB6111E66A5CB /* ObjectSchema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectSchema.swift; path = RealmSwift/ObjectSchema.swift; sourceTree = "<group>"; };
@@ -1827,7 +1830,7 @@
 		542ADECF3FC4A80EC395A4A906B422DC /* DelaySubscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelaySubscription.swift; path = RxSwift/Observables/DelaySubscription.swift; sourceTree = "<group>"; };
 		546CA16134128C0D27C6F75746E9C962 /* CombineLatest+Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CombineLatest+Collection.swift"; path = "RxSwift/Observables/CombineLatest+Collection.swift"; sourceTree = "<group>"; };
 		54BD0291D5093FF308F563EB5C3930C8 /* M80AttributedLabelAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = M80AttributedLabelAttachment.m; path = M80AttributedLabel/M80AttributedLabelAttachment.m; sourceTree = "<group>"; };
-		54C61F1859E5A38694488800F3070ADE /* shared_realm.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = shared_realm.cpp; path = Realm/ObjectStore/src/shared_realm.cpp; sourceTree = "<group>"; };
+		54C61F1859E5A38694488800F3070ADE /* shared_realm.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = shared_realm.cpp; path = Realm/ObjectStore/src/shared_realm.cpp; sourceTree = "<group>"; };
 		54CA2BB10B0506B7018BCC9FAE5B7A05 /* RealmSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RealmSwift-Info.plist"; sourceTree = "<group>"; };
 		54DD898A11CE8FFE335BF9551A86189E /* NIMKitResourceResizer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitResourceResizer.m; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitResourceResizer.m; sourceTree = "<group>"; };
 		54E7DC5909552B2B4DBF8658D13EF2A1 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
@@ -1839,22 +1842,22 @@
 		55FA8C76FC993A2512ACA8DB87C128E5 /* NIMInputEmoticonContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputEmoticonContainerView.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputEmoticonContainerView.h; sourceTree = "<group>"; };
 		56013C47F59D9EDF0223F817B9E765BA /* RectangleBrush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RectangleBrush.swift; path = CLImagePickerTool/CLImagePickerTool/Board/RectangleBrush.swift; sourceTree = "<group>"; };
 		563EBB6A7DB974D2DD0C4E27DF096F9C /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		569712824767D63F40EC3DAC73F806D3 /* system_configuration.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = system_configuration.cpp; path = Realm/ObjectStore/src/sync/impl/apple/system_configuration.cpp; sourceTree = "<group>"; };
+		569712824767D63F40EC3DAC73F806D3 /* system_configuration.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = system_configuration.cpp; path = Realm/ObjectStore/src/sync/impl/apple/system_configuration.cpp; sourceTree = "<group>"; };
 		56F8F32E5EF2CF48F63324E783F70BAC /* btn_back2@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "btn_back2@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/btn_back2@2x.png"; sourceTree = "<group>"; };
 		574D2E95E60D46A88DA79675FAEF9542 /* clr_blue@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "clr_blue@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/clr_blue@2x.png"; sourceTree = "<group>"; };
-		575DDEA0E3C31671D50183452DE9F4A5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		575DDEA0E3C31671D50183452DE9F4A5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		577A80EA7AC945532EE0B13EB8EFF27F /* NIMInputAtCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputAtCache.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputAtCache.h; sourceTree = "<group>"; };
 		5785816CBAEFF3E6EF9A7A6D446972CD /* Amb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Amb.swift; path = RxSwift/Observables/Amb.swift; sourceTree = "<group>"; };
 		57F9FB026378F12AF03E9AD772A2752B /* NIMCreateTeamAnnouncement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMCreateTeamAnnouncement.m; path = NIMKit/NIMKit/Classes/Sections/Team/NIMCreateTeamAnnouncement.m; sourceTree = "<group>"; };
 		58A44EB2EB51E1E4D3DCB4F8054AFC3A /* NIMTeamNotifyUpdateViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTeamNotifyUpdateViewController.m; path = NIMKit/NIMKit/Classes/Sections/Team/NIMTeamNotifyUpdateViewController.m; sourceTree = "<group>"; };
 		58B2DA8A3C980299F978CFF2DE43DAA2 /* NIMCellLayoutConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMCellLayoutConfig.m; path = NIMKit/NIMKit/Classes/Sections/Session/Config/NIMCellLayoutConfig.m; sourceTree = "<group>"; };
-		59297968558AA43E4DDC1D383B374DD6 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
+		59297968558AA43E4DDC1D383B374DD6 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
 		594AED311B0124FC6730A7C0358363CF /* NIMSessionListViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionListViewController.m; path = NIMKit/NIMKit/Classes/Sections/SessionList/NIMSessionListViewController.m; sourceTree = "<group>"; };
 		5993AB999B1F751C121625BA4EB357AB /* NIMSessionConfigurator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionConfigurator.h; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionConfigurator.h; sourceTree = "<group>"; };
 		59A3A12A54CF7E790835423D6171886F /* RxAtomic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxAtomic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A9D221EADE0CB1854A6B5F37533842 /* Sync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sync.swift; path = RealmSwift/Sync.swift; sourceTree = "<group>"; };
 		59FF0C6A6BEE23439DCCFE5D08750C57 /* RLMSyncSubscription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncSubscription.h; path = include/RLMSyncSubscription.h; sourceTree = "<group>"; };
-		5A33C29B270F0B69D34175945266254D /* RxAtomic.c */ = {isa = PBXFileReference; includeInIndex = 1; name = RxAtomic.c; path = RxAtomic/RxAtomic.c; sourceTree = "<group>"; };
+		5A33C29B270F0B69D34175945266254D /* RxAtomic.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = RxAtomic.c; path = RxAtomic/RxAtomic.c; sourceTree = "<group>"; };
 		5A65D59F4E2F4D24B0A52C1B05AB61AD /* NIMInputEmoticonTabView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputEmoticonTabView.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputEmoticonTabView.h; sourceTree = "<group>"; };
 		5AA65E9A80D94E91AE6720B29C72CDE5 /* TZImagePickerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TZImagePickerController-umbrella.h"; sourceTree = "<group>"; };
 		5AFC1CE649A2B8EF911F08A8805539AE /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/UIView+WebCache.m"; sourceTree = "<group>"; };
@@ -1863,12 +1866,12 @@
 		5B76DFDEC388F936518358FDC554E76C /* NIMPinyinConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMPinyinConverter.m; path = NIMKit/NIMKit/Classes/Sections/Util/Spelling/NIMPinyinConverter.m; sourceTree = "<group>"; };
 		5BDB0F38FDC46A74E67236C8189BA539 /* Debounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debounce.swift; path = RxSwift/Observables/Debounce.swift; sourceTree = "<group>"; };
 		5C77D88283DC1EF740D9EBD0DA59E40C /* InvocableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvocableType.swift; path = RxSwift/Schedulers/Internal/InvocableType.swift; sourceTree = "<group>"; };
-		5C7BF663E2BBC91313BE4D0329AA982B /* RLMClassInfo.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMClassInfo.mm; path = Realm/RLMClassInfo.mm; sourceTree = "<group>"; };
+		5C7BF663E2BBC91313BE4D0329AA982B /* RLMClassInfo.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMClassInfo.mm; path = Realm/RLMClassInfo.mm; sourceTree = "<group>"; };
 		5C9103F82D6C34B4869B04783F4F4B7A /* SerialDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerialDisposable.swift; path = RxSwift/Disposables/SerialDisposable.swift; sourceTree = "<group>"; };
-		5D0D5CE3E9A268D948D64CA957F9BC75 /* sync_metadata.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_metadata.cpp; path = Realm/ObjectStore/src/sync/impl/sync_metadata.cpp; sourceTree = "<group>"; };
+		5D0D5CE3E9A268D948D64CA957F9BC75 /* sync_metadata.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_metadata.cpp; path = Realm/ObjectStore/src/sync/impl/sync_metadata.cpp; sourceTree = "<group>"; };
 		5D117D76ACCF1FA97436F9F71010167B /* InputBrush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputBrush.swift; path = CLImagePickerTool/CLImagePickerTool/Board/InputBrush.swift; sourceTree = "<group>"; };
 		5D264F6EBF9578C3EEFF1C0539B5B250 /* NIMKitInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitInfo.m; path = NIMKit/NIMKit/Classes/Sections/Model/NIMKitInfo.m; sourceTree = "<group>"; };
-		5D37CB64105BBCFA6CEF2A21C9DD83EB /* collection_notifications.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = collection_notifications.cpp; path = Realm/ObjectStore/src/collection_notifications.cpp; sourceTree = "<group>"; };
+		5D37CB64105BBCFA6CEF2A21C9DD83EB /* collection_notifications.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = collection_notifications.cpp; path = Realm/ObjectStore/src/collection_notifications.cpp; sourceTree = "<group>"; };
 		5D65D18E45BC294BC72C856B75CF2FAA /* NSImage+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSImage+WebCache.h"; path = "SDWebImage/NSImage+WebCache.h"; sourceTree = "<group>"; };
 		5D9127DAB858CF95FBA4CEA95D570BCA /* CompositeDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositeDisposable.swift; path = RxSwift/Disposables/CompositeDisposable.swift; sourceTree = "<group>"; };
 		5E1D77C298B850264C80713E12689FF6 /* RLMSyncPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncPermission.h; path = include/RLMSyncPermission.h; sourceTree = "<group>"; };
@@ -1886,7 +1889,7 @@
 		601AD69257BF1C1B65E4E54DA423977F /* MessageStyleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageStyleView.swift; path = CLImagePickerTool/CLImagePickerTool/pop/AlertViews/MessageStyleView.swift; sourceTree = "<group>"; };
 		609C90BA0170B9883D38D9AC5BBC0213 /* NIMSessionPrivateProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionPrivateProtocol.h; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionPrivateProtocol.h; sourceTree = "<group>"; };
 		60D0CD20C90DF6EF438AEF34285FD1A4 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
-		60D9C9B23CA071D8DEB457289D950450 /* RLMObjectSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectSchema.mm; path = Realm/RLMObjectSchema.mm; sourceTree = "<group>"; };
+		60D9C9B23CA071D8DEB457289D950450 /* RLMObjectSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectSchema.mm; path = Realm/RLMObjectSchema.mm; sourceTree = "<group>"; };
 		61314C0A17D84EA2C066145765B25383 /* Skip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Skip.swift; path = RxSwift/Observables/Skip.swift; sourceTree = "<group>"; };
 		613F6CF798511184BA307C0E26193F2F /* NIMExtensionHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMExtensionHelper.m; path = NIMKit/NIMKit/Classes/Category/NIMExtensionHelper.m; sourceTree = "<group>"; };
 		615BDB9A4DFDFACA1C96D4BD15D12F4C /* ic_pen_grey@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_pen_grey@3x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_pen_grey@3x.png"; sourceTree = "<group>"; };
@@ -1927,7 +1930,7 @@
 		689FC126B8CF6346416C359E41F6705F /* NIMAdvancedTeamCardViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMAdvancedTeamCardViewController.h; path = NIMKit/NIMKit/Classes/Sections/Team/NIMAdvancedTeamCardViewController.h; sourceTree = "<group>"; };
 		699D4314E7E5DB96FC579F0AC4A359AD /* StartWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StartWith.swift; path = RxSwift/Observables/StartWith.swift; sourceTree = "<group>"; };
 		69A7B27EF3E6CDCBB6F4B643A811C94F /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZPhotoPreviewCell.h; path = TZImagePickerController/TZImagePickerController/TZPhotoPreviewCell.h; sourceTree = "<group>"; };
-		69B7074050BA0FCE27EDD7B5740A9F5A /* transact_log_handler.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = transact_log_handler.cpp; path = Realm/ObjectStore/src/impl/transact_log_handler.cpp; sourceTree = "<group>"; };
+		69B7074050BA0FCE27EDD7B5740A9F5A /* transact_log_handler.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = transact_log_handler.cpp; path = Realm/ObjectStore/src/impl/transact_log_handler.cpp; sourceTree = "<group>"; };
 		69E5554A072797A5B52EC1980F38AEC5 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		69EC694F65A24F24CE6667B664F8F9DD /* NIMContactPickedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMContactPickedView.h; path = NIMKit/NIMKit/Classes/Sections/Contact/NIMContactPickedView.h; sourceTree = "<group>"; };
 		6A0610F38A9D5B1A38C5E3106F83811F /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
@@ -1939,13 +1942,13 @@
 		6BB00B4502A9A34084D732FD43FACB82 /* NIMVideoContentConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMVideoContentConfig.m; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMVideoContentConfig.m; sourceTree = "<group>"; };
 		6BD3982328A052F3950078E0B08CB4C0 /* RLMAccessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMAccessor.h; path = include/RLMAccessor.h; sourceTree = "<group>"; };
 		6BEAB1D437B38D457FB596893E4995DE /* Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = RealmSwift/Optional.swift; sourceTree = "<group>"; };
-		6BEB01029EE90F033ABB1D4D72BBF9B8 /* RLMQueryUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMQueryUtil.mm; path = Realm/RLMQueryUtil.mm; sourceTree = "<group>"; };
-		6C3BD04D2A1542292A52753D76B0F8DE /* object.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = object.cpp; path = Realm/ObjectStore/src/object.cpp; sourceTree = "<group>"; };
+		6BEB01029EE90F033ABB1D4D72BBF9B8 /* RLMQueryUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMQueryUtil.mm; path = Realm/RLMQueryUtil.mm; sourceTree = "<group>"; };
+		6C3BD04D2A1542292A52753D76B0F8DE /* object.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object.cpp; path = Realm/ObjectStore/src/object.cpp; sourceTree = "<group>"; };
 		6C771E8F238575B6C78677DF84975F86 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		6D008BF3BDC6793F8EC76B0583238788 /* RLMRealm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealm.h; path = include/RLMRealm.h; sourceTree = "<group>"; };
 		6D3325A777EDC10A435D924ACEA02DD9 /* LLPhotoBrowser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLPhotoBrowser.xcconfig; sourceTree = "<group>"; };
 		6D7A17CBB17F6196BD1350FD76346340 /* NIMGrowingTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMGrowingTextView.m; path = NIMKit/NIMKit/Classes/Sections/Input/GrowingTextView/NIMGrowingTextView.m; sourceTree = "<group>"; };
-		6D8EFB9FF0B743EC2D30DED293111347 /* object_schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = object_schema.cpp; path = Realm/ObjectStore/src/object_schema.cpp; sourceTree = "<group>"; };
+		6D8EFB9FF0B743EC2D30DED293111347 /* object_schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_schema.cpp; path = Realm/ObjectStore/src/object_schema.cpp; sourceTree = "<group>"; };
 		6E0A5C027AD416F2B512720004AE5A72 /* NIMAdvancedTeamMemberCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMAdvancedTeamMemberCell.m; path = NIMKit/NIMKit/Classes/Sections/Team/View/NIMAdvancedTeamMemberCell.m; sourceTree = "<group>"; };
 		6E1AC649F28AEF267B175D8DB795512D /* NIMLocationContentConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMLocationContentConfig.h; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMLocationContentConfig.h; sourceTree = "<group>"; };
 		6E60FCA23D1761DE2DC05C50665BAEAC /* NSDictionary+NIMKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+NIMKit.m"; path = "NIMKit/NIMKit/Classes/Category/NSDictionary+NIMKit.m"; sourceTree = "<group>"; };
@@ -1955,7 +1958,7 @@
 		6F6953390857F4A4576519C41ADDD3E1 /* Timer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = RxSwift/Observables/Timer.swift; sourceTree = "<group>"; };
 		6FF3AE165B877956F41423569E046855 /* CLPreviewViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLPreviewViewController.swift; path = CLImagePickerTool/CLImagePickerTool/controller/CLPreviewViewController.swift; sourceTree = "<group>"; };
 		70204AE6CCD46B07403066410EB65F88 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		709F075193C1A8BC270B437AB49F6CC0 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709F075193C1A8BC270B437AB49F6CC0 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		711687299F03E0089766607A89676FBC /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = RxSwift/Observables/Sequence.swift; sourceTree = "<group>"; };
 		716B80AAD9E5413C1B5D81F99B083108 /* DistinctUntilChanged.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DistinctUntilChanged.swift; path = RxSwift/Observables/DistinctUntilChanged.swift; sourceTree = "<group>"; };
 		719B55E6D00765BC8325915A75548ABE /* RLMObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObject.h; path = include/RLMObject.h; sourceTree = "<group>"; };
@@ -1964,10 +1967,10 @@
 		723314D1C7C057891D89438A376DC280 /* NIMMediaItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMediaItem.h; path = NIMKit/NIMKit/Classes/Sections/Model/NIMMediaItem.h; sourceTree = "<group>"; };
 		72972F3B02F26C6C7816423B23FCA780 /* FLAnimatedImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FLAnimatedImageView+WebCache.h"; path = "SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.h"; sourceTree = "<group>"; };
 		72FC10206513B34842025A5B41211758 /* RxSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-umbrella.h"; sourceTree = "<group>"; };
-		73299C3F55086035B9CAB764C5F045C7 /* object_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = object_notifier.cpp; path = Realm/ObjectStore/src/impl/object_notifier.cpp; sourceTree = "<group>"; };
+		73299C3F55086035B9CAB764C5F045C7 /* object_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_notifier.cpp; path = Realm/ObjectStore/src/impl/object_notifier.cpp; sourceTree = "<group>"; };
 		73608D12732027379BAF092A871B5A5E /* NIMMessageCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageCell.h; path = NIMKit/NIMKit/Classes/Sections/Session/View/NIMMessageCell.h; sourceTree = "<group>"; };
 		738651DDED8EDD1EADE7053C1372E26A /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
-		73EA1C87A7471F57FA23446C3155629B /* list.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = list.cpp; path = Realm/ObjectStore/src/list.cpp; sourceTree = "<group>"; };
+		73EA1C87A7471F57FA23446C3155629B /* list.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = list.cpp; path = Realm/ObjectStore/src/list.cpp; sourceTree = "<group>"; };
 		740CA9A08A72CBF5F5353F6FF0EC84BC /* First.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = First.swift; path = RxSwift/Observables/First.swift; sourceTree = "<group>"; };
 		742054AE1B53AE5191507C4B24245681 /* NIMRobotContentConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMRobotContentConfig.m; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMRobotContentConfig.m; sourceTree = "<group>"; };
 		7438DD3B2E3E7EE996B0E748D5C125D4 /* ConcurrentDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentDispatchQueueScheduler.swift; path = RxSwift/Schedulers/ConcurrentDispatchQueueScheduler.swift; sourceTree = "<group>"; };
@@ -1979,7 +1982,7 @@
 		761CFDF3EDBE4C40C89942CC5ACC6421 /* SynchronizedOnType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedOnType.swift; path = RxSwift/Concurrency/SynchronizedOnType.swift; sourceTree = "<group>"; };
 		7643F9198CFD620652A7CDF5E0E31581 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
 		767D7B87AE4056ABD5E517A2DC2F7D33 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		76C97592F11396B75C07ED6A57EABA4C /* RLMCollection.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMCollection.mm; path = Realm/RLMCollection.mm; sourceTree = "<group>"; };
+		76C97592F11396B75C07ED6A57EABA4C /* RLMCollection.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMCollection.mm; path = Realm/RLMCollection.mm; sourceTree = "<group>"; };
 		76DB8B5F934293F61E58FA5D68A6CC36 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		771D81BF0FD164E24222DAA6FA5472B5 /* NIMGrowingInternalTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMGrowingInternalTextView.m; path = NIMKit/NIMKit/Classes/Sections/Input/GrowingTextView/NIMGrowingInternalTextView.m; sourceTree = "<group>"; };
 		772658EDA8BC9FF276232D3405FFBF43 /* Switch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Switch.swift; path = RxSwift/Observables/Switch.swift; sourceTree = "<group>"; };
@@ -1987,13 +1990,13 @@
 		77A19DBA252F982B30F5BF33CC1DE5AA /* FLAnimatedImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-prefix.pch"; sourceTree = "<group>"; };
 		77C1AF753C10F2E9D557F0E0C9D61C24 /* LLBrowserActionSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LLBrowserActionSheet.swift; path = Class/LLBrowserActionSheet.swift; sourceTree = "<group>"; };
 		77ECE827E88124953C588EE28DA39945 /* NIMSessionMessageContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionMessageContentView.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionMessageContentView.m; sourceTree = "<group>"; };
-		782C6AB7BF03D7D84005F9B88A212185 /* RLMObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObject.mm; path = Realm/RLMObject.mm; sourceTree = "<group>"; };
-		7832962E20662B5280C1928E0BDF7050 /* Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Player.framework; path = Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		782C6AB7BF03D7D84005F9B88A212185 /* RLMObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObject.mm; path = Realm/RLMObject.mm; sourceTree = "<group>"; };
+		7832962E20662B5280C1928E0BDF7050 /* Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78585C9BADEA5381C66692331C06350E /* FLAnimatedImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FLAnimatedImageView+WebCache.m"; path = "SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.m"; sourceTree = "<group>"; };
 		7884CE026F5556AC338191007F02D466 /* RLMOptionalBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMOptionalBase.h; path = include/RLMOptionalBase.h; sourceTree = "<group>"; };
 		78BCFF7145799DED4991AFA886E737B7 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
 		7921D532BA92C55F2E0327F19F871C3A /* Realm.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Realm.xcconfig; sourceTree = "<group>"; };
-		799CAF90201806F1FA304FECA98DA091 /* sync_session.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_session.cpp; path = Realm/ObjectStore/src/sync/sync_session.cpp; sourceTree = "<group>"; };
+		799CAF90201806F1FA304FECA98DA091 /* sync_session.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_session.cpp; path = Realm/ObjectStore/src/sync/sync_session.cpp; sourceTree = "<group>"; };
 		7A6B75367B3C82303B900089F9BB9F21 /* CodableTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableTransform.swift; path = Sources/CodableTransform.swift; sourceTree = "<group>"; };
 		7A9A4C22C71BFAF783C203892554D748 /* libjcore-ios-1.2.6.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = "libjcore-ios-1.2.6.a"; sourceTree = "<group>"; };
 		7AB4C3B190037A96A853B07069782D5E /* CLImagePickerSingleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLImagePickerSingleViewController.swift; path = CLImagePickerTool/CLImagePickerTool/controller/CLImagePickerSingleViewController.swift; sourceTree = "<group>"; };
@@ -2018,7 +2021,7 @@
 		7E3DE0CF96A3D16A2CA0A41E399260DC /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		7E4B9074B062DC68806115A6880C6F24 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5B2D0E1C988A450A938ED7E8CF6DA9 /* ic_msk_grey@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_msk_grey@3x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_msk_grey@3x.png"; sourceTree = "<group>"; };
-		7E719CE048FBE8798E9FE49EF3921FCE /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Realm.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E719CE048FBE8798E9FE49EF3921FCE /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E976C3E0FA81D38E181420731A72DAF /* NIMKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NIMKit-Info.plist"; sourceTree = "<group>"; };
 		7EC4171CC022BD03F109896AA3E982CD /* LLBrowserZoomScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LLBrowserZoomScrollView.swift; path = Class/LLBrowserZoomScrollView.swift; sourceTree = "<group>"; };
 		7F330609279EA01AAA5608B4366CBD81 /* M80AttributedLabelURL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = M80AttributedLabelURL.h; path = M80AttributedLabel/M80AttributedLabelURL.h; sourceTree = "<group>"; };
@@ -2038,7 +2041,7 @@
 		8338BC4A61C0858B6E201E55FEFFCD13 /* photo_sel_photoPicker2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = photo_sel_photoPicker2.png; path = CLImagePickerTool/CLImagePickerTool/images/photo_sel_photoPicker2.png; sourceTree = "<group>"; };
 		83851921F190575DD82E4542452F448F /* FLAnimatedImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-umbrella.h"; sourceTree = "<group>"; };
 		839EEE5B6C05268D46FDC4F62C53CEAE /* RLMRealmConfiguration_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealmConfiguration_Private.h; path = include/RLMRealmConfiguration_Private.h; sourceTree = "<group>"; };
-		83C869B9C2FF24F28CF25ADDD86DEEA1 /* list_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = list_notifier.cpp; path = Realm/ObjectStore/src/impl/list_notifier.cpp; sourceTree = "<group>"; };
+		83C869B9C2FF24F28CF25ADDD86DEEA1 /* list_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = list_notifier.cpp; path = Realm/ObjectStore/src/impl/list_notifier.cpp; sourceTree = "<group>"; };
 		83C963F171A59C8FCBBA15B854026C2F /* NIMSessionLayoutImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionLayoutImpl.h; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionLayoutImpl.h; sourceTree = "<group>"; };
 		83FE307A376F5E663C60FFB76AA06C41 /* NIMKitResourceResizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitResourceResizer.h; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitResourceResizer.h; sourceTree = "<group>"; };
 		841732853066B39138C8BDB66EC5B566 /* RealmSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RealmSwift-prefix.pch"; sourceTree = "<group>"; };
@@ -2046,7 +2049,7 @@
 		845E3B2C8A871EE54932A1BD0C8AEAD8 /* NIMKitRobotTemplate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitRobotTemplate.h; path = NIMKit/NIMKit/Classes/Sections/Util/Robot/NIMKitRobotTemplate.h; sourceTree = "<group>"; };
 		8487CB58D6C1CEF21B682AC4C0C5367C /* NIMSessionConfigurator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionConfigurator.m; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionConfigurator.m; sourceTree = "<group>"; };
 		851ECE042506CCE5AB16DCBE73903779 /* InvocableScheduledItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvocableScheduledItem.swift; path = RxSwift/Schedulers/Internal/InvocableScheduledItem.swift; sourceTree = "<group>"; };
-		8523DB34A91DE4AC4257DA2E9258EFDB /* RLMSyncSession.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncSession.mm; path = Realm/RLMSyncSession.mm; sourceTree = "<group>"; };
+		8523DB34A91DE4AC4257DA2E9258EFDB /* RLMSyncSession.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncSession.mm; path = Realm/RLMSyncSession.mm; sourceTree = "<group>"; };
 		853ABB044502AF7656A27E6F48A1E4B0 /* Completable+AndThen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Completable+AndThen.swift"; path = "RxSwift/Traits/Completable+AndThen.swift"; sourceTree = "<group>"; };
 		855BEB971832058F6AE13B00DCF4ED86 /* NIMInputProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputProtocol.h; path = NIMKit/NIMKit/Classes/Protocols/NIMInputProtocol.h; sourceTree = "<group>"; };
 		858364FB580CAD22E1A5A616D9C304D7 /* FLAnimatedImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FLAnimatedImage-dummy.m"; sourceTree = "<group>"; };
@@ -2100,23 +2103,23 @@
 		93D6CDD3874E85FFF41BB55ED1EB0EBA /* CLImagePickerTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CLImagePickerTool-Info.plist"; sourceTree = "<group>"; };
 		94004916675541A1E874E4DF4B6E2F91 /* ImageModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageModifier.swift; path = Sources/ImageModifier.swift; sourceTree = "<group>"; };
 		9438F8294AF85C6A6896BDF2C9C8D9BA /* clr_orange@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "clr_orange@3x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/clr_orange@3x.png"; sourceTree = "<group>"; };
-		943F2E17BB49F9FF02B70E2FF6E305EF /* RLMRealm+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "RLMRealm+Sync.mm"; path = "Realm/RLMRealm+Sync.mm"; sourceTree = "<group>"; };
+		943F2E17BB49F9FF02B70E2FF6E305EF /* RLMRealm+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "RLMRealm+Sync.mm"; path = "Realm/RLMRealm+Sync.mm"; sourceTree = "<group>"; };
 		9461FC9C24CF5D247EC8F55677E9671F /* NIMKitTimerHolder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitTimerHolder.m; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitTimerHolder.m; sourceTree = "<group>"; };
-		947A52981731F1D3686A87243942FEEA /* RLMSyncManager.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncManager.mm; path = Realm/RLMSyncManager.mm; sourceTree = "<group>"; };
+		947A52981731F1D3686A87243942FEEA /* RLMSyncManager.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncManager.mm; path = Realm/RLMSyncManager.mm; sourceTree = "<group>"; };
 		9483F8FF9CA534207A4643B322658BAC /* CurrentThreadScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentThreadScheduler.swift; path = RxSwift/Schedulers/CurrentThreadScheduler.swift; sourceTree = "<group>"; };
 		94F98AB608BFAB837B6101E7AC9572F4 /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
 		958C8B82CE31FCBF921E1104DB8C0121 /* OperationQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationQueueScheduler.swift; path = RxSwift/Schedulers/OperationQueueScheduler.swift; sourceTree = "<group>"; };
 		959C764182E29D53FFD04031ED493FC7 /* RxAtomic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RxAtomic.h; path = RxAtomic/include/RxAtomic.h; sourceTree = "<group>"; };
 		95A220713CEBED0794FDC84EDD6FA35A /* RLMRealm+Sync.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RLMRealm+Sync.h"; path = "include/RLMRealm+Sync.h"; sourceTree = "<group>"; };
 		95B5318059279D7C1174B707B4FF1098 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
-		95DF6698775EC18B7AF6393BA6537C46 /* object_store.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = object_store.cpp; path = Realm/ObjectStore/src/object_store.cpp; sourceTree = "<group>"; };
-		9635170BF659C1B35FCFFCCD9B4C9C88 /* CLImagePickerTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CLImagePickerTool.framework; path = CLImagePickerTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DF6698775EC18B7AF6393BA6537C46 /* object_store.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_store.cpp; path = Realm/ObjectStore/src/object_store.cpp; sourceTree = "<group>"; };
+		9635170BF659C1B35FCFFCCD9B4C9C88 /* CLImagePickerTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLImagePickerTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976A7AC45ABC397A4416C291C766302C /* Scan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = RxSwift/Observables/Scan.swift; sourceTree = "<group>"; };
-		977F8AF355D22422C6C81B6190A94B37 /* RLMUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUtil.mm; path = Realm/RLMUtil.mm; sourceTree = "<group>"; };
+		977F8AF355D22422C6C81B6190A94B37 /* RLMUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUtil.mm; path = Realm/RLMUtil.mm; sourceTree = "<group>"; };
 		979ED855A656190EB3A22E2989CCFE44 /* NIMAvatarImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMAvatarImageView.h; path = NIMKit/NIMKit/Classes/Sections/Common/NIMAvatarImageView.h; sourceTree = "<group>"; };
 		984E993FEF02616653ED0C5D15BBA7AB /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
 		99124DE3E76D56CF7600C3A1CB327FA8 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
-		99B5614728551D9A67A9F59AFE96EAB1 /* RLMSyncPermissionResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncPermissionResults.mm; path = Realm/RLMSyncPermissionResults.mm; sourceTree = "<group>"; };
+		99B5614728551D9A67A9F59AFE96EAB1 /* RLMSyncPermissionResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncPermissionResults.mm; path = Realm/RLMSyncPermissionResults.mm; sourceTree = "<group>"; };
 		99F0D2DEBA1FA2D7B38F92D054BC9BAB /* NIMInputEmoticonParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMInputEmoticonParser.m; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputEmoticonParser.m; sourceTree = "<group>"; };
 		9A12F63E2FEB00EA5D29A31A40592CD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		9A64CBEB4A27BDB895DEF83B6BFCFC00 /* DSCallInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCallInfo.h; path = dsbridge/DSCallInfo.h; sourceTree = "<group>"; };
@@ -2132,7 +2135,7 @@
 		9C2F25901FDE60B7E5A542CFC5E60D33 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		9C43B724B7FA5AF1E31E9F44D3F8A480 /* NIMInputAudioRecordIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputAudioRecordIndicatorView.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputAudioRecordIndicatorView.h; sourceTree = "<group>"; };
 		9CEC9C51510AD5B88C289A6D66249730 /* NIMInputEmoticonTabView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMInputEmoticonTabView.m; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputEmoticonTabView.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DCF4F1C4E87726BEBEE3A6E1B328AEB /* JPUSHService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		9DD82769B348C448CCD22028E3B07C01 /* ImmediateSchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmediateSchedulerType.swift; path = RxSwift/ImmediateSchedulerType.swift; sourceTree = "<group>"; };
 		9DD9CD6BBECD849E0C5D0563690FAC93 /* clr_orange@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "clr_orange@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/clr_orange@2x.png"; sourceTree = "<group>"; };
@@ -2143,13 +2146,13 @@
 		9E3A5EDC25A3833A0A138BFCA64A33F0 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		9E56704EA551F345B2E6FFA94A21B0D7 /* NIMSessionMessageContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionMessageContentView.h; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionMessageContentView.h; sourceTree = "<group>"; };
 		9E9E4385D4702C61215E48626DFAF2FF /* NIMKitSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitSetting.h; path = NIMKit/NIMKit/Classes/Global/NIMKitSetting.h; sourceTree = "<group>"; };
-		9ED9CEB1611BC7D30BC6837E73392376 /* RLMUpdateChecker.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMUpdateChecker.mm; path = Realm/RLMUpdateChecker.mm; sourceTree = "<group>"; };
+		9ED9CEB1611BC7D30BC6837E73392376 /* RLMUpdateChecker.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMUpdateChecker.mm; path = Realm/RLMUpdateChecker.mm; sourceTree = "<group>"; };
 		9F390564742AED9305CAA1F0039EBD71 /* CLPreviewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLPreviewCell.swift; path = CLImagePickerTool/CLImagePickerTool/views/CLPreviewCell.swift; sourceTree = "<group>"; };
 		9F3A70AA61B5785D9C2E25438738C911 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		9FAC27C065456F336A5A43AB5A1CFB5B /* NIMPageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMPageView.h; path = NIMKit/NIMKit/Classes/Sections/Common/NIMPageView.h; sourceTree = "<group>"; };
 		9FF2DDDE8CF8A8815CDA3B498393368C /* CLImagePickerListCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLImagePickerListCell.swift; path = CLImagePickerTool/CLImagePickerTool/views/CLImagePickerListCell.swift; sourceTree = "<group>"; };
 		A05E9EDB1BF693CF1B87402AB399C770 /* FLAnimatedImage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FLAnimatedImage-Info.plist"; sourceTree = "<group>"; };
-		A09AD9D2AA5952764716AA0D600CE1F3 /* RLMOptionalBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMOptionalBase.mm; path = Realm/RLMOptionalBase.mm; sourceTree = "<group>"; };
+		A09AD9D2AA5952764716AA0D600CE1F3 /* RLMOptionalBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMOptionalBase.mm; path = Realm/RLMOptionalBase.mm; sourceTree = "<group>"; };
 		A104C0A7F893F5BB3CB476ED87451C6F /* SwitchIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchIfEmpty.swift; path = RxSwift/Observables/SwitchIfEmpty.swift; sourceTree = "<group>"; };
 		A111B0F73BC85545AB80FD9BC56F5769 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/CacheSerializer.swift; sourceTree = "<group>"; };
 		A13FC868D65755B3401D05DBBE329F5C /* Lock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lock.swift; path = RxSwift/Concurrency/Lock.swift; sourceTree = "<group>"; };
@@ -2162,12 +2165,12 @@
 		A35BA4D7A6052C219C37686F991C0CC6 /* NIMTeamAnnouncementListCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamAnnouncementListCell.h; path = NIMKit/NIMKit/Classes/Sections/Team/View/NIMTeamAnnouncementListCell.h; sourceTree = "<group>"; };
 		A39511476CBDD8AD7AD5F797D6167771 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		A39BAE32CC567B029E1741BCA63049EF /* NIMTeamMemberCardHeaderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTeamMemberCardHeaderCell.m; path = NIMKit/NIMKit/Classes/Sections/Team/View/NIMTeamMemberCardHeaderCell.m; sourceTree = "<group>"; };
-		A39E258510B5734D67DDBE09FBDB733D /* CLImagePickerTool.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CLImagePickerTool.bundle; path = "CLImagePickerTool-CLImagePickerTool.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A39E258510B5734D67DDBE09FBDB733D /* CLImagePickerTool.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLImagePickerTool.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BB376F7C83185E9D58D565179982BE /* NIMMessageCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMMessageCell.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/NIMMessageCell.m; sourceTree = "<group>"; };
 		A47C84F5F2190C19096986903D5731AC /* NIMKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NIMKit-umbrella.h"; sourceTree = "<group>"; };
 		A4927DB53A2A057FEAC5774FE71F1B8D /* EditorViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = EditorViewController.xib; path = CLImagePickerTool/CLImagePickerTool/controller/EditorViewController.xib; sourceTree = "<group>"; };
 		A4C53F5B3D60A20B0283F4297DBC02B4 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		A4CDD25E2645ED1AE0D84B7E00D4E077 /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
+		A4CDD25E2645ED1AE0D84B7E00D4E077 /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
 		A4E6B2C1E6E23EFBCE03A4B3136E36F7 /* M80AttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = M80AttributedLabel.h; path = M80AttributedLabel/M80AttributedLabel.h; sourceTree = "<group>"; };
 		A54DE671047AE8DB21904C879F6A7996 /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		A555DF6A4B35018DBA4CAF4BBD06C453 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimitiveSequence.swift; path = RxSwift/Traits/PrimitiveSequence.swift; sourceTree = "<group>"; };
@@ -2177,10 +2180,10 @@
 		A61F9BC5BB7A4329C25EA255DBB2459E /* NIMKitNotificationFirer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitNotificationFirer.m; path = NIMKit/NIMKit/Classes/Sections/Common/NIMKitNotificationFirer.m; sourceTree = "<group>"; };
 		A6656411470D0313DDB03A1CD987C3E0 /* Realm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = RealmSwift/Realm.swift; sourceTree = "<group>"; };
 		A6E6D28EB2FE7C39323A33CABE24F291 /* Player.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Player.xcconfig; sourceTree = "<group>"; };
-		A7234455C47F9224995E330C898F6111 /* weak_realm_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = weak_realm_notifier.cpp; path = Realm/ObjectStore/src/impl/weak_realm_notifier.cpp; sourceTree = "<group>"; };
+		A7234455C47F9224995E330C898F6111 /* weak_realm_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = weak_realm_notifier.cpp; path = Realm/ObjectStore/src/impl/weak_realm_notifier.cpp; sourceTree = "<group>"; };
 		A75E87880F43C629F0C2BB370570A8B8 /* CombineLatest+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CombineLatest+arity.swift"; path = "RxSwift/Observables/CombineLatest+arity.swift"; sourceTree = "<group>"; };
 		A79F49CB31A256E47FE79174C9EA0EE0 /* SDWebImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoder.h; path = SDWebImage/SDWebImageCoder.h; sourceTree = "<group>"; };
-		A7C572D71505F1D2D5D80EFD1FEB1433 /* RLMPredicateUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMPredicateUtil.mm; path = Realm/RLMPredicateUtil.mm; sourceTree = "<group>"; };
+		A7C572D71505F1D2D5D80EFD1FEB1433 /* RLMPredicateUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMPredicateUtil.mm; path = Realm/RLMPredicateUtil.mm; sourceTree = "<group>"; };
 		A834D0429DB344C9687AD2DCD3856B32 /* ic_erase_grey@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_erase_grey@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_erase_grey@2x.png"; sourceTree = "<group>"; };
 		A8416FA00BDD681031F8812E279C4E6A /* NIMKitDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitDevice.m; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitDevice.m; sourceTree = "<group>"; };
 		A85ED16FE729B18CC73C87B5D9FDC1CD /* NIMAvatarImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMAvatarImageView.m; path = NIMKit/NIMKit/Classes/Sections/Common/NIMAvatarImageView.m; sourceTree = "<group>"; };
@@ -2192,7 +2195,7 @@
 		A9CB1409DA79BEF593DC618AAC46AB69 /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaySubject.swift; path = RxSwift/Subjects/ReplaySubject.swift; sourceTree = "<group>"; };
 		AA0CCEF3F06DAA33E1498B4C94998C06 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
 		AA70E63DE9CFA680E719BFF3574DCEA1 /* M80AttributedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M80AttributedLabel-dummy.m"; sourceTree = "<group>"; };
-		AA7B43F4FC430CD6E02949D3B72D6421 /* dsBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dsBridge.framework; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7B43F4FC430CD6E02949D3B72D6421 /* dsBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0D117A7B76BB15F4B8B87EDC96CBD7 /* NIMKitDataProviderImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitDataProviderImpl.h; path = NIMKit/NIMKit/Classes/Global/NIMKitDataProviderImpl.h; sourceTree = "<group>"; };
 		AB2AE03D91E3E265E326D45D4DCA42E7 /* SubscriptionDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionDisposable.swift; path = RxSwift/Disposables/SubscriptionDisposable.swift; sourceTree = "<group>"; };
 		AB57DA39820B51550F8E24D50B1C9D9D /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/ImageDownloader.swift; sourceTree = "<group>"; };
@@ -2200,20 +2203,20 @@
 		ABBDDACF5EC9B524E0EB441EB30C4A66 /* RxAtomic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxAtomic-umbrella.h"; sourceTree = "<group>"; };
 		AC013ABBFA0D9CD7A6D493A4727E1293 /* clr_purple@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "clr_purple@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/clr_purple@2x.png"; sourceTree = "<group>"; };
 		AC2F2201A9CBC324F16790DE407C49A5 /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
-		AC553A4CF04E2D8E2108F6AFE7AB299D /* RLMMigration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMMigration.mm; path = Realm/RLMMigration.mm; sourceTree = "<group>"; };
+		AC553A4CF04E2D8E2108F6AFE7AB299D /* RLMMigration.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMMigration.mm; path = Realm/RLMMigration.mm; sourceTree = "<group>"; };
 		AC7D5D061F6122D2A6B2E5E8D92361BB /* Multicast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multicast.swift; path = RxSwift/Observables/Multicast.swift; sourceTree = "<group>"; };
-		AC88F7D766BEAD0DEC1E183D0E160CFA /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RealmSwift.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC88F7D766BEAD0DEC1E183D0E160CFA /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD52AF70F4BFF9980C55AA567C8A091A /* LockOwnerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LockOwnerType.swift; path = RxSwift/Concurrency/LockOwnerType.swift; sourceTree = "<group>"; };
-		ADDFD9186B8A5D1C5241ABD6479B038A /* M80AttributedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M80AttributedLabel.framework; path = M80AttributedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDFD9186B8A5D1C5241ABD6479B038A /* M80AttributedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M80AttributedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2525AE8796DF2A2DFB1E775ED8ADEA /* NIMNormalTeamCardViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNormalTeamCardViewController.h; path = NIMKit/NIMKit/Classes/Sections/Team/NIMNormalTeamCardViewController.h; sourceTree = "<group>"; };
 		AE34D58A5889071A92C4AE89537A2616 /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = RxSwift/Observables/Range.swift; sourceTree = "<group>"; };
 		AE66905E8AAE21BCB482A7A3221DA35E /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
-		AE8EA74D7E4C7B99D389D6863F5B6D90 /* RLMThreadSafeReference.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMThreadSafeReference.mm; path = Realm/RLMThreadSafeReference.mm; sourceTree = "<group>"; };
+		AE8EA74D7E4C7B99D389D6863F5B6D90 /* RLMThreadSafeReference.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMThreadSafeReference.mm; path = Realm/RLMThreadSafeReference.mm; sourceTree = "<group>"; };
 		AF2E492280795574FA0E7DD8549EE43A /* TZLocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TZLocationManager.h; path = TZImagePickerController/TZImagePickerController/TZLocationManager.h; sourceTree = "<group>"; };
-		AF32E539157F6A4B75FEF1F1777A7318 /* RLMNetworkClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMNetworkClient.mm; path = Realm/RLMNetworkClient.mm; sourceTree = "<group>"; };
+		AF32E539157F6A4B75FEF1F1777A7318 /* RLMNetworkClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMNetworkClient.mm; path = Realm/RLMNetworkClient.mm; sourceTree = "<group>"; };
 		AF5FA56BBBF12242074D81529B64D2A7 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
 		AF6C1B370893F43F85F58ACE0A0EFD0B /* NIMKitProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitProgressHUD.h; path = NIMKit/NIMKit/Classes/Global/NIMKitProgressHUD.h; sourceTree = "<group>"; };
-		AF9FB562BD2F9C4958AC82E9B470CD6D /* results_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = results_notifier.cpp; path = Realm/ObjectStore/src/impl/results_notifier.cpp; sourceTree = "<group>"; };
+		AF9FB562BD2F9C4958AC82E9B470CD6D /* results_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = results_notifier.cpp; path = Realm/ObjectStore/src/impl/results_notifier.cpp; sourceTree = "<group>"; };
 		AFAF71FD00E52A4905A7340FC3E9796E /* Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Player-prefix.pch"; sourceTree = "<group>"; };
 		AFC7EF5819310E5DF16F8048C39B3CCA /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		AFD86CC3B96F195EA8A382C7FAC70E58 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
@@ -2262,7 +2265,7 @@
 		BBC6F62412CE27CD1EE40A5ACFE691DC /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		BBCC92CBB743E9E0A30B2F28E53CD7B6 /* NIMInputEmoticonButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMInputEmoticonButton.m; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputEmoticonButton.m; sourceTree = "<group>"; };
 		BBE8E4CDB61324F8866642A33E144A34 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		BC8137B5EF665A84251CE354AC97BE7A /* partial_sync.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = partial_sync.cpp; path = Realm/ObjectStore/src/sync/partial_sync.cpp; sourceTree = "<group>"; };
+		BC8137B5EF665A84251CE354AC97BE7A /* partial_sync.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = partial_sync.cpp; path = Realm/ObjectStore/src/sync/partial_sync.cpp; sourceTree = "<group>"; };
 		BC8A3BDF457AF597C3A5818D6E651F15 /* NIMKitIndependentModeExtraInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitIndependentModeExtraInfo.m; path = NIMKit/NIMKit/Classes/Global/NIMKitIndependentModeExtraInfo.m; sourceTree = "<group>"; };
 		BCB52BBC21DA138EB405A098E869FD88 /* NIMKitMediaFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitMediaFetcher.h; path = NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.h; sourceTree = "<group>"; };
 		BCE0572664772F169A7D6CB46FA2CE58 /* M80AttributedLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = M80AttributedLabel.modulemap; sourceTree = "<group>"; };
@@ -2277,11 +2280,11 @@
 		BFAEC2BAEED0EFEA147DAF3043828A2D /* NIMTipContentConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTipContentConfig.m; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMTipContentConfig.m; sourceTree = "<group>"; };
 		BFBC74A9ACBCBA9D66341263B47F9CAE /* NIMKitSwitcherCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitSwitcherCell.m; path = NIMKit/NIMKit/Classes/Global/NIMKitSwitcherCell.m; sourceTree = "<group>"; };
 		BFC8CA6B0DFE6C1F3DAF2C1DD79149D4 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
-		C00F69DE591E6BAE4CD9B85B40A3EA61 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C02280081D79CB8C20877E658C4EC16B /* RLMRealm.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealm.mm; path = Realm/RLMRealm.mm; sourceTree = "<group>"; };
+		C00F69DE591E6BAE4CD9B85B40A3EA61 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C02280081D79CB8C20877E658C4EC16B /* RLMRealm.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMRealm.mm; path = Realm/RLMRealm.mm; sourceTree = "<group>"; };
 		C0B18A2441DC6B7E3E1EB98C13583936 /* Moya-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-prefix.pch"; sourceTree = "<group>"; };
 		C11110CBD92EDCE81DD5952A832CB073 /* NIMCommonTableDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCommonTableDelegate.h; path = NIMKit/NIMKit/Classes/Global/NIMCommonTableDelegate.h; sourceTree = "<group>"; };
-		C150980612793902A08FE5691084FEA9 /* TZImagePickerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TZImagePickerController.framework; path = TZImagePickerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C150980612793902A08FE5691084FEA9 /* TZImagePickerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TZImagePickerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C167B636E028C91570BC43DBACDEA00A /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		C1A7FA15DF882951A993F59E1ED85C0D /* Never.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Never.swift; path = RxSwift/Observables/Never.swift; sourceTree = "<group>"; };
 		C1C9C5912916F205A3A366F60A2C8BE6 /* M80AttributedLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = M80AttributedLabel.m; path = M80AttributedLabel/M80AttributedLabel.m; sourceTree = "<group>"; };
@@ -2299,8 +2302,8 @@
 		C54430B9684DDB83019787DA96CB0513 /* NomalStyleView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = NomalStyleView.xib; path = CLImagePickerTool/CLImagePickerTool/pop/AlertViews/NomalStyleView.xib; sourceTree = "<group>"; };
 		C5686A18F52D8F068766DA40F7CDE291 /* Pods-GoodManager-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoodManager-frameworks.sh"; sourceTree = "<group>"; };
 		C5785FE49C6791BE60BE9CA57DD2292B /* Toast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-prefix.pch"; sourceTree = "<group>"; };
-		C5D6CEF3D436832766246859AFFE5803 /* RLMAccessor.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAccessor.mm; path = Realm/RLMAccessor.mm; sourceTree = "<group>"; };
-		C5F31D51986E7E46FEC36709E8F63FC9 /* results.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = results.cpp; path = Realm/ObjectStore/src/results.cpp; sourceTree = "<group>"; };
+		C5D6CEF3D436832766246859AFFE5803 /* RLMAccessor.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMAccessor.mm; path = Realm/RLMAccessor.mm; sourceTree = "<group>"; };
+		C5F31D51986E7E46FEC36709E8F63FC9 /* results.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = results.cpp; path = Realm/ObjectStore/src/results.cpp; sourceTree = "<group>"; };
 		C620538298D96BF336467A6C84E00F7E /* NIMSessionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionViewController.h; path = NIMKit/NIMKit/Classes/Sections/Session/ViewController/NIMSessionViewController.h; sourceTree = "<group>"; };
 		C65CDD85D5FEF3527BB04D49878399E3 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
 		C65F3909E79E662A58AB0268F12B3C6F /* ic_pre_grey@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_pre_grey@3x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_pre_grey@3x.png"; sourceTree = "<group>"; };
@@ -2314,7 +2317,7 @@
 		C7B38BBADDF46102DF9EA83BB33EA87D /* NIMMessageCellFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageCellFactory.h; path = NIMKit/NIMKit/Classes/Sections/Session/Model/NIMMessageCellFactory.h; sourceTree = "<group>"; };
 		C7D1FFD93CAC1161F2CF30E5643D1A3A /* ImagePickerChooseImageCellV2.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ImagePickerChooseImageCellV2.xib; path = CLImagePickerTool/CLImagePickerTool/ImagePickerChooseImageCellV2.xib; sourceTree = "<group>"; };
 		C7E59A996FF827DD1FDAC3C4A11D1389 /* Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debug.swift; path = RxSwift/Observables/Debug.swift; sourceTree = "<group>"; };
-		C826D772B82634F72C5EFB5DF765307A /* LLPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LLPhotoBrowser.framework; path = LLPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C826D772B82634F72C5EFB5DF765307A /* LLPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LLPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C829B6706BA87938083F4EABE4C93B57 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		C8973B6686C70A0A7673655A6056757D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		C8CCE0899E71B7475D92CB28DF5E6D24 /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
@@ -2360,7 +2363,7 @@
 		D1961BD5ADAB03659B6F3193035B7AEE /* Repeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Repeat.swift; path = RxSwift/Observables/Repeat.swift; sourceTree = "<group>"; };
 		D19F9E14FB2C0857A2765F27D4976908 /* Take.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Take.swift; path = RxSwift/Observables/Take.swift; sourceTree = "<group>"; };
 		D2131DFD358F6B25E44631AB18419E75 /* RLMThreadSafeReference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMThreadSafeReference.h; path = include/RLMThreadSafeReference.h; sourceTree = "<group>"; };
-		D2216A78F04E9BFB178E009E40C1FBE8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2216A78F04E9BFB178E009E40C1FBE8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D263214852ED57B0034C7DA733971A72 /* NIMSessionTableAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionTableAdapter.h; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionTableAdapter.h; sourceTree = "<group>"; };
 		D2B186C18F3E9D8435413928E4B66728 /* LLPhotoBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LLPhotoBrowser-dummy.m"; sourceTree = "<group>"; };
 		D2B307CF7876EC0151589778D510A0CE /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
@@ -2380,29 +2383,29 @@
 		D61074971D40B707E3D2BDE8F5BA7F99 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		D654F098108250D97DC10EEB96202AFA /* AnonymousObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousObserver.swift; path = RxSwift/Observers/AnonymousObserver.swift; sourceTree = "<group>"; };
 		D72FD5D59F95CE959174DFD61BF19568 /* Moya.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Moya.xcconfig; sourceTree = "<group>"; };
-		D7331C7A80B47ABDDEAE8103A3610009 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxSwift.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7331C7A80B47ABDDEAE8103A3610009 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7711CBC5B49CD784367FE68801DD649 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		D7999B9DFA452806A3B4CC3E6B6B5DAB /* UITableView+NIMScrollToBottom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+NIMScrollToBottom.h"; path = "NIMKit/NIMKit/Classes/Category/UITableView+NIMScrollToBottom.h"; sourceTree = "<group>"; };
 		D7C3DB20713FC9CC799EE264DB6B7241 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		D88DF39AC7489F758DB590382B073902 /* RLMRealmConfiguration+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "RLMRealmConfiguration+Sync.mm"; path = "Realm/RLMRealmConfiguration+Sync.mm"; sourceTree = "<group>"; };
+		D88DF39AC7489F758DB590382B073902 /* RLMRealmConfiguration+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "RLMRealmConfiguration+Sync.mm"; path = "Realm/RLMRealmConfiguration+Sync.mm"; sourceTree = "<group>"; };
 		D8AC64312CBACE78E30C291F1596F920 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		D8ED2DF044806511991E88F4FA9295A3 /* RLMCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMCollection.h; path = include/RLMCollection.h; sourceTree = "<group>"; };
 		D9261EE9985BFB1038DEEBD1FB62076A /* Cancelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cancelable.swift; path = RxSwift/Cancelable.swift; sourceTree = "<group>"; };
-		D9405356BB59BDA04218D86540314692 /* work_queue.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = work_queue.cpp; path = Realm/ObjectStore/src/sync/impl/work_queue.cpp; sourceTree = "<group>"; };
+		D9405356BB59BDA04218D86540314692 /* work_queue.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = work_queue.cpp; path = Realm/ObjectStore/src/sync/impl/work_queue.cpp; sourceTree = "<group>"; };
 		D9F30426BC86A2A52378053E8C68A02F /* Toast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Info.plist"; sourceTree = "<group>"; };
 		DA69A4553C8570070C0A07D3533CA1DD /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
 		DADCB71BF80673492101E48F6A4B343B /* NopDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NopDisposable.swift; path = RxSwift/Disposables/NopDisposable.swift; sourceTree = "<group>"; };
-		DB01488A2968E6B287F6C285CAC16C18 /* sync_file.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_file.cpp; path = Realm/ObjectStore/src/sync/impl/sync_file.cpp; sourceTree = "<group>"; };
-		DB1E3FA20325C88C6E0C1A591D23900C /* sync_config.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_config.cpp; path = Realm/ObjectStore/src/sync/sync_config.cpp; sourceTree = "<group>"; };
+		DB01488A2968E6B287F6C285CAC16C18 /* sync_file.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_file.cpp; path = Realm/ObjectStore/src/sync/impl/sync_file.cpp; sourceTree = "<group>"; };
+		DB1E3FA20325C88C6E0C1A591D23900C /* sync_config.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_config.cpp; path = Realm/ObjectStore/src/sync/sync_config.cpp; sourceTree = "<group>"; };
 		DB2E0E9C932CE5EDABF2A59AAA1700AD /* NIMKitColorButtonCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitColorButtonCell.m; path = NIMKit/NIMKit/Classes/Global/NIMKitColorButtonCell.m; sourceTree = "<group>"; };
 		DB6137881C73CA83A4A2B3A55FD06611 /* Materialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Materialize.swift; path = RxSwift/Observables/Materialize.swift; sourceTree = "<group>"; };
-		DBE4A446D9B5D8A40D58796487B5D75F /* RLMObservation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObservation.mm; path = Realm/RLMObservation.mm; sourceTree = "<group>"; };
+		DBE4A446D9B5D8A40D58796487B5D75F /* RLMObservation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObservation.mm; path = Realm/RLMObservation.mm; sourceTree = "<group>"; };
 		DC1DE924ABF931730C6B7CC261996FB9 /* NIMCellConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCellConfig.h; path = NIMKit/NIMKit/Classes/Protocols/NIMCellConfig.h; sourceTree = "<group>"; };
 		DC6AEC205356D867D42A7E7E83F4FD02 /* NIMKitUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitUtil.h; path = NIMKit/NIMKit/Classes/Sections/Util/NIMKitUtil.h; sourceTree = "<group>"; };
 		DD0B7F7AB31576A2E0CC124940AD7C32 /* NIMSessionInteractorImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSessionInteractorImpl.h; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionInteractorImpl.h; sourceTree = "<group>"; };
 		DD28B2FC18B434CE18174D9716D709D0 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		DD3985C652459BADF09724CE00B02949 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
-		DD41736FD310513E07AFAC4A6BC4420D /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD41736FD310513E07AFAC4A6BC4420D /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6432398BB38B29D823FDBCD5CB808B /* DSCallInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCallInfo.m; path = dsbridge/DSCallInfo.m; sourceTree = "<group>"; };
 		DD6A78A73078677BF2C0E8821A483140 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
 		DDC154A91FB52B6F4D2B9DAC27DF7ECA /* UIView+Toast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Toast.m"; path = "Toast/Toast/UIView+Toast.m"; sourceTree = "<group>"; };
@@ -2422,22 +2425,22 @@
 		E1E9E060CDE07D560903106C4751C8F8 /* NIMTeamMemberCardViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamMemberCardViewController.h; path = NIMKit/NIMKit/Classes/Sections/Team/NIMTeamMemberCardViewController.h; sourceTree = "<group>"; };
 		E1EDE9CD0C40D29978C0C1373BF4300A /* UITableView+NIMScrollToBottom.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+NIMScrollToBottom.m"; path = "NIMKit/NIMKit/Classes/Category/UITableView+NIMScrollToBottom.m"; sourceTree = "<group>"; };
 		E20B8E3511CB46104EB46DA7C0CC457F /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		E235CEDFFEAB2BB8801B93DED8B1EA56 /* RLMManagedArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMManagedArray.mm; path = Realm/RLMManagedArray.mm; sourceTree = "<group>"; };
+		E235CEDFFEAB2BB8801B93DED8B1EA56 /* RLMManagedArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMManagedArray.mm; path = Realm/RLMManagedArray.mm; sourceTree = "<group>"; };
 		E2C95CBFA4740729649ED77B452B08BC /* CLImagePickerSingleViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CLImagePickerSingleViewController.xib; path = CLImagePickerTool/CLImagePickerTool/controller/CLImagePickerSingleViewController.xib; sourceTree = "<group>"; };
-		E38AE2D13BD91D7DBA444D0B17F0C618 /* sync_manager.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_manager.cpp; path = Realm/ObjectStore/src/sync/sync_manager.cpp; sourceTree = "<group>"; };
+		E38AE2D13BD91D7DBA444D0B17F0C618 /* sync_manager.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_manager.cpp; path = Realm/ObjectStore/src/sync/sync_manager.cpp; sourceTree = "<group>"; };
 		E3F7EF51D216128DF2DFF950732D6F8C /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkLoggerPlugin.swift; path = Sources/Moya/Plugins/NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		E40B6A5DFDBDCEF8DDE55F8C4D60E1EC /* Delay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delay.swift; path = RxSwift/Observables/Delay.swift; sourceTree = "<group>"; };
 		E4C1C406B98980A9A7D0A86D30352D23 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
 		E4E5D61F43CDB8C2C9219EF4DB3829EF /* NIMKitConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitConfig.m; path = NIMKit/NIMKit/Classes/Global/NIMKitConfig.m; sourceTree = "<group>"; };
 		E5050F0769E4C87876AC0F026441007E /* CLPreviewVideoCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLPreviewVideoCell.swift; path = CLImagePickerTool/CLImagePickerTool/views/CLPreviewVideoCell.swift; sourceTree = "<group>"; };
-		E50CE0D5F4E69899E7BA0FC236A77A32 /* RLMArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMArray.mm; path = Realm/RLMArray.mm; sourceTree = "<group>"; };
+		E50CE0D5F4E69899E7BA0FC236A77A32 /* RLMArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMArray.mm; path = Realm/RLMArray.mm; sourceTree = "<group>"; };
 		E51888D80B0C2D2EDA8E3816978A3249 /* NIMKitNotificationFirer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMKitNotificationFirer.h; path = NIMKit/NIMKit/Classes/Sections/Common/NIMKitNotificationFirer.h; sourceTree = "<group>"; };
 		E5236A489B3D9FF653A0CDF4C713954F /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = RxSwift/Errors.swift; sourceTree = "<group>"; };
 		E541653EABC4DD2837B428EB8ECF0D0D /* NIMMessageMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMMessageMaker.m; path = NIMKit/NIMKit/Classes/Sections/Session/Model/NIMMessageMaker.m; sourceTree = "<group>"; };
 		E54A72E358B48180BC68ED670C9D2E26 /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		E5C201720B0D716CA38FE1C3D520C189 /* NIMTeamCardHeaderCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamCardHeaderCell.h; path = NIMKit/NIMKit/Classes/Sections/Team/View/NIMTeamCardHeaderCell.h; sourceTree = "<group>"; };
 		E5DF473A1F66F3A9E09AAD02E4AF9878 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5EB2EC58459B29816F673C03B85158F /* Moya_ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Moya_ObjectMapper.framework; path = "Moya-ObjectMapper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5EB2EC58459B29816F673C03B85158F /* Moya_ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya_ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65E5956D577866819110A1D7529546A /* NIMTextContentConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMTextContentConfig.m; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMTextContentConfig.m; sourceTree = "<group>"; };
 		E697908E7C4F672052C4BB29CC526A77 /* RealmSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RealmSwift-dummy.m"; sourceTree = "<group>"; };
 		E6E27487BFC8F21C302B584E6E730389 /* clvedioplaybtn.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = clvedioplaybtn.png; path = CLImagePickerTool/CLImagePickerTool/images/clvedioplaybtn.png; sourceTree = "<group>"; };
@@ -2446,7 +2449,7 @@
 		E7B4065561D9218D8256E0486492C340 /* M80AttributedLabelAttachment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = M80AttributedLabelAttachment.h; path = M80AttributedLabel/M80AttributedLabelAttachment.h; sourceTree = "<group>"; };
 		E7F3F980FCF0194709AF05C43A5DDC84 /* ic_pen@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_pen@2x.png"; path = "CLImagePickerTool/CLImagePickerTool/images/ic_pen@2x.png"; sourceTree = "<group>"; };
 		E914F4CAECF1BBA65FA8B91EA76D50DC /* NIMSessionImageContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionImageContentView.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionImageContentView.m; sourceTree = "<group>"; };
-		E94959896A3470D794A8FBF736DC6486 /* RLMSyncSubscription.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncSubscription.mm; path = Realm/RLMSyncSubscription.mm; sourceTree = "<group>"; };
+		E94959896A3470D794A8FBF736DC6486 /* RLMSyncSubscription.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncSubscription.mm; path = Realm/RLMSyncSubscription.mm; sourceTree = "<group>"; };
 		E99882D6C5A99BE2703148C0FBA13DC6 /* NIMSessionAudioContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionAudioContentView.m; path = NIMKit/NIMKit/Classes/Sections/Session/View/SessionContentView/NIMSessionAudioContentView.m; sourceTree = "<group>"; };
 		E9B5625140D54FBAE79F86B342F61F44 /* NIMInputMoreContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputMoreContainerView.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputMoreContainerView.h; sourceTree = "<group>"; };
 		E9E8216F9CB0D210DAD7DFBFEAD0F4CF /* RLMSyncSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncSession.h; path = include/RLMSyncSession.h; sourceTree = "<group>"; };
@@ -2458,11 +2461,11 @@
 		EBA2B74EA7EB01ADA6355BEDBAB8A408 /* Pods-GoodManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoodManager-umbrella.h"; sourceTree = "<group>"; };
 		EC1EA55D146F5DC8D59270A6D700944D /* Realm-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Realm-prefix.pch"; sourceTree = "<group>"; };
 		EC5A28F3D27613F78581CE72B0B5CFFF /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
-		ECD870366BAD752F797098CFFDA1F29F /* RLMObjectStore.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectStore.mm; path = Realm/RLMObjectStore.mm; sourceTree = "<group>"; };
+		ECD870366BAD752F797098CFFDA1F29F /* RLMObjectStore.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectStore.mm; path = Realm/RLMObjectStore.mm; sourceTree = "<group>"; };
 		ED308EC96E7D85BC85AD0A88987EBD09 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
-		EE18469BCCD000B826C7F2477F7346B0 /* thread_safe_reference.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = thread_safe_reference.cpp; path = Realm/ObjectStore/src/thread_safe_reference.cpp; sourceTree = "<group>"; };
+		EE18469BCCD000B826C7F2477F7346B0 /* thread_safe_reference.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = thread_safe_reference.cpp; path = Realm/ObjectStore/src/thread_safe_reference.cpp; sourceTree = "<group>"; };
 		EE2D7D7C95E11A37C42E256C352363A4 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		EE5E1BB72F9091EB85FB73DAC9E78CC2 /* realm_coordinator.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = realm_coordinator.cpp; path = Realm/ObjectStore/src/impl/realm_coordinator.cpp; sourceTree = "<group>"; };
+		EE5E1BB72F9091EB85FB73DAC9E78CC2 /* realm_coordinator.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = realm_coordinator.cpp; path = Realm/ObjectStore/src/impl/realm_coordinator.cpp; sourceTree = "<group>"; };
 		EEB178A6C6B779620CCF9D2810D4A9CC /* FLAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = FLAnimatedImage/FLAnimatedImage.m; sourceTree = "<group>"; };
 		EEB4C09D23B2D484905EA912176B2BC8 /* EditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = CLImagePickerTool/CLImagePickerTool/controller/EditorViewController.swift; sourceTree = "<group>"; };
 		EEE968D6A34C4A6BF60752B2770EFDAC /* Realm-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Realm-Info.plist"; sourceTree = "<group>"; };
@@ -2477,7 +2480,7 @@
 		F0A70C9CF77BDF009204685D17748CC6 /* photo_sel_photoPicker.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = photo_sel_photoPicker.png; path = CLImagePickerTool/CLImagePickerTool/images/photo_sel_photoPicker.png; sourceTree = "<group>"; };
 		F0B138307A1D41C8936F7BE33B625B62 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+TZImagePicker.h"; path = "TZImagePickerController/TZImagePickerController/NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
 		F0BE5244E1BF732D567177371BFF57EE /* ElementAt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementAt.swift; path = RxSwift/Observables/ElementAt.swift; sourceTree = "<group>"; };
-		F0F9C390958E40BF34E483ADDB9273AF /* RLMObjectBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectBase.mm; path = Realm/RLMObjectBase.mm; sourceTree = "<group>"; };
+		F0F9C390958E40BF34E483ADDB9273AF /* RLMObjectBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMObjectBase.mm; path = Realm/RLMObjectBase.mm; sourceTree = "<group>"; };
 		F0FD9748634B609F652535A3BADE8A23 /* NIMMemberGroupView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMemberGroupView.h; path = NIMKit/NIMKit/Classes/Sections/Common/NIMMemberGroupView.h; sourceTree = "<group>"; };
 		F1031D8ADD712EA369F7963F9AEA8233 /* AnyObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyObserver.swift; path = RxSwift/AnyObserver.swift; sourceTree = "<group>"; };
 		F11B1FBB25621D7A21C03F171384AB78 /* Realm-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Realm-dummy.m"; sourceTree = "<group>"; };
@@ -2522,7 +2525,7 @@
 		F8E2AC5A23F6896D8DB6881832E0D6C0 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		F8FF7C1BBE6FC7247672DE13AFE782A3 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		F954B8C37E6A9006A3EE270512CEB646 /* PencilChooseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PencilChooseView.swift; path = CLImagePickerTool/CLImagePickerTool/views/PencilChooseView.swift; sourceTree = "<group>"; };
-		F96BB6A7EBB49D2CC8E273E10E118ADA /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FLAnimatedImage.framework; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96BB6A7EBB49D2CC8E273E10E118ADA /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9813648275EB3F13FFCEE6C52056B24 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = RealmSwift/Error.swift; sourceTree = "<group>"; };
 		F992957482F6227676F26E26E01B4964 /* RLMSyncUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncUtil.h; path = include/RLMSyncUtil.h; sourceTree = "<group>"; };
 		FA1DD68350D0BABF7A57055C79EBC7A7 /* NIMKitKeyboardInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitKeyboardInfo.m; path = NIMKit/NIMKit/Classes/Sections/Common/NIMKitKeyboardInfo.m; sourceTree = "<group>"; };
@@ -2546,7 +2549,7 @@
 		FD705BAACDE138B053B361AF19C7EDC8 /* NIMSessionMsgDatasource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMSessionMsgDatasource.m; path = NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionMsgDatasource.m; sourceTree = "<group>"; };
 		FD877B3B1A9EAACE76A05C29ABE3A90D /* ConcurrentMainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentMainScheduler.swift; path = RxSwift/Schedulers/ConcurrentMainScheduler.swift; sourceTree = "<group>"; };
 		FD8CF76532C973C5E92EEF25BA0E4D91 /* Toast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Toast.modulemap; sourceTree = "<group>"; };
-		FDF0EF75493D3B5EB7E319284DCD5768 /* sync_permission.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_permission.cpp; path = Realm/ObjectStore/src/sync/sync_permission.cpp; sourceTree = "<group>"; };
+		FDF0EF75493D3B5EB7E319284DCD5768 /* sync_permission.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = sync_permission.cpp; path = Realm/ObjectStore/src/sync/sync_permission.cpp; sourceTree = "<group>"; };
 		FDF0F7E47483CF6DC70A990AF69C3AE2 /* NIMMessageMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageMaker.h; path = NIMKit/NIMKit/Classes/Sections/Session/Model/NIMMessageMaker.h; sourceTree = "<group>"; };
 		FE37510E504F9FA259D847E2DA5C411E /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		FE43D14971740E0ED70E93E2F742F5ED /* dsBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsBridge.modulemap; sourceTree = "<group>"; };
@@ -2556,8 +2559,8 @@
 		FE9D5D3699487F97DCB4FD024C3089FB /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
 		FE9F0323CB5C2843DB4D94B467BBF789 /* Moya-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Moya-dummy.m"; sourceTree = "<group>"; };
 		FEA2375D683CB0C8ADFCA81939C14C14 /* NIMKitMessageAtModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NIMKitMessageAtModel.m; path = NIMKit/NIMKit/Classes/Sections/Session/Model/NIMKitMessageAtModel.m; sourceTree = "<group>"; };
-		FEEF249BD48C9E4E786D0998B9538947 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Moya.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF560623784E5D580CB4250018AF58DC /* keychain_helper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = keychain_helper.cpp; path = Realm/ObjectStore/src/impl/apple/keychain_helper.cpp; sourceTree = "<group>"; };
+		FEEF249BD48C9E4E786D0998B9538947 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF560623784E5D580CB4250018AF58DC /* keychain_helper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = keychain_helper.cpp; path = Realm/ObjectStore/src/impl/apple/keychain_helper.cpp; sourceTree = "<group>"; };
 		FF96C8C9346AE396F03F993C2DB709AE /* NIMUnsupportContentConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMUnsupportContentConfig.h; path = NIMKit/NIMKit/Classes/Sections/Session/Config/Content/NIMUnsupportContentConfig.h; sourceTree = "<group>"; };
 		FFED4DDE708E4F092C45DCC766153B0B /* NIMInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMInputView.h; path = NIMKit/NIMKit/Classes/Sections/Input/NIMInputView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2834,7 +2837,6 @@
 				98DBA9E1132EC6CC7375718A94ACB340 /* Frameworks */,
 				26579C3A6DB5F42DD1D76EC81013AEAE /* Support Files */,
 			);
-			name = JCore;
 			path = JCore;
 			sourceTree = "<group>";
 		};
@@ -2888,7 +2890,6 @@
 				FDD733255E793BB3F8ECAEB124E35BA3 /* Resources */,
 				0539471DBB885EBAD6BD9A49359C1D1E /* Support Files */,
 			);
-			name = CLImagePickerTool;
 			path = CLImagePickerTool;
 			sourceTree = "<group>";
 		};
@@ -2921,7 +2922,6 @@
 				233B0B850FF9A7385783CF007F143A7B /* URLTransform.swift */,
 				5C23AA5F0032B69B71CD654726AAE123 /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -2954,7 +2954,6 @@
 				5462656D386FE6989908A0C4D21F131E /* Lite */,
 				2DECD2F11FCC816F25858450DEBCDAC0 /* Support Files */,
 			);
-			name = NIMKit;
 			path = NIMKit;
 			sourceTree = "<group>";
 		};
@@ -2988,7 +2987,6 @@
 				44A8137A25F62A224B5127BA9D75544C /* Validation.swift */,
 				EE0AB520869B14E80AC5329E3A93176B /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -3036,7 +3034,6 @@
 				E64BF4A4050D05E04AEA3D2BCF6E01EE /* RxSwift */,
 				F050C20502F98506F7B3509B9CE6E0EE /* Support Files */,
 			);
-			name = "Moya-ObjectMapper";
 			path = "Moya-ObjectMapper";
 			sourceTree = "<group>";
 		};
@@ -3063,7 +3060,6 @@
 				130DF42D9E98765D66396E312C4AB294 /* FLAnimatedImageView.m */,
 				24B860E836BBC6E31C5578C473A7461D /* Support Files */,
 			);
-			name = FLAnimatedImage;
 			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
@@ -3138,7 +3134,6 @@
 				53AA3067DA60CAEBB7897356D87FDE50 /* UIButton+Kingfisher.swift */,
 				0CE95C27A5E55534A73DC6B9021EFAB3 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -3156,7 +3151,6 @@
 				F853F246A25F9109420324C58406B102 /* NSMutableAttributedString+M80.m */,
 				9EA65697506BEE2DD412CFBF463CE524 /* Support Files */,
 			);
-			name = M80AttributedLabel;
 			path = M80AttributedLabel;
 			sourceTree = "<group>";
 		};
@@ -3504,7 +3498,6 @@
 				47A40246AA98E8F574998A5B7DFACD06 /* ResultProtocol.swift */,
 				749E24BFE85D3396C86E9E769E9F8540 /* Support Files */,
 			);
-			name = Result;
 			path = Result;
 			sourceTree = "<group>";
 		};
@@ -3536,7 +3529,6 @@
 				7744D7B33D9E95EB77444A0DB64746BD /* JSBUtil.m */,
 				D65C686425088B23756B52C98BFC9061 /* Support Files */,
 			);
-			name = dsBridge;
 			path = dsBridge;
 			sourceTree = "<group>";
 		};
@@ -3565,7 +3557,6 @@
 				6662B2EA09D984E5842172918C3A542B /* Util.swift */,
 				944A4823AD85BF1EB288E8FD95215499 /* Support Files */,
 			);
-			name = RealmSwift;
 			path = RealmSwift;
 			sourceTree = "<group>";
 		};
@@ -3575,7 +3566,6 @@
 				CB3D98A92E8937B0B5649586E04ABDA9 /* SwiftyJSON.swift */,
 				64D0E987F8EA711E8C2AB3B7C8612E5D /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -3644,7 +3634,6 @@
 				DDC154A91FB52B6F4D2B9DAC27DF7ECA /* UIView+Toast.m */,
 				AFFC33C2D4DDDC9C98B5E493608F4ED5 /* Support Files */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -3676,7 +3665,6 @@
 				F2D93D8D0F586859ADF3CB8FC1DE4BDB /* GIF */,
 				1989DFA342D26366A5EFFCFDA0FE973E /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -3738,7 +3726,6 @@
 				A0DFC15B0E8423EF69752FF1C4327B44 /* Core */,
 				CAC1266FB802F9FA64D0C3F392BBB589 /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -3773,7 +3760,6 @@
 				1E113D7ECC2ADCA9A36248BF7DE586BF /* Resources */,
 				D4CED9E2EC2F88913119A263CC3542A0 /* Support Files */,
 			);
-			name = LLPhotoBrowser;
 			path = LLPhotoBrowser;
 			sourceTree = "<group>";
 		};
@@ -3812,7 +3798,6 @@
 				B104D38FEBF9686772AEF2CD611AB55E /* Frameworks */,
 				3FFB25AFE5E6BCD44DD1BB8A2A7967BD /* Support Files */,
 			);
-			name = NIMSDK_LITE;
 			path = NIMSDK_LITE;
 			sourceTree = "<group>";
 		};
@@ -3916,7 +3901,6 @@
 				D60D89EDC007A9ED3808C34A3E632605 /* Headers */,
 				974C15C0514DFD73F4105B49FF2206C0 /* Support Files */,
 			);
-			name = Realm;
 			path = Realm;
 			sourceTree = "<group>";
 		};
@@ -3957,7 +3941,6 @@
 				F33EF4F7F4FC7A9F3C6B89AB8029627E /* Player.swift */,
 				23D8591F8368D32912A9E22EDB69C134 /* Support Files */,
 			);
-			name = Player;
 			path = Player;
 			sourceTree = "<group>";
 		};
@@ -4116,7 +4099,6 @@
 				2F976E6100FC76D4F00692220BB956F9 /* Zip+Collection.swift */,
 				767BCDD83C5D31D18050E0B987102FDA /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -4134,7 +4116,6 @@
 				209A0FE34BF216B019A348F62375454C /* Reachability.swift */,
 				EA3EE9373284CE9358864EB2C08A6486 /* Support Files */,
 			);
-			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -4282,7 +4263,6 @@
 				959C764182E29D53FFD04031ED493FC7 /* RxAtomic.h */,
 				E62410A921A951F40B0B59266ABCF56A /* Support Files */,
 			);
-			name = RxAtomic;
 			path = RxAtomic;
 			sourceTree = "<group>";
 		};
@@ -4325,7 +4305,6 @@
 				7468EFC58F0E332D0C8483CE4475457C /* UILayoutSupport+Extensions.swift */,
 				E634A31CB1CB09B15FE6C48CCDB89718 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -4428,7 +4407,6 @@
 				735DBD15EBD39EC50B5954A618ECCDF2 /* Resources */,
 				552D93D8A6906466B466D7FF826F750C /* Support Files */,
 			);
-			name = TZImagePickerController;
 			path = TZImagePickerController;
 			sourceTree = "<group>";
 		};
@@ -4493,7 +4471,6 @@
 				F4712AB38C0CE5E631086E55F6D3A1C4 /* Frameworks */,
 				C6D3E82C375B85E4DE1140929A7E5F41 /* Support Files */,
 			);
-			name = JPush;
 			path = JPush;
 			sourceTree = "<group>";
 		};
@@ -5496,6 +5473,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = E194160BA3791D1937A8FCBC21568FE5 /* Products */;
@@ -6859,11 +6837,7 @@
 				INFOPLIST_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap";
 				PRODUCT_MODULE_NAME = FLAnimatedImage;
 				PRODUCT_NAME = FLAnimatedImage;
@@ -6912,11 +6886,7 @@
 				INFOPLIST_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap";
 				PRODUCT_MODULE_NAME = FLAnimatedImage;
 				PRODUCT_NAME = FLAnimatedImage;
@@ -6947,11 +6917,7 @@
 				INFOPLIST_FILE = "Target Support Files/CLImagePickerTool/CLImagePickerTool-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CLImagePickerTool/CLImagePickerTool.modulemap";
 				PRODUCT_MODULE_NAME = CLImagePickerTool;
 				PRODUCT_NAME = CLImagePickerTool;
@@ -6982,11 +6948,7 @@
 				INFOPLIST_FILE = "Target Support Files/Kingfisher/Kingfisher-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
 				PRODUCT_MODULE_NAME = Kingfisher;
 				PRODUCT_NAME = Kingfisher;
@@ -7018,11 +6980,7 @@
 				INFOPLIST_FILE = "Target Support Files/Kingfisher/Kingfisher-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
 				PRODUCT_MODULE_NAME = Kingfisher;
 				PRODUCT_NAME = Kingfisher;
@@ -7053,11 +7011,7 @@
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
 				PRODUCT_MODULE_NAME = SDWebImage;
 				PRODUCT_NAME = SDWebImage;
@@ -7089,11 +7043,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoodManager/Pods-GoodManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoodManager/Pods-GoodManager.modulemap";
 				OTHER_LDFLAGS = "";
@@ -7128,11 +7078,7 @@
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				PRODUCT_MODULE_NAME = Alamofire;
 				PRODUCT_NAME = Alamofire;
@@ -7163,11 +7109,7 @@
 				INFOPLIST_FILE = "Target Support Files/RxSwift/RxSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RxSwift/RxSwift.modulemap";
 				PRODUCT_MODULE_NAME = RxSwift;
 				PRODUCT_NAME = RxSwift;
@@ -7234,8 +7176,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -7258,11 +7199,7 @@
 				INFOPLIST_FILE = "Target Support Files/Toast/Toast-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Toast/Toast.modulemap";
 				PRODUCT_MODULE_NAME = Toast;
 				PRODUCT_NAME = Toast;
@@ -7293,11 +7230,7 @@
 				INFOPLIST_FILE = "Target Support Files/RxAtomic/RxAtomic-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RxAtomic/RxAtomic.modulemap";
 				PRODUCT_MODULE_NAME = RxAtomic;
 				PRODUCT_NAME = RxAtomic;
@@ -7329,11 +7262,7 @@
 				INFOPLIST_FILE = "Target Support Files/dsBridge/dsBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/dsBridge/dsBridge.modulemap";
 				PRODUCT_MODULE_NAME = dsBridge;
 				PRODUCT_NAME = dsBridge;
@@ -7355,10 +7284,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7382,11 +7308,7 @@
 				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
 				PRODUCT_MODULE_NAME = ObjectMapper;
 				PRODUCT_NAME = ObjectMapper;
@@ -7418,11 +7340,7 @@
 				INFOPLIST_FILE = "Target Support Files/dsBridge/dsBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/dsBridge/dsBridge.modulemap";
 				PRODUCT_MODULE_NAME = dsBridge;
 				PRODUCT_NAME = dsBridge;
@@ -7453,11 +7371,7 @@
 				INFOPLIST_FILE = "Target Support Files/Moya/Moya-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Moya/Moya.modulemap";
 				PRODUCT_MODULE_NAME = Moya;
 				PRODUCT_NAME = Moya;
@@ -7488,11 +7402,7 @@
 				INFOPLIST_FILE = "Target Support Files/LLPhotoBrowser/LLPhotoBrowser-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/LLPhotoBrowser/LLPhotoBrowser.modulemap";
 				PRODUCT_MODULE_NAME = LLPhotoBrowser;
 				PRODUCT_NAME = LLPhotoBrowser;
@@ -7524,11 +7434,7 @@
 				INFOPLIST_FILE = "Target Support Files/Toast/Toast-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Toast/Toast.modulemap";
 				PRODUCT_MODULE_NAME = Toast;
 				PRODUCT_NAME = Toast;
@@ -7560,11 +7466,7 @@
 				INFOPLIST_FILE = "Target Support Files/M80AttributedLabel/M80AttributedLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/M80AttributedLabel/M80AttributedLabel.modulemap";
 				PRODUCT_MODULE_NAME = M80AttributedLabel;
 				PRODUCT_NAME = M80AttributedLabel;
@@ -7649,10 +7551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7677,11 +7576,7 @@
 				INFOPLIST_FILE = "Target Support Files/Realm/Realm-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Realm/Realm.modulemap";
 				PRODUCT_MODULE_NAME = Realm;
 				PRODUCT_NAME = Realm;
@@ -7703,10 +7598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7731,11 +7623,7 @@
 				INFOPLIST_FILE = "Target Support Files/RxSwift/RxSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RxSwift/RxSwift.modulemap";
 				PRODUCT_MODULE_NAME = RxSwift;
 				PRODUCT_NAME = RxSwift;
@@ -7767,11 +7655,7 @@
 				INFOPLIST_FILE = "Target Support Files/Result/Result-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Result/Result.modulemap";
 				PRODUCT_MODULE_NAME = Result;
 				PRODUCT_NAME = Result;
@@ -7803,11 +7687,7 @@
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
 				PRODUCT_MODULE_NAME = SnapKit;
 				PRODUCT_NAME = SnapKit;
@@ -7839,11 +7719,7 @@
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
 				PRODUCT_MODULE_NAME = SDWebImage;
 				PRODUCT_NAME = SDWebImage;
@@ -7875,11 +7751,7 @@
 				INFOPLIST_FILE = "Target Support Files/Realm/Realm-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Realm/Realm.modulemap";
 				PRODUCT_MODULE_NAME = Realm;
 				PRODUCT_NAME = Realm;
@@ -7927,11 +7799,7 @@
 				INFOPLIST_FILE = "Target Support Files/RealmSwift/RealmSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RealmSwift/RealmSwift.modulemap";
 				PRODUCT_MODULE_NAME = RealmSwift;
 				PRODUCT_NAME = RealmSwift;
@@ -7963,11 +7831,7 @@
 				INFOPLIST_FILE = "Target Support Files/TZImagePickerController/TZImagePickerController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TZImagePickerController/TZImagePickerController.modulemap";
 				PRODUCT_MODULE_NAME = TZImagePickerController;
 				PRODUCT_NAME = TZImagePickerController;
@@ -7998,11 +7862,7 @@
 				INFOPLIST_FILE = "Target Support Files/ObjectMapper/ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
 				PRODUCT_MODULE_NAME = ObjectMapper;
 				PRODUCT_NAME = ObjectMapper;
@@ -8033,11 +7893,7 @@
 				INFOPLIST_FILE = "Target Support Files/RealmSwift/RealmSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RealmSwift/RealmSwift.modulemap";
 				PRODUCT_MODULE_NAME = RealmSwift;
 				PRODUCT_NAME = RealmSwift;
@@ -8069,11 +7925,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoodManager/Pods-GoodManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoodManager/Pods-GoodManager.modulemap";
 				OTHER_LDFLAGS = "";
@@ -8107,11 +7959,7 @@
 				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
 				PRODUCT_MODULE_NAME = Reachability;
 				PRODUCT_NAME = Reachability;
@@ -8142,11 +7990,7 @@
 				INFOPLIST_FILE = "Target Support Files/Result/Result-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Result/Result.modulemap";
 				PRODUCT_MODULE_NAME = Result;
 				PRODUCT_NAME = Result;
@@ -8177,11 +8021,7 @@
 				INFOPLIST_FILE = "Target Support Files/Moya-ObjectMapper/Moya-ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Moya-ObjectMapper/Moya-ObjectMapper.modulemap";
 				PRODUCT_MODULE_NAME = Moya_ObjectMapper;
 				PRODUCT_NAME = Moya_ObjectMapper;
@@ -8213,11 +8053,7 @@
 				INFOPLIST_FILE = "Target Support Files/Moya/Moya-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Moya/Moya.modulemap";
 				PRODUCT_MODULE_NAME = Moya;
 				PRODUCT_NAME = Moya;
@@ -8249,11 +8085,7 @@
 				INFOPLIST_FILE = "Target Support Files/CLImagePickerTool/CLImagePickerTool-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CLImagePickerTool/CLImagePickerTool.modulemap";
 				PRODUCT_MODULE_NAME = CLImagePickerTool;
 				PRODUCT_NAME = CLImagePickerTool;
@@ -8285,11 +8117,7 @@
 				INFOPLIST_FILE = "Target Support Files/LLPhotoBrowser/LLPhotoBrowser-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/LLPhotoBrowser/LLPhotoBrowser.modulemap";
 				PRODUCT_MODULE_NAME = LLPhotoBrowser;
 				PRODUCT_NAME = LLPhotoBrowser;
@@ -8320,11 +8148,7 @@
 				INFOPLIST_FILE = "Target Support Files/NIMKit/NIMKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NIMKit/NIMKit.modulemap";
 				PRODUCT_MODULE_NAME = NIMKit;
 				PRODUCT_NAME = NIMKit;
@@ -8355,11 +8179,7 @@
 				INFOPLIST_FILE = "Target Support Files/RxAtomic/RxAtomic-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RxAtomic/RxAtomic.modulemap";
 				PRODUCT_MODULE_NAME = RxAtomic;
 				PRODUCT_NAME = RxAtomic;
@@ -8380,10 +8200,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8408,11 +8225,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyJSON;
 				PRODUCT_NAME = SwiftyJSON;
@@ -8444,11 +8257,7 @@
 				INFOPLIST_FILE = "Target Support Files/TZImagePickerController/TZImagePickerController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TZImagePickerController/TZImagePickerController.modulemap";
 				PRODUCT_MODULE_NAME = TZImagePickerController;
 				PRODUCT_NAME = TZImagePickerController;
@@ -8480,11 +8289,7 @@
 				INFOPLIST_FILE = "Target Support Files/Moya-ObjectMapper/Moya-ObjectMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Moya-ObjectMapper/Moya-ObjectMapper.modulemap";
 				PRODUCT_MODULE_NAME = Moya_ObjectMapper;
 				PRODUCT_NAME = Moya_ObjectMapper;
@@ -8505,10 +8310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8532,11 +8334,7 @@
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				PRODUCT_MODULE_NAME = Alamofire;
 				PRODUCT_NAME = Alamofire;
@@ -8568,11 +8366,7 @@
 				INFOPLIST_FILE = "Target Support Files/Player/Player-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Player/Player.modulemap";
 				PRODUCT_MODULE_NAME = Player;
 				PRODUCT_NAME = Player;
@@ -8604,11 +8398,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyJSON;
 				PRODUCT_NAME = SwiftyJSON;
@@ -8639,11 +8429,7 @@
 				INFOPLIST_FILE = "Target Support Files/Player/Player-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Player/Player.modulemap";
 				PRODUCT_MODULE_NAME = Player;
 				PRODUCT_NAME = Player;
@@ -8674,11 +8460,7 @@
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
 				PRODUCT_MODULE_NAME = SnapKit;
 				PRODUCT_NAME = SnapKit;
@@ -8709,11 +8491,7 @@
 				INFOPLIST_FILE = "Target Support Files/M80AttributedLabel/M80AttributedLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/M80AttributedLabel/M80AttributedLabel.modulemap";
 				PRODUCT_MODULE_NAME = M80AttributedLabel;
 				PRODUCT_NAME = M80AttributedLabel;
@@ -8735,10 +8513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8762,11 +8537,7 @@
 				INFOPLIST_FILE = "Target Support Files/NIMKit/NIMKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/NIMKit/NIMKit.modulemap";
 				PRODUCT_MODULE_NAME = NIMKit;
 				PRODUCT_NAME = NIMKit;
@@ -8798,11 +8569,7 @@
 				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
 				PRODUCT_MODULE_NAME = Reachability;
 				PRODUCT_NAME = Reachability;

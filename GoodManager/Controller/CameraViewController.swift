@@ -32,10 +32,10 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
             let imageData = image.jpegData(compressionQuality: 1)
             //        print ("name:"+"\(date)")
             fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
-            print(filePath)
+            print("filePath:  "+filePath)
             APPExecWinJS(mark: "", JSFun: callbackfun! + "(\"" + filePath + "\")")
         }
-        
+        print("hello error!")
     }
     
     
