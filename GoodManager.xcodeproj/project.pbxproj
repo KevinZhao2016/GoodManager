@@ -56,6 +56,20 @@
 		0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04CE21E0D4EF0032C670 /* Window.swift */; };
 		0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04D021E0DDB50032C670 /* QRCode.swift */; };
 		0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB1E0121FB3E0500007EDA /* Location.swift */; };
+		18C188322220419900C8B172 /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188132220419900C8B172 /* UIAlertController+Extend.m */; };
+		18C188332220419900C8B172 /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188142220419900C8B172 /* UIImage+Extend.m */; };
+		18C188342220419900C8B172 /* IDInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C188182220419900C8B172 /* IDInfoViewController.xib */; };
+		18C188352220419900C8B172 /* IDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188192220419900C8B172 /* IDInfoViewController.m */; };
+		18C188362220419900C8B172 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1881A2220419900C8B172 /* AVCaptureViewController.m */; };
+		18C188372220419900C8B172 /* JQAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */; };
+		18C188382220419900C8B172 /* IDAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1881C2220419900C8B172 /* IDAuthViewController.m */; };
+		18C188392220419900C8B172 /* IDAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C1881D2220419900C8B172 /* IDAuthViewController.xib */; };
+		18C1883A2220419900C8B172 /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C188222220419900C8B172 /* libexidcardios.a */; };
+		18C1883B2220419900C8B172 /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 18C188242220419900C8B172 /* zocr0.lib */; };
+		18C1883C2220419900C8B172 /* IDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188282220419900C8B172 /* IDInfo.m */; };
+		18C1883D2220419900C8B172 /* JQIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1882B2220419900C8B172 /* JQIDCardScaningView.m */; };
+		18C1883E2220419900C8B172 /* LHSIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */; };
+		18C1883F2220419900C8B172 /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188312220419900C8B172 /* RectManager.m */; };
 		5697F418221EB957000AC814 /* Jpush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697F417221EB957000AC814 /* Jpush.swift */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
 		6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B58D2B9221EA124004D6D91 /* Nim.swift */; };
@@ -137,6 +151,32 @@
 		0AFB04CE21E0D4EF0032C670 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0AFB04D021E0DDB50032C670 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		0AFB1E0121FB3E0500007EDA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		18C188122220419900C8B172 /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
+		18C188132220419900C8B172 /* UIAlertController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extend.m"; sourceTree = "<group>"; };
+		18C188142220419900C8B172 /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
+		18C188152220419900C8B172 /* UIAlertController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extend.h"; sourceTree = "<group>"; };
+		18C188172220419900C8B172 /* IDAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDAuthViewController.h; sourceTree = "<group>"; };
+		18C188182220419900C8B172 /* IDInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDInfoViewController.xib; sourceTree = "<group>"; };
+		18C188192220419900C8B172 /* IDInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfoViewController.m; sourceTree = "<group>"; };
+		18C1881A2220419900C8B172 /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
+		18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQAVCaptureViewController.m; sourceTree = "<group>"; };
+		18C1881C2220419900C8B172 /* IDAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAuthViewController.m; sourceTree = "<group>"; };
+		18C1881D2220419900C8B172 /* IDAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDAuthViewController.xib; sourceTree = "<group>"; };
+		18C1881E2220419900C8B172 /* AVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
+		18C1881F2220419900C8B172 /* IDInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfoViewController.h; sourceTree = "<group>"; };
+		18C188202220419900C8B172 /* JQAVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQAVCaptureViewController.h; sourceTree = "<group>"; };
+		18C188222220419900C8B172 /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+		18C188242220419900C8B172 /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
+		18C188252220419900C8B172 /* commondef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commondef.h; sourceTree = "<group>"; };
+		18C188262220419900C8B172 /* excards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = excards.h; sourceTree = "<group>"; };
+		18C188282220419900C8B172 /* IDInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfo.m; sourceTree = "<group>"; };
+		18C188292220419900C8B172 /* IDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfo.h; sourceTree = "<group>"; };
+		18C1882B2220419900C8B172 /* JQIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQIDCardScaningView.m; sourceTree = "<group>"; };
+		18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSIDCardScaningView.m; sourceTree = "<group>"; };
+		18C1882D2220419900C8B172 /* JQIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQIDCardScaningView.h; sourceTree = "<group>"; };
+		18C1882E2220419900C8B172 /* LHSIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSIDCardScaningView.h; sourceTree = "<group>"; };
+		18C188302220419900C8B172 /* RectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectManager.h; sourceTree = "<group>"; };
+		18C188312220419900C8B172 /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		5697F417221EB957000AC814 /* Jpush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jpush.swift; sourceTree = "<group>"; };
 		6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DemoProject-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -151,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */,
+				18C1883A2220419900C8B172 /* libexidcardios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +239,7 @@
 			children = (
 				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
 				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
+				18C188102220419900C8B172 /* IDCardRecognition */,
 				0AEDCAB921F166A8005887A3 /* NetWorking */,
 				0A4EDB8021E0849700DB6356 /* View */,
 				0A5B880721D377410045A1BE /* Extension */,
@@ -333,6 +375,95 @@
 				0AEDCAC121F16840005887A3 /* LaunchTarget.swift */,
 			);
 			path = Target;
+			sourceTree = "<group>";
+		};
+		18C188102220419900C8B172 /* IDCardRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				18C188112220419900C8B172 /* Category */,
+				18C188162220419900C8B172 /* Controller */,
+				18C188212220419900C8B172 /* libexidcard */,
+				18C188272220419900C8B172 /* Model */,
+				18C1882A2220419900C8B172 /* View */,
+				18C1882F2220419900C8B172 /* Tool */,
+			);
+			path = IDCardRecognition;
+			sourceTree = "<group>";
+		};
+		18C188112220419900C8B172 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				18C188122220419900C8B172 /* UIImage+Extend.h */,
+				18C188132220419900C8B172 /* UIAlertController+Extend.m */,
+				18C188142220419900C8B172 /* UIImage+Extend.m */,
+				18C188152220419900C8B172 /* UIAlertController+Extend.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		18C188162220419900C8B172 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18C188172220419900C8B172 /* IDAuthViewController.h */,
+				18C188182220419900C8B172 /* IDInfoViewController.xib */,
+				18C188192220419900C8B172 /* IDInfoViewController.m */,
+				18C1881A2220419900C8B172 /* AVCaptureViewController.m */,
+				18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */,
+				18C1881C2220419900C8B172 /* IDAuthViewController.m */,
+				18C1881D2220419900C8B172 /* IDAuthViewController.xib */,
+				18C1881E2220419900C8B172 /* AVCaptureViewController.h */,
+				18C1881F2220419900C8B172 /* IDInfoViewController.h */,
+				18C188202220419900C8B172 /* JQAVCaptureViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18C188212220419900C8B172 /* libexidcard */ = {
+			isa = PBXGroup;
+			children = (
+				18C188222220419900C8B172 /* libexidcardios.a */,
+				18C188232220419900C8B172 /* dicts */,
+				18C188252220419900C8B172 /* commondef.h */,
+				18C188262220419900C8B172 /* excards.h */,
+			);
+			path = libexidcard;
+			sourceTree = "<group>";
+		};
+		18C188232220419900C8B172 /* dicts */ = {
+			isa = PBXGroup;
+			children = (
+				18C188242220419900C8B172 /* zocr0.lib */,
+			);
+			path = dicts;
+			sourceTree = "<group>";
+		};
+		18C188272220419900C8B172 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18C188282220419900C8B172 /* IDInfo.m */,
+				18C188292220419900C8B172 /* IDInfo.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18C1882A2220419900C8B172 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18C1882B2220419900C8B172 /* JQIDCardScaningView.m */,
+				18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */,
+				18C1882D2220419900C8B172 /* JQIDCardScaningView.h */,
+				18C1882E2220419900C8B172 /* LHSIDCardScaningView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18C1882F2220419900C8B172 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				18C188302220419900C8B172 /* RectManager.h */,
+				18C188312220419900C8B172 /* RectManager.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */ = {
@@ -471,6 +602,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C188342220419900C8B172 /* IDInfoViewController.xib in Resources */,
+				18C1883B2220419900C8B172 /* zocr0.lib in Resources */,
+				18C188392220419900C8B172 /* IDAuthViewController.xib in Resources */,
 				0A4A020521D32D6700FD39F7 /* LaunchScreen.storyboard in Resources */,
 				0A4A020221D32D6700FD39F7 /* Assets.xcassets in Resources */,
 				0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */,
@@ -592,7 +726,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C188322220419900C8B172 /* UIAlertController+Extend.m in Sources */,
+				18C188332220419900C8B172 /* UIImage+Extend.m in Sources */,
 				0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */,
+				18C1883E2220419900C8B172 /* LHSIDCardScaningView.m in Sources */,
+				18C188372220419900C8B172 /* JQAVCaptureViewController.m in Sources */,
 				5697F418221EB957000AC814 /* Jpush.swift in Sources */,
 				0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */,
 				0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */,
@@ -610,6 +748,7 @@
 				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
 				0AEC339F21F879B100A0245F /* JsApiSwift.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				18C188362220419900C8B172 /* AVCaptureViewController.m in Sources */,
 				0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */,
 				0A4E312321E199AB00D15766 /* Image.swift in Sources */,
 				0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */,
@@ -623,6 +762,7 @@
 				0A3E2F9D2220339A00BD3124 /* ExUIColor.swift in Sources */,
 				0A7F576C21E2FD4B00F03870 /* PlayerViewController.swift in Sources */,
 				0AEDCABB21F166D0005887A3 /* APINetworkActivityPlugin.swift in Sources */,
+				18C188382220419900C8B172 /* IDAuthViewController.m in Sources */,
 				0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */,
 				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
@@ -631,10 +771,14 @@
 				6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */,
 				0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */,
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
+				18C1883C2220419900C8B172 /* IDInfo.m in Sources */,
+				18C1883F2220419900C8B172 /* RectManager.m in Sources */,
+				18C188352220419900C8B172 /* IDInfoViewController.m in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
 				0AEDCAC621F1709F005887A3 /* LaunchResultModel.swift in Sources */,
+				18C1883D2220419900C8B172 /* JQIDCardScaningView.m in Sources */,
 				0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
 			);
@@ -820,11 +964,16 @@
 				CODE_SIGN_ENTITLEMENTS = GoodManager/GoodManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32G846HEF6;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoodManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoodManager/IDCardRecognition/libexidcard",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -844,11 +993,16 @@
 				CODE_SIGN_ENTITLEMENTS = GoodManager/GoodManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32G846HEF6;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoodManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoodManager/IDCardRecognition/libexidcard",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,4 +11,6 @@
 #import <NIMSDK/NIMSDK.h>
 #import <NIMSessionListViewController.h>
 #import <NIMSessionViewController.h>
+// IDCard识别
+#import "IDAuthViewController.h"
 
