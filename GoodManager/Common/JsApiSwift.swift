@@ -215,4 +215,66 @@ class JsApiSwift: NSObject {
         GoodManager.APPSetBrowserHomeURL(url: url)
     }
     
+    @objc func APPPushSetAlias(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let alias = jsonString["alias"].stringValue
+        GoodManager.APPPushSetAlias(alias)
+    }
+    
+    @objc func APPPushCancelAlias(_ arg:String) {
+        GoodManager.APPPushCancelAlias()
+    }
+    
+    @objc func APPPushMsgRemindType(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let ifOpenVoice = jsonString["ifOpenVoice"].intValue
+        let ifOpenVibration = jsonString["ifOpenVibration"].intValue
+        GoodManager.APPPushMsgRemindType(ifOpenVoice,ifOpenVibration:ifOpenVibration)
+    }
+    
+    @objc func APPNELogin(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let account = jsonString["account"].stringValue
+        let password = jsonString["password"].stringValue
+        GoodManager.APPNELogin(account: account, password: password)
+    }
+    
+    @objc func APPNELoginOut(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let account = jsonString["account"].stringValue
+        let password = jsonString["password"].stringValue
+        let statusBarColor = jsonString["password"].stringValue
+        GoodManager.APPNEOpenDialog(account:account, password:password, statusBarColor:statusBarColor)
+    }
+    
+    @objc func APPNEOpenTelBook(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let account = jsonString["account"].stringValue
+        let password = jsonString["password"].stringValue
+        let statusBarColor = jsonString["password"].stringValue
+        GoodManager.APPNEOpenTelBook(account:account, password:password, statusBarColor:statusBarColor)
+    }
+    
+    @objc func APPNEChatWithFriend(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let fAccount = jsonString["fAccount"].stringValue
+        let statusBarColor = jsonString["password"].stringValue
+        GoodManager.APPNEChatWithFriend(fAccount:fAccount, statusBarColor:statusBarColor)
+    }
+    
+    @objc func APPNEGetUnreadNum(_ arg:String) {
+        GoodManager.APPNEGetUnreadNum()
+    }
+    
+    @objc func APPNEGetUnreadWithQNum(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let qMark = jsonString["qMark"].stringValue
+        GoodManager.APPNEGetUnreadWithQNum(qMark)
+    }
+    
+    @objc func APPNEGetQUnreadWithFNum(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let fAccount = jsonString["fAccount"].stringValue
+        GoodManager.APPNEGetQUnreadWithFNum(fAccount)
+    }
 }

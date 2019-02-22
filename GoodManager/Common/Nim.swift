@@ -8,16 +8,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
-    }
-    
-    func APPNELogin()  {
+func APPNELogin(account: String, password:String)  {
         let account:String = "用户登录的账号"//按测试给的内容更换
         let token = "从自家服务器返回的token"//按测试给的内容更换
         NIMSDK.shared().loginManager.login(account, token: token) { (error) in
@@ -26,6 +18,7 @@ class LoginViewController: UIViewController {
             }
         };
     }
+
     func APPNELoginOut()  {
         NIMSDK.shared().loginManager.logout { (error) in
             if let myError = error {
@@ -35,23 +28,25 @@ class LoginViewController: UIViewController {
         
     }
     //    打开网易云信会话列表
-    func APPNEOpenDialog()  {
+func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
         let vc:NIMSessionListViewController = NIMSessionListViewController();
-        self.present(vc, animated: true, completion: nil);
+        let basevc = getLastMainViewController()
+        basevc.present(vc, animated: true, completion: nil);
     }
     //    获取网易云信通讯录
-    func APPNEOpenTelBook() ->[NIMUser]  {
+    func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) ->[NIMUser]  {
         let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
         return users;
         //users 这个就是数据源  具体ui 自定义
     }
     //打开网易云信好友聊天窗口
-    func  APPNEChatWithFriend(){
+    func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
         let session:NIMSession = NIMSession("要聊天的那个人得sessionid", type: .P2P)//按测试给的内容更换
         let vc:NIMSessionViewController = NIMSessionViewController(session: session)
         //这个一般是导航
         //        self.navigationController?.pushViewController(vc, animated: true)
-        self .present(vc, animated: true, completion: nil);
+        let basevc = getLastMainViewController()
+        basevc.present(vc, animated: true, completion: nil);
     }
     //获取网易云信全部未读消息数
     func  APPNEGetUnreadNum() ->Int {
@@ -74,16 +69,4 @@ class LoginViewController: UIViewController {
         let unreadCount:Int =  recentSession?.unreadCount ?? 0
         return unreadCount;
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}

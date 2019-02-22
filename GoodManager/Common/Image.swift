@@ -191,7 +191,9 @@ func APPGetIdentityCardImage(callBackfunName:String){
 //图片预览
 func APPPreviewImage(paths:String,defaultIndex:Int){
     var photoArray:Array<LLBrowserModel> = []
-    let splitedArray:Array<String> = paths.components(separatedBy: ",")
+    var path = paths.replacingOccurrences(of: " ", with: "")
+    path = path.replacingOccurrences(of: "\n", with: "")
+    let splitedArray:Array<String> = path.components(separatedBy: ",")
     for path in splitedArray{
         let model = LLBrowserModel.init()
         model.imageURL = path
@@ -199,9 +201,10 @@ func APPPreviewImage(paths:String,defaultIndex:Int){
     }
     let browser = LLPhotoBrowserViewController(photoArray: photoArray, currentIndex: defaultIndex)
     // 模态弹出
-    let vc = mainViewControllers.last
+    let vc = getLastMainViewController()
     browser.actionSheetBackgroundColor = UIColor.white
-    vc!.present(browser, animated: false, completion: nil)
+    
+    vc.present(browser, animated: false, completion: nil)
 }
 
 fileprivate func getPathFromAsset(phasset:PHAsset, size:CGSize, ifOriginalPic:Int) ->   [String]{

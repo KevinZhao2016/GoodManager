@@ -19,7 +19,7 @@ class KeyValueRealm{
     func addKeyValue(key:String, value:String) -> Bool{
         let realm = try! Realm()
         print(realm.configuration.fileURL ?? "")
-        var keyValue = queueKeyValue(key:key)
+        let keyValue = queueKeyValue(key:key)
         if(keyValue.key != ""){
             return false
         }
@@ -69,5 +69,5 @@ func APPGetValue(key:String) -> String{
 
 func APPDelValue(key:String) {
     let agent = KeyValueRealm()
-    agent.deleteKeyValue(key: key)
+   _ = agent.deleteKeyValue(key: key)
 }
