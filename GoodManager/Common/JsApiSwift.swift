@@ -176,7 +176,7 @@ class JsApiSwift: NSObject {
         let callBackfunName = jsonString["callBackfunName"].stringValue
         GoodManager.APPStartLocation(callBackfunName: callBackfunName)
     }
-    
+    //通讯录
     @objc func APPGetTelBookList(_ arg:String){
         let jsonString = JSON(parseJSON: arg)
         let callBackfunName = jsonString["callBackfunName"].stringValue
@@ -200,6 +200,7 @@ class JsApiSwift: NSObject {
     @objc func APPSetStatusBarColor(_ arg:String){
         let jsonString = JSON(parseJSON: arg)
         let color = jsonString["color"].stringValue
+        print(color)
         GoodManager.AppSetStatusBarColor(color: color)
     }
     

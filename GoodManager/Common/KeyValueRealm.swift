@@ -12,6 +12,10 @@ import RealmSwift
 class KeyValue: Object {
     @objc dynamic var key:String = ""
     @objc dynamic var value:String = ""
+    
+//    override static func primaryKey() -> String? {
+//        return "key"
+//    }
 }
 
 
@@ -21,16 +25,27 @@ class KeyValueRealm{
         print(realm.configuration.fileURL ?? "")
         let keyValue = queueKeyValue(key:key)
         if(keyValue.key != ""){
-            return false
-        }
-        keyValue.key = key
-        keyValue.value = value
-        do{
-            try realm.write {
-                realm.add(keyValue)
+            do{
+                try realm.write {
+                    realm.delete(keyValue)
+                    let keyvalue = KeyValue()
+                    keyvalue.key = key
+                    keyvalue.value = value
+                    realm.add(keyvalue)
+                }
+            }catch{
+                return false
             }
-        }catch{
-            return false
+        }else{
+            keyValue.key = key
+            keyValue.value = value
+            do{
+                try realm.write {
+                    realm.add(keyValue)
+                }
+            }catch{
+                return false
+            }
         }
         return true
     }
@@ -53,8 +68,8 @@ class KeyValueRealm{
         let realm = try! Realm()
         let result =  realm.objects(KeyValue.self).filter("key == %@",key).first
         return result ?? KeyValue()
+        }
     }
-}
 
 func APPSetValue(key:String, value:String){
     let agent = KeyValueRealm()
