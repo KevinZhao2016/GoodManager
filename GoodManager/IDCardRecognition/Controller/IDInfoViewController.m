@@ -83,14 +83,14 @@
             break;
         }
     }
-    //发送通知
-    //把要发送的信息放入字典中(boss要在论坛中说的话)
-    NSDictionary *message = @{@"idCardFrontImage" : fullPath};
-    //创建通知对象
-    NSNotification * notification = [NSNotification notificationWithName:@"idCardFront" object:self userInfo:message];
-    //向通知中心发送消息（发布消息）
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
-    NSLog(@"发送消息！！！");
+//    //发送通知
+//    //把要发送的信息放入字典中(boss要在论坛中说的话)
+//    NSDictionary *message = @{@"idCardFrontImage" : fullPath};
+//    //创建通知对象
+//    NSNotification * notification = [NSNotification notificationWithName:@"idCardFront" object:self userInfo:message];
+//    //向通知中心发送消息（发布消息）
+//    [[NSNotificationCenter defaultCenter] postNotification:notification];
+//    NSLog(@"发送消息！！！");
     
     [present dismissViewControllerAnimated:YES completion:nil];
     
