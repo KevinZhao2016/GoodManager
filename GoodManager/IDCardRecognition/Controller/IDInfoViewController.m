@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"身份证信息";
     
@@ -83,8 +84,15 @@
             break;
         }
     }
+    ocUseSwift *ous = [ocUseSwift alloc];
+    //callbackfun+"(\"+...+"\")"
+    NSString *str = [[[self.callbackfun stringByAppendingString:@"(\""] stringByAppendingString:fullPath] stringByAppendingString:@"\")"];
+    NSLog(str);
+    [ous ExecWinJSWithJSFun:str];
+    [present dismissViewControllerAnimated:YES completion:nil];
+
 //    //发送通知
-//    //把要发送的信息放入字典中(boss要在论坛中说的话)
+//    //把要发送的信息放入字典中
 //    NSDictionary *message = @{@"idCardFrontImage" : fullPath};
 //    //创建通知对象
 //    NSNotification * notification = [NSNotification notificationWithName:@"idCardFront" object:self userInfo:message];
@@ -92,14 +100,12 @@
 //    [[NSNotificationCenter defaultCenter] postNotification:notification];
 //    NSLog(@"发送消息！！！");
     
-    [present dismissViewControllerAnimated:YES completion:nil];
     
     
 //    [self.navigationController popToRootViewControllerAnimated:YES];
 //    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
 
     
-    ocUseSwift *ous = [ocUseSwift alloc];
     //[ous ExecWinJSWithJSFun:];
     
 //    ous

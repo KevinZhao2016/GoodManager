@@ -46,6 +46,9 @@
 // 是否打开手电筒
 @property (nonatomic,assign,getter = isTorchOn) BOOL torchOn;
 
+@property (nonatomic, strong) NSString *callbackfun;
+
+
 @end
 
 @implementation JQAVCaptureViewController

@@ -538,8 +538,11 @@
                 // 推出IDInfoVC（展示身份证信息的控制器）
                 IDInfoViewController *IDInfoVC = [[IDInfoViewController alloc] init];
 
+                
                 IDInfoVC.IDInfo = iDInfo;// 身份证信息
                 IDInfoVC.IDImage = subImage;// 身份证图像
+                
+                IDInfoVC.callbackfun = self.callbackfun;
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.navigationController pushViewController:IDInfoVC animated:YES];

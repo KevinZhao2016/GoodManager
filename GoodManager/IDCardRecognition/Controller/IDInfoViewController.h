@@ -21,4 +21,6 @@ typedef void (^ablock) (NSString *str);
 // 身份证图像
 @property (nonatomic,strong) UIImage *IDImage;
 
+@property (nonatomic, strong) NSString *callbackfun;
+
 @end

@@ -11,7 +11,7 @@
 #import "JQAVCaptureViewController.h"
 
 @interface IDAuthViewController ()
-    
+
 @end
 
 @implementation IDAuthViewController
@@ -68,6 +68,7 @@
 #pragma mark - 正面拍摄
 - (IBAction)shoot:(UIButton *)sender {
     AVCaptureViewController *AVCaptureVC = [[AVCaptureViewController alloc] init];
+    AVCaptureVC.callbackfun = self.callbackfun;
     [self.navigationController pushViewController:AVCaptureVC animated:YES];
 }
 

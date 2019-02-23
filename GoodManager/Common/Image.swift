@@ -190,7 +190,8 @@ func APPGetIdentityCardImage(callBackfunName:String){
         //imagePicker.callbackfun = callBackfunName
         //vc.present(imagePicker, animated: true, completion: nil)
         var IDAuthVC = IDAuthViewController()
-        
+        IDAuthVC.callbackfun = callBackfunName;
+
         print("IDAuthVC")
         let nvc = UINavigationController(rootViewController: IDAuthVC)
         vc.present(nvc, animated: true, completion: nil)
