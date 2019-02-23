@@ -60,7 +60,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
     }
     //网易im初始化
     func initNISDK()  {
-        let appKey:String = "663b09bceebf709aae5d09e4f6b03fab";
+        //663b09bceebf709aae5d09e4f6b03fab
+
+        let appKey:String = "c867717d00ce3a9a623ba68ca2cad96b";
         let option:NIMSDKOption = NIMSDKOption.init(appKey: appKey);
         option.apnsCername = "GoodManagerPush"
         option.pkCername = "xx"//如需要，填上相应的pushkit

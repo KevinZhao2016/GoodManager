@@ -239,13 +239,23 @@ class JsApiSwift: NSObject {
         let password = jsonString["password"].stringValue
         GoodManager.APPNELogin(account: account, password: password)
     }
-    
+    @objc func APPNEOpenDialog(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let account = jsonString["account"].stringValue
+        let password = jsonString["password"].stringValue
+        let statusBarColor = jsonString["statusBarColor"].stringValue
+        
+        GoodManager.APPNEOpenDialog(account: account, password: password, statusBarColor: statusBarColor)
+        
+    }
     @objc func APPNELoginOut(_ arg:String) {
         let jsonString = JSON(parseJSON: arg)
         let account = jsonString["account"].stringValue
         let password = jsonString["password"].stringValue
         let statusBarColor = jsonString["password"].stringValue
-        GoodManager.APPNEOpenDialog(account:account, password:password, statusBarColor:statusBarColor)
+        
+        GoodManager.APPNELoginOut()
+
     }
     
     @objc func APPNEOpenTelBook(_ arg:String) {
@@ -259,23 +269,32 @@ class JsApiSwift: NSObject {
     @objc func APPNEChatWithFriend(_ arg:String) {
         let jsonString = JSON(parseJSON: arg)
         let fAccount = jsonString["fAccount"].stringValue
-        let statusBarColor = jsonString["password"].stringValue
-        GoodManager.APPNEChatWithFriend(fAccount:fAccount, statusBarColor:statusBarColor)
+        let statusBarColor = jsonString["statusBarColor"].stringValue
+        GoodManager.APPNEChatWithFriend(fAccount: fAccount, statusBarColor: statusBarColor)
+    }
+    @objc func APPNEChatWithQ(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let qMark = jsonString["qMark"].stringValue
+        let statusBarColor = jsonString["statusBarColor"].stringValue
+        GoodManager.APPNEChatWithQ(qMark: qMark, statusBarColor: statusBarColor)
     }
     
     @objc func APPNEGetUnreadNum(_ arg:String) {
-        GoodManager.APPNEGetUnreadNum()
+        let count:Int =   GoodManager.APPNEGetUnreadNum()
+        print(String(format: "全部未读消息个数为：%d", count));
     }
     
     @objc func APPNEGetUnreadWithQNum(_ arg:String) {
         let jsonString = JSON(parseJSON: arg)
         let qMark = jsonString["qMark"].stringValue
-        GoodManager.APPNEGetUnreadWithQNum(qMark)
+       let count:Int = GoodManager.APPNEGetUnreadWithQNum(qMark)
+        
     }
     
     @objc func APPNEGetQUnreadWithFNum(_ arg:String) {
         let jsonString = JSON(parseJSON: arg)
         let fAccount = jsonString["fAccount"].stringValue
-        GoodManager.APPNEGetQUnreadWithFNum(fAccount)
+      let count:Int = GoodManager.APPNEGetQUnreadWithFNum(fAccount)
+       print(String(format: "某个好友未读消息个数为：%d", count));
     }
 }
