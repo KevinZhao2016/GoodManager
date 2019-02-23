@@ -70,6 +70,8 @@
 		18C1883D2220419900C8B172 /* JQIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1882B2220419900C8B172 /* JQIDCardScaningView.m */; };
 		18C1883E2220419900C8B172 /* LHSIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */; };
 		18C1883F2220419900C8B172 /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188312220419900C8B172 /* RectManager.m */; };
+		5645E03722213786002C8A44 /* NIMKitEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */; };
+		5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03822213794002C8A44 /* NIMKitResource.bundle */; };
 		5697F418221EB957000AC814 /* Jpush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697F417221EB957000AC814 /* Jpush.swift */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
 		6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B58D2B9221EA124004D6D91 /* Nim.swift */; };
@@ -178,6 +180,8 @@
 		18C188302220419900C8B172 /* RectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectManager.h; sourceTree = "<group>"; };
 		18C188312220419900C8B172 /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
+		5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitEmoticon.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitEmoticon.bundle; sourceTree = SOURCE_ROOT; };
+		5645E03822213794002C8A44 /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitResource.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitResource.bundle; sourceTree = SOURCE_ROOT; };
 		5697F417221EB957000AC814 /* Jpush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jpush.swift; sourceTree = "<group>"; };
 		6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DemoProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B58D2B9221EA124004D6D91 /* Nim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nim.swift; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 			children = (
 				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
 				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
+				5645E03822213794002C8A44 /* NIMKitResource.bundle */,
+				5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */,
 				18C188102220419900C8B172 /* IDCardRecognition */,
 				0AEDCAB921F166A8005887A3 /* NetWorking */,
 				0A4EDB8021E0849700DB6356 /* View */,
@@ -605,10 +611,12 @@
 				18C188342220419900C8B172 /* IDInfoViewController.xib in Resources */,
 				18C1883B2220419900C8B172 /* zocr0.lib in Resources */,
 				18C188392220419900C8B172 /* IDAuthViewController.xib in Resources */,
+				5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */,
 				0A4A020521D32D6700FD39F7 /* LaunchScreen.storyboard in Resources */,
 				0A4A020221D32D6700FD39F7 /* Assets.xcassets in Resources */,
 				0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */,
 				0A24B4FB21D5CF3500F1336D /* scanSound.wav in Resources */,
+				5645E03722213786002C8A44 /* NIMKitEmoticon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,8 @@ import UIKit
 
 
 func APPNELogin(account: String, password:String)  {
-        let account:String = "用户登录的账号"//按测试给的内容更换
-        let token = "从自家服务器返回的token"//按测试给的内容更换
+        let account:String = account //按测试给的内容更换
+        let token = password//按测试给的内容更换
         NIMSDK.shared().loginManager.login(account, token: token) { (error) in
             if let myError = error {
                 print("登录出现错误--%@",myError);
@@ -29,25 +29,99 @@ func APPNELogin(account: String, password:String)  {
     }
     //    打开网易云信会话列表
 func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
-        let vc:NIMSessionListViewController = NIMSessionListViewController();
-        let basevc = getLastMainViewController()
-        basevc.present(vc, animated: true, completion: nil);
+    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+    let vc:NIMSessionListViewController = NIMSessionListViewController();
+    let basevc = getLastMainViewController()
+    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+    nav.navigationBar.isTranslucent = true
+    nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    nav.navigationBar.shadowImage = UIImage()
+    
+    
+    if (isLogin) {
+        
+        basevc.present(nav, animated: true, completion: nil);
+    }else
+    {
+        NIMSDK.shared().loginManager.login(account, token: password) { (error) in
+            if let myError = error {
+                print("登录出现错误--%@",myError);
+            }else{
+     
+                basevc.present(nav, animated: true, completion: nil);
+            }
+        };
+    }
+    
+    
     }
     //    获取网易云信通讯录
     func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) ->[NIMUser]  {
-        let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
-        return users;
+          let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+        if (isLogin) {
+            let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
+            return users;
+        }else
+        {
+            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
+                if let myError = error {
+                    print("登录出现错误--%@",myError);
+                  
+                }else{
+                    
+                    let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
+                    
+                }
+                
+            }
+             return [];
+        }
+     
         //users 这个就是数据源  具体ui 自定义
     }
     //打开网易云信好友聊天窗口
-    func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
-        let session:NIMSession = NIMSession("要聊天的那个人得sessionid", type: .P2P)//按测试给的内容更换
+func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
+        let session:NIMSession = NIMSession(fAccount, type: .P2P)//按测试给的内容更换
         let vc:NIMSessionViewController = NIMSessionViewController(session: session)
-        //这个一般是导航
-        //        self.navigationController?.pushViewController(vc, animated: true)
+        let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
         let basevc = getLastMainViewController()
-        basevc.present(vc, animated: true, completion: nil);
+    
+        let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+    
+        nav.navigationBar.isTranslucent = true
+        nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        nav.navigationBar.shadowImage = UIImage()
+
+        if (isLogin) {
+            basevc.present(nav, animated: true, completion: nil);
+        }
+        
+        
+    
     }
+    
+//打开网易云信好友聊天窗口
+func  APPNEChatWithQ(qMark:String, statusBarColor:String){
+    let session:NIMSession = NIMSession(qMark, type: .team)//按测试给的内容更换
+    let vc:NIMSessionViewController = NIMSessionViewController(session: session)
+    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+    let basevc = getLastMainViewController()
+    
+    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+    
+    nav.navigationBar.isTranslucent = true
+    nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    nav.navigationBar.shadowImage = UIImage()
+    
+    if (isLogin) {
+        basevc.present(nav, animated: true, completion: nil);
+    }
+    
+    
+    
+}
+
+
     //获取网易云信全部未读消息数
     func  APPNEGetUnreadNum() ->Int {
         let unreadCount:Int = NIMSDK.shared().conversationManager.allUnreadCount()
