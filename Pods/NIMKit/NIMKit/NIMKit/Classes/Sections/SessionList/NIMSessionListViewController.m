@@ -37,6 +37,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"消息列表";
+  
+    UIView *navView = [UIView new];
+    navView.backgroundColor = [UIColor greenColor];
+    navView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 50);
+    [self.view addSubview:navView];
+    
+    
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.delegate         = self;
