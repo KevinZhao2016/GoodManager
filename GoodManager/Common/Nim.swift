@@ -61,21 +61,23 @@ func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
         if (isLogin) {
             let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
             return users;
-        }else
-        {
-            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
-                if let myError = error {
-                    print("登录出现错误--%@",myError);
-                  
-                }else{
-                    
-                    let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
-                    
-                }
-                
-            }
-             return [];
         }
+        return [] ;
+//        }else
+//        {
+//            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
+//                if let myError = error {
+//                    print("登录出现错误--%@",myError);
+//
+//                }else{
+//
+//                    let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
+//
+//                }
+//
+//            }
+//             return [];
+
      
         //users 这个就是数据源  具体ui 自定义
     }
