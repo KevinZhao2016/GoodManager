@@ -10,5 +10,7 @@
 
 @interface JQAVCaptureViewController : UIViewController
 
+@property (nonatomic, strong) NSString *callbackfun;
+
 @end
 

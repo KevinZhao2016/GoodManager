@@ -46,8 +46,6 @@
 // 是否打开手电筒
 @property (nonatomic,assign,getter = isTorchOn) BOOL torchOn;
 
-@property (nonatomic, strong) NSString *callbackfun;
-
 
 @end
 
@@ -465,7 +463,8 @@
                 
                 // 推出IDInfoVC（展示身份证信息的控制器）
                 IDInfoViewController *IDInfoVC = [[IDInfoViewController alloc] init];
-
+                
+                IDInfoVC.callbackfun = self.callbackfun;
                 IDInfoVC.IDInfo = iDInfo;// 身份证信息
                 IDInfoVC.IDImage = subImage;// 身份证图像
                 

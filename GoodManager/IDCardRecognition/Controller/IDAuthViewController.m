@@ -75,6 +75,7 @@
 #pragma mark - 反面拍摄
 - (IBAction)shootAction:(UIButton *)sender {
     JQAVCaptureViewController *AVCaptureVC = [[JQAVCaptureViewController alloc] init];
+    AVCaptureVC.callbackfun = self.callbackfun;
     [self.navigationController pushViewController:AVCaptureVC animated:YES];
 }
 

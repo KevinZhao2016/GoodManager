@@ -71,8 +71,16 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *doucumentDirectory = paths[0];
-    NSString *IDNum = [_IDInfo.num stringByAppendingFormat:@".jpg"];
-    NSString *fullPath = [doucumentDirectory stringByAppendingPathComponent:IDNum];
+    NSString *imageName = [_IDInfo.num stringByAppendingFormat:@".jpg"];
+    NSString *fullPath = @"";
+    if (imageName != nil) {//ID卡正面 有ID号
+        NSLog(imageName);
+        fullPath = [doucumentDirectory stringByAppendingPathComponent:imageName];
+    }else{//ID卡背面 无ID号
+        NSLog(_IDInfo.valid);//有效期
+        imageName = [_IDInfo.valid stringByAppendingFormat:@".jpg"];
+        fullPath = [doucumentDirectory stringByAppendingPathComponent:imageName];
+    }
     [UIImageJPEGRepresentation(_IDImage, 0.5) writeToFile:fullPath atomically:YES];
     NSLog(@"上传图片路径=====%@",fullPath);
     
@@ -99,17 +107,9 @@
 //    //向通知中心发送消息（发布消息）
 //    [[NSNotificationCenter defaultCenter] postNotification:notification];
 //    NSLog(@"发送消息！！！");
-    
-    
-    
+
 //    [self.navigationController popToRootViewControllerAnimated:YES];
 //    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-
-    
-    //[ous ExecWinJSWithJSFun:];
-    
-//    ous
-    
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
