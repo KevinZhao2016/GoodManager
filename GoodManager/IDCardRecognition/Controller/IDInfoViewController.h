@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class IDInfo;
+
+typedef void (^ablock) (NSString *str);
 
 @interface IDInfoViewController : UIViewController
 

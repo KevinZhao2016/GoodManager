@@ -174,6 +174,8 @@ func APPGetBankImage(callBackfunName:String){
 func APPGetIdentityCardImage(callBackfunName:String){
     var vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
+    
+    
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
         let imagePicker = CameraViewController()
         // 表示操作为拍照
@@ -188,10 +190,12 @@ func APPGetIdentityCardImage(callBackfunName:String){
         //imagePicker.callbackfun = callBackfunName
         //vc.present(imagePicker, animated: true, completion: nil)
         var IDAuthVC = IDAuthViewController()
+        
         print("IDAuthVC")
         let nvc = UINavigationController(rootViewController: IDAuthVC)
-        
         vc.present(nvc, animated: true, completion: nil)
+        
+        
     }else {
         // 照相机不可用
         

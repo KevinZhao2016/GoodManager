@@ -15,7 +15,7 @@
 @end
 
 @implementation IDAuthViewController
-int (^sumBlock)(NSString*);
+
 
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -70,12 +70,16 @@ int (^sumBlock)(NSString*);
     AVCaptureViewController *AVCaptureVC = [[AVCaptureViewController alloc] init];
     [self.navigationController pushViewController:AVCaptureVC animated:YES];
 }
+
 #pragma mark - 反面拍摄
 - (IBAction)shootAction:(UIButton *)sender {
     JQAVCaptureViewController *AVCaptureVC = [[JQAVCaptureViewController alloc] init];
     [self.navigationController pushViewController:AVCaptureVC animated:YES];
 }
 
+- (void)back:(NSString*)filePath {
+    //[self.beingDismissed]
+}
 
 //#pragma mark - 导航控制器代理方法
 //#pragma mark 导航控制器即将展示新的控制器时，会掉用这个方法

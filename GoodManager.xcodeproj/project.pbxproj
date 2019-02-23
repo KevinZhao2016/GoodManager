@@ -394,9 +394,9 @@
 			isa = PBXGroup;
 			children = (
 				18C188122220419900C8B172 /* UIImage+Extend.h */,
-				18C188132220419900C8B172 /* UIAlertController+Extend.m */,
 				18C188142220419900C8B172 /* UIImage+Extend.m */,
 				18C188152220419900C8B172 /* UIAlertController+Extend.h */,
+				18C188132220419900C8B172 /* UIAlertController+Extend.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -404,16 +404,16 @@
 		18C188162220419900C8B172 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18C1881D2220419900C8B172 /* IDAuthViewController.xib */,
+				18C1881C2220419900C8B172 /* IDAuthViewController.m */,
 				18C188172220419900C8B172 /* IDAuthViewController.h */,
 				18C188182220419900C8B172 /* IDInfoViewController.xib */,
 				18C188192220419900C8B172 /* IDInfoViewController.m */,
+				18C1881F2220419900C8B172 /* IDInfoViewController.h */,
 				18C1881A2220419900C8B172 /* AVCaptureViewController.m */,
 				18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */,
-				18C1881C2220419900C8B172 /* IDAuthViewController.m */,
-				18C1881D2220419900C8B172 /* IDAuthViewController.xib */,
-				18C1881E2220419900C8B172 /* AVCaptureViewController.h */,
-				18C1881F2220419900C8B172 /* IDInfoViewController.h */,
 				18C188202220419900C8B172 /* JQAVCaptureViewController.h */,
+				18C1881E2220419900C8B172 /* AVCaptureViewController.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -963,6 +963,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GoodManager/GoodManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 32G846HEF6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoodManager/Info.plist;
@@ -992,6 +993,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GoodManager/GoodManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 32G846HEF6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoodManager/Info.plist;

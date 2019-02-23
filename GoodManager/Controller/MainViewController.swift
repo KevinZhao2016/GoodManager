@@ -40,7 +40,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
             setupLaunchView() //启动页
         }
         locationManager.delegate = self //定位代理方法
+        
+//        let notificationName = Notification.Name(rawValue: "idCardFront")
+//        NotificationCenter.default.addObserver(self,selector:#selector(receiveImagePath(notification:)),name: notificationName,object: nil)
     }
+//    @objc func receiveImagePath(notification: Notification){
+//        let userInfo = notification.userInfo as! [String: AnyObject]
+//        let value1 = userInfo["idCardFrontImage"] as! String
+//        print("idCardFrontImage  "+value1)
+//        //ExecWinJS(JSFun: <#T##String#>)
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
 //        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")

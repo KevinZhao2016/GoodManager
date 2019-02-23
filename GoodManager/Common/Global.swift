@@ -92,3 +92,8 @@ func mimeType(pathExtension: String) -> String {
     return "application/octet-stream"
 }
 
+class getLMVC: NSObject {
+    @objc func getLastMainViewController() -> MainViewController{
+        return mainViewControllers.last!
+    }
+}
