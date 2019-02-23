@@ -189,7 +189,9 @@ func APPGetIdentityCardImage(callBackfunName:String){
         //vc.present(imagePicker, animated: true, completion: nil)
         var IDAuthVC = IDAuthViewController()
         print("IDAuthVC")
-        vc.present(UINavigationController(rootViewController: IDAuthVC), animated: true, completion: nil)
+        let nvc = UINavigationController(rootViewController: IDAuthVC)
+        
+        vc.present(nvc, animated: true, completion: nil)
     }else {
         // 照相机不可用
         

@@ -9,6 +9,7 @@
 #import "IDInfoViewController.h"
 #import "IDInfo.h"
 #import "AVCaptureViewController.h"
+#import "IDAuthViewController.h"
 
 @interface IDInfoViewController ()
 
@@ -71,6 +72,7 @@
     NSString *fullPath = [doucumentDirectory stringByAppendingPathComponent:IDNum];
     [UIImageJPEGRepresentation(_IDImage, 0.5) writeToFile:fullPath atomically:YES];
     NSLog(@"上传图片路径=====%@",fullPath);
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{

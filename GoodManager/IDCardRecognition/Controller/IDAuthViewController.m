@@ -11,10 +11,12 @@
 #import "JQAVCaptureViewController.h"
 
 @interface IDAuthViewController ()
-
+    
 @end
 
 @implementation IDAuthViewController
+int (^sumBlock)(NSString*);
+
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -43,11 +45,19 @@
     navigationBarAppearance.backIndicatorTransitionMaskImage = image;
 }
 
+- (void)handleLeftBarButtonAction {
+    NSLog(@"00");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"身份证识别";
 //    self.navigationController.delegate = self;
+//    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(handleLeftBarButtonAction:)];
+//    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    self.navigationItem.backBarButtonItem.title = @"back";
+    self.navigationItem.hidesBackButton = false;
 }
 
 - (void)didReceiveMemoryWarning {
