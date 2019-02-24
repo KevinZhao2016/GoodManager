@@ -33,7 +33,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-2G-nOq">
-                    <rect key="frame" x="10" y="554" width="355" height="46.5"/>
+                    <rect key="frame" x="10" y="470" width="355" height="46.5"/>
                     <color key="backgroundColor" red="1" green="0.60071486230000004" blue="0.20166948439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="q8z-NO-E86"/>
@@ -51,17 +51,39 @@
                         <action selector="shootAction:" destination="-1" eventType="touchUpInside" id="NR8-Pf-7xs"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07t-3d-0iQ">
+                    <rect key="frame" x="10" y="559" width="355" height="33"/>
+                    <color key="backgroundColor" red="1" green="0.60071486230000004" blue="0.20166948439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="4w0-mC-1mT"/>
+                        <constraint firstAttribute="width" constant="355" id="Sqq-Qe-CKA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="bn1-cS-EXc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ePS-2G-nOq" firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="1Zg-uT-bqC"/>
+                <constraint firstItem="07t-3d-0iQ" firstAttribute="top" secondItem="ePS-2G-nOq" secondAttribute="bottom" constant="42.5" id="AbN-pX-fmR"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="leading" secondItem="p0l-5P-Myn" secondAttribute="leading" id="F6a-4D-a4B"/>
                 <constraint firstItem="ePS-2G-nOq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Jt1-nG-Bbo"/>
                 <constraint firstItem="p0l-5P-Myn" firstAttribute="top" secondItem="1Nb-kd-yNR" secondAttribute="bottom" constant="10" id="Kkh-vw-fFm"/>
                 <constraint firstAttribute="trailing" secondItem="ePS-2G-nOq" secondAttribute="trailing" constant="10" id="TDO-mU-o5G"/>
                 <constraint firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" constant="10" id="ZLb-Fe-HGx"/>
+                <constraint firstItem="07t-3d-0iQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bXF-ba-McP"/>
                 <constraint firstItem="p0l-5P-Myn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="d2A-dT-QR3"/>
-                <constraint firstAttribute="bottom" secondItem="ePS-2G-nOq" secondAttribute="bottom" constant="66.5" id="gGF-wa-hMt"/>
+                <constraint firstAttribute="bottom" secondItem="ePS-2G-nOq" secondAttribute="bottom" constant="150.5" id="gGF-wa-hMt"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" id="mR4-9y-E4I"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="vjM-KK-SoL"/>
             </constraints>

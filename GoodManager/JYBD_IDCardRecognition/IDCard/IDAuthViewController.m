@@ -79,9 +79,19 @@
     [self.navigationController pushViewController:AVCaptureVC animated:YES];
 }
 
-- (void)back:(NSString*)filePath {
-    //[self.beingDismissed]
+#pragma mark - 返回
+- (IBAction)backAction:(id)sender {
+    UIViewController *present = self.presentingViewController;
+    while (YES) {
+        if (present.presentingViewController) {
+            present = present.presentingViewController;
+        }else{
+            break;
+        }
+    }
+    [present dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 //#pragma mark - 导航控制器代理方法
 //#pragma mark 导航控制器即将展示新的控制器时，会掉用这个方法

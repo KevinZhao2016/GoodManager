@@ -54,6 +54,7 @@
 }
 
 -(void)okClick{
+    UIImageWriteToSavedPhotosAlbum(self.IDImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *doucumentDirectory = paths[0];
@@ -118,6 +119,11 @@
     }
     return _dataArr;
 }
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    NSLog(@"保存图片成功");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

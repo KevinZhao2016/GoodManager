@@ -72,5 +72,18 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)backAction:(id)sender {
+    UIViewController *present = self.presentingViewController;
+    while (YES) {
+        if (present.presentingViewController) {
+            present = present.presentingViewController;
+        }else{
+            break;
+        }
+    }
+    [present dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 @end
