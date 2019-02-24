@@ -14,4 +14,5 @@
 // IDCard识别
 #import "IDAuthViewController.h"
 #import "IDInfoViewController.h"
-
+// BankCard识别
+#import "BankAuthViewController.h"

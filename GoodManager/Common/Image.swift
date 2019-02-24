@@ -155,18 +155,10 @@ func APPGetBankImage(callBackfunName:String){
     let vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        let imagePicker = CameraViewController()
-        // 表示操作为拍照
-        imagePicker.sourceType = .camera
-        // 拍照后允许用户进行编辑
-        imagePicker.allowsEditing = true
-        // 也可以设置成视频
-        imagePicker.cameraCaptureMode = .photo
-        // 设置代理为 ViewController,已经实现了协议
-        imagePicker.delegate = imagePicker
-        // 进入拍照界面
-        imagePicker.callbackfun = callBackfunName
-        vc.present(imagePicker, animated: true, completion: nil)
+        var BankAuthVC = BankAuthViewController()
+        BankAuthVC.callbackfun = callBackfunName;
+        let nvc = UINavigationController(rootViewController: BankAuthVC)
+        vc.present(nvc, animated: true, completion: nil)
     }else {
         // 照相机不可用
     }
@@ -176,27 +168,11 @@ func APPGetBankImage(callBackfunName:String){
 func APPGetIdentityCardImage(callBackfunName:String){
     var vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
-    
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//        let imagePicker = CameraViewController()
-//        // 表示操作为拍照
-//        imagePicker.sourceType = .camera
-//        // 拍照后允许用户进行编辑
-//        imagePicker.allowsEditing = true
-//        // 也可以设置成视频
-//        imagePicker.cameraCaptureMode = .photo
-//        // 设置代理为 ViewController,已经实现了协议
-//        imagePicker.delegate = imagePicker
-//        // 进入拍照界面
-//        imagePicker.callbackfun = callBackfunName
-//        vc.present(imagePicker, animated: true, completion: nil)
-        
         var IDAuthVC = IDAuthViewController()
         IDAuthVC.callbackfun = callBackfunName;
-
         let nvc = UINavigationController(rootViewController: IDAuthVC)
         vc.present(nvc, animated: true, completion: nil)
-        
     }else {
         // 照相机不可用
     }

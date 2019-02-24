@@ -56,20 +56,46 @@
 		0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04CE21E0D4EF0032C670 /* Window.swift */; };
 		0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04D021E0DDB50032C670 /* QRCode.swift */; };
 		0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB1E0121FB3E0500007EDA /* Location.swift */; };
-		18C188322220419900C8B172 /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188132220419900C8B172 /* UIAlertController+Extend.m */; };
-		18C188332220419900C8B172 /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188142220419900C8B172 /* UIImage+Extend.m */; };
-		18C188342220419900C8B172 /* IDInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C188182220419900C8B172 /* IDInfoViewController.xib */; };
-		18C188352220419900C8B172 /* IDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188192220419900C8B172 /* IDInfoViewController.m */; };
-		18C188362220419900C8B172 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1881A2220419900C8B172 /* AVCaptureViewController.m */; };
-		18C188372220419900C8B172 /* JQAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */; };
-		18C188382220419900C8B172 /* IDAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1881C2220419900C8B172 /* IDAuthViewController.m */; };
-		18C188392220419900C8B172 /* IDAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C1881D2220419900C8B172 /* IDAuthViewController.xib */; };
-		18C1883A2220419900C8B172 /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C188222220419900C8B172 /* libexidcardios.a */; };
-		18C1883B2220419900C8B172 /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 18C188242220419900C8B172 /* zocr0.lib */; };
-		18C1883C2220419900C8B172 /* IDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188282220419900C8B172 /* IDInfo.m */; };
-		18C1883D2220419900C8B172 /* JQIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1882B2220419900C8B172 /* JQIDCardScaningView.m */; };
-		18C1883E2220419900C8B172 /* LHSIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */; };
-		18C1883F2220419900C8B172 /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C188312220419900C8B172 /* RectManager.m */; };
+		18A351622222A88000C62779 /* UIImage+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */; };
+		18A351632222A88000C62779 /* UIAlertController+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */; };
+		18A351642222A88000C62779 /* JYBDScanCardBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351332222A87F00C62779 /* JYBDScanCardBaseVC.m */; };
+		18A351652222A88000C62779 /* JYBDIDCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351352222A87F00C62779 /* JYBDIDCardVC.m */; };
+		18A351662222A88000C62779 /* JYBDBankCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351362222A87F00C62779 /* JYBDBankCardVC.m */; };
+		18A351672222A88000C62779 /* JYBDScanCardManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3513A2222A87F00C62779 /* JYBDScanCardManage.m */; };
+		18A351682222A88000C62779 /* JYBDBankCardSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3513B2222A87F00C62779 /* JYBDBankCardSearch.m */; };
+		18A351692222A88000C62779 /* JYBDScanCardManageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3513C2222A87F00C62779 /* JYBDScanCardManageBase.m */; };
+		18A3516A2222A88000C62779 /* JYBDBankCardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351462222A87F00C62779 /* JYBDBankCardInfo.m */; };
+		18A3516B2222A88000C62779 /* JYBDCardIDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351472222A87F00C62779 /* JYBDCardIDInfo.m */; };
+		18A3516C2222A88000C62779 /* JYBDNewFormeScaningV.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3514B2222A87F00C62779 /* JYBDNewFormeScaningV.m */; };
+		18A3516E2222A88000C62779 /* libexbankcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A3514F2222A87F00C62779 /* libexbankcardios.a */; };
+		18A3516F2222A88000C62779 /* libbexbankcard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A351502222A87F00C62779 /* libbexbankcard.a */; };
+		18A351702222A88000C62779 /* IDCardRectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351522222A87F00C62779 /* IDCardRectManager.m */; };
+		18A351712222A88000C62779 /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 18A351552222A87F00C62779 /* zocr0.lib */; };
+		18A351722222A88000C62779 /* scaningline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A351572222A87F00C62779 /* scaningline@2x.png */; };
+		18A351732222A88000C62779 /* scaningline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A351582222A87F00C62779 /* scaningline@3x.png */; };
+		18A351742222A88000C62779 /* idcard_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A351592222A87F00C62779 /* idcard_back.png */; };
+		18A351752222A88000C62779 /* flashlightscan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A3515A2222A87F00C62779 /* flashlightscan@3x.png */; };
+		18A351762222A88000C62779 /* flashlightscan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A3515B2222A87F00C62779 /* flashlightscan@2x.png */; };
+		18A351772222A88000C62779 /* flashlightscan.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A3515C2222A87F00C62779 /* flashlightscan.png */; };
+		18A351782222A88000C62779 /* scaningbgimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A3515D2222A87F00C62779 /* scaningbgimage.png */; };
+		18A351792222A88000C62779 /* scaningbgimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A3515E2222A87F00C62779 /* scaningbgimage@2x.png */; };
+		18A3517A2222A88000C62779 /* scaningbgimage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A3515F2222A87F00C62779 /* scaningbgimage@3x.png */; };
+		18A3517B2222A88000C62779 /* scaningline.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A351602222A87F00C62779 /* scaningline.png */; };
+		18A3517C2222A88000C62779 /* JYBD_IDCardRecognition.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 18A351612222A87F00C62779 /* JYBD_IDCardRecognition.podspec */; };
+		18A3517E2222AB8D00C62779 /* IDAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A3517D2222AB8D00C62779 /* IDAuthViewController.xib */; };
+		18A351812222AB9E00C62779 /* IDAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351802222AB9E00C62779 /* IDAuthViewController.m */; };
+		18A351842222ABE300C62779 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351832222ABE300C62779 /* AVCaptureViewController.m */; };
+		18A3518A2222AC2F00C62779 /* JQIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351862222AC2F00C62779 /* JQIDCardScaningView.m */; };
+		18A3518B2222AC2F00C62779 /* LHSIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351872222AC2F00C62779 /* LHSIDCardScaningView.m */; };
+		18A3518E2222AC6600C62779 /* JQAVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3518D2222AC6600C62779 /* JQAVCaptureViewController.m */; };
+		18A351922222AC9700C62779 /* IDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351902222AC9700C62779 /* IDInfo.m */; };
+		18A351952222ACC900C62779 /* IDInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A351942222ACC900C62779 /* IDInfoViewController.xib */; };
+		18A351972222ACD000C62779 /* IDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351962222ACCF00C62779 /* IDInfoViewController.m */; };
+		18A3519D2222ACF900C62779 /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3519A2222ACF900C62779 /* UIAlertController+Extend.m */; };
+		18A3519E2222ACF900C62779 /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3519B2222ACF900C62779 /* UIImage+Extend.m */; };
+		18A351A82222B1B900C62779 /* BankAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A351A52222B1B800C62779 /* BankAuthViewController.xib */; };
+		18A351A92222B1B900C62779 /* BankAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351A72222B1B900C62779 /* BankAuthViewController.m */; };
+		18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351AB2222B4CC00C62779 /* BankInfoViewController.m */; };
 		5645E03722213786002C8A44 /* NIMKitEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */; };
 		5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03822213794002C8A44 /* NIMKitResource.bundle */; };
 		5697F418221EB957000AC814 /* Jpush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697F417221EB957000AC814 /* Jpush.swift */; };
@@ -153,32 +179,75 @@
 		0AFB04CE21E0D4EF0032C670 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0AFB04D021E0DDB50032C670 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		0AFB1E0121FB3E0500007EDA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		18C188122220419900C8B172 /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
-		18C188132220419900C8B172 /* UIAlertController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extend.m"; sourceTree = "<group>"; };
-		18C188142220419900C8B172 /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
-		18C188152220419900C8B172 /* UIAlertController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extend.h"; sourceTree = "<group>"; };
-		18C188172220419900C8B172 /* IDAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDAuthViewController.h; sourceTree = "<group>"; };
-		18C188182220419900C8B172 /* IDInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDInfoViewController.xib; sourceTree = "<group>"; };
-		18C188192220419900C8B172 /* IDInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfoViewController.m; sourceTree = "<group>"; };
-		18C1881A2220419900C8B172 /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
-		18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQAVCaptureViewController.m; sourceTree = "<group>"; };
-		18C1881C2220419900C8B172 /* IDAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAuthViewController.m; sourceTree = "<group>"; };
-		18C1881D2220419900C8B172 /* IDAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDAuthViewController.xib; sourceTree = "<group>"; };
-		18C1881E2220419900C8B172 /* AVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
-		18C1881F2220419900C8B172 /* IDInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfoViewController.h; sourceTree = "<group>"; };
-		18C188202220419900C8B172 /* JQAVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQAVCaptureViewController.h; sourceTree = "<group>"; };
-		18C188222220419900C8B172 /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
-		18C188242220419900C8B172 /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
-		18C188252220419900C8B172 /* commondef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commondef.h; sourceTree = "<group>"; };
-		18C188262220419900C8B172 /* excards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = excards.h; sourceTree = "<group>"; };
-		18C188282220419900C8B172 /* IDInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfo.m; sourceTree = "<group>"; };
-		18C188292220419900C8B172 /* IDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfo.h; sourceTree = "<group>"; };
-		18C1882B2220419900C8B172 /* JQIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQIDCardScaningView.m; sourceTree = "<group>"; };
-		18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSIDCardScaningView.m; sourceTree = "<group>"; };
-		18C1882D2220419900C8B172 /* JQIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQIDCardScaningView.h; sourceTree = "<group>"; };
-		18C1882E2220419900C8B172 /* LHSIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSIDCardScaningView.h; sourceTree = "<group>"; };
-		18C188302220419900C8B172 /* RectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectManager.h; sourceTree = "<group>"; };
-		18C188312220419900C8B172 /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
+		18A3512D2222A87F00C62779 /* UIAlertController+IDCardExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IDCardExtend.h"; sourceTree = "<group>"; };
+		18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IDCardExtend.m"; sourceTree = "<group>"; };
+		18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IDCardExtend.m"; sourceTree = "<group>"; };
+		18A351302222A87F00C62779 /* UIImage+IDCardExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IDCardExtend.h"; sourceTree = "<group>"; };
+		18A351322222A87F00C62779 /* JYBDIDCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDIDCardVC.h; sourceTree = "<group>"; };
+		18A351332222A87F00C62779 /* JYBDScanCardBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDScanCardBaseVC.m; sourceTree = "<group>"; };
+		18A351342222A87F00C62779 /* JYBDBankCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDBankCardVC.h; sourceTree = "<group>"; };
+		18A351352222A87F00C62779 /* JYBDIDCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDIDCardVC.m; sourceTree = "<group>"; };
+		18A351362222A87F00C62779 /* JYBDBankCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDBankCardVC.m; sourceTree = "<group>"; };
+		18A351372222A87F00C62779 /* JYBDScanCardBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDScanCardBaseVC.h; sourceTree = "<group>"; };
+		18A351392222A87F00C62779 /* JYBDScanCardManageBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDScanCardManageBase.h; sourceTree = "<group>"; };
+		18A3513A2222A87F00C62779 /* JYBDScanCardManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDScanCardManage.m; sourceTree = "<group>"; };
+		18A3513B2222A87F00C62779 /* JYBDBankCardSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDBankCardSearch.m; sourceTree = "<group>"; };
+		18A3513C2222A87F00C62779 /* JYBDScanCardManageBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDScanCardManageBase.m; sourceTree = "<group>"; };
+		18A3513D2222A87F00C62779 /* JYBDBankCardSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDBankCardSearch.h; sourceTree = "<group>"; };
+		18A3513E2222A87F00C62779 /* JYBDScanCardManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDScanCardManage.h; sourceTree = "<group>"; };
+		18A351402222A87F00C62779 /* exbankcardcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exbankcardcore.h; sourceTree = "<group>"; };
+		18A351412222A87F00C62779 /* commondef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commondef.h; sourceTree = "<group>"; };
+		18A351422222A87F00C62779 /* exbankcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exbankcard.h; sourceTree = "<group>"; };
+		18A351432222A87F00C62779 /* excards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = excards.h; sourceTree = "<group>"; };
+		18A351442222A87F00C62779 /* BankCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCard.h; sourceTree = "<group>"; };
+		18A351462222A87F00C62779 /* JYBDBankCardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDBankCardInfo.m; sourceTree = "<group>"; };
+		18A351472222A87F00C62779 /* JYBDCardIDInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDCardIDInfo.m; sourceTree = "<group>"; };
+		18A351482222A87F00C62779 /* JYBDBankCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDBankCardInfo.h; sourceTree = "<group>"; };
+		18A351492222A87F00C62779 /* JYBDCardIDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDCardIDInfo.h; sourceTree = "<group>"; };
+		18A3514B2222A87F00C62779 /* JYBDNewFormeScaningV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBDNewFormeScaningV.m; sourceTree = "<group>"; };
+		18A3514C2222A87F00C62779 /* JYBDNewFormeScaningV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBDNewFormeScaningV.h; sourceTree = "<group>"; };
+		18A3514E2222A87F00C62779 /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+		18A3514F2222A87F00C62779 /* libexbankcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexbankcardios.a; sourceTree = "<group>"; };
+		18A351502222A87F00C62779 /* libbexbankcard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbexbankcard.a; sourceTree = "<group>"; };
+		18A351522222A87F00C62779 /* IDCardRectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCardRectManager.m; sourceTree = "<group>"; };
+		18A351532222A87F00C62779 /* IDCardRectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardRectManager.h; sourceTree = "<group>"; };
+		18A351552222A87F00C62779 /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
+		18A351572222A87F00C62779 /* scaningline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scaningline@2x.png"; sourceTree = "<group>"; };
+		18A351582222A87F00C62779 /* scaningline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scaningline@3x.png"; sourceTree = "<group>"; };
+		18A351592222A87F00C62779 /* idcard_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idcard_back.png; sourceTree = "<group>"; };
+		18A3515A2222A87F00C62779 /* flashlightscan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashlightscan@3x.png"; sourceTree = "<group>"; };
+		18A3515B2222A87F00C62779 /* flashlightscan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashlightscan@2x.png"; sourceTree = "<group>"; };
+		18A3515C2222A87F00C62779 /* flashlightscan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashlightscan.png; sourceTree = "<group>"; };
+		18A3515D2222A87F00C62779 /* scaningbgimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scaningbgimage.png; sourceTree = "<group>"; };
+		18A3515E2222A87F00C62779 /* scaningbgimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scaningbgimage@2x.png"; sourceTree = "<group>"; };
+		18A3515F2222A87F00C62779 /* scaningbgimage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scaningbgimage@3x.png"; sourceTree = "<group>"; };
+		18A351602222A87F00C62779 /* scaningline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scaningline.png; sourceTree = "<group>"; };
+		18A351612222A87F00C62779 /* JYBD_IDCardRecognition.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JYBD_IDCardRecognition.podspec; sourceTree = "<group>"; };
+		18A3517D2222AB8D00C62779 /* IDAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IDAuthViewController.xib; path = GoodManager/JYBD_IDCardRecognition/IDCard/IDAuthViewController.xib; sourceTree = SOURCE_ROOT; };
+		18A3517F2222AB9700C62779 /* IDAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDAuthViewController.h; path = GoodManager/JYBD_IDCardRecognition/IDCard/IDAuthViewController.h; sourceTree = SOURCE_ROOT; };
+		18A351802222AB9E00C62779 /* IDAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAuthViewController.m; sourceTree = "<group>"; };
+		18A351822222ABDD00C62779 /* AVCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AVCaptureViewController.h; path = GoodManager/JYBD_IDCardRecognition/IDCard/AVCaptureViewController.h; sourceTree = SOURCE_ROOT; };
+		18A351832222ABE300C62779 /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVCaptureViewController.m; path = GoodManager/JYBD_IDCardRecognition/IDCard/AVCaptureViewController.m; sourceTree = SOURCE_ROOT; };
+		18A351862222AC2F00C62779 /* JQIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQIDCardScaningView.m; sourceTree = "<group>"; };
+		18A351872222AC2F00C62779 /* LHSIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSIDCardScaningView.m; sourceTree = "<group>"; };
+		18A351882222AC2F00C62779 /* JQIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQIDCardScaningView.h; sourceTree = "<group>"; };
+		18A351892222AC2F00C62779 /* LHSIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSIDCardScaningView.h; sourceTree = "<group>"; };
+		18A3518C2222AC6000C62779 /* JQAVCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JQAVCaptureViewController.h; path = GoodManager/JYBD_IDCardRecognition/IDCard/JQAVCaptureViewController.h; sourceTree = SOURCE_ROOT; };
+		18A3518D2222AC6600C62779 /* JQAVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JQAVCaptureViewController.m; path = GoodManager/JYBD_IDCardRecognition/IDCard/JQAVCaptureViewController.m; sourceTree = SOURCE_ROOT; };
+		18A351902222AC9700C62779 /* IDInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfo.m; sourceTree = "<group>"; };
+		18A351912222AC9700C62779 /* IDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfo.h; sourceTree = "<group>"; };
+		18A351932222ACBE00C62779 /* IDInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDInfoViewController.h; path = GoodManager/JYBD_IDCardRecognition/IDCard/IDInfoViewController.h; sourceTree = SOURCE_ROOT; };
+		18A351942222ACC900C62779 /* IDInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IDInfoViewController.xib; path = GoodManager/JYBD_IDCardRecognition/IDCard/IDInfoViewController.xib; sourceTree = SOURCE_ROOT; };
+		18A351962222ACCF00C62779 /* IDInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDInfoViewController.m; path = GoodManager/JYBD_IDCardRecognition/IDCard/IDInfoViewController.m; sourceTree = SOURCE_ROOT; };
+		18A351992222ACF900C62779 /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
+		18A3519A2222ACF900C62779 /* UIAlertController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extend.m"; sourceTree = "<group>"; };
+		18A3519B2222ACF900C62779 /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
+		18A3519C2222ACF900C62779 /* UIAlertController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extend.h"; sourceTree = "<group>"; };
+		18A351A52222B1B800C62779 /* BankAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankAuthViewController.xib; sourceTree = "<group>"; };
+		18A351A62222B1B800C62779 /* BankAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAuthViewController.h; sourceTree = "<group>"; };
+		18A351A72222B1B900C62779 /* BankAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAuthViewController.m; sourceTree = "<group>"; };
+		18A351AA2222B4CC00C62779 /* BankInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankInfoViewController.h; sourceTree = "<group>"; };
+		18A351AB2222B4CC00C62779 /* BankInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankInfoViewController.m; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitEmoticon.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitEmoticon.bundle; sourceTree = SOURCE_ROOT; };
 		5645E03822213794002C8A44 /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitResource.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitResource.bundle; sourceTree = SOURCE_ROOT; };
@@ -194,8 +263,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A3516E2222A88000C62779 /* libexbankcardios.a in Frameworks */,
 				59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */,
-				18C1883A2220419900C8B172 /* libexidcardios.a in Frameworks */,
+				18A3516F2222A88000C62779 /* libbexbankcard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +311,11 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
+				18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */,
 				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
 				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
 				5645E03822213794002C8A44 /* NIMKitResource.bundle */,
 				5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */,
-				18C188102220419900C8B172 /* IDCardRecognition */,
 				0AEDCAB921F166A8005887A3 /* NetWorking */,
 				0A4EDB8021E0849700DB6356 /* View */,
 				0A5B880721D377410045A1BE /* Extension */,
@@ -383,93 +453,211 @@
 			path = Target;
 			sourceTree = "<group>";
 		};
-		18C188102220419900C8B172 /* IDCardRecognition */ = {
+		18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				18C188112220419900C8B172 /* Category */,
-				18C188162220419900C8B172 /* Controller */,
-				18C188212220419900C8B172 /* libexidcard */,
-				18C188272220419900C8B172 /* Model */,
-				18C1882A2220419900C8B172 /* View */,
-				18C1882F2220419900C8B172 /* Tool */,
+				18A351A42222B1A200C62779 /* BankCard */,
+				18A351A32222B16F00C62779 /* IDCard */,
+				18A351982222ACF900C62779 /* Category */,
+				18A3518F2222AC9700C62779 /* Model */,
+				18A351852222AC2F00C62779 /* View */,
+				18A3512B2222A87F00C62779 /* Classes */,
+				18A351542222A87F00C62779 /* dicts */,
+				18A351562222A87F00C62779 /* Resources */,
+				18A351612222A87F00C62779 /* JYBD_IDCardRecognition.podspec */,
 			);
-			path = IDCardRecognition;
+			path = JYBD_IDCardRecognition;
 			sourceTree = "<group>";
 		};
-		18C188112220419900C8B172 /* Category */ = {
+		18A3512B2222A87F00C62779 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				18C188122220419900C8B172 /* UIImage+Extend.h */,
-				18C188142220419900C8B172 /* UIImage+Extend.m */,
-				18C188152220419900C8B172 /* UIAlertController+Extend.h */,
-				18C188132220419900C8B172 /* UIAlertController+Extend.m */,
+				18A3512C2222A87F00C62779 /* Category */,
+				18A351312222A87F00C62779 /* Controller */,
+				18A351382222A87F00C62779 /* JYBD_OCR_Bank */,
+				18A3513F2222A87F00C62779 /* libexidcard */,
+				18A351452222A87F00C62779 /* Model */,
+				18A3514A2222A87F00C62779 /* View */,
+				18A3514D2222A87F00C62779 /* exbankcardcore */,
+				18A351512222A87F00C62779 /* Tool */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		18A3512C2222A87F00C62779 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				18A3512D2222A87F00C62779 /* UIAlertController+IDCardExtend.h */,
+				18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */,
+				18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */,
+				18A351302222A87F00C62779 /* UIImage+IDCardExtend.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		18C188162220419900C8B172 /* Controller */ = {
+		18A351312222A87F00C62779 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18C1881D2220419900C8B172 /* IDAuthViewController.xib */,
-				18C1881C2220419900C8B172 /* IDAuthViewController.m */,
-				18C188172220419900C8B172 /* IDAuthViewController.h */,
-				18C188182220419900C8B172 /* IDInfoViewController.xib */,
-				18C188192220419900C8B172 /* IDInfoViewController.m */,
-				18C1881F2220419900C8B172 /* IDInfoViewController.h */,
-				18C1881A2220419900C8B172 /* AVCaptureViewController.m */,
-				18C1881B2220419900C8B172 /* JQAVCaptureViewController.m */,
-				18C188202220419900C8B172 /* JQAVCaptureViewController.h */,
-				18C1881E2220419900C8B172 /* AVCaptureViewController.h */,
+				18A351322222A87F00C62779 /* JYBDIDCardVC.h */,
+				18A351332222A87F00C62779 /* JYBDScanCardBaseVC.m */,
+				18A351342222A87F00C62779 /* JYBDBankCardVC.h */,
+				18A351352222A87F00C62779 /* JYBDIDCardVC.m */,
+				18A351362222A87F00C62779 /* JYBDBankCardVC.m */,
+				18A351372222A87F00C62779 /* JYBDScanCardBaseVC.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		18C188212220419900C8B172 /* libexidcard */ = {
+		18A351382222A87F00C62779 /* JYBD_OCR_Bank */ = {
 			isa = PBXGroup;
 			children = (
-				18C188222220419900C8B172 /* libexidcardios.a */,
-				18C188232220419900C8B172 /* dicts */,
-				18C188252220419900C8B172 /* commondef.h */,
-				18C188262220419900C8B172 /* excards.h */,
+				18A351392222A87F00C62779 /* JYBDScanCardManageBase.h */,
+				18A3513A2222A87F00C62779 /* JYBDScanCardManage.m */,
+				18A3513B2222A87F00C62779 /* JYBDBankCardSearch.m */,
+				18A3513C2222A87F00C62779 /* JYBDScanCardManageBase.m */,
+				18A3513D2222A87F00C62779 /* JYBDBankCardSearch.h */,
+				18A3513E2222A87F00C62779 /* JYBDScanCardManage.h */,
+			);
+			path = JYBD_OCR_Bank;
+			sourceTree = "<group>";
+		};
+		18A3513F2222A87F00C62779 /* libexidcard */ = {
+			isa = PBXGroup;
+			children = (
+				18A351402222A87F00C62779 /* exbankcardcore.h */,
+				18A351412222A87F00C62779 /* commondef.h */,
+				18A351422222A87F00C62779 /* exbankcard.h */,
+				18A351432222A87F00C62779 /* excards.h */,
+				18A351442222A87F00C62779 /* BankCard.h */,
 			);
 			path = libexidcard;
 			sourceTree = "<group>";
 		};
-		18C188232220419900C8B172 /* dicts */ = {
+		18A351452222A87F00C62779 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				18C188242220419900C8B172 /* zocr0.lib */,
-			);
-			path = dicts;
-			sourceTree = "<group>";
-		};
-		18C188272220419900C8B172 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				18C188282220419900C8B172 /* IDInfo.m */,
-				18C188292220419900C8B172 /* IDInfo.h */,
+				18A351462222A87F00C62779 /* JYBDBankCardInfo.m */,
+				18A351472222A87F00C62779 /* JYBDCardIDInfo.m */,
+				18A351482222A87F00C62779 /* JYBDBankCardInfo.h */,
+				18A351492222A87F00C62779 /* JYBDCardIDInfo.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		18C1882A2220419900C8B172 /* View */ = {
+		18A3514A2222A87F00C62779 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18C1882B2220419900C8B172 /* JQIDCardScaningView.m */,
-				18C1882C2220419900C8B172 /* LHSIDCardScaningView.m */,
-				18C1882D2220419900C8B172 /* JQIDCardScaningView.h */,
-				18C1882E2220419900C8B172 /* LHSIDCardScaningView.h */,
+				18A3514B2222A87F00C62779 /* JYBDNewFormeScaningV.m */,
+				18A3514C2222A87F00C62779 /* JYBDNewFormeScaningV.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		18C1882F2220419900C8B172 /* Tool */ = {
+		18A3514D2222A87F00C62779 /* exbankcardcore */ = {
 			isa = PBXGroup;
 			children = (
-				18C188302220419900C8B172 /* RectManager.h */,
-				18C188312220419900C8B172 /* RectManager.m */,
+				18A3514E2222A87F00C62779 /* libexidcardios.a */,
+				18A3514F2222A87F00C62779 /* libexbankcardios.a */,
+				18A351502222A87F00C62779 /* libbexbankcard.a */,
+			);
+			path = exbankcardcore;
+			sourceTree = "<group>";
+		};
+		18A351512222A87F00C62779 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				18A351532222A87F00C62779 /* IDCardRectManager.h */,
+				18A351522222A87F00C62779 /* IDCardRectManager.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		18A351542222A87F00C62779 /* dicts */ = {
+			isa = PBXGroup;
+			children = (
+				18A351552222A87F00C62779 /* zocr0.lib */,
+			);
+			path = dicts;
+			sourceTree = "<group>";
+		};
+		18A351562222A87F00C62779 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18A351572222A87F00C62779 /* scaningline@2x.png */,
+				18A351582222A87F00C62779 /* scaningline@3x.png */,
+				18A351592222A87F00C62779 /* idcard_back.png */,
+				18A3515A2222A87F00C62779 /* flashlightscan@3x.png */,
+				18A3515B2222A87F00C62779 /* flashlightscan@2x.png */,
+				18A3515C2222A87F00C62779 /* flashlightscan.png */,
+				18A3515D2222A87F00C62779 /* scaningbgimage.png */,
+				18A3515E2222A87F00C62779 /* scaningbgimage@2x.png */,
+				18A3515F2222A87F00C62779 /* scaningbgimage@3x.png */,
+				18A351602222A87F00C62779 /* scaningline.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18A351852222AC2F00C62779 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18A351862222AC2F00C62779 /* JQIDCardScaningView.m */,
+				18A351872222AC2F00C62779 /* LHSIDCardScaningView.m */,
+				18A351882222AC2F00C62779 /* JQIDCardScaningView.h */,
+				18A351892222AC2F00C62779 /* LHSIDCardScaningView.h */,
+			);
+			name = View;
+			path = GoodManager/IDCardRecognition/View;
+			sourceTree = SOURCE_ROOT;
+		};
+		18A3518F2222AC9700C62779 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18A351902222AC9700C62779 /* IDInfo.m */,
+				18A351912222AC9700C62779 /* IDInfo.h */,
+			);
+			name = Model;
+			path = GoodManager/IDCardRecognition/Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		18A351982222ACF900C62779 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				18A351992222ACF900C62779 /* UIImage+Extend.h */,
+				18A3519A2222ACF900C62779 /* UIAlertController+Extend.m */,
+				18A3519B2222ACF900C62779 /* UIImage+Extend.m */,
+				18A3519C2222ACF900C62779 /* UIAlertController+Extend.h */,
+			);
+			name = Category;
+			path = GoodManager/IDCardRecognition/Category;
+			sourceTree = SOURCE_ROOT;
+		};
+		18A351A32222B16F00C62779 /* IDCard */ = {
+			isa = PBXGroup;
+			children = (
+				18A3518D2222AC6600C62779 /* JQAVCaptureViewController.m */,
+				18A3518C2222AC6000C62779 /* JQAVCaptureViewController.h */,
+				18A351822222ABDD00C62779 /* AVCaptureViewController.h */,
+				18A351832222ABE300C62779 /* AVCaptureViewController.m */,
+				18A3517D2222AB8D00C62779 /* IDAuthViewController.xib */,
+				18A3517F2222AB9700C62779 /* IDAuthViewController.h */,
+				18A351802222AB9E00C62779 /* IDAuthViewController.m */,
+				18A351942222ACC900C62779 /* IDInfoViewController.xib */,
+				18A351932222ACBE00C62779 /* IDInfoViewController.h */,
+				18A351962222ACCF00C62779 /* IDInfoViewController.m */,
+			);
+			path = IDCard;
+			sourceTree = "<group>";
+		};
+		18A351A42222B1A200C62779 /* BankCard */ = {
+			isa = PBXGroup;
+			children = (
+				18A351AA2222B4CC00C62779 /* BankInfoViewController.h */,
+				18A351AB2222B4CC00C62779 /* BankInfoViewController.m */,
+				18A351A62222B1B800C62779 /* BankAuthViewController.h */,
+				18A351A72222B1B900C62779 /* BankAuthViewController.m */,
+				18A351A52222B1B800C62779 /* BankAuthViewController.xib */,
+			);
+			path = BankCard;
 			sourceTree = "<group>";
 		};
 		6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */ = {
@@ -608,14 +796,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C188342220419900C8B172 /* IDInfoViewController.xib in Resources */,
-				18C1883B2220419900C8B172 /* zocr0.lib in Resources */,
-				18C188392220419900C8B172 /* IDAuthViewController.xib in Resources */,
+				18A3517C2222A88000C62779 /* JYBD_IDCardRecognition.podspec in Resources */,
 				5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */,
+				18A351712222A88000C62779 /* zocr0.lib in Resources */,
+				18A3517A2222A88000C62779 /* scaningbgimage@3x.png in Resources */,
+				18A351722222A88000C62779 /* scaningline@2x.png in Resources */,
+				18A351952222ACC900C62779 /* IDInfoViewController.xib in Resources */,
 				0A4A020521D32D6700FD39F7 /* LaunchScreen.storyboard in Resources */,
+				18A351752222A88000C62779 /* flashlightscan@3x.png in Resources */,
 				0A4A020221D32D6700FD39F7 /* Assets.xcassets in Resources */,
+				18A351772222A88000C62779 /* flashlightscan.png in Resources */,
+				18A3517E2222AB8D00C62779 /* IDAuthViewController.xib in Resources */,
+				18A351742222A88000C62779 /* idcard_back.png in Resources */,
 				0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */,
 				0A24B4FB21D5CF3500F1336D /* scanSound.wav in Resources */,
+				18A351782222A88000C62779 /* scaningbgimage.png in Resources */,
+				18A351762222A88000C62779 /* flashlightscan@2x.png in Resources */,
+				18A3517B2222A88000C62779 /* scaningline.png in Resources */,
+				18A351732222A88000C62779 /* scaningline@3x.png in Resources */,
+				18A351792222A88000C62779 /* scaningbgimage@2x.png in Resources */,
+				18A351A82222B1B900C62779 /* BankAuthViewController.xib in Resources */,
 				5645E03722213786002C8A44 /* NIMKitEmoticon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,61 +934,74 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C188322220419900C8B172 /* UIAlertController+Extend.m in Sources */,
-				18C188332220419900C8B172 /* UIImage+Extend.m in Sources */,
+				18A351692222A88000C62779 /* JYBDScanCardManageBase.m in Sources */,
+				18A351682222A88000C62779 /* JYBDBankCardSearch.m in Sources */,
 				0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */,
-				18C1883E2220419900C8B172 /* LHSIDCardScaningView.m in Sources */,
-				18C188372220419900C8B172 /* JQAVCaptureViewController.m in Sources */,
 				5697F418221EB957000AC814 /* Jpush.swift in Sources */,
 				0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */,
 				0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */,
 				0A5B880021D36C8F0045A1BE /* Global.swift in Sources */,
 				0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */,
+				18A3518A2222AC2F00C62779 /* JQIDCardScaningView.m in Sources */,
+				18A351972222ACD000C62779 /* IDInfoViewController.m in Sources */,
 				0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */,
 				0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */,
 				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
+				18A351652222A88000C62779 /* JYBDIDCardVC.m in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
 				0AEDCAC421F16E40005887A3 /* Launch.swift in Sources */,
 				0AEE664821E105A400636D06 /* ExArray.swift in Sources */,
+				18A351672222A88000C62779 /* JYBDScanCardManage.m in Sources */,
 				0A7F576721E2F0B500F03870 /* CameraViewController.swift in Sources */,
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
+				18A351622222A88000C62779 /* UIImage+IDCardExtend.m in Sources */,
+				18A351632222A88000C62779 /* UIAlertController+IDCardExtend.m in Sources */,
+				18A3518B2222AC2F00C62779 /* LHSIDCardScaningView.m in Sources */,
+				18A3519E2222ACF900C62779 /* UIImage+Extend.m in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
+				18A3516A2222A88000C62779 /* JYBDBankCardInfo.m in Sources */,
 				0AEC339F21F879B100A0245F /* JsApiSwift.swift in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
-				18C188362220419900C8B172 /* AVCaptureViewController.m in Sources */,
+				18A351842222ABE300C62779 /* AVCaptureViewController.m in Sources */,
 				0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */,
 				0A4E312321E199AB00D15766 /* Image.swift in Sources */,
 				0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */,
 				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
+				18A3516B2222A88000C62779 /* JYBDCardIDInfo.m in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
 				0AEDCACA21F177B6005887A3 /* Observable+ObjectMapper.swift in Sources */,
+				18A351642222A88000C62779 /* JYBDScanCardBaseVC.m in Sources */,
 				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,
 				0A23FCF621E0DF9D00ECDA6E /* JS.swift in Sources */,
+				18A351A92222B1B900C62779 /* BankAuthViewController.m in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
 				0A3E2F9D2220339A00BD3124 /* ExUIColor.swift in Sources */,
+				18A3516C2222A88000C62779 /* JYBDNewFormeScaningV.m in Sources */,
 				0A7F576C21E2FD4B00F03870 /* PlayerViewController.swift in Sources */,
+				18A3519D2222ACF900C62779 /* UIAlertController+Extend.m in Sources */,
 				0AEDCABB21F166D0005887A3 /* APINetworkActivityPlugin.swift in Sources */,
-				18C188382220419900C8B172 /* IDAuthViewController.m in Sources */,
+				18A351662222A88000C62779 /* JYBDBankCardVC.m in Sources */,
 				0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */,
 				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
+				18A351702222A88000C62779 /* IDCardRectManager.m in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
+				18A351922222AC9700C62779 /* IDInfo.m in Sources */,
 				0A18C98D21F9F052007DDF57 /* Webview.swift in Sources */,
 				6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */,
 				0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */,
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
-				18C1883C2220419900C8B172 /* IDInfo.m in Sources */,
-				18C1883F2220419900C8B172 /* RectManager.m in Sources */,
-				18C188352220419900C8B172 /* IDInfoViewController.m in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
+				18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */,
 				0AEDCAC621F1709F005887A3 /* LaunchResultModel.swift in Sources */,
-				18C1883D2220419900C8B172 /* JQIDCardScaningView.m in Sources */,
 				0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */,
+				18A3518E2222AC6600C62779 /* JQAVCaptureViewController.m in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
+				18A351812222AB9E00C62779 /* IDAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,7 +1095,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -945,6 +1158,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -974,6 +1188,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 32G846HEF6;
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = GoodManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -983,6 +1198,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoodManager/IDCardRecognition/libexidcard",
+					"$(PROJECT_DIR)/GoodManager/JYBDAVCapture/JYBD_IDCardRecognition/Classes/exbankcardcore",
+					"$(PROJECT_DIR)/GoodManager/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1013,6 +1230,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoodManager/IDCardRecognition/libexidcard",
+					"$(PROJECT_DIR)/GoodManager/JYBDAVCapture/JYBD_IDCardRecognition/Classes/exbankcardcore",
+					"$(PROJECT_DIR)/GoodManager/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
 				PRODUCT_NAME = "$(TARGET_NAME)";

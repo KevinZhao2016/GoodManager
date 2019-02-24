@@ -1,9 +1,12 @@
-
+//
+//  IDCardRectManager.h
+//  JYBDAVCapture
+//
+//  Created by tianxiuping on 2018/6/27.
 
 #import <UIKit/UIKit.h>
 
-@interface RectManager : UIView
-
+@interface IDCardRectManager : UIView
 
 @property (nonatomic, assign)CGRect subRect;
 
@@ -15,4 +18,6 @@
 
 + (char *)getNumbers;
 
++ (NSBundle *)getImageBundle;
 @end
+

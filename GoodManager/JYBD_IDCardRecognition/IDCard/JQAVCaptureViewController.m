@@ -15,7 +15,7 @@
 #import "excards.h"
 #import "IDInfoViewController.h"
 #import "UIImage+Extend.h"
-#import "RectManager.h"
+#import "IDCardRectManager.h"
 #import "UIAlertController+Extend.h"
 #import "JQIDCardScaningView.h"
 
@@ -455,8 +455,8 @@
             if (iDInfo) {// 读取到身份证信息，实例化出IDInfo对象后，截取身份证的有效区域，获取到图像
                 NSLog(@"\n正面\n姓名：%@\n性别：%@\n民族：%@\n住址：%@\n公民身份证号码：%@\n\n反面\n签发机关：%@\n有效期限：%@",iDInfo.name,iDInfo.gender,iDInfo.nation,iDInfo.address,iDInfo.num,iDInfo.issue,iDInfo.valid);
                 
-                CGRect effectRect = [RectManager getEffectImageRect:CGSizeMake(width, height)];
-                CGRect rect = [RectManager getGuideFrame:effectRect];
+                CGRect effectRect = [IDCardRectManager getEffectImageRect:CGSizeMake(width, height)];
+                CGRect rect = [IDCardRectManager getGuideFrame:effectRect];
                 
                 UIImage *image = [UIImage getImageStream:imageBuffer];
                 UIImage *subImage = [UIImage getSubImage:rect inImage:image];
