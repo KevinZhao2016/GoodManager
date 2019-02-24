@@ -311,11 +311,11 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
-				18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */,
 				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
 				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
 				5645E03822213794002C8A44 /* NIMKitResource.bundle */,
 				5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */,
+				18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */,
 				0AEDCAB921F166A8005887A3 /* NetWorking */,
 				0A4EDB8021E0849700DB6356 /* View */,
 				0A5B880721D377410045A1BE /* Extension */,
