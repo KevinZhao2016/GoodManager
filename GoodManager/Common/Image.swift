@@ -43,9 +43,9 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
 //            imagePicker.callbackfun = callBackfunName
 //            vc.present(imagePicker, animated: true, completion: nil)
         
-        controller!.allowTakePicture = true
-        controller!.allowPickingVideo = false
-        vc.present(controller! , animated: true, completion: nil)
+            controller!.allowTakePicture = true
+            controller!.allowPickingVideo = false
+            vc.present(controller! , animated: true, completion: nil)
         }else {
             // 照相机不可用
         }
@@ -150,6 +150,7 @@ func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBac
 //    }
 //}
 
+// TODO 获取银行卡照片
 func APPGetBankImage(callBackfunName:String){
     let vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
@@ -171,35 +172,33 @@ func APPGetBankImage(callBackfunName:String){
     }
 }
 
+// 获取身份证照片
 func APPGetIdentityCardImage(callBackfunName:String){
     var vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
     
-    
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        let imagePicker = CameraViewController()
-        // 表示操作为拍照
-        imagePicker.sourceType = .camera
-        // 拍照后允许用户进行编辑
-        imagePicker.allowsEditing = true
-        // 也可以设置成视频
-        imagePicker.cameraCaptureMode = .photo
-        // 设置代理为 ViewController,已经实现了协议
-        imagePicker.delegate = imagePicker
-        // 进入拍照界面
-        //imagePicker.callbackfun = callBackfunName
-        //vc.present(imagePicker, animated: true, completion: nil)
+//        let imagePicker = CameraViewController()
+//        // 表示操作为拍照
+//        imagePicker.sourceType = .camera
+//        // 拍照后允许用户进行编辑
+//        imagePicker.allowsEditing = true
+//        // 也可以设置成视频
+//        imagePicker.cameraCaptureMode = .photo
+//        // 设置代理为 ViewController,已经实现了协议
+//        imagePicker.delegate = imagePicker
+//        // 进入拍照界面
+//        imagePicker.callbackfun = callBackfunName
+//        vc.present(imagePicker, animated: true, completion: nil)
+        
         var IDAuthVC = IDAuthViewController()
         IDAuthVC.callbackfun = callBackfunName;
 
-        print("IDAuthVC")
         let nvc = UINavigationController(rootViewController: IDAuthVC)
         vc.present(nvc, animated: true, completion: nil)
         
-        
     }else {
         // 照相机不可用
-        
     }
 }
 

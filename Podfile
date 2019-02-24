@@ -34,6 +34,7 @@ target 'GoodManager' do
     pod 'JPush'
     pod 'NIMSDK_LITE'
     pod 'NIMKit'
+    #pod 'ReactiveCocoa', '~> 2.3.1'
 
     
 end
