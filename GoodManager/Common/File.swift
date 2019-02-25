@@ -23,10 +23,16 @@ func APPChooseSingleFile(callBackfunName:String) {
     print("APPChooseSingleFile")
     let vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
-    let FileListVC = FileListViewController()
+    
+    let FileListVC = FileListTableViewController()
     FileListVC.callbackfun = callBackfunName
-    let nvc = UINavigationController(rootViewController: FileListVC)
-    vc.present(nvc, animated: true, completion: nil)
+    if(FileListVC != nil){
+        print(FileListVC)
+        let nvc = UINavigationController(rootViewController: FileListVC)
+        vc.present(nvc, animated: true, completion: nil)
+    }
+    
+    
     
     //callbackfun = callBackfunName
     //ExecWinJS(JSFun: callBackfunName + "(\"1\")")

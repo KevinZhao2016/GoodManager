@@ -21,25 +21,28 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uQ-Dx-C2N">
                         <rect key="frame" x="4.5" y="2.5" width="340" height="65"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-9w-EQ7">
+                                <rect key="frame" x="15" y="22" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="euJ-9w-EQ7" firstAttribute="leading" secondItem="9uQ-Dx-C2N" secondAttribute="leading" constant="15" id="8d5-IS-MPJ"/>
                             <constraint firstAttribute="width" constant="340" id="JZy-Rb-lTB"/>
                             <constraint firstAttribute="height" constant="65" id="ldA-7W-AG4"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="mNV-ZO-xT9"/>
+                            <constraint firstItem="euJ-9w-EQ7" firstAttribute="centerY" secondItem="9uQ-Dx-C2N" secondAttribute="centerY" id="ylM-x3-cWj"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-9w-EQ7">
-                        <rect key="frame" x="41" y="24.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.7729492188" green="0.7729492188" blue="0.7729492188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="9uQ-Dx-C2N" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="D6c-fo-uhT"/>
                     <constraint firstItem="9uQ-Dx-C2N" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nqy-We-sXe"/>
-                    <constraint firstItem="euJ-9w-EQ7" firstAttribute="centerY" secondItem="9uQ-Dx-C2N" secondAttribute="centerY" id="oXM-hq-iez"/>
-                    <constraint firstItem="9uQ-Dx-C2N" firstAttribute="leading" secondItem="euJ-9w-EQ7" secondAttribute="trailing" constant="-78.5" id="pIc-Zw-9wu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -47,7 +50,7 @@
                 <outlet property="fileNameLabel" destination="euJ-9w-EQ7" id="peQ-nE-2J5"/>
                 <outlet property="underView" destination="9uQ-Dx-C2N" id="ggR-k0-iJ2"/>
             </connections>
-            <point key="canvasLocation" x="159" y="77"/>
+            <point key="canvasLocation" x="9" y="70"/>
         </tableViewCell>
     </objects>
 </document>
