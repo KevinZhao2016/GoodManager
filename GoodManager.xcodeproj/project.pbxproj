@@ -96,6 +96,10 @@
 		18A351A82222B1B900C62779 /* BankAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A351A52222B1B800C62779 /* BankAuthViewController.xib */; };
 		18A351A92222B1B900C62779 /* BankAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351A72222B1B900C62779 /* BankAuthViewController.m */; };
 		18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351AB2222B4CC00C62779 /* BankInfoViewController.m */; };
+		18B45DED2223072100987D5A /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B45DEC2223072100987D5A /* FileListViewController.swift */; };
+		18B45DEF22230BA900987D5A /* FileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B45DEE22230BA900987D5A /* FileListViewController.xib */; };
+		18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */; };
+		18B45DF52223136D00987D5A /* FileCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */; };
 		5645E03722213786002C8A44 /* NIMKitEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */; };
 		5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03822213794002C8A44 /* NIMKitResource.bundle */; };
 		5697F418221EB957000AC814 /* Jpush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697F417221EB957000AC814 /* Jpush.swift */; };
@@ -248,6 +252,10 @@
 		18A351A72222B1B900C62779 /* BankAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAuthViewController.m; sourceTree = "<group>"; };
 		18A351AA2222B4CC00C62779 /* BankInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankInfoViewController.h; sourceTree = "<group>"; };
 		18A351AB2222B4CC00C62779 /* BankInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankInfoViewController.m; sourceTree = "<group>"; };
+		18B45DEC2223072100987D5A /* FileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileListViewController.swift; path = ../FileListViewController.swift; sourceTree = "<group>"; };
+		18B45DEE22230BA900987D5A /* FileListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FileListViewController.xib; path = ../FileListViewController.xib; sourceTree = "<group>"; };
+		18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileCellTableViewCell.swift; path = ../FileCellTableViewCell.swift; sourceTree = "<group>"; };
+		18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FileCellTableViewCell.xib; path = ../FileCellTableViewCell.xib; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitEmoticon.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitEmoticon.bundle; sourceTree = SOURCE_ROOT; };
 		5645E03822213794002C8A44 /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitResource.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitResource.bundle; sourceTree = SOURCE_ROOT; };
@@ -374,6 +382,7 @@
 		0A5B87FB21D36BF80045A1BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18B45DF622231CF700987D5A /* FileList */,
 				0AD6618721D7AD0E0066459B /* Base */,
 				0A4A01FC21D32D6700FD39F7 /* MainViewController.swift */,
 				0A24B4F821D5CD4A00F1336D /* ScanQRCodeViewController.swift */,
@@ -660,6 +669,17 @@
 			path = BankCard;
 			sourceTree = "<group>";
 		};
+		18B45DF622231CF700987D5A /* FileList */ = {
+			isa = PBXGroup;
+			children = (
+				18B45DEC2223072100987D5A /* FileListViewController.swift */,
+				18B45DEE22230BA900987D5A /* FileListViewController.xib */,
+				18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */,
+				18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */,
+			);
+			path = FileList;
+			sourceTree = "<group>";
+		};
 		6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,7 +819,9 @@
 				18A3517C2222A88000C62779 /* JYBD_IDCardRecognition.podspec in Resources */,
 				5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */,
 				18A351712222A88000C62779 /* zocr0.lib in Resources */,
+				18B45DF52223136D00987D5A /* FileCellTableViewCell.xib in Resources */,
 				18A3517A2222A88000C62779 /* scaningbgimage@3x.png in Resources */,
+				18B45DEF22230BA900987D5A /* FileListViewController.xib in Resources */,
 				18A351722222A88000C62779 /* scaningline@2x.png in Resources */,
 				18A351952222ACC900C62779 /* IDInfoViewController.xib in Resources */,
 				0A4A020521D32D6700FD39F7 /* LaunchScreen.storyboard in Resources */,
@@ -993,9 +1015,11 @@
 				6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */,
 				0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */,
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
+				18B45DED2223072100987D5A /* FileListViewController.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
+				18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */,
 				18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */,
 				0AEDCAC621F1709F005887A3 /* LaunchResultModel.swift in Sources */,
 				0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */,

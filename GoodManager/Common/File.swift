@@ -11,8 +11,26 @@ import Alamofire
 import Moya
 import ObjectMapper
 import SwiftyJSON
+import QuickLook
+
 
 let fileManager = FileManager.default
+
+let quickLookViewController = QLPreviewController()
+
+//  单选文件
+func APPChooseSingleFile(callBackfunName:String) {
+    print("APPChooseSingleFile")
+    let vc = getLastMainViewController()
+    vc.imagecallBackfunName = callBackfunName
+    let FileListVC = FileListViewController()
+    FileListVC.callbackfun = callBackfunName
+    let nvc = UINavigationController(rootViewController: FileListVC)
+    vc.present(nvc, animated: true, completion: nil)
+    
+    //callbackfun = callBackfunName
+    //ExecWinJS(JSFun: callBackfunName + "(\"1\")")
+}
 
 func APPIfExistFile(path:String) -> Int {
 //    let documentPath = NSHomeDirectory() + "/Documents"

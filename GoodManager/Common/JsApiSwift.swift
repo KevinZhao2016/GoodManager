@@ -125,6 +125,18 @@ class JsApiSwift: NSObject {
         let callBackfunName = jsonString["callBackfunName"].stringValue
         GoodManager.APPPlayVideo(path: path, startPosition: startPosition, callBackfunName: callBackfunName)
     }
+    /*
+     @objc func APPGetBankImage(_ arg:String){
+     let jsonString = JSON(parseJSON: arg)
+     let callBackfunName = jsonString["callBackfunName"].stringValue
+     GoodManager.APPGetBankImage(callBackfunName: callBackfunName)
+     }
+     */
+    @objc func APPChooseSingleFile(_ arg:String){
+        let jsonString = JSON(parseJSON: arg)
+        let callBackfunName = jsonString["callBackfunName"].stringValue
+        GoodManager.APPChooseSingleFile(callBackfunName: callBackfunName)
+    }
     
     @objc func APPGetFileSize(_ arg:String) ->Int {
         let jsonString = JSON(parseJSON: arg)
