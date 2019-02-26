@@ -40,14 +40,14 @@ extension ContactPickerController:CNContactPickerDelegate {
         
             //获取联系人电话号码
             let phones = contact.phoneNumbers
-            for phone in phones {
+//            for phone in phones {
                 //获得标签名（转为能看得懂的本地标签名，比如work、home）
                 //let phoneLabel = CNLabeledValue<NSString>.localizedString(forLabel: phone.label!)
                 //获取号码
-                let phoneValue = phone.value.stringValue
+            let phoneValue = phones.first!.value.stringValue
                 let contactModel = TelBookModel(Phonenumber: phoneValue, Name: lastName + firstName)
                 contactArray.append(contactModel.toJSONString()!)
-            }
+//            }
         }
         self.backClosure!(contactArray.getJSONStringFromArray())
     }

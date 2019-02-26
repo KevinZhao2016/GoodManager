@@ -59,7 +59,7 @@ func APPGetFileSize(path:String) -> String{
 //    let file = docPath.appendingPathComponent("test.txt")
     let attributes = try? manager.attributesOfItem(atPath: path) //结果为Dictionary类型
     print(attributes![FileAttributeKey.size]!)
-    return "\"\(attributes![FileAttributeKey.size]!)\""
+    return "\(attributes![FileAttributeKey.size]!)"
 }
 
 func APPGetFileBase(path:String) -> String{
@@ -121,7 +121,7 @@ func APPDownFile(path:String, callBackfunName:String){
     //指定下载路径和保存文件名
     //指定下载路径（文件名不变）
     let destination: DownloadRequest.DownloadFileDestination = { _, response in
-        let documentsURL = URL(string: NSHomeDirectory() + "/Documents")
+        let documentsURL = URL(string: NSHomeDirectory() + "/Documents/localDocuments")
         let fileURL = documentsURL?.appendingPathComponent(response.suggestedFilename!)
         //两个参数表示如果有同名文件则会覆盖，如果路径中文件夹不存在则会自动创建
         return (fileURL!, [.removePreviousFile, .createIntermediateDirectories])
