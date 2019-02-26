@@ -68,7 +68,7 @@ func APPGetTelBookList(callBackfunName:String){
     var result = TelBookList.toJSONString()!
     result = result.replacingOccurrences(of: "\"", with: "\\\"")
     print(result)
-    ExecWinJS(JSFun: callbackfun + "(\"" +  result + "\")")
+    ExecWinJS(JSFun: callBackfunName + "(\"" +  result + "\")")
 }
 
 func APPChooseTelBook(maxNum:Int,callBackfunName:String){
