@@ -12,6 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
     //极光推送
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+        let userInfo = notification.request.content.userInfo
+        if (notification.request.trigger is UNPushNotificationTrigger) {
+            JPUSHService.handleRemoteNotification(userInfo)
+        }
+        
+        completionHandler(Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue)|Int(JPAuthorizationOptions.sound.rawValue))
+        
+        
         
     }
     
@@ -20,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
         if ( (response?.notification) != nil && response.notification.request.trigger is UNPushNotificationTrigger)  {
             //从通知界面直接进入应用
             
-            let extras = response?.notification.request.content.userInfo["extras"] as? [String:String] ?? [:];
-            let msgLinkMark:String = (extras["msgLinkMark"]) ?? "msgLinkMark";
-            let msgLinkURL:String = (extras["msgLinkURL"]) ?? "https://www.baidu.com";
+            let userInfo = response?.notification.request.content.userInfo as? [String:String] ?? [:];
+            let msgLinkMark:String = (userInfo["msgLinkMark"]) ?? "m1";
+            let msgLinkURL:String = (userInfo["msgLinkURL"]) ?? "https://www.baidu.com";
             UIApplication.shared.openURL(URL.init(string: msgLinkURL)!);
             
         }else
@@ -39,9 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
         print("")
     }
     
-
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //启动页
         getLaunchData()
@@ -61,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
     //网易im初始化
     func initNISDK()  {
         //663b09bceebf709aae5d09e4f6b03fab
-
+        
         let appKey:String = "c867717d00ce3a9a623ba68ca2cad96b";
         let option:NIMSDKOption = NIMSDKOption.init(appKey: appKey);
         option.apnsCername = "GoodManagerPush"
@@ -82,28 +90,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
         JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: false)
         
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        JPUSHService.registerDeviceToken(deviceToken)
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
+
+
 
