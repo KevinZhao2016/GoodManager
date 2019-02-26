@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uQ-Dx-C2N">
-                        <rect key="frame" x="4.5" y="2.5" width="340" height="65"/>
+                        <rect key="frame" x="2.5" y="2.5" width="344" height="65"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-9w-EQ7">
                                 <rect key="frame" x="15" y="22" width="42" height="21"/>
@@ -32,16 +32,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="euJ-9w-EQ7" firstAttribute="leading" secondItem="9uQ-Dx-C2N" secondAttribute="leading" constant="15" id="8d5-IS-MPJ"/>
-                            <constraint firstAttribute="width" constant="340" id="JZy-Rb-lTB"/>
                             <constraint firstAttribute="height" constant="65" id="ldA-7W-AG4"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="mNV-ZO-xT9"/>
                             <constraint firstItem="euJ-9w-EQ7" firstAttribute="centerY" secondItem="9uQ-Dx-C2N" secondAttribute="centerY" id="ylM-x3-cWj"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.7729492188" green="0.7729492188" blue="0.7729492188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="9uQ-Dx-C2N" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="D6c-fo-uhT"/>
+                    <constraint firstItem="9uQ-Dx-C2N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2.5" id="PE4-Jx-QVh"/>
+                    <constraint firstAttribute="trailing" secondItem="9uQ-Dx-C2N" secondAttribute="trailing" constant="2.5" id="cAq-sK-R3n"/>
                     <constraint firstItem="9uQ-Dx-C2N" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nqy-We-sXe"/>
                 </constraints>
             </tableViewCellContentView>
@@ -50,7 +51,7 @@
                 <outlet property="fileNameLabel" destination="euJ-9w-EQ7" id="peQ-nE-2J5"/>
                 <outlet property="underView" destination="9uQ-Dx-C2N" id="ggR-k0-iJ2"/>
             </connections>
-            <point key="canvasLocation" x="9" y="70"/>
+            <point key="canvasLocation" x="7.9710144927536239" y="69.642857142857139"/>
         </tableViewCell>
     </objects>
 </document>

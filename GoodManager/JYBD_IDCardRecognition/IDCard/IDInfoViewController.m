@@ -74,10 +74,10 @@
     NSString *imageName = [_IDInfo.num stringByAppendingFormat:@".jpg"];
     NSString *fullPath = @"";
     if (imageName != nil) {//ID卡正面 有ID号
-        NSLog(imageName);
+        NSLog(@"%@", imageName);
         fullPath = [doucumentDirectory stringByAppendingPathComponent:imageName];
     }else{//ID卡背面 无ID号
-        NSLog(_IDInfo.valid);//有效期
+        NSLog(@"%@", _IDInfo.valid);//有效期
         imageName = [_IDInfo.valid stringByAppendingFormat:@".jpg"];
         fullPath = [doucumentDirectory stringByAppendingPathComponent:imageName];
     }
@@ -95,7 +95,7 @@
     ocUseSwift *ous = [ocUseSwift alloc];
     //callbackfun+"(\"+...+"\")"
     NSString *str = [[[self.callbackfun stringByAppendingString:@"(\""] stringByAppendingString:fullPath] stringByAppendingString:@"\")"];
-    NSLog(str);
+    NSLog(@"%@", str);
     [ous ExecWinJSWithJSFun:str];
     [present dismissViewControllerAnimated:YES completion:nil];
 

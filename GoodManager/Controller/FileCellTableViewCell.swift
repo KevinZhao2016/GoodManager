@@ -21,6 +21,8 @@ class FileCellTableViewCell: UITableViewCell {
         // 设置cell 圆角
         underView.layer.masksToBounds = true
         underView.layer.cornerRadius = 10
+        self.selectedBackgroundView?.backgroundColor = UIColor.lightGray
+        self.underView.backgroundColor = UIColor.white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

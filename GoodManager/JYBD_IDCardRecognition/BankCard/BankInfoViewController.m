@@ -63,7 +63,7 @@
     imageName = [imageName stringByAppendingFormat:@".jpg"];
     NSString *fullPath = @"";
     if (imageName != nil) {//BankCard正面 有银行卡号
-        NSLog(imageName);
+        NSLog(@"%@", imageName);
         fullPath = [doucumentDirectory stringByAppendingPathComponent:imageName];
     }else{//BankCard正面 无银行卡号
         NSLog(@"背面！");//有效期
@@ -72,7 +72,7 @@
     NSLog(@"上传图片路径=====%@",fullPath);
     
     
-    NSLog(@"ok:  %s",fullPath);
+    NSLog(@"ok:  %@",fullPath);
     UIViewController *present = self.presentingViewController;
     while (YES) {
         if (present.presentingViewController) {
