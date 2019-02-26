@@ -61,6 +61,22 @@ func APPGetFileSize(path:String) -> String{
     if (_path != "")&&(_path.contains("[\"")&&(_path.contains("\"]")) ) {
         _path = _path.components(separatedBy: "[\"")[1].components(separatedBy: "\"]")[0]
     }
+    while (_path.contains(",")) {
+        _path.remove(at: _path.firstIndex(of: ",")!)
+    }
+    //两条路径
+    var TwoPath = [String]()
+    if (_path.firstIndex(of: ".") != _path.lastIndex(of: ".")) {
+        TwoPath = _path.components(separatedBy: ".")
+        TwoPath[0].append("."+TwoPath[2])
+        TwoPath[1].append("."+TwoPath[2])
+        var str = TwoPath[1].dropFirst(3)
+        TwoPath[1] = String(str)
+        
+        print("filePath_1:  " + TwoPath[0])
+        print("filePath_2:  " + TwoPath[1])
+
+    }
     let manager = FileManager.default
     let attributes = try? manager.attributesOfItem(atPath: _path) //结果为Dictionary类型
     print("filePath:  \(_path)")
