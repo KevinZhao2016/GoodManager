@@ -14,7 +14,6 @@ class FileCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fileNameLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
