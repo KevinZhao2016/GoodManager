@@ -55,12 +55,16 @@ func APPDelFile(path:String,callBackfunName:String){
 
 func APPGetFileSize(path:String) -> String{
     print("-------------APPGetFileSize--------------")
+    //    let fileType = _path.components(separatedBy: ".")[1]
+    var _path = path
+    //路径整理
+    if (_path != "")&&(_path.contains("[\"")&&(_path.contains("\"]")) ) {
+        _path = _path.components(separatedBy: "[\"")[1].components(separatedBy: "\"]")[0]
+    }
     let manager = FileManager.default
-    let urlForDocument = manager.urls(for: .documentDirectory, in:.userDomainMask)
-//    let docPath = urlForDocument[0]
-//    let file = docPath.appendingPathComponent("test.txt")
-    let attributes = try? manager.attributesOfItem(atPath: path) //结果为Dictionary类型
-    print(attributes![FileAttributeKey.size]!)
+    let attributes = try? manager.attributesOfItem(atPath: _path) //结果为Dictionary类型
+    print("filePath:  \(_path)")
+    print("fileSize:  \(attributes![FileAttributeKey.size]!)")
     return "\(attributes![FileAttributeKey.size]!)"
 }
 
