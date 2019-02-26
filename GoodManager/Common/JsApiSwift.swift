@@ -138,7 +138,7 @@ class JsApiSwift: NSObject {
         GoodManager.APPChooseSingleFile(callBackfunName: callBackfunName)
     }
     
-    @objc func APPGetFileSize(_ arg:String) ->Int {
+    @objc func APPGetFileSize(_ arg:String) ->String {
         let jsonString = JSON(parseJSON: arg)
         let path = jsonString["path"].stringValue
         return GoodManager.APPGetFileSize(path: path)

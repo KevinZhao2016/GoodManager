@@ -27,7 +27,7 @@ extension LaunchTarget: TargetType{
             let folderName:String = "memberInfoB_photo"
             let time:String = getDateTime()
             let fileType:String = mimeType(pathExtension: filepath)
-            let fileSize:Int = APPGetFileSize(path: filepath)
+            let fileSize:String = APPGetFileSize(path: filepath)
             let s = filepath.split(separator: "/").last
             let fileName = String(s!)
             let sign = (appid + fileName + "\(fileSize)" + fileType + folderName + time + md5string).MD5String

@@ -20,22 +20,13 @@ let quickLookViewController = QLPreviewController()
 
 //  单选文件
 func APPChooseSingleFile(callBackfunName:String) {
-    print("APPChooseSingleFile")
+    print("-------------APPChooseSingleFile--------------")
     let vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
-    
     let FileListVC = FileListTableViewController()
     FileListVC.callbackfun = callBackfunName
-    if(FileListVC != nil){
-        print(FileListVC)
-        let nvc = UINavigationController(rootViewController: FileListVC)
-        vc.present(nvc, animated: true, completion: nil)
-    }
-    
-    
-    
-    //callbackfun = callBackfunName
-    //ExecWinJS(JSFun: callBackfunName + "(\"1\")")
+    let nvc = UINavigationController(rootViewController: FileListVC)
+    vc.present(nvc, animated: true, completion: nil)
 }
 
 func APPIfExistFile(path:String) -> Int {
@@ -60,8 +51,15 @@ func APPDelFile(path:String,callBackfunName:String){
     ExecWinJS(JSFun: callBackfunName + "(\"1\")")
 }
 
-func APPGetFileSize(path:String) -> Int{
-    return Int(path.getFileSize())
+func APPGetFileSize(path:String) -> String{
+    print("-------------APPGetFileSize--------------")
+    let manager = FileManager.default
+    let urlForDocument = manager.urls(for: .documentDirectory, in:.userDomainMask)
+//    let docPath = urlForDocument[0]
+//    let file = docPath.appendingPathComponent("test.txt")
+    let attributes = try? manager.attributesOfItem(atPath: path) //结果为Dictionary类型
+    print(attributes![FileAttributeKey.size]!)
+    return "\"\(attributes![FileAttributeKey.size]!)\""
 }
 
 func APPGetFileBase(path:String) -> String{

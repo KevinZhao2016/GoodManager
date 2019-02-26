@@ -34,19 +34,14 @@ func ExecWinJS(JSFun:String){
 }
 
 class ocUseSwift: NSObject {
-
-    func methonddd() -> Void {
-        print("???")
-    }
-    
     @objc func ExecWinJS(JSFun:String) -> Void{
         let vc = getLastMainViewController()
         let Fun = "javascript:" + JSFun
         print(Fun)
         vc.webview.evaluateJavaScript(Fun) { (result, error) in
             //处理js调用结果
-            print(result)
-            print(error)
+            print("js处理结果result:  \(String(describing: result))")
+            print("js处理结果result:  \(String(describing: error))")
         }
     }
 }

@@ -44,7 +44,7 @@ class FileListTableViewController: UITableViewController {
         //            print("cell中的内容\n" + cell.titleName.text! + "\n" + cell.visitTime.text!)
         //        })
         cell.fileNameLabel.text = self.fileNames[indexPath.row]
-        print("cell中的内容\n" + cell.fileNameLabel.text!)
+        print("fileNameLabel:  " + cell.fileNameLabel.text!)
         return cell
     }
     
@@ -66,14 +66,11 @@ class FileListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.title = "File List"
         self.tableView.register(UINib(nibName:"FileCellTableViewCell", bundle:nil), forCellReuseIdentifier:"FileCellTableViewCell")
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("back")))
         self.navigationItem.leftBarButtonItem = newBackButton
         
-        
-        // TODO 准备文件数据： 文件名、文件路径
         // 本地文件存放地址
         fileDir = documentsDir + "/localDocuments"
         do {
@@ -84,9 +81,6 @@ class FileListTableViewController: UITableViewController {
         
         // 获取文件列表
         getFiles()
-        
-        // 准备文件名及相应路径
-        //prepareFileURLs()
         
         self.tableView.reloadData()
     }
@@ -100,7 +94,6 @@ class FileListTableViewController: UITableViewController {
         // 检查文件是否存在
 //        let exsit = fileManager.fileExists(atPath: fileDir+"/ll.txt")
 //        print(exsit)
-        print("保存完毕")
         
         // 遍历指定目录下内容
         var contentResult = [String]()
@@ -111,7 +104,7 @@ class FileListTableViewController: UITableViewController {
         }
         print("contentResult:  \(contentResult)")
         
-        // 获取文件名
+        // 文件名
         self.fileNames = contentResult
         
         // 拼接文件路径
@@ -119,16 +112,15 @@ class FileListTableViewController: UITableViewController {
             self.fileURLs.append(fileDir+"/"+_filenames)
         }
         print(self.fileURLs)
-
     }
     
     // 根据文件的URL，获得 文件名、文件后缀（文件类型）
-    func extractAndBreakFilenameInComponents(fileURL: NSURL) -> (fileName: String, fileExtension: String) {
-        let fileURLParts = fileURL.path!.components(separatedBy: "/")
-        let fileName = fileURLParts.last
-        let filenameParts = fileName?.components(separatedBy: ".")
-        return (filenameParts![0], filenameParts![1])
-    }
+//    func extractAndBreakFilenameInComponents(fileURL: NSURL) -> (fileName: String, fileExtension: String) {
+//        let fileURLParts = fileURL.path!.components(separatedBy: "/")
+//        let fileName = fileURLParts.last
+//        let filenameParts = fileName?.components(separatedBy: ".")
+//        return (filenameParts![0], filenameParts![1])
+//    }
     
     // 为fileURLs添加值
 //    func prepareFileURLs() {
