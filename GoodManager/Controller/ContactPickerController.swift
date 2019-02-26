@@ -28,9 +28,18 @@ class ContactPickerController: CNContactPickerViewController {
 extension ContactPickerController:CNContactPickerDelegate {
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
+        
+        contactArray = []
+        
         if(contacts.count > maxNum){
             let alertVC = UIAlertController(title:nil, message:"选择联系人超过最大数量", preferredStyle: .alert)
             self.present(alertVC, animated:true, completion:nil)
+            
+            //两秒钟后自动消失
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10) {
+                print("bye")
+                self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
         }
         
         for contact in contacts {
@@ -56,6 +65,7 @@ extension ContactPickerController:CNContactPickerDelegate {
             }
             contactArray.append(contactModel.toJSONString()!)
         }
+        print("contactArray: \(contactArray)")
         self.backClosure!(contactArray.getJSONStringFromArray())
     }
     

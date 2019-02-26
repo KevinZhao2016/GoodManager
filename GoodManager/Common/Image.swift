@@ -12,11 +12,80 @@ import CLImagePickerTool
 import Photos
 import TZImagePickerController
 
+let imagePickTool = CLImagePickerTool()
+
+//单选图片
+/**
+ source：图片来源
+    0 仅相册
+    1 仅拍照
+    2 相册或拍照
+ ifNeedEdit：是否需要编辑
+    0 不需要
+    1 需要
+ ifOriginalPic：是否显示原图上传
+    0 不显示
+    1 显示，默认不勾选。压缩的图片在200KB以内
+ callBackfunName：选择完成后回调函数名,返回选择图片路径。
+ */
+func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
+    callbackfun = callBackfunName
+    
+    
+    
+        imagePickTool.singleImageChooseType = .singlePicture
+        if(ifNeedEdit == 1){//需要编辑
+            imagePickTool.singleModelImageCanEditor = true
+        }else{
+            imagePickTool.singleModelImageCanEditor = false
+        }
+        var size:CGSize?
+        if(ifOriginalPic == 0){//原图
+            size = CGSize(width: PHImageManagerMaximumSize.width * 0.4, height: PHImageManagerMaximumSize.height * 0.4)
+        }else{
+            size = PHImageManagerMaximumSize
+        }
+        let vc = getLastMainViewController()
+        var path:String = ""
+        switch source {
+        case 0:
+            imagePickTool.cameraOut = false
+            imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1, superVC: vc) { (asset,editorImage) in
+                let phasset = asset.first!
+                getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic)
+                //            path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
+                //            ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
+            }
+        case 1:
+            imagePickTool.cameraOut = true
+            imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1) { (asset,cutImage) in
+                let phasset = asset.first!
+                getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic)
+                //            path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
+                //            ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
+            }
+        case 2:
+            imagePickTool.cameraOut = false
+            imagePickTool.showCamaroInPicture = true
+            imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1, superVC: vc) { (asset,editorImage) in
+                let phasset = asset.first!
+                getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic)
+                //            path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
+                //            ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
+            }
+        default:
+            break
+        }
+    
+    
+}
+
 //图片多选
 func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunName:String){
     let vc = getLastMainViewController()
     let controller = TZImagePickerController(maxImagesCount: maxNum, delegate: vc)
     vc.imagecallBackfunName = callBackfunName
+    
     if ifOriginalPic == 0{
          controller!.allowPickingOriginalPhoto = false
     }else{
@@ -58,56 +127,7 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
 
 }
 
-let imagePickTool = CLImagePickerTool()
 
-func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
-    callbackfun = callBackfunName
-    imagePickTool.singleImageChooseType = .singlePicture
-    if(ifNeedEdit == 1){
-        imagePickTool.singleModelImageCanEditor = true
-    }else{
-        imagePickTool.singleModelImageCanEditor = false
-    }
-    var size:CGSize?
-    if(ifOriginalPic == 0){
-        size = CGSize(width: PHImageManagerMaximumSize.width * 0.4, height: PHImageManagerMaximumSize.height * 0.4)
-    }else{
-        size = PHImageManagerMaximumSize
-    }
-    let vc = getLastMainViewController()
-    var path:String = ""
-    switch source {
-    case 0:
-        imagePickTool.cameraOut = false
-        imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1, superVC: vc) { (asset,editorImage) in
-            let phasset = asset.first!
-            getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic)
-//            path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-//            ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
-        }
-    case 1:
-        imagePickTool.cameraOut = true
-        imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1) { (asset,cutImage) in
-            let phasset = asset.first!
-            getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic)
-//            path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-//            ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
-        }
-    case 2:
-        imagePickTool.cameraOut = false
-        imagePickTool.showCamaroInPicture = true
-        imagePickTool.cl_setupImagePickerWith(MaxImagesCount: 1, superVC: vc) { (asset,editorImage) in
-            let phasset = asset.first!
-            getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic)
-//            path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-//            ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
-        }
-    default:
-        break
-    }
-    
-   
-}
 
 //func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunName:String){
 //    imagePickTool.isHiddenVideo = true
