@@ -56,11 +56,11 @@ func APPGetTelBookList(callBackfunName:String){
             //print("姓名 : \(lastName)\(firstName)")
             //2.获取电话号码
             let phoneNumbers = contact.phoneNumbers
-//            for phoneNumber in phoneNumbers
-//            {
+            for phoneNumber in phoneNumbers
+            {
                 //print(phoneNumber.value.stringValue)
             TelBookList.append(TelBookModel(Phonenumber:phoneNumbers.first!.value.stringValue, Name: lastName+firstName))
-//            }
+           }
         })
     } catch {
         print(error)
