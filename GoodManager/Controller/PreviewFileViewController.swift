@@ -9,8 +9,9 @@
 import UIKit
 import SnapKit
 import WebKit
+import QuickLook
 
-class PreviewFileViewController: UIViewController {
+class PreviewFileViewController: QLPreviewController {
     var backBtn = UIButton()
     var webView = WKWebView()
     var path:String = ""
@@ -28,8 +29,10 @@ class PreviewFileViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "文件预览"
-        setWebView(path: path)
-        showCloseButton()
+        self.delegate = self
+        self.dataSource = self
+//        setWebView(path: path)
+//        showCloseButton()
         // Do any additional setup after loading the view.
     }
 
@@ -39,7 +42,7 @@ class PreviewFileViewController: UIViewController {
             make.left.right.bottom.equalTo(0)
             make.top.equalTo(self.view).offset(20)
         }
-        let documentPath = NSHomeDirectory() + "/Documents"
+        let documentPath = NSHomeDirectory() + "/Documents/localDocuments"
         let fileUrl = URL(fileURLWithPath: documentPath + path)
         webView.load(URLRequest(url: fileUrl))
 //        webView.scalesPageToFit = true
@@ -56,5 +59,17 @@ class PreviewFileViewController: UIViewController {
     }
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .default
+    }
+}
+
+extension PreviewFileViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource{
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+//        let documentPath = NSHomeDirectory() + "/Documents/localDocuments"
+        let fileUrl = URL(fileURLWithPath:  path)
+        return fileUrl as QLPreviewItem
     }
 }

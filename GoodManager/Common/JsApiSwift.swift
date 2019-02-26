@@ -164,7 +164,7 @@ class JsApiSwift: NSObject {
         GoodManager.APPDownFile(path: path, callBackfunName: callBackfunName)
     }
     
-    @objc func APPIfExistFile(_ arg:String) -> Int {
+    @objc func APPIfExistFile(_ arg:String) -> String {
         let jsonString = JSON(parseJSON: arg)
         let path = jsonString["path"].stringValue
         return GoodManager.APPIfExistFile(path: path)
