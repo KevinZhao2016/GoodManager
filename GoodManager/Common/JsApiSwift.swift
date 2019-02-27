@@ -153,8 +153,10 @@ class JsApiSwift: NSObject {
     @objc func APPUploadFile(_ arg:String){
         let jsonString = JSON(parseJSON: arg)
         let path = jsonString["path"].stringValue
+        let domainName = jsonString["domainName"].stringValue
+        let folderName = jsonString["folderName"].stringValue
         let callBackfunName = jsonString["callBackfunName"].stringValue
-        GoodManager.APPUploadFile(path: path, callBackfunName: callBackfunName)
+        GoodManager.APPUploadFile(path:path, domainName:domainName, folderName:folderName, callBackfunName:callBackfunName)
     }
     
     @objc func APPDownFile(_ arg:String){

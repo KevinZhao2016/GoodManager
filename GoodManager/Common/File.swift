@@ -100,7 +100,7 @@ func APPPreviewFile(path:String){
     vc.present(filevc, animated: true, completion: nil)
 }
 
-func APPUploadFile(path:String, callBackfunName:String){
+func APPUploadFile(path:String, domainName:String, folderName:String, callBackfunName:String){
 //    let fileURL = URL(string: NSHomeDirectory() + "/Documents" + path)
     let LaunchProvider = MoyaProvider<LaunchTarget>()
     //TODO: 上传地址初始化
@@ -109,7 +109,7 @@ func APPUploadFile(path:String, callBackfunName:String){
 //            print(response)
 //            APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + (fileURL?.path)! + ")")
 //    }
-    LaunchProvider.request(.uploadFile(path), completion: { result in
+    LaunchProvider.request(.uploadFile(path,domainName,folderName), completion: { result in
         switch result {
         case let .success(moyaResponse):
             let data = moyaResponse.data // Data, your JSON response is probably in here!

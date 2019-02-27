@@ -13,7 +13,7 @@ var uploadDomainName:String = ""
 
 enum LaunchTarget{
     case Launch
-    case uploadFile(String)
+    case uploadFile(String,String,String)
 }
 
 extension LaunchTarget: TargetType{
@@ -22,9 +22,8 @@ extension LaunchTarget: TargetType{
         switch self{
         case .Launch:
             return nil
-        case .uploadFile(let filepath):
+        case .uploadFile(let filepath, let domainName, let folderName):
             let appid:String = "mAPPIos01"
-            let folderName:String = "memberInfoB_photo"
             let time:String = getDateTime()
             let fileType:String = mimeType(pathExtension: filepath)
             let fileSize:String = APPGetFileSize(path: filepath)
@@ -59,7 +58,7 @@ extension LaunchTarget: TargetType{
             ]
             //return .requestCompositeData(bodyData: jsonToData(jsonDic: params)!, urlParameters: ["action" : "getStartupData"])
             return .requestCompositeParameters(bodyParameters: params, bodyEncoding: URLEncoding.httpBody, urlParameters: ["action" : "getStartupData"])
-        case .uploadFile(let filepath):
+        case .uploadFile(let filepath, let domainName, let folderName):
             let s = filepath.split(separator: "/").last
             let fileName = String(s!)
             let data = MultipartFormData(provider: MultipartFormData.FormDataProvider.file(URL(fileURLWithPath: filepath)), name: fileName)
@@ -70,14 +69,19 @@ extension LaunchTarget: TargetType{
     }
     
     var baseURL: URL{
-        return URL(string: "http://api.yiganzi.cn")!
+        switch self {
+        case .uploadFile(let filepath, let domainName, let folderName):
+            return URL(string: domainName)!
+        default:
+            return URL(string: "http://api.yiganzi.cn")!
+        }
     }
     
     var path: String{
         switch self {
         case .Launch:
                 return "/StartupPage.ashx"
-        case .uploadFile(let filename):
+        case .uploadFile(let filepath, let domainName, let folderName):
                 return "/upFile.ashx"
         }
     }
@@ -86,7 +90,7 @@ extension LaunchTarget: TargetType{
         switch self {
         case .Launch:
             return .post
-        case .uploadFile(let filename):
+        case .uploadFile(let filepath, let domainName, let folderName):
             return .post
         }
     }
