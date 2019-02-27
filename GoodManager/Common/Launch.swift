@@ -10,6 +10,7 @@ import Foundation
 import Moya
 import ObjectMapper
 import SwiftyJSON
+import SDWebImage
 
 fileprivate let LaunchProvider = MoyaProvider<LaunchTarget>()
 
@@ -36,7 +37,12 @@ func getLaunchData(){
                                 linkUrl = model.result.linkUrl
                                 //显示图片
                                 let vc = getLastMainViewController()
-                                vc.image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "launch"))
+                                vc.image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "好监理_启动页"), options: SDWebImageOptions()) { (Image, error, type, url) in
+                                    if (url != nil){
+                                        vc.image.contentMode = .scaleAspectFill;
+                                        print(url)
+                                    }
+                                }
                                 print("picurl:" + picUrl)
                             }
                         } else {

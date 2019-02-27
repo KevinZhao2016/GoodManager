@@ -62,15 +62,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     func setupLaunchView(){
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white
+        self.view.addSubview(image)
         image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
 //        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "好监理_启动页"))
-        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "好监理_启动页"), options: SDWebImageOptions()) { (Image, error, type, url) in
-            self.image.contentMode = .scaleAspectFill;
-            print(url)
-        }
        
-        self.view.addSubview(image)
         //添加点击事件
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
         image.addGestureRecognizer(singleTapGesture)
