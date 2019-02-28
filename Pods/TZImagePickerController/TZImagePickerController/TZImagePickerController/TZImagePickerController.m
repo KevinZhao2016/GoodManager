@@ -38,8 +38,15 @@
 
 - (instancetype)init {
     self = [super init];
+    NSTimeInterval i = self.videoMaximumLength;
     if (self) {
-        self = [self initWithMaxImagesCount:9 delegate:nil];
+        if (self.videoMaximumLength != 0){
+            self = [self initWithMaxImagesCount: 9 videoMaxLength: self.videoMaximumLength delegate:nil];
+        }else{
+            self = [self initWithMaxImagesCount: 9 delegate:nil];
+        }
+        
+//        NSLog(@"TZImagePickerController:  initWithMaxImagesCount:  %s",self.maxImagesCount);
     }
     return self;
 }
@@ -65,6 +72,7 @@
     if (self.needShowStatusBar) [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
+// 设置导航栏
 - (void)setNaviBgColor:(UIColor *)naviBgColor {
     _naviBgColor = naviBgColor;
     self.navigationBar.barTintColor = naviBgColor;
@@ -101,6 +109,7 @@
     [self configBarButtonItemAppearance];
 }
 
+// 设置状态栏
 - (void)setIsStatusBarDefault:(BOOL)isStatusBarDefault {
     _isStatusBarDefault = isStatusBarDefault;
     
@@ -110,6 +119,7 @@
         self.statusBarStyle = UIStatusBarStyleLightContent;
     }
 }
+
 
 - (void)configBarButtonItemAppearance {
     UIBarButtonItem *barItem;
@@ -140,22 +150,38 @@
     return self.statusBarStyle;
 }
 
-- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount delegate:(id<TZImagePickerControllerDelegate>)delegate {
-    return [self initWithMaxImagesCount:maxImagesCount columnNumber:4 delegate:delegate pushPhotoPickerVc:YES];
+//1号 有选择个数限制 时长限制默认为0 列数默认为4 调用4号init
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount delegate:(id<TZImagePickerControllerDelegate>)delegate{
+    NSLog(@"1号 initWithMaxImagesCount");
+    return [self initWithMaxImagesCount:maxImagesCount videoMaxLength:0 columnNumber:4 delegate: (id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:YES];
 }
-
-- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate {
-    return [self initWithMaxImagesCount:maxImagesCount columnNumber:columnNumber delegate:delegate pushPhotoPickerVc:YES];
+//2号 有选择个数限制 和 视频时长限制 列数默认为4 调用4号init
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength delegate:(id<TZImagePickerControllerDelegate>)delegate {
+    NSLog(@"videoMaxLength:  %f", videoMaximumLength);
+    NSLog(@"2号 initWithMaxImagesCount");
+    return [self initWithMaxImagesCount:maxImagesCount videoMaxLength:videoMaximumLength columnNumber: 4 delegate: (id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:YES];
 }
-
-- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:(BOOL)pushPhotoPickerVc {
+//3号 有选择个数限制 和 视频时长限制 和 列数限制 调用4号init
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate {
+    NSLog(@"3号 initWithMaxImagesCount");
+    return [self initWithMaxImagesCount:maxImagesCount videoMaxLength:videoMaximumLength columnNumber:columnNumber delegate:delegate pushPhotoPickerVc:YES];
+}
+//4号 有选择个数限制 和 视频时长限制 和 列数限制
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:(BOOL)pushPhotoPickerVc {
+    NSLog(@"4号 initWithMaxImagesCount");
+    NSLog(@"videoMaxLength:  %f", videoMaximumLength);
     _pushPhotoPickerVc = pushPhotoPickerVc;
     TZAlbumPickerController *albumPickerVc = [[TZAlbumPickerController alloc] init];
     albumPickerVc.isFirstAppear = YES;
+    //初始化选择图片界面 默认4行  详见 initWithMaxImagesCount
     albumPickerVc.columnNumber = columnNumber;
+    //初始化选择图片界面 默认没有时长限制（0）
+    albumPickerVc.videoTimeLimit = videoMaximumLength;
+    
     self = [super initWithRootViewController:albumPickerVc];
     if (self) {
         self.maxImagesCount = maxImagesCount > 0 ? maxImagesCount : 9; // Default is 9 / 默认最大可选9张图片
+        self.videoMaximumLength = videoMaximumLength;
         self.pickerDelegate = delegate;
         self.selectedAssets = [NSMutableArray array];
         
@@ -179,7 +205,6 @@
             _tipLabel.numberOfLines = 0;
             _tipLabel.font = [UIFont systemFontOfSize:16];
             _tipLabel.textColor = [UIColor blackColor];
-            
             NSDictionary *infoDict = [TZCommonTools tz_getInfoDictionary];
             NSString *appName = [infoDict valueForKey:@"CFBundleDisplayName"];
             if (!appName) appName = [infoDict valueForKey:@"CFBundleName"];
@@ -387,6 +412,7 @@
         TZPhotoPickerController *photoPickerVc = [[TZPhotoPickerController alloc] init];
         photoPickerVc.isFirstAppear = YES;
         photoPickerVc.columnNumber = self.columnNumber;
+        photoPickerVc.videoTimeLimit = self.videoMaximumLength;
         [[TZImageManager manager] getCameraRollAlbum:self.allowPickingVideo allowPickingImage:self.allowPickingImage needFetchAssets:NO completion:^(TZAlbumModel *model) {
             photoPickerVc.model = model;
             [self pushViewController:photoPickerVc animated:YES];
@@ -717,20 +743,25 @@
 }
 
 - (void)configTableView {
+
     if (![[TZImageManager manager] authorizationStatusAuthorized]) {
         return;
     }
 
     if (self.isFirstAppear) {
         TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
+        imagePickerVc.videoMaximumLength = _videoTimeLimit;
         [imagePickerVc showProgressHUD];
     }
 
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
+        //
+        imagePickerVc.videoMaximumLength = _videoTimeLimit;
         [[TZImageManager manager] getAllAlbums:imagePickerVc.allowPickingVideo allowPickingImage:imagePickerVc.allowPickingImage needFetchAssets:!self.isFirstAppear completion:^(NSArray<TZAlbumModel *> *models) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self->_albumArr = [NSMutableArray arrayWithArray:models];
+                // 遍历每个相册
                 for (TZAlbumModel *albumModel in self->_albumArr) {
                     albumModel.selectedModels = imagePickerVc.selectedModels;
                 }
@@ -805,9 +836,13 @@
     return cell;
 }
 
+// 点击选择某个相册后
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TZPhotoPickerController *photoPickerVc = [[TZPhotoPickerController alloc] init];
+    // 图片选择列表列数
     photoPickerVc.columnNumber = self.columnNumber;
+    // 视频长度限制 -- 新加的
+    photoPickerVc.videoTimeLimit = self.videoTimeLimit;
     TZAlbumModel *model = _albumArr[indexPath.row];
     photoPickerVc.model = model;
     [self.navigationController pushViewController:photoPickerVc animated:YES];

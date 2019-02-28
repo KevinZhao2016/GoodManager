@@ -28,13 +28,14 @@
 
 @class TZAlbumCell, TZAssetCell;
 @protocol TZImagePickerControllerDelegate;
-@interface TZImagePickerController : UINavigationController
 
+@interface TZImagePickerController : UINavigationController
 #pragma mark -
 /// Use this init method / 用这个初始化方法
 - (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount delegate:(id<TZImagePickerControllerDelegate>)delegate;
-- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate;
-- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:(BOOL)pushPhotoPickerVc;
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength delegate:(id<TZImagePickerControllerDelegate>)delegate;
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate;
+- (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength columnNumber:(NSInteger)columnNumber delegate:(id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:(BOOL)pushPhotoPickerVc;
 /// This init method just for previewing photos / 用这个初始化方法以预览图片
 - (instancetype)initWithSelectedAssets:(NSMutableArray *)selectedAssets selectedPhotos:(NSMutableArray *)selectedPhotos index:(NSInteger)index;
 /// This init method for crop photo / 用这个初始化方法以裁剪图片
@@ -92,8 +93,13 @@
 /// Default is YES, if set NO, user can't take video.
 /// 默认为YES，如果设置为NO, 用户将不能拍摄视频
 @property(nonatomic, assign) BOOL allowTakeVideo;
+
 /// Default value is 10 minutes / 视频最大拍摄时间，默认是10分钟，单位是秒
 @property (assign, nonatomic) NSTimeInterval videoMaximumDuration;
+
+/// Default value ???  / 视频最大时长，用于筛选视频，单位是秒 --- dj-2018-2-27
+@property (assign, nonatomic) NSTimeInterval videoMaximumLength;
+
 /// Customizing UIImagePickerController's other properties, such as videoQuality / 定制UIImagePickerController的其它属性，比如视频拍摄质量videoQuality
 @property (nonatomic, copy) void(^uiImagePickerControllerSettingBlock)(UIImagePickerController *imagePickerController);
 
@@ -257,6 +263,7 @@
 @end
 
 
+
 @protocol TZImagePickerControllerDelegate <NSObject>
 @optional
 // The picker should dismiss itself; when it dismissed these handle will be called.
@@ -292,11 +299,16 @@
 @end
 
 
+
 @interface TZAlbumPickerController : UIViewController
+//图片选择界面列数
 @property (nonatomic, assign) NSInteger columnNumber;
+//图片选择界面视频时长
+@property (nonatomic, assign) NSTimeInterval videoTimeLimit;
 @property (assign, nonatomic) BOOL isFirstAppear;
 - (void)configTableView;
 @end
+
 
 
 @interface UIImage (MyBundle)

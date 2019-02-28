@@ -104,17 +104,21 @@ static CGFloat itemMargin = 5;
         if (!tzImagePickerVc.sortAscendingByModificationDate && self->_isFirstAppear && self->_model.isCameraRoll) {
             [[TZImageManager manager] getCameraRollAlbum:tzImagePickerVc.allowPickingVideo allowPickingImage:tzImagePickerVc.allowPickingImage needFetchAssets:YES completion:^(TZAlbumModel *model) {
                 self->_model = model;
+                NSLog(@"self->_model:  %@",self->_model);
                 self->_models = [NSMutableArray arrayWithArray:self->_model.models];
+                NSLog(@"self->_models:  %@",self->_model.models);
                 [self initSubviews];
             }];
         } else {
-            if (self->_showTakePhotoBtn || self->_isFirstAppear) {
+            if (self->_showTakePhotoBtn || self->_isFirstAppear) {//第一次、不让拍照
                 [[TZImageManager manager] getAssetsFromFetchResult:self->_model.result completion:^(NSArray<TZAssetModel *> *models) {
                     self->_models = [NSMutableArray arrayWithArray:models];
+                    NSLog(@"self->_models:  %@",self->_model.models);
                     [self initSubviews];
                 }];
             } else {
                 self->_models = [NSMutableArray arrayWithArray:self->_model.models];
+                NSLog(@"self->_models:  %@",self->_model.models);
                 [self initSubviews];
             }
         }
@@ -387,6 +391,7 @@ static CGFloat itemMargin = 5;
         __block BOOL havenotShowAlert = YES;
         [TZImageManager manager].shouldFixOrientation = YES;
         __block UIAlertController *alertView;
+        
         for (NSInteger i = 0; i < tzImagePickerVc.selectedModels.count; i++) {
             TZAssetModel *model = tzImagePickerVc.selectedModels[i];
             [[TZImageManager manager] getPhotoWithAsset:model.asset completion:^(UIImage *photo, NSDictionary *info, BOOL isDegraded) {
@@ -765,13 +770,32 @@ static CGFloat itemMargin = 5;
 - (void)checkSelectedModels {
     NSMutableArray *selectedAssets = [NSMutableArray array];
     TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
+    
     for (TZAssetModel *model in tzImagePickerVc.selectedModels) {
         [selectedAssets addObject:model.asset];
     }
-    for (TZAssetModel *model in _models) {
+    NSLog(@"视频时长限制:  %f  秒",self.videoTimeLimit);
+
+    NSMutableArray *copyArray = [NSMutableArray arrayWithArray:_models];
+    
+    for (TZAssetModel *model in copyArray) { //视频时长筛选地
         model.isSelected = NO;
-        if ([selectedAssets containsObject:model.asset]) {
-            model.isSelected = YES;
+        int Second = 0;
+        int Min = 0;
+        int Time = 0;
+        Second = [[model.timeLength componentsSeparatedByString: @":"][1] intValue];
+        Min = [[model.timeLength componentsSeparatedByString: @":"][0] intValue];
+        Time = (Second + Min*60);
+        NSLog(@"视频时长:  %d  秒",Time);
+        if ((self.videoTimeLimit != 0)&&((self.videoTimeLimit) >= Time)) { //有时长，且在时长限制时间内
+            NSLog(@"在时长限制时间内！");
+            if ([selectedAssets containsObject:model.asset]) {
+                model.isSelected = YES;
+            }
+        }else{
+            NSLog(@"超出时长限制！");
+            [_models removeObject:model];
+            model.isSelected = NO;
         }
     }
 }

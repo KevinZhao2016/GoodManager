@@ -12,19 +12,35 @@ import MobileCoreServices
 
 
 func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String){
+    print("---------------APPChooseSingleVideo----------------")
     let vc = mainViewControllers.last
     vc!.videocallBackfunName = callBackfunName
-    let controller = TZImagePickerController(maxImagesCount: 1, delegate: vc)
-    controller?.videoMaximumDuration = TimeInterval(maxVideoLength)
+    
+    // 只能选择一个视频
+    let controller = TZImagePickerController(maxImagesCount: 1, videoMaxLength: TimeInterval(maxVideoLength), delegate: vc)
+    
+    //视频最大拍摄时间
+    controller?.videoMaximumLength = TimeInterval(maxVideoLength)
+    
+    print("最大时长:  \(maxVideoLength)")
     if source == 0 {
-        //仅相册
+        // 仅相册
+        print("仅相册")
+        //let controller_Video_Album = TZImagePickerController.init
+        // 不能拍图片
         controller!.allowTakePicture = false
-        controller!.allowPickingImage = false
-        controller!.allowPickingVideo = true
+        // 不能拍视频
         controller!.allowTakeVideo = false
-        vc!.present(controller! , animated: true, completion: nil)
-    }else if source == 1 {
-        //仅拍摄
+        // 不能选择图片
+        controller!.allowPickingImage = false
+        // 选择视频
+        controller!.allowPickingVideo = true
+        
+        vc!.present(controller!, animated: true, completion: nil)
+        
+    } else if source == 1 {
+        // 仅拍摄
+        print("仅拍摄")
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = CameraViewController()
             // 表示操作为拍照
@@ -50,7 +66,6 @@ func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String
         controller!.allowTakeVideo = true
         vc!.present(controller! , animated: true, completion: nil)
     }
-
 }
 
 func APPPlayVideo(path:String, startPosition:Double, callBackfunName:String){

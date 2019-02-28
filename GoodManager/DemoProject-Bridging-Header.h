@@ -16,3 +16,8 @@
 #import "IDInfoViewController.h"
 // BankCard识别
 #import "BankAuthViewController.h"
+// 多图片选择
+//#import "RITLPhotos/RITLPhotos.h"
+// 视频
+//#import "DmcPickerViewController.h"
+

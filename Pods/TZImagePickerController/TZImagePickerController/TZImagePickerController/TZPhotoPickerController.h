@@ -13,6 +13,7 @@
 
 @property (nonatomic, assign) BOOL isFirstAppear;
 @property (nonatomic, assign) NSInteger columnNumber;
+@property (nonatomic, assign) NSTimeInterval videoTimeLimit;
 @property (nonatomic, strong) TZAlbumModel *model;
 @end
 

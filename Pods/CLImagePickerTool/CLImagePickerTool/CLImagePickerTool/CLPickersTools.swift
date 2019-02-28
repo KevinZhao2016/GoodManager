@@ -17,6 +17,9 @@ class CLPickersTools {
     
     // 是否隐藏视频文件
     var isHiddenVideo: Bool = false
+    // 视频时长限制 默认为-1（不限制）
+    var limitedVideoLength = -1
+    
     // 是否隐藏图片文件，显示视频文件，默认不隐藏
     var isHiddenImage: Bool = false
     // 配置导航栏的颜色，默认是毛玻璃效果
