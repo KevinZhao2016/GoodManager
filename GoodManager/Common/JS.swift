@@ -26,11 +26,14 @@ func ExecWinJS(JSFun:String){
     let vc = getLastMainViewController()
     let Fun = "javascript:" + JSFun
     print(Fun)
-    vc.webview.evaluateJavaScript(Fun) { (result, error) in
-        //处理js调用结果
-        print(result)
-        print(error)
+    DispatchQueue.main.async {
+        vc.webview.evaluateJavaScript(Fun) { (result, error) in
+            //处理js调用结果
+            print(result)
+            print(error)
+        }
     }
+    
 }
 
 class ocUseSwift: NSObject {

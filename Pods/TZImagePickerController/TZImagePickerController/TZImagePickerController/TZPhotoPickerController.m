@@ -798,6 +798,7 @@ static CGFloat itemMargin = 5;
             model.isSelected = NO;
         }
     }
+    
 }
 
 #pragma mark - UIAlertViewDelegate
