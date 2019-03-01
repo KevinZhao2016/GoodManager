@@ -157,7 +157,6 @@
 }
 //2号 有选择个数限制 和 视频时长限制 列数默认为4 调用4号init
 - (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount videoMaxLength:(NSTimeInterval)videoMaximumLength delegate:(id<TZImagePickerControllerDelegate>)delegate {
-    NSLog(@"videoMaxLength:  %f", videoMaximumLength);
     NSLog(@"2号 initWithMaxImagesCount");
     return [self initWithMaxImagesCount:maxImagesCount videoMaxLength:videoMaximumLength columnNumber: 4 delegate: (id<TZImagePickerControllerDelegate>)delegate pushPhotoPickerVc:YES];
 }
@@ -177,7 +176,6 @@
     albumPickerVc.columnNumber = columnNumber;
     //初始化选择图片界面 默认没有时长限制（0）
     albumPickerVc.videoTimeLimit = videoMaximumLength;
-    
     self = [super initWithRootViewController:albumPickerVc];
     if (self) {
         self.maxImagesCount = maxImagesCount > 0 ? maxImagesCount : 9; // Default is 9 / 默认最大可选9张图片

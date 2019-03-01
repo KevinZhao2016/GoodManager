@@ -21,7 +21,9 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
         if (type == "public.movie"){
             let filePath = info[UIImagePickerController.InfoKey.mediaURL] as! URL
 //            print(info[UIImagePickerController.InfoKey.mediaURL])
-             APPExecWinJS(mark: "", JSFun: callbackfun! + "(\"" + filePath.path + "\")")
+            print("filePath.path:  " + filePath.path)
+            APPExecWinJS(mark: "", JSFun: callbackfun! + "(\"" + filePath.path + "\")")
+            self.dismiss(animated: true, completion: nil)
         }else{
             let image = info[UIImagePickerController.InfoKey.originalImage]  as! UIImage
             let fileManager = FileManager.default
@@ -37,7 +39,4 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
         }
         print("hello error!")
     }
-    
-    
-
 }

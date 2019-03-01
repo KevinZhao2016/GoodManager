@@ -33,7 +33,6 @@ func ExecWinJS(JSFun:String){
             print(error)
         }
     }
-    
 }
 
 class ocUseSwift: NSObject {

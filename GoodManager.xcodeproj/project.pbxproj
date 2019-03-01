@@ -400,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				0A5B87FF21D36C8F0045A1BE /* Global.swift */,
+				0A23FCF521E0DF9D00ECDA6E /* JS.swift */,
 				0A5B880121D36CB60045A1BE /* BundleInfo.swift */,
 				0A5B880321D375200045A1BE /* NetWork.swift */,
 				0A4CDEAB21D4A2FB00E28E95 /* File.swift */,
@@ -408,7 +409,6 @@
 				0A58311321D6252100DC4321 /* KeyValueRealm.swift */,
 				0AFB04D021E0DDB50032C670 /* QRCode.swift */,
 				0AFB04CE21E0D4EF0032C670 /* Window.swift */,
-				0A23FCF521E0DF9D00ECDA6E /* JS.swift */,
 				0AEE664521E103D600636D06 /* Contact.swift */,
 				0A4E312221E199AB00D15766 /* Image.swift */,
 				0AEDCAC321F16E40005887A3 /* Launch.swift */,

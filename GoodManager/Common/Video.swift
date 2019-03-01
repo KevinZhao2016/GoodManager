@@ -15,13 +15,10 @@ func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String
     print("---------------APPChooseSingleVideo----------------")
     let vc = mainViewControllers.last
     vc!.videocallBackfunName = callBackfunName
-    
     // 只能选择一个视频
     let controller = TZImagePickerController(maxImagesCount: 1, videoMaxLength: TimeInterval(maxVideoLength), delegate: vc)
-    
     //视频最大拍摄时间
     controller?.videoMaximumLength = TimeInterval(maxVideoLength)
-    
     print("最大时长:  \(maxVideoLength)")
     if source == 0 {
         // 仅相册
@@ -35,9 +32,7 @@ func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String
         controller!.allowPickingImage = false
         // 选择视频
         controller!.allowPickingVideo = true
-        
         vc!.present(controller!, animated: true, completion: nil)
-        
     } else if source == 1 {
         // 仅拍摄
         print("仅拍摄")
