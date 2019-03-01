@@ -20,6 +20,7 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
     let noti = NotificationCenter.default.addObserver(self, selector: Selector("receiverNotification"), name:UIDevice.orientationDidChangeNotification, object: nil)
 
     func receiverNotification(){
+        print("旋转！")
         let orient = UIDevice.current.orientation
         switch orient {
         case .portrait:

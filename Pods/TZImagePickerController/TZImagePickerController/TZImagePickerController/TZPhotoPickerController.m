@@ -787,7 +787,11 @@ static CGFloat itemMargin = 5;
         Min = [[model.timeLength componentsSeparatedByString: @":"][0] intValue];
         Time = (Second + Min*60);
         NSLog(@"视频时长:  %d  秒",Time);
-        if ((self.videoTimeLimit != 0)&&((self.videoTimeLimit) >= Time)) { //有时长，且在时长限制时间内
+        
+        if ((self.videoTimeLimit == 0)&&(Time != 0)) {
+            NSLog(@"图片,删除视频");
+            [_models removeObject:model];
+        }else if ((self.videoTimeLimit) >= Time) { //有时长，且在时长限制时间内
             NSLog(@"在时长限制时间内！");
             if ([selectedAssets containsObject:model.asset]) {
                 model.isSelected = YES;

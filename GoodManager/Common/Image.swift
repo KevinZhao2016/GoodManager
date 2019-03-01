@@ -35,20 +35,21 @@ let imagePickTool = CLImagePickerTool()
 func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
     callbackfun = callBackfunName
     let vc = getLastMainViewController()
+
     let controller = TZImagePickerController(maxImagesCount: 1, delegate: vc)
 
-    if source == 0 {
-        if ifNeedEdit == 0 {
-            if ifOriginalPic == 1 {
-                //0 0 1
-                vc.imagecallBackfunName = callBackfunName
-                controller!.allowTakePicture = false
-                controller!.allowPickingVideo = false
-                controller!.allowPickingOriginalPhoto = true
-                vc.present(controller! , animated: true, completion: nil)
-            }
-        }
-    }
+//    if source == 0 {
+//        if ifNeedEdit == 0 {
+//            if ifOriginalPic == 1 {
+//                //0相册 0不编辑 1原图
+//                vc.imagecallBackfunName = callBackfunName
+//                controller!.allowTakePicture = false
+//                controller!.allowPickingVideo = false
+//                controller!.allowPickingOriginalPhoto = true
+//                vc.present(controller! , animated: true, completion: nil)
+//            }
+//        }
+//    }
     
     imagePickTool.singleImageChooseType = .singlePicture
     if(ifNeedEdit == 1){    //需要编辑
@@ -63,7 +64,7 @@ func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBac
         size = PHImageManagerMaximumSize
     }
 //    let vc = getLastMainViewController()
-    var path:String = ""
+//    var path:String = ""
     switch source {
     case 0:
         imagePickTool.cameraOut = false
@@ -100,18 +101,35 @@ func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBac
 //图片多选
 func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunName:String){
     print("--------------APPChooseMoreImage----------------")
-    
+    print("图片最多可选:  \(maxNum)")
     let vc = getLastMainViewController()
+    vc.imagecallBackfunName = callBackfunName
+    let controller = TZImagePickerController(maxImagesCount: maxNum, delegate: vc)
     
+    //不能选视频
+    controller!.allowPickingVideo = false
     
-//    let controller = TZImagePickerController(maxImagesCount: maxNum, delegate: vc)
-//    vc.imagecallBackfunName = callBackfunName
-//
-//    if ifOriginalPic == 0{
-//         controller!.allowPickingOriginalPhoto = false
-//    }else{
-//        controller!.allowPickingOriginalPhoto = true
-//    }
+    if ifOriginalPic == 0{
+        print("显示原图")
+        controller!.allowPickingOriginalPhoto = false
+    }else{
+        print("非原图")
+        controller!.allowPickingOriginalPhoto = true
+    }
+    
+    if source == 0 {
+        print("仅相册")
+        controller!.allowTakePicture = false
+    }else if source == 1 {
+        // 应当直接进入拍照页面 目前想做成和 均可 一样
+        print("仅拍照")
+        controller!.allowTakeVideo = true
+        
+    }else{
+        print("均可")
+        controller!.allowTakeVideo = true
+    }
+    
 //    if source == 0 {
 //        //仅相册
 //        controller!.allowTakePicture = false
@@ -145,7 +163,8 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
 //        controller!.allowPickingVideo = false
 //        vc.present(controller! , animated: true, completion: nil)
 //    }
-
+    
+    vc.present(controller!, animated: true, completion: nil)
 }
 
 
