@@ -9,7 +9,8 @@
 import Foundation
 import TZImagePickerController
 import MobileCoreServices
-
+import AVFoundation
+import AVKit
 
 func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String){
     print("---------------APPChooseSingleVideo----------------")
@@ -64,10 +65,24 @@ func APPChooseSingleVideo(source:Int, maxVideoLength:Int, callBackfunName:String
 }
 
 func APPPlayVideo(path:String, startPosition:Double, callBackfunName:String){
+    print("---------------APPPlayVideo----------------")
     let basevc = getLastMainViewController()
+    if (path.contains("http:")||path.contains("https:")){
+        print("网络视频")
+//        let vidoeUrl = URL(string: path)
+//        let playerItem = AVPlayerItem(url: vidoeUrl!)
+//        let player = AVPlayer(playerItem: playerItem)
+//        //定义一个视频播放器，通过本地文件路径初始化
+//        let playerViewController = AVPlayerViewController()
+//        playerViewController.player = player
+//        basevc.present(playerViewController, animated: true) {
+//            playerViewController.player!.play()
+//        }
+    }else{
+        print("本地视频")
+    }
     let vc = PlayerViewController()
-    //"https://media.w3.org/2010/05/sintel/trailer.mp4"
-    vc.urlpath = path
+    vc.urlpath = path    //"https://media.w3.org/2010/05/sintel/trailer.mp4"
     vc.playfromtime = startPosition
     vc.callbackfun = callBackfunName
     basevc.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
