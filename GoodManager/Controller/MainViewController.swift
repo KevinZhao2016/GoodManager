@@ -17,7 +17,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
+    var timeCount:Int = 5
+    var timer:Timer?
+    let button:UIButton = UIButton(type: .custom);
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
+    var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
     var photoPath:String = ""
@@ -27,6 +31,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         self.progressView.trackTintColor = UIColor.white // 进度条背景色
         return self.progressView
     }()
+    
     
     lazy var locationManager = CLLocationManager()//用于定位
     lazy var currLocation = CLLocation()
@@ -63,20 +68,64 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(image)
+        let isIPhoneX:Bool = self.isIPhoneX()
+        if isIPhoneX == false  {
+           image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
+            bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
+            bottomImage.backgroundColor = UIColor.white;
+            bottomImage.image = UIImage(named: "好监理_启动页")
+            bottomImage.contentMode = .scaleAspectFit
+            self.view.addSubview(bottomImage)
+
+        }
         image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
+        button.frame = CGRect.init(x: SCREEN_WIDTH - 80, y: STATUS_HEIGHT + 20, width: 50, height: 50)
+        button.backgroundColor = UIColor.lightGray
+        let title:String = String.init(format: "%ds", self.timeCount)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = 25
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
+        image.addSubview(button)
+        
+     
+        
 //        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "好监理_启动页"))
        
         //添加点击事件
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
         image.addGestureRecognizer(singleTapGesture)
         image.isUserInteractionEnabled = true
-        _ = Timer.scheduledTimer(withTimeInterval: 3.3, repeats: false, block: { (Timer) in
-            self.removeImageWithDelay()
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+            self.timeCount = self.timeCount - 1
+            let title:String = String.init(format: "%ds", self.timeCount)
+            self.button.setTitle(title, for: .normal)
+            if(self.timeCount == 0){
+                self.removeImageWithDelay()
+            }
         })
+       
         LaunchFlag = true
+        
     }
-    
+    func isIPhoneX() -> Bool {
+        var iPhoneX:Bool = false
+        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
+            return iPhoneX
+        }
+        if #available(iOS 11.0, *) {
+            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
+                iPhoneX = true
+            }
+        }
+        return iPhoneX
+        
+    }
+    @objc func btnClick(){
+         self.removeImageWithDelay()
+    }
     func setupWebview(){
         // 创建配置
 //        let config = WKWebViewConfiguration()
@@ -103,11 +152,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
     }
     
     func removeImageWithDelay(){
+            self.timer?.invalidate()
+            self.timer = nil
             UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                 self.image.alpha = 0
+                self.bottomImage.alpha = 0
             }, completion: { (finished) -> Void in
                 if(finished){
                     self.image.removeFromSuperview()
+                    self.bottomImage.removeFromSuperview()
                 }
             })
     }
