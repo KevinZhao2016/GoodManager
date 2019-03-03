@@ -87,6 +87,8 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
     
     override func viewDidAppear(_ animated: Bool) {
         self.player.seek(to: CMTime(seconds: self.playfromtime!, preferredTimescale: 1), completionHandler: nil)
+        self.player.autoplay = true
+        self.player.playFromCurrentTime()
     }
     
     func playerCurrentTimeDidChange(_ player: Player) {
