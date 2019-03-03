@@ -10,6 +10,47 @@ import UIKit
 
 typealias editorImageCompleteClouse = (UIImage)->()
 
+//--- UIImageExtension.swift ---
+extension UIImage {
+    //水印位置枚举
+    enum WaterMarkCorner {
+        case TopLeft
+        case TopRight
+        case BottomLeft
+        case BottomRight
+    }
+    //添加水印方法
+    func waterMarkedImage(waterMarkText:String, corner:WaterMarkCorner = .BottomRight, margin:CGPoint = CGPoint(x: 20, y: 20), waterMarkTextColor:UIColor = UIColor.white, waterMarkTextFont:UIFont = UIFont.systemFont(ofSize: 20), backgroundColor:UIColor = UIColor.clear) -> UIImage {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:waterMarkTextColor, NSAttributedString.Key.font:waterMarkTextFont]
+        let textSize = NSString(string: waterMarkText).size(withAttributes: textAttributes)
+        //var textFrame = CGRectMake(0, 0, textSize.width, textSize.height)
+        var textFrame = CGRect(x: 0,y: 0,width: textSize.width,height: textSize.height)
+        
+        let imageSize = self.size
+        switch corner{
+        case .TopLeft:
+            textFrame.origin = margin
+        case .TopRight:
+            textFrame.origin = CGPoint(x: imageSize.width - textSize.width - margin.x, y: margin.y)
+        case .BottomLeft:
+            textFrame.origin = CGPoint(x: margin.x, y: imageSize.height - textSize.height - margin.y)
+        case .BottomRight:
+            textFrame.origin = CGPoint(x: imageSize.width - textSize.width - margin.x, y: imageSize.height - textSize.height - margin.y)
+        }
+        
+        // 开始给图片添加文字水印
+        UIGraphicsBeginImageContext(imageSize)
+        self.draw(in: CGRect(x: 0,y: 0,width: imageSize.width,height: imageSize.height))
+        NSString(string: waterMarkText).draw(in: textFrame, withAttributes: textAttributes)
+        
+        let waterMarkedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return waterMarkedImage!
+    }
+}
+
 class EditorViewController: UIViewController {
     
     @objc var editorImageComplete: editorImageCompleteClouse?
@@ -166,9 +207,7 @@ extension EditorViewController {
     }
     
     @objc func clickBottomBtn(btn:UIButton) {
-
         if btn.currentTitle == graffitiStr {
-            
             pencilBtn.isSelected = !pencilBtn.isSelected
             eraserBtn.isSelected = false
             masicBtn.isSelected = false
@@ -182,7 +221,6 @@ extension EditorViewController {
             }
         }
         if btn.currentTitle == eraserStr {
-
             choosePencilViewDismiss()
             eraserBtn.isSelected = !eraserBtn.isSelected
             pencilBtn.isSelected = false
@@ -201,6 +239,11 @@ extension EditorViewController {
             eraserBtn.isSelected = false
             self.scrollView.isScrollEnabled = !masicBtn.isSelected
             if masicBtn.isSelected {
+                // 文本框
+                print("添加文本")
+//                editorImage = editorImage.waterMarkedImage(waterMarkText: "做最好的开发者知识平台").waterMarkedImage(waterMarkText: "hangge.com", corner: .TopLeft, margin: CGPoint(x: 20, y: 20), waterMarkTextColor: UIColor.black, waterMarkTextFont: UIFont.systemFont(ofSize: 45), backgroundColor: UIColor.clear)
+
+                // 换马赛克为文本框输入
                 self.drawBoardImageView.brush = RectangleBrush()
             } else {
                 self.drawBoardImageView.brush = nil

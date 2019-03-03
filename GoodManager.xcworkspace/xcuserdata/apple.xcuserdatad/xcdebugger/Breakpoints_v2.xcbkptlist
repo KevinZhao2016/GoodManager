@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Common/Image.swift"
-            timestampString = "573156859.528893"
+            timestampString = "573299087.636832"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.292914"
+            timestampString = "573308953.6929491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293009"
+            timestampString = "573308953.694142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "239"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.2930551"
+            timestampString = "573308953.694273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "260"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293097"
+            timestampString = "573308953.6943949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "410"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293138"
+            timestampString = "573308953.694532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "439"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293179"
+            timestampString = "573308953.694621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "492"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293222"
+            timestampString = "573308953.694688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "485"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293262"
+            timestampString = "573308953.6947941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "500"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.2933021"
+            timestampString = "573308953.69488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "749"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293342"
+            timestampString = "573308953.69497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "811"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293382"
+            timestampString = "573308953.695026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "828"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293422"
+            timestampString = "573308953.6951129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "840"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293463"
+            timestampString = "573308953.695208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "938"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.293583"
+            timestampString = "573308953.6954139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "840"
@@ -518,64 +518,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.294073"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-initWithMaxImagesCount:videoMaxLength:columnNumber:delegate:pushPhotoPickerVc:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.294113"
+            timestampString = "573308953.695691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "-init"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.294154"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-initWithMaxImagesCount:videoMaxLength:columnNumber:delegate:pushPhotoPickerVc:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
-            timestampString = "573156276.2941951"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "-initWithMaxImagesCount:videoMaxLength:columnNumber:delegate:pushPhotoPickerVc:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -720,6 +672,38 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m"
+            timestampString = "573308953.6959029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "-initWithMaxImagesCount:videoMaxLength:columnNumber:delegate:pushPhotoPickerVc:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/CLImagePickerTool/CLImagePickerTool/CLImagePickerTool/controller/EditorViewController.swift"
+            timestampString = "573309395.691335"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "clickBottomBtn(btn:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

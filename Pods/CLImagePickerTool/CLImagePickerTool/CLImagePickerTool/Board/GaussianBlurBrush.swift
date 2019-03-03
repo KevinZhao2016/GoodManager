@@ -11,7 +11,6 @@ import UIKit
 class GaussianBlurBrush: BaseBrush {
     
     override func drawInContext(_ context: CGContext) {
-        
         if let lastPoint = self.lastPoint {
             context.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
             context.addLine(to: CGPoint(x: endPoint.x, y: endPoint.y))

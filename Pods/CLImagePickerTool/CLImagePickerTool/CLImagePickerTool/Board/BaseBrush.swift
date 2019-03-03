@@ -13,9 +13,7 @@ import Foundation
 //drawInContext，基于Context的绘图方法，子类必须实现具体的绘图
 //只要是实现了PaintBrush接口的类，我们就当作是一个绘图工具（如铅笔、直尺等）
 protocol PaintBrush {
-    
     func supportedContinuousDrawing() -> Bool
-    
     func drawInContext(_ context: CGContext)
 }
 
@@ -23,7 +21,6 @@ class BaseBrush : NSObject, PaintBrush {
     var beginPoint: CGPoint!
     var endPoint: CGPoint!
     var lastPoint: CGPoint?
-    
     var strokeWidth: CGFloat!
     
     @objc func supportedContinuousDrawing() -> Bool {
