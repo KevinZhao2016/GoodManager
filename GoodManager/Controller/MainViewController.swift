@@ -69,7 +69,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(image)
         let isIPhoneX:Bool = self.isIPhoneX()
-        if isIPhoneX == false  {
+        if isIPhoneX   {
            image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
             bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
             bottomImage.backgroundColor = UIColor.white;
