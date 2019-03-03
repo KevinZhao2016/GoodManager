@@ -33,9 +33,10 @@ let imagePickTool = CLImagePickerTool()
  
  */
 func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
+    print("--------------APPChooseSingleImage----------------")
     callbackfun = callBackfunName
+    
     let vc = getLastMainViewController()
-
     let controller = TZImagePickerController(maxImagesCount: 1, delegate: vc)
 
 //    if source == 0 {
