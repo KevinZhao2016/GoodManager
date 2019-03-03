@@ -8,6 +8,7 @@
 
 import UIKit
 import Player
+import CoreMedia
 
 class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelegate {
     var player = Player()
@@ -85,7 +86,7 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.player.playFrom(time:playfromtime!)
+        self.player.seek(to: CMTime(seconds: self.playfromtime!, preferredTimescale: 1), completionHandler: nil)
     }
     
     func playerCurrentTimeDidChange(_ player: Player) {

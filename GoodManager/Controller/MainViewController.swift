@@ -106,7 +106,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
                 self.removeImageWithDelay()
             }
         })
-       
         LaunchFlag = true
         
     }
