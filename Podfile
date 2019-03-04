@@ -36,6 +36,8 @@ target 'GoodManager' do
     pod 'NIMKit'
     #pod 'ReactiveCocoa', '~> 2.3.1'
     pod 'jot'
+    pod 'WechatOpenSDK'
+    pod 'AliPay'
     
 end
 
