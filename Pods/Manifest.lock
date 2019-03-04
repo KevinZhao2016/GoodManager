@@ -4,12 +4,15 @@ PODS:
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
   - JCore (1.2.6)
+  - jot (0.1.5):
+    - Masonry (~> 0.6.1)
   - JPush (3.1.2):
     - JCore (~> 1.2.6)
   - Kingfisher (4.10.1)
   - LLPhotoBrowser (1.1.0):
     - Kingfisher
   - M80AttributedLabel (1.6.3)
+  - Masonry (0.6.4)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya-ObjectMapper/Core (2.7):
@@ -58,6 +61,7 @@ PODS:
 DEPENDENCIES:
   - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
   - dsBridge
+  - jot
   - JPush
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
@@ -78,10 +82,12 @@ SPEC REPOS:
     - dsBridge
     - FLAnimatedImage
     - JCore
+    - jot
     - JPush
     - Kingfisher
     - LLPhotoBrowser
     - M80AttributedLabel
+    - Masonry
     - Moya
     - Moya-ObjectMapper
     - NIMKit
@@ -115,10 +121,12 @@ SPEC CHECKSUMS:
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  jot: 0f5dc333defa6ad805d01adc3834b201c22510a7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LLPhotoBrowser: 15cf9289a942f3160a0c138d933bf927651ce302
   M80AttributedLabel: d06543195d3e451d2ea62ad76d04aa9cea7661d4
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
   NIMKit: ec370f2f270fbc03bdb68c51118695e03133ffa1
@@ -137,6 +145,6 @@ SPEC CHECKSUMS:
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
 
-PODFILE CHECKSUM: 5cab8c33665474b30f8899eb0a42a82655d43059
+PODFILE CHECKSUM: 6e3726fecd74076275ec9ca54eb7b90908c30866
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1
