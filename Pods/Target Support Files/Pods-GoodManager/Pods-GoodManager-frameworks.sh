@@ -159,6 +159,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLPhotoBrowser/LLPhotoBrowser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/M80AttributedLabel/M80AttributedLabel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NIMKit/NIMKit.framework"
@@ -177,6 +178,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/jot/jot.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
@@ -185,6 +187,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLPhotoBrowser/LLPhotoBrowser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/M80AttributedLabel/M80AttributedLabel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NIMKit/NIMKit.framework"
@@ -203,6 +206,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast/Toast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/jot/jot.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
