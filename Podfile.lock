@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - AliPay (2.1.2)
   - CLImagePickerTool (3.0.0)
   - dsBridge (3.0.6)
   - FLAnimatedImage (1.0.12)
@@ -57,8 +58,10 @@ PODS:
   - SwiftyJSON (4.2.0)
   - Toast (3.1.0)
   - TZImagePickerController (3.0.9)
+  - WechatOpenSDK (1.8.4)
 
 DEPENDENCIES:
+  - AliPay
   - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
   - dsBridge
   - jot
@@ -75,10 +78,12 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
+  - WechatOpenSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AliPay
     - dsBridge
     - FLAnimatedImage
     - JCore
@@ -105,6 +110,7 @@ SPEC REPOS:
     - SwiftyJSON
     - Toast
     - TZImagePickerController
+    - WechatOpenSDK
 
 EXTERNAL SOURCES:
   CLImagePickerTool:
@@ -117,6 +123,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AliPay: 2bd35a4e486d2a8c035043023cd846e886bb21d1
   CLImagePickerTool: 5837ba7d3f4f557bab2ccc1db7a0442e2f377e2b
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -144,7 +151,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
+  WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
 
-PODFILE CHECKSUM: 6e3726fecd74076275ec9ca54eb7b90908c30866
+PODFILE CHECKSUM: 5120af7bba65a81724e333321ed840057c69f4cb
 
 COCOAPODS: 1.6.1
