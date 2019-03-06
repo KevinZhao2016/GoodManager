@@ -7,142 +7,162 @@
 		<key>Alamofire.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>AliPay.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>CLImagePickerTool-CLImagePickerTool.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>CLImagePickerTool.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>FLAnimatedImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>JCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>JPush.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>9</integer>
 		</dict>
 		<key>Kingfisher.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>10</integer>
 		</dict>
 		<key>LLPhotoBrowser.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>11</integer>
 		</dict>
 		<key>M80AttributedLabel.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>Moya-ObjectMapper.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>Moya.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
-		<key>NIMKit.xcscheme_^#shared#^_</key>
+		<key>Masonry.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
-		<key>NIMSDK_LITE.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
-		</dict>
-		<key>ObjectMapper.xcscheme_^#shared#^_</key>
+		<key>Moya-ObjectMapper.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>Player.xcscheme_^#shared#^_</key>
+		<key>Moya.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>NIMKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>Pods-GoodManager.xcscheme_^#shared#^_</key>
+		<key>NIMSDK_LITE.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
-		<key>ReachabilitySwift.xcscheme_^#shared#^_</key>
+		<key>ObjectMapper.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
-		<key>Realm.xcscheme_^#shared#^_</key>
+		<key>Player.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
-		<key>RealmSwift.xcscheme_^#shared#^_</key>
+		<key>Pods-GoodManager.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
-		<key>Result.xcscheme_^#shared#^_</key>
+		<key>ReachabilitySwift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
-		<key>RxAtomic.xcscheme_^#shared#^_</key>
+		<key>Realm.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
-		<key>RxSwift.xcscheme_^#shared#^_</key>
+		<key>RealmSwift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>23</integer>
 		</dict>
-		<key>SDWebImage.xcscheme_^#shared#^_</key>
+		<key>Result.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
-		<key>SnapKit.xcscheme_^#shared#^_</key>
+		<key>RxAtomic.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>25</integer>
 		</dict>
-		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
+		<key>RxSwift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>26</integer>
 		</dict>
-		<key>TZImagePickerController.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
-		</dict>
-		<key>Toast.xcscheme_^#shared#^_</key>
+		<key>SDWebImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>27</integer>
 		</dict>
+		<key>SnapKit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
+		<key>TZImagePickerController.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
+		</dict>
+		<key>Toast.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>30</integer>
+		</dict>
+		<key>WechatOpenSDK.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>32</integer>
+		</dict>
 		<key>dsBridge.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
+		</dict>
+		<key>jot.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 	</dict>
 </dict>

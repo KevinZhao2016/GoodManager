@@ -20,4 +20,11 @@
 //#import "RITLPhotos/RITLPhotos.h"
 // 视频
 //#import "DmcPickerViewController.h"
-
+// 单选图片编辑
+#import <jot/jot.h>
+// 微信支付
+#import <WXApi.h>
+#import <WXApiObject.h>
+// 支付宝支付
+#import <AlipaySDK/AlipaySDK.h>
+//#import "RSADataSigner.h"

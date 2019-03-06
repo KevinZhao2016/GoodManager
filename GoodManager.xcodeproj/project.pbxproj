@@ -100,6 +100,7 @@
 		18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351AB2222B4CC00C62779 /* BankInfoViewController.m */; };
 		18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */; };
 		18B45DF52223136D00987D5A /* FileCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */; };
+		18C7781E222E74C0006550BC /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7781D222E74C0006550BC /* Pay.swift */; };
 		5645E03722213786002C8A44 /* NIMKitEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */; };
 		5645E03922213794002C8A44 /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5645E03822213794002C8A44 /* NIMKitResource.bundle */; };
 		5697F418221EB957000AC814 /* Jpush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697F417221EB957000AC814 /* Jpush.swift */; };
@@ -256,6 +257,7 @@
 		18A351AB2222B4CC00C62779 /* BankInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankInfoViewController.m; sourceTree = "<group>"; };
 		18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileCellTableViewCell.swift; path = ../FileCellTableViewCell.swift; sourceTree = "<group>"; };
 		18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FileCellTableViewCell.xib; path = ../FileCellTableViewCell.xib; sourceTree = "<group>"; };
+		18C7781D222E74C0006550BC /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitEmoticon.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitEmoticon.bundle; sourceTree = SOURCE_ROOT; };
 		5645E03822213794002C8A44 /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = NIMKitResource.bundle; path = Pods/NIMKit/NIMKit/Resources/NIMKitResource.bundle; sourceTree = SOURCE_ROOT; };
@@ -407,6 +409,7 @@
 				0A4CDEAB21D4A2FB00E28E95 /* File.swift */,
 				0A4E312221E199AB00D15766 /* Image.swift */,
 				0A7F576921E2F6A300F03870 /* Video.swift */,
+				18C7781D222E74C0006550BC /* Pay.swift */,
 				0A58311121D6101C00DC4321 /* InterfaceRealm.swift */,
 				0A58311321D6252100DC4321 /* KeyValueRealm.swift */,
 				0AFB04D021E0DDB50032C670 /* QRCode.swift */,
@@ -1045,6 +1048,7 @@
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
+				18C7781E222E74C0006550BC /* Pay.swift in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
 				18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */,
 				18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */,

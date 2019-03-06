@@ -9,18 +9,64 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
-    //极光推送
+class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WXApiDelegate {
+
+    // wxpay
+    func onResp(_ resp: BaseResp) {
+        ExecWinJS(JSFun: "APPWXPay" + "(\"" +  "\(resp.errCode)" + "\")")
+    }
+    
+    // alipay
+    let URLScheme = "alipayforgoodmanager"
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.host == "safepay"{
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url){
+                value in
+                let code = value!
+                let resultStatus = code["resultStatus"] as!String
+                var content = ""
+                ExecWinJS(JSFun: "APPAlipay" + "(\"" +  "\(resultStatus)" + "\")")
+                switch resultStatus {
+                case "9000":
+                    content = "支付成功"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPaySucceess"), object: content)
+                case "8000":
+                    content = "订单正在处理中"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayUnknowStatus"), object: content)
+                case "4000":
+                    content = "支付失败"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "5000":
+                    content = "重复请求"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "6001":
+                    content = "中途取消"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "6002":
+                    content = "网络连接出错"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefault"), object: content)
+                case "6004":
+                    content = "支付结果未知"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayUnknowStatus"), object: content)
+                default:
+                    content = "支付失败"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                    break
+                }
+            }
+        }
+        return true
+    }
+    
+    
+    
+    // 极光推送
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
         let userInfo = notification.request.content.userInfo
         if (notification.request.trigger is UNPushNotificationTrigger) {
             JPUSHService.handleRemoteNotification(userInfo)
         }
-        
         completionHandler(Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue)|Int(JPAuthorizationOptions.sound.rawValue))
-        
-        
-        
     }
     
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
@@ -61,6 +107,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         getTelBookRight()//检查通讯录权限
+        // 注册微信支付
+        WXApi.registerApp("wxac7e2659ee456ef6")
+
         
         initJpush(launchOptions ?? [:]);
         initNISDK() ;
@@ -94,6 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         JPUSHService.registerDeviceToken(deviceToken)
     }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -116,8 +166,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
 }
-
-
-

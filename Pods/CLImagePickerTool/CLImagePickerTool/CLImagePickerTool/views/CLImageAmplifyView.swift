@@ -330,7 +330,7 @@ class CLImageAmplifyView: UIView {
         if self.singlePictureClickSureBtn != nil {
             self.singlePictureClickSureBtn!()
         }
-        
+
         self.lastImageView.removeFromSuperview()
         self.scrollView.removeFromSuperview()
         self.removeFromSuperview()

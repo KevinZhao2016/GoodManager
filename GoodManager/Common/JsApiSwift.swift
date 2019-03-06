@@ -267,7 +267,6 @@ class JsApiSwift: NSObject {
         let account = jsonString["account"].stringValue
         let password = jsonString["password"].stringValue
         let statusBarColor = jsonString["password"].stringValue
-        
         GoodManager.APPNELoginOut()
 
     }
@@ -311,4 +310,17 @@ class JsApiSwift: NSObject {
       let count:Int = GoodManager.APPNEGetQUnreadWithFNum(fAccount)
        print(String(format: "某个好友未读消息个数为：%d", count));
     }
+    
+    @objc func APPWXPay(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let partnerId = jsonString["partnerId"].stringValue
+        let prepayId = jsonString["prepayId"].stringValue
+        let packageValue = jsonString["packageValue"].stringValue
+        let nonceStr = jsonString["nonceStr"].stringValue
+        let timeStamp = jsonString["timeStamp"].stringValue
+        let sign = jsonString["sign"].stringValue
+        let callBackfunName = jsonString["callBackfunName"].stringValue
+        GoodManager.APPWXPay(partnerId: partnerId, prepayId: prepayId, packageValue: packageValue, nonceStr: nonceStr, timeStamp: timeStamp, sign:sign, callBackfunName: callBackfunName)
+    }
+    
 }

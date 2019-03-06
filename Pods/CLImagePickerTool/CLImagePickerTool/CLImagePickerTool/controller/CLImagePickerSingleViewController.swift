@@ -452,7 +452,7 @@ extension CLImagePickerSingleViewController: UICollectionViewDelegate,UICollecti
                     self?.choosePictureComplete(assetArr: assetArr, img: img)
                 }
             }
-            // 编辑图片
+            // 编辑图片 editimageinhere
             cell.singleChoosePictureAndEditor =  { [weak self] (assetArr,img) in
                 let editorVC = EditorViewController.init(nibName: "EditorViewController", bundle: BundleUtil.getCurrentBundle())
                 editorVC.editorImage = img
