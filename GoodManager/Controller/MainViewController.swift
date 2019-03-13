@@ -252,10 +252,13 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     deinit {
-        self.webview.removeObserver(self, forKeyPath: "estimatedProgress")
-        self.webview.uiDelegate = nil
-        self.webview.navigationDelegate = nil
-        webview.configuration.userContentController.removeScriptMessageHandler(forName: "NativeMethod")
+        if self.webview != nil {
+            self.webview.removeObserver(self, forKeyPath: "estimatedProgress")
+            self.webview.uiDelegate = nil
+            self.webview.navigationDelegate = nil
+            webview.configuration.userContentController.removeScriptMessageHandler(forName: "NativeMethod")
+        }else{
+            print("no webview")
+        }
     }
-    
 }

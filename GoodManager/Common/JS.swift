@@ -16,9 +16,13 @@ func APPExecWinJS(mark:String, JSFun:String){
     }else{
         vc = findControllerByMark(mark: mark)
     }
-    vc!.webview.evaluateJavaScript(JSFun) { (result, error) in
-        //处理js调用结果
-        print(result as Any)
+    if vc!.webview != nil {
+        vc!.webview.evaluateJavaScript(JSFun) { (result, error) in
+            //处理js调用结果
+            print(result as Any)
+        }
+    }else{
+        print("\(JSFun)")
     }
 }
 
