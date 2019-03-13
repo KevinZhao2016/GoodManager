@@ -545,12 +545,12 @@
 		18437EE322395CF300E29DA1 /* XMShareView */ = {
 			isa = PBXGroup;
 			children = (
-				18437EE422395CF300E29DA1 /* ExtView */,
 				18437EE722395CF300E29DA1 /* XMShareView.h */,
 				18437EE822395CF300E29DA1 /* CommonMarco.h */,
+				18437EF922395CF300E29DA1 /* XMShareView.m */,
+				18437EE422395CF300E29DA1 /* ExtView */,
 				18437EE922395CF300E29DA1 /* Resource */,
 				18437EF022395CF300E29DA1 /* ShareUtil */,
-				18437EF922395CF300E29DA1 /* XMShareView.m */,
 			);
 			path = XMShareView;
 			sourceTree = "<group>";

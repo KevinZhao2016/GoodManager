@@ -28,3 +28,7 @@
 // 支付宝支付
 #import <AlipaySDK/AlipaySDK.h>
 //#import "RSADataSigner.h"
+// 腾讯QQ
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "XMShareView.h"

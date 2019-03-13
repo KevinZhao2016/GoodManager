@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WXApiDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WXApiDelegate{
 
     // wxpay
     func onResp(_ resp: BaseResp) {
@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     // alipay
     let URLScheme = "alipayforgoodmanager"
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
         if url.host == "safepay"{
             AlipaySDK.defaultService().processOrder(withPaymentResult: url){
                 value in
@@ -54,9 +55,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
                     break
                 }
             }
+        }else{
+            print("url.host != safepay")
+            if (url.absoluteString.hasPrefix("tencent")){
+                return QQApiInterface.handleOpen(url, delegate: nil)
+            
+            //}else if(url.absoluteString.hasPrefix("wb"))
+                
+                //return [WeiboSDK handleOpenURL:url delegate:self];
+                
+            //}else if([[url absoluteString] hasPrefix:@"wx"]) {
+                print("qq推送")
+            }else if(url.absoluteString.hasPrefix("wx")){
+                //  处理微信回调需要在具体的 ViewController 中处理。
+//                let shareViewController = ShareViewController()
+                //ViewController *vc = (ViewController *)self.window.rootViewController;
+                //return [WXApi handleOpenURL:url delegate:vc];
+                return WXApi.handleOpen(url, delegate: nil)
+                print("wx推送")
+            }
         }
         return true
     }
+    
+    
     
     
     
@@ -109,7 +131,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         getTelBookRight()//检查通讯录权限
         // 注册微信支付
         WXApi.registerApp("wxac7e2659ee456ef6")
-
+        // 注册QQ
+        TencentOAuth.init(appId: "1108245066", andDelegate: nil)
         
         initJpush(launchOptions ?? [:]);
         initNISDK() ;

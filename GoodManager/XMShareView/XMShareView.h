@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, SHARE_ITEM){
     SHARE_ITEM_QZONE,
     
     //  微博
-    SHARE_ITEM_WEIBO
+//    SHARE_ITEM_WEIBO
 };
 
 

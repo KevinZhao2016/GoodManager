@@ -113,11 +113,12 @@ static const NSInteger numbersOfItemInLine = 3;
             
             tempButton.tag = SHARE_ITEM_QZONE;
             
-        }else if([textList[i] isEqualToString:NSLocalizedString(@"微博", nil)]){
-            
-            tempButton.tag = SHARE_ITEM_WEIBO;
-            
         }
+        //else if([textList[i] isEqualToString:NSLocalizedString(@"微博", nil)]){
+            
+//            tempButton.tag = SHARE_ITEM_WEIBO;
+            
+        //}
         
         [shareActionView addSubview:tempButton];
     }
@@ -188,11 +189,12 @@ static const NSInteger numbersOfItemInLine = 3;
         
         [self shareToQzone];
         
-    }else if ( sender.tag == SHARE_ITEM_WEIBO ) {
-        
-        [self shareToWeibo];
-        
     }
+    //else if ( sender.tag == SHARE_ITEM_WEIBO ) {
+        
+    //    [self shareToWeibo];
+        
+    //}
     
     [self clickClose];
     
@@ -242,17 +244,17 @@ static const NSInteger numbersOfItemInLine = 3;
     [util shareToQzone];
 }
 
-- (void)shareToWeibo
-{
- 
-    XMShareWeiboUtil *util = [XMShareWeiboUtil sharedInstance];
-    util.shareTitle = self.shareTitle;
-    util.shareText = self.shareText;
-    util.shareUrl = self.shareUrl;
-    
-    [util shareToWeibo];
-    
-}
+//- (void)shareToWeibo
+//{
+// 
+//    XMShareWeiboUtil *util = [XMShareWeiboUtil sharedInstance];
+//    util.shareTitle = self.shareTitle;
+//    util.shareText = self.shareText;
+//    util.shareUrl = self.shareUrl;
+//    
+//    [util shareToWeibo];
+//    
+//}
 
 - (void)clickClose
 {

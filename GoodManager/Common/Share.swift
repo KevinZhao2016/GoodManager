@@ -9,10 +9,16 @@
 import Foundation
 
 func APPShare(title: String, description: String, thumbImage: String, url: String, callBackfunName: String) {
-    print("title:           \(title)")
-    print("description:     \(description)")
-    print("thumbImage:      \(thumbImage)")
-    print("url:             \(url)")
-    print("callBackfunName: \(callBackfunName)")
-    
+    print("-------------APPShare--------------")
+    let vc = getLastMainViewController()
+    vc.imagecallBackfunName = callBackfunName
+    var shareView = XMShareView()
+    shareView = XMShareView.init(frame: vc.view.bounds)
+    shareView.alpha = 0.0;
+    shareView.shareTitle = title
+    shareView.shareText = description
+    shareView.shareUrl = url
+    vc.view.addSubview(shareView)
+    shareView.alpha = 1.0
+    ExecWinJS(JSFun: callBackfunName)
 }
