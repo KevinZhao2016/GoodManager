@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mqqapi</string>
+		<string>weixin</string>
+		<string>wechat</string>
+	</array>
 	<key>BuildTime</key>
 	<string>20190101</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -44,6 +50,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>alipayforgoodmanager</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>QQ</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxac7e2659ee456ef6</string>
 			</array>
 		</dict>
 	</array>

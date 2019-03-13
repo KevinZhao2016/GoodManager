@@ -17,7 +17,7 @@ class JsApiSwift: NSObject {
         return String(format:"%@[Swift sync call:%@]", arg, "test")
     }
     
-    @objc func APPGetNetwork( _ arg:String) ->String {
+    @objc func APPGetNetwork(_ arg:String) ->String {
         return GoodManager.APPGetNetWork()
     }
     
@@ -39,6 +39,16 @@ class JsApiSwift: NSObject {
         let jsonString = JSON(parseJSON: arg)
         let mark = jsonString["mark"].stringValue
         GoodManager.APPWinClose(mark: mark)
+    }
+    
+    @objc func APPShare(_ arg:String) {
+        let jsonString = JSON(parseJSON: arg)
+        let title = jsonString["title"].stringValue
+        let description = jsonString["description"].stringValue
+        let thumbImage = jsonString["thumbImage"].stringValue
+        let url = jsonString["url"].stringValue
+        let callBackfunName = jsonString["callBackfunName"].stringValue
+        GoodManager.APPShare(title: title, description: description, thumbImage: thumbImage, url: url,callBackfunName: callBackfunName)
     }
     
     @objc func APPExecWinJS(_ arg:String){
