@@ -303,7 +303,7 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPNEGetUnreadNum(_ arg:String) {
-        let count:Int =   GoodManager.APPNEGetUnreadNum()
+        let count:Int = GoodManager.APPNEGetUnreadNum()
         print(String(format: "全部未读消息个数为：%d", count));
     }
     
