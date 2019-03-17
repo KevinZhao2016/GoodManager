@@ -59,6 +59,7 @@ PODS:
   - Toast (3.1.0)
   - TZImagePickerController (3.0.9)
   - WechatOpenSDK (1.8.4)
+  - Weibo_SDK (3.2.3)
 
 DEPENDENCIES:
   - AliPay
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
   - WechatOpenSDK
+  - Weibo_SDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -115,11 +117,16 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CLImagePickerTool:
     :git: https://github.com/Darren-chenchen/CLImagePickerTool.git
+  Weibo_SDK:
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 CHECKOUT OPTIONS:
   CLImagePickerTool:
     :commit: acd0cfabb7a66909b3144b110dac0bfa09ce7db1
     :git: https://github.com/Darren-chenchen/CLImagePickerTool.git
+  Weibo_SDK:
+    :commit: f5b138320aefe0ed20b76b8510521432f1a6c9ac
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -152,7 +159,8 @@ SPEC CHECKSUMS:
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
   WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
+  Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
 
-PODFILE CHECKSUM: 5120af7bba65a81724e333321ed840057c69f4cb
+PODFILE CHECKSUM: 86ae4f75685ab0b78ce0fb4632b12579ad73c17e
 
 COCOAPODS: 1.6.1
