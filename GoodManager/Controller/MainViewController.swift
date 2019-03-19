@@ -13,7 +13,7 @@ import TZImagePickerController
 import dsBridge
 import CoreLocation
 
-class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
+class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
@@ -261,4 +261,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate {
             print("no webview")
         }
     }
+    
+    // 图片单选 - 拍照取消
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+//        self.imagePicker = nil
+        print("bye")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    /*
+     
+     */
+    
 }

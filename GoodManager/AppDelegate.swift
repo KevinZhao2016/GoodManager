@@ -133,6 +133,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         WXApi.registerApp("wxac7e2659ee456ef6")
         // 注册QQ
         TencentOAuth.init(appId: "1108245066", andDelegate: nil)
+        // 注册weibo
+        WeiboSDK.registerApp("580085537")
         
         initJpush(launchOptions ?? [:]);
         initNISDK() ;
