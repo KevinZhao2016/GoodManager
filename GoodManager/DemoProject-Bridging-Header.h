@@ -21,7 +21,15 @@
 // 视频
 //#import "DmcPickerViewController.h"
 // 单选图片编辑
-#import <jot/jot.h>
+#import "IJSImagePickerController.h"
+#import "IJSImageManager.h"
+#import "IJSExtension.h"
+//#import "IJSVideoTestController.h"
+#import "IJSMapViewModel.h"
+#import <IJSFoundation/IJSFoundation.h>
+#import <Photos/Photos.h>
+#import "IJSVideoManager.h"
+#import "IJSAlbumModel.h"
 // 微信支付
 #import <WXApi.h>
 #import <WXApiObject.h>
@@ -32,3 +40,5 @@
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import "XMShareView.h"
+// 微博
+#import <Weibo_SDK/WeiboSDK.h>

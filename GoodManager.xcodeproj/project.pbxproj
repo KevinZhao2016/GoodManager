@@ -85,6 +85,84 @@
 		18437F0322395CF300E29DA1 /* XMShareWeiboUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437EF722395CF300E29DA1 /* XMShareWeiboUtil.m */; };
 		18437F0422395CF300E29DA1 /* XMShareWechatUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437EF822395CF300E29DA1 /* XMShareWechatUtil.m */; };
 		18437F0522395CF300E29DA1 /* XMShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18437EF922395CF300E29DA1 /* XMShareView.m */; };
+		1890D6632240C26E001AC1D3 /* IJSVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5B12240C26E001AC1D3 /* IJSVideoManager.m */; };
+		1890D6642240C26E001AC1D3 /* IJSVideoManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5B62240C26E001AC1D3 /* IJSVideoManagerController.m */; };
+		1890D6652240C26E001AC1D3 /* IJSVideoCutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5B72240C26E001AC1D3 /* IJSVideoCutController.m */; };
+		1890D6662240C26E001AC1D3 /* IJSImageManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5B82240C26E001AC1D3 /* IJSImageManagerController.m */; };
+		1890D6672240C26E001AC1D3 /* IJSVideoEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5B92240C26E001AC1D3 /* IJSVideoEditController.m */; };
+		1890D6682240C26E001AC1D3 /* IJSImageEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5BB2240C26E001AC1D3 /* IJSImageEditController.m */; };
+		1890D6692240C26E001AC1D3 /* IJSImageDrawTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5C42240C26E001AC1D3 /* IJSImageDrawTool.m */; };
+		1890D66A2240C26E001AC1D3 /* IJSImageToolBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5C52240C26E001AC1D3 /* IJSImageToolBase.m */; };
+		1890D66B2240C26E001AC1D3 /* IJSImageMosaicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5C72240C26E001AC1D3 /* IJSImageMosaicTool.m */; };
+		1890D66C2240C26E001AC1D3 /* IJSIPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5C82240C26E001AC1D3 /* IJSIPath.m */; };
+		1890D66D2240C26E001AC1D3 /* IJSVideoSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5CD2240C26E001AC1D3 /* IJSVideoSlideView.m */; };
+		1890D66E2240C26E001AC1D3 /* IJSImageMosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5CE2240C26E001AC1D3 /* IJSImageMosaicView.m */; };
+		1890D66F2240C26E001AC1D3 /* IJSIColorButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5CF2240C26E001AC1D3 /* IJSIColorButtonView.m */; };
+		1890D6702240C26E001AC1D3 /* IJSImageToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5D42240C26E001AC1D3 /* IJSImageToolView.m */; };
+		1890D6712240C26E001AC1D3 /* IJSIImputTextExportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5D52240C26E001AC1D3 /* IJSIImputTextExportView.m */; };
+		1890D6722240C26E001AC1D3 /* IJSImageMosaicToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5D62240C26E001AC1D3 /* IJSImageMosaicToolView.m */; };
+		1890D6732240C26E001AC1D3 /* IJSIImputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5D72240C26E001AC1D3 /* IJSIImputTextView.m */; };
+		1890D6742240C26E001AC1D3 /* IJSVideoRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5D92240C26E001AC1D3 /* IJSVideoRulerView.m */; };
+		1890D6752240C26E001AC1D3 /* IJSIPanDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5DA2240C26E001AC1D3 /* IJSIPanDrawingView.m */; };
+		1890D6762240C26E001AC1D3 /* IJSImageGaussanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5DE2240C26E001AC1D3 /* IJSImageGaussanView.m */; };
+		1890D6772240C26E001AC1D3 /* IJSImageNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5DF2240C26E001AC1D3 /* IJSImageNavigationView.m */; };
+		1890D6782240C26E001AC1D3 /* IJSIMapViewExportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5E02240C26E001AC1D3 /* IJSIMapViewExportView.m */; };
+		1890D6792240C26E001AC1D3 /* IJSVideoTrimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5E12240C26E001AC1D3 /* IJSVideoTrimView.m */; };
+		1890D67A2240C26E001AC1D3 /* IJSImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5E62240C26E001AC1D3 /* IJSImageManager.m */; };
+		1890D67B2240C26E001AC1D3 /* IJSAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5EA2240C26E001AC1D3 /* IJSAlbumModel.m */; };
+		1890D67C2240C26E001AC1D3 /* IJSAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5ED2240C26E001AC1D3 /* IJSAssetModel.m */; };
+		1890D67D2240C26E001AC1D3 /* IJSPreviewVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5F02240C26E001AC1D3 /* IJSPreviewVideoView.m */; };
+		1890D67E2240C26E001AC1D3 /* IJSPhotoPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5F12240C26E001AC1D3 /* IJSPhotoPickerCell.m */; };
+		1890D67F2240C26E001AC1D3 /* IJSSelectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5F22240C26E001AC1D3 /* IJSSelectedCell.m */; };
+		1890D6802240C26E001AC1D3 /* IJSPreviewLivePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5F32240C26E001AC1D3 /* IJSPreviewLivePhotoView.m */; };
+		1890D6812240C26E001AC1D3 /* IJSAlbumPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5F42240C26E001AC1D3 /* IJSAlbumPickerCell.m */; };
+		1890D6822240C26E001AC1D3 /* IJSPreviewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5F72240C26E001AC1D3 /* IJSPreviewImageCell.m */; };
+		1890D6832240C26E001AC1D3 /* IJSPreviewGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5FC2240C26E001AC1D3 /* IJSPreviewGifView.m */; };
+		1890D6842240C26E001AC1D3 /* IJSPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D5FF2240C26E001AC1D3 /* IJSPhotoPickerController.m */; };
+		1890D6852240C26E001AC1D3 /* IJS3DTouchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6002240C26E001AC1D3 /* IJS3DTouchController.m */; };
+		1890D6862240C26E001AC1D3 /* IJSPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6012240C26E001AC1D3 /* IJSPhotoPreviewController.m */; };
+		1890D6872240C26E001AC1D3 /* IJSImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6022240C26E001AC1D3 /* IJSImagePickerController.m */; };
+		1890D6882240C26E001AC1D3 /* IJSAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6052240C26E001AC1D3 /* IJSAlbumPickerController.m */; };
+		1890D6892240C26E001AC1D3 /* IJSDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D60C2240C26E001AC1D3 /* IJSDrawingView.m */; };
+		1890D68A2240C26E001AC1D3 /* IJSDColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6112240C26E001AC1D3 /* IJSDColorView.m */; };
+		1890D68B2240C26E001AC1D3 /* IJSDExportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6122240C26E001AC1D3 /* IJSDExportView.m */; };
+		1890D68C2240C26E001AC1D3 /* IJSDrawingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6132240C26E001AC1D3 /* IJSDrawingModel.m */; };
+		1890D68D2240C26E001AC1D3 /* IJSDToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6152240C26E001AC1D3 /* IJSDToolBarView.m */; };
+		1890D68E2240C26E001AC1D3 /* IJSVideoDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6162240C26E001AC1D3 /* IJSVideoDrawingView.m */; };
+		1890D68F2240C26E001AC1D3 /* IJSDrawingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6172240C26E001AC1D3 /* IJSDrawingController.m */; };
+		1890D6902240C26E001AC1D3 /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6192240C26E001AC1D3 /* TOActivityCroppedImageProvider.m */; };
+		1890D6912240C26E001AC1D3 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D61B2240C26E001AC1D3 /* UIImage+CropRotate.m */; };
+		1890D6922240C26E001AC1D3 /* TOCropViewControllerTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D61C2240C26E001AC1D3 /* TOCropViewControllerTransitioning.m */; };
+		1890D6932240C26E001AC1D3 /* TOCroppedImageAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D61E2240C26E001AC1D3 /* TOCroppedImageAttributes.m */; };
+		1890D6942240C26E001AC1D3 /* TOCropScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6202240C26E001AC1D3 /* TOCropScrollView.m */; };
+		1890D6952240C26E001AC1D3 /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6212240C26E001AC1D3 /* TOCropViewController.m */; };
+		1890D6962240C26E001AC1D3 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6222240C26E001AC1D3 /* TOCropView.m */; };
+		1890D6972240C26E001AC1D3 /* TOCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6242240C26E001AC1D3 /* TOCropOverlayView.m */; };
+		1890D6982240C26E001AC1D3 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6282240C26E001AC1D3 /* TOCropToolbar.m */; };
+		1890D6992240C26E001AC1D3 /* IJSMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D62D2240C26E001AC1D3 /* IJSMapView.m */; };
+		1890D69A2240C26E001AC1D3 /* IJSMapViewMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D62E2240C26E001AC1D3 /* IJSMapViewMapCell.m */; };
+		1890D69B2240C26E001AC1D3 /* IJSMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6302240C26E001AC1D3 /* IJSMapViewModel.m */; };
+		1890D69C2240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6322240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.m */; };
+		1890D69D2240C26E001AC1D3 /* IJSMapViewThumbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6352240C26E001AC1D3 /* IJSMapViewThumbCell.m */; };
+		1890D69E2240C26E001AC1D3 /* IJSCNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6392240C26E001AC1D3 /* IJSCNavigationView.m */; };
+		1890D69F2240C26E001AC1D3 /* IJSQRCodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D63E2240C26E001AC1D3 /* IJSQRCodeManager.m */; };
+		1890D6A02240C26E001AC1D3 /* IJSQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6412240C26E001AC1D3 /* IJSQRCodeController.m */; };
+		1890D6A12240C26E001AC1D3 /* JSPhotoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1890D6432240C26E001AC1D3 /* JSPhotoSDK.bundle */; };
+		1890D6A22240C26E001AC1D3 /* NSBundle+IJSUBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6462240C26E001AC1D3 /* NSBundle+IJSUBundle.m */; };
+		1890D6A32240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6472240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.m */; };
+		1890D6A42240C26E001AC1D3 /* UIImage+IJSUImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6482240C26E001AC1D3 /* UIImage+IJSUImage.m */; };
+		1890D6A52240C26E001AC1D3 /* CALayer+IJSULayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6492240C26E001AC1D3 /* CALayer+IJSULayer.m */; };
+		1890D6A62240C26E001AC1D3 /* IJSAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D64A2240C26E001AC1D3 /* IJSAlertViewController.m */; };
+		1890D6A72240C26E001AC1D3 /* IJSNotificationCenterString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D64D2240C26E001AC1D3 /* IJSNotificationCenterString.m */; };
+		1890D6A82240C26E001AC1D3 /* IJSLodingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D64E2240C26E001AC1D3 /* IJSLodingView.m */; };
+		1890D6A92240C26E001AC1D3 /* UIButton+IJSUButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D64F2240C26E001AC1D3 /* UIButton+IJSUButton.m */; };
+		1890D6AA2240C26E001AC1D3 /* UIView+IJSUUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6542240C26E001AC1D3 /* UIView+IJSUUIView.m */; };
+		1890D6AB2240C26E001AC1D3 /* NSError+IJSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6582240C26E001AC1D3 /* NSError+IJSError.m */; };
+		1890D6AC2240C26E001AC1D3 /* UITextField+IJSUTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6592240C26E001AC1D3 /* UITextField+IJSUTextField.m */; };
+		1890D6AD2240C26E001AC1D3 /* NSObject+IJSUKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D65C2240C26E001AC1D3 /* NSObject+IJSUKeyValue.m */; };
+		1890D6AE2240C26E001AC1D3 /* UINavigationController+IJSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1890D65D2240C26E001AC1D3 /* UINavigationController+IJSNavigationController.m */; };
+		1890D6AF2240C26E001AC1D3 /* IJSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890D6622240C26E001AC1D3 /* IJSFoundation.framework */; };
+		1890D6B12240FF6D001AC1D3 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */; };
 		18A351622222A88000C62779 /* UIImage+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */; };
 		18A351632222A88000C62779 /* UIAlertController+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */; };
 		18A351642222A88000C62779 /* JYBDScanCardBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351332222A87F00C62779 /* JYBDScanCardBaseVC.m */; };
@@ -247,6 +325,166 @@
 		18437EF722395CF300E29DA1 /* XMShareWeiboUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMShareWeiboUtil.m; sourceTree = "<group>"; };
 		18437EF822395CF300E29DA1 /* XMShareWechatUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMShareWechatUtil.m; sourceTree = "<group>"; };
 		18437EF922395CF300E29DA1 /* XMShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMShareView.m; sourceTree = "<group>"; };
+		1890D5B12240C26E001AC1D3 /* IJSVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoManager.m; sourceTree = "<group>"; };
+		1890D5B22240C26E001AC1D3 /* IJSImageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageConst.h; sourceTree = "<group>"; };
+		1890D5B32240C26E001AC1D3 /* IJSVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoManager.h; sourceTree = "<group>"; };
+		1890D5B52240C26E001AC1D3 /* IJSImageEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageEditController.h; sourceTree = "<group>"; };
+		1890D5B62240C26E001AC1D3 /* IJSVideoManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoManagerController.m; sourceTree = "<group>"; };
+		1890D5B72240C26E001AC1D3 /* IJSVideoCutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoCutController.m; sourceTree = "<group>"; };
+		1890D5B82240C26E001AC1D3 /* IJSImageManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageManagerController.m; sourceTree = "<group>"; };
+		1890D5B92240C26E001AC1D3 /* IJSVideoEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoEditController.m; sourceTree = "<group>"; };
+		1890D5BA2240C26E001AC1D3 /* IJSEditSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSEditSDK.h; sourceTree = "<group>"; };
+		1890D5BB2240C26E001AC1D3 /* IJSImageEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageEditController.m; sourceTree = "<group>"; };
+		1890D5BC2240C26E001AC1D3 /* IJSVideoEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoEditController.h; sourceTree = "<group>"; };
+		1890D5BD2240C26E001AC1D3 /* IJSImageManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageManagerController.h; sourceTree = "<group>"; };
+		1890D5BE2240C26E001AC1D3 /* IJSVideoManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoManagerController.h; sourceTree = "<group>"; };
+		1890D5BF2240C26E001AC1D3 /* IJSVideoCutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoCutController.h; sourceTree = "<group>"; };
+		1890D5C12240C26E001AC1D3 /* IJSImageToolBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageToolBase.h; sourceTree = "<group>"; };
+		1890D5C22240C26E001AC1D3 /* IJSIPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSIPath.h; sourceTree = "<group>"; };
+		1890D5C32240C26E001AC1D3 /* IJSImageMosaicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageMosaicTool.h; sourceTree = "<group>"; };
+		1890D5C42240C26E001AC1D3 /* IJSImageDrawTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageDrawTool.m; sourceTree = "<group>"; };
+		1890D5C52240C26E001AC1D3 /* IJSImageToolBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageToolBase.m; sourceTree = "<group>"; };
+		1890D5C62240C26E001AC1D3 /* IJSImageDrawTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageDrawTool.h; sourceTree = "<group>"; };
+		1890D5C72240C26E001AC1D3 /* IJSImageMosaicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageMosaicTool.m; sourceTree = "<group>"; };
+		1890D5C82240C26E001AC1D3 /* IJSIPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSIPath.m; sourceTree = "<group>"; };
+		1890D5CA2240C26E001AC1D3 /* IJSIPanDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSIPanDrawingView.h; sourceTree = "<group>"; };
+		1890D5CB2240C26E001AC1D3 /* IJSVideoRulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoRulerView.h; sourceTree = "<group>"; };
+		1890D5CC2240C26E001AC1D3 /* IJSIImputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSIImputTextView.h; sourceTree = "<group>"; };
+		1890D5CD2240C26E001AC1D3 /* IJSVideoSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoSlideView.m; sourceTree = "<group>"; };
+		1890D5CE2240C26E001AC1D3 /* IJSImageMosaicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageMosaicView.m; sourceTree = "<group>"; };
+		1890D5CF2240C26E001AC1D3 /* IJSIColorButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSIColorButtonView.m; sourceTree = "<group>"; };
+		1890D5D02240C26E001AC1D3 /* IJSVideoTrimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoTrimView.h; sourceTree = "<group>"; };
+		1890D5D12240C26E001AC1D3 /* IJSIMapViewExportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSIMapViewExportView.h; sourceTree = "<group>"; };
+		1890D5D22240C26E001AC1D3 /* IJSImageGaussanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageGaussanView.h; sourceTree = "<group>"; };
+		1890D5D32240C26E001AC1D3 /* IJSImageNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageNavigationView.h; sourceTree = "<group>"; };
+		1890D5D42240C26E001AC1D3 /* IJSImageToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageToolView.m; sourceTree = "<group>"; };
+		1890D5D52240C26E001AC1D3 /* IJSIImputTextExportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSIImputTextExportView.m; sourceTree = "<group>"; };
+		1890D5D62240C26E001AC1D3 /* IJSImageMosaicToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageMosaicToolView.m; sourceTree = "<group>"; };
+		1890D5D72240C26E001AC1D3 /* IJSIImputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSIImputTextView.m; sourceTree = "<group>"; };
+		1890D5D82240C26E001AC1D3 /* IJSVideoSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoSlideView.h; sourceTree = "<group>"; };
+		1890D5D92240C26E001AC1D3 /* IJSVideoRulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoRulerView.m; sourceTree = "<group>"; };
+		1890D5DA2240C26E001AC1D3 /* IJSIPanDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSIPanDrawingView.m; sourceTree = "<group>"; };
+		1890D5DB2240C26E001AC1D3 /* IJSIColorButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSIColorButtonView.h; sourceTree = "<group>"; };
+		1890D5DC2240C26E001AC1D3 /* IJSImageMosaicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageMosaicView.h; sourceTree = "<group>"; };
+		1890D5DD2240C26E001AC1D3 /* IJSImageToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageToolView.h; sourceTree = "<group>"; };
+		1890D5DE2240C26E001AC1D3 /* IJSImageGaussanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageGaussanView.m; sourceTree = "<group>"; };
+		1890D5DF2240C26E001AC1D3 /* IJSImageNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageNavigationView.m; sourceTree = "<group>"; };
+		1890D5E02240C26E001AC1D3 /* IJSIMapViewExportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSIMapViewExportView.m; sourceTree = "<group>"; };
+		1890D5E12240C26E001AC1D3 /* IJSVideoTrimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoTrimView.m; sourceTree = "<group>"; };
+		1890D5E22240C26E001AC1D3 /* IJSImageMosaicToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageMosaicToolView.h; sourceTree = "<group>"; };
+		1890D5E32240C26E001AC1D3 /* IJSIImputTextExportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSIImputTextExportView.h; sourceTree = "<group>"; };
+		1890D5E62240C26E001AC1D3 /* IJSImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImageManager.m; sourceTree = "<group>"; };
+		1890D5E72240C26E001AC1D3 /* IJSConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSConst.h; sourceTree = "<group>"; };
+		1890D5E82240C26E001AC1D3 /* IJSImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImageManager.h; sourceTree = "<group>"; };
+		1890D5EA2240C26E001AC1D3 /* IJSAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSAlbumModel.m; sourceTree = "<group>"; };
+		1890D5EB2240C26E001AC1D3 /* IJSAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSAssetModel.h; sourceTree = "<group>"; };
+		1890D5EC2240C26E001AC1D3 /* IJSAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSAlbumModel.h; sourceTree = "<group>"; };
+		1890D5ED2240C26E001AC1D3 /* IJSAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSAssetModel.m; sourceTree = "<group>"; };
+		1890D5EF2240C26E001AC1D3 /* IJSPreviewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPreviewImageCell.h; sourceTree = "<group>"; };
+		1890D5F02240C26E001AC1D3 /* IJSPreviewVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPreviewVideoView.m; sourceTree = "<group>"; };
+		1890D5F12240C26E001AC1D3 /* IJSPhotoPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPhotoPickerCell.m; sourceTree = "<group>"; };
+		1890D5F22240C26E001AC1D3 /* IJSSelectedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSSelectedCell.m; sourceTree = "<group>"; };
+		1890D5F32240C26E001AC1D3 /* IJSPreviewLivePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPreviewLivePhotoView.m; sourceTree = "<group>"; };
+		1890D5F42240C26E001AC1D3 /* IJSAlbumPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSAlbumPickerCell.m; sourceTree = "<group>"; };
+		1890D5F52240C26E001AC1D3 /* IJSPreviewGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPreviewGifView.h; sourceTree = "<group>"; };
+		1890D5F62240C26E001AC1D3 /* IJSPreviewVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPreviewVideoView.h; sourceTree = "<group>"; };
+		1890D5F72240C26E001AC1D3 /* IJSPreviewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPreviewImageCell.m; sourceTree = "<group>"; };
+		1890D5F82240C26E001AC1D3 /* IJSPhotoPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPhotoPickerCell.h; sourceTree = "<group>"; };
+		1890D5F92240C26E001AC1D3 /* IJSAlbumPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSAlbumPickerCell.h; sourceTree = "<group>"; };
+		1890D5FA2240C26E001AC1D3 /* IJSPreviewLivePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPreviewLivePhotoView.h; sourceTree = "<group>"; };
+		1890D5FB2240C26E001AC1D3 /* IJSSelectedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSSelectedCell.h; sourceTree = "<group>"; };
+		1890D5FC2240C26E001AC1D3 /* IJSPreviewGifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPreviewGifView.m; sourceTree = "<group>"; };
+		1890D5FE2240C26E001AC1D3 /* IJSAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSAlbumPickerController.h; sourceTree = "<group>"; };
+		1890D5FF2240C26E001AC1D3 /* IJSPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPhotoPickerController.m; sourceTree = "<group>"; };
+		1890D6002240C26E001AC1D3 /* IJS3DTouchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJS3DTouchController.m; sourceTree = "<group>"; };
+		1890D6012240C26E001AC1D3 /* IJSPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSPhotoPreviewController.m; sourceTree = "<group>"; };
+		1890D6022240C26E001AC1D3 /* IJSImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSImagePickerController.m; sourceTree = "<group>"; };
+		1890D6032240C26E001AC1D3 /* IJS3DTouchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJS3DTouchController.h; sourceTree = "<group>"; };
+		1890D6042240C26E001AC1D3 /* IJSPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPhotoPickerController.h; sourceTree = "<group>"; };
+		1890D6052240C26E001AC1D3 /* IJSAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSAlbumPickerController.m; sourceTree = "<group>"; };
+		1890D6062240C26E001AC1D3 /* IJSImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSImagePickerController.h; sourceTree = "<group>"; };
+		1890D6072240C26E001AC1D3 /* IJSPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSPhotoPreviewController.h; sourceTree = "<group>"; };
+		1890D60A2240C26E001AC1D3 /* IJSDExportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSDExportView.h; sourceTree = "<group>"; };
+		1890D60B2240C26E001AC1D3 /* IJSDColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSDColorView.h; sourceTree = "<group>"; };
+		1890D60C2240C26E001AC1D3 /* IJSDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSDrawingView.m; sourceTree = "<group>"; };
+		1890D60D2240C26E001AC1D3 /* IJSDrawingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSDrawingModel.h; sourceTree = "<group>"; };
+		1890D60E2240C26E001AC1D3 /* IJSDToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSDToolBarView.h; sourceTree = "<group>"; };
+		1890D60F2240C26E001AC1D3 /* IJSDrawingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSDrawingController.h; sourceTree = "<group>"; };
+		1890D6102240C26E001AC1D3 /* IJSVideoDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSVideoDrawingView.h; sourceTree = "<group>"; };
+		1890D6112240C26E001AC1D3 /* IJSDColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSDColorView.m; sourceTree = "<group>"; };
+		1890D6122240C26E001AC1D3 /* IJSDExportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSDExportView.m; sourceTree = "<group>"; };
+		1890D6132240C26E001AC1D3 /* IJSDrawingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSDrawingModel.m; sourceTree = "<group>"; };
+		1890D6142240C26E001AC1D3 /* IJSDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSDrawingView.h; sourceTree = "<group>"; };
+		1890D6152240C26E001AC1D3 /* IJSDToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSDToolBarView.m; sourceTree = "<group>"; };
+		1890D6162240C26E001AC1D3 /* IJSVideoDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSVideoDrawingView.m; sourceTree = "<group>"; };
+		1890D6172240C26E001AC1D3 /* IJSDrawingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSDrawingController.m; sourceTree = "<group>"; };
+		1890D6192240C26E001AC1D3 /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActivityCroppedImageProvider.m; sourceTree = "<group>"; };
+		1890D61A2240C26E001AC1D3 /* TOCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropView.h; sourceTree = "<group>"; };
+		1890D61B2240C26E001AC1D3 /* UIImage+CropRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CropRotate.m"; sourceTree = "<group>"; };
+		1890D61C2240C26E001AC1D3 /* TOCropViewControllerTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropViewControllerTransitioning.m; sourceTree = "<group>"; };
+		1890D61D2240C26E001AC1D3 /* TOCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropOverlayView.h; sourceTree = "<group>"; };
+		1890D61E2240C26E001AC1D3 /* TOCroppedImageAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCroppedImageAttributes.m; sourceTree = "<group>"; };
+		1890D61F2240C26E001AC1D3 /* TOCropToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropToolbar.h; sourceTree = "<group>"; };
+		1890D6202240C26E001AC1D3 /* TOCropScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropScrollView.m; sourceTree = "<group>"; };
+		1890D6212240C26E001AC1D3 /* TOCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropViewController.m; sourceTree = "<group>"; };
+		1890D6222240C26E001AC1D3 /* TOCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropView.m; sourceTree = "<group>"; };
+		1890D6232240C26E001AC1D3 /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActivityCroppedImageProvider.h; sourceTree = "<group>"; };
+		1890D6242240C26E001AC1D3 /* TOCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropOverlayView.m; sourceTree = "<group>"; };
+		1890D6252240C26E001AC1D3 /* TOCropViewController-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TOCropViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		1890D6262240C26E001AC1D3 /* TOCropViewControllerTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropViewControllerTransitioning.h; sourceTree = "<group>"; };
+		1890D6272240C26E001AC1D3 /* UIImage+CropRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CropRotate.h"; sourceTree = "<group>"; };
+		1890D6282240C26E001AC1D3 /* TOCropToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropToolbar.m; sourceTree = "<group>"; };
+		1890D6292240C26E001AC1D3 /* TOCroppedImageAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCroppedImageAttributes.h; sourceTree = "<group>"; };
+		1890D62A2240C26E001AC1D3 /* TOCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropViewController.h; sourceTree = "<group>"; };
+		1890D62B2240C26E001AC1D3 /* TOCropScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropScrollView.h; sourceTree = "<group>"; };
+		1890D62D2240C26E001AC1D3 /* IJSMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSMapView.m; sourceTree = "<group>"; };
+		1890D62E2240C26E001AC1D3 /* IJSMapViewMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSMapViewMapCell.m; sourceTree = "<group>"; };
+		1890D62F2240C26E001AC1D3 /* IJSMapViewThumbCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSMapViewThumbCell.h; sourceTree = "<group>"; };
+		1890D6302240C26E001AC1D3 /* IJSMapViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSMapViewModel.m; sourceTree = "<group>"; };
+		1890D6312240C26E001AC1D3 /* IJSMapViewUIMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSMapViewUIMacro.h; sourceTree = "<group>"; };
+		1890D6322240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSMapViewCollectionViewLayout.m; sourceTree = "<group>"; };
+		1890D6332240C26E001AC1D3 /* IJSMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSMapView.h; sourceTree = "<group>"; };
+		1890D6342240C26E001AC1D3 /* IJSMapViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSMapViewModel.h; sourceTree = "<group>"; };
+		1890D6352240C26E001AC1D3 /* IJSMapViewThumbCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSMapViewThumbCell.m; sourceTree = "<group>"; };
+		1890D6362240C26E001AC1D3 /* IJSMapViewMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSMapViewMapCell.h; sourceTree = "<group>"; };
+		1890D6372240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSMapViewCollectionViewLayout.h; sourceTree = "<group>"; };
+		1890D6392240C26E001AC1D3 /* IJSCNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSCNavigationView.m; sourceTree = "<group>"; };
+		1890D63A2240C26E001AC1D3 /* IJSCNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSCNavigationView.h; sourceTree = "<group>"; };
+		1890D63D2240C26E001AC1D3 /* IJSQRCodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSQRCodeManager.h; sourceTree = "<group>"; };
+		1890D63E2240C26E001AC1D3 /* IJSQRCodeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSQRCodeManager.m; sourceTree = "<group>"; };
+		1890D6402240C26E001AC1D3 /* IJSQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSQRCodeController.h; sourceTree = "<group>"; };
+		1890D6412240C26E001AC1D3 /* IJSQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSQRCodeController.m; sourceTree = "<group>"; };
+		1890D6432240C26E001AC1D3 /* JSPhotoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JSPhotoSDK.bundle; sourceTree = "<group>"; };
+		1890D6452240C26E001AC1D3 /* UIView+IJSUUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IJSUUIView.h"; sourceTree = "<group>"; };
+		1890D6462240C26E001AC1D3 /* NSBundle+IJSUBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+IJSUBundle.m"; sourceTree = "<group>"; };
+		1890D6472240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+IJSUUIBarBtItem.m"; sourceTree = "<group>"; };
+		1890D6482240C26E001AC1D3 /* UIImage+IJSUImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IJSUImage.m"; sourceTree = "<group>"; };
+		1890D6492240C26E001AC1D3 /* CALayer+IJSULayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+IJSULayer.m"; sourceTree = "<group>"; };
+		1890D64A2240C26E001AC1D3 /* IJSAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSAlertViewController.m; sourceTree = "<group>"; };
+		1890D64B2240C26E001AC1D3 /* UITextField+IJSUTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+IJSUTextField.h"; sourceTree = "<group>"; };
+		1890D64C2240C26E001AC1D3 /* NSError+IJSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+IJSError.h"; sourceTree = "<group>"; };
+		1890D64D2240C26E001AC1D3 /* IJSNotificationCenterString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSNotificationCenterString.m; sourceTree = "<group>"; };
+		1890D64E2240C26E001AC1D3 /* IJSLodingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJSLodingView.m; sourceTree = "<group>"; };
+		1890D64F2240C26E001AC1D3 /* UIButton+IJSUButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IJSUButton.m"; sourceTree = "<group>"; };
+		1890D6502240C26E001AC1D3 /* UINavigationController+IJSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+IJSNavigationController.h"; sourceTree = "<group>"; };
+		1890D6512240C26E001AC1D3 /* NSObject+IJSUKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IJSUKeyValue.h"; sourceTree = "<group>"; };
+		1890D6522240C26E001AC1D3 /* NSBundle+IJSUBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+IJSUBundle.h"; sourceTree = "<group>"; };
+		1890D6532240C26E001AC1D3 /* IJSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSExtension.h; sourceTree = "<group>"; };
+		1890D6542240C26E001AC1D3 /* UIView+IJSUUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IJSUUIView.m"; sourceTree = "<group>"; };
+		1890D6552240C26E001AC1D3 /* CALayer+IJSULayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+IJSULayer.h"; sourceTree = "<group>"; };
+		1890D6562240C26E001AC1D3 /* UIImage+IJSUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IJSUImage.h"; sourceTree = "<group>"; };
+		1890D6572240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+IJSUUIBarBtItem.h"; sourceTree = "<group>"; };
+		1890D6582240C26E001AC1D3 /* NSError+IJSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+IJSError.m"; sourceTree = "<group>"; };
+		1890D6592240C26E001AC1D3 /* UITextField+IJSUTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+IJSUTextField.m"; sourceTree = "<group>"; };
+		1890D65A2240C26E001AC1D3 /* IJSAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSAlertViewController.h; sourceTree = "<group>"; };
+		1890D65B2240C26E001AC1D3 /* IJSUConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSUConst.h; sourceTree = "<group>"; };
+		1890D65C2240C26E001AC1D3 /* NSObject+IJSUKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IJSUKeyValue.m"; sourceTree = "<group>"; };
+		1890D65D2240C26E001AC1D3 /* UINavigationController+IJSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+IJSNavigationController.m"; sourceTree = "<group>"; };
+		1890D65E2240C26E001AC1D3 /* UIButton+IJSUButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+IJSUButton.h"; sourceTree = "<group>"; };
+		1890D65F2240C26E001AC1D3 /* IJSLodingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSLodingView.h; sourceTree = "<group>"; };
+		1890D6602240C26E001AC1D3 /* IJSNotificationCenterString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSNotificationCenterString.h; sourceTree = "<group>"; };
+		1890D6622240C26E001AC1D3 /* IJSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJSFoundation.framework; sourceTree = "<group>"; };
+		1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		18A3512D2222A87F00C62779 /* UIAlertController+IDCardExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IDCardExtend.h"; sourceTree = "<group>"; };
 		18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IDCardExtend.m"; sourceTree = "<group>"; };
 		18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IDCardExtend.m"; sourceTree = "<group>"; };
@@ -336,6 +574,7 @@
 			files = (
 				18437EE22239566400E29DA1 /* libiconv.tbd in Frameworks */,
 				18437EE02239564900E29DA1 /* libz.tbd in Frameworks */,
+				1890D6AF2240C26E001AC1D3 /* IJSFoundation.framework in Frameworks */,
 				18437EDE2239563D00E29DA1 /* libc++.tbd in Frameworks */,
 				18437EDC2239562600E29DA1 /* libsqlite3.tbd in Frameworks */,
 				18437EDA2239560F00E29DA1 /* Foundation.framework in Frameworks */,
@@ -400,6 +639,7 @@
 				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
 				5645E03822213794002C8A44 /* NIMKitResource.bundle */,
 				5645E03622213786002C8A44 /* NIMKitEmoticon.bundle */,
+				1890D5AD2240C26E001AC1D3 /* SDK */,
 				18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */,
 				18437EE322395CF300E29DA1 /* XMShareView */,
 				0AEDCAB921F166A8005887A3 /* NetWorking */,
@@ -470,6 +710,7 @@
 				0AEE664321E0ED0800636D06 /* ContactPickerController.swift */,
 				0A7F576621E2F0B500F03870 /* CameraViewController.swift */,
 				0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */,
+				1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -590,6 +831,349 @@
 				18437EF822395CF300E29DA1 /* XMShareWechatUtil.m */,
 			);
 			path = ShareUtil;
+			sourceTree = "<group>";
+		};
+		1890D5AD2240C26E001AC1D3 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5AE2240C26E001AC1D3 /* Core */,
+				1890D6422240C26E001AC1D3 /* Resources */,
+				1890D6442240C26E001AC1D3 /* IJSUExtension */,
+				1890D6612240C26E001AC1D3 /* Required */,
+			);
+			name = SDK;
+			path = "../../../../../../Downloads/IJSPhotoSDK-master/IJSPhotoSDKProject/SDK";
+			sourceTree = "<group>";
+		};
+		1890D5AE2240C26E001AC1D3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5AF2240C26E001AC1D3 /* IJSEditSDK */,
+				1890D5E42240C26E001AC1D3 /* IJSPhotoSDK */,
+				1890D6082240C26E001AC1D3 /* IJSUIBase */,
+				1890D63B2240C26E001AC1D3 /* IJSQRCodeSDK */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1890D5AF2240C26E001AC1D3 /* IJSEditSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5B02240C26E001AC1D3 /* ConstantFile */,
+				1890D5B42240C26E001AC1D3 /* Controller */,
+				1890D5C02240C26E001AC1D3 /* Model */,
+				1890D5C92240C26E001AC1D3 /* View */,
+			);
+			path = IJSEditSDK;
+			sourceTree = "<group>";
+		};
+		1890D5B02240C26E001AC1D3 /* ConstantFile */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5B12240C26E001AC1D3 /* IJSVideoManager.m */,
+				1890D5B22240C26E001AC1D3 /* IJSImageConst.h */,
+				1890D5B32240C26E001AC1D3 /* IJSVideoManager.h */,
+			);
+			path = ConstantFile;
+			sourceTree = "<group>";
+		};
+		1890D5B42240C26E001AC1D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5B52240C26E001AC1D3 /* IJSImageEditController.h */,
+				1890D5B62240C26E001AC1D3 /* IJSVideoManagerController.m */,
+				1890D5B72240C26E001AC1D3 /* IJSVideoCutController.m */,
+				1890D5B82240C26E001AC1D3 /* IJSImageManagerController.m */,
+				1890D5B92240C26E001AC1D3 /* IJSVideoEditController.m */,
+				1890D5BA2240C26E001AC1D3 /* IJSEditSDK.h */,
+				1890D5BB2240C26E001AC1D3 /* IJSImageEditController.m */,
+				1890D5BC2240C26E001AC1D3 /* IJSVideoEditController.h */,
+				1890D5BD2240C26E001AC1D3 /* IJSImageManagerController.h */,
+				1890D5BE2240C26E001AC1D3 /* IJSVideoManagerController.h */,
+				1890D5BF2240C26E001AC1D3 /* IJSVideoCutController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1890D5C02240C26E001AC1D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5C12240C26E001AC1D3 /* IJSImageToolBase.h */,
+				1890D5C22240C26E001AC1D3 /* IJSIPath.h */,
+				1890D5C32240C26E001AC1D3 /* IJSImageMosaicTool.h */,
+				1890D5C42240C26E001AC1D3 /* IJSImageDrawTool.m */,
+				1890D5C52240C26E001AC1D3 /* IJSImageToolBase.m */,
+				1890D5C62240C26E001AC1D3 /* IJSImageDrawTool.h */,
+				1890D5C72240C26E001AC1D3 /* IJSImageMosaicTool.m */,
+				1890D5C82240C26E001AC1D3 /* IJSIPath.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1890D5C92240C26E001AC1D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5CA2240C26E001AC1D3 /* IJSIPanDrawingView.h */,
+				1890D5CB2240C26E001AC1D3 /* IJSVideoRulerView.h */,
+				1890D5CC2240C26E001AC1D3 /* IJSIImputTextView.h */,
+				1890D5CD2240C26E001AC1D3 /* IJSVideoSlideView.m */,
+				1890D5CE2240C26E001AC1D3 /* IJSImageMosaicView.m */,
+				1890D5CF2240C26E001AC1D3 /* IJSIColorButtonView.m */,
+				1890D5D02240C26E001AC1D3 /* IJSVideoTrimView.h */,
+				1890D5D12240C26E001AC1D3 /* IJSIMapViewExportView.h */,
+				1890D5D22240C26E001AC1D3 /* IJSImageGaussanView.h */,
+				1890D5D32240C26E001AC1D3 /* IJSImageNavigationView.h */,
+				1890D5D42240C26E001AC1D3 /* IJSImageToolView.m */,
+				1890D5D52240C26E001AC1D3 /* IJSIImputTextExportView.m */,
+				1890D5D62240C26E001AC1D3 /* IJSImageMosaicToolView.m */,
+				1890D5D72240C26E001AC1D3 /* IJSIImputTextView.m */,
+				1890D5D82240C26E001AC1D3 /* IJSVideoSlideView.h */,
+				1890D5D92240C26E001AC1D3 /* IJSVideoRulerView.m */,
+				1890D5DA2240C26E001AC1D3 /* IJSIPanDrawingView.m */,
+				1890D5DB2240C26E001AC1D3 /* IJSIColorButtonView.h */,
+				1890D5DC2240C26E001AC1D3 /* IJSImageMosaicView.h */,
+				1890D5DD2240C26E001AC1D3 /* IJSImageToolView.h */,
+				1890D5DE2240C26E001AC1D3 /* IJSImageGaussanView.m */,
+				1890D5DF2240C26E001AC1D3 /* IJSImageNavigationView.m */,
+				1890D5E02240C26E001AC1D3 /* IJSIMapViewExportView.m */,
+				1890D5E12240C26E001AC1D3 /* IJSVideoTrimView.m */,
+				1890D5E22240C26E001AC1D3 /* IJSImageMosaicToolView.h */,
+				1890D5E32240C26E001AC1D3 /* IJSIImputTextExportView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1890D5E42240C26E001AC1D3 /* IJSPhotoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5E52240C26E001AC1D3 /* ConstantFile */,
+				1890D5E92240C26E001AC1D3 /* Model */,
+				1890D5EE2240C26E001AC1D3 /* View */,
+				1890D5FD2240C26E001AC1D3 /* Controllers */,
+			);
+			path = IJSPhotoSDK;
+			sourceTree = "<group>";
+		};
+		1890D5E52240C26E001AC1D3 /* ConstantFile */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5E62240C26E001AC1D3 /* IJSImageManager.m */,
+				1890D5E72240C26E001AC1D3 /* IJSConst.h */,
+				1890D5E82240C26E001AC1D3 /* IJSImageManager.h */,
+			);
+			path = ConstantFile;
+			sourceTree = "<group>";
+		};
+		1890D5E92240C26E001AC1D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5EA2240C26E001AC1D3 /* IJSAlbumModel.m */,
+				1890D5EB2240C26E001AC1D3 /* IJSAssetModel.h */,
+				1890D5EC2240C26E001AC1D3 /* IJSAlbumModel.h */,
+				1890D5ED2240C26E001AC1D3 /* IJSAssetModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1890D5EE2240C26E001AC1D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5EF2240C26E001AC1D3 /* IJSPreviewImageCell.h */,
+				1890D5F02240C26E001AC1D3 /* IJSPreviewVideoView.m */,
+				1890D5F12240C26E001AC1D3 /* IJSPhotoPickerCell.m */,
+				1890D5F22240C26E001AC1D3 /* IJSSelectedCell.m */,
+				1890D5F32240C26E001AC1D3 /* IJSPreviewLivePhotoView.m */,
+				1890D5F42240C26E001AC1D3 /* IJSAlbumPickerCell.m */,
+				1890D5F52240C26E001AC1D3 /* IJSPreviewGifView.h */,
+				1890D5F62240C26E001AC1D3 /* IJSPreviewVideoView.h */,
+				1890D5F72240C26E001AC1D3 /* IJSPreviewImageCell.m */,
+				1890D5F82240C26E001AC1D3 /* IJSPhotoPickerCell.h */,
+				1890D5F92240C26E001AC1D3 /* IJSAlbumPickerCell.h */,
+				1890D5FA2240C26E001AC1D3 /* IJSPreviewLivePhotoView.h */,
+				1890D5FB2240C26E001AC1D3 /* IJSSelectedCell.h */,
+				1890D5FC2240C26E001AC1D3 /* IJSPreviewGifView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1890D5FD2240C26E001AC1D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1890D5FE2240C26E001AC1D3 /* IJSAlbumPickerController.h */,
+				1890D5FF2240C26E001AC1D3 /* IJSPhotoPickerController.m */,
+				1890D6002240C26E001AC1D3 /* IJS3DTouchController.m */,
+				1890D6012240C26E001AC1D3 /* IJSPhotoPreviewController.m */,
+				1890D6022240C26E001AC1D3 /* IJSImagePickerController.m */,
+				1890D6032240C26E001AC1D3 /* IJS3DTouchController.h */,
+				1890D6042240C26E001AC1D3 /* IJSPhotoPickerController.h */,
+				1890D6052240C26E001AC1D3 /* IJSAlbumPickerController.m */,
+				1890D6062240C26E001AC1D3 /* IJSImagePickerController.h */,
+				1890D6072240C26E001AC1D3 /* IJSPhotoPreviewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1890D6082240C26E001AC1D3 /* IJSUIBase */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6092240C26E001AC1D3 /* IJSVideoDrawTool */,
+				1890D6182240C26E001AC1D3 /* TOCropViewController */,
+				1890D62C2240C26E001AC1D3 /* IJSMapView */,
+				1890D6382240C26E001AC1D3 /* IJSCustomUI */,
+			);
+			path = IJSUIBase;
+			sourceTree = "<group>";
+		};
+		1890D6092240C26E001AC1D3 /* IJSVideoDrawTool */ = {
+			isa = PBXGroup;
+			children = (
+				1890D60A2240C26E001AC1D3 /* IJSDExportView.h */,
+				1890D60B2240C26E001AC1D3 /* IJSDColorView.h */,
+				1890D60C2240C26E001AC1D3 /* IJSDrawingView.m */,
+				1890D60D2240C26E001AC1D3 /* IJSDrawingModel.h */,
+				1890D60E2240C26E001AC1D3 /* IJSDToolBarView.h */,
+				1890D60F2240C26E001AC1D3 /* IJSDrawingController.h */,
+				1890D6102240C26E001AC1D3 /* IJSVideoDrawingView.h */,
+				1890D6112240C26E001AC1D3 /* IJSDColorView.m */,
+				1890D6122240C26E001AC1D3 /* IJSDExportView.m */,
+				1890D6132240C26E001AC1D3 /* IJSDrawingModel.m */,
+				1890D6142240C26E001AC1D3 /* IJSDrawingView.h */,
+				1890D6152240C26E001AC1D3 /* IJSDToolBarView.m */,
+				1890D6162240C26E001AC1D3 /* IJSVideoDrawingView.m */,
+				1890D6172240C26E001AC1D3 /* IJSDrawingController.m */,
+			);
+			path = IJSVideoDrawTool;
+			sourceTree = "<group>";
+		};
+		1890D6182240C26E001AC1D3 /* TOCropViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6192240C26E001AC1D3 /* TOActivityCroppedImageProvider.m */,
+				1890D61A2240C26E001AC1D3 /* TOCropView.h */,
+				1890D61B2240C26E001AC1D3 /* UIImage+CropRotate.m */,
+				1890D61C2240C26E001AC1D3 /* TOCropViewControllerTransitioning.m */,
+				1890D61D2240C26E001AC1D3 /* TOCropOverlayView.h */,
+				1890D61E2240C26E001AC1D3 /* TOCroppedImageAttributes.m */,
+				1890D61F2240C26E001AC1D3 /* TOCropToolbar.h */,
+				1890D6202240C26E001AC1D3 /* TOCropScrollView.m */,
+				1890D6212240C26E001AC1D3 /* TOCropViewController.m */,
+				1890D6222240C26E001AC1D3 /* TOCropView.m */,
+				1890D6232240C26E001AC1D3 /* TOActivityCroppedImageProvider.h */,
+				1890D6242240C26E001AC1D3 /* TOCropOverlayView.m */,
+				1890D6252240C26E001AC1D3 /* TOCropViewController-Bridging-Header.h */,
+				1890D6262240C26E001AC1D3 /* TOCropViewControllerTransitioning.h */,
+				1890D6272240C26E001AC1D3 /* UIImage+CropRotate.h */,
+				1890D6282240C26E001AC1D3 /* TOCropToolbar.m */,
+				1890D6292240C26E001AC1D3 /* TOCroppedImageAttributes.h */,
+				1890D62A2240C26E001AC1D3 /* TOCropViewController.h */,
+				1890D62B2240C26E001AC1D3 /* TOCropScrollView.h */,
+			);
+			path = TOCropViewController;
+			sourceTree = "<group>";
+		};
+		1890D62C2240C26E001AC1D3 /* IJSMapView */ = {
+			isa = PBXGroup;
+			children = (
+				1890D62D2240C26E001AC1D3 /* IJSMapView.m */,
+				1890D62E2240C26E001AC1D3 /* IJSMapViewMapCell.m */,
+				1890D62F2240C26E001AC1D3 /* IJSMapViewThumbCell.h */,
+				1890D6302240C26E001AC1D3 /* IJSMapViewModel.m */,
+				1890D6312240C26E001AC1D3 /* IJSMapViewUIMacro.h */,
+				1890D6322240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.m */,
+				1890D6332240C26E001AC1D3 /* IJSMapView.h */,
+				1890D6342240C26E001AC1D3 /* IJSMapViewModel.h */,
+				1890D6352240C26E001AC1D3 /* IJSMapViewThumbCell.m */,
+				1890D6362240C26E001AC1D3 /* IJSMapViewMapCell.h */,
+				1890D6372240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.h */,
+			);
+			path = IJSMapView;
+			sourceTree = "<group>";
+		};
+		1890D6382240C26E001AC1D3 /* IJSCustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6392240C26E001AC1D3 /* IJSCNavigationView.m */,
+				1890D63A2240C26E001AC1D3 /* IJSCNavigationView.h */,
+			);
+			path = IJSCustomUI;
+			sourceTree = "<group>";
+		};
+		1890D63B2240C26E001AC1D3 /* IJSQRCodeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1890D63C2240C26E001AC1D3 /* ConstantFile */,
+				1890D63F2240C26E001AC1D3 /* Controller */,
+			);
+			path = IJSQRCodeSDK;
+			sourceTree = "<group>";
+		};
+		1890D63C2240C26E001AC1D3 /* ConstantFile */ = {
+			isa = PBXGroup;
+			children = (
+				1890D63D2240C26E001AC1D3 /* IJSQRCodeManager.h */,
+				1890D63E2240C26E001AC1D3 /* IJSQRCodeManager.m */,
+			);
+			path = ConstantFile;
+			sourceTree = "<group>";
+		};
+		1890D63F2240C26E001AC1D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6402240C26E001AC1D3 /* IJSQRCodeController.h */,
+				1890D6412240C26E001AC1D3 /* IJSQRCodeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1890D6422240C26E001AC1D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6432240C26E001AC1D3 /* JSPhotoSDK.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1890D6442240C26E001AC1D3 /* IJSUExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6452240C26E001AC1D3 /* UIView+IJSUUIView.h */,
+				1890D6462240C26E001AC1D3 /* NSBundle+IJSUBundle.m */,
+				1890D6472240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.m */,
+				1890D6482240C26E001AC1D3 /* UIImage+IJSUImage.m */,
+				1890D6492240C26E001AC1D3 /* CALayer+IJSULayer.m */,
+				1890D64A2240C26E001AC1D3 /* IJSAlertViewController.m */,
+				1890D64B2240C26E001AC1D3 /* UITextField+IJSUTextField.h */,
+				1890D64C2240C26E001AC1D3 /* NSError+IJSError.h */,
+				1890D64D2240C26E001AC1D3 /* IJSNotificationCenterString.m */,
+				1890D64E2240C26E001AC1D3 /* IJSLodingView.m */,
+				1890D64F2240C26E001AC1D3 /* UIButton+IJSUButton.m */,
+				1890D6502240C26E001AC1D3 /* UINavigationController+IJSNavigationController.h */,
+				1890D6512240C26E001AC1D3 /* NSObject+IJSUKeyValue.h */,
+				1890D6522240C26E001AC1D3 /* NSBundle+IJSUBundle.h */,
+				1890D6532240C26E001AC1D3 /* IJSExtension.h */,
+				1890D6542240C26E001AC1D3 /* UIView+IJSUUIView.m */,
+				1890D6552240C26E001AC1D3 /* CALayer+IJSULayer.h */,
+				1890D6562240C26E001AC1D3 /* UIImage+IJSUImage.h */,
+				1890D6572240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.h */,
+				1890D6582240C26E001AC1D3 /* NSError+IJSError.m */,
+				1890D6592240C26E001AC1D3 /* UITextField+IJSUTextField.m */,
+				1890D65A2240C26E001AC1D3 /* IJSAlertViewController.h */,
+				1890D65B2240C26E001AC1D3 /* IJSUConst.h */,
+				1890D65C2240C26E001AC1D3 /* NSObject+IJSUKeyValue.m */,
+				1890D65D2240C26E001AC1D3 /* UINavigationController+IJSNavigationController.m */,
+				1890D65E2240C26E001AC1D3 /* UIButton+IJSUButton.h */,
+				1890D65F2240C26E001AC1D3 /* IJSLodingView.h */,
+				1890D6602240C26E001AC1D3 /* IJSNotificationCenterString.h */,
+			);
+			path = IJSUExtension;
+			sourceTree = "<group>";
+		};
+		1890D6612240C26E001AC1D3 /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				1890D6622240C26E001AC1D3 /* IJSFoundation.framework */,
+			);
+			path = Required;
 			sourceTree = "<group>";
 		};
 		18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */ = {
@@ -981,6 +1565,7 @@
 				0A4A020021D32D6700FD39F7 /* Main.storyboard in Resources */,
 				0A24B4FB21D5CF3500F1336D /* scanSound.wav in Resources */,
 				18A351782222A88000C62779 /* scaningbgimage.png in Resources */,
+				1890D6A12240C26E001AC1D3 /* JSPhotoSDK.bundle in Resources */,
 				18A351762222A88000C62779 /* flashlightscan@2x.png in Resources */,
 				18A3517B2222A88000C62779 /* scaningline.png in Resources */,
 				18A351732222A88000C62779 /* scaningline@3x.png in Resources */,
@@ -1136,83 +1721,159 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A351692222A88000C62779 /* JYBDScanCardManageBase.m in Sources */,
+				1890D6652240C26E001AC1D3 /* IJSVideoCutController.m in Sources */,
 				1814CD3F2223B6DC00AF66D1 /* FileListTableViewController.swift in Sources */,
 				18A351682222A88000C62779 /* JYBDBankCardSearch.m in Sources */,
 				0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */,
 				5697F418221EB957000AC814 /* Jpush.swift in Sources */,
+				1890D67D2240C26E001AC1D3 /* IJSPreviewVideoView.m in Sources */,
 				18437F0422395CF300E29DA1 /* XMShareWechatUtil.m in Sources */,
 				0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */,
 				0AEE664421E0ED0800636D06 /* ContactPickerController.swift in Sources */,
 				0A5B880021D36C8F0045A1BE /* Global.swift in Sources */,
 				0A61A64621D761CF00A5CAD5 /* TelBookModel.swift in Sources */,
+				1890D6722240C26E001AC1D3 /* IJSImageMosaicToolView.m in Sources */,
 				18A3518A2222AC2F00C62779 /* JQIDCardScaningView.m in Sources */,
+				1890D68A2240C26E001AC1D3 /* IJSDColorView.m in Sources */,
+				1890D6A62240C26E001AC1D3 /* IJSAlertViewController.m in Sources */,
 				18A351972222ACD000C62779 /* IDInfoViewController.m in Sources */,
 				0A4EE1BA21D9F24400A943D1 /* LocationModel.swift in Sources */,
+				1890D6A42240C26E001AC1D3 /* UIImage+IJSUImage.m in Sources */,
+				1890D6932240C26E001AC1D3 /* TOCroppedImageAttributes.m in Sources */,
 				0AD6618621D7AC640066459B /* BaseNavigationController.swift in Sources */,
+				1890D6672240C26E001AC1D3 /* IJSVideoEditController.m in Sources */,
 				0A5B880221D36CB60045A1BE /* BundleInfo.swift in Sources */,
+				1890D6962240C26E001AC1D3 /* TOCropView.m in Sources */,
+				1890D69C2240C26E001AC1D3 /* IJSMapViewCollectionViewLayout.m in Sources */,
 				18A351652222A88000C62779 /* JYBDIDCardVC.m in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
+				1890D6702240C26E001AC1D3 /* IJSImageToolView.m in Sources */,
 				18437F0522395CF300E29DA1 /* XMShareView.m in Sources */,
 				0AEDCAC421F16E40005887A3 /* Launch.swift in Sources */,
 				0AEE664821E105A400636D06 /* ExArray.swift in Sources */,
 				18A351672222A88000C62779 /* JYBDScanCardManage.m in Sources */,
+				1890D6A82240C26E001AC1D3 /* IJSLodingView.m in Sources */,
 				0A7F576721E2F0B500F03870 /* CameraViewController.swift in Sources */,
+				1890D6952240C26E001AC1D3 /* TOCropViewController.m in Sources */,
+				1890D6AC2240C26E001AC1D3 /* UITextField+IJSUTextField.m in Sources */,
 				0A4A01FD21D32D6700FD39F7 /* MainViewController.swift in Sources */,
+				1890D6982240C26E001AC1D3 /* TOCropToolbar.m in Sources */,
 				18A351622222A88000C62779 /* UIImage+IDCardExtend.m in Sources */,
 				18A351632222A88000C62779 /* UIAlertController+IDCardExtend.m in Sources */,
 				18A3518B2222AC2F00C62779 /* LHSIDCardScaningView.m in Sources */,
+				1890D6A92240C26E001AC1D3 /* UIButton+IJSUButton.m in Sources */,
 				18A3519E2222ACF900C62779 /* UIImage+Extend.m in Sources */,
 				0A4A01FB21D32D6700FD39F7 /* AppDelegate.swift in Sources */,
 				18437F0122395CF300E29DA1 /* XMShareUtil.m in Sources */,
+				1890D6892240C26E001AC1D3 /* IJSDrawingView.m in Sources */,
 				0AEE664621E103D600636D06 /* Contact.swift in Sources */,
+				1890D6A32240C26E001AC1D3 /* UIBarButtonItem+IJSUUIBarBtItem.m in Sources */,
 				18A3516A2222A88000C62779 /* JYBDBankCardInfo.m in Sources */,
 				0AEC339F21F879B100A0245F /* JsApiSwift.swift in Sources */,
 				18437F0222395CF300E29DA1 /* XMShareQQUtil.m in Sources */,
 				0A5B87FE21D36C3E0045A1BE /* BaseViewController.swift in Sources */,
+				1890D68F2240C26E001AC1D3 /* IJSDrawingController.m in Sources */,
 				18A351842222ABE300C62779 /* AVCaptureViewController.m in Sources */,
+				1890D6A72240C26E001AC1D3 /* IJSNotificationCenterString.m in Sources */,
 				0AEDCAC821F17181005887A3 /* ResultModel.swift in Sources */,
 				0A4E312321E199AB00D15766 /* Image.swift in Sources */,
+				1890D6A22240C26E001AC1D3 /* NSBundle+IJSUBundle.m in Sources */,
 				0AEDCABD21F166E9005887A3 /* APIProvider.swift in Sources */,
 				0A4EE1BC21D9F31F00A943D1 /* LocationExtension.swift in Sources */,
+				1890D6AB2240C26E001AC1D3 /* NSError+IJSError.m in Sources */,
+				1890D66B2240C26E001AC1D3 /* IJSImageMosaicTool.m in Sources */,
+				1890D67A2240C26E001AC1D3 /* IJSImageManager.m in Sources */,
+				1890D6882240C26E001AC1D3 /* IJSAlbumPickerController.m in Sources */,
+				1890D6872240C26E001AC1D3 /* IJSImagePickerController.m in Sources */,
+				1890D6922240C26E001AC1D3 /* TOCropViewControllerTransitioning.m in Sources */,
 				18A3516B2222A88000C62779 /* JYBDCardIDInfo.m in Sources */,
 				0A24B4F921D5CD4A00F1336D /* ScanQRCodeViewController.swift in Sources */,
 				0A4F01E721D75C6000AD1E2C /* MainViewControllerExtension.swift in Sources */,
 				0AEDCACA21F177B6005887A3 /* Observable+ObjectMapper.swift in Sources */,
+				1890D67C2240C26E001AC1D3 /* IJSAssetModel.m in Sources */,
+				1890D69A2240C26E001AC1D3 /* IJSMapViewMapCell.m in Sources */,
+				1890D6822240C26E001AC1D3 /* IJSPreviewImageCell.m in Sources */,
+				1890D6752240C26E001AC1D3 /* IJSIPanDrawingView.m in Sources */,
+				1890D6742240C26E001AC1D3 /* IJSVideoRulerView.m in Sources */,
+				1890D67F2240C26E001AC1D3 /* IJSSelectedCell.m in Sources */,
+				1890D6902240C26E001AC1D3 /* TOActivityCroppedImageProvider.m in Sources */,
 				18A351642222A88000C62779 /* JYBDScanCardBaseVC.m in Sources */,
+				1890D6AE2240C26E001AC1D3 /* UINavigationController+IJSNavigationController.m in Sources */,
+				1890D6862240C26E001AC1D3 /* IJSPhotoPreviewController.m in Sources */,
 				0A5B880621D3754C0045A1BE /* NetworkStatusModel.swift in Sources */,
+				1890D6852240C26E001AC1D3 /* IJS3DTouchController.m in Sources */,
 				18437EFA22395CF300E29DA1 /* VerticalUIButton.m in Sources */,
 				0A23FCF621E0DF9D00ECDA6E /* JS.swift in Sources */,
 				18A351A92222B1B900C62779 /* BankAuthViewController.m in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
+				1890D6A02240C26E001AC1D3 /* IJSQRCodeController.m in Sources */,
+				1890D66A2240C26E001AC1D3 /* IJSImageToolBase.m in Sources */,
+				1890D6802240C26E001AC1D3 /* IJSPreviewLivePhotoView.m in Sources */,
+				1890D6A52240C26E001AC1D3 /* CALayer+IJSULayer.m in Sources */,
+				1890D66D2240C26E001AC1D3 /* IJSVideoSlideView.m in Sources */,
+				1890D6692240C26E001AC1D3 /* IJSImageDrawTool.m in Sources */,
 				0A3E2F9D2220339A00BD3124 /* ExUIColor.swift in Sources */,
 				18A3516C2222A88000C62779 /* JYBDNewFormeScaningV.m in Sources */,
 				0A7F576C21E2FD4B00F03870 /* PlayerViewController.swift in Sources */,
 				18A3519D2222ACF900C62779 /* UIAlertController+Extend.m in Sources */,
+				1890D6832240C26E001AC1D3 /* IJSPreviewGifView.m in Sources */,
 				0AEDCABB21F166D0005887A3 /* APINetworkActivityPlugin.swift in Sources */,
 				18437EC4223951AB00E29DA1 /* Share.swift in Sources */,
+				1890D6662240C26E001AC1D3 /* IJSImageManagerController.m in Sources */,
 				18A351662222A88000C62779 /* JYBDBankCardVC.m in Sources */,
+				1890D68D2240C26E001AC1D3 /* IJSDToolBarView.m in Sources */,
+				1890D6792240C26E001AC1D3 /* IJSVideoTrimView.m in Sources */,
+				1890D6AA2240C26E001AC1D3 /* UIView+IJSUUIView.m in Sources */,
 				0A58311421D6252100DC4321 /* KeyValueRealm.swift in Sources */,
+				1890D6912240C26E001AC1D3 /* UIImage+CropRotate.m in Sources */,
 				0AADBCC721D8A7A900DEA755 /* VerionModel.swift in Sources */,
+				1890D69B2240C26E001AC1D3 /* IJSMapViewModel.m in Sources */,
 				18A351702222A88000C62779 /* IDCardRectManager.m in Sources */,
+				1890D66C2240C26E001AC1D3 /* IJSIPath.m in Sources */,
+				1890D6682240C26E001AC1D3 /* IJSImageEditController.m in Sources */,
 				0A5B880921D377590045A1BE /* ExUIView.swift in Sources */,
 				0AADBCC521D873F200DEA755 /* ExDictionary.swift in Sources */,
 				18A351922222AC9700C62779 /* IDInfo.m in Sources */,
 				0A18C98D21F9F052007DDF57 /* Webview.swift in Sources */,
 				6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */,
+				1890D69D2240C26E001AC1D3 /* IJSMapViewThumbCell.m in Sources */,
+				1890D6712240C26E001AC1D3 /* IJSIImputTextExportView.m in Sources */,
+				1890D6632240C26E001AC1D3 /* IJSVideoManager.m in Sources */,
+				1890D6842240C26E001AC1D3 /* IJSPhotoPickerController.m in Sources */,
+				1890D66F2240C26E001AC1D3 /* IJSIColorButtonView.m in Sources */,
+				1890D68C2240C26E001AC1D3 /* IJSDrawingModel.m in Sources */,
 				0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */,
+				1890D69F2240C26E001AC1D3 /* IJSQRCodeManager.m in Sources */,
+				1890D6642240C26E001AC1D3 /* IJSVideoManagerController.m in Sources */,
+				1890D67B2240C26E001AC1D3 /* IJSAlbumModel.m in Sources */,
 				0AEDCAC221F16840005887A3 /* LaunchTarget.swift in Sources */,
+				1890D6AD2240C26E001AC1D3 /* NSObject+IJSUKeyValue.m in Sources */,
+				1890D66E2240C26E001AC1D3 /* IJSImageMosaicView.m in Sources */,
+				1890D67E2240C26E001AC1D3 /* IJSPhotoPickerCell.m in Sources */,
+				1890D69E2240C26E001AC1D3 /* IJSCNavigationView.m in Sources */,
 				0AD6618421D797BA0066459B /* PreviewFileViewController.swift in Sources */,
 				18437F0322395CF300E29DA1 /* XMShareWeiboUtil.m in Sources */,
+				1890D6942240C26E001AC1D3 /* TOCropScrollView.m in Sources */,
 				0A7F576A21E2F6A300F03870 /* Video.swift in Sources */,
+				1890D6782240C26E001AC1D3 /* IJSIMapViewExportView.m in Sources */,
+				1890D6732240C26E001AC1D3 /* IJSIImputTextView.m in Sources */,
+				1890D6992240C26E001AC1D3 /* IJSMapView.m in Sources */,
+				1890D6762240C26E001AC1D3 /* IJSImageGaussanView.m in Sources */,
 				18C7781E222E74C0006550BC /* Pay.swift in Sources */,
+				1890D68E2240C26E001AC1D3 /* IJSVideoDrawingView.m in Sources */,
 				0A58311221D6101C00DC4321 /* InterfaceRealm.swift in Sources */,
+				1890D6972240C26E001AC1D3 /* TOCropOverlayView.m in Sources */,
 				18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */,
 				18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */,
 				0AEDCAC621F1709F005887A3 /* LaunchResultModel.swift in Sources */,
+				1890D6B12240FF6D001AC1D3 /* TakePictureViewController.swift in Sources */,
 				0AEDCABF21F16722005887A3 /* APITarget.swift in Sources */,
 				18A3518E2222AC6600C62779 /* JQAVCaptureViewController.m in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
+				1890D68B2240C26E001AC1D3 /* IJSDExportView.m in Sources */,
+				1890D6812240C26E001AC1D3 /* IJSAlbumPickerCell.m in Sources */,
 				18A351812222AB9E00C62779 /* IDAuthViewController.m in Sources */,
+				1890D6772240C26E001AC1D3 /* IJSImageNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,6 +2056,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GoodManager/GoodManager.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 32G846HEF6;
@@ -1403,6 +2065,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GoodManager/SDK/Required",
 				);
 				INFOPLIST_FILE = GoodManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1416,8 +2079,10 @@
 					"$(PROJECT_DIR)/GoodManager/JYBDAVCapture/JYBD_IDCardRecognition/Classes/exbankcardcore",
 					"$(PROJECT_DIR)/GoodManager/JYBD_IDCardRecognition/Classes/exbankcardcore",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoodManager/DemoProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1432,6 +2097,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GoodManager/GoodManager.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 32G846HEF6;
@@ -1439,6 +2105,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GoodManager/SDK/Required",
 				);
 				INFOPLIST_FILE = GoodManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1454,6 +2121,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoodManager/DemoProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -12,7 +12,6 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
     var callbackfun:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
