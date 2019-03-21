@@ -2,8 +2,20 @@ PODS:
   - Alamofire (4.8.0)
   - AliPay (2.1.2)
   - CLImagePickerTool (3.0.0)
+  - CocoaLumberjack (3.2.1):
+    - CocoaLumberjack/Default (= 3.2.1)
+    - CocoaLumberjack/Extensions (= 3.2.1)
+  - CocoaLumberjack/Default (3.2.1)
+  - CocoaLumberjack/Extensions (3.2.1):
+    - CocoaLumberjack/Default
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
   - dsBridge (3.0.6)
+  - Fabric (1.9.0)
   - FLAnimatedImage (1.0.12)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - JCore (1.2.6)
   - jot (0.1.5):
     - Masonry (~> 0.6.1)
@@ -55,6 +67,8 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SnapKit (4.0.1)
+  - SSZipArchive (1.8.1)
+  - SVProgressHUD (2.1.2)
   - SwiftyJSON (4.2.0)
   - Toast (3.1.0)
   - TZImagePickerController (3.0.9)
@@ -64,7 +78,11 @@ PODS:
 DEPENDENCIES:
   - AliPay
   - CLImagePickerTool (from `https://github.com/Darren-chenchen/CLImagePickerTool.git`)
+  - CocoaLumberjack (~> 3.2.1)
+  - Crashlytics
   - dsBridge
+  - Fabric
+  - FMDB (~> 2.7.2)
   - jot
   - JPush
   - Kingfisher (~> 4.10.0)
@@ -77,6 +95,8 @@ DEPENDENCIES:
   - RealmSwift
   - SDWebImage/GIF
   - SnapKit (~> 4.0.0)
+  - SSZipArchive (~> 1.8.1)
+  - SVProgressHUD (~> 2.1.2)
   - SwiftyJSON (~> 4.0)
   - TZImagePickerController
   - WechatOpenSDK
@@ -86,8 +106,12 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AliPay
+    - CocoaLumberjack
+    - Crashlytics
     - dsBridge
+    - Fabric
     - FLAnimatedImage
+    - FMDB
     - JCore
     - jot
     - JPush
@@ -109,6 +133,8 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SnapKit
+    - SSZipArchive
+    - SVProgressHUD
     - SwiftyJSON
     - Toast
     - TZImagePickerController
@@ -132,8 +158,12 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AliPay: 2bd35a4e486d2a8c035043023cd846e886bb21d1
   CLImagePickerTool: 5837ba7d3f4f557bab2ccc1db7a0442e2f377e2b
+  CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   jot: 0f5dc333defa6ad805d01adc3834b201c22510a7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
@@ -155,12 +185,14 @@ SPEC CHECKSUMS:
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SSZipArchive: 04547dfa448be5ed7ecbaf7eaf8a6e9eb9b42997
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
   WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
   Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
 
-PODFILE CHECKSUM: 86ae4f75685ab0b78ce0fb4632b12579ad73c17e
+PODFILE CHECKSUM: 47e271d536723f04c6910ae694fff751f621ad22
 
 COCOAPODS: 1.6.1

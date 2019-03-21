@@ -39,5 +39,11 @@ target 'GoodManager' do
     pod 'WechatOpenSDK'
     pod 'AliPay'
     pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+    pod 'FMDB', '~> 2.7.2'
+    pod 'CocoaLumberjack', '~> 3.2.1'
+    pod 'SSZipArchive', '~> 1.8.1'
+    pod 'SVProgressHUD', '~> 2.1.2'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
