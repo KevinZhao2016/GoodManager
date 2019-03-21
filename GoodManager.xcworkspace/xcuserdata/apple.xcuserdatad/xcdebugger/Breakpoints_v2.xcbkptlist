@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../../Downloads/IJSPhotoSDK-master/IJSPhotoSDKProject/SDK/Core/IJSPhotoSDK/Controllers/IJSImagePickerController.m"
-            timestampString = "574702212.396775"
+            timestampString = "574749068.814916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
@@ -746,13 +746,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../../Downloads/IJSPhotoSDK-master/IJSPhotoSDKProject/SDK/Core/IJSPhotoSDK/Controllers/IJSImagePickerController.m"
-            timestampString = "574702212.3973221"
+            timestampString = "574749068.8176301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "333"
             endingLineNumber = "333"
-            landmarkName = "-setDataSource:"
-            landmarkType = "7">
+            landmarkName = "@implementation IJSImagePickerController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../../Downloads/IJSPhotoSDK-master/IJSPhotoSDKProject/SDK/Core/IJSPhotoSDK/Controllers/IJSImagePickerController.m"
-            timestampString = "574702212.397722"
+            timestampString = "574749068.818004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "255"
