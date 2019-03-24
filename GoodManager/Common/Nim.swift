@@ -53,49 +53,33 @@ func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
 }
 
 //    获取网易云信通讯录
-func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) ->[NIMUser]  {
+func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) {
     let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
-    if (isLogin) {
-        let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
-        return users;
-    }
-    return [] ;
-    //        }else
-    //        {
-    //            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
-    //                if let myError = error {
-    //                    print("登录出现错误--%@",myError);
-    //
-    //                }else{
-    //
-    //                    let users:[NIMUser] =  NIMSDK.shared().userManager.myFriends() ?? []
-    //
-    //                }
-    //
-    //            }
-    //             return [];
-    
-    
-    //users 这个就是数据源  具体ui 自定义
-}
-//打开网易云信好友聊天窗口
-func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
-    let session:NIMSession = NIMSession(fAccount, type: .P2P)//按测试给的内容更换
-    let vc:NIMSessionViewController = NIMSessionViewController(session: session)
-    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+    let vc:NTESContactViewController = NTESContactViewController();
     let basevc = getLastMainViewController()
-    
     let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
-    
     nav.navigationBar.isTranslucent = true
     nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
     nav.navigationBar.shadowImage = UIImage()
     
     if (isLogin) {
+        
         basevc.present(nav, animated: true, completion: nil);
+    }else{
+        NIMSDK.shared().loginManager.login(account, token: password) { (error) in
+            if let myError = error {
+                print("登录出现错误--%@",myError);
+            }else{
+                
+                basevc.present(nav, animated: true, completion: nil);
+            }
+        };
     }
     
-    
+}
+//打开网易云信好友聊天窗口
+func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
+   
     
 }
 

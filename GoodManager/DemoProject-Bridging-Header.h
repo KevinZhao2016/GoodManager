@@ -11,6 +11,7 @@
 #import <NIMSDK/NIMSDK.h>
 #import <NIMSessionListViewController.h>
 #import <NIMSessionViewController.h>
+#import "NTESContactViewController.h"
 // IDCard识别
 #import "IDAuthViewController.h"
 #import "IDInfoViewController.h"
@@ -42,3 +43,5 @@
 #import "XMShareView.h"
 // 微博
 #import <Weibo_SDK/WeiboSDK.h>
+
+
