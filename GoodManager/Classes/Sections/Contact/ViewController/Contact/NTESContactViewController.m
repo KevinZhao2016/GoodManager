@@ -83,8 +83,22 @@ NIMEventSubscribeManagerDelegate> {
     [[NIMSDK sharedSDK].loginManager addDelegate:self];
     [[NIMSDK sharedSDK].userManager addDelegate:self];
     [[NIMSDK sharedSDK].subscribeManager addDelegate:self];
-}
 
+    
+    if (self.navigationController.viewControllers.count == 1)
+    {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"back" style:UIBarButtonItemStyleDone target:self action:@selector(itemClick)];
+        self.navigationItem.leftBarButtonItem = item;
+        
+        
+    }
+    
+
+
+}
+- (void)itemClick{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)setUpNavItem{
     UIButton *teamBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [teamBtn addTarget:self action:@selector(onOpera:) forControlEvents:UIControlEventTouchUpInside];

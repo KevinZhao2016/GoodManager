@@ -311,6 +311,7 @@ class JsApiSwift: NSObject {
         let jsonString = JSON(parseJSON: arg)
         let qMark = jsonString["qMark"].stringValue
        let count:Int = GoodManager.APPNEGetUnreadWithQNum(qMark)
+    print(String(format: "某个群未读消息个数为：%d", count));
         
     }
     

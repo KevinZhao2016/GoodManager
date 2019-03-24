@@ -39,10 +39,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"消息列表";
   
-    UIView *navView = [UIView new];
-    navView.backgroundColor = [UIColor greenColor];
-    navView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 50);
-    [self.view addSubview:navView];
+    if (self.navigationController.viewControllers.count == 1)
+    {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"back" style:UIBarButtonItemStyleDone target:self action:@selector(itemClick)];
+        self.navigationItem.leftBarButtonItem = item;
+        
+        
+    }
+    
+    
+    
+    
     
     
     
@@ -74,7 +81,9 @@
     extern NSString *const NIMKitUserInfoHasUpdatedNotification;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserInfoHasUpdatedNotification:) name:NIMKitUserInfoHasUpdatedNotification object:nil];
 }
-
+- (void)itemClick{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)refresh{
     if (!self.recentSessions.count) {
         self.tableView.hidden = YES;

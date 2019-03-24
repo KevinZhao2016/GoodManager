@@ -72,8 +72,20 @@
     [self markRead];
     //更新已读位置
     [self uiCheckReceipts:nil];
+    if (self.navigationController.viewControllers.count == 1)
+    {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"back" style:UIBarButtonItemStyleDone target:self action:@selector(itemClick)];
+        self.navigationItem.leftBarButtonItem = item;
+        
+        
+    }
+    
+    
+    
 }
-
+- (void)itemClick{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)setupNav
 {
     [self setUpTitleView];
