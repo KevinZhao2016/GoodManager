@@ -273,4 +273,10 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
      
      */
     
+    // 当前statusBar使用的样式
+    var style: UIStatusBarStyle = .default
+    // 重现statusBar相关方法
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return self.style
+    }
 }
