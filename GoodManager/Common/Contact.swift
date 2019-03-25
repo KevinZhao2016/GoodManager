@@ -78,7 +78,6 @@ func APPChooseTelBook(maxNum:Int,callBackfunName:String){
     vc.maxNum = maxNum
     vc.backClosure = { (ContactString:String) ->Void in
         var result = ContactString
-        print("resut!!!!!!!!!!:",result)
         result = result.replacingOccurrences(of: "\"", with: "\\\"")
         result = result.replacingOccurrences(of: "\\\\\"", with: "\\\"")
         ExecWinJS(JSFun: callBackfunName + "(\"" + result + "\")")

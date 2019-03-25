@@ -21,27 +21,20 @@ class ContactPickerController: CNContactPickerViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-      
     }
-    
 }
+
 extension ContactPickerController:CNContactPickerDelegate {
-    
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
-        
         contactArray = []
-        
         if(contacts.count > maxNum){
             let alertVC = UIAlertController(title:nil, message:"选择联系人超过最大数量", preferredStyle: .alert)
             self.present(alertVC, animated:true, completion:nil)
-            
-            //两秒钟后自动消失
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10) {
-                print("bye")
-                self.presentedViewController?.dismiss(animated: false, completion: nil)
-            }
+            //自动消失
+//            DispatchQueue.main.asyncAfter(deadline: .now()+2){
+//                self.presentedViewController?.dismiss(animated: false, completion: nil)
+//            }
         }
-        
         for contact in contacts {
             //获取联系人的姓名
             let lastName = contact.familyName
@@ -49,12 +42,6 @@ extension ContactPickerController:CNContactPickerDelegate {
         
             //获取联系人电话号码
             let phones = contact.phoneNumbers
-//            for phone in phones {
-                //获得标签名（转为能看得懂的本地标签名，比如work、home）
-                //let phoneLabel = CNLabeledValue<NSString>.localizedString(forLabel: phone.label!)
-                //获取号码
-            print("phones:  \(phones)")
-            
             var phoneValue = ""
             var contactModel = TelBookModel(Phonenumber: phoneValue, Name: lastName + firstName)
             if (phones.first != nil){
@@ -65,8 +52,6 @@ extension ContactPickerController:CNContactPickerDelegate {
             }
             contactArray.append(contactModel.toJSONString()!)
         }
-        print("contactArray: \(contactArray)")
         self.backClosure!(contactArray.getJSONStringFromArray())
     }
-    
 }
