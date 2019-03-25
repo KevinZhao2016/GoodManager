@@ -159,7 +159,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         
         
         JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self);
-        let appKey:String = "e8b4fd84c62dd199b4e059ea"
+        let appKey:String = "c0a25071e3f4e28e80fbea4b"
         let channel:String = "https://www.baidu.com"
         JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: true)
         
