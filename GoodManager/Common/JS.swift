@@ -7,14 +7,21 @@
 //
 
 import Foundation
+import WebKit
+
 
 //调用js方法
 func APPExecWinJS(mark:String, JSFun:String){
     var vc:MainViewController?
+    print("mark:  \(mark)")
     if (mark == "") {
         vc = getLastMainViewController()
     }else{
-        vc = findControllerByMark(mark: mark)
+        var _mark = mark
+        if _mark == "mark_home_" {
+            _mark = "main"
+        }
+        vc = findControllerByMark(mark: _mark)
     }
     if vc!.webview != nil {
         vc!.webview.evaluateJavaScript(JSFun) { (result, error) in
@@ -22,6 +29,7 @@ func APPExecWinJS(mark:String, JSFun:String){
             print(result as Any)
         }
     }else{
+        print("webview is nil!")
         print("\(JSFun)")
     }
 }
