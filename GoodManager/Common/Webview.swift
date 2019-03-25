@@ -20,6 +20,25 @@ func APPSetBrowserHomeURL(url:String){
 
 func AppSetStatusBarColor(color:String){
     let vc = getLastMainViewController()
+    let numComponents = UIColor().hexStringToUIColor(hex: color).cgColor.components
+    //CGFloat R, G, B;
+    if numComponents != nil {
+        let R = numComponents![0]
+        let G = numComponents![1]
+        let B = numComponents![2]
+        let colorBirghtness = ((R * 299) + (G * 587) + (B * 114)) / 1000
+        if(colorBirghtness < 0.5){
+            //Color is dark
+            print("Color is dark")
+            vc.style = .lightContent
+            vc.setNeedsStatusBarAppearanceUpdate()
+        }else{
+            //Color is light
+            print("Color is light")
+            vc.style = .default
+            vc.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
     vc.view.backgroundColor = UIColor().hexStringToUIColor(hex: color)
 }
 

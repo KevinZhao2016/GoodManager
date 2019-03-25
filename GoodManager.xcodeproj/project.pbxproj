@@ -3912,7 +3912,7 @@
 					"$(PROJECT_DIR)/GoodManager/Classes/Vendors/WXChatSDK/SPaySDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yiganzi.hjl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoodManager/DemoProject-Bridging-Header.h";
@@ -3957,7 +3957,7 @@
 					"$(PROJECT_DIR)/GoodManager/Classes/Vendors/WXChatSDK/WXSDK",
 					"$(PROJECT_DIR)/GoodManager/Classes/Vendors/WXChatSDK/SPaySDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GoodManager.HJL;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yiganzi.hjl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoodManager/DemoProject-Bridging-Header.h";
