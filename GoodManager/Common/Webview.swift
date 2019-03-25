@@ -29,12 +29,12 @@ func AppSetStatusBarColor(color:String){
         let colorBirghtness = ((R * 299) + (G * 587) + (B * 114)) / 1000
         if(colorBirghtness < 0.5){
             //Color is dark
-            print("Color is dark")
+//            print("Color is dark")
             vc.style = .lightContent
             vc.setNeedsStatusBarAppearanceUpdate()
         }else{
             //Color is light
-            print("Color is light")
+//            print("Color is light")
             vc.style = .default
             vc.setNeedsStatusBarAppearanceUpdate()
         }
