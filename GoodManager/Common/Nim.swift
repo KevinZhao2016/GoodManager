@@ -112,24 +112,24 @@ func  APPNEChatWithQ(qMark:String, statusBarColor:String){
 
 
 //获取网易云信全部未读消息数
-func  APPNEGetUnreadNum() ->Int {
+func  APPNEGetUnreadNum() ->String {
     let unreadCount:Int = NIMSDK.shared().conversationManager.allUnreadCount()
-    return unreadCount
+    return "\(unreadCount)"
 }
 //获取网易云信某个群未读消息数
-func  APPNEGetUnreadWithQNum(_ qMark:String) -> Int {
+func  APPNEGetUnreadWithQNum(_ qMark:String) -> String {
     let session:NIMSession = NIMSession.init(qMark, type: .team)
     let recentSession:NIMRecentSession? = NIMSDK.shared().conversationManager.recentSession(by: session)
     //这个群的未读消息数
     let unreadCount:Int =  recentSession?.unreadCount ?? 0
-    return unreadCount
+    return "\(unreadCount)"
 }
 //获取网易云信某个群未读消息数
-func  APPNEGetQUnreadWithFNum(_ fAccount:String) ->Int {
+func  APPNEGetQUnreadWithFNum(_ fAccount:String) -> String {
     let session:NIMSession = NIMSession.init(fAccount, type: .P2P)
     let recentSession:NIMRecentSession? = NIMSDK.shared().conversationManager.recentSession(by: session)
     //这个好友的未读消息数
     let unreadCount:Int =  recentSession?.unreadCount ?? 0
-    return unreadCount;
+    return "\(unreadCount)"
 }
 

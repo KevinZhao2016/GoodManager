@@ -20,13 +20,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请准备好您的银行卡原件" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nb-kd-yNR">
-                    <rect key="frame" x="10" y="84" width="355" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.48238962888717651" green="0.47837376594543457" blue="0.48240691423416138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="25" y="84" width="325" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idcard_first" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-5P-Myn">
-                    <rect key="frame" x="10" y="114.5" width="355" height="224"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankcard_first" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-5P-Myn">
+                    <rect key="frame" x="25" y="137.5" width="325" height="205"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="p0l-5P-Myn" secondAttribute="height" multiplier="355:224" id="jRm-AH-HBb"/>
@@ -75,22 +74,23 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ePS-2G-nOq" firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="1Zg-uT-bqC"/>
+                <constraint firstItem="p0l-5P-Myn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Wf-BJ-YdF"/>
                 <constraint firstItem="07t-3d-0iQ" firstAttribute="top" secondItem="ePS-2G-nOq" secondAttribute="bottom" constant="42.5" id="AbN-pX-fmR"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="leading" secondItem="p0l-5P-Myn" secondAttribute="leading" id="F6a-4D-a4B"/>
                 <constraint firstItem="ePS-2G-nOq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Jt1-nG-Bbo"/>
-                <constraint firstItem="p0l-5P-Myn" firstAttribute="top" secondItem="1Nb-kd-yNR" secondAttribute="bottom" constant="10" id="Kkh-vw-fFm"/>
+                <constraint firstItem="p0l-5P-Myn" firstAttribute="top" secondItem="1Nb-kd-yNR" secondAttribute="bottom" constant="27" id="Kkh-vw-fFm"/>
                 <constraint firstAttribute="trailing" secondItem="ePS-2G-nOq" secondAttribute="trailing" constant="10" id="TDO-mU-o5G"/>
-                <constraint firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" constant="10" id="ZLb-Fe-HGx"/>
+                <constraint firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" constant="25" id="ZLb-Fe-HGx"/>
                 <constraint firstItem="07t-3d-0iQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bXF-ba-McP"/>
-                <constraint firstItem="p0l-5P-Myn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="d2A-dT-QR3"/>
+                <constraint firstItem="p0l-5P-Myn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="d2A-dT-QR3"/>
                 <constraint firstAttribute="bottom" secondItem="ePS-2G-nOq" secondAttribute="bottom" constant="150.5" id="gGF-wa-hMt"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" id="mR4-9y-E4I"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="vjM-KK-SoL"/>
             </constraints>
-            <point key="canvasLocation" x="-513.5" y="-226.5"/>
+            <point key="canvasLocation" x="-514.39999999999998" y="-227.13643178410797"/>
         </view>
     </objects>
     <resources>
-        <image name="idcard_first" width="283" height="179"/>
+        <image name="bankcard_first" width="610" height="432"/>
     </resources>
 </document>
