@@ -302,24 +302,20 @@ class JsApiSwift: NSObject {
         GoodManager.APPNEChatWithQ(qMark: qMark, statusBarColor: statusBarColor)
     }
     
-    @objc func APPNEGetUnreadNum(_ arg:String) {
-        let count:Int = GoodManager.APPNEGetUnreadNum()
-        print(String(format: "全部未读消息个数为：%d", count));
+    @objc func APPNEGetUnreadNum(_ arg:String) -> String{
+        return GoodManager.APPNEGetUnreadNum()
     }
     
-    @objc func APPNEGetUnreadWithQNum(_ arg:String) {
+    @objc func APPNEGetUnreadWithQNum(_ arg:String) -> String {
         let jsonString = JSON(parseJSON: arg)
         let qMark = jsonString["qMark"].stringValue
-       let count:Int = GoodManager.APPNEGetUnreadWithQNum(qMark)
-    print(String(format: "某个群未读消息个数为：%d", count));
-        
+        return GoodManager.APPNEGetUnreadWithQNum(qMark)
     }
     
-    @objc func APPNEGetQUnreadWithFNum(_ arg:String) {
+    @objc func APPNEGetQUnreadWithFNum(_ arg:String) -> String {
         let jsonString = JSON(parseJSON: arg)
         let fAccount = jsonString["fAccount"].stringValue
-      let count:Int = GoodManager.APPNEGetQUnreadWithFNum(fAccount)
-       print(String(format: "某个好友未读消息个数为：%d", count));
+        return GoodManager.APPNEGetQUnreadWithFNum(fAccount)
     }
     
     @objc func APPWXPay(_ arg:String) {

@@ -75,7 +75,6 @@ func APPGetFileSize(path:String) -> String{
         
         print("filePath_1:  " + TwoPath[0])
         print("filePath_2:  " + TwoPath[1])
-
     }
     let manager = FileManager.default
     let attributes = try? manager.attributesOfItem(atPath: _path) //结果为Dictionary类型
