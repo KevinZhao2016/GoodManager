@@ -158,10 +158,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
         
         
+//        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self);
+//        let appKey:String = "c0a25071e3f4e28e80fbea4b"
+//        let channel:String = "https://www.baidu.com"
+//        JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: true)
+        
         JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self);
         let appKey:String = "c0a25071e3f4e28e80fbea4b"
         let channel:String = "https://www.baidu.com"
-        JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: true)
+        JPUSHService.setup(withOption: launchOptions, appKey: appKey, channel: channel, apsForProduction: false)
         
     }
     
