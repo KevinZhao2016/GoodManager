@@ -310,8 +310,9 @@
     [self.view addSubview:navigationView];
     self.navigationView = navigationView;
     [self.view bringSubviewToFront:navigationView];
-    [navigationView.cancleButton setTitle:[NSBundle localizedStringForKey:@"Back"] forState:UIControlStateNormal];
-    
+    [navigationView.cancleButton setTitle:[NSBundle localizedStringForKey:@"返回"] forState:UIControlStateNormal];
+    [navigationView.cancleButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+
     // 工具站位视图
     UIView *placeholderToolView = [[UIView alloc] initWithFrame:CGRectMake(0, JSScreenHeight - IJSIMapViewHeight, JSScreenWidth, IJSIMapViewHeight)];
     placeholderToolView.backgroundColor = [UIColor clearColor];
