@@ -105,8 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             let msgLinkURL:String = (userInfo["msgLinkURL"]) ?? "https://www.baidu.com";
             UIApplication.shared.openURL(URL.init(string: msgLinkURL)!);
             
-        }else
-        {
+        }else{
             //从通知设置界面进入应用
             //             print(response?.notification.request.content.userInfo)
         }
@@ -133,7 +132,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         self.window?.rootViewController = vc
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-        getTelBookRight()//检查通讯录权限
+        //检查通讯录权限
+        getTelBookRight()
         // 注册微信支付
         WXApi.registerApp("wxac7e2659ee456ef6")
         // 注册QQ

@@ -17,9 +17,14 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
+    
+    // 倒计时更改
     var timeCount:Int = 5
     var timer:Timer?
+    
     let button:UIButton = UIButton(type: .custom);
+    
+    
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
@@ -80,12 +85,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
         image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
-        button.frame = CGRect.init(x: SCREEN_WIDTH - 80, y: STATUS_HEIGHT + 20, width: 50, height: 50)
-        button.backgroundColor = UIColor.lightGray
-        let title:String = String.init(format: "%ds", self.timeCount)
+        
+        // 倒计时按钮
+        button.frame = CGRect.init(x: SCREEN_WIDTH - 70, y: STATUS_HEIGHT + 10, width: 65, height: 25)
+        button.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        let title:String = String.init(format: "%d 跳过", self.timeCount)
         button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 3
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         image.addSubview(button)
@@ -100,15 +108,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         image.isUserInteractionEnabled = true
         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
             self.timeCount = self.timeCount - 1
-            let title:String = String.init(format: "%ds", self.timeCount)
+            let title:String = String.init(format: "%d 跳过", self.timeCount)
             self.button.setTitle(title, for: .normal)
             if(self.timeCount == 0){
                 self.removeImageWithDelay()
             }
         })
         LaunchFlag = true
-        
     }
+    
     func isIPhoneX() -> Bool {
         var iPhoneX:Bool = false
         if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
@@ -120,11 +128,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             }
         }
         return iPhoneX
-        
     }
+    
     @objc func btnClick(){
          self.removeImageWithDelay()
     }
+    
     func setupWebview(){
         // 创建配置
 //        let config = WKWebViewConfiguration()
