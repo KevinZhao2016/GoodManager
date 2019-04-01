@@ -200,8 +200,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }else{
             targetSize = CGSize(width: 200, height: 200)
             // 压缩图片
+            var i = 1
             for _image in photos {
-                var i = 1
                 print("压缩图片！")
                 let imageData = _image.jpegData(compressionQuality: 0.4)
                 let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
@@ -211,18 +211,13 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                 zipImageURLS.append(filePath)
                 print("zipFilePath:  " + filePath)
                 fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+                i+=1
             }
         }
-        
-        
-        
-
-        
         var i = 0
         var j = 0
         print("assets:  \(assets)")
         for asset in assets {
-            i = i + 1
             print("i:  \(i)")
             PHImageManager.default().requestImage(for: asset as! PHAsset, targetSize: targetSize, contentMode: .aspectFit, options:nil, resultHandler: {(image, info:[AnyHashable : Any]?) in
                 print ("j:  \(j)")
@@ -230,20 +225,28 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                     print("请求原图！")
                     let imageURL = info!["PHImageFileURLKey"] as! URL
                     print("路径：",imageURL)
-                    self.photoPath.append(imageURL.path + ",")
+                    self.photoPath.append(imageURL.path)
                     print("photopath:",self.photoPath)
-                    self.ImageCallBack(path: imageURL.path, callBackfunName: self.imagecallBackfunName)
+                    if(j < assets.count-1){
+                        self.photoPath.append(",")
+                    }
+                    if(j == assets.count-1){
+                        self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
+                    }
                 }else if((isSelectOriginalPhoto == false)&&j<zipImageURLS.count){
                     print("请求缩略图！")
-                    self.photoPath.append(zipImageURLS[j] + ",")
+                    self.photoPath.append(zipImageURLS[j])
+                    if(j < assets.count-1){
+                        self.photoPath.append(",")
+                    }
                     print(zipImageURLS[j])
-                    self.ImageCallBack(path: zipImageURLS[j], callBackfunName: self.imagecallBackfunName)
+                    if(j == assets.count-1){
+                        self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
+                    }
                 }
                 j = j + 1
-//                if(i == assets.count){
-//                    self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
-//                }
             })
+            i = i + 1
         }
     }
     

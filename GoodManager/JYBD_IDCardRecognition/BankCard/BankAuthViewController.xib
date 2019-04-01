@@ -32,12 +32,9 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-2G-nOq">
-                    <rect key="frame" x="10" y="470" width="355" height="46.5"/>
-                    <color key="backgroundColor" red="1" green="0.60071486230000004" blue="0.20166948439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="q8z-NO-E86"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="10" y="480" width="355" height="36.5"/>
+                    <color key="backgroundColor" red="0.30196078431372547" green="0.74901960784313726" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="银行卡扫描">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -51,13 +48,13 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07t-3d-0iQ">
-                    <rect key="frame" x="10" y="559" width="355" height="33"/>
-                    <color key="backgroundColor" red="1" green="0.60071486230000004" blue="0.20166948439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="10" y="559" width="355" height="37"/>
+                    <color key="backgroundColor" red="0.30196078431372547" green="0.74901960784313726" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="33" id="4w0-mC-1mT"/>
+                        <constraint firstAttribute="height" constant="37" id="4w0-mC-1mT"/>
                         <constraint firstAttribute="width" constant="355" id="Sqq-Qe-CKA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="取消">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -73,7 +70,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ePS-2G-nOq" firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="1Zg-uT-bqC"/>
+                <constraint firstItem="ePS-2G-nOq" firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="440:45" id="1Zg-uT-bqC"/>
                 <constraint firstItem="p0l-5P-Myn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Wf-BJ-YdF"/>
                 <constraint firstItem="07t-3d-0iQ" firstAttribute="top" secondItem="ePS-2G-nOq" secondAttribute="bottom" constant="42.5" id="AbN-pX-fmR"/>
                 <constraint firstItem="1Nb-kd-yNR" firstAttribute="leading" secondItem="p0l-5P-Myn" secondAttribute="leading" id="F6a-4D-a4B"/>
