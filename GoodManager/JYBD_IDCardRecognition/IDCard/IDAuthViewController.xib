@@ -34,13 +34,13 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvA-P2-d21">
-                    <rect key="frame" x="10" y="377" width="355" height="46.5"/>
-                    <color key="backgroundColor" red="1" green="0.60071486234664917" blue="0.20166948437690735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="10" y="377" width="355" height="36.5"/>
+                    <color key="backgroundColor" red="0.30196078431372547" green="0.74901960784313726" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="355" id="8du-mp-rzp" userLabel="width = 355"/>
-                        <constraint firstAttribute="width" secondItem="OvA-P2-d21" secondAttribute="height" multiplier="343:45" id="9DT-sl-Y13"/>
+                        <constraint firstAttribute="width" secondItem="OvA-P2-d21" secondAttribute="height" multiplier="440:45" id="9DT-sl-Y13"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="开始识别(正面)">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -54,12 +54,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-2G-nOq">
-                    <rect key="frame" x="10" y="445.5" width="355" height="46.5"/>
-                    <color key="backgroundColor" red="1" green="0.60071486230000004" blue="0.20166948439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="q8z-NO-E86"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="10" y="435.5" width="355" height="36"/>
+                    <color key="backgroundColor" red="0.30196078431372547" green="0.74901960784313726" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="开始识别(反面)">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -73,13 +70,13 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qei-wG-MSr">
-                    <rect key="frame" x="10" y="550" width="355" height="33"/>
-                    <color key="backgroundColor" red="1" green="0.60071486230000004" blue="0.20166948439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="10" y="546" width="355" height="37"/>
+                    <color key="backgroundColor" red="0.30196078431372547" green="0.74901960784313726" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="33" id="BuE-Rz-we7"/>
+                        <constraint firstAttribute="height" constant="37" id="BuE-Rz-we7"/>
                         <constraint firstAttribute="width" constant="355" id="rYA-52-QdC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="取消">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -95,7 +92,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ePS-2G-nOq" firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="343:45" id="1Zg-uT-bqC"/>
+                <constraint firstItem="ePS-2G-nOq" firstAttribute="width" secondItem="ePS-2G-nOq" secondAttribute="height" multiplier="440:45" id="1Zg-uT-bqC"/>
                 <constraint firstItem="Qei-wG-MSr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5xX-PS-jEo"/>
                 <constraint firstItem="ePS-2G-nOq" firstAttribute="trailing" secondItem="1Nb-kd-yNR" secondAttribute="trailing" id="Iwg-ad-SFe"/>
                 <constraint firstItem="ePS-2G-nOq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Jt1-nG-Bbo"/>

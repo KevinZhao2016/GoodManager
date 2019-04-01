@@ -6,6 +6,8 @@
 //  Copyright © 2019 GoodManager. All rights reserved.
 //
 
+
+
 import UIKit
 import Player
 import CoreMedia
@@ -44,15 +46,39 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
         }
     }
     
+    
+    // 横屏
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // viewWillAppear 设置页面横屏
+    override func viewWillAppear(_ animated: Bool) {
+        //let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        //UIDevice.current.setValue(value, forKey: "orientation")
+        super.viewWillAppear(animated)
+        if !UIDevice.current.isGeneratingDeviceOrientationNotifications {
+            UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        }
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleOrientationChange(notification:)),
+                                            name: UIApplication.didChangeStatusBarOrientationNotification,
+                                               object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 横屏
+        appDelegate.blockRotation = true
+        
         showCloseButton()
         
         self.title = "视频播放"
         self.navigationController?.navigationBar.titleTextAttributes = {[NSAttributedString.Key.foregroundColor: UIColor.white,NSAttributedString.Key.font:UIFont(name: "Heiti SC", size: 18.0)!
             ]}()
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = .black
+        self.player.view.backgroundColor = .black
+        
         let videoUrl: URL = URL(fileURLWithPath: urlpath!)// file or http url
         
         self.player.playerDelegate = self
@@ -74,8 +100,45 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
         self.view.addSubview(progressView);
 
     }
+    
+    // viewWillDisappear设置页面转回竖屏
+    override func viewWillDisappear(_ animated: Bool) {
+        appDelegate.blockRotation = false
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        NotificationCenter.default.removeObserver(self)
+        UIDevice.current.endGeneratingDeviceOrientationNotifications()
+    }
+    
+    
+    
+    // 横屏页面是否支持旋转
+    // 默认为true
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    // 监听屏幕旋转
+    @objc private func handleOrientationChange(notification: Notification) {
+        // 获取设备方向
+        let statusBarOrientation = UIApplication.shared.statusBarOrientation
+        if statusBarOrientation.isPortrait {
+            print("竖屏了")
+            self.view.frame = CGRect(x: 0,y: 0,width: min(UIScreen.main.bounds.width,UIScreen.main.bounds.height),height: max(UIScreen.main.bounds.width,UIScreen.main.bounds.height))
+            self.player.view.frame = self.view.bounds
+            self.player.fillMode = PlayerFillMode.resizeAspect
+        } else if statusBarOrientation.isLandscape {
+            print("横屏了")
+            self.view.frame = CGRect(x: 0,y: 0,width: max(UIScreen.main.bounds.width,UIScreen.main.bounds.height),height: min(UIScreen.main.bounds.width,UIScreen.main.bounds.height))
+            self.player.view.frame = self.view.bounds
+            self.player.fillMode = PlayerFillMode.resizeAspect
+        }
+    }
+    
     func showCloseButton(){
         let barButton = UIBarButtonItem.init(title: "返回", style: .done, target: self, action: #selector(self.back))
+        barButton.tintColor = .white
         self.navigationItem.leftBarButtonItem = barButton
     }
     

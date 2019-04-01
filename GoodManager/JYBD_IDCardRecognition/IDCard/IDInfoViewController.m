@@ -15,6 +15,7 @@
 @interface IDInfoViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *IDImageView;
+@property (weak, nonatomic) IBOutlet UILabel *NoteLabel;
 @property (strong, nonatomic) IBOutlet UILabel *IDNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sexLabel;
@@ -38,13 +39,18 @@
     
     
     self.IDImageView.image = _IDImage;
-    if (_IDInfo.name) {
+    NSLog(@"\n正面\n姓名：%@\n性别：%@\n民族：%@\n住址：%@\n公民身份证号码：%@\n\n反面\n签发机关：%@\n有效期限：%@",_IDInfo.name,_IDInfo.gender,_IDInfo.nation,_IDInfo.address,_IDInfo.num,_IDInfo.issue,_IDInfo.valid);
+    
+    if (_IDInfo.name != NULL ) {
         self.IDNumLabel.text = _IDInfo.num;
         self.nameLabel.text = [NSString stringWithFormat:@"姓名: %@",_IDInfo.name];
         self.sexLabel.text = [NSString stringWithFormat:@"性别: %@",_IDInfo.gender];
         self.nationLabel.text = [NSString stringWithFormat:@"民族: %@",_IDInfo.nation];
         self.adressLabel.text = [NSString stringWithFormat:@"地址: %@",_IDInfo.address];
     } else {
+        
+        self.NoteLabel.hidden = true;
+        self.IDNumLabel.hidden = true;
         self.VisaAgencyLabel.text = [NSString stringWithFormat:@"签发机关: %@",_IDInfo.issue];
         self.TermOfValidityLabel.text = [NSString stringWithFormat:@"有效期: %@",_IDInfo.valid];
     }

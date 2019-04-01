@@ -17,9 +17,14 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
+    
+    // 倒计时更改
     var timeCount:Int = 5
     var timer:Timer?
+    
     let button:UIButton = UIButton(type: .custom);
+    
+    
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
@@ -80,12 +85,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
         image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
-        button.frame = CGRect.init(x: SCREEN_WIDTH - 80, y: STATUS_HEIGHT + 20, width: 50, height: 50)
-        button.backgroundColor = UIColor.lightGray
-        let title:String = String.init(format: "%ds", self.timeCount)
+        
+        // 倒计时按钮
+        button.frame = CGRect.init(x: SCREEN_WIDTH - 70, y: STATUS_HEIGHT + 10, width: 65, height: 25)
+        button.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        let title:String = String.init(format: "%d 跳过", self.timeCount)
         button.setTitle(title, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 3
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         image.addSubview(button)
@@ -100,15 +108,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         image.isUserInteractionEnabled = true
         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
             self.timeCount = self.timeCount - 1
-            let title:String = String.init(format: "%ds", self.timeCount)
+            let title:String = String.init(format: "%d 跳过", self.timeCount)
             self.button.setTitle(title, for: .normal)
             if(self.timeCount == 0){
                 self.removeImageWithDelay()
             }
         })
         LaunchFlag = true
-        
     }
+    
     func isIPhoneX() -> Bool {
         var iPhoneX:Bool = false
         if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
@@ -120,11 +128,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             }
         }
         return iPhoneX
-        
     }
+    
     @objc func btnClick(){
          self.removeImageWithDelay()
     }
+    
     func setupWebview(){
         // 创建配置
 //        let config = WKWebViewConfiguration()
@@ -200,8 +209,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }else{
             targetSize = CGSize(width: 200, height: 200)
             // 压缩图片
+            var i = 1
             for _image in photos {
-                var i = 1
                 print("压缩图片！")
                 let imageData = _image.jpegData(compressionQuality: 0.4)
                 let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
@@ -211,18 +220,13 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                 zipImageURLS.append(filePath)
                 print("zipFilePath:  " + filePath)
                 fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+                i+=1
             }
         }
-        
-        
-        
-
-        
         var i = 0
         var j = 0
         print("assets:  \(assets)")
         for asset in assets {
-            i = i + 1
             print("i:  \(i)")
             PHImageManager.default().requestImage(for: asset as! PHAsset, targetSize: targetSize, contentMode: .aspectFit, options:nil, resultHandler: {(image, info:[AnyHashable : Any]?) in
                 print ("j:  \(j)")
@@ -230,20 +234,28 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                     print("请求原图！")
                     let imageURL = info!["PHImageFileURLKey"] as! URL
                     print("路径：",imageURL)
-                    self.photoPath.append(imageURL.path + ",")
+                    self.photoPath.append(imageURL.path)
                     print("photopath:",self.photoPath)
-                    self.ImageCallBack(path: imageURL.path, callBackfunName: self.imagecallBackfunName)
+                    if(j < assets.count-1){
+                        self.photoPath.append(",")
+                    }
+                    if(j == assets.count-1){
+                        self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
+                    }
                 }else if((isSelectOriginalPhoto == false)&&j<zipImageURLS.count){
                     print("请求缩略图！")
-                    self.photoPath.append(zipImageURLS[j] + ",")
+                    self.photoPath.append(zipImageURLS[j])
+                    if(j < assets.count-1){
+                        self.photoPath.append(",")
+                    }
                     print(zipImageURLS[j])
-                    self.ImageCallBack(path: zipImageURLS[j], callBackfunName: self.imagecallBackfunName)
+                    if(j == assets.count-1){
+                        self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
+                    }
                 }
                 j = j + 1
-//                if(i == assets.count){
-//                    self.ImageCallBack(path: self.photoPath, callBackfunName: self.imagecallBackfunName)
-//                }
             })
+            i = i + 1
         }
     }
     

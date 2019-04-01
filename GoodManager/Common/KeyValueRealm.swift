@@ -68,8 +68,8 @@ class KeyValueRealm{
         let realm = try! Realm()
         let result =  realm.objects(KeyValue.self).filter("key == %@",key).first
         return result ?? KeyValue()
-        }
     }
+}
 
 func APPSetValue(key:String, value:String){
     let agent = KeyValueRealm()

@@ -542,6 +542,9 @@
                 IDInfoVC.IDInfo = iDInfo;// 身份证信息
                 IDInfoVC.IDImage = subImage;// 身份证图像
                 
+                
+                
+                
                 IDInfoVC.callbackfun = self.callbackfun;
                 
                 dispatch_async(dispatch_get_main_queue(), ^{

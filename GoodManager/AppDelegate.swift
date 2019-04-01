@@ -10,7 +10,11 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WXApiDelegate{
-
+    
+    // 屏幕旋转变量
+    var blockRotation: Bool = false
+    
+    
     // wxpay
     func onResp(_ resp: BaseResp) {
         ExecWinJS(JSFun: "APPWXPay" + "(\"" +  "\(resp.errCode)" + "\")")
@@ -101,8 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             let msgLinkURL:String = (userInfo["msgLinkURL"]) ?? "https://www.baidu.com";
             UIApplication.shared.openURL(URL.init(string: msgLinkURL)!);
             
-        }else
-        {
+        }else{
             //从通知设置界面进入应用
             //             print(response?.notification.request.content.userInfo)
         }
@@ -119,6 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         //启动页
         getLaunchData()
         window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -128,7 +132,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         self.window?.rootViewController = vc
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-        getTelBookRight()//检查通讯录权限
+        //检查通讯录权限
+        getTelBookRight()
         // 注册微信支付
         WXApi.registerApp("wxac7e2659ee456ef6")
         // 注册QQ
@@ -194,6 +199,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if self.blockRotation{
+            return UIInterfaceOrientationMask.all
+        } else {
+            return UIInterfaceOrientationMask.portrait
+        }
     }
     
 }
