@@ -10,7 +10,11 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WXApiDelegate{
-
+    
+    // 屏幕旋转变量
+    var blockRotation: Bool = false
+    
+    
     // wxpay
     func onResp(_ resp: BaseResp) {
         ExecWinJS(JSFun: "APPWXPay" + "(\"" +  "\(resp.errCode)" + "\")")
@@ -119,6 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         //启动页
         getLaunchData()
         window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -194,6 +199,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if self.blockRotation{
+            return UIInterfaceOrientationMask.all
+        } else {
+            return UIInterfaceOrientationMask.portrait
+        }
     }
     
 }
