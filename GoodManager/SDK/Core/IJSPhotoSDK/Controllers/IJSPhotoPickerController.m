@@ -514,7 +514,8 @@ static NSString *const CellID = @"pickerID";
      [self.navigationItem.rightBarButtonItem setTitleTextAttributes:dict forState:UIControlStateNormal];
     
     // 左按钮
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSBundle localizedStringForKey:@"Back"] style:UIBarButtonItemStylePlain target:self action:@selector(_cleanModelButtonAction)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSBundle localizedStringForKey:@"返回"] style:UIBarButtonItemStylePlain target:self action:@selector(_cleanModelButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = UIColor.whiteColor;
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:dict forState:UIControlStateNormal];
     
     //背景

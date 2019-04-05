@@ -25,7 +25,7 @@
 -(void)_setupUI
 {
     UIButton *leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
-    [leftButton setTitle:[NSBundle localizedStringForKey:@"Back"] forState:UIControlStateNormal];
+    [leftButton setTitle:[NSBundle localizedStringForKey:@"返回"] forState:UIControlStateNormal];
     [leftButton setImage:[IJSFImageGet loadImageWithBundle:@"" subFile:@"" grandson:nil imageName:@"" imageType:@""] forState:UIControlStateNormal];
     [self addSubview:leftButton];
     self.leftButton = leftButton;

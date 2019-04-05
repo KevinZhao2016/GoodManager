@@ -139,8 +139,8 @@
     [self.view addSubview:navigationView];
     self.navigationView = navigationView;
     [self.view bringSubviewToFront:navigationView];
-    [navigationView.cancleButton setTitle:[NSBundle localizedStringForKey:@"Back"] forState:(UIControlStateNormal)];
-    
+    [navigationView.cancleButton setTitle:[NSBundle localizedStringForKey:@"返回"] forState:(UIControlStateNormal)];
+    [navigationView.cancleButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     // 底部的UI 在数据请求完成再加载
     Float64 duration = CMTimeGetSeconds([self.avasset duration]);
     if (self.maxCutTime >= duration)

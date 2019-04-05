@@ -74,10 +74,9 @@
     [self uiCheckReceipts:nil];
     if (self.navigationController.viewControllers.count == 1)
     {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"back" style:UIBarButtonItemStyleDone target:self action:@selector(itemClick)];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(itemClick)];
+        item.tintColor = UIColor.blackColor;
         self.navigationItem.leftBarButtonItem = item;
-        
-        
     }
     
     

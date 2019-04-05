@@ -56,7 +56,8 @@
 //    self.navigationController.delegate = self;
 //    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(handleLeftBarButtonAction:)];
 //    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-    self.navigationItem.backBarButtonItem.title = @"back";
+    self.navigationItem.backBarButtonItem.title = @"返回";
+    self.navigationItem.leftBarButtonItem.tintColor = UIColor.blackColor;
     self.navigationItem.hidesBackButton = false;
 }
 

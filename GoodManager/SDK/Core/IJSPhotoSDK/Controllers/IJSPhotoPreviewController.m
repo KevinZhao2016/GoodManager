@@ -537,7 +537,8 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
          originalButton.selected = NO;
     }
     // 左按钮
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSBundle localizedStringForKey:@"Back"] style:UIBarButtonItemStylePlain target:self action:@selector(callBackButtonAction)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSBundle localizedStringForKey:@"返回"] style:UIBarButtonItemStylePlain target:self action:@selector(callBackButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = UIColor.blackColor;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[NSFontAttributeName] = [UIFont systemFontOfSize:17];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:dict forState:UIControlStateNormal];
