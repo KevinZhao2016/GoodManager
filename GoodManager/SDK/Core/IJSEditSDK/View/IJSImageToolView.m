@@ -43,6 +43,7 @@
     CGFloat marginLeft = ToolBarMarginLeft;
     CGFloat toolButtonCenterY = self.js_height / 2 - buttonSzieWidth / 2;
     UIView *toolBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.js_width, self.js_height)];
+    toolBarView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     [self addSubview:toolBarView];
     self.toolBarView = toolBarView;
 
