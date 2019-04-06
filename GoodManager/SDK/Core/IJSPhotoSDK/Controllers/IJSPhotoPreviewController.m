@@ -195,6 +195,7 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
     {
         IJSPreviewImageCell *preciewCell = (IJSPreviewImageCell *) cell;
         [preciewCell.scrollView setZoomScale:1.0];
+//        [preciewCell.scrollView ]
     }
 }
 #pragma mark - IJSPreviewImageCellDelegate 代理方法
@@ -1181,7 +1182,8 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
         [weakSelf dismissViewControllerAnimated:YES completion:^{
             if (weakSelf.selectedHandler)
             {
-                weakSelf.selectedHandler(photos, avPlayers, asset, infos, sourceType, nil);
+                // 不传infos ， 因为参数类型不对，会产生错误
+                weakSelf.selectedHandler(photos, avPlayers, asset, nil, sourceType, nil);
             }
         }];
     });

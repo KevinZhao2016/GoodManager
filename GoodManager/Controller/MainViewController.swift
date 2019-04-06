@@ -12,6 +12,7 @@ import SDWebImage
 import TZImagePickerController
 import dsBridge
 import CoreLocation
+import SwiftyJSON
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     var mark:String = "main"
@@ -26,7 +27,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
-    //var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
+    var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
     var photoPath:String = ""
@@ -43,13 +44,29 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     lazy var locationModel = LocationModel()
     
     override func viewDidLoad() {
+        
+        
+        
         print(UIScreen.main.bounds)
         super.viewDidLoad()
         setupWebview()
         if(LaunchFlag == false){
-            setupLaunchView() //启动页
+            var netSituation = APPGetNetWork()
+            let jsonString = JSON(parseJSON: netSituation)
+            netSituation = jsonString["mode"].stringValue
+            if netSituation == "0" {
+                let vc = getLastMainViewController()
+                let noNetVC = NoNetViewController()
+                vc.present(noNetVC, animated: true, completion: nil)
+            } else {
+                setupLaunchView() //启动页
+            }
         }
         locationManager.delegate = self //定位代理方法
+        
+        
+        
+        
         
 //        let notificationName = Notification.Name(rawValue: "idCardFront")
 //        NotificationCenter.default.addObserver(self,selector:#selector(receiveImagePath(notification:)),name: notificationName,object: nil)
@@ -73,16 +90,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(image)
-        //let isIPhoneX:Bool = self.isIPhoneX()
-//        if isIPhoneX   {
-//           image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
-//            bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
-//            bottomImage.backgroundColor = UIColor.white;
-//            bottomImage.image = UIImage(named: "好监理_启动页")
-//            bottomImage.contentMode = .scaleAspectFit
-//            self.view.addSubview(bottomImage)
-//
-//        }
+        let isIPhoneX:Bool = self.isIPhoneX()
+        if isIPhoneX   {
+            image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
+            
+            bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
+            bottomImage.backgroundColor = UIColor.white;
+            bottomImage.image = UIImage(named: "好监理_启动页")
+            bottomImage.contentMode = .scaleAspectFit
+            self.view.addSubview(bottomImage)
+        }
         image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
         
@@ -137,6 +154,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     func setupWebview(){
+        
         // 创建配置
 //        let config = WKWebViewConfiguration()
 //        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
@@ -166,11 +184,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             self.timer = nil
             UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                 self.image.alpha = 0
-                //self.bottomImage.alpha = 0
+                self.bottomImage.alpha = 0
             }, completion: { (finished) -> Void in
                 if(finished){
                     self.image.removeFromSuperview()
-                    //self.bottomImage.removeFromSuperview()
+                    self.bottomImage.removeFromSuperview()
                 }
             })
     }

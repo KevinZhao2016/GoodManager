@@ -19,8 +19,8 @@
 #import "IJSIMapViewExportView.h"
 #import "IJSIImputTextView.h"
 #import "IJSIImputTextExportView.h"
-#import "IJSImageMosaicToolView.h"
-#import "IJSImageMosaicTool.h"
+//#import "IJSImageMosaicToolView.h"
+//#import "IJSImageMosaicTool.h"
 
 #import <IJSFoundation/IJSFoundation.h>
 #import "TOCropViewController-Bridging-Header.h"
@@ -40,8 +40,8 @@
 @property (nonatomic, weak) IJSIImputTextExportView *exportTextView; // 导出的文字视图
 @property (nonatomic, weak) IJSIImputTextView *imputTextView;        // 文字视图
 @property (nonatomic, strong) IJSImageDrawTool *drawTool;            //绘画的工具/
-@property (nonatomic, strong) IJSImageMosaicTool *mosaicTool;        // 马赛克绘制工具
-@property (nonatomic, weak) IJSImageMosaicToolView *mosaicToolView;  // 马赛克工具条
+//@property (nonatomic, strong) IJSImageMosaicTool *mosaicTool;        // 马赛克绘制工具
+//@property (nonatomic, weak) IJSImageMosaicToolView *mosaicToolView;  // 马赛克工具条
 @property (nonatomic, assign) BOOL hiddenToolView;                   //是否隐藏工具条
 @property (nonatomic, strong) UIImage *completeEditImage;            //处理的image
 @property (nonatomic, copy) void (^completeEditImageCallBlock)(UIImage *image,NSURL *outputPath, NSError *error);
@@ -163,7 +163,7 @@
     // 画笔
     self.toolsView.panButtonBlock = ^(UIButton *button) {
 
-        [weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
+        //[weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
         BOOL isHidden = button.isSelected;
 
         weakSelf.currentModel = IJSIDrawMode;
@@ -188,7 +188,7 @@
     
     // 笑脸图
     self.toolsView.smileButtonBlock = ^(UIButton *button) {
-        [weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
+        //[weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
         weakSelf.currentModel = IJSIPaperMode;
         [weakSelf _hiddenplaceholderToolViewSubView];
         weakSelf.placeholderToolView.frame = CGRectMake(0, JSScreenHeight -IJSGTabbarSafeBottomMargin - JSScreenHeight * 230 / 667, JSScreenWidth, JSScreenHeight * 230 / 667);
@@ -207,7 +207,7 @@
 
     // 文字
     self.toolsView.textButtonBlock = ^(UIButton *button) {
-        [weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
+        //[weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
         weakSelf.currentModel = IJSITextMode;
         [weakSelf _hiddenplaceholderToolViewSubView];
         weakSelf.imputTextView.hidden = NO;
@@ -215,25 +215,25 @@
     };
 
     // 马赛克
-    self.toolsView.mosaicButtonBlock = ^(UIButton *button) {
-        weakSelf.currentModel = IJSIMosaicMode;
-        [weakSelf _hiddenplaceholderToolViewSubView];
-        [weakSelf _hiddenPlaceholderToolView:NO];
-
-        if (IJSGiPhoneX)
-        {
-             weakSelf.placeholderToolView.frame = CGRectMake(0, JSScreenHeight - IJSGTabbarSafeBottomMargin - ToolBarMarginBottom - IJSImageMosaicButtonHeight, JSScreenWidth, IJSImageMosaicButtonHeight);
-        }
-        else
-        {
-            weakSelf.placeholderToolView.frame = CGRectMake(0, JSScreenHeight - ToolBarMarginBottom - IJSImageMosaicButtonHeight, JSScreenWidth, IJSImageMosaicButtonHeight);
-        }
-        weakSelf.mosaicToolView.hidden = button.selected;
-        [weakSelf _drawingViewSubViewUserInteractionEnabled:nil state:NO];
-    };
+//    self.toolsView.mosaicButtonBlock = ^(UIButton *button) {
+//        weakSelf.currentModel = IJSIMosaicMode;
+//        [weakSelf _hiddenplaceholderToolViewSubView];
+//        [weakSelf _hiddenPlaceholderToolView:NO];
+//
+//        if (IJSGiPhoneX)
+//        {
+//             weakSelf.placeholderToolView.frame = CGRectMake(0, JSScreenHeight - IJSGTabbarSafeBottomMargin - ToolBarMarginBottom - IJSImageMosaicButtonHeight, JSScreenWidth, IJSImageMosaicButtonHeight);
+//        }
+//        else
+//        {
+//            weakSelf.placeholderToolView.frame = CGRectMake(0, JSScreenHeight - ToolBarMarginBottom - IJSImageMosaicButtonHeight, JSScreenWidth, IJSImageMosaicButtonHeight);
+//        }
+//        //weakSelf.mosaicToolView.hidden = button.selected;
+//        [weakSelf _drawingViewSubViewUserInteractionEnabled:nil state:NO];
+//    };
     // 裁剪
     self.toolsView.clipButtonBlock = ^(UIButton *button) {
-        [weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
+        //[weakSelf.mosaicToolView resetButtonStatus:nil];  // 恢复button的原始状态
         weakSelf.currentModel = IJSIClipMode;
          [weakSelf _hiddenPlaceholderToolView:YES];
         [weakSelf _completeCallback:^(UIImage *image) {
@@ -334,8 +334,8 @@
 // 排版层次
 - (void)_resetUIHierarchy
 {
-    [self.drawingView insertSubview:self.mosaicTool.guassanView atIndex:0];
-    [self.drawingView insertSubview:self.mosaicTool.mosaicView atIndex:1];
+    //[self.drawingView insertSubview:self.mosaicTool.guassanView atIndex:0];
+    //[self.drawingView insertSubview:self.mosaicTool.mosaicView atIndex:1];
     [self.drawingView insertSubview:self.drawTool.panDrawingView atIndex:2];
     [self _drawingViewSubViewUserInteractionEnabled:nil state:NO];
 }
@@ -360,7 +360,7 @@
             UIImage *filterGaussan = [realImage getImageFilterForGaussianBlur:10];
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.gaussanImage = filterGaussan;
-                weakSelf.mosaicTool.mosaicToolGaussanImage = weakSelf.gaussanImage;
+                //weakSelf.mosaicTool.mosaicToolGaussanImage = weakSelf.gaussanImage;
                 weakSelf.isGetingGuassImage = YES;
                 JSLog(@"渲染完成");
             });
@@ -573,90 +573,90 @@
     return _exportTextView;
 }
 // 马赛克工具条
-- (IJSImageMosaicToolView *)mosaicToolView
-{
-    if (_mosaicToolView == nil)
-    {
-        IJSImageMosaicToolView *mosaicToolView = [[IJSImageMosaicToolView alloc] initWithFrame:CGRectMake(0, 0, JSScreenWidth, IJSImageMosaicButtonHeight)];
-        _mosaicToolView = mosaicToolView;
-        mosaicToolView.backgroundColor = [UIColor clearColor];
-        [self.placeholderToolView addSubview:mosaicToolView];
-        [self.view bringSubviewToFront:self.placeholderToolView];
+//- (IJSImageMosaicToolView *)mosaicToolView
+//{
+//    if (_mosaicToolView == nil)
+//    {
+//        IJSImageMosaicToolView *mosaicToolView = [[IJSImageMosaicToolView alloc] initWithFrame:CGRectMake(0, 0, JSScreenWidth, IJSImageMosaicButtonHeight)];
+//        _mosaicToolView = mosaicToolView;
+//        mosaicToolView.backgroundColor = [UIColor clearColor];
+//        [self.placeholderToolView addSubview:mosaicToolView];
+//        [self.view bringSubviewToFront:self.placeholderToolView];
+//
+//        __weak typeof(self) weakSelf = self;
+//        _mosaicToolView.typeOneCallBack = ^(UIButton *button) { //马赛克
+//
+//            weakSelf.mosaicTool.graffitiType = JSMosaicType;
+//            weakSelf.mosaicTool.mosaicView.backgroundColor = [UIColor clearColor];
+//            [weakSelf _drawingViewSubViewUserInteractionEnabled:weakSelf.mosaicTool.mosaicView state:YES];
+//            weakSelf.mosaicTool.drawToolDidTap = ^{
+//                [weakSelf _hiddenToolsView:weakSelf.hiddenToolView];
+//                weakSelf.hiddenToolView = !weakSelf.hiddenToolView;
+//            };
+//            weakSelf.mosaicTool.drawingCallBack = ^(BOOL isDrawing) {
+//                [weakSelf _hiddenToolsView:YES];
+//            };
+//            weakSelf.mosaicTool.drawEndCallBack = ^(BOOL isEndDraw) {
+//                [weakSelf _hiddenToolsView:NO];
+//            };
+//
+//        };
+//
+//        mosaicToolView.typeTwoCallBack = ^(UIButton *button) { // 高斯
+//
+//            weakSelf.mosaicTool.graffitiType = JSGaussanType;
+//            weakSelf.mosaicTool.guassanView.backgroundColor = [UIColor clearColor];
+//            [weakSelf _drawingViewSubViewUserInteractionEnabled:weakSelf.mosaicTool.guassanView state:YES];
+//            weakSelf.mosaicTool.drawToolDidTap = ^{
+//                [weakSelf _hiddenToolsView:weakSelf.hiddenToolView];
+//                weakSelf.hiddenToolView = !weakSelf.hiddenToolView;
+//            };
+//
+//            weakSelf.mosaicTool.drawingCallBack = ^(BOOL isDrawing) {
+//                [weakSelf _hiddenToolsView:YES];
+//            };
+//            weakSelf.mosaicTool.drawEndCallBack = ^(BOOL isEndDraw) {
+//                [weakSelf _hiddenToolsView:NO];
+//            };
+//
+//            if (weakSelf.gaussanImage == nil)
+//            {
+//                IJSLodingView *lodingView = [IJSLodingView showLodingViewAddedTo:weakSelf.view title:@"正在处理... ..."];
+//                weakSelf.lodingView = lodingView;
+//                [weakSelf _startListenPlayerTimer];
+//                [weakSelf _getGaussanImage];
+//            }
+//        };
+//
+//        mosaicToolView.cancleLastCallBack = ^(UIButton *button) { // 取消
+//
+//            if (weakSelf.mosaicTool.graffitiType == JSMosaicType)
+//            {
+//                [weakSelf.mosaicTool.mosaicView cleanLastDrawPath];
+//            }
+//            else if (weakSelf.mosaicTool.graffitiType == JSGaussanType)
+//            {
+//                [weakSelf.mosaicTool.guassanView cleanLastDrawPath];
+//            }
+//            else
+//            {
+//                return;
+//            }
+//        };
+//    }
+//    return _mosaicToolView;
+//}
 
-        __weak typeof(self) weakSelf = self;
-        _mosaicToolView.typeOneCallBack = ^(UIButton *button) { //马赛克
-
-            weakSelf.mosaicTool.graffitiType = JSMosaicType;
-            weakSelf.mosaicTool.mosaicView.backgroundColor = [UIColor clearColor];
-            [weakSelf _drawingViewSubViewUserInteractionEnabled:weakSelf.mosaicTool.mosaicView state:YES];
-            weakSelf.mosaicTool.drawToolDidTap = ^{
-                [weakSelf _hiddenToolsView:weakSelf.hiddenToolView];
-                weakSelf.hiddenToolView = !weakSelf.hiddenToolView;
-            };
-            weakSelf.mosaicTool.drawingCallBack = ^(BOOL isDrawing) {
-                [weakSelf _hiddenToolsView:YES];
-            };
-            weakSelf.mosaicTool.drawEndCallBack = ^(BOOL isEndDraw) {
-                [weakSelf _hiddenToolsView:NO];
-            };
-
-        };
-
-        mosaicToolView.typeTwoCallBack = ^(UIButton *button) { // 高斯
-
-            weakSelf.mosaicTool.graffitiType = JSGaussanType;
-            weakSelf.mosaicTool.guassanView.backgroundColor = [UIColor clearColor];
-            [weakSelf _drawingViewSubViewUserInteractionEnabled:weakSelf.mosaicTool.guassanView state:YES];
-            weakSelf.mosaicTool.drawToolDidTap = ^{
-                [weakSelf _hiddenToolsView:weakSelf.hiddenToolView];
-                weakSelf.hiddenToolView = !weakSelf.hiddenToolView;
-            };
-
-            weakSelf.mosaicTool.drawingCallBack = ^(BOOL isDrawing) {
-                [weakSelf _hiddenToolsView:YES];
-            };
-            weakSelf.mosaicTool.drawEndCallBack = ^(BOOL isEndDraw) {
-                [weakSelf _hiddenToolsView:NO];
-            };
-
-            if (weakSelf.gaussanImage == nil)
-            {
-                IJSLodingView *lodingView = [IJSLodingView showLodingViewAddedTo:weakSelf.view title:@"正在处理... ..."];
-                weakSelf.lodingView = lodingView;
-                [weakSelf _startListenPlayerTimer];
-                [weakSelf _getGaussanImage];
-            }
-        };
-
-        mosaicToolView.cancleLastCallBack = ^(UIButton *button) { // 取消
-
-            if (weakSelf.mosaicTool.graffitiType == JSMosaicType)
-            {
-                [weakSelf.mosaicTool.mosaicView cleanLastDrawPath];
-            }
-            else if (weakSelf.mosaicTool.graffitiType == JSGaussanType)
-            {
-                [weakSelf.mosaicTool.guassanView cleanLastDrawPath];
-            }
-            else
-            {
-                return;
-            }
-        };
-    }
-    return _mosaicToolView;
-}
-
-//马赛克笔
-- (IJSImageMosaicTool *)mosaicTool
-{
-    if (_mosaicTool == nil)
-    {
-        IJSImageMosaicTool *mosaicTool = [[IJSImageMosaicTool alloc] initToolWithViewController:self];
-        _mosaicTool = mosaicTool;
-    }
-    return _mosaicTool;
-}
+////马赛克笔
+//- (IJSImageMosaicTool *)mosaicTool
+//{
+//    if (_mosaicTool == nil)
+//    {
+//        IJSImageMosaicTool *mosaicTool = [[IJSImageMosaicTool alloc] initToolWithViewController:self];
+//        _mosaicTool = mosaicTool;
+//    }
+//    return _mosaicTool;
+//}
 
 /*-----------------------------------私有方法-------------------------------------------------------*/
 #pragma mark 隐藏工具条和导航栏
@@ -734,14 +734,14 @@
         {
             [(IJSIPanDrawingView *) subView cleanAllDrawPath];
         }
-        if ([subView isKindOfClass:[IJSImageGaussanView class]])
-        {
-            [(IJSImageGaussanView *) subView cleanAllDrawPath];
-        }
-        if ([subView isKindOfClass:[IJSImageMosaicView class]])
-        {
-            [(IJSImageMosaicView *) subView cleanAllDrawPath];
-        }
+//        if ([subView isKindOfClass:[IJSImageGaussanView class]])
+//        {
+//            [(IJSImageGaussanView *) subView cleanAllDrawPath];
+//        }
+//        if ([subView isKindOfClass:[IJSImageMosaicView class]])
+//        {
+//            [(IJSImageMosaicView *) subView cleanAllDrawPath];
+//        }
     }
 }
 // 清除所有的贴图
@@ -850,22 +850,22 @@
     return self.backPlacehodelView;
 }
 // 让图片保持在屏幕中央，防止图片放大时，位置出现跑偏
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView
-{
-    UIView *anyView = self.backPlacehodelView;
-    CGFloat offsetX = 0.0;
-    if (self.backScrollView.bounds.size.width > self.backScrollView.contentSize.width)
-    {
-        offsetX = (self.backScrollView.bounds.size.width - self.backScrollView.contentSize.width) * 0.5;
-    }
-    CGFloat offsetY = 0.0;
-    if ((self.backScrollView.bounds.size.height > self.backScrollView.contentSize.height))
-    {
-        offsetY = (self.backScrollView.bounds.size.height - self.backScrollView.contentSize.height) * 0.5;
-    }
-    
-    anyView.center = CGPointMake(self.backScrollView.contentSize.width * 0.5 + offsetX, self.backScrollView.contentSize.height * 0.5 + offsetY);
-}
+//- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+//{
+//    UIView *anyView = self.backPlacehodelView;
+//    CGFloat offsetX = 0.0;
+//    if (self.backScrollView.bounds.size.width > self.backScrollView.contentSize.width)
+//    {
+//        offsetX = (self.backScrollView.bounds.size.width - self.backScrollView.contentSize.width) * 0.5;
+//    }
+//    CGFloat offsetY = 0.0;
+//    if ((self.backScrollView.bounds.size.height > self.backScrollView.contentSize.height))
+//    {
+//        offsetY = (self.backScrollView.bounds.size.height - self.backScrollView.contentSize.height) * 0.5;
+//    }
+//
+//    anyView.center = CGPointMake(self.backScrollView.contentSize.width * 0.5 + offsetX, self.backScrollView.contentSize.height * 0.5 + offsetY);
+//}
 
 #pragma mark 裁剪的代理方法
 - (void)cropViewController:(TOCropViewController *)cropViewController didCropToImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle
@@ -876,8 +876,8 @@
     [self _cleanAllExportView];
     [self _cleanAllSubView];
     self.drawTool.panDrawingView = nil;
-    self.mosaicTool.mosaicView = nil;
-    self.mosaicTool.guassanView = nil;
+    //self.mosaicTool.mosaicView = nil;
+    //self.mosaicTool.guassanView = nil;
     [self _resetUIHierarchy];
 
     self.cropImageRect = cropRect;

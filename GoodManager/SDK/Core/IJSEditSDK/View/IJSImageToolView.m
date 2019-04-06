@@ -20,7 +20,7 @@
 /* 文字button */
 @property (nonatomic, weak) UIButton *textButton;
 /* 马赛克 */
-@property (nonatomic, weak) UIButton *mosaicButton;
+//@property (nonatomic, weak) UIButton *mosaicButton;
 /* 裁剪 */
 @property (nonatomic, weak) UIButton *clipButton;
 
@@ -50,7 +50,7 @@
     UIButton *panButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [panButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"annotate@2x" imageType:@"png"] forState:UIControlStateNormal];
     [panButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"annotate_selected@2x" imageType:@"png"] forState:UIControlStateSelected];
-    panButton.frame = CGRectMake(marginLeft, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
+    panButton.frame = CGRectMake(marginLeft+50, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
     panButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [panButton addTarget:self action:@selector(_panButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [toolBarView addSubview:panButton];
@@ -74,18 +74,20 @@
     [toolBarView addSubview:textButton];
     self.textButton = textButton;
 
-    UIButton *mosaicButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [mosaicButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"mosaicblack@2x" imageType:@"png"] forState:UIControlStateNormal];
-    [mosaicButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"mosaicgreen@2x" imageType:@"png"] forState:UIControlStateSelected];
-    mosaicButton.frame = CGRectMake(textButton.js_centerX + buttonSzieWidth / 2 + marginLeft, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
-    mosaicButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [mosaicButton addTarget:self action:@selector(_mosaicButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [toolBarView addSubview:mosaicButton];
-    self.mosaicButton = mosaicButton;
+//    UIButton *mosaicButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [mosaicButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"mosaicblack@2x" imageType:@"png"] forState:UIControlStateNormal];
+//    [mosaicButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"mosaicgreen@2x" imageType:@"png"] forState:UIControlStateSelected];
+//    mosaicButton.frame = CGRectMake(textButton.js_centerX + buttonSzieWidth / 2 + marginLeft, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
+//    mosaicButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    [mosaicButton addTarget:self action:@selector(_mosaicButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [toolBarView addSubview:mosaicButton];
+//    self.mosaicButton = mosaicButton;
 
     UIButton *clipButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [clipButton setImage:[IJSFImageGet loadImageWithBundle:@"JSPhotoSDK" subFile:nil grandson:nil imageName:@"clip@2x" imageType:@"png"] forState:UIControlStateNormal];
-    clipButton.frame = CGRectMake(mosaicButton.js_centerX + buttonSzieWidth / 2 + marginLeft, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
+//    clipButton.frame = CGRectMake(mosaicButton.js_centerX + buttonSzieWidth / 2 + marginLeft, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
+    clipButton.frame = CGRectMake(textButton.js_centerX + buttonSzieWidth / 2 + marginLeft, toolButtonCenterY, buttonSzieWidth, buttonSzieWidth);
+
     clipButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [clipButton addTarget:self action:@selector(_clipButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [toolBarView addSubview:clipButton];
@@ -157,7 +159,7 @@
 /*------------------------------------视频编辑重新调整button的UI布局-------------------------------*/
 - (void)setupUIForVideoEditController
 {
-    self.mosaicButton.hidden = YES;
+    //self.mosaicButton.hidden = YES;
     CGFloat marginLeft = (JSScreenWidth - 4 * buttonSzieWidth) / 5;
     self.panButton.js_left = marginLeft;
     self.smileButton.js_left = marginLeft * 2 + buttonSzieWidth;
