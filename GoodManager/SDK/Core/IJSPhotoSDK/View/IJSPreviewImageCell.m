@@ -55,7 +55,7 @@
     {
         _backImageView = [UIImageView new];
         _backImageView.backgroundColor = [UIColor colorWithRed:(34 / 255.0) green:(34 / 255.0) blue:(34 / 255.0) alpha:1.0];
-        _backImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _backImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.scrollView addSubview:_backImageView];
         [self _addTapWithView:_backImageView];
     }

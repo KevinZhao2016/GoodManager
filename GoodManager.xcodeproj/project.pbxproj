@@ -163,6 +163,7 @@
 		186C0A2722432C9C000E27F1 /* UINavigationController+IJSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C09D622432C9B000E27F1 /* UINavigationController+IJSNavigationController.m */; };
 		186C0A2822432C9C000E27F1 /* IJSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186C09DB22432C9B000E27F1 /* IJSFoundation.framework */; };
 		1890D6B12240FF6D001AC1D3 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */; };
+		18943B9E2257915D00B97FE1 /* NoNetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943B9D2257915D00B97FE1 /* NoNetViewController.swift */; };
 		18A351622222A88000C62779 /* UIImage+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */; };
 		18A351632222A88000C62779 /* UIAlertController+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */; };
 		18A351642222A88000C62779 /* JYBDScanCardBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351332222A87F00C62779 /* JYBDScanCardBaseVC.m */; };
@@ -705,6 +706,7 @@
 		186C09D922432C9B000E27F1 /* IJSNotificationCenterString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJSNotificationCenterString.h; sourceTree = "<group>"; };
 		186C09DB22432C9B000E27F1 /* IJSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJSFoundation.framework; sourceTree = "<group>"; };
 		1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
+		18943B9D2257915D00B97FE1 /* NoNetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetViewController.swift; sourceTree = "<group>"; };
 		18A3512D2222A87F00C62779 /* UIAlertController+IDCardExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IDCardExtend.h"; sourceTree = "<group>"; };
 		18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IDCardExtend.m"; sourceTree = "<group>"; };
 		18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IDCardExtend.m"; sourceTree = "<group>"; };
@@ -1352,6 +1354,7 @@
 				0A7F576621E2F0B500F03870 /* CameraViewController.swift */,
 				0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */,
 				1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */,
+				18943B9D2257915D00B97FE1 /* NoNetViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1521,16 +1524,16 @@
 			isa = PBXGroup;
 			children = (
 				186C092E22432C9B000E27F1 /* IJSImageEditController.h */,
+				186C093422432C9B000E27F1 /* IJSImageEditController.m */,
+				186C093222432C9B000E27F1 /* IJSVideoEditController.m */,
 				186C092F22432C9B000E27F1 /* IJSVideoManagerController.m */,
+				186C093822432C9B000E27F1 /* IJSVideoCutController.h */,
 				186C093022432C9B000E27F1 /* IJSVideoCutController.m */,
 				186C093122432C9B000E27F1 /* IJSImageManagerController.m */,
-				186C093222432C9B000E27F1 /* IJSVideoEditController.m */,
 				186C093322432C9B000E27F1 /* IJSEditSDK.h */,
-				186C093422432C9B000E27F1 /* IJSImageEditController.m */,
 				186C093522432C9B000E27F1 /* IJSVideoEditController.h */,
 				186C093622432C9B000E27F1 /* IJSImageManagerController.h */,
 				186C093722432C9B000E27F1 /* IJSVideoManagerController.h */,
-				186C093822432C9B000E27F1 /* IJSVideoCutController.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3666,6 +3669,7 @@
 				5656C4DD22453CD5006592FC /* NTESCustomAttachmentDecoder.m in Sources */,
 				5656C48622453CD5006592FC /* NTESContactDataCell.m in Sources */,
 				5656C4A322453CD5006592FC /* NTESSystemNotificationViewController.m in Sources */,
+				18943B9E2257915D00B97FE1 /* NoNetViewController.swift in Sources */,
 				18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */,
 				18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */,
 				5656C4AB22453CD5006592FC /* NTESChatroomManager.m in Sources */,
