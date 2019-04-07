@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, WhiteBoardCmdType){
 static const NSTimeInterval CallerWaitSeconds = 40;
 static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 
-@interface NTESWhiteboardViewController ()< NTESTimerHolderDelegate>
+@interface NTESWhiteboardViewController ()<NIMRTSManagerDelegate, NTESTimerHolderDelegate>
 
 @property (strong, nonatomic) NTESWhiteboardDrawView *myDrawView;
 @property (strong, nonatomic) NTESWhiteboardDrawView *peerDrawView;
@@ -104,11 +104,11 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-   
+    id<NIMRTSManager> manager = [NIMAVChatSDK sharedSDK].rtsManager;
+    [manager addDelegate:self];
     [self updateButton];
     
-  
+    [[NIMAVChatSDK sharedSDK].rtsManager setUpGlobalSocksWithParam:[self globalSocksSetting]];
     
     NIMKitInfo *info = [[NIMKit sharedKit] infoByUser:_peerID option:nil];
     NSURL *avatarURL;
@@ -144,7 +144,7 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 
     if (_isCaller) {
         [self switchToCallerView];
-      
+        [self requestRTS];
         [_hintTextLabel setText:@"正在邀请对方, 请稍后"];
         _callerWaitingTimer = [[NTESTimerHolder alloc] init];
         [_callerWaitingTimer startTimer:CallerWaitSeconds delegate:self repeats:NO];
@@ -163,7 +163,8 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 }
 - (void)dealloc
 {
-    
+    id<NIMRTSManager> manager = [NIMAVChatSDK sharedSDK].rtsManager;
+    [manager removeDelegate:self];
     
     NTESWhiteboardAttachment *attachment = [[NTESWhiteboardAttachment alloc] init];
     attachment.flag = CustomWhiteboardFlagClose;
@@ -178,22 +179,31 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 
 #pragma mark - user interfaces
 - (IBAction)onRejectButtonPressed:(id)sender {
-   
+    [self responseRTS:NO];
     [self dismiss];
 }
 - (IBAction)onAcceptButtonPressed:(id)sender {
     
+    if (_types & NIMRTSServiceAudio) {
+        UInt64 currentNetcall = [[NIMAVChatSDK sharedSDK].netCallManager currentCallID];
+        if (currentNetcall) {
+            [[NIMAVChatSDK sharedSDK].netCallManager hangup:currentNetcall];
+        }
+    }
     
+    [self responseRTS:YES];
+    [self switchToWaitingConnectView];
 }
 - (IBAction)onMuteButtonPressed:(id)sender {
     _mute = !_mute;
     [self updateButton];
- 
+    [[NIMAVChatSDK sharedSDK].rtsManager setMute:_mute];
+    [[NIMAVChatSDK sharedSDK].rtsManager sendRTSControl:_mute ? @"关闭了声音" : @"打开了声音" forSession:_sessionID];
 }
 - (IBAction)onSpeakerButtonPressed:(id)sender {
     _speaker = !_speaker;
     [self updateButton];
-   
+    [[NIMAVChatSDK sharedSDK].rtsManager setSpeaker:_speaker];
 }
 - (IBAction)onCloseButtonPressed:(id)sender {
     
@@ -267,7 +277,90 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 
 
 }
+- (void)onRTS:(NSString *)sessionID
+      service:(NIMRTSService)type
+       status:(NIMRTSStatus)status
+        error:(NSError *)error
+{
+    DDLogInfo(@"RTSDemo: service %zd status %zd", type, status);
+    if (type == NIMRTSServiceReliableTransfer) {
+        if (status == NIMRTSStatusConnect) {
+            [self switchToConnectedView];
+            [_sendCmdsTimer startTimer:SendCmdIntervalSeconds delegate:self repeats:YES];
+        }
+        else {
+            DDLogInfo(@"已断开连接: %zd", error.code);
+            [self termimateRTS];
+            [self dismissAfter:1];
+        }
+    }
+    else if (type == NIMRTSServiceAudio) {
+        _audioConnected = (status == NIMRTSStatusConnect) ? YES : NO;
+        if (_audioConnected) {
+            [[NIMAVChatSDK sharedSDK].rtsManager setMute:_mute];
+        }
+        else {
+            DDLogInfo(@"已断开音频服务: %zd", error.code);
+        }
+        if (![_footerView isHidden]) {
+            [_muteButton setHidden:!_audioConnected];
+        }
+    }
+}
 
+- (void)onRTSReceive:(NSString *)sessionID
+                data:(NSData *)data
+                from:(NSString *)user
+              withIn:(NIMRTSService)channel
+{
+    NSString *cmdString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    DDLogDebug(@"receive app data:%@", cmdString);
+    NSArray *cmds = [cmdString componentsSeparatedByString:@";"];
+    BOOL newLine = NO;
+    NSMutableArray *points = [[NSMutableArray alloc] init];
+    for (NSString *cmdString in cmds) {
+        if ([cmdString rangeOfString:@":"].length == 0) {
+            continue;
+        }
+        NSArray *cmd = [cmdString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@":,"]];
+        NSAssert(cmd.count >= 3, @"Invalid cmd");
+        
+        NSInteger c = [cmd[0] integerValue];
+        NSArray *point = [NSArray arrayWithObjects:
+                          @([cmd[1] floatValue] * _drawViewWidth),
+                          @([cmd[2] floatValue] * _drawViewWidth), nil];
+        switch (c) {
+            case WhiteBoardCmdTypePointStart:
+                if ([points count] > 0) {
+                    [_peerDrawView addPoints:points isNewLine:newLine];
+                    points = [[NSMutableArray alloc] init];
+                }
+                newLine = YES;
+            case WhiteBoardCmdTypePointMove:
+            case WhiteBoardCmdTypePointEnd:
+                [points addObject:point];
+                break;
+            case WhiteBoardCmdTypeCancelLine:
+                [_peerDrawView deleteLastLine];
+                break;
+//            case WhiteBoardCmdTypePacketID:
+//                DDLogDebug(@"------receive cmd id %@", cmd[1]);
+//                break;
+            case WhiteBoardCmdTypeClearLines:
+                [self clearWhiteboard];
+                [self sendWhiteboardCmd:WhiteBoardCmdTypeClearLinesAck];
+                break;
+            case WhiteBoardCmdTypeClearLinesAck:
+                [self clearWhiteboard];
+                break;
+            default:
+                break;
+        }
+    }
+    if ([points count] > 0) {
+        [_peerDrawView addPoints:points isNewLine:newLine];
+    }
+}
 
 - (void)onRTSControl:(NSString *)controlInfo
                 from:(NSString *)user
@@ -281,9 +374,18 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
     }
 }
 
+- (void)onRTSRecordingInfo:(NIMRTSRecordingInfo *)info
+                forSession:(NSString *)sessionID
+{
+//    NSString *fileType = (info.service == NIMRTSServiceReliableTransfer) ? @"白板" : @"语音";
+//    [self sendMessage:[NTESSessionMsgConverter msgWithText:[NSString stringWithFormat:@"%@:%@", fileType, info.recordFileName]]];
+}
 
-
-
+- (void)onRTSAudioNetStatus:(NIMNetCallNetStatus)status
+                       user:(NSString *)user
+{
+    DDLogInfo(@"RTS audio netstatus: user %@, stat %@", user,@(status));
+}
 
 
 #pragma mark UIResponder
@@ -318,14 +420,64 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
     }
 }
 
-
-
+#pragma mark - private methods
+- (void)requestRTS
+{
+    
+    NIMRTSOption *option = [[NIMRTSOption alloc] init];
+    
+    option.extendMessage = @"白板请求扩展信息";
+    option.apnsContent = @"邀请你加入白板会话";
+    option.apnsSound = @"video_chat_tip_receiver.aac";
+    [self fillUserSetting:option];
+    
+    __weak typeof(self) wself = self;
+    _sessionID = [[NIMAVChatSDK sharedSDK].rtsManager requestRTS:[NSArray arrayWithObject:_peerID]
+                                                  services:_types
+                                                    option:option
+                                                completion:^(NSError *error, NSString *sessionID, UInt64 channelID)
+    {
+        if (error) {
+            DDLogInfo(@"RTSDemo: send request failed %zd!!!", error.code);
+            NSString *errToast = (error.code == NIMAVRemoteErrorCodeCalleeOffline) ? @"对方不在线" : [NSString stringWithFormat:@"发起失败:%zd", error.code];
+            [wself makeToast:errToast];
+            [wself dismissAfter:2];
+        }
+        else {
+            DDLogInfo(@"RTSDemo: session %@ channel %llu", sessionID, channelID);
+            NTESWhiteboardAttachment *attachment = [[NTESWhiteboardAttachment alloc] init];
+            attachment.flag = CustomWhiteboardFlagInvite;
+            NIMMessage *message = [NTESSessionMsgConverter msgWithWhiteboardAttachment:attachment];
+            [wself sendMessage:message];
+        }
+    }];
+}
+- (void)responseRTS:(BOOL)accepted
+{
+    NIMRTSOption *option = [[NIMRTSOption alloc] init];    
+    [self fillUserSetting:option];
+    
+    __weak typeof(self) wself = self;
+    [[NIMAVChatSDK sharedSDK].rtsManager responseRTS:_sessionID
+                                        accept:accepted
+                                        option:option
+                                    completion:^(NSError *error, NSString *sessionID, UInt64 channelID) {
+        if (error) {
+            [wself makeToast:[NSString stringWithFormat:@"接听失败:%zd", error.code]];
+            DDLogInfo(@"RTSDemo: send response failed %zd!!!", error.code);
+            [wself dismissAfter:2];
+        }
+        else {
+            DDLogInfo(@"RTSDemo: session %@ channel %llu", sessionID, channelID);
+        }
+    }];
+}
 
 - (void)termimateRTS
 {
     if (_needTerminateRTS) {
         _needTerminateRTS = NO;
-       
+        [[NIMAVChatSDK sharedSDK].rtsManager terminateRTS:_sessionID];
     }
 }
 
@@ -369,7 +521,13 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
 
 - (void)sendRTSData:(NSString *)data
 {
-  
+    BOOL success = [[NIMAVChatSDK sharedSDK].rtsManager sendRTSData:[data dataUsingEncoding:NSUTF8StringEncoding]
+                                                        from:_sessionID
+                                                           to:(_isCaller ? nil : _peerID) //单播和广播发送示例
+                                                        with:NIMRTSServiceReliableTransfer];
+    if (!success) {
+        [self.view.window makeToast:@"数据发送失败" duration:1 position:CSToastPositionBottom];
+    }
 }
 
 - (void)switchToCallerView
@@ -507,8 +665,25 @@ static const NSTimeInterval SendCmdIntervalSeconds = 0.06;
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (void)fillUserSetting:(NIMRTSOption *)option
+{
+    option.serverRecordAudio = [[NTESBundleSetting sharedConfig] serverRecordAudio];
+    option.serverRecordData = [[NTESBundleSetting sharedConfig] serverRecordWhiteboardData];
+    option.autoDeactivateAudioSession = [[NTESBundleSetting sharedConfig] autoDeactivateAudioSession];
+    option.audioDenoise = [[NTESBundleSetting sharedConfig] audioDenoise];
+    option.voiceDetect = [[NTESBundleSetting sharedConfig] voiceDetect];
+    option.preferHDAudio =  [[NTESBundleSetting sharedConfig] preferHDAudio];
+    option.scene = [[NTESBundleSetting sharedConfig] scene];
+}
 
-
-
+- (NIMRTSSocksParam *)globalSocksSetting
+{
+    NIMRTSSocksParam *socksParam = [[NIMRTSSocksParam alloc] init];
+    socksParam.enableProxy   = [[NTESBundleSetting sharedConfig] useSocks];
+    socksParam.socksUsername = [[NTESBundleSetting sharedConfig] socksUsername];
+    socksParam.socksPassword = [[NTESBundleSetting sharedConfig] socksPassword];
+    socksParam.socksAddr     = [[NTESBundleSetting sharedConfig] socks5Addr];
+    return socksParam;
+}
 
 @end

@@ -232,7 +232,10 @@
 }
 
 
-
+- (NIMNetCallVideoCrop)videochatVideoCrop
+{
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"videochat_video_crop"] integerValue];
+}
 
 - (BOOL)videochatAutoRotateRemoteVideo
 {
@@ -245,7 +248,15 @@
     return (setting == 0) ? UIViewContentModeScaleAspectFill : UIViewContentModeScaleAspectFit;
 }
 
-
+- (NIMNetCallVideoQuality)preferredVideoQuality
+{
+    NSInteger videoQualitySetting = [[[NSUserDefaults standardUserDefaults] objectForKey:@"videochat_preferred_video_quality"] integerValue];
+    if ((videoQualitySetting >= NIMNetCallVideoQualityDefault) &&
+        (videoQualitySetting <= NIMNetCallVideoQuality720pLevel)) {
+        return (NIMNetCallVideoQuality)videoQualitySetting;
+    }
+    return NIMNetCallVideoQualityDefault;
+}
 
 
 - (BOOL)startWithBackCamera
@@ -253,9 +264,28 @@
     return [[[NSUserDefaults standardUserDefaults] objectForKey:@"videochat_start_with_back_camera"] boolValue];
 }
 
+- (NIMNetCallVideoCodec)perferredVideoEncoder
+{
+    NSInteger videoEncoderSetting = [[[NSUserDefaults standardUserDefaults] objectForKey:@"videochat_preferred_video_encoder"] integerValue];
 
+    if ((videoEncoderSetting >= NIMNetCallVideoCodecDefault) &&
+        (videoEncoderSetting <= NIMNetCallVideoCodecHardware)) {
+        return (NIMNetCallVideoCodec)videoEncoderSetting;
+    }
+    return NIMNetCallVideoCodecDefault;
+}
 
+- (NIMNetCallVideoCodec)perferredVideoDecoder
+{
+    NSInteger videoDecoderSetting = [[[NSUserDefaults standardUserDefaults] objectForKey:@"videochat_preferred_video_decoder"] integerValue];
+    
+    if ((videoDecoderSetting >= NIMNetCallVideoCodecDefault) &&
+        (videoDecoderSetting <= NIMNetCallVideoCodecHardware)) {
+        return (NIMNetCallVideoCodec)videoDecoderSetting;
+    }
+    return NIMNetCallVideoCodecDefault;
 
+}
 - (NSUInteger)videoMaxEncodeKbps
 {
     return [[[NSUserDefaults standardUserDefaults] objectForKey:@"videochat_video_encode_max_kbps"] integerValue];
@@ -321,6 +351,17 @@
     }
 }
 
+- (NIMAVChatScene)scene
+{
+    id setting = [[NSUserDefaults standardUserDefaults] objectForKey:@"avchat_scene"];
+    
+    if (setting) {
+        return [setting unsignedIntegerValue];
+    }
+    else {
+        return NIMAVChatSceneDefault;
+    }
+}
 
 - (NSInteger)chatroomRetryCount
 {
@@ -383,12 +424,12 @@
                 [self serverRecordAudio],
                 [self serverRecordVideo],
                 [self serverRecordWhiteboardData],
-            
+                [self videochatVideoCrop],
                 [self videochatAutoRotateRemoteVideo],
-            
+                [self preferredVideoQuality],
                 [self startWithBackCamera],
-            
-            
+                [self perferredVideoEncoder],
+                [self perferredVideoDecoder],
                 [self videoMaxEncodeKbps],
                 [self localRecordVideoKbps],
                 [self localRecordVideoQuality],
@@ -396,7 +437,7 @@
                 [self audioDenoise],
                 [self voiceDetect],
                 [self preferHDAudio],
-               
+                [self scene],
                 [self chatroomRetryCount],
                 [self enableSyncWhenFetchRemoteMessages]
             ];

@@ -62,12 +62,18 @@
     return vc;
 }
 
-
+- (UIViewController *)sdkNetCallLogViewController
+{
+    NSString *filepath = [[NIMAVChatSDK sharedSDK].netCallManager netCallLogFilepath];
+    NTESLogViewController *vc = [[NTESLogViewController alloc] initWithFilepath:filepath];
+    vc.title = @"NetCall Log";
+    return vc;
+}
 
 - (UIViewController *)sdkNetDetectLogViewController
 {
-   
-    NTESLogViewController *vc = [[NTESLogViewController alloc] initWithFilepath:@""];
+    NSString *filepath = [[NIMAVChatSDK sharedSDK].avchatNetDetectManager logFilepath];
+    NTESLogViewController *vc = [[NTESLogViewController alloc] initWithFilepath:filepath];
     vc.title = @"Net Detect Log";
     return vc;
 }

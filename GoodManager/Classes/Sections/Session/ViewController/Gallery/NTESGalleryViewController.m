@@ -79,7 +79,35 @@
     
     [self layoutGallery:_currentItem.size];
     
-   
+    [[NIMSDK sharedSDK].resourceManager fetchNOSURLWithURL:_currentItem.imageURL completion:^(NSError * _Nullable error, NSString * _Nullable urlString) {
+        NSURL *url = [NSURL URLWithString:urlString ? : @""];
+        typeof(self) weakSelf = self;
+        [self.galleryImageView sd_setImageWithURL:url
+                                 placeholderImage:[UIImage imageWithContentsOfFile:_currentItem.thumbPath]
+                                          options:SDWebImageRetryFailed | SDWebImageAvoidAutoSetImage  completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                                              dispatch_async(dispatch_get_main_queue(), ^
+                                                             {
+                                                                 if (!error)
+                                                                 {
+                                                                     [weakSelf layoutGallery:image.size];
+                                                                     weakSelf.galleryImageView.image = image;
+                                                                 }
+                                                             });
+                                          }];
+        if (self.session)
+        {
+            [self setupRightNavItem];
+        }
+        
+        if ([_currentItem.name length])
+        {
+            self.navigationItem.title = _currentItem.name;
+        }
+        
+        UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onLongPressImageView:)];
+        [self.scrollView addGestureRecognizer:recognizer];
+    }];
+    
 }
 
 
@@ -167,7 +195,29 @@
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
     {
-      
+        UIAlertController *controller = [[UIAlertController alloc] init];
+        __weak typeof(self) weakSelf = self;
+        [[NIMSDK sharedSDK].resourceManager fetchNOSURLWithURL:self.currentItem.imageURL completion:^(NSError * _Nullable error, NSString * _Nullable urlString)
+        {
+            NSURL *url = [NSURL URLWithString:weakSelf.currentItem.imageURL];
+            UIImage *image = [[SDWebImageManager sharedManager].imageCache imageFromCacheForKey:[[SDWebImageManager sharedManager] cacheKeyForURL:url]];
+            if (image)
+            {
+                [[[controller addAction:@"保存至相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    [NIMKitAuthorizationTool requestPhotoLibraryAuthorization:^(NIMKitAuthorizationStatus status) {
+                        switch (status) {
+                            case NIMKitAuthorizationStatusAuthorized:
+                                UIImageWriteToSavedPhotosAlbum(image, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+                                break;
+                            default:
+                                [weakSelf.view makeToast:@"没有开启权限，请开启权限" duration:2.0 position:CSToastPositionCenter];
+                                break;
+                        }
+                    }];
+                }]addAction:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {}] show];
+            }
+        }];
+        
     }
 }
 
@@ -255,8 +305,28 @@
 }
 
 + (void)downloadImage:(NSString *)url imageView:(SingleSnapView *)imageView{
-    
-    
+    __weak typeof(imageView) wImageView = imageView;
+    __block NSString *targetURL = url;
+    [[NIMSDK sharedSDK].resourceManager fetchNOSURLWithURL:url
+                                                completion:^(NSError * _Nullable error, NSString * _Nullable urlString)
+     {
+         if(urlString && !error) {
+             targetURL = urlString;
+         }
+         [imageView sd_setImageWithURL:[NSURL URLWithString:targetURL] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+             dispatch_async_main_safe(^{
+                 wImageView.progress = (CGFloat)receivedSize / expectedSize;
+             });
+         } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+             if (error) {
+                 [wImageView makeToast:@"下载图片失败"
+                              duration:2
+                              position:CSToastPositionCenter];
+             }else{
+                 wImageView.progress = 1.0;
+             }
+         }];
+     }];
 }
 
 

@@ -7,7 +7,7 @@
 //
 
 #import "NTESSessionUtil.h"
-#import "NTESLoginManager.h"
+
 #import "NTESSnapchatAttachment.h"
 #import "NTESJanKenPonAttachment.h"
 #import "NTESChartletAttachment.h"

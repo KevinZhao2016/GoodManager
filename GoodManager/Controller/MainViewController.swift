@@ -102,7 +102,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
 //        APPChooseSingleImage(source:0, ifNeedEdit:0, ifOriginalPic:1 ,callBackfunName:"String")
 //        APPChooseSingleVideo(source:0, maxVideoLength:3, callBackfunName:"String")
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.isNavigationBarHidden = true;
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true);
+    self.navigationController?.isNavigationBarHidden = false;
+    }
     func setupLaunchView(){
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white
