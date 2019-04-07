@@ -123,13 +123,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
+        
+        
         //启动页
         getLaunchData()
         window = UIWindow.init(frame: UIScreen.main.bounds)
+        
         let vc = MainViewController()
+        let mainNV = UINavigationController.init(rootViewController: vc);
         vc.mark = "main"
         mainViewControllers.append(vc)
-        self.window?.rootViewController = vc
+        self.window?.rootViewController = mainNV
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         //检查通讯录权限

@@ -37,17 +37,6 @@ PODS:
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - NIMKit (2.11.5):
-    - NIMKit/Lite (= 2.11.5)
-  - NIMKit/Core (2.11.5):
-    - M80AttributedLabel (~> 1.6.3)
-    - SDWebImage (~> 4.2.2)
-    - Toast (~> 3.0)
-    - TZImagePickerController (~> 3.0.7)
-  - NIMKit/Lite (2.11.5):
-    - NIMKit/Core
-    - NIMSDK_LITE (~> 6.1.1)
-  - NIMSDK_LITE (6.1.1)
   - ObjectMapper (3.4.2)
   - Player (0.12.1)
   - ReachabilitySwift (4.3.0)
@@ -60,8 +49,6 @@ PODS:
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
   - SDWebImage/GIF (4.2.3):
     - FLAnimatedImage (~> 1.0)
@@ -87,9 +74,8 @@ DEPENDENCIES:
   - JPush
   - Kingfisher (~> 4.10.0)
   - LLPhotoBrowser (~> 1.1.0)
+  - M80AttributedLabel (~> 1.6.3)
   - Moya-ObjectMapper/RxSwift
-  - NIMKit
-  - NIMSDK_LITE
   - Player (~> 0.12.0)
   - ReachabilitySwift
   - RealmSwift
@@ -98,6 +84,7 @@ DEPENDENCIES:
   - SSZipArchive (~> 1.8.1)
   - SVProgressHUD (~> 2.1.2)
   - SwiftyJSON (~> 4.0)
+  - Toast (~> 3.0)
   - TZImagePickerController
   - WechatOpenSDK
   - Weibo_SDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
@@ -121,8 +108,6 @@ SPEC REPOS:
     - Masonry
     - Moya
     - Moya-ObjectMapper
-    - NIMKit
-    - NIMSDK_LITE
     - ObjectMapper
     - Player
     - ReachabilitySwift
@@ -173,8 +158,6 @@ SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
-  NIMKit: ec370f2f270fbc03bdb68c51118695e03133ffa1
-  NIMSDK_LITE: fb16cf52c23cd5769ed1ec196d234307ba000aa0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
@@ -193,6 +176,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
   Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
 
-PODFILE CHECKSUM: 47e271d536723f04c6910ae694fff751f621ad22
+PODFILE CHECKSUM: 9e27ea3322497ca0de75956ea9fae2a567f8d69f
 
 COCOAPODS: 1.6.1

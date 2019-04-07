@@ -293,14 +293,6 @@ SOFTWARE.
 
 
 
-## NIMKit
-
-Copyright 2019 Netease 
-
-## NIMSDK_LITE
-
-Copyright 2019 Netease 
-
 ## ObjectMapper
 
 The MIT License (MIT)

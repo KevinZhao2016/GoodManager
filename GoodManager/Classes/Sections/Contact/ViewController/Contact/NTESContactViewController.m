@@ -83,23 +83,8 @@ NIMEventSubscribeManagerDelegate> {
     [[NIMSDK sharedSDK].loginManager addDelegate:self];
     [[NIMSDK sharedSDK].userManager addDelegate:self];
     [[NIMSDK sharedSDK].subscribeManager addDelegate:self];
-
-    
-    if (self.navigationController.viewControllers.count == 1)
-    {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(itemClick)];
-        item.tintColor = UIColor.blackColor;
-        self.navigationItem.leftBarButtonItem = item;
-        
-        
-    }
-    
-
-
 }
-- (void)itemClick{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 - (void)setUpNavItem{
     UIButton *teamBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [teamBtn addTarget:self action:@selector(onOpera:) forControlEvents:UIControlEventTouchUpInside];
@@ -108,8 +93,23 @@ NIMEventSubscribeManagerDelegate> {
     [teamBtn sizeToFit];
     UIBarButtonItem *teamItem = [[UIBarButtonItem alloc] initWithCustomView:teamBtn];
     self.navigationItem.rightBarButtonItem = teamItem;
-}
+    
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backBtn setTitle:@"back" forState:UIControlStateNormal];
+      [backBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backBtn) forControlEvents:UIControlEventTouchUpInside];
+    [teamBtn sizeToFit];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    if (self.tabBarController) {
+      self.navigationItem.leftBarButtonItem = backItem;
+    }
 
+}
+- (void)backBtn
+{
+    [self.tabBarController.navigationController popViewControllerAnimated:YES];
+}
 - (void)prepareData{
     _contacts = [[NTESGroupedContacts alloc] init];
 

@@ -202,35 +202,35 @@
     
     // AVChat 私有化配置
     {
-     
+        NIMAVChatServerSetting *avChatServerSetting = [NIMAVChatSDK sharedSDK].serverSetting;
         id setting = [config objectForKey:@"nrtc_server"];
         if(setting) {
-          
+            avChatServerSetting.nrtcServerAddress = setting;
         }
         
         setting = [config objectForKey:@"nrtc_roomserver"];
         if(setting) {
-            
+            avChatServerSetting.roomServerAddress = setting;
         }
         
         setting = [config objectForKey:@"kibana_server"];
         if(setting) {
-           
+            avChatServerSetting.statisticsAddress = setting;
         }
         
         setting = [config objectForKey:@"statistic_server"];
         if(setting) {
-         
+            avChatServerSetting.eventTrackAddress = setting;
         }
         
         setting = [config objectForKey:@"netdetect_server"];
         if(setting) {
-            
+            avChatServerSetting.nrtcServerAddress = setting;
         }
         
         setting = [config objectForKey:@"compat_server"];
         if(setting) {
-           
+            avChatServerSetting.compatConfigAddress = setting;
         }
         
     }

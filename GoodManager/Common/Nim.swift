@@ -20,31 +20,45 @@ func APPNELogin(account: String, password:String)  {
 }
 
 func APPNELoginOut()  {
-    NIMSDK.shared().loginManager.logout { (error) in
-        if let myError = error {
-            print("登出出现错误--%@",myError);
+    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+    let basevc = getLastMainViewController()
+    
+    //    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+    
+    
+    
+    if (isLogin) {
+        NIMSDK.shared().loginManager.logout { (error) in
+            if let myError = error {
+                print("登出出现错误--%@",myError);
+            }
         }
     }
+    
+   
     
 }
 //    打开网易云信会话列表
 func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
     let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
-    let vc:NIMSessionListViewController = NIMSessionListViewController();
+  
+    let vc:NTESMainTabController = NTESMainTabController();
     let basevc = getLastMainViewController()
-    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+//    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
 
     
     if (isLogin) {
         
-        basevc.present(nav, animated: true, completion: nil);
+        basevc.navigationController?.pushViewController(vc, animated:true );
+        
+//        basevc.present(nav, animated: true, completion: nil);
     }else{
         NIMSDK.shared().loginManager.login(account, token: password) { (error) in
             if let myError = error {
                 print("登录出现错误--%@",myError);
             }else{
                 
-                basevc.present(nav, animated: true, completion: nil);
+              basevc.navigationController?.pushViewController(vc, animated:true );
             }
         };
     }
@@ -55,19 +69,19 @@ func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) {
     let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
     let vc:NTESContactViewController = NTESContactViewController();
     let basevc = getLastMainViewController()
-    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+//    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
    
     
     if (isLogin) {
         
-        basevc.present(nav, animated: true, completion: nil);
+      basevc.navigationController?.pushViewController(vc, animated:true );
     }else{
         NIMSDK.shared().loginManager.login(account, token: password) { (error) in
             if let myError = error {
                 print("登录出现错误--%@",myError);
             }else{
                 
-                basevc.present(nav, animated: true, completion: nil);
+               basevc.navigationController?.pushViewController(vc, animated:true );
             }
         };
     }
@@ -76,16 +90,16 @@ func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) {
 //打开网易云信好友聊天窗口
 func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
     let session:NIMSession = NIMSession(fAccount, type: .P2P)//按测试给h的内容更换
-    let vc:NIMSessionViewController = NIMSessionViewController(session: session)
+    let vc:NTESSessionViewController = NTESSessionViewController(session: session)
     let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
     let basevc = getLastMainViewController()
     
-    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+//    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
     
  
     
     if (isLogin) {
-        basevc.present(nav, animated: true, completion: nil);
+       basevc.navigationController?.pushViewController(vc, animated:true );
     }
     
     
@@ -94,16 +108,16 @@ func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
 //打开网易云信好友聊天窗口
 func  APPNEChatWithQ(qMark:String, statusBarColor:String){
     let session:NIMSession = NIMSession(qMark, type: .team)//按测试给的内容更换
-    let vc:NIMSessionViewController = NIMSessionViewController(session: session)
+    let vc:NTESSessionViewController = NTESSessionViewController(session: session)
     let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
     let basevc = getLastMainViewController()
     
-    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+//    let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
     
    
     
     if (isLogin) {
-        basevc.present(nav, animated: true, completion: nil);
+       basevc.navigationController?.pushViewController(vc, animated:true );
     }
     
     

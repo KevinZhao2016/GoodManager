@@ -89,16 +89,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>NIMKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>NIMSDK_LITE.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
