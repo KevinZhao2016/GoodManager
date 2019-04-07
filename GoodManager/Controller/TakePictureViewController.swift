@@ -12,7 +12,7 @@ class TakePictureViewController: UIViewController,UIImagePickerControllerDelegat
     //拍照
     func initCameraPicker(){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            let  cameraPicker = UIImagePickerController()
+            let cameraPicker = UIImagePickerController()
             cameraPicker.delegate = self
             cameraPicker.allowsEditing = true
             cameraPicker.sourceType = .camera

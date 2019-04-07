@@ -9,10 +9,21 @@
 import Foundation
 import RealmSwift
 
+func APPIfExistInterfaceName(interfaceName:String) -> String {
+    let AppInterfaces = ["APPGetNetwork","APPGetVersion","APPWinOpen","APPWinClose","APPShare","APPExecWinJS","APPSetValue","APPGetValue","APPDelValue","APPOutBrowserOpenURL","APPGetBankImage","APPGetIdentityCardImage","APPChooseSingleImage","APPChooseMoreImage","APPPreviewImage","APPChooseSingleVideo","APPPlayVideo","APPChooseSingleFile","APPGetFileSize","APPGetFileBase","APPUploadFile","APPDownFile","APPIfExistFile","APPDelFile","APPPreviewFile","APPStartLocation","APPGetTelBookList","APPChooseTelBook","APPScanQRCode","APPSetStatusBarColor","APPSetProgressBarColor","APPSetBrowserHomeURL","APPPushSetAlias","APPPushCancelAlias","APPPushMsgRemindType","APPNELogin","APPNEOpenDialog","APPNELoginOut","APPNEOpenTelBook","APPNEChatWithFriend","APPNEChatWithQ","APPNEGetUnreadNum","APPNEGetUnreadWithQNum","APPNEGetQUnreadWithFNum","APPWXPay","APPIfExistInterfaceName"]
+    print(AppInterfaces.count)
+    if AppInterfaces.contains(interfaceName) {
+        return "1"
+    }
+    return "0"
+}
+
 // Define your models like regular Swift classes
 class InterfaceName: Object {
     @objc dynamic var name = ""
 }
+
+
 
 func APPIfExistInterfaceName(interfaceName:String) -> Int{
     var flag = 0

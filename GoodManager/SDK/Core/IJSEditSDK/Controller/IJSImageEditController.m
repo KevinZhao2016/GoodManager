@@ -68,6 +68,8 @@
 
     [self _buttonClickAction];
     [self _resetUIHierarchy];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -694,10 +696,14 @@
     }
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
-        if (self.backPlacehodelView.js_origin.x < -JSScreenWidth / 2/3.f
-            || self.backPlacehodelView.js_origin.x > JSScreenWidth + JSScreenWidth / 2/3.f
-            || self.backPlacehodelView.js_origin.y > JSScreenHeight - IJSGTabbarHeight
-            || self.backPlacehodelView.js_origin.y < -JSScreenHeight / 2/3.f)
+//        if (self.backPlacehodelView.js_origin.x < -JSScreenWidth / 2/3.f
+//            || self.backPlacehodelView.js_origin.x > JSScreenWidth + JSScreenWidth / 2/3.f
+//            || self.backPlacehodelView.js_origin.y > JSScreenHeight - IJSGTabbarHeight
+//            || self.backPlacehodelView.js_origin.y < -JSScreenHeight / 2/3.f)
+//        {
+//            self.backPlacehodelView.center = self.view.center;
+//        }
+        if (self.backPlacehodelView.js_origin.x != 0 || self.backPlacehodelView.js_origin.y != 0)//不许移动
         {
             self.backPlacehodelView.center = self.view.center;
         }
@@ -851,22 +857,22 @@
     return self.backPlacehodelView;
 }
 // 让图片保持在屏幕中央，防止图片放大时，位置出现跑偏
-//- (void)scrollViewDidZoom:(UIScrollView *)scrollView
-//{
-//    UIView *anyView = self.backPlacehodelView;
-//    CGFloat offsetX = 0.0;
-//    if (self.backScrollView.bounds.size.width > self.backScrollView.contentSize.width)
-//    {
-//        offsetX = (self.backScrollView.bounds.size.width - self.backScrollView.contentSize.width) * 0.5;
-//    }
-//    CGFloat offsetY = 0.0;
-//    if ((self.backScrollView.bounds.size.height > self.backScrollView.contentSize.height))
-//    {
-//        offsetY = (self.backScrollView.bounds.size.height - self.backScrollView.contentSize.height) * 0.5;
-//    }
-//
-//    anyView.center = CGPointMake(self.backScrollView.contentSize.width * 0.5 + offsetX, self.backScrollView.contentSize.height * 0.5 + offsetY);
-//}
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    UIView *anyView = self.backPlacehodelView;
+    CGFloat offsetX = 0.0;
+    if (self.backScrollView.bounds.size.width > self.backScrollView.contentSize.width)
+    {
+        offsetX = (self.backScrollView.bounds.size.width - self.backScrollView.contentSize.width) * 0.5;
+    }
+    CGFloat offsetY = 0.0;
+    if ((self.backScrollView.bounds.size.height > self.backScrollView.contentSize.height))
+    {
+        offsetY = (self.backScrollView.bounds.size.height - self.backScrollView.contentSize.height) * 0.5;
+    }
+
+    anyView.center = CGPointMake(self.backScrollView.contentSize.width * 0.5 + offsetX, self.backScrollView.contentSize.height * 0.5 + offsetY);
+}
 
 #pragma mark 裁剪的代理方法
 - (void)cropViewController:(TOCropViewController *)cropViewController didCropToImage:(UIImage *)image withRect:(CGRect)cropRect angle:(NSInteger)angle

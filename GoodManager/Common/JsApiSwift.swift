@@ -330,4 +330,10 @@ class JsApiSwift: NSObject {
         GoodManager.APPWXPay(partnerId: partnerId, prepayId: prepayId, packageValue: packageValue, nonceStr: nonceStr, timeStamp: timeStamp, sign:sign, callBackfunName: callBackfunName)
     }
     
+    @objc func APPIfExistInterfaceName(_ arg:String) -> String {
+        let jsonString = JSON(parseJSON: arg)
+        let interfaceName = jsonString["interfaceName"].stringValue
+        return GoodManager.APPIfExistInterfaceName(interfaceName: interfaceName)
+    }
+
 }

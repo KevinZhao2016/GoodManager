@@ -25,8 +25,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     let button:UIButton = UIButton(type: .custom);
     
-    
+    // 无网络
+//    var backgroundViewOfImage = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
+    
+    
     var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
@@ -45,28 +48,27 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         
-        
-        
         print(UIScreen.main.bounds)
         super.viewDidLoad()
-        setupWebview()
-        if(LaunchFlag == false){
-            var netSituation = APPGetNetWork()
-            let jsonString = JSON(parseJSON: netSituation)
-            netSituation = jsonString["mode"].stringValue
-            if netSituation == "0" {
-                let vc = getLastMainViewController()
-                let noNetVC = NoNetViewController()
-                vc.present(noNetVC, animated: true, completion: nil)
-            } else {
-                setupLaunchView() //启动页
-            }
-        }
+        setupLaunchView() //启动页
+
+//        setupWebview()
+        
+        
+        
+//        if(LaunchFlag == false){
+//            var netSituation = APPGetNetWork()
+//            let jsonString = JSON(parseJSON: netSituation)
+//            netSituation = jsonString["mode"].stringValue
+//            if netSituation == "0" {
+//                let vc = getLastMainViewController()
+//                let noNetVC = NoNetViewController()
+//                vc.present(noNetVC, animated: true, completion: nil)
+//            } else {
+//
+//            }
+//        }
         locationManager.delegate = self //定位代理方法
-        
-        
-        
-        
         
 //        let notificationName = Notification.Name(rawValue: "idCardFront")
 //        NotificationCenter.default.addObserver(self,selector:#selector(receiveImagePath(notification:)),name: notificationName,object: nil)
@@ -79,6 +81,21 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
 //    }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        var netSituation = APPGetNetWork()
+        let jsonString = JSON(parseJSON: netSituation)
+        netSituation = jsonString["mode"].stringValue
+        if netSituation == "0" {
+            print("hello")
+            let vc = getLastMainViewController()
+            let noNetVC = NoNetViewController()
+            vc.present(noNetVC, animated: true, completion: nil)
+        }else{
+            setupWebview()
+            setupLaunchView() //启动页
+        }
+        
 //        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")
 //       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
 //        APPChooseMoreImage(source: 0, maxNum: 9, ifOriginalPic: 1, callBackfunName: "String")
@@ -89,7 +106,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     func setupLaunchView(){
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white
-        self.view.addSubview(image)
+//        self.backgroundViewOfImage.addSubview(image)
+//        self.view.addSubview(backgroundViewOfImage)
         let isIPhoneX:Bool = self.isIPhoneX()
         if isIPhoneX   {
             image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
@@ -188,6 +206,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             }, completion: { (finished) -> Void in
                 if(finished){
                     self.image.removeFromSuperview()
+//                    self.backgroundViewOfImage.removeFromSuperview()
                     self.bottomImage.removeFromSuperview()
                 }
             })
