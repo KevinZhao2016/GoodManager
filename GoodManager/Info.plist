@@ -60,9 +60,11 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string></string>
+			<string>sinaweibo</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>wb580085537</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -113,6 +115,7 @@
 		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
 		<string>sinaweibosso</string>
+		<string>sinaweibohdsso</string>
 		<string>weibosdk</string>
 		<string>weibosdk2.5</string>
 		<string>weibo</string>

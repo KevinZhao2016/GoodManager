@@ -18,7 +18,7 @@ class FileListTableViewController: UITableViewController {
     var fileManager = FileManager.default
 
     // 文件存放总目录
-    let documentsDir = NSHomeDirectory() + "/Documents"
+    let documentsDir = NSHomeDirectory() + "/Documents/localDocuments"
     var fileDir = ""
     
     // 文件名字的数组变量

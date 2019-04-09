@@ -26,6 +26,7 @@
 //#import "DmcPickerViewController.h"
 // 单选图片编辑
 #import "IJSImagePickerController.h"
+#import "IJSPhotoPreviewController.h"
 #import "IJSImageManager.h"
 #import "IJSExtension.h"
 //#import "IJSVideoTestController.h"

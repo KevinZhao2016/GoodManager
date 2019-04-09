@@ -15,6 +15,8 @@
 #import "IJSImageManager.h"
 #import "IJSConst.h"
 #import "IJSMapViewModel.h"
+#import "GoodManager-Swift.h"
+
 
 @interface IJSImagePickerController ()
 {
@@ -237,7 +239,7 @@
         // 设置使用手机的前置摄像头。
         //picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
         // 设置拍摄的照片允许编辑
-        _pickerView.allowsEditing =NO;
+        _pickerView.allowsEditing = NO;
         _pickerView.delegate = self;
         
     }else{
@@ -264,6 +266,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     // 保存图片到相册中
     UIImageWriteToSavedPhotosAlbum(theImage,self,@selector(image: didFinishSavingWithError: contextInfo:),nil);
     [picker dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"NSString * _Nonnull format, ...");
+    //  定位1
+    
 }
 
 - (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
@@ -273,7 +278,51 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         msg = @"保存图片失败";
     } else {
         msg = @"保存图片成功";
-        [self _pushPhotoPickerVc_nojudge];
+        [self dismissViewControllerAnimated:NO completion:^{
+            NSLog(@"?????????????");
+            IJSImagePickerController *ijsip = [[IJSImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 pushPhotoPickerVc:YES];
+            ijsip.allowPickingVideo = NO;
+            ijsip.isHiddenEdit = _isHiddenEdit;
+            ijsip.hiddenOriginalButton = _hiddenOriginalButton;
+            if (_hiddenOriginalButton==YES) {
+                ijsip.allowPickingOriginalPhoto = NO;
+            }else{
+                ijsip.allowPickingOriginalPhoto = YES;
+            }
+            ijsip.dataSource = 0;
+            [ijsip loadTheSelectedData:^(NSArray<UIImage *> *photos, NSArray<NSURL *> *avPlayers, NSArray<PHAsset *> *assets, NSArray<NSDictionary *> *infos, IJSPExportSourceType sourceType, NSError *error) {
+                NSMutableArray *path = [[NSMutableArray alloc] init];
+                [[PHImageManager defaultManager] requestImageForAsset:assets[0] targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+                    if (ijsip.allowPickingOriginalPhoto) {
+                        NSURL *imageURL = info[@"PHImageFileURLKey"];
+                        [path addObject:(imageURL.path)];
+                    }else{
+                        NSLog(@"ijsimagepickercontroller.m  image  301行");
+                        NSFileManager *fileMG = [NSFileManager defaultManager];
+                        NSString *rootPath = NSHomeDirectory();
+                        rootPath = [NSString stringWithFormat:@"%@",rootPath];
+                        int name = info[@"PHImageResultDeliveredImageFormatKey"];
+                        NSString *filePath = [NSString stringWithFormat:@"%@/Documents/%d.jpg",rootPath,name];
+                        NSData *imageData = UIImageJPEGRepresentation(image,1);
+                        [fileMG createFileAtPath:filePath contents:imageData attributes:nil];
+                        [path addObject:filePath];
+                    }
+                    NSString *result = @"";
+                    if (![NSJSONSerialization isValidJSONObject:path]) {
+                        NSLog(@"无法解析出JSONString");
+                    }else{
+                        NSData *a = [NSJSONSerialization dataWithJSONObject:path options:nil error:nil];
+                        NSString *json = [[NSString alloc] initWithData:a encoding:NSUTF8StringEncoding];
+                        result = [json stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+                        ocUseSwift *ous = [ocUseSwift alloc];
+                        [ous ExecWinJSWithJSFun:[NSString stringWithFormat:@"appChooseSingleImageCallBack(\"%@\")",result]];
+                    }
+                }];
+            }];
+            getLMVC *ll = [getLMVC alloc];
+            UIViewController *main = [ll getLastMainViewController];
+            [main presentViewController:ijsip animated:YES completion:nil];
+        }];
     }
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alert show];

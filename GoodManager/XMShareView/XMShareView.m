@@ -15,20 +15,20 @@
 #import "XMShareQQUtil.h"
 
 //  每一项的宽度
-static const CGFloat itemWidth = 60.0;
+static CGFloat itemWidth = 60.0;
 
 //  每一项的高度
-static const CGFloat itemHeight = 60.0;
+static CGFloat itemHeight = 60.0;
 
 //  水平间隔
-static const CGFloat itemHorPadding = 20.0;
+static const CGFloat itemHorPadding = 10.0;
 
 //  垂直间隔
 static const CGFloat itemVerPadding = 20.0;
 
 
 //  每行显示数量
-static const NSInteger numbersOfItemInLine = 3;
+static const NSInteger numbersOfItemInLine = 5;
 
 @implementation XMShareView
 
@@ -41,7 +41,19 @@ static const NSInteger numbersOfItemInLine = 3;
         
         [self configureData];
         [self initUI];
-        
+        // 取消按钮
+        UILabel *cancleButton;
+        cancleButton = [[UILabel alloc] initWithFrame:CGRectMake(0, SIZE_OF_SCREEN.height - 50, SIZE_OF_SCREEN.width, 50)];
+        cancleButton.backgroundColor = [UIColor whiteColor];
+//        cancleButton.titleLabel.font = [UIFont systemFontOfSize:18];
+//        [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
+        cancleButton.text = @"取消";
+        cancleButton.textAlignment = UITextAlignmentCenter;
+        cancleButton.font = [UIFont systemFontOfSize:18];
+        cancleButton.tintColor = [UIColor blackColor];
+//        [cancleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [cancleButton addTarget:self action:@selector(clickCancleButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:cancleButton];
     }
     return self;
     
@@ -52,6 +64,8 @@ static const NSInteger numbersOfItemInLine = 3;
  */
 - (void)initUI
 {
+    itemWidth = SIZE_OF_SCREEN.width/5 - itemHorPadding;
+    itemHeight = itemWidth;
     
     //  背景色黑色半透明
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
@@ -63,10 +77,13 @@ static const NSInteger numbersOfItemInLine = 3;
     self.userInteractionEnabled = YES;
     
     CGFloat startY = 0;
-    CGFloat bgViewWidth = itemWidth * numbersOfItemInLine + itemHorPadding * (numbersOfItemInLine + 1) ;
-    CGFloat bgViewHeight = itemHeight * 2 + itemVerPadding * 4;
-    CGFloat bgViewX = (SIZE_OF_SCREEN.width - bgViewWidth) / 2;
-    CGFloat bgViewY = (SIZE_OF_SCREEN.height - bgViewHeight) / 2;
+//    CGFloat bgViewWidth = itemWidth * numbersOfItemInLine + itemHorPadding * (numbersOfItemInLine + 1) ;
+    CGFloat bgViewWidth = SIZE_OF_SCREEN.width;
+    CGFloat bgViewHeight = itemHeight * 2 + itemVerPadding;
+//    CGFloat bgViewX = (SIZE_OF_SCREEN.width - bgViewWidth) / 2;
+    CGFloat bgViewX = 0;
+//    CGFloat bgViewY = (SIZE_OF_SCREEN.height - bgViewHeight) / 2;
+    CGFloat bgViewY = SIZE_OF_SCREEN.height - bgViewHeight;
     
     //  居中白色视图
     UIView *shareActionView = [[UIView alloc] initWithFrame:CGRectMake(bgViewX,
@@ -83,11 +100,9 @@ static const NSInteger numbersOfItemInLine = 3;
         UIImage *img = [UIImage imageNamed: iconList[i] ];
         
         int row = i / numbersOfItemInLine;
-        
         int col = i % numbersOfItemInLine;
         
         CGFloat x =  (itemWidth + itemHorPadding) * col + itemHorPadding;
-        
         CGFloat y = startY  + (itemHeight + itemVerPadding) * row + itemVerPadding;
         
         tempButton = [[VerticalUIButton alloc] initWithFrame:CGRectMake(x, y, itemWidth, itemHeight)];
@@ -98,30 +113,18 @@ static const NSInteger numbersOfItemInLine = 3;
         [tempButton addTarget:self action:@selector(clickActionButton:) forControlEvents:UIControlEventTouchUpInside];
         
         if([textList[i] isEqualToString:NSLocalizedString(@"微信好友", nil)]){
-            
             tempButton.tag = SHARE_ITEM_WEIXIN_SESSION;
-            
         }else if([textList[i] isEqualToString:NSLocalizedString(@"朋友圈", nil)]){
-            
             tempButton.tag = SHARE_ITEM_WEIXIN_TIMELINE;
-            
         }else if([textList[i] isEqualToString:NSLocalizedString(@"QQ", nil)]){
-            
             tempButton.tag = SHARE_ITEM_QQ;
-            
         }else if([textList[i] isEqualToString:NSLocalizedString(@"QQ空间", nil)]){
-            
             tempButton.tag = SHARE_ITEM_QZONE;
-            
         }else if([textList[i] isEqualToString:NSLocalizedString(@"微博", nil)]){
-            
             tempButton.tag = SHARE_ITEM_WEIBO;
-            
         }
-        
         [shareActionView addSubview:tempButton];
     }
-   
 }
 
 
@@ -197,6 +200,12 @@ static const NSInteger numbersOfItemInLine = 3;
     [self clickClose];
     
 }
+- (void)clickCancleButton
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.alpha = 0.0;
+    }];
+}
 
 - (void)shareToWeixinSession
 {
@@ -256,11 +265,9 @@ static const NSInteger numbersOfItemInLine = 3;
 
 - (void)clickClose
 {
-    [UIView animateWithDuration:1 animations:^{
+    [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 0.0;
     }];
-    
-    
 }
 
 

@@ -17,9 +17,7 @@ class ContactPickerController: CNContactPickerViewController {
     var backClosure: ContactsString?// 数据回调闭包
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-    
     override func viewDidAppear(_ animated: Bool) {
     }
 }
@@ -54,4 +52,10 @@ extension ContactPickerController:CNContactPickerDelegate {
         }
         self.backClosure!(contactArray.getJSONStringFromArray())
     }
+    
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        contactArray = []
+        self.backClosure!(contactArray.getJSONStringFromArray())
+    }
+    
 }

@@ -68,7 +68,7 @@ extension PreviewFileViewController: QLPreviewControllerDelegate, QLPreviewContr
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-//        let documentPath = NSHomeDirectory() + "/Documents/localDocuments"
+//        let documentPath = NSHomeDirectory() + "/Documents"
         let fileUrl = URL(fileURLWithPath:  path)
         return fileUrl as QLPreviewItem
     }

@@ -2143,15 +2143,15 @@
 			isa = PBXGroup;
 			children = (
 				186C097722432C9B000E27F1 /* IJSAlbumPickerController.h */,
+				186C098022432C9B000E27F1 /* IJSPhotoPreviewController.h */,
+				186C097A22432C9B000E27F1 /* IJSPhotoPreviewController.m */,
 				186C097822432C9B000E27F1 /* IJSPhotoPickerController.m */,
 				186C097922432C9B000E27F1 /* IJS3DTouchController.m */,
-				186C097A22432C9B000E27F1 /* IJSPhotoPreviewController.m */,
-				186C097B22432C9B000E27F1 /* IJSImagePickerController.m */,
 				186C097C22432C9B000E27F1 /* IJS3DTouchController.h */,
 				186C097D22432C9B000E27F1 /* IJSPhotoPickerController.h */,
 				186C097E22432C9B000E27F1 /* IJSAlbumPickerController.m */,
 				186C097F22432C9B000E27F1 /* IJSImagePickerController.h */,
-				186C098022432C9B000E27F1 /* IJSPhotoPreviewController.h */,
+				186C097B22432C9B000E27F1 /* IJSImagePickerController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
