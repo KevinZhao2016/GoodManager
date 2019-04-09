@@ -96,8 +96,8 @@ NIMEventSubscribeManagerDelegate> {
     
     
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backBtn setTitle:@"back" forState:UIControlStateNormal];
-      [backBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backBtn) forControlEvents:UIControlEventTouchUpInside];
     [teamBtn sizeToFit];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
