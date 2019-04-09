@@ -14,121 +14,98 @@ import TZImagePickerController
 
 let imagePickTool = CLImagePickerTool()
 
-//单选图片
-/**
- source：图片来源
-    0 仅相册
-    1 仅拍照
-    2 相册或拍照
- ifNeedEdit：是否需要编辑
-    0 不需要
-    1 需要
- ifOriginalPic：是否显示原图上传
-    0 不显示
-    1 显示，默认不勾选。压缩的图片在200KB以内
- callBackfunName：选择完成后回调函数名,返回选择图片路径。
- 
-    0 0 0   √
-    0 0 1
- 
- */
+// 相册
+func chooseSingleImageFromAlbum(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
+    print("--------------ChooseSingleImage -- from album----------------")
+    let vc = getLastMainViewController()
+    let ijsip = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false)
+    // 不能选择视频
+    ijsip?.allowPickingVideo = false
+    // 编辑
+    if ifNeedEdit == 0 {
+        // 不需要编辑
+        ijsip?.isHiddenEdit = true
+    }else{
+        // 需要编辑
+        ijsip?.isHiddenEdit = false
+    }
+    var size:CGSize?
+    size = PHImageManagerMaximumSize
+    // 原图
+    if ifOriginalPic == 0 {
+        // 不显示
+        ijsip?.hiddenOriginalButton = true
+    }else{
+        // 显示
+        ijsip?.allowPickingOriginalPhoto = true
+        ijsip?.hiddenOriginalButton = false
+    }
+    ijsip?.dataSource = source
+    // 获取数据
+    ijsip?.dataSource = 0
+    ijsip?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
+        getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
+    })
+    vc.present(ijsip!, animated: true, completion: nil)
+}
+
+// 拍照
+func chooseSingleImageFromCamera(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
+    print("--------------ChooseSingleImage -- from camera----------------")
+    let vc = getLastMainViewController()
+    let ijsip_1 = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false, dataSource: 1)
+    ijsip_1?.dataSource = 1
+    // 不能选择视频
+    ijsip_1?.allowPickingVideo = false
+    // 编辑
+    if ifNeedEdit == 0 {
+        // 不需要编辑
+        ijsip_1?.isHiddenEdit = true
+    }else{
+        // 需要编辑
+        ijsip_1?.isHiddenEdit = false
+    }
+    var size:CGSize?
+    size = PHImageManagerMaximumSize
+    // 原图
+    if ifOriginalPic == 0 {
+        // 不显示
+        ijsip_1?.hiddenOriginalButton = true
+    }else{
+        // 显示
+        ijsip_1?.allowPickingOriginalPhoto = true
+        ijsip_1?.hiddenOriginalButton = false
+    }
+    // 获取数据
+    ijsip_1?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
+        getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
+    })
+    vc.present(ijsip_1!, animated: true, completion: nil)
+}
+
+// 单选图片
 func APPChooseSingleImage(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
     print("--------------APPChooseSingleImage----------------")
     callbackfun = callBackfunName
-    let vc = getLastMainViewController()
-    
     if source == 0 {
         // 相册
-        let ijsip = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false)
-        // 不能选择视频
-        ijsip?.allowPickingVideo = false
-        // 编辑
-        if ifNeedEdit == 0 {
-            // 不需要编辑
-            ijsip?.isHiddenEdit = true
-        }else{
-            // 需要编辑
-            ijsip?.isHiddenEdit = false
-        }
-        var size:CGSize?
-        size = PHImageManagerMaximumSize
-        // 原图
-        if ifOriginalPic == 0 {
-            // 不显示
-            ijsip?.hiddenOriginalButton = true
-        }else{
-            // 显示
-            ijsip?.allowPickingOriginalPhoto = true
-            ijsip?.hiddenOriginalButton = false
-        }
-        ijsip?.dataSource = source
-        // 获取数据
-        ijsip?.dataSource = 0
-        ijsip?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
-            getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
-        })
-        vc.present(ijsip!, animated: true, completion: nil)
+        chooseSingleImageFromAlbum(source: 0, ifNeedEdit: ifNeedEdit, ifOriginalPic: ifOriginalPic, callBackfunName: callBackfunName)
     }else if source == 1 {
         // 拍照
-        let ijsip_1 = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false, dataSource: 1)
-        ijsip_1?.dataSource = 1
-        // 不能选择视频
-        ijsip_1?.allowPickingVideo = false
-        // 编辑
-        if ifNeedEdit == 0 {
-            // 不需要编辑
-            ijsip_1?.isHiddenEdit = true
-        }else{
-            // 需要编辑
-            ijsip_1?.isHiddenEdit = false
-        }
-        var size:CGSize?
-        size = PHImageManagerMaximumSize
-        // 原图
-        if ifOriginalPic == 0 {
-            // 不显示
-            ijsip_1?.hiddenOriginalButton = true
-        }else{
-            // 显示
-            ijsip_1?.allowPickingOriginalPhoto = true
-            ijsip_1?.hiddenOriginalButton = false
-        }
-        // 获取数据
-        ijsip_1?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
-            getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
-        })
-        vc.present(ijsip_1!, animated: true, completion: nil)
+        chooseSingleImageFromCamera(source: 1, ifNeedEdit: ifNeedEdit, ifOriginalPic: ifOriginalPic, callBackfunName: callBackfunName)
     }else{
         print("拍照/相册")
-        let ijsip_1 = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false, dataSource: 1)
-        ijsip_1?.dataSource = 1
-        // 不能选择视频
-        ijsip_1?.allowPickingVideo = false
-        // 编辑
-        if ifNeedEdit == 0 {
-            // 不需要编辑
-            ijsip_1?.isHiddenEdit = true
-        }else{
-            // 需要编辑
-            ijsip_1?.isHiddenEdit = false
-        }
-        var size:CGSize?
-        size = PHImageManagerMaximumSize
-        // 原图
-        if ifOriginalPic == 0 {
-            // 不显示
-            ijsip_1?.hiddenOriginalButton = true
-        }else{
-            // 显示
-            ijsip_1?.allowPickingOriginalPhoto = true
-            ijsip_1?.hiddenOriginalButton = false
-        }
-        // 获取数据
-        ijsip_1?.dataSource = 1
-        ijsip_1?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
-            getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
-        })
-        vc.present(ijsip_1!, animated: true, completion: nil)
+        let vc = getLastMainViewController()
+        let alert = UIAlertController(title: "拍照或从相册选择", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "拍照", style: UIAlertAction.Style.default, handler: { (UIAlertView) in
+            print("拍照")
+            chooseSingleImageFromCamera(source: 1, ifNeedEdit: ifNeedEdit, ifOriginalPic: ifOriginalPic, callBackfunName: callBackfunName)
+        }))
+        alert.addAction(UIAlertAction(title: "相册", style: UIAlertAction.Style.default, handler: { (UIAlertView) in
+            print("相册")
+            chooseSingleImageFromAlbum(source: 0, ifNeedEdit: ifNeedEdit, ifOriginalPic: ifOriginalPic, callBackfunName: callBackfunName)
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -163,86 +140,8 @@ func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunNa
         print("均可")
         controller!.allowTakeVideo = true
     }
-    
-//    if source == 0 {
-//        //仅相册
-//        controller!.allowTakePicture = false
-//        controller!.allowPickingVideo = false
-//        vc.present(controller! , animated: true, completion: nil)
-//    }else if source == 1 {
-//        //仅拍照
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-////            let imagePicker = CameraViewController()
-////            // 表示操作为拍照
-////            imagePicker.sourceType = .camera
-////            // 拍照后允许用户进行编辑
-////            imagePicker.allowsEditing = false
-////            // 也可以设置成视频
-////            imagePicker.cameraCaptureMode = .photo
-////            // 设置代理为 ViewController,已经实现了协议
-////            imagePicker.delegate = imagePicker
-////            // 进入拍照界面
-////            imagePicker.callbackfun = callBackfunName
-////            vc.present(imagePicker, animated: true, completion: nil)
-//
-//            controller!.allowTakePicture = true
-//            controller!.allowPickingVideo = false
-//            vc.present(controller! , animated: true, completion: nil)
-//        }else {
-//            // 照相机不可用
-//        }
-//    }else{
-//        //相册和拍照
-//        controller!.allowTakePicture = true
-//        controller!.allowPickingVideo = false
-//        vc.present(controller! , animated: true, completion: nil)
-//    }
-    
     vc.present(controller!, animated: true, completion: nil)
 }
-
-
-
-//func APPChooseMoreImage(source:Int, maxNum:Int, ifOriginalPic:Int ,callBackfunName:String){
-//    imagePickTool.isHiddenVideo = true
-//    var size:CGSize?
-//    if(ifOriginalPic == 0){
-//        size = CGSize(width: PHImageManagerMaximumSize.width * 0.4, height: PHImageManagerMaximumSize.height * 0.4)
-//    }else{
-//        size = PHImageManagerMaximumSize
-//    }
-//    var path:String = ""
-//    switch source {
-//    case 0:
-//        imagePickTool.cameraOut = false
-//        imagePickTool.showCamaroInPicture = false
-//        imagePickTool.cl_setupImagePickerWith(MaxImagesCount: maxNum) { (asset,cutImage) in
-//            for phasset in asset {
-//                path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-//                ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
-//            }
-//        }
-//    case 1:
-//        imagePickTool.cameraOut = true
-//        imagePickTool.cl_setupImagePickerWith(MaxImagesCount: maxNum) { (asset,cutImage) in
-//            for phasset in asset {
-//                path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-//                ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
-//            }
-//        }
-//    case 2:
-//        imagePickTool.showCamaroInPicture = true
-//        imagePickTool.cameraOut = false
-//        imagePickTool.cl_setupImagePickerWith(MaxImagesCount: maxNum) { (asset,cutImage) in
-//            for phasset in asset {
-//                path = getPathFromAsset(phasset: phasset, size: size!, ifOriginalPic: ifOriginalPic).joined(separator: ",")
-//                ExecWinJS(JSFun: callBackfunName + "(\"" + path + "\")")
-//            }
-//        }
-//    default:
-//        break
-//    }
-//}
 
 // TODO 获取银行卡照片
 func APPGetBankImage(callBackfunName:String){

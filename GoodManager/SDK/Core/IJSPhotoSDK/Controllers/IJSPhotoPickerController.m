@@ -78,10 +78,15 @@ static NSString *const CellID = @"pickerID";
     [self _createrBottomToolBarUI];
     [self _handleCallBackData];
     [self _createrData];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:true];
+    [super viewWillAppear:false];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:false];
     //CGRectMake(0, 0, 1, 1)可以直接返回到UITableView的最顶端
     [self.showCollectioView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 }
