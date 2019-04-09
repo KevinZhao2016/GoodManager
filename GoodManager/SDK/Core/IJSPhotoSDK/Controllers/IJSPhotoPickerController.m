@@ -80,6 +80,12 @@ static NSString *const CellID = @"pickerID";
     [self _createrData];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:true];
+    //CGRectMake(0, 0, 1, 1)可以直接返回到UITableView的最顶端
+    [self.showCollectioView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+}
+
 // 处理回调
 - (void)_handleCallBackData
 {
@@ -101,6 +107,7 @@ static NSString *const CellID = @"pickerID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     IJSPhotoPickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellID forIndexPath:indexPath];
     IJSImagePickerController *vc = (IJSImagePickerController *) self.navigationController;
     IJSAssetModel *model = self.assetModelArr[indexPath.row];
@@ -131,11 +138,13 @@ static NSString *const CellID = @"pickerID";
     }
     cell.model = model;
     cell.cellDelegate = self;
+    
     return cell;
 }
 #pragma mark tableview的点击方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     IJSImagePickerController *vc = (IJSImagePickerController *) self.navigationController;
     IJSPhotoPreviewController *preViewVc = [[IJSPhotoPreviewController alloc] init];
     IJSAssetModel *tempModel = self.assetModelArr[indexPath.row];
@@ -203,8 +212,9 @@ static NSString *const CellID = @"pickerID";
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
 // 滑动到顶部
-    [self.showCollectioView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+//    [self.showCollectioView scrollRectToVisible:CGRectMake(0, 0, 10, 10) animated:NO];
 }
+
 #pragma mark - cell的代理方法
 - (void)didClickCellButtonWithButton:(UIButton *)button  ButtonState:(BOOL)state buttonIndex:(NSInteger)currentIndex
 {

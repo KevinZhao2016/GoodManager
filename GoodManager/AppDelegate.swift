@@ -11,6 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WXApiDelegate{
     
+    
     // 屏幕旋转变量
     var blockRotation: Bool = false
     
@@ -22,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     
     // alipay
     let URLScheme = "alipayforgoodmanager"
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
         if url.host == "safepay"{
             AlipaySDK.defaultService().processOrder(withPaymentResult: url){
                 value in
@@ -62,27 +63,132 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         }else{
             print("url.host != safepay")
             if (url.absoluteString.hasPrefix("tencent")){
-                return QQApiInterface.handleOpen(url, delegate: nil)
-            
-            //}else if(url.absoluteString.hasPrefix("wb"))
-                
-                //return [WeiboSDK handleOpenURL:url delegate:self];
-                
-            //}else if([[url absoluteString] hasPrefix:@"wx"]) {
                 print("qq推送")
+                ExecWinJS(JSFun: "appShareCallBack")
+                return QQApiInterface.handleOpen(url, delegate: nil)
+            }else if(url.absoluteString.hasPrefix("wb")||url.absoluteString.hasPrefix("sinaweibo")){
+                print("weibo推送")
+                ExecWinJS(JSFun: "appShareCallBack")
+                return WeiboSDK.handleOpen(url, delegate: nil)
             }else if(url.absoluteString.hasPrefix("wx")){
-                //  处理微信回调需要在具体的 ViewController 中处理。
-//                let shareViewController = ShareViewController()
-                //ViewController *vc = (ViewController *)self.window.rootViewController;
-                //return [WXApi handleOpenURL:url delegate:vc];
-                return WXApi.handleOpen(url, delegate: nil)
                 print("wx推送")
+                ExecWinJS(JSFun: "appShareCallBack")
+                return WXApi.handleOpen(url, delegate: nil)
+            }else{
+                ExecWinJS(JSFun: "appShareCallBack")
+                print(url.absoluteString)
             }
         }
         return true
     }
     
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        if url.host == "safepay"{
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url){
+                value in
+                let code = value!
+                let resultStatus = code["resultStatus"] as!String
+                var content = ""
+                ExecWinJS(JSFun: "APPAlipay" + "(\"" +  "\(resultStatus)" + "\")")
+                switch resultStatus {
+                case "9000":
+                    content = "支付成功"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPaySucceess"), object: content)
+                case "8000":
+                    content = "订单正在处理中"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayUnknowStatus"), object: content)
+                case "4000":
+                    content = "支付失败"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "5000":
+                    content = "重复请求"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "6001":
+                    content = "中途取消"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "6002":
+                    content = "网络连接出错"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefault"), object: content)
+                case "6004":
+                    content = "支付结果未知"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayUnknowStatus"), object: content)
+                default:
+                    content = "支付失败"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                    break
+                }
+            }
+        }else{
+            print("url.host != safepay")
+            if (url.absoluteString.hasPrefix("tencent")){
+                print("qq推送")
+                return QQApiInterface.handleOpen(url, delegate: nil)
+            }else if(url.absoluteString.hasPrefix("wb")||url.absoluteString.hasPrefix("sinaweibo")){
+                print("weibo推送")
+                return WeiboSDK.handleOpen(url, delegate: nil)
+            }else if(url.absoluteString.hasPrefix("wx")){
+                print("wx推送")
+                return WXApi.handleOpen(url, delegate: nil)
+            }else{
+                print(url.absoluteString)
+            }
+        }
+        return true
+    }
     
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if url.host == "safepay"{
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url){
+                value in
+                let code = value!
+                let resultStatus = code["resultStatus"] as!String
+                var content = ""
+                ExecWinJS(JSFun: "APPAlipay" + "(\"" +  "\(resultStatus)" + "\")")
+                switch resultStatus {
+                case "9000":
+                    content = "支付成功"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPaySucceess"), object: content)
+                case "8000":
+                    content = "订单正在处理中"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayUnknowStatus"), object: content)
+                case "4000":
+                    content = "支付失败"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "5000":
+                    content = "重复请求"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "6001":
+                    content = "中途取消"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                case "6002":
+                    content = "网络连接出错"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefault"), object: content)
+                case "6004":
+                    content = "支付结果未知"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayUnknowStatus"), object: content)
+                default:
+                    content = "支付失败"
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "aliPayDefeat"), object: content)
+                    break
+                }
+            }
+        }else{
+            print("url.host != safepay")
+            if (url.absoluteString.hasPrefix("tencent")){
+                print("qq推送")
+                return QQApiInterface.handleOpen(url, delegate: nil)
+            }else if(url.absoluteString.hasPrefix("wb")||url.absoluteString.hasPrefix("sinaweibo")){
+                print("weibo推送")
+                return WeiboSDK.handleOpen(url, delegate: nil)
+            }else if(url.absoluteString.hasPrefix("wx")){
+                print("wx推送")
+                return WXApi.handleOpen(url, delegate: nil)
+            }else{
+                print(url.absoluteString)
+            }
+        }
+        return true
+    }
     
     
     
@@ -140,6 +246,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         TencentOAuth.init(appId: "1108245066", andDelegate: nil)
         // 注册weibo
         WeiboSDK.registerApp("580085537")
+        WeiboSDK.enableDebugMode(true)
         
         initJpush(launchOptions ?? [:]);
         initNISDK() ;

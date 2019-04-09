@@ -5,7 +5,6 @@
 //  Created by KevinZhao on 2018/12/25.
 //  Copyright © 2018 GoodManager. All rights reserved.
 //
-
 import UIKit
 import WebKit
 import SDWebImage
@@ -13,8 +12,22 @@ import TZImagePickerController
 import dsBridge
 import CoreLocation
 import SwiftyJSON
+import Reachability
 
-class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate,WeiboSDKDelegate{
+   
+    var chooseSingleImage = false
+    
+    // 屏幕宽高
+    var SCWIDTH = UIScreen.main.bounds.width
+    var SCHEIGHT = UIScreen.main.bounds.height
+    
+    // 网络状态监听部分
+    // Reachability必须一直存在，所以需要设置为全局变量
+    let reachability = Reachability()!
+    var noteLabel:UILabel = UILabel()
+    var newButton:UIButton = UIButton()
+    
     var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
@@ -23,91 +36,142 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var timeCount:Int = 5
     var timer:Timer?
     
+    //用于定位
+    lazy var locationManager = CLLocationManager()
+    lazy var currLocation = CLLocation()
+    lazy var locationModel = LocationModel()
+    
+    // UI
     let button:UIButton = UIButton(type: .custom);
-    
-    // 无网络
-//    var backgroundViewOfImage = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
-    
-    
     var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
     var photoPath:String = ""
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
-        self.progressView.tintColor = UIColor.green      // 进度条颜色
-        self.progressView.trackTintColor = UIColor.white // 进度条背景色
+        // 进度条颜色
+        self.progressView.tintColor = UIColor.green
+        // 进度条背景色
+        self.progressView.trackTintColor = UIColor.white
         return self.progressView
     }()
     
-    
-    lazy var locationManager = CLLocationManager()//用于定位
-    lazy var currLocation = CLLocation()
-    lazy var locationModel = LocationModel()
-    
     override func viewDidLoad() {
-        
         print(UIScreen.main.bounds)
         super.viewDidLoad()
-        setupLaunchView() //启动页
-
-//        setupWebview()
         
+        NetworkStatusListener()
         
-        
-//        if(LaunchFlag == false){
-//            var netSituation = APPGetNetWork()
-//            let jsonString = JSON(parseJSON: netSituation)
-//            netSituation = jsonString["mode"].stringValue
-//            if netSituation == "0" {
-//                let vc = getLastMainViewController()
-//                let noNetVC = NoNetViewController()
-//                vc.present(noNetVC, animated: true, completion: nil)
-//            } else {
-//
-//            }
-//        }
+        setupWebview()
+        if(LaunchFlag == false){
+            var netSituation = APPGetNetWork()
+            let jsonString = JSON(parseJSON: netSituation)
+            netSituation = jsonString["mode"].stringValue
+            if netSituation == "0" {
+                let vc = getLastMainViewController()
+                let noNetVC = NoNetViewController()
+                vc.present(noNetVC, animated: true, completion: nil)
+            } else {
+                setupLaunchView() //启动页
+            }
+        }
         locationManager.delegate = self //定位代理方法
-        
-//        let notificationName = Notification.Name(rawValue: "idCardFront")
-//        NotificationCenter.default.addObserver(self,selector:#selector(receiveImagePath(notification:)),name: notificationName,object: nil)
     }
-//    @objc func receiveImagePath(notification: Notification){
-//        let userInfo = notification.userInfo as! [String: AnyObject]
-//        let value1 = userInfo["idCardFrontImage"] as! String
-//        print("idCardFrontImage  "+value1)
-//        //ExecWinJS(JSFun: <#T##String#>)
-//    }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         
+    }
+    
+    // 1、设置网络状态消息监听 2、获得网络Reachability对象
+    func NetworkStatusListener() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name: Notification.Name.reachabilityChanged,object: reachability)
+        do{
+            // 3、开启网络状态消息监听
+            try reachability.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
+    }
+    
+    // 主动检测网络状态
+    @objc func reachabilityChanged(note: NSNotification) {
+        let reachability = note.object as! Reachability // 准备获取网络连接信息
+        
+        if reachability.isReachable { // 判断网络连接状态
+            print("网络连接：可用")
+            if reachability.isReachableViaWiFi { // 判断网络连接类型
+                print("连接类型：WiFi")
+                // strServerInternetAddrss = getHostAddress_WLAN() // 获取主机IP地址 192.168.31.2 小米路由器
+                // processClientSocket(strServerInternetAddrss)    // 初始化Socket并连接，还得恢复按钮可用
+            } else {
+                print("连接类型：移动网络")
+                // getHostAddrss_GPRS()  // 通过外网获取主机IP地址，并且初始化Socket并建立连接
+            }
+        } else {
+            print("网络连接：不可用")
+            DispatchQueue.main.async { // 不加这句导致界面还没初始化完成就打开警告框，这样不行
+                
+                self.webview.removeFromSuperview()
+                self.view.backgroundColor = .white
+                
+                self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: (self.SCHEIGHT/5)*2, width: 200, height: 90))
+                self.noteLabel.textColor = .darkGray
+                self.noteLabel.text = "请检查网络设置！"
+                self.noteLabel.textAlignment = .center
+                self.view.addSubview(self.noteLabel)
+                
+                self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: (self.SCHEIGHT/5)*2+100, width: 100, height: 35))
+                self.newButton.layer.masksToBounds = true                //开启遮罩（不开启遮罩设置圆角无效）
+                self.newButton.layer.cornerRadius = 5
+                self.newButton.layer.borderWidth = 1
+                self.newButton.layer.borderColor = UIColor.lightGray.cgColor
+                self.newButton.backgroundColor = .white
+                self.newButton.setTitle("刷新", for: .normal)
+                self.newButton.tintColor = .lightGray
+                self.newButton.setTitleColor(UIColor.lightGray, for: .normal)
+                self.newButton.setTitleColor(UIColor.darkGray, for: .highlighted)
+                self.newButton.addTarget(self, action: #selector(self.newButtonAction), for: .touchUpInside)
+                self.view.addSubview(self.newButton)
+                
+                self.alert_noNetwrok() // 警告框，提示没有网络
+            }
+        }
+    }
+    deinit {// 移除消息通知
+        // 关闭网络状态消息监听
+        reachability.stopNotifier()
+        // 移除网络状态消息通知
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.reachabilityChanged, object: reachability)
+    }
+    
+    // 警告框，提示没有连接网络
+    func alert_noNetwrok() -> Void {
+        let alert = UIAlertController(title: "系统提示", message: "请打开网络连接", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func newButtonAction() {
+        print("检查网络！")
         var netSituation = APPGetNetWork()
         let jsonString = JSON(parseJSON: netSituation)
         netSituation = jsonString["mode"].stringValue
-        if netSituation == "0" {
-            print("hello")
-            let vc = getLastMainViewController()
-            let noNetVC = NoNetViewController()
-            vc.present(noNetVC, animated: true, completion: nil)
-        }else{
+        if netSituation != "0" {
+            print("网络可用！")
+            self.newButton.removeFromSuperview()
+            self.noteLabel.removeFromSuperview()
             setupWebview()
-            setupLaunchView() //启动页
+        }else{
+            print("网络不可用！")
         }
-        
-//        APPChooseSingleVideo(source:1, maxVideoLength:10, callBackfunName:"String")
-//       APPPlayVideo(path:"https://media.w3.org/2010/05/sintel/trailer.mp4", startPosition:10, callBackfunName:"String")
-//        APPChooseMoreImage(source: 0, maxNum: 9, ifOriginalPic: 1, callBackfunName: "String")
-//        APPChooseSingleImage(source:0, ifNeedEdit:0, ifOriginalPic:1 ,callBackfunName:"String")
-//        APPChooseSingleVideo(source:0, maxVideoLength:3, callBackfunName:"String")
     }
     
     func setupLaunchView(){
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white
-//        self.backgroundViewOfImage.addSubview(image)
-//        self.view.addSubview(backgroundViewOfImage)
+        self.view.addSubview(image)
         let isIPhoneX:Bool = self.isIPhoneX()
         if isIPhoneX   {
             image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
@@ -132,13 +196,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         
-        
         image.addSubview(button)
         
-     
-        
-//        image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "好监理_启动页"))
-       
         //添加点击事件
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewClick))
         image.addGestureRecognizer(singleTapGesture)
@@ -168,19 +227,19 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     @objc func btnClick(){
-         self.removeImageWithDelay()
+        self.removeImageWithDelay()
     }
     
     func setupWebview(){
         
         // 创建配置
-//        let config = WKWebViewConfiguration()
-//        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
-//        let userContent = WKUserContentController()
-//        // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-//        userContent.add(self, name: "NativeMethod")
-//        // 将UserConttentController设置到配置文件
-//        config.userContentController = userContent
+        //        let config = WKWebViewConfiguration()
+        //        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
+        //        let userContent = WKUserContentController()
+        //        // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
+        //        userContent.add(self, name: "NativeMethod")
+        //        // 将UserConttentController设置到配置文件
+        //        config.userContentController = userContent
         webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - STATUS_HEIGHT))
         //bridge
         webview.addJavascriptObject(JsApiSwift(), namespace: nil)
@@ -198,18 +257,17 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     func removeImageWithDelay(){
-            self.timer?.invalidate()
-            self.timer = nil
-            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
-                self.image.alpha = 0
-                self.bottomImage.alpha = 0
-            }, completion: { (finished) -> Void in
-                if(finished){
-                    self.image.removeFromSuperview()
-//                    self.backgroundViewOfImage.removeFromSuperview()
-                    self.bottomImage.removeFromSuperview()
-                }
-            })
+        self.timer?.invalidate()
+        self.timer = nil
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+            self.image.alpha = 0
+            self.bottomImage.alpha = 0
+        }, completion: { (finished) -> Void in
+            if(finished){
+                self.image.removeFromSuperview()
+                self.bottomImage.removeFromSuperview()
+            }
+        })
     }
     
     @objc func imageViewClick(){
@@ -218,7 +276,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
     }
     
+    @objc func pushPreviewController(){
+        print("pushPreviewController")
+    }
+    
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!) {
+        
         let option = PHVideoRequestOptions.init()
         option.isNetworkAccessAllowed = true
         option.deliveryMode = PHVideoRequestOptionsDeliveryMode.automatic
@@ -228,6 +291,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             print(path)
             self.VideoCallBack(path:path!, callBackfunName:self.videocallBackfunName)
         }
+        
+        chooseSingleImage = false
     }
     
     private func VideoCallBack(path:String, callBackfunName:String){
@@ -240,6 +305,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+        print("imagePickerController")
+        
         self.photoPath = ""
         var zipImageURLS = [String]()
         var targetSize = PHImageManagerMaximumSize
@@ -302,20 +369,10 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    deinit {
-        if self.webview != nil {
-            self.webview.removeObserver(self, forKeyPath: "estimatedProgress")
-            self.webview.uiDelegate = nil
-            self.webview.navigationDelegate = nil
-            webview.configuration.userContentController.removeScriptMessageHandler(forName: "NativeMethod")
-        }else{
-            print("no webview")
-        }
-    }
     
     // 图片单选 - 拍照取消
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-//        self.imagePicker = nil
+        //        self.imagePicker = nil
         print("bye")
         self.dismiss(animated: true, completion: nil)
     }
@@ -326,8 +383,36 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     // 当前statusBar使用的样式
     var style: UIStatusBarStyle = .default
+    
+    
     // 重现statusBar相关方法
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return self.style
     }
+    
+    func didReceiveWeiboRequest(_ request: WBBaseRequest!) {
+        
+    }
+    
+    func didReceiveWeiboResponse(_ response: WBBaseResponse!) {
+        if response is WBSendMessageToWeiboResponse {
+            let rm = response as! WBSendMessageToWeiboResponse
+            
+            if rm.statusCode == WeiboSDKResponseStatusCode.success {
+                // 成功
+                print("分享成功")
+                // 如果在创建WBSendMessageToWeiboRequest 实例对象时, accessToken传nil, 这里是获取不到授权信息的
+                //                let accessToken = rm.authResponse.accessToken
+                //                let uid = rm.authResponse.userID
+                let userInfo = rm.requestUserInfo // request 中设置的自定义信息
+                
+                print("分享成功\n\(userInfo ?? ["假的": ""])")
+            } else {
+                // 失败
+                print("分享失败")
+            }
+        }
+    }
+    
+    
 }
