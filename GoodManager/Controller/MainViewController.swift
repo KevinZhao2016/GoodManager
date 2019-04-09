@@ -167,7 +167,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             print("网络不可用！")
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.isNavigationBarHidden = true;
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true);
+    self.navigationController?.isNavigationBarHidden = false;
+    }
     func setupLaunchView(){
         //启动图片 异步获取
         self.view.backgroundColor = UIColor.white

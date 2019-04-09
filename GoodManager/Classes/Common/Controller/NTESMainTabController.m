@@ -7,7 +7,6 @@
 //
 
 #import "NTESMainTabController.h"
-
 #import "NTESSessionListViewController.h"
 #import "NTESContactViewController.h"
 #import "UIImage+NTESColor.h"
@@ -22,7 +21,7 @@
 #define TabbarImage @"image"
 #define TabbarSelectedImage @"selectedImage"
 #define TabbarItemBadgeValue @"badgeValue"
-#define TabBarCount 4
+#define TabBarCount 2
 
 typedef NS_ENUM(NSInteger,NTESMainTabType) {
     NTESMainTabTypeMessageList,    //聊天
@@ -52,8 +51,8 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
 @implementation NTESMainTabController
 
 + (instancetype)instance{
-   
-        return nil;
+
+  return nil;
 
 }
 
@@ -69,9 +68,15 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     [self setUpStatusBar];
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    self.navigationController.navigationBarHidden = NO;
+    
+}
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

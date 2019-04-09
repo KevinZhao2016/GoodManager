@@ -7,8 +7,8 @@
 //
 
 #import "NTESNotificationCenter.h"
-
-
+#import "NTESVideoChatViewController.h"
+#import "NTESAudioChatViewController.h"
 #import "NTESMainTabController.h"
 #import "NTESSessionViewController.h"
 #import "NSDictionary+NTESJson.h"
@@ -22,16 +22,16 @@
 #import "NTESLiveViewController.h"
 #import "NTESSessionMsgConverter.h"
 #import "NTESSessionUtil.h"
-
-
-
+#import "NTESTeamMeetingCallingViewController.h"
+#import "NTESTeamMeetingCalleeInfo.h"
+#import "NTESTeamMeetingViewController.h"
 #import "NTESAVNotifier.h"
 #import "NTESRedPacketTipAttachment.h"
 
 NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChanged";
 
-@interface NTESNotificationCenter () <NIMSystemNotificationManagerDelegate
-,NIMBroadcastManagerDelegate, NIMSignalManagerDelegate>
+@interface NTESNotificationCenter () <NIMSystemNotificationManagerDelegate,NIMNetCallManagerDelegate,
+NIMRTSManagerDelegate,NIMChatManagerDelegate,NIMBroadcastManagerDelegate, NIMSignalManagerDelegate>
 
 @property (nonatomic,strong) AVAudioPlayer *player; //播放提示音
 @property (nonatomic,strong) NTESAVNotifier *notifier;
@@ -63,7 +63,8 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
         _notifier = [[NTESAVNotifier alloc] init];
         
         [[NIMSDK sharedSDK].systemNotificationManager addDelegate:self];
-     
+        [[NIMAVChatSDK sharedSDK].netCallManager addDelegate:self];
+        [[NIMAVChatSDK sharedSDK].rtsManager addDelegate:self];
         [[NIMSDK sharedSDK].chatManager addDelegate:self];
         [[NIMSDK sharedSDK].broadcastManager addDelegate:self];
         
@@ -77,7 +78,8 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
 
 - (void)dealloc{
     [[NIMSDK sharedSDK].systemNotificationManager removeDelegate:self];
-   
+    [[NIMAVChatSDK sharedSDK].netCallManager removeDelegate:self];
+    [[NIMAVChatSDK sharedSDK].rtsManager removeDelegate:self];
     [[NIMSDK sharedSDK].chatManager removeDelegate:self];
     [[NIMSDK sharedSDK].broadcastManager removeDelegate:self];
 }
@@ -105,7 +107,13 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
 {
     UINavigationController *nav = [NTESMainTabController instance].selectedViewController;
     BOOL needPlay = YES;
-  
+    for (UIViewController *vc in nav.viewControllers) {
+        if ([vc isKindOfClass:[NIMSessionViewController class]] ||  [vc isKindOfClass:[NTESLiveViewController class]] || [vc isKindOfClass:[NTESNetChatViewController class]])
+        {
+            needPlay = NO;
+            break;
+        }
+    }
     if (needPlay) {
         [self.player stop];
         [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient error:nil];
@@ -232,7 +240,15 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
                         NSTimeInterval nowTime  = [[NSDate date] timeIntervalSince1970];
                         if (nowTime - sendTime < 45)
                         {
-                           
+                            //60 秒内，认为有效，否则丢弃
+                            NTESTeamMeetingCalleeInfo *info = [[NTESTeamMeetingCalleeInfo alloc] init];
+                            info.teamId  = [dict jsonString:NTESTeamMeetingTeamId];
+                            info.members = [dict jsonArray:NTESTeamMeetingMembers];
+                            info.meetingName = [dict jsonString:NTESTeamMeetingName];
+                            info.teamName = [dict jsonString:NTESTeamMeetingTeamName];
+                            
+                            NTESTeamMeetingCallingViewController *vc = [[NTESTeamMeetingCallingViewController alloc] initWithCalleeInfo:info];
+                            [self presentModelViewController:vc];
                         }                        
                     }                    
                 }
@@ -244,7 +260,58 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
     }
 }
 
+#pragma mark - NIMNetCallManagerDelegate
+- (void)onReceive:(UInt64)callID from:(NSString *)caller type:(NIMNetCallMediaType)type message:(NSString *)extendMessage{
+    
+    NTESMainTabController *tabVC = [NTESMainTabController instance];
+    [tabVC.view endEditing:YES];
+    UINavigationController *nav = tabVC.selectedViewController;
 
+    if ([self shouldResponseBusy]){
+        [[NIMAVChatSDK sharedSDK].netCallManager control:callID type:NIMNetCallControlTypeBusyLine];
+    }
+    else {
+        
+        if ([self shouldFireNotification:caller]) {
+            NSString *text = [self textByCaller:caller
+                                           type:type];
+            [_notifier start:text];
+        }
+        
+
+        
+        UIViewController *vc;
+        switch (type) {
+            case NIMNetCallTypeVideo:{
+                vc = [[NTESVideoChatViewController alloc] initWithCaller:caller callId:callID];
+            }
+                break;
+            case NIMNetCallTypeAudio:{
+                vc = [[NTESAudioChatViewController alloc] initWithCaller:caller callId:callID];
+            }
+                break;
+            default:
+                break;
+        }
+        if (!vc) {
+            return;
+        }
+        
+        // 由于音视频聊天里头有音频和视频聊天界面的切换，直接用present的话页面过渡会不太自然，这里还是用push，然后做出present的效果
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.25;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromTop;
+        [nav.view.layer addAnimation:transition forKey:nil];
+        nav.navigationBarHidden = YES;
+        if (nav.presentedViewController) {
+            // fix bug MMC-1431
+            [nav.presentedViewController dismissViewControllerAnimated:NO completion:nil];
+        }
+        [nav pushViewController:vc animated:NO];
+    }
+}
 
 - (void)onHangup:(UInt64)callID
               by:(NSString *)user
@@ -258,7 +325,7 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
              message:(NSString *)info
 {
     if ([self shouldResponseBusy]) {
-      
+        [[NIMAVChatSDK sharedSDK].rtsManager responseRTS:sessionID accept:NO option:nil completion:nil];
     }
     else {
         
@@ -297,8 +364,12 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
 
 - (BOOL)shouldResponseBusy
 {
-    return YES;
-   
+    NTESMainTabController *tabVC = [NTESMainTabController instance];
+    UINavigationController *nav = tabVC.selectedViewController;
+    return [nav.topViewController isKindOfClass:[NTESNetChatViewController class]] ||
+    [tabVC.presentedViewController isKindOfClass:[NTESWhiteboardViewController class]] ||
+    [tabVC.presentedViewController isKindOfClass:[NTESTeamMeetingCallingViewController class]] ||
+    [tabVC.presentedViewController isKindOfClass:[NTESTeamMeetingViewController class]];
 }
 
 #pragma mark - NIMBroadcastManagerDelegate
@@ -307,6 +378,18 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
     [self makeToast:broadcastMessage.content];
 }
 
+#pragma mark - format
+- (NSString *)textByCaller:(NSString *)caller type:(NIMNetCallMediaType)type
+{
+    NSString *action = type == NIMNetCallMediaTypeAudio ? @"音频":@"视频";
+    NSString *text = [NSString stringWithFormat:@"你收到了一个%@聊天请求",action];
+    NIMKitInfo *info = [[NIMKit sharedKit] infoByUser:caller option:nil];
+    if ([info.showName length])
+    {
+        text = [NSString stringWithFormat:@"%@向你发起了一个%@聊天请求",info.showName,action];
+    }
+    return text;
+}
 
 
 - (NSString *)textByCaller:(NSString *)caller

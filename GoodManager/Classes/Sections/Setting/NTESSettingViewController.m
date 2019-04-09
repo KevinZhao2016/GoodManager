@@ -30,7 +30,7 @@
 #import "NTESSessionUtil.h"
 #import "JRMFHeader.h"
 #import "NTESMigrateMessageViewController.h"
-NSString *NTESNotificationLogout = @"NTESNotificationLogout";
+extern NSString *NTESNotificationLogout = @"NTESNotificationLogout";
 @interface NTESSettingViewController ()<NIMUserManagerDelegate>
 
 @property (nonatomic,strong) NSArray *data;
@@ -361,7 +361,6 @@ NSString *NTESNotificationLogout = @"NTESNotificationLogout";
                 [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error)
                  {
                      extern NSString *NTESNotificationLogout;
-                     
                      [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
                  }];
                 break;

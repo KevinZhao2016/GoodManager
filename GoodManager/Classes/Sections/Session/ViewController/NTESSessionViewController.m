@@ -21,9 +21,9 @@
 #import "NTESSnapchatAttachment.h"
 #import "NTESJanKenPonAttachment.h"
 #import "NTESFileTransSelectViewController.h"
-
+#import "NTESAudioChatViewController.h"
 #import "NTESWhiteboardViewController.h"
-
+#import "NTESVideoChatViewController.h"
 #import "NTESChartletAttachment.h"
 #import "NTESGalleryViewController.h"
 #import "NTESVideoViewController.h"
@@ -50,8 +50,8 @@
 #import "NIMLocationViewController.h"
 #import "NIMKitInfoFetchOption.h"
 #import "NTESSubscribeManager.h"
-
-
+#import "NTESTeamMeetingViewController.h"
+#import "NTESTeamMeetingCallerInfo.h"
 #import "NIMInputAtCache.h"
 #import "NTESRobotCardViewController.h"
 #import "NTESRedPacketManager.h"
@@ -68,6 +68,7 @@
 UINavigationControllerDelegate,
 NIMSystemNotificationManagerDelegate,
 NIMMediaManagerDelegate,
+NTESTimerHolderDelegate,
 NIMContactSelectDelegate,
 NIMEventSubscribeManagerDelegate,
 NIMNormalTeamCardVCProtocol,
@@ -76,7 +77,7 @@ NIMAdvancedTeamCardVCProtocol>
 @property (nonatomic,strong)    NTESCustomSysNotificationSender *notificaionSender;
 @property (nonatomic,strong)    NTESSessionConfig       *sessionConfig;
 @property (nonatomic,strong)    UIImagePickerController *imagePicker;
-
+@property (nonatomic,strong)    NTESTimerHolder         *titleTimer;
 @property (nonatomic,strong)    UIView *currentSingleSnapView;
 @property (nonatomic,strong)    NTESFPSLabel *fpsLabel;
 @property (nonatomic,strong)    NIMKitMediaFetcher *mediaFetcher;
@@ -93,7 +94,7 @@ NIMAdvancedTeamCardVCProtocol>
     [self setUpNav];
     BOOL disableCommandTyping = self.disableCommandTyping || (self.session.sessionType == NIMSessionTypeP2P &&[[NIMSDK sharedSDK].userManager isUserInBlackList:self.session.sessionId]);
     if (!disableCommandTyping) {
-       
+        _titleTimer = [[NTESTimerHolder alloc] init];
         [[NIMSDK sharedSDK].systemNotificationManager addDelegate:self];
     }
 
@@ -198,11 +199,18 @@ NIMAdvancedTeamCardVCProtocol>
         if ([dict jsonInteger:NTESNotifyID] == NTESCommandTyping && self.session.sessionType == NIMSessionTypeP2P && [notification.sender isEqualToString:self.session.sessionId])
         {
             [self refreshSessionTitle:@"正在输入..."];
-           
+            [_titleTimer startTimer:5
+                           delegate:self
+                            repeats:NO];
         }
     }
     
     
+}
+
+- (void)onNTESTimerFired:(NTESTimerHolder *)holder
+{
+    [self refreshSessionTitle:self.sessionTitle];
 }
 
 
@@ -250,20 +258,60 @@ NIMAdvancedTeamCardVCProtocol>
 {
     if ([self checkRTSCondition]) {
         //由于音视频聊天里头有音频和视频聊天界面的切换，直接用present的话页面过渡会不太自然，这里还是用push，然后做出present的效果
-      
+        NTESAudioChatViewController *vc = [[NTESAudioChatViewController alloc] initWithCallee:self.session.sessionId];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.25;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromTop;
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
+        self.navigationController.navigationBarHidden = YES;
+        [self.navigationController pushViewController:vc animated:NO];
     }
 }
 
 #pragma mark - 视频聊天
 - (void)onTapMediaItemVideoChat:(NIMMediaItem *)item
 {
-   
+    if ([self checkRTSCondition]) {
+        //由于音视频聊天里头有音频和视频聊天界面的切换，直接用present的话页面过渡会不太自然，这里还是用push，然后做出present的效果
+        NTESVideoChatViewController *vc = [[NTESVideoChatViewController alloc] initWithCallee:self.session.sessionId];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.25;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromTop;
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
+        self.navigationController.navigationBarHidden = YES;
+        [self.navigationController pushViewController:vc animated:NO];
+    }
 }
 
 #pragma mark - 群组会议
 - (void)onTapMediaItemTeamMeeting:(NIMMediaItem *)item
 {
-   
+    if ([self checkRTSCondition])
+    {
+        NIMTeam *team = [[NIMSDK sharedSDK].teamManager teamById:self.session.sessionId];
+        NSString *currentUserID = [[[NIMSDK sharedSDK] loginManager] currentAccount];
+        NIMContactTeamMemberSelectConfig *config = [[NIMContactTeamMemberSelectConfig alloc] init];
+        config.teamId = team.teamId;
+        config.filterIds = @[currentUserID];
+        config.needMutiSelected = YES;
+        config.maxSelectMemberCount = 8;
+        config.showSelectDetail = YES;
+        NIMContactSelectViewController *vc = [[NIMContactSelectViewController alloc] initWithConfig:config];
+        __weak typeof(self) weakSelf = self;
+        vc.finshBlock = ^(NSArray * memeber){
+            NSString *me = [NIMSDK sharedSDK].loginManager.currentAccount;
+            NTESTeamMeetingCallerInfo *info = [[NTESTeamMeetingCallerInfo alloc] init];
+            info.members = [@[me] arrayByAddingObjectsFromArray:memeber];
+            info.teamId = team.teamId;
+            NTESTeamMeetingViewController *vc = [[NTESTeamMeetingViewController alloc] initWithCallerInfo:info];
+            [weakSelf presentViewController:vc animated:NO completion:nil];
+        };;
+        [vc show];
+    }
 }
 
 
@@ -349,7 +397,11 @@ NIMAdvancedTeamCardVCProtocol>
 #pragma mark - 白板
 - (void)onTapMediaItemWhiteBoard:(NIMMediaItem *)item
 {
-  
+    NTESWhiteboardViewController *vc = [[NTESWhiteboardViewController alloc] initWithSessionID:nil
+                                                                                        peerID:self.session.sessionId
+                                                                                         types:NIMRTSServiceReliableTransfer | NIMRTSServiceAudio
+                                                                                          info:@"白板演示"];
+    [self presentViewController:vc animated:NO completion:nil];
 }
 
 

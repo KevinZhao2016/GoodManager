@@ -10,7 +10,6 @@ post_install do |installer|
         end
     end
 end
-
 target 'GoodManager' do
 
     # Basics
@@ -32,8 +31,6 @@ target 'GoodManager' do
     pod 'dsBridge'
     pod 'CLImagePickerTool', :git => 'https://github.com/Darren-chenchen/CLImagePickerTool.git'
     pod 'JPush'
-    pod 'NIMSDK_LITE'
-    pod 'NIMKit'
     #pod 'ReactiveCocoa', '~> 2.3.1'
     pod 'jot'
     pod 'WechatOpenSDK'
@@ -45,5 +42,11 @@ target 'GoodManager' do
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'M80AttributedLabel', '~> 1.6.3'
+    pod 'Toast', '~> 3.0'
+    
+#    target 'NIMKit' do
+#      project 'NIMKit/NIMKit.xcodeproj'
+#    end
 end
 

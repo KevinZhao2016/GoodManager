@@ -9,9 +9,12 @@
 // 如果需要使用 idfa 功能所需要引入的头文件（可选）
 #import <AdSupport/AdSupport.h>
 #import <NIMSDK/NIMSDK.h>
-#import <NIMSessionListViewController.h>
-#import <NIMSessionViewController.h>
+#import "NIMKit.h"
+#import "NTESSessionListViewController.h"
 #import "NTESContactViewController.h"
+#import "NTESSessionViewController.h"
+
+#import "NTESMainTabController.h"
 // IDCard识别
 #import "IDAuthViewController.h"
 #import "IDInfoViewController.h"

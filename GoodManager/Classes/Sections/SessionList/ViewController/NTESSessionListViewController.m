@@ -83,8 +83,24 @@
     [moreBtn sizeToFit];
     UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithCustomView:moreBtn];
     self.navigationItem.rightBarButtonItem = moreItem;
+    
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backBtn setTitle:@"back" forState:UIControlStateNormal];
+      [backBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backBtn) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn sizeToFit];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backItem;
+    
+    
+    
 }
+- (void)backBtn
+{
+    [self.tabBarController.navigationController popViewControllerAnimated:YES];
 
+}
 - (void)refresh{
     [super refresh];
     self.emptyTipLabel.hidden = self.recentSessions.count;
