@@ -31,7 +31,12 @@
         [self cleanupTool];
         [self setupTool];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusChange) name:UIApplicationWillChangeStatusBarFrameNotification object:nil];
+    
     return self;
+}
+- (void)statusChange{
+    [self.panDrawingView setFrame:CGRectMake(self.panDrawingView.frame.origin.x, self.panDrawingView.frame.origin.y, self.panDrawingView.frame.size.width, self.panDrawingView.frame.size.height)];
 }
 
 - (void)didFinishHandleWithCompletionBlock:(void (^)(UIImage *, NSError *, NSDictionary *))completionBlock
@@ -66,7 +71,22 @@
 {
     if (_panDrawingView == nil)
     {
-        IJSIPanDrawingView *panDrawingView = [[IJSIPanDrawingView alloc] initWithFrame:self.editorController.backImageView.bounds];
+//        IJSIPanDrawingView *panDrawingView = [[IJSIPanDrawingView alloc] initWithFrame:self.editorController.backImageView.bounds];
+        CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+        
+        CGFloat width = self.editorController.backImageView.frame.size.width;
+        CGFloat height = self.editorController.backImageView.frame.size.height;
+        
+        IJSIPanDrawingView *panDrawingView = [IJSIPanDrawingView alloc];
+        if (rectStatus.size.height > 20) {
+            // 热点
+            [panDrawingView initWithFrame:CGRectMake(self.editorController.backImageView.bounds.origin.x, self.editorController.backImageView.bounds.origin.y + 20, width, height)];
+        }else{
+            [panDrawingView  initWithFrame:CGRectMake(self.editorController.backImageView.bounds.origin.x, self.editorController.backImageView.bounds.origin.y, width, height)];
+        }
+        
+        
+        
         panDrawingView.center = self.drawingView.superview.center;
         panDrawingView.backImage = _backImage; //self.editorController.backImageView.image;
         panDrawingView.panWidth = _panWidth; //self.editorController.panWidth;
