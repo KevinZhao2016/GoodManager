@@ -42,6 +42,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     lazy var locationModel = LocationModel()
     
     // UI
+    var imageView:UIImageView = UIImageView()
     let button:UIButton = UIButton(type: .custom);
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
     var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
@@ -113,23 +114,33 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             DispatchQueue.main.async { // 不加这句导致界面还没初始化完成就打开警告框，这样不行
                 
                 self.webview.removeFromSuperview()
+                
                 self.view.backgroundColor = .white
                 
-                self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: (self.SCHEIGHT/5)*2, width: 200, height: 90))
+                let image = UIImage(named: "pic_refresh_1")
+                self.imageView.image = image
+                self.imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-60,y:150,width:120,height:120)
+                self.view.addSubview(self.imageView)
+                
+                self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: 270, width: 200, height: 90))
                 self.noteLabel.textColor = .darkGray
-                self.noteLabel.text = "请检查网络设置！"
+                self.noteLabel.text = "暂无网络，点击重试"
                 self.noteLabel.textAlignment = .center
                 self.view.addSubview(self.noteLabel)
                 
-                self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: (self.SCHEIGHT/5)*2+100, width: 100, height: 35))
-                self.newButton.layer.masksToBounds = true                //开启遮罩（不开启遮罩设置圆角无效）
+                self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: 350, width: 100, height: 40))
+                //开启遮罩（不开启遮罩设置圆角无效）
+                self.newButton.layer.masksToBounds = true
+                //设置圆角半径
                 self.newButton.layer.cornerRadius = 5
-                self.newButton.layer.borderWidth = 1
-                self.newButton.layer.borderColor = UIColor.lightGray.cgColor
+                //设置按钮边框宽度
+                self.newButton.layer.borderWidth = 3
+                //设置按钮边框颜色
+                self.newButton.layer.borderColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
                 self.newButton.backgroundColor = .white
-                self.newButton.setTitle("刷新", for: .normal)
-                self.newButton.tintColor = .lightGray
-                self.newButton.setTitleColor(UIColor.lightGray, for: .normal)
+                self.newButton.setTitle("点击重试", for: .normal)
+                self.newButton.tintColor = .init(red: 77, green: 191, blue: 255, alpha: 1)
+                self.newButton.setTitleColor(UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1), for: .normal)
                 self.newButton.setTitleColor(UIColor.darkGray, for: .highlighted)
                 self.newButton.addTarget(self, action: #selector(self.newButtonAction), for: .touchUpInside)
                 self.view.addSubview(self.newButton)
