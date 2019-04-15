@@ -68,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             let documents = NSHomeDirectory() + "/Documents/localDocuments/"
             print(documents)
             var originPath = url.absoluteString
+            
+            
             if (FileManager.default.fileExists(atPath: inbox)){
                 print("inbox 存在")
                 let fileName = originPath.split(separator: "/").last!.removingPercentEncoding!
@@ -77,6 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
                     print("源文件:    "+sourceFilePath)
                     let aimFilePath = documents + fileName
                     print("目标地址:  "+aimFilePath)
+//                    if(FileManager.default.fileExists(atPath: aimFilePath.removingPercentEncoding!)){
+//                        let alert = UIAlertController(title: "文件已存在！", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+//                        // 传参
+//                        let alertAction1 = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler:{(alert: UIAlertAction!) in
+//                            return true
+//                        })
+//                        alert.addAction(alertAction1)
+//                        vc.present(alert, animated: true, completion: nil)
+//                    }
                     do{
                         try FileManager.default.copyItem(at: URL.init(fileURLWithPath: sourceFilePath.removingPercentEncoding!), to: URL.init(fileURLWithPath: aimFilePath.removingPercentEncoding!))
                         let alert = UIAlertController(title: "文件已保存！", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
