@@ -46,9 +46,11 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         
         let leftItem = UIBarButtonItem.init(title: "返回", style: .plain, target: self, action: #selector(self.backAction))
         self.navigationItem.leftBarButtonItem = leftItem
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1)
         
         let rightItem = UIBarButtonItem.init(title: "相册", style: .plain, target: self, action: #selector(self.imageQRScanAction))
         self.navigationItem.rightBarButtonItem = rightItem
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1)
     }
     
     //MARK: -------相册二维码识别--------
