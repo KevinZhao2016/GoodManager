@@ -53,34 +53,66 @@ func chooseSingleImageFromAlbum(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,c
 func chooseSingleImageFromCamera(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,callBackfunName:String){
     print("--------------ChooseSingleImage -- from camera----------------")
     let vc = getLastMainViewController()
-    let ijsip_1 = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false, dataSource: 1)
-    ijsip_1?.dataSource = 1
-    // 不能选择视频
-    ijsip_1?.allowPickingVideo = false
-    // 编辑
+    
+    let pickerView = UIImagePickerController()
+    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+        // 将sourceType设为UIImagePickerControllerSourceTypeCamera代表拍照或拍视频
+        pickerView.sourceType = UIImagePickerController.SourceType.camera
+        // 设置拍摄照片
+        pickerView.cameraCaptureMode = UIImagePickerController.CameraCaptureMode.photo
+        // 设置使用手机的后置摄像头（默认使用后置摄像头）
+        pickerView.cameraDevice = UIImagePickerController.CameraDevice.rear
+        // 在预览界面不需要编辑，到编辑界面再进行编辑
+        pickerView.allowsEditing = false
+        pickerView.delegate = vc
+    }else{
+        print("无法打开摄像头")
+    }
     if ifNeedEdit == 0 {
         // 不需要编辑
-        ijsip_1?.isHiddenEdit = true
+        vc.isNeedEdit = false
     }else{
         // 需要编辑
-        ijsip_1?.isHiddenEdit = false
+        vc.isNeedEdit = true
     }
-    var size:CGSize?
-    size = PHImageManagerMaximumSize
-    // 原图
     if ifOriginalPic == 0 {
-        // 不显示
-        ijsip_1?.hiddenOriginalButton = true
+        // 不显示原图
+        vc.isOriginal = false
     }else{
-        // 显示
-        ijsip_1?.allowPickingOriginalPhoto = true
-        ijsip_1?.hiddenOriginalButton = false
+        // 显示原图
+        vc.isOriginal = true
     }
-    // 获取数据
-    ijsip_1?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
-        getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
-    })
-    vc.present(ijsip_1!, animated: true, completion: nil)
+    vc.present(pickerView, animated: true, completion:nil)
+    
+    
+//    let ijsip_1 = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false, dataSource: 1)
+//    ijsip_1?.dataSource = 1
+//    // 不能选择视频
+//    ijsip_1?.allowPickingVideo = false
+//    // 编辑
+//    if ifNeedEdit == 0 {
+//        // 不需要编辑
+//        ijsip_1?.isHiddenEdit = true
+//    }else{
+//        // 需要编辑
+//        ijsip_1?.isHiddenEdit = false
+//    }
+//    var size:CGSize?
+//    size = PHImageManagerMaximumSize
+//    // 原图
+//    if ifOriginalPic == 0 {
+//        // 不显示
+//        ijsip_1?.hiddenOriginalButton = true
+//    }else{
+//        // 显示
+//        ijsip_1?.allowPickingOriginalPhoto = true
+//        ijsip_1?.hiddenOriginalButton = false
+//    }
+//    // 获取数据
+//    ijsip_1?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
+//        getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
+//    })
+//    vc.present(ijsip_1!, animated: true, completion: nil)
 }
 
 // 单选图片
