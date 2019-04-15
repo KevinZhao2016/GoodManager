@@ -62,6 +62,18 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         print(UIScreen.main.bounds)
         super.viewDidLoad()
         
+        // 文件管理
+        var fileManager = FileManager.default
+        // 文件存放总目录
+        let documentsDir = NSHomeDirectory() + "/Documents/localDocuments"
+        // 本地文件存放地址
+        let fileDir = documentsDir
+        do {
+            try fileManager.createDirectory(atPath: fileDir, withIntermediateDirectories: true, attributes: nil)
+        } catch is Error {
+            print("Error")
+        }
+        
         NetworkStatusListener()
         
         setupWebview()
