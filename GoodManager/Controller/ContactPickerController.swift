@@ -20,37 +20,40 @@ class ContactPickerController: CNContactPickerViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
     }
+    
+    func alert(){
+        let alertVC = UIAlertController(title:nil, message:"选择联系人超过最大数量: \(maxNum)", preferredStyle: .alert)
+//        let alertAction1 = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler:nil)
+//        alertVC.addAction(alertAction1)
+        self.present(alertVC, animated:true, completion:nil)
+    }
 }
 
 extension ContactPickerController:CNContactPickerDelegate {
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
         contactArray = []
         if(contacts.count > maxNum){
-            let alertVC = UIAlertController(title:nil, message:"选择联系人超过最大数量", preferredStyle: .alert)
-            self.present(alertVC, animated:true, completion:nil)
-            //自动消失
-//            DispatchQueue.main.asyncAfter(deadline: .now()+2){
-//                self.presentedViewController?.dismiss(animated: false, completion: nil)
-//            }
-        }
-        for contact in contacts {
-            //获取联系人的姓名
-            let lastName = contact.familyName
-            let firstName = contact.givenName
-        
-            //获取联系人电话号码
-            let phones = contact.phoneNumbers
-            var phoneValue = ""
-            var contactModel = TelBookModel(Phonenumber: phoneValue, Name: lastName + firstName)
-            if (phones.first != nil){
-                phoneValue = phones.first!.value.stringValue
-                contactModel = TelBookModel(Phonenumber: phoneValue, Name: lastName + firstName)
-            }else{
-                contactModel = TelBookModel(Phonenumber: "暂无号码", Name: lastName + firstName)
+            alert()
+        }else{
+            for contact in contacts {
+                //获取联系人的姓名
+                let lastName = contact.familyName
+                let firstName = contact.givenName
+                
+                //获取联系人电话号码
+                let phones = contact.phoneNumbers
+                var phoneValue = ""
+                var contactModel = TelBookModel(Phonenumber: phoneValue, Name: lastName + firstName)
+                if (phones.first != nil){
+                    phoneValue = phones.first!.value.stringValue
+                    contactModel = TelBookModel(Phonenumber: phoneValue, Name: lastName + firstName)
+                }else{
+                    contactModel = TelBookModel(Phonenumber: "暂无号码", Name: lastName + firstName)
+                }
+                contactArray.append(contactModel.toJSONString()!)
             }
-            contactArray.append(contactModel.toJSONString()!)
+            self.backClosure!(contactArray.getJSONStringFromArray())
         }
-        self.backClosure!(contactArray.getJSONStringFromArray())
     }
     
     func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
