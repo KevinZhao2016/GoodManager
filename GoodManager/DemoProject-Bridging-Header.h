@@ -29,6 +29,8 @@
 #import "IJSPhotoPreviewController.h"
 #import "IJSImageManager.h"
 #import "IJSExtension.h"
+#import "IJSAssetModel.h"
+#import "IJSImageManagerController.h"
 //#import "IJSVideoTestController.h"
 #import "IJSMapViewModel.h"
 #import <IJSFoundation/IJSFoundation.h>
