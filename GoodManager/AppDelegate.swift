@@ -61,54 +61,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
                 }
             }
         }else if url.scheme == "file"{
-            print("文件")
-            print(url.absoluteString)
-            
             let vc = getLastMainViewController()
-
-            //var originPath = url.absoluteString.removingPercentEncoding!
+            
+            print("文件")
+            let inbox = NSHomeDirectory() + "/Documents/Inbox/"
+            print(inbox)
+            let documents = NSHomeDirectory() + "/Documents/localDocuments/"
+            print(documents)
+            
             var originPath = url.absoluteString
+
             
-            if originPath.hasPrefix("file:///private"){
-                originPath = originPath.replacingOccurrences(of: "file:///private", with: "")
-                print("originPath: \(originPath)")
-            }
-            
-            let path = URL(fileURLWithPath: NSHomeDirectory() + "/Documents/localDocuments")
-            let fileName = originPath.split(separator: "/").last!
-            var finalPath = "\(path)\(fileName)"
-            if finalPath.hasPrefix("file://"){
-                finalPath = finalPath.replacingOccurrences(of: "file://", with: "")
-            }
-            print("finalPath: \(finalPath)")
-            
-            let fileManager = FileManager.default
-            
-            if (fileManager.fileExists(atPath: finalPath)){
-                do{
-                    try fileManager.removeItem(at: URL(string: finalPath)!)
-                }catch{
-                    print("文件已存在")
+            if (FileManager.default.fileExists(atPath: inbox)){
+                print("inbox 存在")
+                let fileName = originPath.split(separator: "/").last!.removingPercentEncoding!
+                if (FileManager.default.fileExists(atPath: inbox + fileName)){
+                    let fileName = originPath.split(separator: "/").last!
+                    let sourceFilePath = inbox + fileName
+                    print("源文件:    "+sourceFilePath)
+                    let aimFilePath = documents + fileName
+                    print("目标地址:  "+aimFilePath)
+                    do{
+                        try FileManager.default.copyItem(at: URL.init(fileURLWithPath: sourceFilePath.removingPercentEncoding!), to: URL.init(fileURLWithPath: aimFilePath.removingPercentEncoding!))
+                    }catch let error as NSError{
+                        print(error)
+                    }
                 }
             }
-            
-            do{
-                let path_1 = URL(string:originPath)!
-                let path_2 = URL(string:finalPath)!
-                try fileManager.copyItem(at: path_1, to: path_2)
-                let avc = UIAlertController(title: "系统提示",message: "文件拷贝成功！", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "好的", style: .default, handler: nil)
-                avc.addAction(okAction)
-                vc.present(avc, animated: true, completion: nil)
-            }catch{
-//                let avc = UIAlertController(title: "系统提示",message: "文件拷贝失败！", preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "好的", style: .default, handler: nil)
-//                avc.addAction(okAction)
-//                vc.present(avc, animated: true, completion: nil)
-                return false
-            }
-            print("application:openURL:options:")
-            
         }else{
             print("url.host != safepay")
             if (url.absoluteString.hasPrefix("tencent")){
