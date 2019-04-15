@@ -8,6 +8,31 @@
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
 	<string>好监理</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string>com.hjl</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.microsoft.word.doc</string>
+				<string>com.microsoft.powerpoint.ppt</string>
+				<string>com.microsoft.excel.xls</string>
+				<string>com.adobe.pdf</string>
+				<string>public.image</string>
+				<string>public.composite-content</string>
+				<string>public.content</string>
+				<string>public.archive</string>
+				<string>public.audio</string>
+				<string>public.movie</string>
+				<string>public.data</string>
+				<string>public.data</string>
+				<string>public.item</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -166,5 +191,14 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeIdentifier</key>
+			<string>cn.yiganzi.hjl</string>
+		</dict>
+	</array>
 </dict>
 </plist>
