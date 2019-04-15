@@ -62,7 +62,7 @@
 #import "NTESCellLayoutConfig.h"
 #import "NTESTeamReceiptSendViewController.h"
 #import "NTESTeamReceiptDetailViewController.h"
-
+#import "GoodManager-Swift.h"
 @interface NTESSessionViewController ()
 <UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
@@ -318,6 +318,23 @@ NIMAdvancedTeamCardVCProtocol>
 #pragma mark - 文件传输
 - (void)onTapMediaItemFileTrans:(NIMMediaItem *)item
 {
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     NTESFileTransSelectViewController *vc = [[NTESFileTransSelectViewController alloc]
                                              initWithNibName:nil bundle:nil];
     __weak typeof(self) wself = self;
@@ -991,7 +1008,7 @@ NIMAdvancedTeamCardVCProtocol>
     if (!_mediaFetcher) {
         _mediaFetcher = [[NIMKitMediaFetcher alloc] init];
         _mediaFetcher.limit = 1;
-        _mediaFetcher.mediaTypes = @[(NSString *)kUTTypeImage];;;
+        _mediaFetcher.mediaTypes = @[(NSString *)kUTTypeImage,(NSString *)kUTTypeAudio];;;
     }
     return _mediaFetcher;
 }

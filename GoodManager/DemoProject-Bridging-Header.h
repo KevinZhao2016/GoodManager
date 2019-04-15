@@ -13,7 +13,7 @@
 #import "NTESSessionListViewController.h"
 #import "NTESContactViewController.h"
 #import "NTESSessionViewController.h"
-
+#import "NTESBundleSetting.h"
 #import "NTESMainTabController.h"
 // IDCard识别
 #import "IDAuthViewController.h"

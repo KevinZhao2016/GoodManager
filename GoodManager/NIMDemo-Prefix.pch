@@ -16,7 +16,7 @@
 #import <NIMAVChat/NIMAVChat.h>
 #import "NTESGlobalMacro.h"
 #import "NIMKit.h"
-
+#import "NTESRedPacketManager.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
 #ifdef DEBUG
