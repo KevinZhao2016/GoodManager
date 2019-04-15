@@ -421,46 +421,91 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             alert.addAction(UIAlertAction(title: "确定",style: UIAlertAction.Style.default,handler: nil))
         } else {
             print("保存成功")
-            
-            
             let alert = UIAlertController(title: "保存图片成功！",message: nil,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "确定",style: UIAlertAction.Style.default,handler: {(alert:UIAlertAction) in
-                
                 if self.isNeedEdit{
                     // 需要编辑
                     let imageManagerVC = IJSImageManagerController(edit:image)
                     imageManagerVC?.loadImage{(image_:UIImage?,outputPath:URL?,error:Error?) in
                         print(outputPath)
+                        
                         if self.isOriginal{
                             // 需要原图
                             let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
                             alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
-                                
+                                let result = outputPath?.absoluteString.replacingOccurrences(of: "file://", with: "")
+                                ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + result! + "\")")
                             }))
                             alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
-                                
+                                print(outputPath)
+                                var data = image.jpegData(compressionQuality: 1);
+                                if data!.count/1024 > 200{
+                                    data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
+                                }
+                                let rootPath = NSHomeDirectory()
+                                let name = Int(arc4random() % 10000) + 1
+                                let fileMG = FileManager.default
+                                let finalPath = rootPath+"/Documents/\(name).jpg"
+                                fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                                ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
                             }))
+                            self.present(alert, animated: true, completion: nil)
                         }else{
                             // 不需要原图
-                            
+                            var data = image.jpegData(compressionQuality: 1);
+                            if data!.count/1024 > 200{
+                                data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
+                            }
+                            let rootPath = NSHomeDirectory()
+                            let name = Int(arc4random() % 10000) + 1
+                            let fileMG = FileManager.default
+                            let finalPath = rootPath+"/Documents/\(name).jpg"
+                            fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                            ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
                         }
                     }
                     self.present(imageManagerVC!,animated:true,completion:nil)
                 }else{
-                    
-                    
-                    print(contextInfo)
-                    
                     // 不需要编辑
+                    print("\(image.accessibilityPath)")
                     if self.isOriginal{
                         // 需要原图
                         let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                            var data = image.jpegData(compressionQuality: 1);
+                            let rootPath = NSHomeDirectory()
+                            let name = Int(arc4random() % 10000) + 1
+                            let fileMG = FileManager.default
+                            let finalPath = rootPath+"/Documents/\(name).jpg"
+                            fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                            ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
                         }))
                         alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                            // 不需要原图
+                            var data = image.jpegData(compressionQuality: 1);
+                            if data!.count/1024 > 200{
+                                data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
+                            }
+                            let rootPath = NSHomeDirectory()
+                            let name = Int(arc4random() % 10000) + 1
+                            let fileMG = FileManager.default
+                            let finalPath = rootPath+"/Documents/\(name).jpg"
+                            fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                            ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
                         }))
+                        self.present(alert, animated: true, completion: nil)
                     }else{
                         // 不需要原图
+                        var data = image.jpegData(compressionQuality: 1);
+                        if data!.count/1024 > 200{
+                            data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
+                        }
+                        let rootPath = NSHomeDirectory()
+                        let name = Int(arc4random() % 10000) + 1
+                        let fileMG = FileManager.default
+                        let finalPath = rootPath+"/Documents/\(name).jpg"
+                        fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                        ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
                     }
                 }
             }))
