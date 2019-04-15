@@ -41,6 +41,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     lazy var currLocation = CLLocation()
     lazy var locationModel = LocationModel()
     
+    // 单选图片是否 选择原图
+    var isOriginal:Bool = true
+    // 单选图片是否 需要编辑
+    var isNeedEdit:Bool = true
+    
     // UI
     var imageView:UIImageView = UIImageView()
     let button:UIButton = UIButton(type: .custom);
@@ -393,6 +398,73 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                 j = j + 1
             })
             i = i + 1
+        }
+    }
+    
+    // 单选图片 - 拍照获得图片
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //获得照片
+        let image:UIImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        // 拍照
+        if picker.sourceType == .camera {
+            //保存相册
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    // 单选图片 - 拍照后存储
+    @objc func image(image:UIImage,didFinishSavingWithError error:NSError?,contextInfo:AnyObject){
+        if error != nil {
+            print("保存失败")
+            let alert = UIAlertController(title: "保存图片失败！",message: nil,preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "确定",style: UIAlertAction.Style.default,handler: nil))
+        } else {
+            print("保存成功")
+            
+            
+            let alert = UIAlertController(title: "保存图片成功！",message: nil,preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "确定",style: UIAlertAction.Style.default,handler: {(alert:UIAlertAction) in
+                
+                if self.isNeedEdit{
+                    // 需要编辑
+                    let imageManagerVC = IJSImageManagerController(edit:image)
+                    imageManagerVC?.loadImage{(image_:UIImage?,outputPath:URL?,error:Error?) in
+                        print(outputPath)
+                        if self.isOriginal{
+                            // 需要原图
+                            let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                                
+                            }))
+                            alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                                
+                            }))
+                        }else{
+                            // 不需要原图
+                            
+                        }
+                    }
+                    self.present(imageManagerVC!,animated:true,completion:nil)
+                }else{
+                    
+                    
+                    print(contextInfo)
+                    
+                    // 不需要编辑
+                    if self.isOriginal{
+                        // 需要原图
+                        let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                        }))
+                        alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                        }))
+                    }else{
+                        // 不需要原图
+                    }
+                }
+            }))
+            self.present(alert,animated:true,completion:nil)
         }
     }
     

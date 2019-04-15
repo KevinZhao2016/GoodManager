@@ -490,12 +490,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/AppDelegate.swift"
-            timestampString = "577027054.925248"
+            timestampString = "577032105.606935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "application(_:open:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoodManager/Controller/MainViewController.swift"
+            timestampString = "577035932.358724"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "452"
+            endingLineNumber = "452"
+            landmarkName = "image(image:didFinishSavingWithError:contextInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
