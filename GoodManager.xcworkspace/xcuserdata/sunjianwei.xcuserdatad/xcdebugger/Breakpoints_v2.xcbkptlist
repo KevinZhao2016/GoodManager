@@ -89,22 +89,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoodManager/Classes/Sections/Session/Config/NTESSessionConfig.m"
-            timestampString = "576316128.7231849"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-mediaItems"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GoodManager/Vendors/NIMKit/Classes/Sections/Session/ViewController/NIMSessionViewController.m"
             timestampString = "576316128.723233"
             startingColumnNumber = "9223372036854775807"
@@ -270,27 +254,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "576428230.47106"
+            timestampString = "577035144.716596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "576428230.471518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -301,13 +269,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "576428230.4718519"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
+            timestampString = "577035144.7167701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-setUpPhotoLibrary:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
+            timestampString = "577035144.717185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-imagePickerController:didFinishPickingVideo:sourceAssets:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
+            timestampString = "577035144.717454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
+            timestampString = "577035144.717702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-setUpPhotoLibrary:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

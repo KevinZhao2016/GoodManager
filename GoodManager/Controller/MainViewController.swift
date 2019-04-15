@@ -245,16 +245,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     func isIPhoneX() -> Bool {
-        var iPhoneX:Bool = false
-        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
-            return iPhoneX
-        }
-        if #available(iOS 11.0, *) {
-            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
-                iPhoneX = true
-            }
-        }
-        return iPhoneX
+//        var iPhoneX:Bool = false
+//        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
+//            return iPhoneX
+//        }
+//        if #available(iOS 11.0, *) {
+//            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
+//                iPhoneX = true
+//            }
+//        }
+        return false;
     }
     
     @objc func btnClick(){
