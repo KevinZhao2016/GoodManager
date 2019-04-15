@@ -28,10 +28,10 @@
 }
 /* 默认的列数 */
 @property (nonatomic, assign) NSInteger columnNumber;
-@property(nonatomic, weak) UIImagePickerController *picker;    //test for nothing
-@property(nonatomic, weak) IJSAlbumPickerController *albumVc;  // 相册控制器
-@property(nonatomic, weak) IJSPhotoPickerController *photoVc;  // 相册预览界面
-@property(nonatomic, assign) int countoftime;
+@property (nonatomic, weak) UIImagePickerController *picker;    //test for nothing
+@property (nonatomic, weak) IJSAlbumPickerController *albumVc;  // 相册控制器
+@property (nonatomic, weak) IJSPhotoPickerController *photoVc;  // 相册预览界面
+@property (nonatomic, assign) int countoftime;
 
 
 @property(nonatomic,copy) void(^selectedHandler)(NSArray<UIImage *> *photos, NSArray *avPlayers, NSArray *assets, NSArray<NSDictionary *> *infos, IJSPExportSourceType sourceType,NSError *error);  // 数据回调
