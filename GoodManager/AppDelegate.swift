@@ -62,16 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             }
         }else if url.scheme == "file"{
             let vc = getLastMainViewController()
-            
             print("文件")
             let inbox = NSHomeDirectory() + "/Documents/Inbox/"
             print(inbox)
             let documents = NSHomeDirectory() + "/Documents/localDocuments/"
             print(documents)
-            
             var originPath = url.absoluteString
-
-            
             if (FileManager.default.fileExists(atPath: inbox)){
                 print("inbox 存在")
                 let fileName = originPath.split(separator: "/").last!.removingPercentEncoding!
@@ -83,10 +79,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
                     print("目标地址:  "+aimFilePath)
                     do{
                         try FileManager.default.copyItem(at: URL.init(fileURLWithPath: sourceFilePath.removingPercentEncoding!), to: URL.init(fileURLWithPath: aimFilePath.removingPercentEncoding!))
+                        let alert = UIAlertController(title: "文件已保存！", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+                        // 传参
+                        let alertAction1 = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler:nil)
+                        alert.addAction(alertAction1)
+                        vc.present(alert, animated: true, completion: nil)
                     }catch let error as NSError{
                         print(error)
+                        let alert = UIAlertController(title: "文件保存失败！", message: "error: \(error.code)", preferredStyle: UIAlertController.Style.actionSheet)
+                        // 传参
+                        let alertAction1 = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler:nil)
+                        alert.addAction(alertAction1)
+                        vc.present(alert, animated: true, completion: nil)
                     }
+                }else{
+                    let alert = UIAlertController(title: "文件保存失败！", message: "文件丢失！", preferredStyle: UIAlertController.Style.actionSheet)
+                    // 传参
+                    let alertAction1 = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler:nil)
+                    alert.addAction(alertAction1)
+                    vc.present(alert, animated: true, completion: nil)
                 }
+            }else{
+                let alert = UIAlertController(title: "文件保存失败！", message: "文件丢失！", preferredStyle: UIAlertController.Style.actionSheet)
+                // 传参
+                let alertAction1 = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler:nil)
+                alert.addAction(alertAction1)
+                vc.present(alert, animated: true, completion: nil)
             }
         }else{
             print("url.host != safepay")
