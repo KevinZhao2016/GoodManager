@@ -37,8 +37,8 @@
 {
     self = [super init];
     if (self) {
-        _mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
-        _limit = 9;
+        _mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage,(NSString *)kUTTypeVideo];
+        _limit = 9000;
     }
     return self;
 }

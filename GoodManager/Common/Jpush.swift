@@ -25,10 +25,10 @@ func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
     let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
     if ifOpenVoice == 0 {
         
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue);
+        entity.types = Int(JPAuthorizationOptions.alert.rawValue);
     }else
     {
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
     }
     let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate;
     JPUSHService.register(forRemoteNotificationConfig: entity, delegate: delegate);

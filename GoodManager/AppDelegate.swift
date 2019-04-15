@@ -258,7 +258,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         if (notification.request.trigger is UNPushNotificationTrigger) {
             JPUSHService.handleRemoteNotification(userInfo)
         }
-        completionHandler(Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue)|Int(JPAuthorizationOptions.sound.rawValue))
+        completionHandler(Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue))
     }
     
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
@@ -332,7 +332,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         //Required
         //notice: 3.0.0 及以后版本注册可以这样写，也可以继续用之前的注册方式
         let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.badge.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
         
         
 //        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self);
