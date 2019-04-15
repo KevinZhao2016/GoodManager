@@ -73,7 +73,7 @@ class FileListTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = .black
         
         // 本地文件存放地址
-        fileDir = documentsDir + "/localDocuments"
+        fileDir = documentsDir
         do {
             try fileManager.createDirectory(atPath: fileDir, withIntermediateDirectories: true, attributes: nil)
         } catch is Error {

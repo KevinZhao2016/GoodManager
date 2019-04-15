@@ -92,7 +92,7 @@ typedef NS_ENUM(NSUInteger, IJSPExportSourceType) {
 @property (nonatomic, assign) BOOL allowPickingGif;
 
 /* 隐藏编辑按钮 */
-@property(nonatomic,assign) BOOL isHiddenEdit;
+@property (nonatomic, assign) BOOL isHiddenEdit;
 
 /*  默认为YES，如果设置为NO,拍照按钮将隐藏,用户将不能选择照片 */
 @property (nonatomic, assign) BOOL allowTakePicture;
@@ -121,7 +121,7 @@ typedef NS_ENUM(NSUInteger, IJSPExportSourceType) {
 /**
  隐藏选择原始图选择按钮,默认是yes隐藏
  */
-@property(nonatomic,assign) BOOL hiddenOriginalButton;
+@property (nonatomic, assign) BOOL hiddenOriginalButton;
 
 
 

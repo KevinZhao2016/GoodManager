@@ -32,6 +32,12 @@
 @property(nonatomic, weak) IJSAlbumPickerController *albumVc;  // 相册控制器
 @property(nonatomic, weak) IJSPhotoPickerController *photoVc;  // 相册预览界面
 @property(nonatomic, assign) int countoftime;
+
+
+@property(nonatomic,copy) void(^selectedHandler)(NSArray<UIImage *> *photos, NSArray *avPlayers, NSArray *assets, NSArray<NSDictionary *> *infos, IJSPExportSourceType sourceType,NSError *error);  // 数据回调
+
+@property(nonatomic,copy) void(^cancelHandler)(void);  // 取消选择的属性
+
 @end
 
 @implementation IJSImagePickerController
@@ -268,7 +274,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [picker dismissViewControllerAnimated:YES completion:nil];
     NSLog(@"NSString * _Nonnull format, ...");
     //  定位1
-    
 }
 
 - (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
@@ -279,7 +284,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     } else {
         msg = @"保存图片成功";
         [self dismissViewControllerAnimated:NO completion:^{
-            NSLog(@"?????????????");
             IJSImagePickerController *ijsip = [[IJSImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 pushPhotoPickerVc:YES];
             ijsip.allowPickingVideo = NO;
             ijsip.isHiddenEdit = _isHiddenEdit;
@@ -292,7 +296,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             ijsip.dataSource = 0;
             [ijsip loadTheSelectedData:^(NSArray<UIImage *> *photos, NSArray<NSURL *> *avPlayers, NSArray<PHAsset *> *assets, NSArray<NSDictionary *> *infos, IJSPExportSourceType sourceType, NSError *error) {
                 NSMutableArray *path = [[NSMutableArray alloc] init];
+
                 [[PHImageManager defaultManager] requestImageForAsset:assets[0] targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+
                     if (ijsip.allowPickingOriginalPhoto) {
                         NSURL *imageURL = info[@"PHImageFileURLKey"];
                         [path addObject:(imageURL.path)];
@@ -324,9 +330,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             [main presentViewController:ijsip animated:YES completion:nil];
         }];
     }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存图片结果" message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"点击了确定按钮");
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
+
 
 #pragma mark - 当用户取消时，调用该方法
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

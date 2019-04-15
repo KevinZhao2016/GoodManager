@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 	<key>BuildTime</key>
 	<string>20190101</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -14,20 +18,17 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>com.hjl</string>
+			<string>public.content</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.microsoft.word.doc</string>
-				<string>com.microsoft.powerpoint.ppt</string>
-				<string>com.microsoft.excel.xls</string>
-				<string>com.adobe.pdf</string>
 				<string>public.image</string>
 				<string>public.composite-content</string>
 				<string>public.content</string>
 				<string>public.archive</string>
 				<string>public.audio</string>
 				<string>public.movie</string>
-				<string>public.data</string>
 				<string>public.data</string>
 				<string>public.item</string>
 			</array>

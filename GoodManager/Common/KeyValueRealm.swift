@@ -12,48 +12,34 @@ import RealmSwift
 class KeyValue: Object {
     @objc dynamic var key:String = ""
     @objc dynamic var value:String = ""
-    
-//    override static func primaryKey() -> String? {
-//        return "key"
-//    }
+    override class func primaryKey() -> String?{
+        return "key"
+    }
 }
 
 
 class KeyValueRealm{
+    
     func addKeyValue(key:String, value:String) -> Bool{
+        // 使用默认数据库
         let realm = try! Realm()
-        print(realm.configuration.fileURL ?? "")
-        let keyValue = queueKeyValue(key:key)
-        if(keyValue.key != ""){
-            do{
-                try realm.write {
-                    realm.delete(keyValue)
-                    let keyvalue = KeyValue()
-                    keyvalue.key = key
-                    keyvalue.value = value
-                    realm.add(keyvalue)
-                }
-            }catch{
-                return false
-            }
-        }else{
-            keyValue.key = key
-            keyValue.value = value
-            do{
-                try realm.write {
-                    realm.add(keyValue)
-                }
-            }catch{
-                return false
-            }
+        
+        let keyValue = KeyValue()
+        keyValue.key = key
+        keyValue.value = value
+        
+        try! realm.write {
+            print("key   : " + keyValue.key)
+            print("value : " + keyValue.value)
+            realm.add(keyValue, update: true)
         }
         return true
     }
     
     func deleteKeyValue(key:String) -> Bool{
         let realm = try! Realm()
-        print(realm.configuration.fileURL ?? "")
         let keyValue = queueKeyValue(key: key)
+        print("keyValue : \(keyValue.key)  \(keyValue.value)")
         do{
             try realm.write {
                 realm.delete(keyValue)
@@ -66,7 +52,7 @@ class KeyValueRealm{
     
     func queueKeyValue(key:String) -> KeyValue{
         let realm = try! Realm()
-        let result =  realm.objects(KeyValue.self).filter("key == %@",key).first
+        var result =  realm.objects(KeyValue.self).filter("key == %@",key).first
         return result ?? KeyValue()
     }
 }
@@ -84,5 +70,5 @@ func APPGetValue(key:String) -> String{
 
 func APPDelValue(key:String) {
     let agent = KeyValueRealm()
-   _ = agent.deleteKeyValue(key: key)
+    _ = agent.deleteKeyValue(key: key)
 }
