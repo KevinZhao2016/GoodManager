@@ -27,22 +27,22 @@ class NoNetViewController: UIViewController {
         imageView.image = image
         //指定图片显示的位置
 //        imageView.frame.origin = CGPoint(x:UIScreen.main.bounds.width/2,y:100);
-        imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-60,y:150,width:120,height:120)
+        imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-90,y:150,width:180,height:180)
         self.view.addSubview(imageView)
         
-        label = UILabel(frame: CGRect(x: SCWIDTH/2-100, y: 270, width: 200, height: 90))
-        label.textColor = .darkGray
+        label = UILabel(frame: CGRect(x: SCWIDTH/2-100, y: 310, width: 200, height: 90))
+        label.textColor = .lightGray
         label.text = "暂无网络，点击重试"
         label.textAlignment = .center
         self.view.addSubview(label)
         
-        newButton = UIButton(frame: CGRect(x: SCWIDTH/2-50, y: 350, width: 100, height: 40))
+        newButton = UIButton(frame: CGRect(x: SCWIDTH/2-50, y: 400, width: 100, height: 40))
         //开启遮罩（不开启遮罩设置圆角无效）
         newButton.layer.masksToBounds = true
         //设置圆角半径
         newButton.layer.cornerRadius = 5
         //设置按钮边框宽度
-        newButton.layer.borderWidth = 3
+        newButton.layer.borderWidth = 1
         //设置按钮边框颜色
         newButton.layer.borderColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
         newButton.backgroundColor = .white
