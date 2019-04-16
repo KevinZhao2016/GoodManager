@@ -66,7 +66,7 @@ class FileListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "File List"
+        self.title = "文件列表"
         self.tableView.register(UINib(nibName:"FileCellTableViewCell", bundle:nil), forCellReuseIdentifier:"FileCellTableViewCell")
         let newBackButton = UIBarButtonItem(title: "返回", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("back")))
         self.navigationItem.leftBarButtonItem = newBackButton

@@ -89,7 +89,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             if netSituation == "0" {
                 let vc = getLastMainViewController()
                 let noNetVC = NoNetViewController()
-                vc.present(noNetVC, animated: true, completion: nil)
+                vc.present(noNetVC, animated: false, completion: nil)
             } else {
                 setupLaunchView() //启动页
             }
@@ -136,22 +136,22 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                 
                 let image = UIImage(named: "pic_refresh_1")
                 self.imageView.image = image
-                self.imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-60,y:150,width:120,height:120)
+                self.imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-90,y:150,width:180,height:180)
                 self.view.addSubview(self.imageView)
                 
-                self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: 270, width: 200, height: 90))
-                self.noteLabel.textColor = .darkGray
+                self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: 310, width: 200, height: 90))
+                self.noteLabel.textColor = .lightGray
                 self.noteLabel.text = "暂无网络，点击重试"
                 self.noteLabel.textAlignment = .center
                 self.view.addSubview(self.noteLabel)
                 
-                self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: 350, width: 100, height: 40))
+                self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: 400, width: 100, height: 40))
                 //开启遮罩（不开启遮罩设置圆角无效）
                 self.newButton.layer.masksToBounds = true
                 //设置圆角半径
                 self.newButton.layer.cornerRadius = 5
                 //设置按钮边框宽度
-                self.newButton.layer.borderWidth = 3
+                self.newButton.layer.borderWidth = 1
                 //设置按钮边框颜色
                 self.newButton.layer.borderColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
                 self.newButton.backgroundColor = .white
