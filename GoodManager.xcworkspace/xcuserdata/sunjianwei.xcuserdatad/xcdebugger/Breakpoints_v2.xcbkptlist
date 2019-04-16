@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Classes/Sections/Session/Config/NTESSessionConfig.m"
-            timestampString = "576316128.722199"
+            timestampString = "577058981.698866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -254,7 +254,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577035144.716596"
+            timestampString = "577062604.616397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -270,7 +270,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
-            timestampString = "577035144.7167701"
+            timestampString = "577062604.6165299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -286,7 +286,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
-            timestampString = "577035144.717185"
+            timestampString = "577062604.616635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -302,7 +302,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
-            timestampString = "577035144.717454"
+            timestampString = "577062604.6167229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -318,12 +318,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NIMKit/NIMKit/Classes/Sections/Common/NIMKitMediaFetcher.m"
-            timestampString = "577035144.717702"
+            timestampString = "577062604.616809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "-setUpPhotoLibrary:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoodManager/Classes/Sections/Session/ViewController/NTESSessionViewController.m"
+            timestampString = "577062604.616936"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "-onSelectChartlet:catalog:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoodManager/Common/Image.swift"
+            timestampString = "577037663.740428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "chooseSingleImageFromAlbum(source:ifNeedEdit:ifOriginalPic:callBackfunName:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoodManager/Classes/Sections/Session/ViewController/NTESSessionViewController.m"
+            timestampString = "577062604.617085"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "-doTopSession:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Session/ViewController/NIMSessionViewController.m"
+            timestampString = "577040042.908774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "718"
+            endingLineNumber = "718"
+            landmarkName = "-onTapMediaItemPicture:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionInteractorImpl.m"
+            timestampString = "577062604.617291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
+            landmarkName = "-mediaPicturePressed"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionInteractorImpl.m"
+            timestampString = "577062604.617388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "-mediaPicturePressed"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NIMKit/NIMKit/Classes/Sections/Session/Object/NIMSessionInteractorImpl.m"
+            timestampString = "577062604.617481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
+            landmarkName = "-mediaPicturePressed"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
