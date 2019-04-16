@@ -14,7 +14,7 @@
 #import "NIMMessageMaker.h"
 #import "NIMLocationViewController.h"
 #import "NIMKitAudioCenter.h"
-
+#import "IJSImagePickerController.h"
 static const void * const NTESDispatchMessageDataPrepareSpecificKey = &NTESDispatchMessageDataPrepareSpecificKey;
 dispatch_queue_t NTESMessageDataPrepareQueue()
 {
@@ -382,6 +382,61 @@ dispatch_queue_t NTESMessageDataPrepareQueue()
 - (void)mediaPicturePressed
 {
     __weak typeof(self) weakSelf = self;
+
+    UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
+    IJSImagePickerController *ijsip = [[IJSImagePickerController alloc]initWithMaxImagesCount:1 columnNumber:4 pushPhotoPickerVc:NO];
+    // 选择视频
+    ijsip.allowPickingVideo = YES;
+    // 编辑
+ 
+        // 需要编辑
+    ijsip.isHiddenEdit = NO;
+
+  
+    CGSize  size = PHImageManagerMaximumSize;
+  
+        // 显示
+    ijsip.allowPickingOriginalPhoto = YES;
+    ijsip.hiddenOriginalButton = NO;
+    // 获取数据
+    ijsip.dataSource = 0;
+    [ijsip loadTheSelectedData:^(NSArray<UIImage *> *photos, NSArray<NSURL *> *avPlayers, NSArray<PHAsset *> *assets, NSArray<NSDictionary *> *infos, IJSPExportSourceType sourceType, NSError *error) {
+        switch (sourceType) {
+            case IJSPImageType:
+                for (UIImage *image in photos) {
+                    NIMMessage *message = [NIMMessageMaker msgWithImage:image];
+                    [[NIMSDK sharedSDK].chatManager sendMessage:message toSession:weakSelf.session error:nil];
+                }
+                break;
+            case IJSPVideoType:
+            {
+                NSLog(@"%@",avPlayers.firstObject.absoluteString);
+                NSString *path = avPlayers.firstObject.absoluteString;
+                path = [path stringByReplacingOccurrencesOfString:@"file:///" withString:@""];
+
+                NIMMessage *message = [NIMMessageMaker msgWithVideo:path];
+                [[NIMSDK sharedSDK].chatManager sendMessage:message toSession:weakSelf.session error:nil];
+                
+            }
+                break;
+            default:
+                break;
+        }
+        
+        
+        
+    }];
+    [rootVC presentViewController:ijsip animated:YES completion:nil];
+ 
+    return;
+    
+    
+    
+    
+    
+    
+    
+    
     [self.mediaFetcher fetchPhotoFromLibrary:^(NSArray *images, NSString *path, PHAssetMediaType type) {
         switch (type) {
             case PHAssetMediaTypeImage:
