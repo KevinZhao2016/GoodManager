@@ -54,6 +54,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
     var photoPath:String = ""
+    
     lazy  var progressView: UIProgressView = {
         self.progressView = UIProgressView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 2))
         // 进度条颜色
@@ -63,37 +64,42 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         return self.progressView
     }()
     
+    
+    
+    //-------------------------生命周期--------------------------
     override func viewDidLoad() {
         print(UIScreen.main.bounds)
         super.viewDidLoad()
         
-        // 文件管理
-        var fileManager = FileManager.default
-        // 文件存放总目录
+        let fileManager = FileManager.default
         let documentsDir = NSHomeDirectory() + "/Documents/localDocuments"
-        // 本地文件存放地址
         let fileDir = documentsDir
         do {
             try fileManager.createDirectory(atPath: fileDir, withIntermediateDirectories: true, attributes: nil)
-        } catch is Error {
+        } catch {
             print("Error")
         }
         
         NetworkStatusListener()
         
-        setupWebview()
+        if reachability.isReachable {
+            setupWebview()
+        }
+        
         if(LaunchFlag == false){
+            // 若在启动时
             var netSituation = APPGetNetWork()
             let jsonString = JSON(parseJSON: netSituation)
             netSituation = jsonString["mode"].stringValue
             if netSituation == "0" {
-                let vc = getLastMainViewController()
-                let noNetVC = NoNetViewController()
-                vc.present(noNetVC, animated: false, completion: nil)
+                // 网络不可用
+                nonetLoad()
             } else {
-                setupLaunchView() //启动页
+                // 网络可用
             }
+            setupLaunchView() //启动页
         }
+        
         locationManager.delegate = self //定位代理方法
     }
     
@@ -101,6 +107,25 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.isNavigationBarHidden = true;
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true);
+        self.navigationController?.isNavigationBarHidden = false;
+    }
+    
+    
+    
+    
+    //-----------------------------网络监听-----------------------------------
     // 1、设置网络状态消息监听 2、获得网络Reachability对象
     func NetworkStatusListener() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name: Notification.Name.reachabilityChanged,object: reachability)
@@ -129,40 +154,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         } else {
             print("网络连接：不可用")
             DispatchQueue.main.async { // 不加这句导致界面还没初始化完成就打开警告框，这样不行
-                
-                self.webview.removeFromSuperview()
-                
-                self.view.backgroundColor = .white
-                
-                let image = UIImage(named: "pic_refresh_1")
-                self.imageView.image = image
-                self.imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-90,y:150,width:180,height:180)
-                self.view.addSubview(self.imageView)
-                
-                self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: 310, width: 200, height: 90))
-                self.noteLabel.textColor = .lightGray
-                self.noteLabel.text = "暂无网络，点击重试"
-                self.noteLabel.textAlignment = .center
-                self.view.addSubview(self.noteLabel)
-                
-                self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: 400, width: 100, height: 40))
-                //开启遮罩（不开启遮罩设置圆角无效）
-                self.newButton.layer.masksToBounds = true
-                //设置圆角半径
-                self.newButton.layer.cornerRadius = 5
-                //设置按钮边框宽度
-                self.newButton.layer.borderWidth = 1
-                //设置按钮边框颜色
-                self.newButton.layer.borderColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
-                self.newButton.backgroundColor = .white
-                self.newButton.setTitle("点击重试", for: .normal)
-                self.newButton.tintColor = .init(red: 77, green: 191, blue: 255, alpha: 1)
-                self.newButton.setTitleColor(UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1), for: .normal)
-                self.newButton.setTitleColor(UIColor.darkGray, for: .highlighted)
-                self.newButton.addTarget(self, action: #selector(self.newButtonAction), for: .touchUpInside)
-                self.view.addSubview(self.newButton)
-                
-                self.alert_noNetwrok() // 警告框，提示没有网络
+                //self.nonetLoad()
             }
         }
     }
@@ -173,43 +165,13 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         NotificationCenter.default.removeObserver(self, name: Notification.Name.reachabilityChanged, object: reachability)
     }
     
-    // 警告框，提示没有连接网络
-    func alert_noNetwrok() -> Void {
-        let alert = UIAlertController(title: "系统提示", message: "请打开网络连接", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "确定", style: .default, handler: nil)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
-    }
     
-    @objc func newButtonAction() {
-        print("检查网络！")
-        var netSituation = APPGetNetWork()
-        let jsonString = JSON(parseJSON: netSituation)
-        netSituation = jsonString["mode"].stringValue
-        if netSituation != "0" {
-            print("网络可用！")
-            self.newButton.removeFromSuperview()
-            self.noteLabel.removeFromSuperview()
-            setupWebview()
-        }else{
-            print("网络不可用！")
-        }
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
-        self.navigationController?.isNavigationBarHidden = true;
-        
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true);
-    self.navigationController?.isNavigationBarHidden = false;
-    }
+    //-----------------------------工具方法-----------------------------------
+    //加载起始页面
     func setupLaunchView(){
         //启动图片 异步获取
-        self.view.backgroundColor = UIColor.white
-        self.view.addSubview(image)
         let isIPhoneX:Bool = self.isIPhoneX()
-        if isIPhoneX   {
+        if isIPhoneX {
             image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
             
             bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
@@ -220,6 +182,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
         image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
+        image.backgroundColor = .white
         
         // 倒计时按钮
         button.frame = CGRect.init(x: SCREEN_WIDTH - 70, y: STATUS_HEIGHT + 10, width: 65, height: 25)
@@ -247,7 +210,94 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             }
         })
         LaunchFlag = true
+        
+        self.view.backgroundColor = UIColor.white
+        self.view.addSubview(image)
     }
+    
+    // 加载webview
+    func setupWebview(){
+        print("set up webview")
+        
+        webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - STATUS_HEIGHT))
+        //bridge
+        webview.addJavascriptObject(JsApiSwift(), namespace: nil)
+        webview.load(URLRequest(url: URL(string: url)!))
+        webview.navigationDelegate = self
+        webview.allowsBackForwardNavigationGestures = true
+        
+        //进度条监听
+        self.webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        self.webview.addSubview(self.progressView)
+        //适配全面屏,隐藏安全区域
+        if #available(iOS 11.0, *) {
+            webview.scrollView.contentInsetAdjustmentBehavior = .never;
+        }
+        self.view.addSubview(webview)
+    }
+    
+    // 提示无网络
+    func nonetLoad(){
+        self.view.backgroundColor = .white
+        self.style = .default
+        self.setNeedsStatusBarAppearanceUpdate()
+
+        if self.webview != nil {
+            // 去除webview
+            self.webview.removeFromSuperview()
+        }
+        
+        let image = UIImage(named: "pic_refresh_1")
+        self.imageView.image = image
+        self.imageView.frame = CGRect(x:UIScreen.main.bounds.width/2-90,y:150,width:180,height:180)
+        
+        self.noteLabel = UILabel(frame: CGRect(x: self.SCWIDTH/2-100, y: 310, width: 200, height: 90))
+        self.noteLabel.textColor = .lightGray
+        self.noteLabel.text = "暂无网络，点击重试"
+        self.noteLabel.textAlignment = .center
+        
+        self.newButton = UIButton(frame: CGRect(x: self.SCWIDTH/2-50, y: 400, width: 100, height: 40))
+        //开启遮罩（不开启遮罩设置圆角无效）
+        self.newButton.layer.masksToBounds = true
+        self.newButton.layer.cornerRadius = 5
+        self.newButton.layer.borderWidth = 1
+        self.newButton.layer.borderColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
+        self.newButton.backgroundColor = .white
+        self.newButton.setTitle("点击重试", for: .normal)
+        self.newButton.tintColor = .init(red: 77, green: 191, blue: 255, alpha: 1)
+        self.newButton.setTitleColor(UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1), for: .normal)
+        self.newButton.setTitleColor(UIColor.darkGray, for: .highlighted)
+        self.newButton.addTarget(self, action: #selector(self.newButtonAction), for: .touchUpInside)
+        
+        self.view.addSubview(self.noteLabel)
+        self.view.addSubview(self.imageView)
+        self.view.addSubview(self.newButton)
+    }
+    
+    // 无网络页面刷新
+    @objc func newButtonAction() {
+        print("检查网络！")
+        var netSituation = APPGetNetWork()
+        let jsonString = JSON(parseJSON: netSituation)
+        netSituation = jsonString["mode"].stringValue
+        if netSituation != "0" {
+            print("网络可用！")
+            self.newButton.removeFromSuperview()
+            self.noteLabel.removeFromSuperview()
+            setupWebview()
+        }else{
+            print("网络不可用！")
+        }
+    }
+    
+    // 警告框，提示没有连接网络
+    func alert_noNetwrok() -> Void {
+        let alert = UIAlertController(title: "系统提示", message: "请打开网络连接", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     func isIPhoneX() -> Bool {
 //        var iPhoneX:Bool = false
@@ -262,36 +312,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         return false;
     }
     
+    // 刷新页面按钮
     @objc func btnClick(){
         self.removeImageWithDelay()
     }
     
-    func setupWebview(){
-        
-        // 创建配置
-        //        let config = WKWebViewConfiguration()
-        //        // 创建UserContentController（提供JavaScript向webView发送消息的方法）
-        //        let userContent = WKUserContentController()
-        //        // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-        //        userContent.add(self, name: "NativeMethod")
-        //        // 将UserConttentController设置到配置文件
-        //        config.userContentController = userContent
-        webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - STATUS_HEIGHT))
-        //bridge
-        webview.addJavascriptObject(JsApiSwift(), namespace: nil)
-        webview.load(URLRequest(url: URL(string: url)!))
-        webview.navigationDelegate = self
-        webview.allowsBackForwardNavigationGestures = true
-        self.view.addSubview(webview)
-        //进度条监听
-        self.webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        self.webview.addSubview(self.progressView)
-        //适配全面屏,隐藏安全区域
-        if #available(iOS 11.0, *) {
-            webview.scrollView.contentInsetAdjustmentBehavior = .never;
-        }
-    }
-    
+    // 跳过起始页面广告
     func removeImageWithDelay(){
         self.timer?.invalidate()
         self.timer = nil
@@ -306,6 +332,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         })
     }
     
+    // 点击广告图片
     @objc func imageViewClick(){
         if (linkUrl != "" && picUrl != ""){
             APPOutBrowserOpenURL(url: linkUrl)
@@ -316,8 +343,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         print("pushPreviewController")
     }
     
+    
+    //--------------------------------代理方法--------------------------------------
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!) {
-        
         let option = PHVideoRequestOptions.init()
         option.isNetworkAccessAllowed = true
         option.deliveryMode = PHVideoRequestOptionsDeliveryMode.automatic
@@ -513,10 +541,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
     // 图片单选 - 拍照取消
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -561,6 +586,4 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             }
         }
     }
-    
-    
 }
