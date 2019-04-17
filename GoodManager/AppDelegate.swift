@@ -264,14 +264,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     }
     
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
-        
+        print("方法调用");
         if ( (response?.notification) != nil && response.notification.request.trigger is UNPushNotificationTrigger)  {
             //从通知界面直接进入应用
             
             let userInfo = response?.notification.request.content.userInfo as? [String:String] ?? [:];
             let msgLinkMark:String = (userInfo["msgLinkMark"]) ?? "m1";
             let msgLinkURL:String = (userInfo["msgLinkURL"]) ?? "https://www.baidu.com";
-            UIApplication.shared.openURL(URL.init(string: msgLinkURL)!);
+            print("传入链接");
+//            UIApplication.shared.openURL(URL.init(string: msgLinkURL)!);
+            
+            UIApplication.shared.open(URL.init(string: msgLinkURL)!, options: [:], completionHandler: nil);
+            print("执行完成");
             
         }else{
             //从通知设置界面进入应用
