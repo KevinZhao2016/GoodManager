@@ -69,15 +69,12 @@ func APPPlayVideo(path:String, startPosition:Double, callBackfunName:String){
     let basevc = getLastMainViewController()
     if (path.contains("http:")||path.contains("https:")){
         print("网络视频")
-//        let vidoeUrl = URL(string: path)
-//        let playerItem = AVPlayerItem(url: vidoeUrl!)
-//        let player = AVPlayer(playerItem: playerItem)
-//        //定义一个视频播放器，通过本地文件路径初始化
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        basevc.present(playerViewController, animated: true) {
-//            playerViewController.player!.play()
-//        }
+        if(basevc.reachability.isReachable){
+            //do nothing
+        }else{
+            basevc.nonetLoad()
+            return
+        }
     }else{
         print("本地视频")
     }

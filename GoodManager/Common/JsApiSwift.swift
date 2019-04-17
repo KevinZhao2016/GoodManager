@@ -26,13 +26,18 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPWinOpen (_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let url = jsonString["url"].stringValue
-        let mark = jsonString["mark"].stringValue
-        let progressBarColor = jsonString["progressBarColor"].stringValue
-        let statusBarColor = jsonString["statusBarColor"].stringValue
-        print(jsonString)
-        GoodManager.APPWinOpen(url:url,mark:mark,progressBarColor:progressBarColor,statusBarColor:statusBarColor)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let url = jsonString["url"].stringValue
+            let mark = jsonString["mark"].stringValue
+            let progressBarColor = jsonString["progressBarColor"].stringValue
+            let statusBarColor = jsonString["statusBarColor"].stringValue
+            print(jsonString)
+            GoodManager.APPWinOpen(url:url,mark:mark,progressBarColor:progressBarColor,statusBarColor:statusBarColor)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPWinClose(_ arg:String){
@@ -40,22 +45,32 @@ class JsApiSwift: NSObject {
         let mark = jsonString["mark"].stringValue
         GoodManager.APPWinClose(mark: mark)
     }
-    
+
     @objc func APPShare(_ arg:String) {
-        let jsonString = JSON(parseJSON: arg)
-        let title = jsonString["title"].stringValue
-        let description = jsonString["description"].stringValue
-        let thumbImage = jsonString["thumbImage"].stringValue
-        let url = jsonString["url"].stringValue
-        let callBackfunName = jsonString["callBackfunName"].stringValue
-        GoodManager.APPShare(title: title, description: description, thumbImage: thumbImage, url: url,callBackfunName: callBackfunName)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let title = jsonString["title"].stringValue
+            let description = jsonString["description"].stringValue
+            let thumbImage = jsonString["thumbImage"].stringValue
+            let url = jsonString["url"].stringValue
+            let callBackfunName = jsonString["callBackfunName"].stringValue
+            GoodManager.APPShare(title: title, description: description, thumbImage: thumbImage, url: url,callBackfunName: callBackfunName)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPExecWinJS(_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let mark = jsonString["mark"].stringValue
-        let JSFun = jsonString["JSFun"].stringValue
-        GoodManager.APPExecWinJS(mark: mark, JSFun: JSFun)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let mark = jsonString["mark"].stringValue
+            let JSFun = jsonString["JSFun"].stringValue
+            GoodManager.APPExecWinJS(mark: mark, JSFun: JSFun)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPSetValue(_ arg:String){
@@ -78,9 +93,14 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPOutBrowserOpenURL(_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let url = jsonString["url"].stringValue
-        GoodManager.APPOutBrowserOpenURL(url: url)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let url = jsonString["url"].stringValue
+            GoodManager.APPOutBrowserOpenURL(url: url)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPGetBankImage(_ arg:String){
@@ -114,10 +134,15 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPPreviewImage(_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let paths = jsonString["paths"].stringValue
-        let defaultIndex = jsonString["defaultIndex"].intValue
-        GoodManager.APPPreviewImage(paths: paths, defaultIndex: defaultIndex)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let paths = jsonString["paths"].stringValue
+            let defaultIndex = jsonString["defaultIndex"].intValue
+            GoodManager.APPPreviewImage(paths: paths, defaultIndex: defaultIndex)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPChooseSingleVideo(_ arg: String){
@@ -161,19 +186,29 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPUploadFile(_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let path = jsonString["path"].stringValue
-        let domainName = jsonString["domainName"].stringValue
-        let folderName = jsonString["folderName"].stringValue
-        let callBackfunName = jsonString["callBackfunName"].stringValue
-        GoodManager.APPUploadFile(path:path, domainName:domainName, folderName:folderName, callBackfunName:callBackfunName)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let path = jsonString["path"].stringValue
+            let domainName = jsonString["domainName"].stringValue
+            let folderName = jsonString["folderName"].stringValue
+            let callBackfunName = jsonString["callBackfunName"].stringValue
+            GoodManager.APPUploadFile(path:path, domainName:domainName, folderName:folderName, callBackfunName:callBackfunName)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPDownFile(_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let path = jsonString["path"].stringValue
-        let callBackfunName = jsonString["callBackfunName"].stringValue
-        GoodManager.APPDownFile(path: path, callBackfunName: callBackfunName)
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let path = jsonString["path"].stringValue
+            let callBackfunName = jsonString["callBackfunName"].stringValue
+            GoodManager.APPDownFile(path: path, callBackfunName: callBackfunName)
+        }else{
+            vc.nonetLoad()
+        }
     }
     
     @objc func APPIfExistFile(_ arg:String) -> String {
@@ -196,9 +231,15 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPStartLocation(_ arg:String){
-        let jsonString = JSON(parseJSON: arg)
-        let callBackfunName = jsonString["callBackfunName"].stringValue
-        GoodManager.APPStartLocation(callBackfunName: callBackfunName)
+        print("------------------APPStartLocation----------------------")
+        let vc = getLastMainViewController()
+        if(vc.reachability.isReachable){
+            let jsonString = JSON(parseJSON: arg)
+            let callBackfunName = jsonString["callBackfunName"].stringValue
+            GoodManager.APPStartLocation(callBackfunName: callBackfunName)
+        }else{
+            vc.nonetLoad()
+        }
     }
     //通讯录
     @objc func APPGetTelBookList(_ arg:String){
@@ -235,12 +276,25 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPSetBrowserHomeURL(_ arg:String){
+        print("------------------APPSetBrowserHomeURL----------------------")
+        //    let vc = getLastMainViewController()
+        //    if(vc.reachability.isReachable){
+        //
+        //    }else{
+        //    vc.nonetLoad()
+        //    }
         let jsonString = JSON(parseJSON: arg)
         let url = jsonString["url"].stringValue
         GoodManager.APPSetBrowserHomeURL(url: url)
     }
     
     @objc func APPPushSetAlias(_ arg:String) {
+        //    let vc = getLastMainViewController()
+        //    if(vc.reachability.isReachable){
+        //
+        //    }else{
+        //    vc.nonetLoad()
+        //    }
         let jsonString = JSON(parseJSON: arg)
         let alias = jsonString["alias"].stringValue
         GoodManager.APPPushSetAlias(alias)
@@ -330,10 +384,10 @@ class JsApiSwift: NSObject {
         GoodManager.APPWXPay(partnerId: partnerId, prepayId: prepayId, packageValue: packageValue, nonceStr: nonceStr, timeStamp: timeStamp, sign:sign, callBackfunName: callBackfunName)
     }
     
+    // 判断接口是否存在
     @objc func APPIfExistInterfaceName(_ arg:String) -> String {
         let jsonString = JSON(parseJSON: arg)
         let interfaceName = jsonString["interfaceName"].stringValue
         return GoodManager.APPIfExistInterfaceName(interfaceName: interfaceName)
     }
-
 }
