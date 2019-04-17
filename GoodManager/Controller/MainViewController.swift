@@ -259,7 +259,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
 //                iPhoneX = true
 //            }
 //        }
-        return false;
+        return true;
     }
     
     @objc func btnClick(){

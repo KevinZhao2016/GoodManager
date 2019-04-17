@@ -22,7 +22,7 @@
 #import "NTESRobotCardViewController.h"
 #import "NTESRedPacketAttachment.h"
 #import "NTESRedPacketTipAttachment.h"
-#define SessionListTitle @"云信 Demo"
+#define SessionListTitle @"消息列表"
 
 @interface NTESSessionListViewController ()<NIMLoginManagerDelegate,NTESListHeaderDelegate,NIMEventSubscribeManagerDelegate,UIViewControllerPreviewingDelegate>
 
@@ -396,13 +396,13 @@
 - (UIView*)titleView:(NSString*)userID{
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.titleLabel.text =  SessionListTitle;
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:15.f];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.f];
     [self.titleLabel sizeToFit];
     UILabel *subLabel  = [[UILabel alloc] initWithFrame:CGRectZero];
-    subLabel.textColor = [UIColor grayColor];
-    subLabel.font = [UIFont systemFontOfSize:12.f];
+    subLabel.textColor = [UIColor clearColor];
+    subLabel.font = [UIFont systemFontOfSize:0.f];
     subLabel.text = userID;
-    subLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//    subLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [subLabel sizeToFit];
     
     UIView *titleView = [[UIView alloc] init];

@@ -124,37 +124,37 @@ NIMEventSubscribeManagerDelegate> {
     NSInteger systemCount = [[[NIMSDK sharedSDK] systemNotificationManager] allUnreadCount];
     NSMutableArray *utils =
             [@[
-              @{
-                  contactCellUtilIcon:@"icon_notification_normal",
-                  contactCellUtilTitle:@"验证消息",
-                  contactCellUtilVC:@"NTESSystemNotificationViewController",
-                  contactCellUtilBadge:@(systemCount)
-               },
-              @{
-                  contactCellUtilIcon:@"icon_team_advance_normal",
-                  contactCellUtilTitle:@"高级群",
-                  contactCellUtilVC:@"NTESAdvancedTeamListViewController"
-               },
-              @{
-                  contactCellUtilIcon:@"icon_team_normal_normal",
-                  contactCellUtilTitle:@"讨论组",
-                  contactCellUtilVC:@"NTESNormalTeamListViewController"
-                },
-              @{
-                  contactCellUtilIcon:@"icon_robot_normal",
-                  contactCellUtilTitle:@"智能机器人",
-                  contactCellUtilVC:@"NTESRobotListViewController"
-                  },
-              @{
-                  contactCellUtilIcon:@"icon_blacklist_normal",
-                  contactCellUtilTitle:@"黑名单",
-                  contactCellUtilVC:@"NTESBlackListViewController"
-                  },
-              @{
-                  contactCellUtilIcon:@"icon_computer_normal",
-                  contactCellUtilTitle:@"我的电脑",
-                  contactCellUtilSelectorName:@"onEnterMyComputer"
-                },
+//              @{
+//                  contactCellUtilIcon:@"icon_notification_normal",
+//                  contactCellUtilTitle:@"验证消息",
+//                  contactCellUtilVC:@"NTESSystemNotificationViewController",
+//                  contactCellUtilBadge:@(systemCount)
+//               },
+//              @{
+//                  contactCellUtilIcon:@"icon_team_advance_normal",
+//                  contactCellUtilTitle:@"高级群",
+//                  contactCellUtilVC:@"NTESAdvancedTeamListViewController"
+//               },
+//              @{
+//                  contactCellUtilIcon:@"icon_team_normal_normal",
+//                  contactCellUtilTitle:@"讨论组",
+//                  contactCellUtilVC:@"NTESNormalTeamListViewController"
+//                },
+//              @{
+//                  contactCellUtilIcon:@"icon_robot_normal",
+//                  contactCellUtilTitle:@"智能机器人",
+//                  contactCellUtilVC:@"NTESRobotListViewController"
+//                  },
+//              @{
+//                  contactCellUtilIcon:@"icon_blacklist_normal",
+//                  contactCellUtilTitle:@"黑名单",
+//                  contactCellUtilVC:@"NTESBlackListViewController"
+//                  },
+//              @{
+//                  contactCellUtilIcon:@"icon_computer_normal",
+//                  contactCellUtilTitle:@"我的电脑",
+//                  contactCellUtilSelectorName:@"onEnterMyComputer"
+//                },
               ] mutableCopy];
     
     self.navigationItem.title = @"通讯录";
@@ -187,13 +187,14 @@ NIMEventSubscribeManagerDelegate> {
 }
 
 - (void)onOpera:(id)sender{
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择操作" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"添加好友",@"创建高级群",@"创建讨论组",@"搜索高级群", nil];
+//    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择操作" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"添加好友",@"创建高级群",@"创建讨论组",@"搜索高级群", nil];
+     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择操作" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"发起群聊", nil];
     __weak typeof(self) wself = self;
     NSString *currentUserId = [[NIMSDK sharedSDK].loginManager currentAccount];
     [sheet showInView:self.view completionHandler:^(NSInteger index) {
         UIViewController *vc;
         switch (index) {
-            case 0:
+            case 10:
                 vc = [[NTESContactAddFriendViewController alloc] initWithNibName:nil bundle:nil];
                 break;
             case 1:{  //创建高级群
@@ -218,7 +219,7 @@ NIMEventSubscribeManagerDelegate> {
                 }];
                 break;
             }
-            case 2:{ //创建讨论组
+            case 0:{ //创建讨论组
                 [wself presentMemberSelector:^(NSArray *uids) {
                     if (!uids.count) {
                         return; //讨论组必须除自己外必须要有一个群成员
