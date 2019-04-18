@@ -15,10 +15,9 @@ import QuickLook
 
 
 let fileManager = FileManager.default
-
 let quickLookViewController = QLPreviewController()
 
-//  单选文件
+// 单选文件
 func APPChooseSingleFile(callBackfunName:String) {
     print("-------------APPChooseSingleFile--------------")
     let vc = getLastMainViewController()
@@ -29,6 +28,7 @@ func APPChooseSingleFile(callBackfunName:String) {
     vc.present(nvc, animated: true, completion: nil)
 }
 
+// 文件是否存在
 func APPIfExistFile(path:String) -> String {
 //    let documentPath = NSHomeDirectory() + "/Documents"
     let isExists = fileManager.fileExists(atPath:  path)
@@ -167,7 +167,6 @@ func APPDownFile(path:String, callBackfunName:String){
         //两个参数表示如果有同名文件则会覆盖，如果路径中文件夹不存在则会自动创建
         return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
     }
-    
     //需要下载的文件
     let fileURL = URL(string: path)
     //开始下载

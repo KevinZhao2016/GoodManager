@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     // 屏幕旋转变量
     var blockRotation: Bool = false
     
-    
     // wxpay
     func onResp(_ resp: BaseResp) {
         ExecWinJS(JSFun: "APPWXPay" + "(\"" +  "\(resp.errCode)" + "\")")
@@ -295,8 +294,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        
+       
         
         //启动页
         getLaunchData()

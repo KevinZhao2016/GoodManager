@@ -28,6 +28,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var noteLabel:UILabel = UILabel()
     var newButton:UIButton = UIButton()
     
+    
     var mark:String = "main"
     var url:String = mainUrl
     var webview:DWKWebView!
@@ -93,6 +94,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             netSituation = jsonString["mode"].stringValue
             if netSituation == "0" {
                 // 网络不可用
+                
                 nonetLoad()
             } else {
                 // 网络可用
@@ -238,9 +240,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     // 提示无网络
     func nonetLoad(){
-        self.view.backgroundColor = .white
         self.style = .default
         self.setNeedsStatusBarAppearanceUpdate()
+        self.view.backgroundColor = .white
 
         if self.webview != nil {
             // 去除webview
@@ -264,7 +266,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         self.newButton.layer.borderColor = UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1).cgColor
         self.newButton.backgroundColor = .white
         self.newButton.setTitle("点击重试", for: .normal)
-        self.newButton.tintColor = .init(red: 77, green: 191, blue: 255, alpha: 1)
+//        self.newButton.tintColor = .init(red: 77, green: 191, blue: 255, alpha: 1)
         self.newButton.setTitleColor(UIColor.init(red: 77/255, green: 191/255, blue: 255/255, alpha: 1), for: .normal)
         self.newButton.setTitleColor(UIColor.darkGray, for: .highlighted)
         self.newButton.addTarget(self, action: #selector(self.newButtonAction), for: .touchUpInside)
