@@ -127,14 +127,14 @@ func APPUploadFile(path:String, domainName:String, folderName:String, callBackfu
             if(statusCode == 200){
                 do {
                     if let model = try? moyaResponse.mapObject(LaunchResultModel.self) {
-                        if(model.code == 1){
-                            print(model)
-                            //TODO：执行回调
-                            ExecWinJS(JSFun: callBackfunName + "(" + String(data: data, encoding: String.Encoding.utf8)! + ")")
-                        }
+                        print("上传文件 code：\(model.code)")
+                        let str = model.result.toJSONString()?.replacingOccurrences(of: "\"", with: "\\\"")
+                        ExecWinJS(JSFun: callBackfunName + "(\"" + (str ?? "no data") + "\")")
                     } else {
                         print("map  error")
-                        let alert = UIAlertController(title: "文件上传失败！", message: "map error!", preferredStyle: UIAlertController.Style.alert)
+                        print("data : \(data)")
+                        ExecWinJS(JSFun: callBackfunName + "(\"" + "no data" + "\")")
+                        let alert = UIAlertController(title: "文件上传异常！", message: "文件上传成功，获取返回值异常!", preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
                         vc.present(alert, animated: true, completion: nil)
                     }
@@ -149,7 +149,7 @@ func APPUploadFile(path:String, domainName:String, folderName:String, callBackfu
             guard let error = error as? CustomStringConvertible else {
                 break
             }
-            let alert = UIAlertController(title: "文件上传失败！", message: "文件不存在", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "文件上传失败！", message: error.description, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
             vc.present(alert, animated: true, completion: nil)
             print("APPUploadFile  -- error:  " + "\(error)")
