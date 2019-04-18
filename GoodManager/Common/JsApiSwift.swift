@@ -247,7 +247,29 @@ class JsApiSwift: NSObject {
     @objc func APPPreviewFile(_ arg:String){
         let jsonString = JSON(parseJSON: arg)
         let path = jsonString["path"].stringValue
-        GoodManager.APPPreviewFile(path: path)
+        
+        let supportedFileType = "txt/pdf/doc/docx/page/xls/xlsx/ppt/pptx/jpg/png/gif/jpeg/mp3/mp4"
+        let fileUrlStr = path
+        let startIndex = fileUrlStr.index(of: ".")!
+        var fileType = fileUrlStr[startIndex..<fileUrlStr.endIndex]
+        fileType.removeFirst()
+        print("fileType: "+fileType)
+        if supportedFileType.contains(fileType) {
+            // 文件支持预览
+            GoodManager.APPPreviewFile(path: path)
+        }else{
+            // 文件不支持预览
+            notSupportedPreviewAlert(path: path)
+        }
+    }
+    func notSupportedPreviewAlert(path:String) {
+        let vc = getLastMainViewController()
+        let alert = UIAlertController(title: "文件不支持预览!", message: "请分享到其他应用", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "确定", style: UIAlertAction.Style.cancel, handler: {(alertAction:UIAlertAction) in
+            GoodManager.APPPreviewFile(path: path)
+        })
+        alert.addAction(action)
+        vc.present(alert, animated: true, completion: nil)
     }
     
     @objc func APPStartLocation(_ arg:String){
