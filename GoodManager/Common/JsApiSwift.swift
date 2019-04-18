@@ -61,9 +61,7 @@ class JsApiSwift: NSObject {
             let url = jsonString["url"].stringValue
             let callBackfunName = jsonString["callBackfunName"].stringValue
             GoodManager.APPShare(title: title, description: description, thumbImage: thumbImage, url: url,callBackfunName: callBackfunName)
-            
         }else{
-            
             vc.nonetLoad()
         }
     }
