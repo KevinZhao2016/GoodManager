@@ -34,7 +34,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var webview:DWKWebView!
     
     // 倒计时更改
-    var timeCount:Int = 5
+    var timeCount:Int = 50
     var timer:Timer?
     
     //用于定位
@@ -51,7 +51,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var imageView:UIImageView = UIImageView()
     let button:UIButton = UIButton(type: .custom);
     var image = FLAnimatedImageView(frame: UIScreen.main.bounds)
-    var bottomImage:UIImageView = UIImageView(frame: UIScreen.main.bounds)
+    var bottomImage:UIImageView = UIImageView()
     lazy var videocallBackfunName:String = ""
     lazy var imagecallBackfunName:String = ""
     var photoPath:String = ""
@@ -179,16 +179,19 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         let isIPhoneX:Bool = self.isIPhoneX()
         if isIPhoneX {
             image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
+            image.backgroundColor = UIColor.lightGray;
+            
             
             bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
             bottomImage.backgroundColor = UIColor.white;
-            bottomImage.image = UIImage(named: "好监理_启动页")
-            bottomImage.contentMode = .scaleAspectFit
-            self.view.addSubview(bottomImage)
+          bottomImage.image = UIImage(named: "好监理_启动页")
+           bottomImage.contentMode = .scaleAspectFit
+          self.view.addSubview(bottomImage)
+            
         }
-        image.image = UIImage(named: "好监理_启动页")
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = .white
+//       image.image = UIImage(named: "好监理_启动页")
+//        image.contentMode = .scaleAspectFit
+//        image.backgroundColor = .white
         
         // 倒计时按钮
         button.frame = CGRect.init(x: SCREEN_WIDTH - 70, y: STATUS_HEIGHT + 10, width: 65, height: 25)
@@ -219,6 +222,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(image)
+        
+       
     }
     
 
@@ -235,9 +240,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         return true;
     }
     
-    @objc func btnClick(){
-        self.removeImageWithDelay()
-    }
+//    @objc func btnClick(){
+//        self.removeImageWithDelay()
+//    }
     
 
     // 加载webview
@@ -325,18 +330,18 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     
-    func isIPhoneX() -> Bool {
-//        var iPhoneX:Bool = false
-//        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
-//            return iPhoneX
-//        }
-//        if #available(iOS 11.0, *) {
-//            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
-//                iPhoneX = true
-//            }
-//        }
-        return false;
-    }
+//    func isIPhoneX() -> Bool {
+////        var iPhoneX:Bool = false
+////        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
+////            return iPhoneX
+////        }
+////        if #available(iOS 11.0, *) {
+////            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
+////                iPhoneX = true
+////            }
+////        }
+//        return false;
+//    }
     
     // 刷新页面按钮
     @objc func btnClick(){

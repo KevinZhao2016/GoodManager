@@ -39,7 +39,7 @@ func getLaunchData(){
                                 let vc = getLastMainViewController()
                                 vc.image.sd_setImage(with: URL(string: picUrl), placeholderImage: UIImage(named: "好监理_启动页"), options: SDWebImageOptions()) { (Image, error, type, url) in
                                     if (url != nil){
-                                        vc.image.contentMode = .scaleAspectFill;
+//                                       vc.image.contentMode = .scaleAspectFill;
                                         print(url)
                                     }
                                 }
