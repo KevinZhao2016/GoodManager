@@ -358,7 +358,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         PHImageManager.default().requestAVAsset(forVideo: asset, options: option) { (Asset:AVAsset?, AudioMix:AVAudioMix?, info:[AnyHashable : Any]?) in
             let  avAsset = Asset as? AVURLAsset
             let path = avAsset?.url.path
-            print(path)
+            //print(path)
             self.VideoCallBack(path:path!, callBackfunName:self.videocallBackfunName)
         }
         
@@ -388,9 +388,20 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             var i = 1
             for _image in photos {
                 print("压缩图片！")
-                let imageData = _image.jpegData(compressionQuality: 0.4)
+
+//                //byte
+//                let imageC = image
+//                var data = imageC.jpegData(compressionQuality: 1.0)
+//                //KB
+//                data = self.resetImgSize(sourceImage: imageC, maxImageLenght: -1, maxSizeKB: 200)
+                
+                //byte
+                var imageData = _image.jpegData(compressionQuality: 1.0)
+                //KB
+                imageData = self.resetImgSize(sourceImage: _image, maxImageLenght: -1, maxSizeKB: 200)
+                
+                
                 let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-                let name = _image.accessibilityIdentifier
                 let filePath = rootPath + "/" + "image_\(i)" + ".jpg"
                 let fileManager = FileManager.default
                 zipImageURLS.append(filePath)
@@ -401,7 +412,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
         var i = 0
         var j = 0
-        print("assets:  \(assets)")
+        //print("assets:  \(assets)")
         for asset in assets {
             print("i:  \(i)")
             PHImageManager.default().requestImage(for: asset as! PHAsset, targetSize: targetSize, contentMode: .aspectFit, options:nil, resultHandler: {(image, info:[AnyHashable : Any]?) in
@@ -455,71 +466,28 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             alert.addAction(UIAlertAction(title: "确定",style: UIAlertAction.Style.default,handler: nil))
         } else {
             print("保存成功")
-            let alert = UIAlertController(title: "保存图片成功！",message: nil,preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "确定",style: UIAlertAction.Style.default,handler: {(alert:UIAlertAction) in
-                if self.isNeedEdit{
-                    // 需要编辑
-                    let imageManagerVC = IJSImageManagerController(edit:image)
-                    imageManagerVC?.loadImage{(image_:UIImage?,outputPath:URL?,error:Error?) in
-                        print(outputPath)
-                        
-                        if self.isOriginal{
-                            // 需要原图
-                            let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
-                            alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
-                                let result = outputPath?.absoluteString.replacingOccurrences(of: "file://", with: "")
-                                ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + result! + "\")")
-                            }))
-                            alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
-                                print(outputPath)
-                                var data = image.jpegData(compressionQuality: 1);
-                                if data!.count/1024 > 200{
-                                    data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
-                                }
-                                let rootPath = NSHomeDirectory()
-                                let name = Int(arc4random() % 10000) + 1
-                                let fileMG = FileManager.default
-                                let finalPath = rootPath+"/Documents/\(name).jpg"
-                                fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
-                                ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
-                            }))
-                            self.present(alert, animated: true, completion: nil)
-                        }else{
-                            // 不需要原图
-                            var data = image.jpegData(compressionQuality: 1);
-                            if data!.count/1024 > 200{
-                                data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
-                            }
-                            let rootPath = NSHomeDirectory()
-                            let name = Int(arc4random() % 10000) + 1
-                            let fileMG = FileManager.default
-                            let finalPath = rootPath+"/Documents/\(name).jpg"
-                            fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
-                            ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
-                        }
-                    }
-                    self.present(imageManagerVC!,animated:true,completion:nil)
-                }else{
-                    // 不需要编辑
-                    print("\(image.accessibilityPath)")
+            if self.isNeedEdit{
+                // 需要编辑
+                let imageManagerVC = IJSImageManagerController(edit:image)
+                imageManagerVC?.loadImage{(image_:UIImage?,outputPath:URL?,error:Error?) in
+                    //print(outputPath)
+                    
                     if self.isOriginal{
                         // 需要原图
                         let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
-                            var data = image.jpegData(compressionQuality: 1);
-                            let rootPath = NSHomeDirectory()
-                            let name = Int(arc4random() % 10000) + 1
-                            let fileMG = FileManager.default
-                            let finalPath = rootPath+"/Documents/\(name).jpg"
-                            fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
-                            ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
+                            let result = outputPath?.absoluteString.replacingOccurrences(of: "file://", with: "")
+                            ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + result! + "\")")
                         }))
                         alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
-                            // 不需要原图
-                            var data = image.jpegData(compressionQuality: 1);
-                            if data!.count/1024 > 200{
-                                data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
-                            }
+                            //print(outputPath)
+                            
+                            //byte
+                            let imageC = image
+                            var data = imageC.jpegData(compressionQuality: 1.0)
+                            //KB
+                            data = self.resetImgSize(sourceImage: imageC, maxImageLenght: -1, maxSizeKB: 200)
+                            
                             let rootPath = NSHomeDirectory()
                             let name = Int(arc4random() % 10000) + 1
                             let fileMG = FileManager.default
@@ -530,10 +498,12 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                         self.present(alert, animated: true, completion: nil)
                     }else{
                         // 不需要原图
-                        var data = image.jpegData(compressionQuality: 1);
-                        if data!.count/1024 > 200{
-                            data = image.jpegData(compressionQuality: 0.01);//压缩比例在0~1之间
-                        }
+                        //byte
+                        let imageC = image
+                        var data = imageC.jpegData(compressionQuality: 1.0)
+                        //KB
+                        data = self.resetImgSize(sourceImage: imageC, maxImageLenght: -1, maxSizeKB: 200)
+                        
                         let rootPath = NSHomeDirectory()
                         let name = Int(arc4random() % 10000) + 1
                         let fileMG = FileManager.default
@@ -542,12 +512,96 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
                         ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
                     }
                 }
-            }))
-            self.present(alert,animated:true,completion:nil)
+                self.present(imageManagerVC!,animated:true,completion:nil)
+            }else{
+                // 不需要编辑
+                //print("\(image.accessibilityPath)")
+                if self.isOriginal{
+                    // 需要原图
+                    let alert = UIAlertController(title: "是否需要原图？",message: nil,preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "是",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                        let data = image.jpegData(compressionQuality: 1);
+                        let rootPath = NSHomeDirectory()
+                        let name = Int(arc4random() % 10000) + 1
+                        let fileMG = FileManager.default
+                        let finalPath = rootPath+"/Documents/\(name).jpg"
+                        fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                        ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
+                    }))
+                    alert.addAction(UIAlertAction(title: "否",style: UIAlertAction.Style.default,handler:{(alert:UIAlertAction) in
+                        // 不需要原图
+                        //byte
+                        let imageC = image
+                        var data = imageC.jpegData(compressionQuality: 1.0)
+                        //KB
+                        data = self.resetImgSize(sourceImage: imageC, maxImageLenght: -1, maxSizeKB: 200)
+                        
+                        let rootPath = NSHomeDirectory()
+                        let name = Int(arc4random() % 10000) + 1
+                        let fileMG = FileManager.default
+                        let finalPath = rootPath+"/Documents/\(name).jpg"
+                        fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                        ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }else{
+                    // 不需要原图
+                    //byte
+                    let imageC = image
+                    var data = imageC.jpegData(compressionQuality: 1.0)
+                    //KB
+                    data = self.resetImgSize(sourceImage: imageC, maxImageLenght: -1, maxSizeKB: 200)
+                    
+                    let rootPath = NSHomeDirectory()
+                    let name = Int(arc4random() % 10000) + 1
+                    let fileMG = FileManager.default
+                    let finalPath = rootPath+"/Documents/\(name).jpg"
+                    fileMG.createFile(atPath: finalPath, contents: data, attributes: nil)
+                    ExecWinJS(JSFun: "appChooseSingleImageCallBack" + "(\"" + finalPath + "\")")
+                }
+            }
         }
     }
     
-    
+    // 单选图片压缩
+    func resetImgSize(sourceImage : UIImage,maxImageLenght : CGFloat,maxSizeKB : CGFloat) -> Data {
+        var maxSize = maxSizeKB
+        var maxImageSize = maxImageLenght
+        if (maxSize <= 0.0) {
+            maxSize = 1024.0;
+        }
+        if (maxImageSize <= 0.0)  {
+            maxImageSize = 1024.0;
+        }
+        
+        //先调整分辨率
+        var newSize = CGSize.init(width: sourceImage.size.width, height: sourceImage.size.height)
+        let tempHeight = newSize.height / maxImageSize;
+        let tempWidth = newSize.width / maxImageSize;
+        if (tempWidth > 1.0 && tempWidth > tempHeight) {
+            newSize = CGSize.init(width: sourceImage.size.width / tempWidth, height: sourceImage.size.height / tempWidth)
+        }
+            
+        else if (tempHeight > 1.0 && tempWidth < tempHeight){
+            newSize = CGSize.init(width: sourceImage.size.width / tempHeight, height: sourceImage.size.height / tempHeight)
+        }
+        
+        UIGraphicsBeginImageContext(newSize)
+        sourceImage.draw(in: CGRect.init(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        var imageData = newImage!.jpegData(compressionQuality:1.0)
+        var sizeOriginKB : CGFloat = CGFloat((imageData?.count)!) / 1024.0;
+        
+        //调整大小
+        var resizeRate = 0.9;
+        while (sizeOriginKB > maxSize && resizeRate > 0.1) {
+            imageData = newImage!.jpegData(compressionQuality:CGFloat(resizeRate))
+            sizeOriginKB = CGFloat((imageData?.count)!) / 1024.0;
+            resizeRate -= 0.1;
+        }
+        return imageData!
+    }
     
     // 图片单选 - 拍照取消
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -555,10 +609,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         print("bye")
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-     
-     */
     
     // 当前statusBar使用的样式
     var style: UIStatusBarStyle = .default
