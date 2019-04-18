@@ -221,7 +221,27 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         self.view.addSubview(image)
     }
     
+
+    func isIPhoneX() -> Bool {
+//        var iPhoneX:Bool = false
+//        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
+//            return iPhoneX
+//        }
+//        if #available(iOS 11.0, *) {
+//            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
+//                iPhoneX = true
+//            }
+//        }
+        return true;
+    }
+    
+    @objc func btnClick(){
+        self.removeImageWithDelay()
+    }
+    
+
     // 加载webview
+
     func setupWebview(){
         print("set up webview")
         

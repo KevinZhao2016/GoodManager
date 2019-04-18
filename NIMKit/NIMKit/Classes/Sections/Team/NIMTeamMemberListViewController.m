@@ -10,7 +10,7 @@
 #import "NIMTeamCardHeaderCell.h"
 #import "NIMCardMemberItem.h"
 #import "NIMTeamMemberCardViewController.h"
-
+#import "NTESSessionViewController.h"
 #define CollectionCellReuseId @"cell"
 #define CollectionItemWidth  55
 #define CollectionItemHeight 80
@@ -120,14 +120,26 @@
     NSIndexPath *indexpath = [self.collectionView indexPathForCell:cell];
     NSInteger index = indexpath.section * self.collectionItemNumber;
     index += indexpath.row;
+    
+    
     NIMTeamMemberCardViewController *vc = [[NIMTeamMemberCardViewController alloc] init];
     vc.delegate = self;
     
     NIMTeamCardMemberItem *member = self.data[index];
-    NIMTeamCardMemberItem *viewer = [[NIMTeamCardMemberItem alloc] initWithMember:self.myTeamCard];
-    vc.member = member;
-    vc.viewer = viewer;
-    [self.navigationController pushViewController:vc animated:YES];
+    NIMTeamMember *usermember = member.member;
+//    NIMTeamCardMemberItem *viewer = [[NIMTeamCardMemberItem alloc] initWithMember:self.myTeamCard];
+//    vc.member = member;
+//    vc.viewer = viewer;
+//
+    
+    
+    
+    NIMSession *session = [NIMSession session:usermember.userId type:NIMSessionTypeP2P];
+    NTESSessionViewController *sessionViewC = [[NTESSessionViewController alloc]initWithSession:session];
+    [self.navigationController pushViewController:sessionViewC animated:YES];
+   
+    
+    
 }
 
 #pragma mark - TeamMemberCardActionDelegate
