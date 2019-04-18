@@ -81,6 +81,10 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             print("Error")
         }
         
+        // 存储一个普通的文本文件
+        let info = "欢迎使用好监理！"
+        try! info.write(toFile: fileDir+"/welcom.txt", atomically: true, encoding: String.Encoding.utf8)
+        
         NetworkStatusListener()
         
         if reachability.isReachable {
