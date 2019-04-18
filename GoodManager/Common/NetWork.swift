@@ -82,21 +82,43 @@ func APPGetNetWork() -> String{
     let reachability = Reachability()!
     var networkStatus = NetworkStatus(Mode:0,Describe:"")
     let network = Network()
+    
+    let checkNetObject = checkNet()
+    
+//    var isNetGood = false
+//    isNetGood = checkNetObject.checkNetCanUse()
+    
+    var isReach = false
+    isReach = checkNetObject.isReach()
+    print(isReach)
+    
     // 检测网络连接状态
     if reachability.connection != .none {
-        print("网络连接：可用")
         // 检测网络类型
         if reachability.connection == .wifi {
             print("网络类型：Wifi")
-            networkStatus.mode = 2
-            networkStatus.describe = network.getSSidInfo()
-            print(networkStatus.toJSON())
+            
+            if isReach{
+                print("网络连接：可用")
+                networkStatus.mode = 2
+                networkStatus.describe = network.getSSidInfo()
+                print(networkStatus.toJSON())
+            }else{
+                print("网络连接：不可用")
+                networkStatus.mode = 0
+                networkStatus.describe = network.getSSidInfo()
+                print(networkStatus.toJSON())
+            }
+            
+            
         } else if reachability.connection == .cellular {
             print("网络类型：移动网络")
+            print("网络连接：可用")
             networkStatus.mode = 1
             networkStatus.describe = network.getNetworkType()
         } else {
             print("网络连接：不可用")
+            print("网络连接：可用")
         }
     }
         return networkStatus.toJSONString()!

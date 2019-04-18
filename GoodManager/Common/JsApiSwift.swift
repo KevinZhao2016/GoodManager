@@ -13,7 +13,6 @@ class JsApiSwift: NSObject {
     
     //MUST use "_" to ignore the first argument name explicitly。
     @objc func testSyn( _ arg:String) -> String {
-        
         return String(format:"%@[Swift sync call:%@]", arg, "test")
     }
     
@@ -27,7 +26,10 @@ class JsApiSwift: NSObject {
     
     @objc func APPWinOpen (_ arg:String){
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let url = jsonString["url"].stringValue
             let mark = jsonString["mark"].stringValue
@@ -48,7 +50,10 @@ class JsApiSwift: NSObject {
 
     @objc func APPShare(_ arg:String) {
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let title = jsonString["title"].stringValue
             let description = jsonString["description"].stringValue
@@ -56,14 +61,19 @@ class JsApiSwift: NSObject {
             let url = jsonString["url"].stringValue
             let callBackfunName = jsonString["callBackfunName"].stringValue
             GoodManager.APPShare(title: title, description: description, thumbImage: thumbImage, url: url,callBackfunName: callBackfunName)
+            
         }else{
+            
             vc.nonetLoad()
         }
     }
     
     @objc func APPExecWinJS(_ arg:String){
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let mark = jsonString["mark"].stringValue
             let JSFun = jsonString["JSFun"].stringValue
@@ -94,7 +104,10 @@ class JsApiSwift: NSObject {
     
     @objc func APPOutBrowserOpenURL(_ arg:String){
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let url = jsonString["url"].stringValue
             GoodManager.APPOutBrowserOpenURL(url: url)
@@ -135,7 +148,10 @@ class JsApiSwift: NSObject {
     
     @objc func APPPreviewImage(_ arg:String){
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let paths = jsonString["paths"].stringValue
             let defaultIndex = jsonString["defaultIndex"].intValue
@@ -187,7 +203,10 @@ class JsApiSwift: NSObject {
     
     @objc func APPUploadFile(_ arg:String){
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let path = jsonString["path"].stringValue
             let domainName = jsonString["domainName"].stringValue
@@ -201,7 +220,10 @@ class JsApiSwift: NSObject {
     
     @objc func APPDownFile(_ arg:String){
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let path = jsonString["path"].stringValue
             let callBackfunName = jsonString["callBackfunName"].stringValue
@@ -233,7 +255,10 @@ class JsApiSwift: NSObject {
     @objc func APPStartLocation(_ arg:String){
         print("------------------APPStartLocation----------------------")
         let vc = getLastMainViewController()
-        if(vc.reachability.isReachable){
+        let checkNetObject = checkNet()
+        let isReach = checkNetObject.isReach()
+        print(isReach)
+        if(isReach){
             let jsonString = JSON(parseJSON: arg)
             let callBackfunName = jsonString["callBackfunName"].stringValue
             GoodManager.APPStartLocation(callBackfunName: callBackfunName)
@@ -278,7 +303,10 @@ class JsApiSwift: NSObject {
     @objc func APPSetBrowserHomeURL(_ arg:String){
         print("------------------APPSetBrowserHomeURL----------------------")
         //    let vc = getLastMainViewController()
-        //    if(vc.reachability.isReachable){
+        //    let checkNetObject = checkNet()
+        //    let isReach = checkNetObject.isReach()
+        //    print(isReach)
+        //    if(isReach){
         //
         //    }else{
         //    vc.nonetLoad()
@@ -289,12 +317,6 @@ class JsApiSwift: NSObject {
     }
     
     @objc func APPPushSetAlias(_ arg:String) {
-        //    let vc = getLastMainViewController()
-        //    if(vc.reachability.isReachable){
-        //
-        //    }else{
-        //    vc.nonetLoad()
-        //    }
         let jsonString = JSON(parseJSON: arg)
         let alias = jsonString["alias"].stringValue
         GoodManager.APPPushSetAlias(alias)

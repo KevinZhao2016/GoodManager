@@ -56,6 +56,7 @@
 		0AFB04CF21E0D4EF0032C670 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04CE21E0D4EF0032C670 /* Window.swift */; };
 		0AFB04D121E0DDB50032C670 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB04D021E0DDB50032C670 /* QRCode.swift */; };
 		0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB1E0121FB3E0500007EDA /* Location.swift */; };
+		181076802267B21800CFCD5A /* checkNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810767F2267B21800CFCD5A /* checkNet.m */; };
 		1814CD3F2223B6DC00AF66D1 /* FileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1814CD3D2223B6DC00AF66D1 /* FileListTableViewController.swift */; };
 		1814CD402223B6DC00AF66D1 /* FileListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1814CD3E2223B6DC00AF66D1 /* FileListTableViewController.xib */; };
 		18437EC4223951AB00E29DA1 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18437EC3223951AB00E29DA1 /* Share.swift */; };
@@ -675,6 +676,8 @@
 		0AFB04CE21E0D4EF0032C670 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		0AFB04D021E0DDB50032C670 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		0AFB1E0121FB3E0500007EDA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1810767E2267B21800CFCD5A /* checkNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = checkNet.h; sourceTree = "<group>"; };
+		1810767F2267B21800CFCD5A /* checkNet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = checkNet.m; sourceTree = "<group>"; };
 		1814CD3D2223B6DC00AF66D1 /* FileListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListTableViewController.swift; sourceTree = "<group>"; };
 		1814CD3E2223B6DC00AF66D1 /* FileListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileListTableViewController.xib; sourceTree = "<group>"; };
 		18437EC3223951AB00E29DA1 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
@@ -1772,6 +1775,7 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
+				1810767B2267B17100CFCD5A /* UtilTool */,
 				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
 				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
 				5656C56022453D26006592FC /* NIMDemo-Prefix.pch */,
@@ -1925,6 +1929,15 @@
 				0AEDCAC121F16840005887A3 /* LaunchTarget.swift */,
 			);
 			path = Target;
+			sourceTree = "<group>";
+		};
+		1810767B2267B17100CFCD5A /* UtilTool */ = {
+			isa = PBXGroup;
+			children = (
+				1810767E2267B21800CFCD5A /* checkNet.h */,
+				1810767F2267B21800CFCD5A /* checkNet.m */,
+			);
+			path = UtilTool;
 			sourceTree = "<group>";
 		};
 		18437EE322395CF300E29DA1 /* XMShareView */ = {
@@ -4300,7 +4313,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = GoodManager;
 				TargetAttributes = {
 					0A4A01F621D32D6700FD39F7 = {
@@ -4695,6 +4708,7 @@
 				18A351652222A88000C62779 /* JYBDIDCardVC.m in Sources */,
 				560F872422599728003E6E3A /* NTESPersonalCardViewController.m in Sources */,
 				0A5B880421D375200045A1BE /* NetWork.swift in Sources */,
+				181076802267B21800CFCD5A /* checkNet.m in Sources */,
 				560F8B11225B944D003E6E3A /* NIMAudioContentConfig.m in Sources */,
 				186C0A0722432C9C000E27F1 /* IJSVideoDrawingView.m in Sources */,
 				560F8B2C225B944D003E6E3A /* NIMSessionFileTransContentView.m in Sources */,
@@ -5132,7 +5146,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
