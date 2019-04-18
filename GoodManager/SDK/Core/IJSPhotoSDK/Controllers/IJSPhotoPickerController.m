@@ -543,12 +543,13 @@ static NSString *const CellID = @"pickerID";
     [self.view addSubview:toolBarView];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    //预览
+    //单选图片预览按钮
     UIButton *previewButton = [UIButton buttonWithType:UIButtonTypeCustom];
     previewButton.frame = CGRectMake(5, 5, 70, 30);
     previewButton.backgroundColor = [IJSFColor colorWithR:27 G:81 B:28 alpha:1];
     [previewButton setTitle:[NSBundle localizedStringForKey:@"Preview"] forState:UIControlStateNormal];
     [previewButton setTitleColor:[IJSFColor colorWithR:98 G:103 B:109 alpha:1] forState:UIControlStateNormal];
+    previewButton.titleLabel.font = [UIFont systemFontOfSize: 14];
     [previewButton addTarget:self action:@selector(_pushPreViewPhoto) forControlEvents:UIControlEventTouchUpInside];
     [toolBarView addSubview:previewButton];
     self.previewButton = previewButton;
@@ -561,6 +562,7 @@ static NSString *const CellID = @"pickerID";
     finishButton.layer.cornerRadius = 2;
     [finishButton setTitle:[NSBundle localizedStringForKey:@"Done"] forState:UIControlStateNormal];
     [finishButton setTitleColor:[IJSFColor colorWithR:77 G:128 B:78 alpha:1] forState:UIControlStateNormal];
+    finishButton.titleLabel.font = [UIFont systemFontOfSize: 14];
     [finishButton addTarget:self action:@selector(_finishSelectImageDisMiss) forControlEvents:UIControlEventTouchUpInside];
     [toolBarView addSubview:finishButton];
     self.finishButton = finishButton;

@@ -49,5 +49,6 @@
 #import "XMShareView.h"
 // 微博
 #import <Weibo_SDK/WeiboSDK.h>
-
-
+// 判断网络状况
+//#import "RealReachability.h"
+#import "checkNet.h"

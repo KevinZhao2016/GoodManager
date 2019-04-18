@@ -12,6 +12,8 @@ import WebKit
 import QuickLook
 
 class PreviewFileViewController: QLPreviewController {
+    
+    
     var backBtn = UIButton()
     var webView = WKWebView()
     var path:String = ""
@@ -36,27 +38,28 @@ class PreviewFileViewController: QLPreviewController {
         // Do any additional setup after loading the view.
     }
 
-    func setWebView(path:String){
-        self.view.addSubview(webView)
-        self.webView.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.top.equalTo(self.view).offset(20)
-        }
-        let documentPath = NSHomeDirectory() + "/Documents/localDocuments"
-        let fileUrl = URL(fileURLWithPath: documentPath + path)
-        webView.load(URLRequest(url: fileUrl))
-//        webView.scalesPageToFit = true
-    }
+//    func setWebView(path:String){
+//        self.view.addSubview(webView)
+//        self.webView.snp.makeConstraints { (make) in
+//            make.left.right.bottom.equalTo(0)
+//            make.top.equalTo(self.view).offset(20)
+//        }
+//        let documentPath = NSHomeDirectory() + "/Documents/localDocuments"
+//        let fileUrl = URL(fileURLWithPath: documentPath + path)
+//
+//        webView.load(URLRequest(url: fileUrl))
+////        webView.scalesPageToFit = true
+//    }
     
     func showCloseButton(){
         let barButton = UIBarButtonItem.init(title: "返回", style: .done, target: self, action: #selector(self.back))
         self.navigationItem.leftBarButtonItem = barButton
-        
     }
     
     @objc func back(){
         self.dismiss(animated: true, completion: nil)
     }
+    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .default
     }
@@ -70,6 +73,8 @@ extension PreviewFileViewController: QLPreviewControllerDelegate, QLPreviewContr
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
 //        let documentPath = NSHomeDirectory() + "/Documents"
         let fileUrl = URL(fileURLWithPath:  path)
+        
+        
         return fileUrl as QLPreviewItem
     }
 }

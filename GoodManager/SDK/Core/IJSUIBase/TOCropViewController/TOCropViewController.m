@@ -466,9 +466,9 @@
     }
 
     //Prepare the localized options
-    NSString *cancelButtonTitle = NSLocalizedStringFromTableInBundle(@"Cancel", @"TOCropViewControllerLocalizable", resourceBundle, nil);
-    NSString *originalButtonTitle = NSLocalizedStringFromTableInBundle(@"Original", @"TOCropViewControllerLocalizable", resourceBundle, nil);
-    NSString *squareButtonTitle = NSLocalizedStringFromTableInBundle(@"Square", @"TOCropViewControllerLocalizable", resourceBundle, nil);
+    NSString *cancelButtonTitle = NSLocalizedStringFromTableInBundle(@"取消", @"TOCropViewControllerLocalizable", resourceBundle, nil);
+    NSString *originalButtonTitle = NSLocalizedStringFromTableInBundle(@"原始尺寸", @"TOCropViewControllerLocalizable", resourceBundle, nil);
+    NSString *squareButtonTitle = NSLocalizedStringFromTableInBundle(@"正方形", @"TOCropViewControllerLocalizable", resourceBundle, nil);
 
     //Prepare the list that will be fed to the alert view/controller
     NSMutableArray *items = [NSMutableArray array];

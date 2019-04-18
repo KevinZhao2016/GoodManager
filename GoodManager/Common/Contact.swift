@@ -67,7 +67,6 @@ func APPGetTelBookList(callBackfunName:String){
     }
     var result = TelBookList.toJSONString()!
     result = result.replacingOccurrences(of: "\"", with: "\\\"")
-    print(result)
     ExecWinJS(JSFun: callBackfunName + "(\"" +  result + "\")")
 }
 
@@ -78,6 +77,8 @@ func APPChooseTelBook(maxNum:Int,callBackfunName:String){
     vc.maxNum = maxNum
     vc.backClosure = { (ContactString:String) ->Void in
         var result = ContactString
+        result = result.replacingOccurrences(of: "\"{", with: "{")
+        result = result.replacingOccurrences(of: "}\"", with: "}")
         result = result.replacingOccurrences(of: "\"", with: "\\\"")
         result = result.replacingOccurrences(of: "\\\\\"", with: "\\\"")
         ExecWinJS(JSFun: callBackfunName + "(\"" + result + "\")")
