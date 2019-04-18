@@ -89,9 +89,9 @@ class FileListTableViewController: UITableViewController {
     // 获取文件列表 -> fileNames 、fileURLs
     func getFiles() {
         // test
-        // 存储一个普通的文本文件
-        let info = "欢迎来到hange.com"
-        try! info.write(toFile: fileDir+"/ll.txt", atomically: true, encoding: String.Encoding.utf8)
+//        // 存储一个普通的文本文件
+//        let info = "欢迎使用好监理！"
+//        try! info.write(toFile: fileDir+"/welcom.txt", atomically: true, encoding: String.Encoding.utf8)
         // 检查文件是否存在
 //        let exsit = fileManager.fileExists(atPath: fileDir+"/ll.txt")
 //        print(exsit)

@@ -16,6 +16,7 @@ import QuickLook
 
 let fileManager = FileManager.default
 let quickLookViewController = QLPreviewController()
+//let documentPath = NSHomeDirectory() + "/Documents"
 
 // 单选文件
 func APPChooseSingleFile(callBackfunName:String) {
@@ -30,7 +31,6 @@ func APPChooseSingleFile(callBackfunName:String) {
 
 // 文件是否存在
 func APPIfExistFile(path:String) -> String {
-//    let documentPath = NSHomeDirectory() + "/Documents"
     let isExists = fileManager.fileExists(atPath:  path)
     var result:String = ""
     if (isExists){
@@ -42,15 +42,22 @@ func APPIfExistFile(path:String) -> String {
 }
 
 func APPDelFile(path:String,callBackfunName:String){
-//    let documentPath = NSHomeDirectory() + "/Documents"
     do {
-        try fileManager.removeItem(atPath: path)
+        var isDir: ObjCBool = false
+        if FileManager.default.fileExists(atPath: path,isDirectory: &isDir){
+            if isDir.boolValue {
+                // file exists and is a directory
+            }
+            else {
+                // file exists and is not a directory
+            }
+            try! fileManager.removeItem(atPath: path)
+        }
+        ExecWinJS(JSFun: callBackfunName + "(\"1\")")
+    } catch {
+        print(error)
+        ExecWinJS(JSFun: callBackfunName + "(\"0\")")
     }
-    catch {
-            ExecWinJS(JSFun: callBackfunName + "(\"0\")")
-            print(error)
-    }
-    ExecWinJS(JSFun: callBackfunName + "(\"1\")")
 }
 
 func APPGetFileSize(path:String) -> String{
@@ -83,78 +90,122 @@ func APPGetFileSize(path:String) -> String{
         print("fileSize:  \(attributes![FileAttributeKey.size]!)")
         return "\(attributes![FileAttributeKey.size]!)"
     }else{
+        let vc = getLastMainViewController()
+        let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
         return "APPGetFileSize  --  error!: no such file!"
     }
 }
 
 func APPGetFileBase(path:String) -> String{
     print("-------------APPGetFileBase--------------")
-    let fileUrl = URL(fileURLWithPath: path)
-    let fileData = try? Data(contentsOf: fileUrl)
-    // 将文件转为base64编码
-    let base64 = fileData?.base64EncodedString(options: .endLineWithLineFeed)
-    return base64 ?? ""
+    let vc = getLastMainViewController()
+    var isDir: ObjCBool = false
+    // 如果文件存在
+    if FileManager.default.fileExists(atPath: path,isDirectory: &isDir){
+        if isDir.boolValue {
+            // file exists and is a directory
+        }
+        else {
+            // file exists and is not a directory
+        }
+        let fileUrl = URL(fileURLWithPath: path)
+        let fileData = try? Data(contentsOf: fileUrl)
+        // 将文件转为base64编码
+        let base64 = fileData?.base64EncodedString(options: .endLineWithLineFeed)
+        return base64 ?? ""
+    }else{
+        //文件不存在
+        let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
+        return ""
+    }
 }
 
 //在线预览文件
 func APPPreviewFile(path:String){
     print("-------------APPPreviewFile--------------")
     let vc = getLastMainViewController()
-    let filevc = PreviewFileViewController(Path: path)
-//    let controller = BaseNavigationController(rootViewController:PreviewFileViewController(Path: path))
-    vc.present(filevc, animated: true, completion: nil)
+    var isDir: ObjCBool = false
+    // 如果文件存在
+    if FileManager.default.fileExists(atPath: path,isDirectory: &isDir){
+        if isDir.boolValue {
+            // file exists and is a directory
+        }
+        else {
+            // file exists and is not a directory
+        }
+        let filevc = PreviewFileViewController(Path: path)
+        vc.present(filevc, animated: true, completion: nil)
+    }else{
+        //文件不存在
+        let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
+    }
 }
 
 func APPUploadFile(path:String, domainName:String, folderName:String, callBackfunName:String){
     print("-------------APPUploadFile--------------")
-//    let fileURL = URL(string: NSHomeDirectory() + "/Documents" + path)
     let vc = getLastMainViewController()
-    let LaunchProvider = MoyaProvider<LaunchTarget>()
-    //TODO: 上传地址初始化
-//    Alamofire.upload(fileURL!, to: "host")
-//        .response { response in
-//            print(response)
-//            APPExecWinJS(mark: "", JSFun: callBackfunName + "(" + (fileURL?.path)! + ")")
-//    }
-    LaunchProvider.request(.uploadFile(path,domainName,folderName), completion: { result in
-        switch result {
-        case let .success(moyaResponse):
-            // Data, your JSON response is probably in here!
-            let data = moyaResponse.data
-            // Int - 200, 401, 500, etc
-            let statusCode = moyaResponse.statusCode
-            print("APPUploadFile  -- success: " + "\(statusCode)")
-            if(statusCode == 200){
-                do {
-                    if let model = try? moyaResponse.mapObject(LaunchResultModel.self) {
-                        print("上传文件 code：\(model.code)")
-                        let str = model.result.toJSONString()?.replacingOccurrences(of: "\"", with: "\\\"")
-                        ExecWinJS(JSFun: callBackfunName + "(\"" + (str ?? "no data") + "\")")
-                    } else {
-                        print("map  error")
-                        print("data : \(data)")
-                        ExecWinJS(JSFun: callBackfunName + "(\"" + "no data" + "\")")
-                        let alert = UIAlertController(title: "文件上传异常！", message: "文件上传成功，获取返回值异常!", preferredStyle: UIAlertController.Style.alert)
+    
+    var isDir: ObjCBool = false
+    // 如果文件存在
+    if FileManager.default.fileExists(atPath: path,isDirectory: &isDir){
+        if isDir.boolValue {
+            // file exists and is a directory
+        }
+        else {
+            // file exists and is not a directory
+        }
+        let LaunchProvider = MoyaProvider<LaunchTarget>()
+        LaunchProvider.request(.uploadFile(path,domainName,folderName), completion: { result in
+            switch result {
+            case let .success(moyaResponse):
+                // Data, your JSON response is probably in here!
+                let data = moyaResponse.data
+                // Int - 200, 401, 500, etc
+                let statusCode = moyaResponse.statusCode
+                print("APPUploadFile  -- success: " + "\(statusCode)")
+                if(statusCode == 200){
+                    do {
+                        if let model = try? moyaResponse.mapObject(LaunchResultModel.self) {
+                            print("上传文件 code：\(model.code)")
+                            let str = model.result.toJSONString()?.replacingOccurrences(of: "\"", with: "\\\"")
+                            ExecWinJS(JSFun: callBackfunName + "(\"" + (str ?? "no data") + "\")")
+                        } else {
+                            print("map  error")
+                            print("data : \(data)")
+                            ExecWinJS(JSFun: callBackfunName + "(\"" + "no data" + "\")")
+                            let alert = UIAlertController(title: "文件上传异常！", message: "文件上传成功，获取返回值异常!", preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+                            vc.present(alert, animated: true, completion: nil)
+                        }
+                    }catch {
+                        print("APPUploadFile  -- error:  "+"\(error)")
+                        let alert = UIAlertController(title: "文件上传失败！", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
                         vc.present(alert, animated: true, completion: nil)
                     }
-                }catch {
-                    print("APPUploadFile  -- error:  "+"\(error)")
-                    let alert = UIAlertController(title: "文件上传失败！", message: "\(error)", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
-                    vc.present(alert, animated: true, completion: nil)
                 }
+            case let .failure(error):
+                guard let error = error as? CustomStringConvertible else {
+                    break
+                }
+                let alert = UIAlertController(title: "文件上传失败！", message: error.description, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+                vc.present(alert, animated: true, completion: nil)
+                print("APPUploadFile  -- error:  " + "\(error)")
             }
-        case let .failure(error):
-            guard let error = error as? CustomStringConvertible else {
-                break
-            }
-            let alert = UIAlertController(title: "文件上传失败！", message: error.description, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
-            vc.present(alert, animated: true, completion: nil)
-            print("APPUploadFile  -- error:  " + "\(error)")
-        }
-    })
+        })
+    }else{
+        //文件不存在
+        let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
+    }
 }
 
 func APPDownFile(path:String, callBackfunName:String){
