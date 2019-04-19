@@ -34,7 +34,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var webview:DWKWebView!
     
     // 倒计时更改
-    var timeCount:Int = 50
+    var timeCount:Int = 5
     var timer:Timer?
     
     //用于定位

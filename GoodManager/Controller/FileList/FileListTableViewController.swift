@@ -70,7 +70,7 @@ class FileListTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName:"FileCellTableViewCell", bundle:nil), forCellReuseIdentifier:"FileCellTableViewCell")
         let newBackButton = UIBarButtonItem(title: "返回", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("back")))
         self.navigationItem.leftBarButtonItem = newBackButton
-        self.navigationItem.leftBarButtonItem?.tintColor = .black
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.black
         
         // 本地文件存放地址
         fileDir = documentsDir
