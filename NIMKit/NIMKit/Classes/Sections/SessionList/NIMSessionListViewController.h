@@ -22,6 +22,10 @@
 @property (nonatomic,strong) NSMutableArray * recentSessions;
 
 /**
+ *  最近会话集合
+ */
+@property (nonatomic,strong) NSMutableArray * searchSessions;
+/**
  *  删除会话时是不是也同时删除服务器会话 (防止漫游)
  */
 @property (nonatomic,assign)   BOOL autoRemoveRemoteSession;
