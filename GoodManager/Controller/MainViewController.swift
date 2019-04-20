@@ -179,7 +179,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         let isIPhoneX:Bool = self.isIPhoneX()
         if isIPhoneX {
             image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
-            image.backgroundColor = UIColor.lightGray;
+            image.backgroundColor = UIColor.white;
             
             
             bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
@@ -189,9 +189,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
           self.view.addSubview(bottomImage)
             
         }
-//       image.image = UIImage(named: "好监理_启动页")
-//        image.contentMode = .scaleAspectFit
-//        image.backgroundColor = .white
+       image.image = UIImage(named: "好监理_启动页")
+        image.contentMode = .scaleAspectFit
+        image.backgroundColor = .white
         
         // 倒计时按钮
         button.frame = CGRect.init(x: SCREEN_WIDTH - 70, y: STATUS_HEIGHT + 10, width: 65, height: 25)
@@ -228,16 +228,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
 
     func isIPhoneX() -> Bool {
-//        var iPhoneX:Bool = false
-//        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
-//            return iPhoneX
-//        }
-//        if #available(iOS 11.0, *) {
-//            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
-//                iPhoneX = true
-//            }
-//        }
-        return true;
+        var iPhoneX:Bool = false
+        if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone{
+            return iPhoneX
+        }
+        if #available(iOS 11.0, *) {
+            if Double((UIApplication.shared.delegate?.window??.safeAreaInsets.bottom)!) > 0.0 {
+          iPhoneX = true
+            }
+        }
+        return iPhoneX;
     }
     
 //    @objc func btnClick(){

@@ -12,4 +12,6 @@
 
 @interface NTESGroupedContacts : NTESGroupedDataCollection
 
++(instancetype)allocInstance:(NSString *)content;
+
 @end

@@ -10,18 +10,48 @@ import Foundation
 
 
 func APPPushSetAlias(_ alias:String)  {
+    let Main = getLastMainViewController()
+    let checkNetObject = checkNet()
+    let isReach = checkNetObject.isReach()
+    print(isReach)
+    if(isReach){
+        
+    }else{
+        Main.nonetLoad()
+        return ;
+    }
     JPUSHService.setAlias(alias, completion: { (seq, alias, res) in
         print("\(seq)---\(alias)---\(res)");
     }, seq: 110);
 }
 //    取消极光账号
 func APPPushCancelAlias()  {
+    let Main = getLastMainViewController()
+    let checkNetObject = checkNet()
+    let isReach = checkNetObject.isReach()
+    print(isReach)
+    if(isReach){
+        
+    }else{
+        Main.nonetLoad()
+        return ;
+    }
     JPUSHService.deleteAlias({ (iResCode, iAlias, seq) in
         
     }, seq: 110)
 }
 //    设置新消息提醒方式接口
 func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
+    let Main = getLastMainViewController()
+    let checkNetObject = checkNet()
+    let isReach = checkNetObject.isReach()
+    print(isReach)
+    if(isReach){
+        
+    }else{
+        Main.nonetLoad()
+        return ;
+    }
     let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
     if ifOpenVoice == 0 {
         

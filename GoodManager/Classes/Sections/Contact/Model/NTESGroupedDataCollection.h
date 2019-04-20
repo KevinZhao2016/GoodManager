@@ -18,6 +18,8 @@
 
 @interface NTESGroupedDataCollection : NSObject
 
+@property (nonatomic, copy) NSString *content;
+
 @property (nonatomic, strong) NSArray *members;
 @property (nonatomic, copy) NSComparator groupTitleComparator;
 @property (nonatomic, copy) NSComparator groupMemberComparator;

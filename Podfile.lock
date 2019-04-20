@@ -61,6 +61,9 @@ PODS:
   - TZImagePickerController (3.0.9)
   - WechatOpenSDK (1.8.4)
   - Weibo_SDK (3.2.3)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
 
 DEPENDENCIES:
   - AliPay
@@ -88,6 +91,7 @@ DEPENDENCIES:
   - TZImagePickerController
   - WechatOpenSDK
   - Weibo_SDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
+  - YYCategories (~> 1.0.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -124,6 +128,7 @@ SPEC REPOS:
     - Toast
     - TZImagePickerController
     - WechatOpenSDK
+    - YYCategories
 
 EXTERNAL SOURCES:
   CLImagePickerTool:
@@ -175,7 +180,8 @@ SPEC CHECKSUMS:
   TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
   WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
   Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: 9e27ea3322497ca0de75956ea9fae2a567f8d69f
+PODFILE CHECKSUM: 414012f79e97853295518fa92faba18a9492b632
 
 COCOAPODS: 1.6.1

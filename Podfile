@@ -44,7 +44,7 @@ target 'GoodManager' do
     pod 'Crashlytics'
     pod 'M80AttributedLabel', '~> 1.6.3'
     pod 'Toast', '~> 3.0'
-    
+    pod 'YYCategories', '~> 1.0.4'
 #    target 'NIMKit' do
 #      project 'NIMKit/NIMKit.xcodeproj'
 #    end

@@ -14,8 +14,9 @@
 #import "NIMKitUtil.h"
 #import "NIMKit.h"
 
-@interface NIMSessionListViewController ()
-
+@interface NIMSessionListViewController ()<UISearchBarDelegate>
+@property(nonatomic,strong)UISearchBar *searchBar;
+@property(nonatomic,strong)UIView *coverView;
 @end
 
 @implementation NIMSessionListViewController
@@ -44,6 +45,8 @@
     self.tableView.tableFooterView  = [[UIView alloc] init];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _recentSessions = [[NIMSDK sharedSDK].conversationManager.allRecentSessions mutableCopy];
+    _searchSessions = [NSMutableArray array];
+    _searchSessions = [_recentSessions mutableCopy];
     if (!self.recentSessions.count)
     {
         _recentSessions = [NSMutableArray array];
@@ -52,7 +55,7 @@
     {
         _recentSessions = [self customSortRecents:_recentSessions];
     }
-
+    self.tableView.tableHeaderView = [self headView];
     [[NIMSDK sharedSDK].conversationManager addDelegate:self];
     [[NIMSDK sharedSDK].loginManager addDelegate:self];
     
@@ -65,7 +68,73 @@
     extern NSString *const NIMKitUserInfoHasUpdatedNotification;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserInfoHasUpdatedNotification:) name:NIMKitUserInfoHasUpdatedNotification object:nil];
 }
+- (UIView *)coverView
+{
+    if (_coverView == nil) {
+        _coverView = [UIView new];
+        _coverView.frame = self.view.bounds;
+        _coverView.backgroundColor = [UIColor clearColor];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
+        [_coverView addGestureRecognizer:tap];
+    }
+    return _coverView;
+}
+- (void)tap
+{
+    [self.coverView removeFromSuperview];
+    self.searchBar.text = @"";
+    [self.view endEditing:YES];
+}
+- (UIView *)headView
+{
+    self.searchBar = [[UISearchBar alloc] init];// 初始化，不解释
+    self.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
+    [self.searchBar setPlaceholder:@"Search"];// 搜索框的占位符
+    [self.searchBar setBarStyle:UIBarStyleDefault];// 搜索框样式
+    self.searchBar.showsCancelButton = YES;
+    self.searchBar.delegate = self;
 
+    
+    
+    return self.searchBar;
+    
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;
+{
+    [self.view addSubview:self.coverView];
+}
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    self.searchSessions = [self.recentSessions mutableCopy];
+    [self.tableView reloadData];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
+    [self.coverView removeFromSuperview];
+    NSMutableArray *datas = [NSMutableArray array];
+    NSString *content = self.searchBar.text;
+    if (content.length == 0) {
+        self.searchSessions = [self.recentSessions mutableCopy];
+        [self.tableView reloadData];
+        return;
+    }
+    for (NIMRecentSession *session in self.searchSessions) {
+        NSString *name = [self nameForRecentSession:session];
+        if ([name rangeOfString:content].location != NSNotFound) {
+            [datas addObject:session];
+        }
+    }
+    self.searchSessions = [datas mutableCopy];
+    [self.tableView reloadData];
+    
+    NSLog(@"%@",searchBar.text);
+   
+}
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"sss");
+}
 - (void)refresh{
     if (!self.recentSessions.count) {
         self.tableView.hidden = YES;
@@ -78,7 +147,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NIMRecentSession *recentSession = self.recentSessions[indexPath.row];
+    NIMRecentSession *recentSession = self.searchSessions[indexPath.row];
     [self onSelectedRecent:recentSession atIndexPath:indexPath];
 }
 
@@ -98,7 +167,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.recentSessions.count;
+    return self.searchSessions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -108,7 +177,7 @@
         cell = [[NIMSessionListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         [cell.avatarImageView addTarget:self action:@selector(onTouchAvatar:) forControlEvents:UIControlEventTouchUpInside];
     }
-    NIMRecentSession *recent = self.recentSessions[indexPath.row];
+    NIMRecentSession *recent = self.searchSessions[indexPath.row];
     cell.nameLabel.text = [self nameForRecentSession:recent];
     [cell.avatarImageView setAvatarBySession:recent.session];
     [cell.nameLabel sizeToFit];

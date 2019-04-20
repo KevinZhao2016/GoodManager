@@ -11,10 +11,18 @@
 
 @interface NTESGroupedContacts () 
 
+
+
 @end
 
 @implementation NTESGroupedContacts
-
++(instancetype)allocInstance:(NSString *)content
+{
+    NTESGroupedContacts *contacts =  [[self alloc]init];
+    contacts.content = content;
+    [contacts update];
+    return contacts;
+}
 - (instancetype)init
 {
     self = [super init];
@@ -31,7 +39,7 @@
         self.groupMemberComparator = ^NSComparisonResult(NSString *key1, NSString *key2) {
             return [key1 compare:key2];
         };
-        [self update];
+       
     }
     return self;
 }
@@ -42,7 +50,17 @@
         NIMKitInfo *info           = [[NIMKit sharedKit] infoByUser:user.userId option:nil];
         NTESContactDataMember *contact = [[NTESContactDataMember alloc] init];
         contact.info               = info;
-        [contacts addObject:contact];
+      
+        //判断过滤
+        if (self.content != nil && self.content.length != 0) {
+            NSString *showName = contact.info.showName;
+            if ([showName containsString:self.content]) {
+                [contacts addObject:contact];
+            }
+        }else{
+            [contacts addObject:contact];
+        }
+  
     }
     [self setMembers:contacts];
 }
