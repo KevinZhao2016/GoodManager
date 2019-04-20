@@ -179,6 +179,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYCategories.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>dsBridge.xcscheme</key>
 		<dict>
 			<key>isShown</key>

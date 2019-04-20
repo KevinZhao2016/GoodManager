@@ -31,12 +31,19 @@ NIMSystemNotificationManagerDelegate,
 NTESContactUtilCellDelegate,
 NIMContactDataCellDelegate,
 NIMLoginManagerDelegate,
-NIMEventSubscribeManagerDelegate> {
+NIMEventSubscribeManagerDelegate,UISearchBarDelegate> {
     UIRefreshControl *_refreshControl;
     NTESGroupedContacts *_contacts;
 }
 
 @property (nonatomic,strong) NSArray * datas;
+
+@property (nonatomic,strong) NTESGroupedContacts * searchContacs;
+
+@property(nonatomic,strong)UISearchBar *searchBar;
+
+@property(nonatomic,strong)UIView *coverView;
+
 
 @end
 
@@ -76,7 +83,7 @@ NIMEventSubscribeManagerDelegate> {
     self.tableView.separatorInset = separatorInset;
     self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = [UIView new];
-    
+    self.tableView.tableHeaderView = [self headView];
     [self prepareData];
     
     [[NIMSDK sharedSDK].systemNotificationManager addDelegate:self];
@@ -110,9 +117,64 @@ NIMEventSubscribeManagerDelegate> {
 {
     [self.tabBarController.navigationController popViewControllerAnimated:YES];
 }
+- (UIView *)coverView
+{
+    if (_coverView == nil) {
+        _coverView = [UIView new];
+        _coverView.frame = self.view.bounds;
+        _coverView.backgroundColor = [UIColor clearColor];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
+        [_coverView addGestureRecognizer:tap];
+    }
+    return _coverView;
+}
+- (void)tap
+{
+    [self.coverView removeFromSuperview];
+    self.searchBar.text = @"";
+    [self.view endEditing:YES];
+}
+- (UIView *)headView
+{
+    self.searchBar = [[UISearchBar alloc] init];// 初始化，不解释
+    self.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
+    [self.searchBar setPlaceholder:@"Search"];// 搜索框的占位符
+    [self.searchBar setBarStyle:UIBarStyleDefault];// 搜索框样式
+    self.searchBar.showsCancelButton = YES;
+    self.searchBar.delegate = self;
+    
+    
+    
+    return self.searchBar;
+    
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;
+{
+    [self.view addSubview:self.coverView];
+}
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
+    [self.coverView removeFromSuperview];
+  
+    [self refresh];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
+    [self.coverView removeFromSuperview];
+   
+    [self refresh];
+    
+    NSLog(@"%@",searchBar.text);
+    
+}
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"sss");
+}
 - (void)prepareData{
-    _contacts = [[NTESGroupedContacts alloc] init];
-
+    _contacts = [NTESGroupedContacts allocInstance:self.searchBar.text];
     NSString *contactCellUtilIcon   = @"icon";
     NSString *contactCellUtilVC     = @"vc";
     NSString *contactCellUtilBadge  = @"badge";
@@ -163,6 +225,13 @@ NIMEventSubscribeManagerDelegate> {
     //构造显示的数据模型
     NTESContactUtilItem *contactUtil = [[NTESContactUtilItem alloc] init];
     NSMutableArray * members = [[NSMutableArray alloc] init];
+    
+    //添加过滤
+    
+    
+    
+    
+    
     for (NSDictionary *item in utils) {
         NTESContactUtilMember *utilItem = [[NTESContactUtilMember alloc] init];
         utilItem.nick              = item[contactCellUtilTitle];
@@ -176,6 +245,7 @@ NIMEventSubscribeManagerDelegate> {
     contactUtil.members = members;
     
     [_contacts addGroupAboveWithTitle:@"" members:contactUtil.members];
+
 }
 
 #pragma mark - Action

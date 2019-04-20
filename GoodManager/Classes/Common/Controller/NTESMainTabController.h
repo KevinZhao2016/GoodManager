@@ -10,6 +10,8 @@
 #import "NIMKit.h"
 @interface NTESMainTabController : UITabBarController
 
+@property(nonatomic, copy) NSString *hexColor;
+
 + (instancetype)instance;
 
 @end
