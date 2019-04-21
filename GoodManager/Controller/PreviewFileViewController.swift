@@ -22,7 +22,13 @@ class PreviewFileViewController: QLPreviewController {
         super.init(nibName: nil, bundle: nil)
         self.path = Path
     }
-    
+    init(){
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    @objc func setPath(Path:String) {
+       self.path = Path
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -72,6 +78,7 @@ extension PreviewFileViewController: QLPreviewControllerDelegate, QLPreviewContr
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
 //        let documentPath = NSHomeDirectory() + "/Documents"
+        print("%@",path);
         let fileUrl = URL(fileURLWithPath:  path)
         
         

@@ -8,11 +8,13 @@
 
 #import "NTESFilePreViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "GoodManager-Swift.h"
 @interface NTESFilePreViewController ()<NIMChatManagerDelegate>
 
 @property(nonatomic,strong)NIMFileObject *fileObject;
 
 @property(nonatomic,strong)UIDocumentInteractionController *interactionController;
+
 
 @property(nonatomic,assign)BOOL isDownLoading;
 
@@ -37,33 +39,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = self.fileObject.displayName;
-    self.fileNameLabel.text   = self.fileObject.displayName;
+   
     NSString *filePath = self.fileObject.path;
-    self.progressView.hidden = YES;
-    [self.actionBtn addTarget:self action:@selector(touchUpBtn) forControlEvents:UIControlEventTouchUpInside];
+   
+   
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        [self.actionBtn setTitle:@"用其他应用程序打开" forState:UIControlStateNormal];
+      
+       
+        PreviewFileViewController *filevc = [[PreviewFileViewController alloc]init];
+        [filevc setPathWithPath:self.fileObject.path];
+        [self.navigationController popViewControllerAnimated:NO];
+        [self.navigationController pushViewController:filevc animated:NO];
+        
+        
     }else{
-        [self.actionBtn setTitle:@"下载文件" forState:UIControlStateNormal];
+        [self downLoadFile];
     }
+    
+   
+  
+    
 }
 
 - (void)touchUpBtn{
     NSString *filePath = self.fileObject.path;
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        [self openWithOtherApp];
+        
+       
+        PreviewFileViewController *filevc = [[PreviewFileViewController alloc]init];
+        [filevc setPathWithPath:self.fileObject.path];
+        [self.navigationController popViewControllerAnimated:NO];
+        [self.navigationController pushViewController:filevc animated:NO];
+   
     }else{
         if (self.isDownLoading) {
             [[NIMSDK sharedSDK].chatManager cancelFetchingMessageAttachment:self.fileObject.message];
-            self.progressView.hidden   = YES;
-            self.progressView.progress = 0.0;
-            [self.actionBtn setTitle:@"下载文件" forState:UIControlStateNormal];
-            self.isDownLoading         = NO;
+           [self downLoadFile];
         }else{
             [self downLoadFile];
         }
     }
 }
+
+
+
 
 #pragma mark - 文件下载
 
@@ -78,9 +97,7 @@
     if ([message.messageId isEqualToString:self.fileObject.message.messageId])
     {
         self.isDownLoading = YES;
-        self.progressView.hidden = NO;
-        self.progressView.progress = progress;
-        [self.actionBtn setTitle:@"取消下载" forState:UIControlStateNormal];
+       
     }
 }
 
@@ -91,18 +108,26 @@
     if ([message.messageId isEqualToString:self.fileObject.message.messageId])
     {
         self.isDownLoading = NO;
-        self.progressView.hidden = YES;
+       
         if (!error)
         {
-            [self.actionBtn setTitle:@"用其他应用程序打开" forState:UIControlStateNormal];
+            
+            
+            PreviewFileViewController *filevc = [[PreviewFileViewController alloc]init];
+            [filevc setPathWithPath:self.fileObject.path];
+            [self.navigationController popViewControllerAnimated:NO];
+            [self.navigationController pushViewController:filevc animated:NO];
+            
+            
+         
         }
         else
         {
-            self.progressView.progress = 0.0f;
-            [self.actionBtn setTitle:@"下载失败，点击重新下载" forState:UIControlStateNormal];
+     
         }
     }
 }
+
 
 
 #pragma mark - 其他应用打开
