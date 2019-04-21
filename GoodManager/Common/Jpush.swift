@@ -59,7 +59,8 @@ func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
             //开启声音
             print("开启声音")
             entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
-            
+            let playSound = LxxPlaySound()
+            playSound.playWithSound()
         }
         if ifOpenVibration == 0 {
             //不开震动
@@ -69,6 +70,8 @@ func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
             //开启震动
             print("开启震动")
             entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+            let playSound = LxxPlaySound.init(forPlayingVibrate: ())
+            playSound!.play()
         }
         
         let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate;

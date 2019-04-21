@@ -50,6 +50,7 @@
 
 -(void)play;
 
+-(void)playWithSound;
 
 @end
 

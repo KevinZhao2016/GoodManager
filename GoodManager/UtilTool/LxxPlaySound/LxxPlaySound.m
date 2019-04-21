@@ -18,20 +18,22 @@
     return self;
 }
 
+
 -(id)initForPlayingSystemSoundEffectWith:(NSString *)resourceName ofType:(NSString *)type{
 
     self = [super init];
     if (self) {
-        NSString *path = [[NSBundle bundleWithIdentifier:@"com.apple.UIKit"] pathForResource:resourceName ofType:type];
-        
+        NSString *path = [NSString stringWithFormat:@"/System/Library/Audio/UISounds/%@.%@",@"new-mail",@"caf"];
         if (path) {
-            SystemSoundID theSoundID;
-            OSStatus error =  AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &theSoundID);
-            if (error == kAudioServicesNoError) {
-                soundID = theSoundID;
-            }else {
-                NSLog(@"Failed to create sound ");
+            NSString *url = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSLog(@"%@",path);
+            NSLog(@"%@",url);
+            
+            OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path],&soundID);
+            if (error != kAudioServicesNoError) {
+                soundID = 0;
             }
+            NSLog(@"!!!!!!!!!!!!! %d",soundID);
         }
     }
     return self;
@@ -59,6 +61,9 @@
     AudioServicesPlaySystemSound(soundID);
 }
 
+-(void)playWithSound{
+    AudioServicesPlaySystemSound(1000);
+}
 
 -(void)dealloc{
     AudioServicesDisposeSystemSoundID(soundID);
