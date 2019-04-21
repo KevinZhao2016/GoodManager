@@ -260,8 +260,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             JPUSHService.handleRemoteNotification(userInfo)
         }
         completionHandler(Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue))
-    }
+        
+      
+        Voice()
+        
     
+    }
+    func Voice() {
+        
+        let vc:MainViewController =
+        getLastMainViewController()
+        switch vc.remaindWay {
+       
+        case 1:
+            do {
+          
+
+         }
+         break;
+        case 2:
+            do {
+            //开启震动时的调用方法
+            let playSound = LxxPlaySound.init(forPlayingVibrate: ())
+            playSound!.play()
+           
+        }
+          break;
+        case 3:
+            do {
+            //有声有震动
+            let playSound = LxxPlaySound.init(forPlayingVibrate: ())
+            playSound!.play()
+            
+            let playSound1 = LxxPlaySound()
+            playSound1.playWithSound()
+
+         }
+         break;
+        default:
+            break;
+        }
+        
+        
+        
+      
+    }
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
         print("方法调用");
         if ( (response?.notification) != nil && response.notification.request.trigger is UNPushNotificationTrigger)  {

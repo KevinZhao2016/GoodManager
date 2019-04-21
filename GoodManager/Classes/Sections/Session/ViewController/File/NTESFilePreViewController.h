@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 @interface NTESFilePreViewController : UIViewController
 
-@property(nonatomic,strong) IBOutlet UIButton *actionBtn;
 
-@property(nonatomic,strong) IBOutlet UIProgressView *progressView;
 
-@property(nonatomic,strong) IBOutlet UILabel *fileNameLabel;
 
 - (instancetype)initWithFileObject:(NIMFileObject*)object;
 

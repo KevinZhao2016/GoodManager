@@ -42,13 +42,13 @@
     UITapGestureRecognizer * doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapAction:)];
     doubleTap.numberOfTapsRequired = 2;
     [singleTap requireGestureRecognizerToFail:doubleTap];
-    [self addGestureRecognizer:doubleTap];
+   [self addGestureRecognizer:doubleTap];
     
     
+//    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onLongPressImageView:)];
+//    [self.scrollView addGestureRecognizer:recognizer];
     
     UILongPressGestureRecognizer * longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTapAction:)];
-    longTap.minimumPressDuration = 2;
-    [singleTap requireGestureRecognizerToFail:longTap];
     [self addGestureRecognizer:longTap];
     
     
@@ -71,6 +71,7 @@
     UIImage *image =  self.subImageView.image;
     __weak typeof(self) weakSelf = self;
     if (longTap.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"UIGestureRecognizerStateBegan");
         UIAlertController *controller = [[UIAlertController alloc] init];
         __weak typeof(self)weakSelf = self;
         [[[controller addAction:@"保存至相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -92,7 +93,15 @@
 //
 //        [parentVC.navigationController presentViewController:controller animated:YES completion:nil];
        
-}
+    }else if (longTap.state == UIGestureRecognizerStateChanged){
+        NSLog(@"UIGestureRecognizerStateChanged");
+    }else if (longTap.state == UIGestureRecognizerStateEnded){
+        NSLog(@"UIGestureRecognizerStateEnded");
+    }else if (longTap.state == UIGestureRecognizerStateCancelled){
+        NSLog(@"UIGestureRecognizerStateCancelled");
+    }else if (longTap.state == UIGestureRecognizerStateFailed){
+        NSLog(@"UIGestureRecognizerStateFailed");
+    }
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
