@@ -415,18 +415,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             var i = 1
             for _image in photos {
                 print("压缩图片！")
-
-//                //byte
-//                let imageC = image
-//                var data = imageC.jpegData(compressionQuality: 1.0)
-//                //KB
-//                data = self.resetImgSize(sourceImage: imageC, maxImageLenght: -1, maxSizeKB: 200)
                 
                 //byte
                 var imageData = _image.jpegData(compressionQuality: 1.0)
                 //KB
                 imageData = self.resetImgSize(sourceImage: _image, maxImageLenght: -1, maxSizeKB: 200)
-                
                 
                 let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
                 let filePath = rootPath + "/" + "image_\(i)" + ".jpg"

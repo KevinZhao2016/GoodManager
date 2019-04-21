@@ -228,14 +228,15 @@ static NSString *const CellID = @"pickerID";
     IJSImagePickerController *vc = (IJSImagePickerController *) self.navigationController;
     if (state){
         // 被选中
-//        currentModel.isSelectedModel = YES;
-//        currentModel.didMask = YES;
+        currentModel.isSelectedModel = YES;
+        currentModel.didMask = YES;
         if (vc.selectedModels.count < vc.maxImagesCount){
             // 选中的个数没有超标
-            currentModel.isSelectedModel = YES;
-            currentModel.didMask = YES;
+//            currentModel.isSelectedModel = YES;
+//            currentModel.didMask = YES;
             [self.selectedModels addObject:currentModel];
             vc.selectedModels = self.selectedModels;   // 指向同一个地址
+            
             currentModel.didClickModelArr = self.selectedModels;
             currentModel.cellButtonNnumber = currentModel.didClickModelArr.count; // 给button的赋值
             if (vc.selectedModels.count == vc.maxImagesCount){
@@ -243,9 +244,9 @@ static NSString *const CellID = @"pickerID";
             }
         }else{
             // 选中超标
-            state = NO;
-            currentModel.isSelectedModel = NO;
-            currentModel.didMask = NO;
+//            state = NO;
+//            currentModel.isSelectedModel = NO;
+//            currentModel.didMask = NO;
             NSString *title = [NSString stringWithFormat:[NSBundle localizedStringForKey:@"Select a maximum of %zd photos"], vc.maxImagesCount];
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
@@ -256,9 +257,9 @@ static NSString *const CellID = @"pickerID";
         currentModel.isSelectedModel = NO;
         currentModel.didMask = NO;
 
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [weakSelf _reloadCellNoAniomation:currentModel];
-//        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf _reloadCellNoAniomation:currentModel];
+        });
         
         NSArray *selectedModels = [NSArray arrayWithArray:vc.selectedModels]; // 处理用户回调数据
         for (IJSAssetModel *newModel in selectedModels)

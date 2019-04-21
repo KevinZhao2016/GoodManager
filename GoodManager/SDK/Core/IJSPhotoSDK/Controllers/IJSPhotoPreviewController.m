@@ -20,6 +20,8 @@
 #import "IJSImageManagerController.h"
 #import "IJSSelectedCell.h"
 
+#import "GoodManager-Swift.h"
+
 #import "IJSEditSDK.h"
 
 static NSString *const IJSShowCellID = @"IJSPreviewImageCell";
@@ -34,7 +36,7 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
 @property (nonatomic, assign) BOOL isPlaying;                     //正在播放
 @property (nonatomic, weak) UIButton *editButton;                 /* 编辑 */
 @property (nonatomic, weak) UIButton *finishButton;               /* 完成 */
-@property(nonatomic,weak) UIButton *originalButton;  // 选择原图
+@property(nonatomic,weak) UIButton *originalButton;               // 选择原图
 @property (nonatomic, weak) UICollectionView *showCollectioView;  /* collection */
 @property (nonatomic, strong) NSMutableArray *imageDataArr;       /* 解析的数据 */
 @property (nonatomic, weak) UIView *toolBarView;                  /* 工具条 */
@@ -898,7 +900,7 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
 #pragma mark -----------------------允许选择原图------------------------------
 -(void)_selectedOriginImage:(UIButton *)button
 {
-   IJSImagePickerController *vc = (IJSImagePickerController *)self.navigationController;
+    IJSImagePickerController *vc = (IJSImagePickerController *)self.navigationController;
     vc.allowPickingOriginalPhoto = !button.selected;
     button.selected = !button.selected;
 }
@@ -1064,12 +1066,18 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
             }];
             
         }];
-    }
-    else
-    {                    // 图片
-        if (model.outputPath) // 裁剪过了
-        {
+    }else{
+        // 图片
+        if (model.outputPath){
+            // 裁剪过了
             UIImage *image =[UIImage imageWithData:[NSData dataWithContentsOfURL:model.outputPath]];
+            
+            // 进行压缩
+//            getPathOfImages *gpi = [getPathOfImages alloc];
+//            NSData *data = [gpi resetImgSizeWithSourceImage:image maxImageLenght:-1 maxSizeKB:200];
+//            UIImage *imageZip = [UIImage imageWithData: data];
+
+            
             [photos replaceObjectAtIndex:index withObject:image];
             [assets replaceObjectAtIndex:index withObject:model.asset];
             for (id item in photos)
@@ -1080,15 +1088,18 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
                 }
             }
             [self _didGetAllPhotos:photos asset:assets infos:nil isSelectOriginalPhoto:NO avPlayers:nil sourceType:IJSPImageType];
-        }
-        else
-        { // 没有裁剪过
-            
+        }else{
+            // 没有裁剪过
             [[IJSImageManager shareManager] getPhotoWithAsset:model.asset completion:^(UIImage *photo, NSDictionary *info, BOOL isDegraded) {
+                
+                // 进行压缩
+//                getPathOfImages *gpi = [getPathOfImages alloc];
+//                NSData *data = [gpi resetImgSizeWithSourceImage:photo maxImageLenght:-1 maxSizeKB:200];
+//                UIImage *imageZip = [UIImage imageWithData: data];
+                
                 if (isDegraded)
                     return; // 获取不到高清图
-                if (photo)
-                {
+                if (photo){
                     [photos replaceObjectAtIndex:index withObject:photo];
                 }
                 if (info)
@@ -1121,6 +1132,7 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
         }
     }
 }
+
 /// 获取原图
 - (void)_getBackOriginalDataPhotos:(NSMutableArray *)photos
                             assets:(NSMutableArray *)assets
@@ -1184,8 +1196,20 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
         [weakSelf dismissViewControllerAnimated:YES completion:^{
             if (weakSelf.selectedHandler)
             {
+                //NSMutableArray *newPhotos;
+                
+//                for (id item in photos){
+//                    // 进行压缩
+//                    getPathOfImages *gpi = [getPathOfImages alloc];
+//                    NSData *data = [gpi resetImgSizeWithSourceImage:item maxImageLenght:-1 maxSizeKB:200];
+//                    UIImage *imageZip = [UIImage imageWithData: data];
+//
+//                    [newPhotos addObject:imageZip];
+//                }
+                
                 // 不传infos ， 因为参数类型不对，会产生错误
                 weakSelf.selectedHandler(photos, avPlayers, asset, nil, sourceType, nil);
+                //weakSelf.selectedHandler(newPhotos, avPlayers, asset, nil, sourceType, nil);
             }
         }];
     });

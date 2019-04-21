@@ -64,6 +64,7 @@
         }
     }
 }
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -177,6 +178,7 @@
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }
+
 - (void)_observeAuthrizationStatusChange
 {
     if ([[IJSImageManager shareManager] authorizationStatusAuthorized])

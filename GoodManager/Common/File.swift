@@ -90,11 +90,16 @@ func APPGetFileSize(path:String) -> String{
         print("fileSize:  \(attributes![FileAttributeKey.size]!)")
         return "\(attributes![FileAttributeKey.size]!)"
     }else{
-        let vc = getLastMainViewController()
-        let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
-        vc.present(alert, animated: true, completion: nil)
-        return "APPGetFileSize  --  error!: no such file!"
+        if FileManager.default.fileExists(atPath: path){
+            do{
+                var fileinfo = try FileManager.default.attributesOfItem(atPath: path)
+                let size = "\(fileinfo[FileAttributeKey.size])"
+                return size
+            }catch{
+                return "unknow"
+            }
+        }
+        return "unknow"
     }
 }
 

@@ -37,14 +37,38 @@ func chooseSingleImageFromAlbum(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,c
         ijsip?.hiddenOriginalButton = true
     }else{
         // 显示
-        ijsip?.allowPickingOriginalPhoto = true
-        ijsip?.hiddenOriginalButton = false
+        ijsip?.hiddenOriginalButton = true
+
     }
     ijsip?.dataSource = source
     // 获取数据
     ijsip?.dataSource = 0
     ijsip?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
-        getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
+        
+        var isOrigin = 0
+        if(ifOriginalPic == 1){
+            // 显示选择框
+            let vc = getLastMainViewController()
+            let alert = UIAlertController(title: "是否选择原图", message: nil, preferredStyle: UIAlertController.Style.alert)
+            
+            let action1 = UIAlertAction(title: "是", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+                isOrigin = 1
+                // 选择原图
+                getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: isOrigin)
+            })
+            
+            let action2 = UIAlertAction(title: "否", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+                isOrigin = 0
+                // 选择缩略图
+                getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: isOrigin)
+            })
+            alert.addAction(action1)
+            alert.addAction(action2)
+            vc.present(alert, animated: true, completion:nil)
+        }else{
+            // 直接返回缩略图
+            getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: 0)
+        }
     })
     vc.present(ijsip!, animated: true, completion: nil)
 }
@@ -83,36 +107,6 @@ func chooseSingleImageFromCamera(source:Int, ifNeedEdit:Int, ifOriginalPic:Int ,
         vc.isOriginal = true
     }
     vc.present(pickerView, animated: true, completion:nil)
-    
-    
-//    let ijsip_1 = IJSImagePickerController(maxImagesCount: 1, columnNumber: 4, pushPhotoPickerVc: false, dataSource: 1)
-//    ijsip_1?.dataSource = 1
-//    // 不能选择视频
-//    ijsip_1?.allowPickingVideo = false
-//    // 编辑
-//    if ifNeedEdit == 0 {
-//        // 不需要编辑
-//        ijsip_1?.isHiddenEdit = true
-//    }else{
-//        // 需要编辑
-//        ijsip_1?.isHiddenEdit = false
-//    }
-//    var size:CGSize?
-//    size = PHImageManagerMaximumSize
-//    // 原图
-//    if ifOriginalPic == 0 {
-//        // 不显示
-//        ijsip_1?.hiddenOriginalButton = true
-//    }else{
-//        // 显示
-//        ijsip_1?.allowPickingOriginalPhoto = true
-//        ijsip_1?.hiddenOriginalButton = false
-//    }
-//    // 获取数据
-//    ijsip_1?.loadTheSelectedData({(images: [UIImage]?, urls: [URL]?, assets: [PHAsset]?, x: [[AnyHashable:Any]]?, type: IJSPExportSourceType,error: Error?) in
-//        getPathFromAsset(phasset: assets![0], size: size!, ifOriginalPic: ifOriginalPic)
-//    })
-//    vc.present(ijsip_1!, animated: true, completion: nil)
 }
 
 // 单选图片
@@ -180,7 +174,7 @@ func APPGetBankImage(callBackfunName:String){
     let vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        var BankAuthVC = BankAuthViewController()
+        let BankAuthVC = BankAuthViewController()
         BankAuthVC.callbackfun = callBackfunName;
         let nvc = UINavigationController(rootViewController: BankAuthVC)
         vc.present(nvc, animated: true, completion: nil)
@@ -191,10 +185,10 @@ func APPGetBankImage(callBackfunName:String){
 
 // 获取身份证照片
 func APPGetIdentityCardImage(callBackfunName:String){
-    var vc = getLastMainViewController()
+    let vc = getLastMainViewController()
     vc.imagecallBackfunName = callBackfunName
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        var IDAuthVC = IDAuthViewController()
+        let IDAuthVC = IDAuthViewController()
         IDAuthVC.callbackfun = callBackfunName;
         let nvc = UINavigationController(rootViewController: IDAuthVC)
         vc.present(nvc, animated: true, completion: nil)
@@ -228,40 +222,211 @@ func getPathFromAsset(phasset:PHAsset, size:CGSize, ifOriginalPic:Int) ->   [Str
                                           targetSize: size, contentMode: .aspectFit,
                                           options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
                                             if(ifOriginalPic == 1){
+                                                // 原图
                                                 let imageURL = info!["PHImageFileURLKey"] as! URL
                                                 path.append(imageURL.path)
-//                                                path = imageURL.path
                                                 print("路径：",path)
+                                                var result = path.getJSONStringFromArray()
+                                                result = result.replacingOccurrences(of: "\"", with: "\\\"")
+                                                ExecWinJS(JSFun: callbackfun + "(\"" + result + "\")")
+                                                //
                                             }else{
+                                                // 缩略图
                                                 let fileManager = FileManager.default
                                                 let rootPath = NSHomeDirectory() + "/Documents/"
                                                 let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
                                                 let filePath = rootPath  + "\(name)" + ".jpg"
-                                                let imageData = image?.jpegData(compressionQuality: 1)
+                                                let imageData = resetImgSize(sourceImage: image!, maxImageLenght: -1, maxSizeKB: 200)
                                                 fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
                                                 path.append(filePath)
-//                                                path = filePath
                                                 print("路径：",path)
+                                                var result = path.getJSONStringFromArray()
+                                                result = result.replacingOccurrences(of: "\"", with: "\\\"")
+                                                ExecWinJS(JSFun: callbackfun + "(\"" + result + "\")")
                                             }
-                                            var result = path.getJSONStringFromArray()
-                                            result = result.replacingOccurrences(of: "\"", with: "\\\"")
-                                            ExecWinJS(JSFun: callbackfun + "(\"" + result + "\")")
     })
-   
     return path
 }
 
+func resetImgSize(sourceImage : UIImage,maxImageLenght : CGFloat,maxSizeKB : CGFloat) -> Data {
+    var maxSize = maxSizeKB
+    var maxImageSize = maxImageLenght
+    if (maxSize <= 0.0) {
+        maxSize = 1024.0;
+    }
+    if (maxImageSize <= 0.0)  {
+        maxImageSize = 1024.0;
+    }
+    
+    //先调整分辨率
+    var newSize = CGSize.init(width: sourceImage.size.width, height: sourceImage.size.height)
+    let tempHeight = newSize.height / maxImageSize;
+    let tempWidth = newSize.width / maxImageSize;
+    if (tempWidth > 1.0 && tempWidth > tempHeight) {
+        newSize = CGSize.init(width: sourceImage.size.width / tempWidth, height: sourceImage.size.height / tempWidth)
+    }
+        
+    else if (tempHeight > 1.0 && tempWidth < tempHeight){
+        newSize = CGSize.init(width: sourceImage.size.width / tempHeight, height: sourceImage.size.height / tempHeight)
+    }
+    
+    UIGraphicsBeginImageContext(newSize)
+    sourceImage.draw(in: CGRect.init(x: 0, y: 0, width: newSize.width, height: newSize.height))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    var imageData = newImage!.jpegData(compressionQuality:1.0)
+    var sizeOriginKB : CGFloat = CGFloat((imageData?.count)!) / 1024.0;
+    
+    //调整大小
+    var resizeRate = 0.9;
+    while (sizeOriginKB > maxSize && resizeRate > 0.1) {
+        imageData = newImage!.jpegData(compressionQuality:CGFloat(resizeRate))
+        sizeOriginKB = CGFloat((imageData?.count)!) / 1024.0;
+        resizeRate -= 0.1;
+    }
+    return imageData!
+}
+
+
+//func ifNeedOrigin()->Int{
+//    var isOrigin = 0
+//    let vc = getLastMainViewController()
+//    let alert = UIAlertController(title: "是否选择原图", message: nil, preferredStyle: UIAlertController.Style.alert)
+//
+//    let action1 = UIAlertAction(title: "是", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+//        isOrigin = 1
+//    })
+//
+//    let action2 = UIAlertAction(title: "否", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+//        isOrigin = 0
+//    })
+//    alert.addAction(action1)
+//    alert.addAction(action2)
+//    vc.present(alert, animated: true, completion: nil)
+//    return isOrigin
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class getPathOfImages: NSObject {
+    // 是否需要原图
+//    @objc func ifNeedOrigin()->Int{
+//        var isOrigin = 0
+//        let vc = getLastMainViewController()
+//        let alert = UIAlertController(title: "是否选择原图", message: nil, preferredStyle: UIAlertController.Style.alert)
+//
+//        let action1 = UIAlertAction(title: "是", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+//            isOrigin = 1
+//        })
+//
+//        let action2 = UIAlertAction(title: "否", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+//            isOrigin = 0
+//        })
+//        alert.addAction(action1)
+//        alert.addAction(action2)
+//        vc.present(alert, animated: true, completion: nil)
+//        //}
+//        print(isOrigin)
+//        return isOrigin
+//    }
+    
+    
+    // 单选图片压缩
+    @objc func resetImgSize(sourceImage : UIImage,maxImageLenght : CGFloat,maxSizeKB : CGFloat) -> Data {
+        var maxSize = maxSizeKB
+        var maxImageSize = maxImageLenght
+        if (maxSize <= 0.0) {
+            maxSize = 1024.0;
+        }
+        if (maxImageSize <= 0.0)  {
+            maxImageSize = 1024.0;
+        }
+        
+        //先调整分辨率
+        var newSize = CGSize.init(width: sourceImage.size.width, height: sourceImage.size.height)
+        let tempHeight = newSize.height / maxImageSize;
+        let tempWidth = newSize.width / maxImageSize;
+        if (tempWidth > 1.0 && tempWidth > tempHeight) {
+            newSize = CGSize.init(width: sourceImage.size.width / tempWidth, height: sourceImage.size.height / tempWidth)
+        }
+            
+        else if (tempHeight > 1.0 && tempWidth < tempHeight){
+            newSize = CGSize.init(width: sourceImage.size.width / tempHeight, height: sourceImage.size.height / tempHeight)
+        }
+        
+        UIGraphicsBeginImageContext(newSize)
+        sourceImage.draw(in: CGRect.init(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        var imageData = newImage!.jpegData(compressionQuality:1.0)
+        var sizeOriginKB : CGFloat = CGFloat((imageData?.count)!) / 1024.0;
+        
+        //调整大小
+        var resizeRate = 0.9;
+        while (sizeOriginKB > maxSize && resizeRate > 0.1) {
+            imageData = newImage!.jpegData(compressionQuality:CGFloat(resizeRate))
+            sizeOriginKB = CGFloat((imageData?.count)!) / 1024.0;
+            resizeRate -= 0.1;
+        }
+        return imageData!
+    }
+    
+    
     @objc func getPathFromAsset(phasset:PHAsset, size:CGSize, ifOriginalPic:Int) ->   [String]{
         var path:[String] = [String]()
         PHImageManager.default().requestImage(for: phasset,
                                               targetSize: size, contentMode: .aspectFit,
                                               options: nil, resultHandler: { (image, info:[AnyHashable : Any]?) in
                                                 if(ifOriginalPic == 1){
-                                                    let imageURL = info!["PHImageFileURLKey"] as! URL
-                                                    path.append(imageURL.path)
-                                                    //                                                path = imageURL.path
-                                                    print("路径：",path)
+                                                    var isOrigin = ifOriginalPic
+                                                    //if (ifOriginalPic == 1){
+                                                        let vc = getLastMainViewController()
+                                                        let alert = UIAlertController(title: "是否选择原图", message: nil, preferredStyle: UIAlertController.Style.alert)
+                                                        
+                                                        let action1 = UIAlertAction(title: "是", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+                                                            isOrigin = 1
+                                                        })
+                                                        
+                                                        let action2 = UIAlertAction(title: "否", style: UIAlertAction.Style.default, handler: {(AlertAction:UIAlertAction) in
+                                                            isOrigin = 0
+                                                        })
+                                                        alert.addAction(action1)
+                                                        alert.addAction(action2)
+                                                        vc.present(alert, animated: true, completion: nil)
+                                                    //}
+                                                    print(isOrigin)
+                                                    
+                                                    if isOrigin == 1{
+                                                        let imageURL = info!["PHImageFileURLKey"] as! URL
+                                                        path.append(imageURL.path)
+                                                        //                                                path = imageURL.path
+                                                        print("路径：",path)
+                                                    }else{
+                                                        let fileManager = FileManager.default
+                                                        let rootPath = NSHomeDirectory() + "/Documents/"
+                                                        let name = info!["PHImageResultDeliveredImageFormatKey"] as! Int
+                                                        let filePath = rootPath  + "\(name)" + ".jpg"
+                                                        let imageData = image?.jpegData(compressionQuality: 1)
+                                                        fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+                                                        path.append(filePath)
+                                                        //                                                path = filePath
+                                                        print("路径：",path)
+                                                    }
+                                                    
                                                 }else{
                                                     let fileManager = FileManager.default
                                                     let rootPath = NSHomeDirectory() + "/Documents/"
