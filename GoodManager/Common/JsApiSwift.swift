@@ -374,7 +374,6 @@ class JsApiSwift: NSObject {
         let password = jsonString["password"].stringValue
         let statusBarColor = jsonString["password"].stringValue
         GoodManager.APPNELoginOut()
-
     }
     
     @objc func APPNEOpenTelBook(_ arg:String) {

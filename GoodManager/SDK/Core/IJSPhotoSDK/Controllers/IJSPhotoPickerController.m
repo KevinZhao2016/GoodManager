@@ -226,35 +226,39 @@ static NSString *const CellID = @"pickerID";
      __weak typeof (self) weakSelf = self;
     IJSAssetModel *currentModel = self.assetModelArr[currentIndex];
     IJSImagePickerController *vc = (IJSImagePickerController *) self.navigationController;
-    if (state) // 被选中
-    {
-        currentModel.isSelectedModel = YES;
-        currentModel.didMask = YES;
-        if (vc.selectedModels.count < vc.maxImagesCount) // 选中的个数没有超标
-        {
+    if (state){
+        // 被选中
+//        currentModel.isSelectedModel = YES;
+//        currentModel.didMask = YES;
+        if (vc.selectedModels.count < vc.maxImagesCount){
+            // 选中的个数没有超标
+            currentModel.isSelectedModel = YES;
+            currentModel.didMask = YES;
             [self.selectedModels addObject:currentModel];
             vc.selectedModels = self.selectedModels;   // 指向同一个地址
             currentModel.didClickModelArr = self.selectedModels;
             currentModel.cellButtonNnumber = currentModel.didClickModelArr.count; // 给button的赋值
-            if (vc.selectedModels.count == vc.maxImagesCount)
-            {
+            if (vc.selectedModels.count == vc.maxImagesCount){
                 [self _reloadAllCellWithNoAnimation];
             }
-        }
-        else // 选中超标
-        {
+        }else{
+            // 选中超标
+            state = NO;
+            currentModel.isSelectedModel = NO;
+            currentModel.didMask = NO;
             NSString *title = [NSString stringWithFormat:[NSBundle localizedStringForKey:@"Select a maximum of %zd photos"], vc.maxImagesCount];
-            [vc showAlertWithTitle:title];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
         }
-    }
-    else //  取消选中
-    {
+    }else{
+        //  取消选中
         currentModel.isSelectedModel = NO;
         currentModel.didMask = NO;
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf _reloadCellNoAniomation:currentModel];
-        });
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf _reloadCellNoAniomation:currentModel];
+//        });
         
         NSArray *selectedModels = [NSArray arrayWithArray:vc.selectedModels]; // 处理用户回调数据
         for (IJSAssetModel *newModel in selectedModels)
@@ -273,13 +277,11 @@ static NSString *const CellID = @"pickerID";
             tempModel.cellButtonNnumber = i + 1;
         }
         // 刷新返回之前的没有蒙版的状态
-        if (vc.selectedModels.count == vc.maxImagesCount - 1)
-        {
+        if (vc.selectedModels.count == vc.maxImagesCount - 1){
             [self _reloadAllCellWithNoAnimation];
         }
     }
     [self _resetToorBarStatus]; // 重置 toor
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (IJSAssetModel *tempModel in weakSelf.selectedModels)
         {
@@ -289,6 +291,8 @@ static NSString *const CellID = @"pickerID";
     // 刷新视频不可选中
     [self _maskVideoType];
 }
+
+
 /// 视频蒙版
 -(void)_maskVideoType
 {
@@ -549,7 +553,7 @@ static NSString *const CellID = @"pickerID";
     previewButton.backgroundColor = [IJSFColor colorWithR:27 G:81 B:28 alpha:1];
     [previewButton setTitle:[NSBundle localizedStringForKey:@"Preview"] forState:UIControlStateNormal];
     [previewButton setTitleColor:[IJSFColor colorWithR:98 G:103 B:109 alpha:1] forState:UIControlStateNormal];
-    previewButton.titleLabel.font = [UIFont systemFontOfSize: 14];
+    previewButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [previewButton addTarget:self action:@selector(_pushPreViewPhoto) forControlEvents:UIControlEventTouchUpInside];
     [toolBarView addSubview:previewButton];
     self.previewButton = previewButton;
@@ -562,7 +566,8 @@ static NSString *const CellID = @"pickerID";
     finishButton.layer.cornerRadius = 2;
     [finishButton setTitle:[NSBundle localizedStringForKey:@"Done"] forState:UIControlStateNormal];
     [finishButton setTitleColor:[IJSFColor colorWithR:77 G:128 B:78 alpha:1] forState:UIControlStateNormal];
-    finishButton.titleLabel.font = [UIFont systemFontOfSize: 14];
+    finishButton.titleLabel.font = [UIFont systemFontOfSize:14];
+
     [finishButton addTarget:self action:@selector(_finishSelectImageDisMiss) forControlEvents:UIControlEventTouchUpInside];
     [toolBarView addSubview:finishButton];
     self.finishButton = finishButton;

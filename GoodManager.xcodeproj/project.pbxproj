@@ -207,6 +207,7 @@
 		18A351AC2222B4CC00C62779 /* BankInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351AB2222B4CC00C62779 /* BankInfoViewController.m */; };
 		18B45DF42223136D00987D5A /* FileCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */; };
 		18B45DF52223136D00987D5A /* FileCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */; };
+		18B49584226C3DF900B239FB /* LxxPlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B49583226C3DF900B239FB /* LxxPlaySound.m */; };
 		18C7781E222E74C0006550BC /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7781D222E74C0006550BC /* Pay.swift */; };
 		560F870522599727003E6E3A /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 560F84F322599727003E6E3A /* AlipaySDK.bundle */; };
 		560F870622599727003E6E3A /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560F84F422599727003E6E3A /* AlipaySDK.framework */; };
@@ -968,6 +969,8 @@
 		18A351AB2222B4CC00C62779 /* BankInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankInfoViewController.m; sourceTree = "<group>"; };
 		18B45DF22223136D00987D5A /* FileCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileCellTableViewCell.swift; path = ../FileCellTableViewCell.swift; sourceTree = "<group>"; };
 		18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FileCellTableViewCell.xib; path = ../FileCellTableViewCell.xib; sourceTree = "<group>"; };
+		18B49582226C3DF900B239FB /* LxxPlaySound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LxxPlaySound.h; sourceTree = "<group>"; };
+		18B49583226C3DF900B239FB /* LxxPlaySound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LxxPlaySound.m; sourceTree = "<group>"; };
 		18C7781D222E74C0006550BC /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		560F81A622598F29003E6E3A /* Pods_GoodManager_NIMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GoodManager_NIMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2002,8 +2005,8 @@
 		1810767B2267B17100CFCD5A /* UtilTool */ = {
 			isa = PBXGroup;
 			children = (
-				1810767E2267B21800CFCD5A /* checkNet.h */,
-				1810767F2267B21800CFCD5A /* checkNet.m */,
+				18B49581226C3DA600B239FB /* LxxPlaySound */,
+				18BF8635226C3D3000F8A2DF /* checkNet */,
 			);
 			path = UtilTool;
 			sourceTree = "<group>";
@@ -2616,6 +2619,24 @@
 				1814CD3E2223B6DC00AF66D1 /* FileListTableViewController.xib */,
 			);
 			path = FileList;
+			sourceTree = "<group>";
+		};
+		18B49581226C3DA600B239FB /* LxxPlaySound */ = {
+			isa = PBXGroup;
+			children = (
+				18B49582226C3DF900B239FB /* LxxPlaySound.h */,
+				18B49583226C3DF900B239FB /* LxxPlaySound.m */,
+			);
+			path = LxxPlaySound;
+			sourceTree = "<group>";
+		};
+		18BF8635226C3D3000F8A2DF /* checkNet */ = {
+			isa = PBXGroup;
+			children = (
+				1810767E2267B21800CFCD5A /* checkNet.h */,
+				1810767F2267B21800CFCD5A /* checkNet.m */,
+			);
+			path = checkNet;
 			sourceTree = "<group>";
 		};
 		560F84F022599727003E6E3A /* Classes */ = {
@@ -4493,6 +4514,9 @@
 							com.apple.AccessWiFi = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -4812,6 +4836,7 @@
 				186C0A2522432C9C000E27F1 /* UITextField+IJSUTextField.m in Sources */,
 				560F8AD9225B944C003E6E3A /* NIMKitDevice.m in Sources */,
 				569CEA56226AB3BA00ECEA22 /* IQUITextFieldView+Additions.m in Sources */,
+				18B49584226C3DF900B239FB /* LxxPlaySound.m in Sources */,
 				560F87C822599728003E6E3A /* UIImage+NTESColor.m in Sources */,
 				186C0A1822432C9C000E27F1 /* IJSQRCodeManager.m in Sources */,
 				186C09F422432C9C000E27F1 /* IJSAlbumModel.m in Sources */,

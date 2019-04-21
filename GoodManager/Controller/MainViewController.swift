@@ -15,7 +15,7 @@ import SwiftyJSON
 import Reachability
 
 class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate,WeiboSDKDelegate{
-   
+    
     var chooseSingleImage = false
     
     // 屏幕宽高
@@ -28,6 +28,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var noteLabel:UILabel = UILabel()
     var newButton:UIButton = UIButton()
     
+    // 提醒方式 0：无声无震动  1：有声无震动（未实现） 2：无声有震动  3：有声有震动
+    var remaindWay = 3
     
     var mark:String = "main"
     var url:String = mainUrl
