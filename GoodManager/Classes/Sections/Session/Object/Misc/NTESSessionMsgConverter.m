@@ -134,7 +134,7 @@
     }else{
         displayName     = [NSString stringWithFormat:@"%@",[NSUUID UUID].UUIDString.MD5String];
     }
-    fileObject.displayName    = displayName;
+    fileObject.displayName    = extension;
     NIMMessage *message       = [[NIMMessage alloc] init];
     message.messageObject     = fileObject;
     message.apnsContent = @"发来了一个文件";

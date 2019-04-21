@@ -93,13 +93,14 @@
           
             NSMutableArray *datas = [NSMutableArray array];
             NSMutableArray *imageVs = [NSMutableArray array];
-            NSInteger index = 0;
-            for (int i=0; i<objects.count; i++) {
-                NTESMediaPreviewObject *object = objects[i];
+            NSInteger imageIndex = 0;
+            for (int i= 0; i< objects.count; i++) {
+                NSInteger index = objects.count - 1 -i;
+                NTESMediaPreviewObject *object = objects[index];
                 [datas addObject:object.url];
                 
                 if ([object.objectId isEqualToString:self.currentItem.itemId]) {
-                    index = i;
+                    imageIndex = datas.count - 1;
                 }
                 
                 UIImageView *image1  = [UIImageView new];
@@ -107,12 +108,11 @@
                 [imageVs addObject:image1];
             
             }
-//             NSArray * bigImages = @[@"http://img01.cztv.com/201508/19/9008d57f59984e7b188ab69fbb458915.jpg",@"http://img2.100bt.com/upload/ttq/20140315/1394865797382_middle.jpeg",@"http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1301/23/c0/17652199_1358923371562.jpg"];
+
             
             
             
-            
-            LZImageBrowserViewController * imageBrowserViewController = [[LZImageBrowserViewController alloc] initWithUrlStr:datas originImageViews:imageVs selectPage:index];
+            LZImageBrowserViewController * imageBrowserViewController = [[LZImageBrowserViewController alloc] initWithUrlStr:datas originImageViews:imageVs selectPage:imageIndex];
             [self.view addSubview:imageBrowserViewController.view];
             [self addChildViewController:imageBrowserViewController];
             
