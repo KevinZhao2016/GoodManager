@@ -15,6 +15,9 @@
 #import "NTESMediaPreviewViewController.h"
 #import "UIAlertView+NTESBlock.h"
 #import "NIMKitAuthorizationTool.h"
+#import "LZImageBrowserManger.h"
+#import "LZImageBrowserHeader.h"
+#import "LZImageBrowserViewController.h"
 
 @implementation NTESGalleryItem
 
@@ -29,6 +32,8 @@
 @property (nonatomic,strong)    NTESGalleryItem *currentItem;
 @property (nonatomic,strong)    NIMSession *session;
 @property (nonatomic,strong)  IBOutlet  UIScrollView *scrollView;
+
+@property(nonatomic,strong)LZImageBrowserManger *imageBrowserManger;
 @end
 
 @implementation NTESGalleryViewController
@@ -49,6 +54,85 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
+    
+    NIMMessageSearchOption *option = [[NIMMessageSearchOption alloc] init];
+    option.limit = 0;
+    option.messageTypes = @[@(NIMMessageTypeImage)];
+    __weak typeof(self) weakSelf = self;
+    [[NIMSDK sharedSDK].conversationManager searchMessages:self.session option:option result:^(NSError * _Nullable error, NSArray<NIMMessage *> * _Nullable messages) {
+        if (weakSelf)
+        {
+            NSMutableArray *objects = [[NSMutableArray alloc] init];
+            NTESMediaPreviewObject *focusObject;
+            
+            //显示的时候新的在前老的在后，逆序排列
+            //如果需要微信的显示顺序，则直接将这段代码去掉即可
+            NSArray *array = messages.reverseObjectEnumerator.allObjects;
+            
+            for (NIMMessage *message in array)
+            {
+                switch (message.messageType) {
+                    case NIMMessageTypeVideo:{
+                       
+                        break;
+                    }
+                    case NIMMessageTypeImage:{
+                        NTESMediaPreviewObject *object = [weakSelf previewObjectByImage:message.messageObject];
+                        //图片 thumbPath 一致，就认为是本次浏览的图片
+                        if ([message.messageId isEqualToString:weakSelf.currentItem.itemId])
+                        {
+                            focusObject = object;
+                        }
+                        [objects addObject:object];
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }
+          
+            NSMutableArray *datas = [NSMutableArray array];
+            NSMutableArray *imageVs = [NSMutableArray array];
+            NSInteger index = 0;
+            for (int i=0; i<objects.count; i++) {
+                NTESMediaPreviewObject *object = objects[i];
+                [datas addObject:object.url];
+                
+                if ([object.objectId isEqualToString:self.currentItem.itemId]) {
+                    index = i;
+                }
+                
+                UIImageView *image1  = [UIImageView new];
+                image1.frame = CGRectMake(0, 0, object.imageSize.width, object.imageSize.height);
+                [imageVs addObject:image1];
+            
+            }
+//             NSArray * bigImages = @[@"http://img01.cztv.com/201508/19/9008d57f59984e7b188ab69fbb458915.jpg",@"http://img2.100bt.com/upload/ttq/20140315/1394865797382_middle.jpeg",@"http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1301/23/c0/17652199_1358923371562.jpg"];
+            
+            
+            
+            
+            LZImageBrowserViewController * imageBrowserViewController = [[LZImageBrowserViewController alloc] initWithUrlStr:datas originImageViews:imageVs selectPage:index];
+            [self.view addSubview:imageBrowserViewController.view];
+            [self addChildViewController:imageBrowserViewController];
+            
+            
+            
+        }
+    }];
+
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 
@@ -143,7 +227,7 @@
     [button setImage:[UIImage imageNamed:@"icon_gallery_more_pressed"] forState:UIControlStateHighlighted];
     [button sizeToFit];
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = buttonItem;
+//    self.navigationItem.rightBarButtonItem = buttonItem;
 }
 
 
