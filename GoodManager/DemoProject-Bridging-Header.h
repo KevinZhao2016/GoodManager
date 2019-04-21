@@ -50,5 +50,6 @@
 // 微博
 #import <Weibo_SDK/WeiboSDK.h>
 // 判断网络状况
-//#import "RealReachability.h"
 #import "checkNet.h"
+// 改变震动、响铃模式
+#import "LxxPlaySound.h"

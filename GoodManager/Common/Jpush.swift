@@ -40,29 +40,43 @@ func APPPushCancelAlias()  {
         
     }, seq: 110)
 }
+
 //    设置新消息提醒方式接口
 func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
     let Main = getLastMainViewController()
+    
     let checkNetObject = checkNet()
     let isReach = checkNetObject.isReach()
-    print(isReach)
     if(isReach){
+        // 网络连接成功
+        let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
+        if ifOpenVoice == 0 {
+            //不开声音
+            print("不开声音")
+            // 不设置声音就会自动静音
+            entity.types = Int(JPAuthorizationOptions.alert.rawValue);
+        }else{
+            //开启声音
+            print("开启声音")
+            entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+            
+        }
+        if ifOpenVibration == 0 {
+            //不开震动
+            print("不开震动")
+            entity.types = Int(JPAuthorizationOptions.alert.rawValue);
+        }else{
+            //开启震动
+            print("开启震动")
+            entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+        }
         
+        let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate;
+        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: delegate);
     }else{
         Main.nonetLoad()
         return ;
     }
-    let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
-    if ifOpenVoice == 0 {
-        
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue);
-    }else
-    {
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
-    }
-    let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate;
-    JPUSHService.register(forRemoteNotificationConfig: entity, delegate: delegate);
-    
 }
 
 
