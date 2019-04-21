@@ -597,6 +597,13 @@
 		569CEA58226AB3BA00ECEA22 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA44226AB3B900ECEA22 /* IQUIView+Hierarchy.m */; };
 		569CEA59226AB3BA00ECEA22 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA49226AB3B900ECEA22 /* IQUIViewController+Additions.m */; };
 		569CEA5A226AB3BA00ECEA22 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA4B226AB3B900ECEA22 /* IQKeyboardReturnKeyHandler.m */; };
+		569CEA6B226C058E00ECEA22 /* LZImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA5D226C058E00ECEA22 /* LZImageBrowserViewController.m */; };
+		569CEA6C226C058E00ECEA22 /* LZImageBrowserSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA5F226C058E00ECEA22 /* LZImageBrowserSubView.m */; };
+		569CEA6D226C058E00ECEA22 /* LZImageBrowserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA63226C058E00ECEA22 /* LZImageBrowserModel.m */; };
+		569CEA6E226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA64226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.m */; };
+		569CEA6F226C058E00ECEA22 /* LZImageBrowserMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA65226C058E00ECEA22 /* LZImageBrowserMainView.m */; };
+		569CEA70226C058E00ECEA22 /* LZImageBrowserTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA67226C058E00ECEA22 /* LZImageBrowserTranslation.m */; };
+		569CEA71226C058E00ECEA22 /* LZImageBrowserManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA69226C058E00ECEA22 /* LZImageBrowserManger.m */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
 		6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B58D2B9221EA124004D6D91 /* Nim.swift */; };
 /* End PBXBuildFile section */
@@ -1734,6 +1741,21 @@
 		569CEA49226AB3B900ECEA22 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
 		569CEA4A226AB3B900ECEA22 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		569CEA4B226AB3B900ECEA22 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		569CEA5C226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserForceTouchViewController.h; sourceTree = "<group>"; };
+		569CEA5D226C058E00ECEA22 /* LZImageBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserViewController.m; sourceTree = "<group>"; };
+		569CEA5E226C058E00ECEA22 /* LZImageBrowserTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserTranslation.h; sourceTree = "<group>"; };
+		569CEA5F226C058E00ECEA22 /* LZImageBrowserSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserSubView.m; sourceTree = "<group>"; };
+		569CEA60226C058E00ECEA22 /* LZImageBrowserMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserMainView.h; sourceTree = "<group>"; };
+		569CEA61226C058E00ECEA22 /* LZImageBrowserManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserManger.h; sourceTree = "<group>"; };
+		569CEA62226C058E00ECEA22 /* LZImageBrowserHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserHeader.h; sourceTree = "<group>"; };
+		569CEA63226C058E00ECEA22 /* LZImageBrowserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserModel.m; sourceTree = "<group>"; };
+		569CEA64226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserForceTouchViewController.m; sourceTree = "<group>"; };
+		569CEA65226C058E00ECEA22 /* LZImageBrowserMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserMainView.m; sourceTree = "<group>"; };
+		569CEA66226C058E00ECEA22 /* LZImageBrowserSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserSubView.h; sourceTree = "<group>"; };
+		569CEA67226C058E00ECEA22 /* LZImageBrowserTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserTranslation.m; sourceTree = "<group>"; };
+		569CEA68226C058E00ECEA22 /* LZImageBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserViewController.h; sourceTree = "<group>"; };
+		569CEA69226C058E00ECEA22 /* LZImageBrowserManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserManger.m; sourceTree = "<group>"; };
+		569CEA6A226C058E00ECEA22 /* LZImageBrowserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserModel.h; sourceTree = "<group>"; };
 		6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DemoProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B58D2B9221EA124004D6D91 /* Nim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nim.swift; sourceTree = "<group>"; };
 		A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3705,6 +3727,7 @@
 		560F87EB22599793003E6E3A /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				569CEA5B226C058E00ECEA22 /* LZImageBrowser */,
 				569CEA27226AB3B900ECEA22 /* IQKeyboardManager */,
 				560F89A2225B944B003E6E3A /* NIMKit */,
 				560F87EC22599793003E6E3A /* NIMSDK */,
@@ -4353,6 +4376,28 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		569CEA5B226C058E00ECEA22 /* LZImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				569CEA5C226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.h */,
+				569CEA5D226C058E00ECEA22 /* LZImageBrowserViewController.m */,
+				569CEA5E226C058E00ECEA22 /* LZImageBrowserTranslation.h */,
+				569CEA5F226C058E00ECEA22 /* LZImageBrowserSubView.m */,
+				569CEA60226C058E00ECEA22 /* LZImageBrowserMainView.h */,
+				569CEA61226C058E00ECEA22 /* LZImageBrowserManger.h */,
+				569CEA62226C058E00ECEA22 /* LZImageBrowserHeader.h */,
+				569CEA63226C058E00ECEA22 /* LZImageBrowserModel.m */,
+				569CEA64226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.m */,
+				569CEA65226C058E00ECEA22 /* LZImageBrowserMainView.m */,
+				569CEA66226C058E00ECEA22 /* LZImageBrowserSubView.h */,
+				569CEA67226C058E00ECEA22 /* LZImageBrowserTranslation.m */,
+				569CEA68226C058E00ECEA22 /* LZImageBrowserViewController.h */,
+				569CEA69226C058E00ECEA22 /* LZImageBrowserManger.m */,
+				569CEA6A226C058E00ECEA22 /* LZImageBrowserModel.h */,
+			);
+			path = LZImageBrowser;
+			sourceTree = "<group>";
+		};
 		6C1248B6F0F6E73EEFDCD2C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -4745,6 +4790,7 @@
 				560F874A22599728003E6E3A /* NTESMutiClientsHeaderView.m in Sources */,
 				560F875422599728003E6E3A /* NTESSignSettingViewController.m in Sources */,
 				560F8B03225B944C003E6E3A /* NIMTeamNotifyUpdateViewController.m in Sources */,
+				569CEA6D226C058E00ECEA22 /* LZImageBrowserModel.m in Sources */,
 				560F878A22599728003E6E3A /* NTESExportMessageDelegateImpl.m in Sources */,
 				560F8AF6225B944C003E6E3A /* NIMTeamMemberListViewController.m in Sources */,
 				560F8B1A225B944D003E6E3A /* NIMSessionTableAdapter.m in Sources */,
@@ -4807,6 +4853,7 @@
 				560F876222599728003E6E3A /* NTESSettingSwitcherCell.m in Sources */,
 				560F87E222599728003E6E3A /* NTESFPSLabel.m in Sources */,
 				560F8B3A225B944D003E6E3A /* M80AttributedLabel+NIMKit.m in Sources */,
+				569CEA6B226C058E00ECEA22 /* LZImageBrowserViewController.m in Sources */,
 				560F8AD4225B944C003E6E3A /* NIMKitResourceResizer.m in Sources */,
 				569CEA58226AB3BA00ECEA22 /* IQUIView+Hierarchy.m in Sources */,
 				560F873D22599728003E6E3A /* NTESChatroomTextContentView.m in Sources */,
@@ -4870,6 +4917,7 @@
 				560F8B2C225B944D003E6E3A /* NIMSessionFileTransContentView.m in Sources */,
 				560F877222599728003E6E3A /* NTESSessionChartletContentView.m in Sources */,
 				560F8B2E225B944D003E6E3A /* NIMSessionUnknowContentView.m in Sources */,
+				569CEA71226C058E00ECEA22 /* LZImageBrowserManger.m in Sources */,
 				560F87C622599728003E6E3A /* UIScrollView+NTESDirection.m in Sources */,
 				186C0A0F22432C9C000E27F1 /* TOCropView.m in Sources */,
 				18437F0522395CF300E29DA1 /* XMShareView.m in Sources */,
@@ -4891,6 +4939,7 @@
 				560F871E22599728003E6E3A /* NTESContactAddFriendViewController.m in Sources */,
 				560F875F22599728003E6E3A /* NTESSettingPortraitCell.m in Sources */,
 				560F87A522599728003E6E3A /* mvp.vsh.c in Sources */,
+				569CEA6C226C058E00ECEA22 /* LZImageBrowserSubView.m in Sources */,
 				560F8ACB225B944C003E6E3A /* NIMContactSelectViewController.m in Sources */,
 				569CEA57226AB3BA00ECEA22 /* IQUIScrollView+Additions.m in Sources */,
 				186C0A2122432C9C000E27F1 /* IJSLodingView.m in Sources */,
@@ -4953,6 +5002,7 @@
 				18A3519E2222ACF900C62779 /* UIImage+Extend.m in Sources */,
 				560F8ACE225B944C003E6E3A /* NIMContactDataCell.m in Sources */,
 				560F876922599728003E6E3A /* NTESSearchLocalHistoryObject.m in Sources */,
+				569CEA6E226C058E00ECEA22 /* LZImageBrowserForceTouchViewController.m in Sources */,
 				560F877A22599728003E6E3A /* NTESSearchMessageContentCell.m in Sources */,
 				186C0A0422432C9C000E27F1 /* IJSDExportView.m in Sources */,
 				560F874922599728003E6E3A /* NTESTextHeaderView.m in Sources */,
@@ -5092,6 +5142,7 @@
 				560F878E22599728003E6E3A /* NTESImportMessageDelegateImpl.m in Sources */,
 				0A4CDEAC21D4A2FB00E28E95 /* File.swift in Sources */,
 				560F879922599728003E6E3A /* NTESVideoDataTimeoutChecker.m in Sources */,
+				569CEA6F226C058E00ECEA22 /* LZImageBrowserMainView.m in Sources */,
 				0A3E2F9D2220339A00BD3124 /* ExUIColor.swift in Sources */,
 				560F8ADF225B944C003E6E3A /* NIMInputMoreContainerView.m in Sources */,
 				18A3516C2222A88000C62779 /* JYBDNewFormeScaningV.m in Sources */,
@@ -5112,6 +5163,7 @@
 				560F8B28225B944D003E6E3A /* NIMSessionAudioContentView.m in Sources */,
 				186C09E722432C9C000E27F1 /* IJSImageMosaicView.m in Sources */,
 				560F8AE4225B944C003E6E3A /* NIMInputToolBar.m in Sources */,
+				569CEA70226C058E00ECEA22 /* LZImageBrowserTranslation.m in Sources */,
 				186C09E322432C9C000E27F1 /* IJSImageToolBase.m in Sources */,
 				18437EC4223951AB00E29DA1 /* Share.swift in Sources */,
 				560F8AF3225B944C003E6E3A /* NIMTeamMemberCardViewController.m in Sources */,
