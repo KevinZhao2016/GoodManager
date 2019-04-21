@@ -10,8 +10,9 @@ import UIKit
 import QuickLook
 
 class FileListTableViewController: UITableViewController {
-
+    typealias  block = (_ str: String,_ url:String) -> Void
     var callbackfun:String?
+    var fileBlock:block?
     
     
     // 文件管理
@@ -28,6 +29,13 @@ class FileListTableViewController: UITableViewController {
     var fileURLs = [String]()
     
     //返回cell个数
+    
+    
+   @objc func setBlock(_ block:@escaping block)
+    {
+        self.fileBlock = block;
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fileNames.count
     }
@@ -58,7 +66,15 @@ class FileListTableViewController: UITableViewController {
         print("-------------cell clicked-------------")
         print("indexPath:    \(indexPath))")
         print("fileName:     \(fileNames[indexPath.row])")
-        ExecWinJS(JSFun: self.callbackfun! + "(\"" + "\(self.fileURLs[indexPath.row])" + "\")")
+        
+        if let myBlock = self.fileBlock{
+          myBlock(fileNames[indexPath.row],self.fileURLs[indexPath.row]);
+        }else
+        {
+          ExecWinJS(JSFun: self.callbackfun! + "(\"" + "\(self.fileURLs[indexPath.row])" + "\")")
+        }
+    
+        
         back()
     }
 

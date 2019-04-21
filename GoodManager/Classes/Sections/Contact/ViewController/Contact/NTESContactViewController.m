@@ -138,7 +138,7 @@ NIMEventSubscribeManagerDelegate,UISearchBarDelegate> {
 {
     self.searchBar = [[UISearchBar alloc] init];// 初始化，不解释
     self.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
-    [self.searchBar setPlaceholder:@"Search"];// 搜索框的占位符
+    [self.searchBar setPlaceholder:@"搜索"];// 搜索框的占位符
     [self.searchBar setBarStyle:UIBarStyleDefault];// 搜索框样式
     self.searchBar.showsCancelButton = YES;
     self.searchBar.delegate = self;

@@ -90,7 +90,7 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
     //会话界面发送拍摄的视频，拍摄结束后点击发送后可能顶部会有红条，导致的界面错位。
     self.view.frame = [UIScreen mainScreen].bounds;
     if (self.hexColor) {
-        UIColor *color = [UIColor blackColor];
+        UIColor *color = [UIColor colorWithHexString:self.hexColor];
         UIView *view = [[UIView alloc]init];
         view.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
         [self.view addSubview:view];

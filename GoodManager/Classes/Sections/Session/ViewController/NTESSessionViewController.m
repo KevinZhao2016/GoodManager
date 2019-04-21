@@ -319,11 +319,18 @@ NIMAdvancedTeamCardVCProtocol>
 - (void)onTapMediaItemFileTrans:(NIMMediaItem *)item
 {
     
+  __weak typeof(self) wself = self;
+    FileListTableViewController *fileListVC = [[FileListTableViewController alloc]init];
+    [fileListVC setBlock:^(NSString * name, NSString * url) {
+        NSLog(@"%@---%@",name,url);
+        NSData *fileData = [NSData dataWithContentsOfFile:url];
+         [wself sendMessage:[NTESSessionMsgConverter msgWithFileData:fileData extension:name]];
+    }];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:fileListVC];
+    [self presentViewController:nav animated:YES completion:nil];
+ 
 
-    
-    
-    
-    
+    return;
     
     
     
@@ -337,7 +344,7 @@ NIMAdvancedTeamCardVCProtocol>
     
     NTESFileTransSelectViewController *vc = [[NTESFileTransSelectViewController alloc]
                                              initWithNibName:nil bundle:nil];
-    __weak typeof(self) wself = self;
+  
     __weak typeof(vc)   wVC = vc;
     vc.completionBlock = ^void(id sender,NSString *ext){
         if ([sender isKindOfClass:[NSString class]]) {
