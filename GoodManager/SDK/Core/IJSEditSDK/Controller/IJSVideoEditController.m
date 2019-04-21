@@ -318,7 +318,7 @@
             return;
         }
         weakSelf.isDoing = YES;
-        IJSLodingView *lodingView = [IJSLodingView showLodingViewAddedTo:weakSelf.view title:@"正在处理... ..."];
+        IJSLodingView *lodingView = [IJSLodingView showLodingViewAddedTo:weakSelf.view title:@"正在从icloud同步... ..."];
         [IJSVideoManager cutVideoAndExportVideoWithVideoAsset:weakSelf.resultAvasset startTime:weakSelf.startTime endTime:weakSelf.endTime completion:^(NSURL *outputPath, NSError *error, IJSVideoState state) {
 
             [lodingView removeFromSuperview];

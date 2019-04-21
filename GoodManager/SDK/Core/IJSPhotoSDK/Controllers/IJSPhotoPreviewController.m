@@ -1040,7 +1040,7 @@ static NSString *const IJSSelectedCellID = @"IJSSelectedCell";
                 maxTime = duration;
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.lodingView = [IJSLodingView showLodingViewAddedTo:self.view title:@"正在处理... ..."];
+                weakSelf.lodingView = [IJSLodingView showLodingViewAddedTo:self.view title:@"正在从icloud同步... ..."];
             });
             
             [IJSVideoManager cutVideoAndExportVideoWithVideoAsset:asset startTime:0 endTime:maxTime completion:^(NSURL *outputPath, NSError *error, IJSVideoState state) {
