@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577351267.524286"
+            timestampString = "577530140.26814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "MainViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577351267.524714"
+            timestampString = "577530140.268738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "600"
-            endingLineNumber = "600"
+            startingLineNumber = "602"
+            endingLineNumber = "602"
             landmarkName = "resetImgSize(sourceImage:maxImageLenght:maxSizeKB:)"
             landmarkType = "7">
             <Locations>
@@ -682,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577351267.524788"
+            timestampString = "577530140.269019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "586"
-            endingLineNumber = "586"
+            startingLineNumber = "588"
+            endingLineNumber = "588"
             landmarkName = "image(image:didFinishSavingWithError:contextInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -746,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Common/Jpush.swift"
-            timestampString = "577526355.650466"
+            timestampString = "577530140.269429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "APPPushMsgRemindType(_:ifOpenVibration:)"
             landmarkType = "9">
          </BreakpointContent>
