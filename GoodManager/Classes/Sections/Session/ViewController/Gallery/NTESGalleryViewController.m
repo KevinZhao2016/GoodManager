@@ -227,7 +227,7 @@
     [button setImage:[UIImage imageNamed:@"icon_gallery_more_pressed"] forState:UIControlStateHighlighted];
     [button sizeToFit];
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = buttonItem;
+//    self.navigationItem.rightBarButtonItem = buttonItem;
 }
 
 
