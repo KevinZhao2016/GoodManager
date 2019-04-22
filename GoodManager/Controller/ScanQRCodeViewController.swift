@@ -139,7 +139,15 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         label.textColor = UIColor.white
         label.textAlignment = .center
         
+        let flash = UILabel.init(frame: CGRect.init(x: 0, y: (height + scanWidth)/2 + 40, width: width, height: 20))
+        flash.text = "闪光灯"
+        flash.font = UIFont.systemFont(ofSize: 17)
+        flash.textColor = UIColor.white
+        flash.textAlignment = .center
+        
         self.view.addSubview(label)
+        
+        self.view.addSubview(flash)
     }
     
     //MARK: ------扫描线动画-------
