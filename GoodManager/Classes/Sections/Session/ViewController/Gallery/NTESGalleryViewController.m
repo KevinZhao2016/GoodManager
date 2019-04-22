@@ -185,7 +185,7 @@
         
         if ([_currentItem.name length])
         {
-            self.navigationItem.title = _currentItem.name;
+//            self.navigationItem.title = _currentItem.name;
         }
         
         UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onLongPressImageView:)];
