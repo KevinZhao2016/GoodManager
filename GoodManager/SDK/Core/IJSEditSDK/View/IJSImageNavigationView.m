@@ -31,7 +31,7 @@
     [self addSubview:navigationView];
 
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancleButton.frame = CGRectMake(10, 0, 70, self.js_height);
+    cancleButton.frame = CGRectMake(10, 20, 70, self.js_height);
     [cancleButton setTitle:[NSBundle localizedStringForKey:@"Cancel"] forState:UIControlStateNormal];
     [cancleButton addTarget:self action:@selector(cancleButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [cancleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -40,7 +40,7 @@
     self.cancleButton.js_centerY = self.js_height * 0.5;
 
     UIButton *finishButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    finishButton.frame = CGRectMake(JSScreenWidth - 80, 0, 70, self.js_height);
+    finishButton.frame = CGRectMake(JSScreenWidth - 80, 20, 70, self.js_height);
     [finishButton setTitle:[NSBundle localizedStringForKey:@"OK"] forState:UIControlStateNormal];
     [finishButton addTarget:self action:@selector(finishButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [navigationView addSubview:finishButton];

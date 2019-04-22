@@ -52,6 +52,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     // 文件分享
     var documentInteractionController = UIDocumentInteractionController()
     
+    // 启动页接口地址
+    var domainName = "http://api.yiganzi.cn"
+    
     // UI
     var imageView:UIImageView = UIImageView()
     let button:UIButton = UIButton(type: .custom);
