@@ -80,8 +80,6 @@ extension PreviewFileViewController: QLPreviewControllerDelegate, QLPreviewContr
 //        let documentPath = NSHomeDirectory() + "/Documents"
         print("%@",path);
         let fileUrl = URL(fileURLWithPath:  path)
-        
-        
         return fileUrl as QLPreviewItem
     }
 }

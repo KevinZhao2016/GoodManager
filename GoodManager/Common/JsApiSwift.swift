@@ -265,9 +265,20 @@ class JsApiSwift: NSObject {
     func notSupportedPreviewAlert(path:String) {
         let vc = getLastMainViewController()
         let alert = UIAlertController(title: "文件不支持预览!", message: "请分享到其他应用", preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "确定", style: UIAlertAction.Style.cancel, handler: {(alertAction:UIAlertAction) in
-            GoodManager.APPPreviewFile(path: path)
+        let action_1 = UIAlertAction(title: "分享", style: UIAlertAction.Style.default, handler: {(alertAction:UIAlertAction) in
+            
+            // 文档路径
+            let url = NSURL(fileURLWithPath: path)
+            vc.documentInteractionController = UIDocumentInteractionController(url: url as URL)
+            vc.documentInteractionController.presentOpenInMenu(from: CGRect.zero, in: vc.view, animated: true)
+            vc.documentInteractionController.delegate = vc
+            
+            //GoodManager.APPPreviewFile(path: path)
         })
+        let action = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel, handler: {(alertAction:UIAlertAction) in
+            //GoodManager.APPPreviewFile(path: path)
+        })
+        alert.addAction(action_1)
         alert.addAction(action)
         vc.present(alert, animated: true, completion: nil)
     }

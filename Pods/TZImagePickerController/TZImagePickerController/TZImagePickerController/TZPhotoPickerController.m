@@ -358,6 +358,7 @@ static CGFloat itemMargin = 5;
     [self pushPhotoPrevireViewController:photoPreviewVc needCheckSelectedModels:YES];
 }
 
+// 点击  原图按钮
 - (void)originalPhotoButtonClick {
     _originalPhotoButton.selected = !_originalPhotoButton.isSelected;
     _isSelectOriginalPhoto = _originalPhotoButton.isSelected;
