@@ -13,8 +13,8 @@
 #import "IJSImageNavigationView.h"
 #import "IJSExtension.h"
 @interface IJSIImputTextView () <UITextViewDelegate>
-@property (nonatomic, weak) UIView *backView; //
-@property (nonatomic, strong) UIVisualEffectView *effectView;
+@property (nonatomic, weak) UIView *backView;                       //
+@property (nonatomic, strong) UIVisualEffectView *effectView;       //
 @property (nonatomic, assign) CGFloat keyboardHeight;               // 键盘高度
 @property (nonatomic, strong) IJSIColorButtonView *colorButtonView; // 颜色
 @property (nonatomic, weak) UITextView *textView;                   // 文字框
@@ -34,8 +34,8 @@
     return self;
 }
 
-- (void)_createdUI
-{
+- (void)_createdUI{
+    
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.js_width, self.js_height)];
     [self addSubview:backView];
     backView.backgroundColor = [UIColor clearColor];
@@ -43,6 +43,7 @@
 
     UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     self.effectView = [[UIVisualEffectView alloc] initWithEffect:blur];
+    self.effectView.backgroundColor = [UIColor clearColor];
     self.effectView.frame = CGRectMake(0, 0, JSScreenWidth, JSScreenHeight);
     [backView addSubview:self.effectView];
 
@@ -56,6 +57,7 @@
     {
         navigationView  = [[IJSImageNavigationView alloc] initWithFrame:CGRectMake(0, 0, JSScreenWidth, IJSINavigationHeight)];
     }
+
     navigationView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
     [backView addSubview:navigationView];
     self.navigationView = navigationView;
@@ -82,8 +84,8 @@
     [backView addSubview:colorButtonView];
     self.colorButtonView = colorButtonView;
 }
-- (void)_callBackBlock
-{
+
+- (void)_callBackBlock{
     __weak typeof(self) weakSelf = self;
     self.colorButtonView.colorCallBack = ^(UIColor *color) {
         weakSelf.textView.textColor = color;
@@ -132,7 +134,8 @@
     CGRect keyboardRect = [aValue CGRectValue];
     self.keyboardHeight = keyboardRect.size.height;
     self.colorButtonView.frame = CGRectMake(0, JSScreenHeight - self.keyboardHeight  - ColorButtonViewWidth, JSScreenWidth, ColorButtonViewWidth);
-    self.textView.frame = CGRectMake(IJSIImputTextMarginLeft, IJSGStatusBarAndNavigationBarHeight, JSScreenWidth - 2 * IJSIImputTextMarginLeft, self.colorButtonView.frame.origin.y);
+//    self.textView.frame = CGRectMake(IJSIImputTextMarginLeft, IJSGStatusBarAndNavigationBarHeight, JSScreenWidth - 2 * IJSIImputTextMarginLeft, self.colorButtonView.frame.origin.y);
+    self.textView.frame = CGRectMake(IJSIImputTextMarginLeft, 35, JSScreenWidth - 2 * IJSIImputTextMarginLeft, self.colorButtonView.frame.origin.y);
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification

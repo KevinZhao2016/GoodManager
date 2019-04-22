@@ -264,7 +264,7 @@ class JsApiSwift: NSObject {
     }
     func notSupportedPreviewAlert(path:String) {
         let vc = getLastMainViewController()
-        let alert = UIAlertController(title: "文件不支持预览!", message: "请分享到其他应用", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "该文件暂不支持预览!", message: "请分享到其他应用", preferredStyle: UIAlertController.Style.alert)
         let action_1 = UIAlertAction(title: "分享", style: UIAlertAction.Style.default, handler: {(alertAction:UIAlertAction) in
             
             // 文档路径
@@ -434,6 +434,12 @@ class JsApiSwift: NSObject {
         let sign = jsonString["sign"].stringValue
         let callBackfunName = jsonString["callBackfunName"].stringValue
         GoodManager.APPWXPay(partnerId: partnerId, prepayId: prepayId, packageValue: packageValue, nonceStr: nonceStr, timeStamp: timeStamp, sign:sign, callBackfunName: callBackfunName)
+    }
+    
+    @objc func APPSetStartupPageDomainName(_ arg:String){
+        let jsonString = JSON(parseJSON: arg)
+        let domainName = jsonString["domainName"].stringValue
+        
     }
     
     // 判断接口是否存在

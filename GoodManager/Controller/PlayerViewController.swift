@@ -15,10 +15,19 @@ import CoreMedia
 class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelegate {
     var player = Player()
     //let myProgressView = UIProgressView(frame: CGRectMake(0, UIScreen.main.bounds.height, UIScreen.main.bounds.width, 5))
+    
+    // 进度条
+//    var slider = UISlider()
+    
     var progressView = UIProgressView(progressViewStyle:UIProgressView.Style.default)
+    
+    var beginTouchX:CGFloat = 0.0
+    var endTouchX:CGFloat = 0.0
+    
     var urlpath:String?
     var playfromtime:Double?
     var callbackfun:String?
+    
     
     let noti = NotificationCenter.default.addObserver(self, selector: Selector("receiverNotification"), name:UIDevice.orientationDidChangeNotification, object: nil)
 
@@ -90,15 +99,16 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
         self.view.addSubview(self.player.view)
         self.player.didMove(toParent: self)
         self.player.fillMode = PlayerFillMode.resizeAspect
+        
         let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.player.view.addGestureRecognizer(tapGestureRecognizer)
         
+        
         self.progressView.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height - 30)
         //self.progressView.frame(forAlignmentRect: CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 5))
         progressView.progress = 0 //默认进度 0%
-        self.view.addSubview(progressView);
-
+        self.view.addSubview(progressView)
     }
     
     // viewWillDisappear设置页面转回竖屏
@@ -217,4 +227,72 @@ extension PlayerViewController {
             break
         }
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        self.beginTouchX = (touches.first?.location(in: self.view).x)!
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //    获得到当前播放的时间(秒)
+        //Float64 cur = CMTimeGetSeconds(player.currentTime);
+        //var cur = CMTimeGetSeconds(player.currentTime)
+        
+        super.touchesMoved(touches, with: event)
+        
+//        self.endTouchX = (touches.last?.location(in: self.view).x)!
+        
+//        var endX:CGFloat
+//        var changedX:CGFloat
+//        //获取点击的坐标位置
+        for touch:AnyObject in touches {
+            let t:UITouch = touch as! UITouch
+            print("startx:  \(beginTouchX)  movingx:  \(t.location(in: self.view).x)")
+
+            //var changeX = t.location(in: self.view).x - _startPoin
+            self.endTouchX = t.location(in: self.view).x
+//
+//            changedX = endX - beginTouchX
+//
+//            if changedX > 10 {
+//                var cur = player.currentTime
+//                cur += 2;
+//                self.player.seek(to: CMTime(seconds: cur, preferredTimescale: 1), completionHandler: nil)
+//            }else if changedX < -10{
+//                var cur = player.currentTime
+//                cur -= 1;
+//                self.player.seek(to: CMTime(seconds: cur, preferredTimescale: 1), completionHandler: nil)
+//            }
+        }
+        
+        
+        
+        
+        
+        //[player seekToTime:CMTimeMake(cur, 1)];
+    }
+    
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var changedX = 0.0
+
+        changedX = Double(self.endTouchX - self.beginTouchX)
+        
+        print("changedX:  \(changedX)")
+        
+        if changedX > 5 {
+            var cur = player.currentTime
+            cur += 2*(changedX/30);
+            self.player.seek(to: CMTime(seconds: cur, preferredTimescale: 500), completionHandler: nil)
+        }else if changedX < -5{
+            var cur = player.currentTime
+            cur += 2*(changedX/40);
+            self.player.seek(to: CMTime(seconds: cur, preferredTimescale: 500), completionHandler: nil)
+        }
+        self.beginTouchX = 0
+        self.endTouchX = 0
+    }
+
 }
