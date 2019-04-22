@@ -14,7 +14,7 @@ import CoreLocation
 import SwiftyJSON
 import Reachability
 
-class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate,WeiboSDKDelegate{
+class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate,WeiboSDKDelegate,UIDocumentInteractionControllerDelegate{
     
     var chooseSingleImage = false
     
@@ -48,6 +48,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     var isOriginal:Bool = true
     // 单选图片是否 需要编辑
     var isNeedEdit:Bool = true
+    
+    // 文件分享
+    var documentInteractionController = UIDocumentInteractionController()
     
     // UI
     var imageView:UIImageView = UIImageView()
@@ -182,16 +185,13 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         if isIPhoneX {
             image.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8)
             image.backgroundColor = UIColor.white;
-            
-            
             bottomImage.frame = CGRect.init(x: 0, y: SCREEN_HEIGHT * 0.8, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2)
             bottomImage.backgroundColor = UIColor.white;
-          bottomImage.image = UIImage(named: "好监理_启动页")
-           bottomImage.contentMode = .scaleAspectFit
-          self.view.addSubview(bottomImage)
-            
+            bottomImage.image = UIImage(named: "好监理_启动页")
+            bottomImage.contentMode = .scaleAspectFit
+            self.view.addSubview(bottomImage)
         }
-       image.image = UIImage(named: "好监理_启动页")
+        image.image = UIImage(named: "好监理_启动页")
         image.contentMode = .scaleAspectFit
         image.backgroundColor = .white
         
@@ -662,4 +662,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             }
         }
     }
+    
+    // 文件分享代理
+    func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController) {
+        
+    }
+    func documentInteractionControllerWillBeginPreview(_ controller: UIDocumentInteractionController) {
+        
+    }
+    func documentInteractionController(_ controller: UIDocumentInteractionController, willBeginSendingToApplication application: String?) {
+        
+    }
+    
 }

@@ -42,6 +42,7 @@ func APPIfExistFile(path:String) -> String {
 }
 
 func APPDelFile(path:String,callBackfunName:String){
+    let vc = getLastMainViewController()
     do {
         var isDir: ObjCBool = false
         if FileManager.default.fileExists(atPath: path,isDirectory: &isDir){
@@ -52,8 +53,14 @@ func APPDelFile(path:String,callBackfunName:String){
                 // file exists and is not a directory
             }
             try! fileManager.removeItem(atPath: path)
+            ExecWinJS(JSFun: callBackfunName + "(\"1\")")
+        }else{
+            //文件不存在
+            let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
+            vc.present(alert, animated: true, completion: nil)
+            ExecWinJS(JSFun: callBackfunName + "(\"0\")")
         }
-        ExecWinJS(JSFun: callBackfunName + "(\"1\")")
     } catch {
         print(error)
         ExecWinJS(JSFun: callBackfunName + "(\"0\")")
@@ -125,7 +132,7 @@ func APPGetFileBase(path:String) -> String{
         let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
         vc.present(alert, animated: true, completion: nil)
-        return ""
+        return "no data"
     }
 }
 
@@ -202,6 +209,7 @@ func APPUploadFile(path:String, domainName:String, folderName:String, callBackfu
                 let alert = UIAlertController(title: "文件上传失败！", message: error.description, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
                 vc.present(alert, animated: true, completion: nil)
+                
                 print("APPUploadFile  -- error:  " + "\(error)")
             }
         })
@@ -210,6 +218,7 @@ func APPUploadFile(path:String, domainName:String, folderName:String, callBackfu
         let alert = UIAlertController(title: "文件不存在！", message: nil, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "确认", style: UIAlertAction.Style.default, handler: nil))
         vc.present(alert, animated: true, completion: nil)
+        ExecWinJS(JSFun: callBackfunName + "(\"" + "no data" + "\")")
     }
 }
 
