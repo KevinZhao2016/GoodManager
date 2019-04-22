@@ -15,6 +15,8 @@
 #import "NIMLocationViewController.h"
 #import "NIMKitAudioCenter.h"
 #import "IJSImagePickerController.h"
+#import "IJSImageManagerController.h"
+
 static const void * const NTESDispatchMessageDataPrepareSpecificKey = &NTESDispatchMessageDataPrepareSpecificKey;
 dispatch_queue_t NTESMessageDataPrepareQueue()
 {
@@ -384,7 +386,7 @@ dispatch_queue_t NTESMessageDataPrepareQueue()
     __weak typeof(self) weakSelf = self;
 
     UIViewController *rootVC = UIApplication.sharedApplication.keyWindow.rootViewController;
-    IJSImagePickerController *ijsip = [[IJSImagePickerController alloc]initWithMaxImagesCount:1 columnNumber:4 pushPhotoPickerVc:NO];
+    IJSImagePickerController *ijsip = [[IJSImagePickerController alloc]initWithMaxImagesCount:9 columnNumber:4 pushPhotoPickerVc:NO];
     // 选择视频
     ijsip.allowPickingVideo = YES;
     // 编辑
@@ -479,13 +481,24 @@ dispatch_queue_t NTESMessageDataPrepareQueue()
 {
     __weak typeof(self) weakSelf = self;
     [self.mediaFetcher fetchMediaFromCamera:^(NSString *path, UIImage *image) {
-        NIMMessage *message;
-        if (image) {
-            message = [NIMMessageMaker msgWithImage:image];
-        }else{
-            message = [NIMMessageMaker msgWithVideo:path];
-        }
-        [[NIMSDK sharedSDK].chatManager sendMessage:message toSession:weakSelf.session error:nil];
+        //修改
+        
+        IJSImageManagerController *imageManagerVC = [[IJSImageManagerController alloc]initWithEditImage:image];
+        [imageManagerVC loadImageOnCompleteResult:^(UIImage *image, NSURL *outputPath, NSError *error) {
+            NIMMessage *message;
+            if (image) {
+                message = [NIMMessageMaker msgWithImage:image];
+            }else{
+                message = [NIMMessageMaker msgWithVideo:path];
+            }
+            [[NIMSDK sharedSDK].chatManager sendMessage:message toSession:weakSelf.session error:nil];
+        }];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:imageManagerVC animated:YES completion:nil];
+
+        
+
+        
+       
     }];
 }
 

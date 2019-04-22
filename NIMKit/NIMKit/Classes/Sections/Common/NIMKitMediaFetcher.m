@@ -101,6 +101,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+     [picker dismissViewControllerAnimated:YES completion:nil];
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) {
         
@@ -137,7 +138,7 @@
         self.cameraResultHandler(nil,image);
         self.cameraResultHandler = nil;
     }
-    [picker dismissViewControllerAnimated:YES completion:nil];
+   
 }
 
 

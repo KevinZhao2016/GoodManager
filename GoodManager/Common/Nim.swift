@@ -71,14 +71,15 @@ func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
             basevc.navigationController?.pushViewController(vc, animated:true );
             
         }else{
-            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
-                if let myError = error {
-                    print("登录出现错误--%@",myError);
-                }else{
-                    
-                    basevc.navigationController?.pushViewController(vc, animated:true );
-                }
-            };
+            alert(content: "请先登录！")
+//            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
+//                if let myError = error {
+//                    print("登录出现错误--%@",myError);
+//                }else{
+//
+//                    basevc.navigationController?.pushViewController(vc, animated:true );
+//                }
+//            };
         }
     }else{
         vc.nonetLoad()
@@ -121,14 +122,15 @@ func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) {
         
       basevc.navigationController?.pushViewController(vc, animated:true );
     }else{
-        NIMSDK.shared().loginManager.login(account, token: password) { (error) in
-            if let myError = error {
-                print("登录出现错误--%@",myError);
-            }else{
-                
-               basevc.navigationController?.pushViewController(vc, animated:true );
-            }
-        };
+        alert(content: "请先登录！")
+//        NIMSDK.shared().loginManager.login(account, token: password) { (error) in
+//            if let myError = error {
+//                print("登录出现错误--%@",myError);
+//            }else{
+//
+//               basevc.navigationController?.pushViewController(vc, animated:true );
+//            }
+//        };
     }
     
 }
@@ -155,6 +157,9 @@ func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
     
     if (isLogin) {
        basevc.navigationController?.pushViewController(vc, animated:true );
+    }else
+    {
+        alert(content: "请先登录！")
     }
     
     
@@ -183,6 +188,8 @@ func  APPNEChatWithQ(qMark:String, statusBarColor:String){
     
     if (isLogin) {
        basevc.navigationController?.pushViewController(vc, animated:true );
+    }else{
+        alert(content: "请先登录！")
     }
     
     
@@ -202,8 +209,16 @@ func  APPNEGetUnreadNum() ->String {
         Main.nonetLoad()
         return "0";
     }
-    let unreadCount:Int = NIMSDK.shared().conversationManager.allUnreadCount()
-    return "\(unreadCount)"
+    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+ 
+    if (isLogin) {
+        let unreadCount:Int = NIMSDK.shared().conversationManager.allUnreadCount()
+        return "\(unreadCount)"
+    }else{
+        alert(content: "请先登录！")
+        return "0"
+    }
+   
 }
 //获取网易云信某个群未读消息数
 func  APPNEGetUnreadWithQNum(_ qMark:String) -> String {
@@ -217,11 +232,19 @@ func  APPNEGetUnreadWithQNum(_ qMark:String) -> String {
         Main.nonetLoad()
         return "0";
     }
-    let session:NIMSession = NIMSession.init(qMark, type: .team)
-    let recentSession:NIMRecentSession? = NIMSDK.shared().conversationManager.recentSession(by: session)
-    //这个群的未读消息数
-    let unreadCount:Int =  recentSession?.unreadCount ?? 0
-    return "\(unreadCount)"
+    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+    
+    if (isLogin) {
+        let session:NIMSession = NIMSession.init(qMark, type: .team)
+        let recentSession:NIMRecentSession? = NIMSDK.shared().conversationManager.recentSession(by: session)
+        //这个群的未读消息数
+        let unreadCount:Int =  recentSession?.unreadCount ?? 0
+        return "\(unreadCount)"
+    }else{
+        alert(content: "请先登录！")
+        return "0"
+    }
+   
 }
 //获取网易云信某个群未读消息数
 func  APPNEGetQUnreadWithFNum(_ fAccount:String) -> String {
@@ -235,10 +258,29 @@ func  APPNEGetQUnreadWithFNum(_ fAccount:String) -> String {
         Main.nonetLoad()
         return "0";
     }
-    let session:NIMSession = NIMSession.init(fAccount, type: .P2P)
-    let recentSession:NIMRecentSession? = NIMSDK.shared().conversationManager.recentSession(by: session)
-    //这个好友的未读消息数
-    let unreadCount:Int =  recentSession?.unreadCount ?? 0
-    return "\(unreadCount)"
+    let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
+    
+    if (isLogin) {
+        let session:NIMSession = NIMSession.init(fAccount, type: .P2P)
+        let recentSession:NIMRecentSession? = NIMSDK.shared().conversationManager.recentSession(by: session)
+        //这个好友的未读消息数
+        let unreadCount:Int =  recentSession?.unreadCount ?? 0
+        return "\(unreadCount)"
+    }else{
+        alert(content: "请先登录！")
+        return "0"
+    }
+    
+   
 }
-
+func alert(content:String){
+    let vc:MainViewController = getLastMainViewController();
+    let alertC:UIAlertController = UIAlertController.init(title: nil, message: content, preferredStyle: .alert)
+    let action:UIAlertAction
+        = UIAlertAction.init(title: "确定", style: .cancel, handler: nil)
+    alertC.addAction(action)
+    vc.present(alertC, animated: true, completion: nil)
+    
+    
+    
+}
