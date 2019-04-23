@@ -380,8 +380,7 @@ class JsApiSwift: NSObject {
         
     }
     @objc func APPNELoginOut(_ arg:String) {
-        let jsonString = JSON(parseJSON: arg)
-        
+//        let jsonString = JSON(parseJSON: arg)
 //        let account = jsonString["account"].stringValue
 //        let password = jsonString["password"].stringValue
 //        let statusBarColor = jsonString["password"].stringValue
