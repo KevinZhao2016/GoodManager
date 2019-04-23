@@ -209,6 +209,7 @@
 		18B45DF52223136D00987D5A /* FileCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B45DF32223136D00987D5A /* FileCellTableViewCell.xib */; };
 		18B49584226C3DF900B239FB /* LxxPlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B49583226C3DF900B239FB /* LxxPlaySound.m */; };
 		18C7781E222E74C0006550BC /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7781D222E74C0006550BC /* Pay.swift */; };
+		18EBACED226EDABD00CFB868 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBACEC226EDABD00CFB868 /* Nim.swift */; };
 		560F870522599727003E6E3A /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 560F84F322599727003E6E3A /* AlipaySDK.bundle */; };
 		560F870622599727003E6E3A /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560F84F422599727003E6E3A /* AlipaySDK.framework */; };
 		560F870722599727003E6E3A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 560F84F922599727003E6E3A /* README.txt */; };
@@ -605,7 +606,6 @@
 		569CEA70226C058E00ECEA22 /* LZImageBrowserTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA67226C058E00ECEA22 /* LZImageBrowserTranslation.m */; };
 		569CEA71226C058E00ECEA22 /* LZImageBrowserManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CEA69226C058E00ECEA22 /* LZImageBrowserManger.m */; };
 		59AD2954AF493339E3EAF1C7 /* Pods_GoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */; };
-		6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B58D2B9221EA124004D6D91 /* Nim.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -972,6 +972,7 @@
 		18B49582226C3DF900B239FB /* LxxPlaySound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LxxPlaySound.h; sourceTree = "<group>"; };
 		18B49583226C3DF900B239FB /* LxxPlaySound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LxxPlaySound.m; sourceTree = "<group>"; };
 		18C7781D222E74C0006550BC /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
+		18EBACEC226EDABD00CFB868 /* Nim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nim.swift; sourceTree = "<group>"; };
 		51ABA4DA779708FE9BC0F16A /* Pods-GoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		560F81A622598F29003E6E3A /* Pods_GoodManager_NIMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GoodManager_NIMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		560F84F322599727003E6E3A /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -1757,7 +1758,6 @@
 		569CEA69226C058E00ECEA22 /* LZImageBrowserManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZImageBrowserManger.m; sourceTree = "<group>"; };
 		569CEA6A226C058E00ECEA22 /* LZImageBrowserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZImageBrowserModel.h; sourceTree = "<group>"; };
 		6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DemoProject-Bridging-Header.h"; sourceTree = "<group>"; };
-		6B58D2B9221EA124004D6D91 /* Nim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nim.swift; sourceTree = "<group>"; };
 		A18D82D30AB22ADD310528D4 /* Pods_GoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7317ACA35C25E7563687A49 /* Pods-GoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodManager/Pods-GoodManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1944,6 +1944,7 @@
 				0A5B880321D375200045A1BE /* NetWork.swift */,
 				18437EC3223951AB00E29DA1 /* Share.swift */,
 				0A4CDEAB21D4A2FB00E28E95 /* File.swift */,
+				18EBACEC226EDABD00CFB868 /* Nim.swift */,
 				0A4E312221E199AB00D15766 /* Image.swift */,
 				0A7F576921E2F6A300F03870 /* Video.swift */,
 				18C7781D222E74C0006550BC /* Pay.swift */,
@@ -1954,7 +1955,6 @@
 				0AEE664521E103D600636D06 /* Contact.swift */,
 				0AEDCAC321F16E40005887A3 /* Launch.swift */,
 				0A18C98C21F9F052007DDF57 /* Webview.swift */,
-				6B58D2B9221EA124004D6D91 /* Nim.swift */,
 				5697F417221EB957000AC814 /* Jpush.swift */,
 				0AFB1E0121FB3E0500007EDA /* Location.swift */,
 			);
@@ -5198,7 +5198,6 @@
 				186C09EF22432C9C000E27F1 /* IJSImageGaussanView.m in Sources */,
 				560F8B02225B944C003E6E3A /* NIMTeamCardHeaderCell.m in Sources */,
 				186C09EC22432C9C000E27F1 /* IJSIImputTextView.m in Sources */,
-				6B58D2BA221EA124004D6D91 /* Nim.swift in Sources */,
 				560F8ACF225B944C003E6E3A /* NIMContactPickedView.m in Sources */,
 				0AFB1E0221FB3E0500007EDA /* Location.swift in Sources */,
 				186C09E522432C9C000E27F1 /* IJSIPath.m in Sources */,
@@ -5268,6 +5267,7 @@
 				18A3518E2222AC6600C62779 /* JQAVCaptureViewController.m in Sources */,
 				560F873822599728003E6E3A /* NTESLiveInfoViewController.m in Sources */,
 				186C0A0122432C9C000E27F1 /* IJSAlbumPickerController.m in Sources */,
+				18EBACED226EDABD00CFB868 /* Nim.swift in Sources */,
 				560F87CF22599728003E6E3A /* NTESAVNotifier.m in Sources */,
 				0A4CDEAE21D4A7C500E28E95 /* ExString.swift in Sources */,
 				560F87B722599728003E6E3A /* NTESTeamReceiptSendViewController.m in Sources */,
