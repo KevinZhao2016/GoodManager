@@ -42,6 +42,7 @@ func APPPushCancelAlias()  {
 }
 
 //    设置新消息提醒方式接口
+ // 提醒方式 0：无声无震动  1：有声无震动（未实现） 2：无声有震动  3：有声有震动
 func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
     let Main = getLastMainViewController()
     
@@ -49,24 +50,20 @@ func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
     let isReach = checkNetObject.isReach()
     if(isReach){
         // 网络连接成功
-        let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
+      
         
         if ifOpenVoice == 0 {
             //不开声音
             print("不开声音")
             // 不设置声音就会自动静音
-            entity.types = Int(JPAuthorizationOptions.alert.rawValue);
+           
             if ifOpenVibration == 0 {
                 //无声 无震动
-                print("不开震动")
-                entity.types = Int(JPAuthorizationOptions.alert.rawValue);
-                
+                print("无声 无震动")
                 Main.remaindWay = 0
             }else{
                 //无声 有震动
-                print("开启震动")
-                entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
-                
+                print("无声 有震动")
                 //开启震动时的调用方法
                 let playSound = LxxPlaySound.init(forPlayingVibrate: ())
                 playSound!.play()
@@ -74,23 +71,17 @@ func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
             }
         }else{
             //开启声音
-            print("开启声音")
-            entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+           
             if ifOpenVibration == 0 {
                 //有声 无震动
                 print("不开震动")
-                entity.types = Int(JPAuthorizationOptions.alert.rawValue);
                 Main.remaindWay = 1
             }else{
                 //开启震动
-                print("开启震动")
-                entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
-                
+                print("有声音震动")
                 //开启震动时的调用方法
                 let playSound = LxxPlaySound.init(forPlayingVibrate: ())
                 playSound!.play()
-                
-                // 有声 有震动
                 Main.remaindWay = 3
             }
             
@@ -100,8 +91,7 @@ func APPPushMsgRemindType(_ ifOpenVoice:Int,ifOpenVibration:Int)  {
         }
         
         
-        let delegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate;
-        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: delegate);
+       
         
         print(Main.remaindWay)
     }else{
