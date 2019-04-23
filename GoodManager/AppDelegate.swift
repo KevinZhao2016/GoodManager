@@ -259,7 +259,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         if (notification.request.trigger is UNPushNotificationTrigger) {
             JPUSHService.handleRemoteNotification(userInfo)
         }
-        completionHandler(Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue))
+        completionHandler(Int(JPAuthorizationOptions.alert.rawValue))
         
       
         Voice()
@@ -267,38 +267,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
     
     }
     func Voice() {
-        
-        let vc:MainViewController =
-        getLastMainViewController()
+        // 提醒方式 0：无声无震动  1：有声无震动（未实现） 2：无声有震动  3：有声有震动
+        let vc: MainViewController =
+            getLastMainViewController()
         switch vc.remaindWay {
-       
+        case 0:
+            do {
+                // 无声无震动
+            }
+            break
         case 1:
             do {
-          
-
-         }
-         break;
+                // 有声无震动
+                let playSound1 = LxxPlaySound()
+                playSound1.playWithSound()
+            }
+            break
         case 2:
             do {
-            //开启震动时的调用方法
-            let playSound = LxxPlaySound.init(forPlayingVibrate: ())
-            playSound!.play()
-           
-        }
-          break;
+                // 有声有震动
+                let playSound = LxxPlaySound(forPlayingVibrate: ())
+                playSound!.play()
+            }
+            break
         case 3:
             do {
-            //有声有震动
-            let playSound = LxxPlaySound.init(forPlayingVibrate: ())
-            playSound!.play()
-            
-            let playSound1 = LxxPlaySound()
-            playSound1.playWithSound()
-
-         }
-         break;
+                // 有声有震动
+                let playSound = LxxPlaySound(forPlayingVibrate: ())
+                playSound!.play()
+                
+                let playSound1 = LxxPlaySound()
+                playSound1.playWithSound()
+            }
+            break
         default:
-            break;
+            break
         }
     }
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
@@ -375,7 +378,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         //Required
         //notice: 3.0.0 及以后版本注册可以这样写，也可以继续用之前的注册方式
         let entity:JPUSHRegisterEntity = JPUSHRegisterEntity();
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue)|Int(JPAuthorizationOptions.sound.rawValue);
+        entity.types = Int(JPAuthorizationOptions.alert.rawValue);
         
         
 //        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self);
