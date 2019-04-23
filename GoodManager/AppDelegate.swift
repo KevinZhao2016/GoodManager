@@ -300,10 +300,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         default:
             break;
         }
-        
-        
-        
-      
     }
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
         print("方法调用");
@@ -427,5 +423,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             return UIInterfaceOrientationMask.portrait
         }
     }
-    
 }
