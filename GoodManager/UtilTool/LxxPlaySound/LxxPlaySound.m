@@ -7,7 +7,7 @@
 //
 
 #import "LxxPlaySound.h"
-
+#import <AVFoundation/AVFoundation.h>
 @implementation LxxPlaySound
 
 -(id)initForPlayingVibrate{
@@ -58,11 +58,20 @@
 }
 
 -(void)play{
-    AudioServicesPlaySystemSound(soundID);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 -(void)playWithSound{
-    AudioServicesPlaySystemSound(1000);
+//    AudioServicesPlaySystemSound(1007);
+    SystemSoundID sound;
+    NSString*path = [NSString stringWithFormat:@"/System/Library/Audio/UISounds/%@.%@",@"sms-received1",@"caf"];
+    OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path],&sound);
+    
+    if(error!=kAudioServicesNoError)sound = nil;
+    
+    AudioServicesPlaySystemSound(sound);
+    
+  
 }
 
 -(void)dealloc{
