@@ -113,10 +113,8 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
     
     // viewWillDisappear设置页面转回竖屏
     override func viewWillDisappear(_ animated: Bool) {
-        appDelegate.blockRotation = false
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
         
+
         NotificationCenter.default.removeObserver(self)
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
@@ -153,8 +151,33 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
     }
     
     @objc func back(){
-        self.dismiss(animated: true, completion: nil)
         print(self.player.currentTime)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        appDelegate.blockRotation = false
+        
+        if UIApplication.shared.statusBarOrientation.isLandscape{
+            print("landscape")
+            UIApplication.shared.statusBarOrientation = .portrait
+            print("!!!!!!!!!!!!!!!!")
+        }else{
+            print("p")
+        }
+        if UIApplication.shared.statusBarOrientation.isLandscape{
+            print("landscape")
+            UIApplication.shared.statusBarOrientation = .portrait
+            print("!!!!!!!!!!!!!!!!")
+        }else{
+            print("p")
+        }
+        self.dismiss(animated: true, completion: {() in
+//            if UIApplication.shared.statusBarOrientation.isLandscape{
+//                print("landscape")
+//            }else{
+//                print("p")
+//            }
+        })
         ExecWinJS(JSFun: callbackfun! + "(\"" + "\(self.player.currentTime)" + "\")")
     }
     
