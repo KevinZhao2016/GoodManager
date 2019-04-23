@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+var isNimLogout = false;
 func APPNELogin(account: String, password:String)  {
     let account:String = account //按测试给的内容更换
     let token = password//按测试给的内容更换
@@ -20,6 +19,9 @@ func APPNELogin(account: String, password:String)  {
         NIMSDK.shared().loginManager.login(account, token: token) { (error) in
             if let myError = error {
                 print("登录出现错误--%@",myError);
+            }else
+            {
+                isNimLogout = true
             }
         };
     }else{
@@ -29,7 +31,7 @@ func APPNELogin(account: String, password:String)  {
     
     
 }
-
+//注销
 func APPNELoginOut()  {
     let vc = getLastMainViewController()
     let checkNetObject = checkNet()
@@ -37,14 +39,32 @@ func APPNELoginOut()  {
     print(isReach)
     if(isReach){
         let isLogin:Bool = NIMSDK.shared().loginManager.isLogined()
-        let basevc = getLastMainViewController()
-        
+  
         if (isLogin) {
-            NIMSDK.shared().loginManager.logout { (error) in
-                if let myError = error {
-                    print("登出出现错误--%@",myError);
-                }
+            if(isNimLogout){
+                isNimLogout = false;
+                NIMSDK.shared().loginManager.logout { (error) in
+                    if let myError = error {
+                        isNimLogout = true;
+                        //退出失败
+                        print("登出出现错误--%@",myError);
+                    }else
+                    {//退出成功
+                        
+                        
+                        
+                    }
+             }
+           
+            }else
+            {
+                print("不起作用")
+                
             }
+        }else
+        {
+            //用户没有登录
+            print("不起作用1")
         }
     }else{
         vc.nonetLoad()
