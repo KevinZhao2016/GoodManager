@@ -80,6 +80,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         print(UIScreen.main.bounds)
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleOrientationChange(notification:)),
+                                               name: UIApplication.didChangeStatusBarOrientationNotification,
+                                               object: nil)
+        
         let fileManager = FileManager.default
         let documentsDir = NSHomeDirectory() + "/Documents/localDocuments"
         let fileDir = documentsDir
@@ -118,7 +123,19 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print("mainViewController 出现")
         
+        //        UIApplication.shared.statusBarOrientation = .landscapeLeft
+        
+//        if UIApplication.shared.statusBarOrientation.isLandscape {
+//            UIView.animate(withDuration: 0.5) {
+//                
+//                
+//                self.view.transform = CGAffineTransform(rotationAngle: 90);
+//                print("hhhhhh")
+//                
+//            }
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,6 +146,15 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         super.viewWillAppear(animated);
         self.navigationController?.isNavigationBarHidden = true;
         
+        
+        
+//        self.view.frame = CGRect(x: 0,y: 0,width: min(UIScreen.main.bounds.width,UIScreen.main.bounds.height),height: max(UIScreen.main.bounds.width,UIScreen.main.bounds.height))
+//        self.webview.frame = self.view.frame
+        
+        
+//        self.player.fillMode = PlayerFillMode.resizeAspect
+//        self.webview.
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -255,6 +281,8 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     func setupWebview(){
         print("set up webview")
         
+        UIApplication.shared.statusBarOrientation = .portrait
+
         webview = DWKWebView(frame: CGRect(x: 0, y: STATUS_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - STATUS_HEIGHT))
         //bridge
         webview.addJavascriptObject(JsApiSwift(), namespace: nil)
@@ -377,6 +405,25 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     @objc func pushPreviewController(){
         print("pushPreviewController")
+    }
+    
+    // 监听屏幕旋转
+    @objc private func handleOrientationChange(notification: Notification) {
+        // 获取设备方向
+        let statusBarOrientation = UIApplication.shared.statusBarOrientation
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        
+        if statusBarOrientation.isPortrait {
+            print("竖屏了")
+            
+            //self.player.fillMode = PlayerFillMode.resizeAspect
+        } else if statusBarOrientation.isLandscape {
+            print("横屏了")
+//            self.view.frame = CGRect(x: 0,y: 0,width: max(UIScreen.main.bounds.width,UIScreen.main.bounds.height),height: min(UIScreen.main.bounds.width,UIScreen.main.bounds.height))
+//            self.webview.frame = self.view.bounds
+            //self.player.fillMode = PlayerFillMode.resizeAspect
+        }
     }
     
     
