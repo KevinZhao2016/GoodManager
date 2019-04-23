@@ -103,6 +103,7 @@ func APPGetFileSize(path:String) -> String{
                 let size = "\(fileinfo[FileAttributeKey.size])"
                 return size
             }catch{
+                
                 return "unknow"
             }
         }

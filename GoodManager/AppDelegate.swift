@@ -426,5 +426,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             return UIInterfaceOrientationMask.portrait
         }
     }
-    
 }
