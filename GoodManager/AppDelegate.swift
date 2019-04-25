@@ -241,6 +241,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
             }else if(url.absoluteString.hasPrefix("wx")){
                 print("wx推送")
                 return WXApi.handleOpen(url, delegate: nil)
+            }else if(url.absoluteString.hasPrefix("QQ")){
+                print(url.absoluteString)
             }else{
                 print(url.absoluteString)
             }
@@ -354,7 +356,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         // 注册微信支付
         WXApi.registerApp("wxac7e2659ee456ef6")
         // 注册QQ
-        TencentOAuth.init(appId: "1108245066", andDelegate: nil)
+        //TencentOAuth.init(appId: "1108245066", andDelegate: nil)
         // 注册weibo
         WeiboSDK.registerApp("580085537")
         WeiboSDK.enableDebugMode(true)

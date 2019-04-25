@@ -10,11 +10,11 @@
 #define XMShare_CommonMarco_h
 
 ///  APP KEY
-#define APP_KEY_WEIXIN            @"wxd930ea5d5a258f4f"
+#define APP_KEY_WEIXIN            @"wxac7e2659ee456ef6"
 
-#define APP_KEY_QQ                @"222222"
+#define APP_ID_QQ                @"222222"
 
-#define APP_KEY_WEIBO             @"2045436852"
+#define APP_KEY_WEIBO             @"wb580085537"
 
 #define APP_KEY_WEIBO_RedirectURL @"http://www.sina.com"
 

@@ -14,7 +14,9 @@ import CoreLocation
 import SwiftyJSON
 import Reachability
 
-class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate,WeiboSDKDelegate,UIDocumentInteractionControllerDelegate{
+class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate,WeiboSDKDelegate,UIDocumentInteractionControllerDelegate,QQApiInterfaceDelegate{
+    
+    
     
     var chooseSingleImage = false
     
@@ -428,6 +430,21 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     
     //--------------------------------代理方法--------------------------------------
+    
+    // qq回调
+    func onReq(_ req: QQBaseReq!) {
+        
+    }
+    
+    func onResp(_ resp: QQBaseResp!) {
+        var massage = ""
+        print(resp)
+    }
+    
+    func isOnlineResponse(_ response: [AnyHashable : Any]!) {
+        
+    }
+    
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!) {
         let option = PHVideoRequestOptions.init()
         option.isNetworkAccessAllowed = true

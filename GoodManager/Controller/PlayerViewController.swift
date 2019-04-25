@@ -79,7 +79,10 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
         // 横屏
         appDelegate.blockRotation = true
         
-        showCloseButton()
+        //showCloseButton()
+        let barButton = UIBarButtonItem.init(title: "返回", style: .done, target: self, action: #selector(self.back))
+        barButton.tintColor = .white
+        self.navigationItem.leftBarButtonItem = barButton
         
         self.title = "视频播放"
         self.navigationController?.navigationBar.titleTextAttributes = {[NSAttributedString.Key.foregroundColor: UIColor.white,NSAttributedString.Key.font:UIFont(name: "Heiti SC", size: 18.0)!
@@ -144,11 +147,9 @@ class PlayerViewController: UIViewController,PlayerDelegate,PlayerPlaybackDelega
         }
     }
     
-    func showCloseButton(){
-        let barButton = UIBarButtonItem.init(title: "返回", style: .done, target: self, action: #selector(self.back))
-        barButton.tintColor = .white
-        self.navigationItem.leftBarButtonItem = barButton
-    }
+//    func showCloseButton(){
+//
+//    }
     
     @objc func back(){
         print(self.player.currentTime)
