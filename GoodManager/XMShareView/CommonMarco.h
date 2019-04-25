@@ -12,7 +12,7 @@
 ///  APP KEY
 #define APP_KEY_WEIXIN            @"wxac7e2659ee456ef6"
 
-#define APP_ID_QQ                @"222222"
+#define APP_ID_QQ                 @"1108860926"
 
 #define APP_KEY_WEIBO             @"wb580085537"
 
