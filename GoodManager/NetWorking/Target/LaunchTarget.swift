@@ -73,7 +73,15 @@ extension LaunchTarget: TargetType{
         case .uploadFile(let filepath, let domainName, let folderName):
             return URL(string: domainName)!
         default:
-            return URL(string: "http://api.yiganzi.cn")!
+            var url = "http://api.yiganzi.cn"
+            url = GoodManager.APPGetValue(key: "_StartDomainName_")
+            if url == ""{
+                print("===================启动图片使用默认url====================")
+                return URL(string: "http://api.yiganzi.cn")!
+            }
+            print("===================启动图片使用新url====================")
+            print("\(url)")
+            return URL(string: url)!
         }
     }
     

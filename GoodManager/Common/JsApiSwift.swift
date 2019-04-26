@@ -439,7 +439,7 @@ class JsApiSwift: NSObject {
     @objc func APPSetStartupPageDomainName(_ arg:String){
         let jsonString = JSON(parseJSON: arg)
         let domainName = jsonString["domainName"].stringValue
-        
+        GoodManager.APPSetValue(key: "_StartDomainName_", value: domainName)
     }
     
     // 判断接口是否存在
