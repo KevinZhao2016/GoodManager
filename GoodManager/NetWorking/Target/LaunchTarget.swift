@@ -49,11 +49,14 @@ extension LaunchTarget: TargetType{
             let appid = "mAPPIos01"
             let time = getDateTime()
             let body = ["mAPPIos01",getDateTime()]
+            let type = "hjl"//好监理
+            //let type = "hlgc"//互联广场
             //let sign = (body.sorted().joined() + md5string).MD5String
             let sign = (body.joined() + md5string).MD5String
             let params = [
                 "time" : time,
                 "appid": appid,
+                "type" : type,
                 "sign" : sign
             ]
             //return .requestCompositeData(bodyData: jsonToData(jsonDic: params)!, urlParameters: ["action" : "getStartupData"])
@@ -73,11 +76,11 @@ extension LaunchTarget: TargetType{
         case .uploadFile(let filepath, let domainName, let folderName):
             return URL(string: domainName)!
         default:
-            var url = "http://api.yiganzi.cn"
+            var url = "http://hangzhou.api.yiganzi.cn"
             url = GoodManager.APPGetValue(key: "_StartDomainName_")
             if url == ""{
                 print("===================启动图片使用默认url====================")
-                return URL(string: "http://api.yiganzi.cn")!
+                return URL(string: "http://hangzhou.api.yiganzi.cn")!
             }
             print("===================启动图片使用新url====================")
             print("\(url)")

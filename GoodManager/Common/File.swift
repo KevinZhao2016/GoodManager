@@ -159,6 +159,7 @@ func APPPreviewFile(path:String){
     }
 }
 
+// 上传文件
 func APPUploadFile(path:String, domainName:String, folderName:String, callBackfunName:String){
     print("-------------APPUploadFile--------------")
     let vc = getLastMainViewController()
