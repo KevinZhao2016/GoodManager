@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m"
-            timestampString = "577549626.710543"
+            timestampString = "579063933.435318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "692"
@@ -470,7 +470,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/SDK/Core/IJSEditSDK/Controller/IJSImageEditController.m"
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/AppDelegate.swift"
-            timestampString = "577962830.17133"
+            timestampString = "579102870.210768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577873545.702528"
+            timestampString = "579102870.210973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "MainViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577873545.702716"
+            timestampString = "579102870.211194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "662"
-            endingLineNumber = "662"
+            startingLineNumber = "663"
+            endingLineNumber = "663"
             landmarkName = "resetImgSize(sourceImage:maxImageLenght:maxSizeKB:)"
             landmarkType = "7">
             <Locations>
@@ -682,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "577873545.702774"
+            timestampString = "579102870.211261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "648"
-            endingLineNumber = "648"
+            startingLineNumber = "649"
+            endingLineNumber = "649"
             landmarkName = "image(image:didFinishSavingWithError:contextInfo:)"
             landmarkType = "7">
          </BreakpointContent>

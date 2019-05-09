@@ -48,17 +48,18 @@ extension LaunchTarget: TargetType{
         case .Launch:
             let appid = "mAPPIos01"
             let time = getDateTime()
-            let body = ["mAPPIos01",getDateTime()]
+            //let body = ["mAPPIos01",getDateTime()]
             let type = "hjl"//好监理
             //let type = "hlgc"//互联广场
             //let sign = (body.sorted().joined() + md5string).MD5String
-            let sign = (body.joined() + md5string).MD5String
+            let sign = (appid + time + type + md5string).MD5String
             let params = [
-                "time" : time,
                 "appid": appid,
+                "time" : time,
                 "type" : type,
                 "sign" : sign
             ]
+            print("\(params)")
             //return .requestCompositeData(bodyData: jsonToData(jsonDic: params)!, urlParameters: ["action" : "getStartupData"])
             return .requestCompositeParameters(bodyParameters: params, bodyEncoding: URLEncoding.httpBody, urlParameters: ["action" : "getStartupData"])
         case .uploadFile(let filepath, let domainName, let folderName):

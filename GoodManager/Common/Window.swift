@@ -9,6 +9,7 @@
 import Foundation
 
 func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:String){
+    print("===================APPWinOpen=====================")
     let vc = getLastMainViewController()
     let webvc = MainViewController()
     webvc.mark = mark
@@ -20,14 +21,24 @@ func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:St
 }
 
 func APPWinClose(mark:String){
+    print("===================APPWinClose=====================")
     let vc = findControllerByMark(mark: mark)
     vc.dismiss(animated: false, completion: nil)
+    print(mark)
+    var mark_ = mark
     var i:Int = 0
-    for VC in mainViewControllers {
-        if(VC.mark == mark){
-            break
+    for VC_ in mainViewControllers {
+        print(VC_.mark)
+        if(VC_.mark == mark_){
+            print("i: \(i)")
+            mainViewControllers.remove(at: i)
+            return
+        }else{
+            i = i + 1
         }
-        i = i + 1
     }
-    mainViewControllers.remove(at: i)
+    // 如果没有找到相关页面，关闭“mark_home_”页面
+    mainViewControllers.remove(at: mainViewControllers.count-1)
+    let vc_wrong = getLastMainViewController()
+    vc_wrong.dismiss(animated: false, completion: nil)
 }

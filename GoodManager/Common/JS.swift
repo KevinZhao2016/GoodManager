@@ -19,7 +19,7 @@ func APPExecWinJS(mark:String, JSFun:String){
     }else{
         var _mark = mark
         if _mark == "mark_home_" {
-            _mark = "main"
+            //_mark = "main"
         }
         vc = findControllerByMark(mark: _mark)
     }

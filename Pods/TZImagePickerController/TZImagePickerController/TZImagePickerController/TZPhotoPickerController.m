@@ -106,21 +106,21 @@ static CGFloat itemMargin = 5;
         if (!tzImagePickerVc.sortAscendingByModificationDate && self->_isFirstAppear && self->_model.isCameraRoll) {
             [[TZImageManager manager] getCameraRollAlbum:tzImagePickerVc.allowPickingVideo allowPickingImage:tzImagePickerVc.allowPickingImage needFetchAssets:YES completion:^(TZAlbumModel *model) {
                 self->_model = model;
-                NSLog(@"self->_model:  %@",self->_model);
+                //NSLog(@"self->_model:  %@",self->_model);
                 self->_models = [NSMutableArray arrayWithArray:self->_model.models];
-                NSLog(@"self->_models:  %@",self->_model.models);
+                //NSLog(@"self->_models:  %@",self->_model.models);
                 [self initSubviews];
             }];
         } else {
             if (self->_showTakePhotoBtn || self->_isFirstAppear) {//第一次、不让拍照
                 [[TZImageManager manager] getAssetsFromFetchResult:self->_model.result completion:^(NSArray<TZAssetModel *> *models) {
                     self->_models = [NSMutableArray arrayWithArray:models];
-                    NSLog(@"self->_models:  %@",self->_model.models);
+                    //NSLog(@"self->_models:  %@",self->_model.models);
                     [self initSubviews];
                 }];
             } else {
                 self->_models = [NSMutableArray arrayWithArray:self->_model.models];
-                NSLog(@"self->_models:  %@",self->_model.models);
+                //NSLog(@"self->_models:  %@",self->_model.models);
                 [self initSubviews];
             }
         }
@@ -777,7 +777,7 @@ static CGFloat itemMargin = 5;
     for (TZAssetModel *model in tzImagePickerVc.selectedModels) {
         [selectedAssets addObject:model.asset];
     }
-    NSLog(@"视频时长限制:  %f  秒",self.videoTimeLimit);
+    //NSLog(@"视频时长限制:  %f  秒",self.videoTimeLimit);
 
     NSMutableArray *copyArray = [NSMutableArray arrayWithArray:_models];
     
@@ -789,7 +789,7 @@ static CGFloat itemMargin = 5;
         Second = [[model.timeLength componentsSeparatedByString: @":"][1] intValue];
         Min = [[model.timeLength componentsSeparatedByString: @":"][0] intValue];
         Time = (Second + Min*60);
-        NSLog(@"视频时长:  %d  秒",Time);
+        //NSLog(@"视频时长:  %d  秒",Time);
         
         if ((self.videoTimeLimit == 0)&&(Time != 0)) {
             NSLog(@"图片,删除视频");
