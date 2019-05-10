@@ -346,7 +346,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, WX
         
         let vc = MainViewController()
         let mainNV = UINavigationController.init(rootViewController: vc);
-        vc.mark = "mark_home_"
+        vc.mark = "max_home_"
         mainViewControllers.append(vc)
         self.window?.rootViewController = mainNV
         self.window?.backgroundColor = UIColor.white

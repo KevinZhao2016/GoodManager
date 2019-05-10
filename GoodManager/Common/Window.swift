@@ -17,28 +17,29 @@ func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:St
     mainViewControllers.append(webvc)
     APPSetProgressBarColor(color: progressBarColor)
     AppSetStatusBarColor(color: statusBarColor)
-    vc.present(webvc, animated: true, completion: nil)
+//    // test
+//    for VC_ in mainViewControllers {
+//        print(VC_.mark)
+//    }
+    print("lastmainviecontroller.mark:  \(vc.mark)")
+    vc.navigationController?.pushViewController(webvc, animated: true)
 }
 
 func APPWinClose(mark:String){
     print("===================APPWinClose=====================")
-    let vc = findControllerByMark(mark: mark)
-    vc.dismiss(animated: false, completion: nil)
-    print(mark)
-    var mark_ = mark
+    let mark_ = mark
+    print("相关mark:  \(mark_)")
     var i:Int = 0
     for VC_ in mainViewControllers {
-        print(VC_.mark)
+        print("VC.mark:  \(VC_.mark)")
         if(VC_.mark == mark_){
             print("i: \(i)")
-            mainViewControllers.remove(at: i)
+            let vc = mainViewControllers.remove(at: i)
+            vc.navigationController?.popViewController(animated: true)
             return
         }else{
             i = i + 1
         }
     }
-    // 如果没有找到相关页面，关闭“mark_home_”页面
-    mainViewControllers.remove(at: mainViewControllers.count-1)
-    let vc_wrong = getLastMainViewController()
-    vc_wrong.dismiss(animated: false, completion: nil)
+    print("没有找到： "+mark)
 }

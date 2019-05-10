@@ -17,10 +17,7 @@ func APPExecWinJS(mark:String, JSFun:String){
     if (mark == "") {
         vc = getLastMainViewController()
     }else{
-        var _mark = mark
-        if _mark == "mark_home_" {
-            //_mark = "main"
-        }
+        let _mark = mark
         vc = findControllerByMark(mark: _mark)
     }
     if vc!.webview != nil {

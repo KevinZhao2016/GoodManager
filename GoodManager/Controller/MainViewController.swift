@@ -33,8 +33,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     // 提醒方式 0：无声无震动  1：有声无震动（未实现） 2：无声有震动  3：有声有震动
     var remaindWay = 0
     
-    //var mark:String = "main"
-    var mark:String = "mark_home_"
+    var mark:String = "max_home_"
     var url:String = mainUrl
     var webview:DWKWebView!
     
