@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>BuildTime</key>
 	<string>20190101</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -16,7 +18,7 @@
 			<key>CFBundleTypeName</key>
 			<string>public.content</string>
 			<key>LSHandlerRank</key>
-			<string>Owner</string>
+			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>public.image</string>
@@ -45,7 +47,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>hjl.4.2.20190430</string>
+	<string>1.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -160,19 +162,23 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>App需要启用手机相机</string>
+	<string>是否允许此App使用您的相机？</string>
 	<key>NSContactsUsageDescription</key>
-	<string>APP需要读取您的联系人</string>
+	<string>是否允许此App访问您的通讯录？</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>需要获取定位权限</string>
+	<string>是否允许此App访问您的地理位置?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>需要获取定位权限</string>
+	<string>是否允许此App访问您的地理位置?</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>是否许允此App使用蓝牙？</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>访问麦克风以录像</string>
+	<string>是否允许此App使用您的麦克风？</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>是否允许存储图片</string>
+	<string>是否允许此App访问您的相册？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要您的同意才能开启手机相册</string>
+	<string>是否允许此App访问您的相册？</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>是否允许此App使用日历？</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
