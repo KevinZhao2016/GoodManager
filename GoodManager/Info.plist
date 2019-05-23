@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleGetInfoString</key>
-	<string></string>
 	<key>BuildTime</key>
 	<string>20190101</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -34,6 +32,8 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -100,7 +100,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqapi</string>
@@ -161,28 +161,26 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>是否允许此App使用您的相机？</string>
-	<key>NSContactsUsageDescription</key>
-	<string>是否允许此App访问您的通讯录？</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>是否允许此App访问您的地理位置?</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>是否允许此App访问您的地理位置?</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>是否许允此App使用蓝牙？</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>是否允许此App使用您的麦克风？</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>是否允许此App访问您的相册？</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>是否允许此App访问您的相册？</string>
+	<string>使用蓝牙以传输文件等信息，如果不允许，将无法使用蓝牙功能。</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>是否允许此App使用日历？</string>
+	<string>获取日历以精确地规划装修计划。如果不允许，将无法访问日历。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>授权后，用于拍摄图片、视频拍摄和扫一扫的功能。如果不允许，将无法使用相机功能。</string>
+	<key>NSContactsUsageDescription</key>
+	<string>获取通讯录信息用于添加好友或进行沟通。如果不允许，将无法访问通讯录。此功能仅用于访问通讯录好友，不会保存你的通讯录内容。</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>获取定位信息用于为用户提供附近的装修信息。如果不允许，你将无法使用位置功能。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>获取定位信息用于为用户提供附近的装修信息。如果不允许，你将无法使用位置功能。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>App需要您的允许才可以使用麦克风，用于录制视频时获取声音。如果不允许,你将无法使用麦克风功能。</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>用于从相册选取照片设置个人头像，以及保存图片至本地。如果不允许,你将无法使用图片功能。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>授权后可以从相册选取图片和视频。如果不允许,你将无法使用图片功能。</string>
 	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
+	<array/>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
