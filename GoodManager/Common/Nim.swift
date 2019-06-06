@@ -235,7 +235,7 @@ func  APPNEGetUnreadNum() ->String {
         let unreadCount:Int = NIMSDK.shared().conversationManager.allUnreadCount()
         return "\(unreadCount)"
     }else{
-        alert(content: "请先登录！")
+        //alert(content: "请先登录！")
         return "0"
     }
    
