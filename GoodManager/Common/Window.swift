@@ -17,10 +17,10 @@ func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:St
     mainViewControllers.append(webvc)
     APPSetProgressBarColor(color: progressBarColor)
     AppSetStatusBarColor(color: statusBarColor)
-//    // test
-//    for VC_ in mainViewControllers {
-//        print(VC_.mark)
-//    }
+    // test
+    for VC_ in mainViewControllers {
+        print(VC_.mark)
+    }
     print("lastmainviecontroller.mark:  \(vc.mark)")
     vc.navigationController?.pushViewController(webvc, animated: true)
 }
@@ -31,11 +31,14 @@ func APPWinClose(mark:String){
     print("相关mark:  \(mark_)")
     var i:Int = 0
     for VC_ in mainViewControllers {
-        print("VC.mark:  \(VC_.mark)")
         if(VC_.mark == mark_){
             print("i: \(i)")
             let vc = mainViewControllers.remove(at: i)
             vc.navigationController?.popViewController(animated: true)
+            // test
+            for test_ in mainViewControllers {
+                print(test_.mark)
+            }
             return
         }else{
             i = i + 1

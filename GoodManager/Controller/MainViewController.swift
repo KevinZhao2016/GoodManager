@@ -75,12 +75,23 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         return self.progressView
     }()
     
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//        if self.children.count == 1{
+//            return false
+//        }
+//        return true
+//    }
+    
     
     
     //-------------------------生命周期--------------------------
     override func viewDidLoad() {
         print(UIScreen.main.bounds)
         super.viewDidLoad()
+        
+        //self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        print(self.navigationController?.interactivePopGestureRecognizer?.isEnabled)
+
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleOrientationChange(notification:)),
@@ -106,6 +117,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             setupWebview()
         }
         
+        
+        
+        
         if(LaunchFlag == false){
             // 若在启动时
             var netSituation = APPGetNetWork()
@@ -124,11 +138,16 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         locationManager.delegate = self //定位代理方法
     }
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         print("mainViewController 出现")
         
-        //        UIApplication.shared.statusBarOrientation = .landscapeLeft
         
+        
+        
+        
+        //        UIApplication.shared.statusBarOrientation = .landscapeLeft
 //        if UIApplication.shared.statusBarOrientation.isLandscape {
 //            UIView.animate(withDuration: 0.5) {
 //                
@@ -148,6 +167,10 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         super.viewWillAppear(animated);
         self.navigationController?.isNavigationBarHidden = true;
         
+        // 为当前控制器禁用👉右滑返回手势
+        if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        }
         
         
 //        self.view.frame = CGRect(x: 0,y: 0,width: min(UIScreen.main.bounds.width,UIScreen.main.bounds.height),height: max(UIScreen.main.bounds.width,UIScreen.main.bounds.height))
@@ -162,6 +185,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true);
         self.navigationController?.isNavigationBarHidden = false;
+        //self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
+        // 为其他控制器开启👉右滑返回手势
+        if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        }
     }
     
     
@@ -741,4 +769,37 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         
     }
     
+    
+    
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+        print("willMove")
+        print(parent)
+        print(mainViewControllers.count)
+    }
+    
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+        print("didMove")
+        let mark_ = self.mark
+        if parent == nil{
+            print("返回")
+            var i:Int = 0
+            for VC_ in mainViewControllers {
+                if(VC_.mark == mark_){
+                    print("i: \(i)")
+                    let vc = mainViewControllers.remove(at: i)
+                    // test
+                    for test_ in mainViewControllers {
+                        print(test_.mark)
+                    }
+                    return
+                }else{
+                    i = i + 1
+                }
+            }
+            print("没有找到： "+mark)
+        }
+        print(mainViewControllers.count)
+    }
 }
