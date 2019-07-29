@@ -36,6 +36,7 @@ func findControllerByMark(mark:String) -> MainViewController{
     }
     return MainViewController()
 }
+
 //判断是否全面屏
 var isFullScreen: Bool {
     if #available(iOS 11, *) {
@@ -76,6 +77,11 @@ func jsonToData(jsonDic:Dictionary<String, Any>) -> Data? {
 }
 
 func getLastMainViewController() -> MainViewController{
+    print(mainViewControllers.count)
+    if(mainViewControllers.count == 0){
+        print("error")
+        //var vc:UIViewController = mainViewController()
+    }
     return mainViewControllers.last!
 }
 

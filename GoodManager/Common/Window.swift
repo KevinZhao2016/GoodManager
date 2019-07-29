@@ -9,7 +9,7 @@
 import Foundation
 
 func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:String){
-    print("===================APPWinOpen=====================")
+    print("===================APPWinOpen begin=====================")
     let vc = getLastMainViewController()
     let webvc = MainViewController()
     webvc.mark = mark
@@ -23,10 +23,11 @@ func APPWinOpen(url:String,mark:String,progressBarColor:String,statusBarColor:St
     }
     print("lastmainviecontroller.mark:  \(vc.mark)")
     vc.navigationController?.pushViewController(webvc, animated: true)
+    print("===================APPWinOpen end=====================")
 }
 
 func APPWinClose(mark:String){
-    print("===================APPWinClose=====================")
+    print("===================APPWinClose begin=====================")
     let mark_ = mark
     print("相关mark:  \(mark_)")
     var i:Int = 0
@@ -39,10 +40,12 @@ func APPWinClose(mark:String){
             for test_ in mainViewControllers {
                 print(test_.mark)
             }
+            print("===================APPWinClose end=====================")
             return
         }else{
             i = i + 1
         }
     }
     print("没有找到： "+mark)
+    print("===================APPWinClose end=====================")
 }

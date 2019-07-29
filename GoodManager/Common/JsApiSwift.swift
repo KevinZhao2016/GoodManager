@@ -375,7 +375,6 @@ class JsApiSwift: NSObject {
         let account = jsonString["account"].stringValue
         let password = jsonString["password"].stringValue
         let statusBarColor = jsonString["statusBarColor"].stringValue
-        
         GoodManager.APPNEOpenDialog(account: account, password: password, statusBarColor: statusBarColor)
         
     }
@@ -441,6 +440,20 @@ class JsApiSwift: NSObject {
         let domainName = jsonString["domainName"].stringValue
         GoodManager.APPSetValue(key: "_StartDomainName_", value: domainName)
     }
+    
+    // 给手机“硬返回”绑定JS事件，用户点击“返回”后时先执行JS函数（本页面的JS函数）再返回
+    @objc func APPBindBackClickJS(_ arg:String){
+        let jsonString = JSON(parseJSON: arg)
+        let JSFun = jsonString["JSFun"].stringValue
+        GoodManager.APPExecWinJS(mark: "", JSFun: JSFun)
+    }
+    
+    // 通过应用包名打开对应的APP。如果设置未安装对应的应用，提示“未安装”
+//    @objc func APPStartAPPlication(_ arg:String){
+//        let jsonString = JSON(parseJSON: arg)
+//        let packageName = jsonString["packageName"].stringValue
+//        GoodManager.wakeAPP(packageName: packageName)
+//    }
     
     // 判断接口是否存在
     @objc func APPIfExistInterfaceName(_ arg:String) -> String {

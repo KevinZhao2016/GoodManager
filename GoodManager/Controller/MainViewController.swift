@@ -126,36 +126,9 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("mainViewController 出现")
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
-        self.navigationController?.isNavigationBarHidden = true;
-        // 为当前控制器禁用👉右滑返回手势
-        if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
-            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        }
-
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true);
-        self.navigationController?.isNavigationBarHidden = false;
-        //self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
-        // 为其他控制器开启👉右滑返回手势
-        if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
-            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        }
-    }
-    
-    
     
     
     //-----------------------------网络监听-----------------------------------
@@ -747,6 +720,25 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.isNavigationBarHidden = true;
+        // 为当前控制器禁用👉右滑返回手势
+        if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true);
+        self.navigationController?.isNavigationBarHidden = false;
+        //self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
+        // 为其他控制器开启👉右滑返回手势
+        if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        }
+    }
+    
     
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
@@ -779,4 +771,5 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
         print(mainViewControllers.count)
     }
+    
 }

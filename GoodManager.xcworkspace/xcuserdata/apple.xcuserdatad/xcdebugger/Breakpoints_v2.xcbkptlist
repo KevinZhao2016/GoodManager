@@ -521,22 +521,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "586088425.4916151"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "MainViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GoodManager/UtilTool/checkNet.m"
             timestampString = "577351267.524363"
             startingColumnNumber = "9223372036854775807"
@@ -745,13 +729,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GoodManager/Common/Window.swift"
-            timestampString = "582810096.759961"
+            filePath = "GoodManager/Common/Global.swift"
+            timestampString = "586113673.898833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "APPWinOpen(url:mark:progressBarColor:statusBarColor:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getLastMainViewController()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
