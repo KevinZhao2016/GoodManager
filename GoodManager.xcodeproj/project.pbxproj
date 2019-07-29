@@ -165,6 +165,8 @@
 		186C0A2822432C9C000E27F1 /* IJSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186C09DB22432C9B000E27F1 /* IJSFoundation.framework */; };
 		1890D6B12240FF6D001AC1D3 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */; };
 		18943B9E2257915D00B97FE1 /* NoNetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943B9D2257915D00B97FE1 /* NoNetViewController.swift */; };
+		18971A6522EEE55A001ECA1C /* privacyDoc.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18971A6422EEE55A001ECA1C /* privacyDoc.bundle */; };
+		18971A6722EEEC55001ECA1C /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18971A6622EEEC55001ECA1C /* PrivacyViewController.swift */; };
 		18A351622222A88000C62779 /* UIImage+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */; };
 		18A351632222A88000C62779 /* UIAlertController+IDCardExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */; };
 		18A351642222A88000C62779 /* JYBDScanCardBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A351332222A87F00C62779 /* JYBDScanCardBaseVC.m */; };
@@ -898,6 +900,8 @@
 		186C09DB22432C9B000E27F1 /* IJSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJSFoundation.framework; sourceTree = "<group>"; };
 		1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		18943B9D2257915D00B97FE1 /* NoNetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetViewController.swift; sourceTree = "<group>"; };
+		18971A6422EEE55A001ECA1C /* privacyDoc.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = privacyDoc.bundle; sourceTree = "<group>"; };
+		18971A6622EEEC55001ECA1C /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		18A3512D2222A87F00C62779 /* UIAlertController+IDCardExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+IDCardExtend.h"; sourceTree = "<group>"; };
 		18A3512E2222A87F00C62779 /* UIImage+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IDCardExtend.m"; sourceTree = "<group>"; };
 		18A3512F2222A87F00C62779 /* UIAlertController+IDCardExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+IDCardExtend.m"; sourceTree = "<group>"; };
@@ -1846,16 +1850,20 @@
 		0A4A01F921D32D6700FD39F7 /* GoodManager */ = {
 			isa = PBXGroup;
 			children = (
-				1810767B2267B17100CFCD5A /* UtilTool */,
-				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
-				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
-				5656C56022453D26006592FC /* NIMDemo-Prefix.pch */,
+				0A4A020321D32D6700FD39F7 /* LaunchScreen.storyboard */,
+				0A4A01FE21D32D6700FD39F7 /* Main.storyboard */,
+				0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */,
 				5656C56122453D26006592FC /* NTESGlobalMacro.h */,
-				560F899C22599D54003E6E3A /* NIMKitEmoticon.bundle */,
+				5656C56022453D26006592FC /* NIMDemo-Prefix.pch */,
+				6B264AE2221E8A1B00781576 /* DemoProject-Bridging-Header.h */,
+				0A2AE35A21FC817D0000BC35 /* GoodManager.entitlements */,
 				560F899B22599D4A003E6E3A /* NIMKitResource.bundle */,
+				560F899C22599D54003E6E3A /* NIMKitEmoticon.bundle */,
+				5656C57B22454751006592FC /* NIMDemoChartlet.bundle */,
+				18971A6422EEE55A001ECA1C /* privacyDoc.bundle */,
+				1810767B2267B17100CFCD5A /* UtilTool */,
 				560F87EB22599793003E6E3A /* Vendors */,
 				560F84F022599727003E6E3A /* Classes */,
-				5656C57B22454751006592FC /* NIMDemoChartlet.bundle */,
 				5656C25322444C10006592FC /* Reachability */,
 				186C092622432C9B000E27F1 /* SDK */,
 				18A3512A2222A87F00C62779 /* JYBD_IDCardRecognition */,
@@ -1866,10 +1874,7 @@
 				0A5B87FC21D36BFF0045A1BE /* Common */,
 				0A5B87FB21D36BF80045A1BE /* Controller */,
 				0A5B87F921D36BEB0045A1BE /* Model */,
-				0A4A01FA21D32D6700FD39F7 /* AppDelegate.swift */,
-				0A4A01FE21D32D6700FD39F7 /* Main.storyboard */,
 				0A4A020121D32D6700FD39F7 /* Assets.xcassets */,
-				0A4A020321D32D6700FD39F7 /* LaunchScreen.storyboard */,
 				0A24B4FA21D5CF3400F1336D /* scanSound.wav */,
 				0A4A020621D32D6700FD39F7 /* Info.plist */,
 			);
@@ -1930,6 +1935,7 @@
 				0A7F576B21E2FD4B00F03870 /* PlayerViewController.swift */,
 				1890D6B02240FF6D001AC1D3 /* TakePictureViewController.swift */,
 				18943B9D2257915D00B97FE1 /* NoNetViewController.swift */,
+				18971A6622EEEC55001ECA1C /* PrivacyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4587,6 +4593,7 @@
 				0A4A020221D32D6700FD39F7 /* Assets.xcassets in Resources */,
 				18A351772222A88000C62779 /* flashlightscan.png in Resources */,
 				18A3517E2222AB8D00C62779 /* IDAuthViewController.xib in Resources */,
+				18971A6522EEE55A001ECA1C /* privacyDoc.bundle in Resources */,
 				1814CD402223B6DC00AF66D1 /* FileListTableViewController.xib in Resources */,
 				560F87B222599728003E6E3A /* NTESTeamMeetingCallingViewController.xib in Resources */,
 				560F877B22599728003E6E3A /* NTESVideoViewController.xib in Resources */,
@@ -4942,6 +4949,7 @@
 				560F87C622599728003E6E3A /* UIScrollView+NTESDirection.m in Sources */,
 				186C0A0F22432C9C000E27F1 /* TOCropView.m in Sources */,
 				18437F0522395CF300E29DA1 /* XMShareView.m in Sources */,
+				18971A6722EEEC55001ECA1C /* PrivacyViewController.swift in Sources */,
 				0AEDCAC421F16E40005887A3 /* Launch.swift in Sources */,
 				560F8B15225B944D003E6E3A /* NIMTextContentConfig.m in Sources */,
 				560F87CC22599728003E6E3A /* NTESCADisplayLinkHolder.m in Sources */,

@@ -29,6 +29,7 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     let reachability = Reachability()!
     var noteLabel:UILabel = UILabel()
     var newButton:UIButton = UIButton()
+    var privacyButton:UIButton = UIButton()
     
     // 提醒方式 0：无声无震动  1：有声无震动（未实现） 2：无声有震动  3：有声有震动
     var remaindWay = 0
@@ -75,23 +76,11 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         return self.progressView
     }()
     
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        if self.children.count == 1{
-//            return false
-//        }
-//        return true
-//    }
-    
-    
     
     //-------------------------生命周期--------------------------
     override func viewDidLoad() {
         print(UIScreen.main.bounds)
         super.viewDidLoad()
-        
-        //self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        print(self.navigationController?.interactivePopGestureRecognizer?.isEnabled)
-
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleOrientationChange(notification:)),
@@ -117,9 +106,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
             setupWebview()
         }
         
-        
-        
-        
         if(LaunchFlag == false){
             // 若在启动时
             var netSituation = APPGetNetWork()
@@ -143,20 +129,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     override func viewDidAppear(_ animated: Bool) {
         print("mainViewController 出现")
         
-        
-        
-        
-        
-        //        UIApplication.shared.statusBarOrientation = .landscapeLeft
-//        if UIApplication.shared.statusBarOrientation.isLandscape {
-//            UIView.animate(withDuration: 0.5) {
-//                
-//                
-//                self.view.transform = CGAffineTransform(rotationAngle: 90);
-//                print("hhhhhh")
-//                
-//            }
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -166,19 +138,10 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         self.navigationController?.isNavigationBarHidden = true;
-        
         // 为当前控制器禁用👉右滑返回手势
         if (navigationController?.responds(to: NSSelectorFromString("interactivePopGestureRecognizer")))! {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
-        
-        
-//        self.view.frame = CGRect(x: 0,y: 0,width: min(UIScreen.main.bounds.width,UIScreen.main.bounds.height),height: max(UIScreen.main.bounds.width,UIScreen.main.bounds.height))
-//        self.webview.frame = self.view.frame
-        
-        
-//        self.player.fillMode = PlayerFillMode.resizeAspect
-//        self.webview.
 
     }
     
@@ -300,11 +263,6 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }
         return iPhoneX;
     }
-    
-//    @objc func btnClick(){
-//        self.removeImageWithDelay()
-//    }
-    
 
     // 加载webview
 
@@ -363,9 +321,20 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         self.newButton.setTitleColor(UIColor.darkGray, for: .highlighted)
         self.newButton.addTarget(self, action: #selector(self.newButtonAction), for: .touchUpInside)
         
+        privacyButton = UIButton(frame: CGRect(x: SCWIDTH/2-35, y: 600, width: 80, height: 40))
+        privacyButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        privacyButton.backgroundColor = .white
+        privacyButton.setTitle("隐私政策", for: .normal)
+        privacyButton.tintColor = .lightGray
+        privacyButton.setTitleColor(UIColor.lightGray, for: .normal)
+        privacyButton.setTitleColor(UIColor.darkGray, for: .highlighted)
+        privacyButton.addTarget(self, action: #selector(privacyButtonAction), for: .touchUpInside)
+        
         self.view.addSubview(self.noteLabel)
         self.view.addSubview(self.imageView)
         self.view.addSubview(self.newButton)
+        self.view.addSubview(self.privacyButton)
+
     }
     
     // 无网络页面刷新
@@ -382,6 +351,14 @@ class MainViewController: BaseViewController,TZImagePickerControllerDelegate, UI
         }else{
             print("网络不可用！")
         }
+    }
+    
+    // 无网络页面隐私入口
+    @objc func privacyButtonAction() {
+        print("显示隐私政策！")
+        
+        let privacyVC:UIViewController = PrivacyViewController()
+        self.navigationController?.pushViewController(privacyVC, animated: true)
     }
     
     // 警告框，提示没有连接网络

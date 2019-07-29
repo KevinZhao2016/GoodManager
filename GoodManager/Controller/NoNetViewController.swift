@@ -19,6 +19,7 @@ class NoNetViewController: UIViewController {
     var imageView:UIImageView = UIImageView()
     var label:UILabel = UILabel()
     var newButton:UIButton = UIButton()
+    var privacyButton:UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,16 @@ class NoNetViewController: UIViewController {
         newButton.addTarget(self, action: #selector(newButtonAction), for: .touchUpInside)
         self.view.addSubview(newButton)
         
+        privacyButton = UIButton(frame: CGRect(x: SCWIDTH/2-35, y: 600, width: 80, height: 40))
+        privacyButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        privacyButton.backgroundColor = .white
+        privacyButton.setTitle("隐私政策", for: .normal)
+        privacyButton.tintColor = .lightGray
+        privacyButton.setTitleColor(UIColor.lightGray, for: .normal)
+        privacyButton.setTitleColor(UIColor.darkGray, for: .highlighted)
+        privacyButton.addTarget(self, action: #selector(privacyButtonAction), for: .touchUpInside)
+        self.view.addSubview(privacyButton)
+        
         self.view.backgroundColor = .white
     }
 
@@ -78,5 +89,13 @@ class NoNetViewController: UIViewController {
         }else{
             print("网络不可用！")
         }
+    }
+    
+    
+    @objc func privacyButtonAction() {
+        print("显示隐私政策！")
+        
+        let privacyVC:UIViewController = PrivacyViewController()
+        self.navigationController?.pushViewController(privacyVC, animated: true)
     }
 }

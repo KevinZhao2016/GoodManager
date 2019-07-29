@@ -91,7 +91,7 @@ func APPNEOpenDialog(account:String, password:String, statusBarColor:String)  {
             basevc.navigationController?.pushViewController(vc, animated:true );
             
         }else{
-            alert(content: "请先登录！")
+            //alert(content: "请先登录！")
 //            NIMSDK.shared().loginManager.login(account, token: password) { (error) in
 //                if let myError = error {
 //                    print("登录出现错误--%@",myError);
@@ -142,7 +142,7 @@ func APPNEOpenTelBook(account:String, password:String, statusBarColor:String) {
         
       basevc.navigationController?.pushViewController(vc, animated:true );
     }else{
-        alert(content: "请先登录！")
+        //alert(content: "请先登录！")
 //        NIMSDK.shared().loginManager.login(account, token: password) { (error) in
 //            if let myError = error {
 //                print("登录出现错误--%@",myError);
@@ -179,7 +179,7 @@ func  APPNEChatWithFriend(fAccount:String, statusBarColor:String){
        basevc.navigationController?.pushViewController(vc, animated:true );
     }else
     {
-        alert(content: "请先登录！")
+        //alert(content: "请先登录！")
     }
     
     
@@ -209,7 +209,7 @@ func  APPNEChatWithQ(qMark:String, statusBarColor:String){
     if (isLogin) {
        basevc.navigationController?.pushViewController(vc, animated:true );
     }else{
-        alert(content: "请先登录！")
+        //alert(content: "请先登录！")
     }
     
     
@@ -261,7 +261,7 @@ func  APPNEGetUnreadWithQNum(_ qMark:String) -> String {
         let unreadCount:Int =  recentSession?.unreadCount ?? 0
         return "\(unreadCount)"
     }else{
-        alert(content: "请先登录！")
+        //alert(content: "请先登录！")
         return "0"
     }
    
@@ -287,7 +287,7 @@ func  APPNEGetQUnreadWithFNum(_ fAccount:String) -> String {
         let unreadCount:Int =  recentSession?.unreadCount ?? 0
         return "\(unreadCount)"
     }else{
-        alert(content: "请先登录！")
+        //alert(content: "请先登录！")
         return "0"
     }
     

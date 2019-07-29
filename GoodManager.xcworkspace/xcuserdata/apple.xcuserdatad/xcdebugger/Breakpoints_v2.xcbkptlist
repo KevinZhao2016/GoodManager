@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "582810096.75965"
+            timestampString = "586088425.4916151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "MainViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -625,70 +625,6 @@
             endingLineNumber = "47"
             landmarkName = "APPDelFile(path:callBackfunName:)"
             landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "582810096.759789"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "690"
-            endingLineNumber = "690"
-            landmarkName = "resetImgSize(sourceImage:maxImageLenght:maxSizeKB:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GoodManager.MainViewController.resetImgSize(sourceImage: __C.UIImage, maxImageLenght: CoreGraphics.CGFloat, maxSizeKB: CoreGraphics.CGFloat) -&gt; Foundation.Data"
-                  moduleName = "GoodManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Documents/ios/Swift/GoodManager/GoodManager/GoodManager/Controller/MainViewController.swift"
-                  timestampString = "577277790.112523"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "589"
-                  endingLineNumber = "589"
-                  offsetFromSymbolStart = "2456">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GoodManager.MainViewController.resetImgSize(sourceImage: __C.UIImage, maxImageLenght: CoreGraphics.CGFloat, maxSizeKB: CoreGraphics.CGFloat) -&gt; Foundation.Data"
-                  moduleName = "GoodManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Documents/ios/Swift/GoodManager/GoodManager/GoodManager/Controller/MainViewController.swift"
-                  timestampString = "577277790.115497"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "589"
-                  endingLineNumber = "589"
-                  offsetFromSymbolStart = "3064">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoodManager/Controller/MainViewController.swift"
-            timestampString = "582810096.7598391"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "676"
-            endingLineNumber = "676"
-            landmarkName = "image(image:didFinishSavingWithError:contextInfo:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
